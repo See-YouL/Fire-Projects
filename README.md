@@ -23,6 +23,32 @@
 
 [看视频配置串口下载程序](https://www.bilibili.com/video/BV1yW411Y7Gw)
 
+### 美化Keil界面
+
+**非必须步骤**, 用来美化界面
+
+[使用该方案的插件](https://www.bilibili.com/video/BV1uT411S7mB/?share_source=copy_web&vd_source=0db47c15b9f51dbaa4548ec2dc55dea4)
+
+[使用该方案的主题配色](https://www.bilibili.com/video/BV1Df4y1k75Z/?share_source=copy_web&vd_source=0db47c15b9f51dbaa4548ec2dc55dea4)
+
+### 配置VScode
+
+**非必须步骤**, 用来使用VScode开发, *也可使用Keil MDK则不需要该步骤*
+
+方案一: 使用VScode + Keil5 MDK进行开发(主要插件**Keil Assistant**)
+
+- 优点: 不需要使用Keil进行编辑
+- 缺点: 不具备Debug功能,只有编译和烧录
+
+[方案一参考视频](https://www.bilibili.com/video/BV19V411g7gD/?share_source=copy_web&vd_source=0db47c15b9f51dbaa4548ec2dc55dea4)
+
+方案二: 使用Vscode + EIDE进行开发(主要插件**EIDE**)
+
+- 优点: 可在VScode中进行调试
+- 缺点: 依赖Keil的编译环境
+
+[方案二参考视频](https://www.bilibili.com/video/BV1nr4y1R7Jb/?share_source=copy_web&vd_source=0db47c15b9f51dbaa4548ec2dc55dea4)
+
 ## 理论知识
 
 ### STM32命名方式
