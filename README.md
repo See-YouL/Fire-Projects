@@ -133,9 +133,9 @@ GPIO（General-Purpose Input/Output）
 
 对于NMOS, Us=0V = Ug=0V, 简单认为, NMOS管截止
 
-![ODR=0时推挽输出原理图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2015.09.27.png)
+![ODR=0时推挽输出原理图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2015.20.46.png)
 
-若ODR为0,经过反相器后为0, 此时PMOS和NMOS的Ug=3.3V
+若ODR为0,经过反相器后为1, 此时PMOS和NMOS的Ug=3.3V
 
 对于PMOS, Us=3.3V = Ug=3.3V, 简单认为, PMOS管截止
 
