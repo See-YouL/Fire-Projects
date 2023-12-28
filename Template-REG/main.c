@@ -48,5 +48,3 @@ void SystemInit(void)
 {
     // 函数体为空，目的是骗过编译器不报错
 }
-
-// test
