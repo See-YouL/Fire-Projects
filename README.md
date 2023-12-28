@@ -14,13 +14,14 @@
 
 看视频配置KeilMDK,P2
 
-![看视频配置Keil MDK](https://www.bilibili.com/video/BV1yW411Y7Gw/?p=2&share_source=copy_web&vd_source=0db47c15b9f51dbaa4548ec2dc55dea4)
+![看视频配置Keil MDK](https://www.bilibili.com/video/BV1yW411Y7Gw)
+
 
 ### 配置串口下载程序
 
 看视频配置串口下载程序,P4
 
-![看视频配置串口下载程序](https://www.bilibili.com/video/BV1yW411Y7Gw/?p=4&share_source=copy_web&vd_source=0db47c15b9f51dbaa4548ec2dc55dea4)
+![看视频配置串口下载程序](https://www.bilibili.com/video/BV1yW411Y7Gw)
 
 ## 理论知识
 
