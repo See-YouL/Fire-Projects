@@ -122,3 +122,21 @@ GPIO（General-Purpose Input/Output）
 - **如果引脚电压低于VSS则下面的保护二极管导通**,保护芯片
 
 #### 推挽输出
+
+![ODR=1时推挽输出原理图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2015.09.27.png)
+
+推挽输出部分的INT来自ODR寄存器
+
+若ODR为1, 经过反相器后为0, 此时PMOS和NMOS的Ug=0V
+
+对于PMOS, Us=3.3V > Ug=0V, PMOS管导通, OUT=VDD
+
+对于NMOS, Us=0V = Ug=0V, 简单认为, NMOS管截止
+
+![ODR=0时推挽输出原理图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2015.09.27.png)
+
+若ODR为0,经过反相器后为0, 此时PMOS和NMOS的Ug=3.3V
+
+对于PMOS, Us=3.3V = Ug=3.3V, 简单认为, PMOS管截止
+
+对于NMOS, Us=0V < Ug=3.3V, NMOS管导通, OUT=GND=0V
