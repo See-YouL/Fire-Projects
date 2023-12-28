@@ -140,3 +140,10 @@ GPIO（General-Purpose Input/Output）
 对于PMOS, Us=3.3V = Ug=3.3V, 简单认为, PMOS管截止
 
 对于NMOS, Us=0V < Ug=3.3V, NMOS管导通, OUT=GND=0V
+
+**推挽输出的含义**
+
+![推挽输出含义图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2015.23.18.png)
+
+- PMOS导通时, OUT处电流向外称为**推**, 此时电流称为**灌电流**
+- NMOS导通时, OUT处电流向里称为**挽**, 此时电流称为**拉电流**
