@@ -294,3 +294,11 @@ I/O引脚至上拉/下拉输入(通过BSRR寄存器软件配置), 经TTL肖特�
 2. 选择具体的GPIO
 3. 配置GPIO的工作模式(CRL CRH)
 3. 控制GPIO输出高低电平(ODR,BRR和BSRR)
+
+### GPIO编程
+
+确定总线基地址, 其中AHB的基地址是从DMA1开始的,即从0x40020000开始
+
+ ```c
+ #define PERIPH_BASE 
+ ```
