@@ -14,5 +14,7 @@
 
 // 定义寄存器
 
-// APB2外设时钟使能寄存器
-#define RCC_APB2ENR ((volatile unsigned int *)(RCC_BASE + 0x18))
+#define RCC_APB2ENR (*(volatile unsigned int *)(RCC_BASE + 0x18)) // APB2外设时钟使能寄存器
+#define GPIOB_CRL (*(volatile unsigned int *)(GPIOB_BASE + 0x00))// GPIOB_CRL
+#define GPIOB_CRH (*(volatile unsigned int *)(GPIOB_BASE + 0x04)) // GPIOB_CRH
+#define GPIOB_ODR (*(volatile unsigned int *)(GPIOB_BASE + 0x0C)) // GPIOB_CRH
