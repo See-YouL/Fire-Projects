@@ -430,3 +430,35 @@ GPIOB->CRL &= ~((0x0F) << (4*1)); // 将GPIOB状态复位
 GPIOB->CRL |= ((1) << (4*1)); // 将GPIOB设置为推挽输出
 GPIOB->ODR &= ~(1<<0); // PB0置0
 ```
+
+在stm32f10x.h中增加RCC的结构体定义,如下
+
+```c
+typedef struct 
+{
+    uint32_t CR;
+    uint32_t CFGR;
+    uint32_t CIR;
+    uint32_t APB2RSTR;
+    uint32_t APB1RSTR;
+    uint32_t AHBENR;
+    uint32_t APB2ENR;
+    uint32_t APB1ENR;
+    uint32_t BDCR;
+    uint32_t CSR;
+    uint32_t AHBRSTR;
+    uint32_t CFGR2;
+}RCC_Typedef;
+
+#define RCC ((RCC_Typedef*)RCC_BASE) // 使用RCC->访问成员变量
+/*----------------------------------------------------------------
+若定义为 #define RCC (*(RCC_Typedef*)RCC_Base)
+则使用RCC.XXX来访问成员变量
+----------------------------------------------------------------*/
+```
+
+在main.c中通过结构体访问RCC寄存器,代码如下
+
+```c
+RCC->APB2ENR |= ((1) << 3); // 开启GPIOB的时钟
+```

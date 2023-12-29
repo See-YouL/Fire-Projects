@@ -19,7 +19,7 @@
 
 int main(void)
 {
-  RCC_APB2ENR |= ((1) << 3); // 开启GPIOB的时钟
+  RCC->APB2ENR |= ((1) << 3); // 开启GPIOB的时钟
   GPIOB->CRL &= ~((0x0F) << (4*1)); // 将GPIOB状态复位
   GPIOB->CRL |= ((1) << (4*1)); // 将GPIOB设置为推挽输出
   GPIOB->ODR &= ~(1<<0); // PB0置0
