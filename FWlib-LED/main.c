@@ -23,8 +23,6 @@ int main(void)
   GPIOB->CRL &= ~((0x0F) << (4*1)); // 将GPIOB状态复位
   GPIOB->CRL |= ((1) << (4*1)); // 将GPIOB设置为推挽输出
   GPIOB->ODR &= ~(1<<0); // PB0置0
-  
-
 }
 
 // Arm6 编译器不需要下面的操作
