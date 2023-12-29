@@ -400,6 +400,16 @@
               <FileType>5</FileType>
               <FilePath>.\stm32f10x.h</FilePath>
             </File>
+            <File>
+              <FileName>stm32f10x_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\stm32f10x_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\stm32f10x_gpio.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

@@ -1,3 +1,6 @@
+#ifndef __STM32F10X_H
+#define __STM32F10X_H
+
 // 存放stm32寄存器映射的代码
 
 // 外设 Peripheral
@@ -57,3 +60,5 @@ typedef struct
 若定义为 #define RCC (*(RCC_Typedef*)RCC_Base)
 则使用RCC.XXX来访问成员变量
 ----------------------------------------------------------------*/
+
+#endif // !__STM32F10X_H
