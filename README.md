@@ -466,3 +466,36 @@ RCC->APB2ENR |= ((1) << 3); // 开启GPIOB的时钟
 #### 增加端口置位/复位函数
 
 增加stm32f10x_gpio.c和stm32f10x_gpio.h文件
+
+#### 补充: 在C语言中#ifndef的作用
+
+在C语言中，#ifndef 是一种预处理指令，用于条件编译。它的全称是 "if not defined"，意思是“如果没有定义”。#ifndef 通常与 #define 和 #endif 一起使用，**用于防止头文件的内容被多次包含（重复包含）**。
+
+**作用**
+
+#ifndef 的主要作用是**确保一个头文件中的内容只被包含一次，防止因重复包含同一头文件而导致的编译错误**这种技术被称为“包含卫士”（Include Guards）或“头文件卫士”（Header Guards）。
+
+**使用方式**
+
+一个典型的使用 #ifndef 的例子如下：
+
+```c
+// 假设这是一个头文件 example.h
+
+#ifndef EXAMPLE_H    // 如果没有定义 EXAMPLE_H
+#define EXAMPLE_H    // 定义 EXAMPLE_H
+
+// 头文件的内容
+void someFunction();
+// 更多的声明...
+
+#endif // 结束 #ifndef
+```
+
+在这个例子中：
+
+1. 当编译器首次遇到 example.h 时，EXAMPLE_H 还没有被定义，所以编译器会处理 #define EXAMPLE_H 和随后的头文件内容。
+2. 如果同一源文件或其他包含了 example.h 的文件再次尝试包含 example.h，EXAMPLE_H 已经被定义了，因此 #ifndef EXAMPLE_H 条件失败，编译器将跳过文件的其余部分，防止重复包含。
+重要性
+
+在C语言项目中，特别是在大型项目中，头文件经常被多个源文件包含，或者一个头文件包含其他头文件。如果没有包含卫士，头文件中的定义（如函数声明、宏定义、类型定义等）可能会被重复包含，导致编译错误（如重复定义错误）。使用 #ifndef 可以有效地避免这种情况。
