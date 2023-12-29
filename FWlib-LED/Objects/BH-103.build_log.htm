@@ -47,17 +47,17 @@ main.c(23): warning: // comments are not allowed in this language [-Wcomment]
 main.c(24): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
   GPIOB->CRL &= ~((0x0F) << (4*1)); // 将GPIOB状态复位
              ~~ ^~~~~~~~~~~~~~~~~~
-main.c(41): warning: no previous prototype for function 'SystemInit' [-Wmissing-prototypes]
+main.c(38): warning: no previous prototype for function 'SystemInit' [-Wmissing-prototypes]
 void SystemInit(void)
      ^
-main.c(41): note: declare 'static' if the function is not intended to be used outside of this translation unit
+main.c(38): note: declare 'static' if the function is not intended to be used outside of this translation unit
 void SystemInit(void)
 ^
 static 
 7 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=460 RO-data=320 RW-data=0 ZI-data=1632  
+Program Size: Code=452 RO-data=320 RW-data=0 ZI-data=1632  
 FromELF: creating hex file...
 ".\Objects\BH-103.axf" - 0 Error(s), 7 Warning(s).
 
@@ -72,7 +72,7 @@ Package Vendor: Keil
   D:/Embedded/MDK/Pack/Keil/STM32F1xx_DFP/2.4.1/Device/Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
