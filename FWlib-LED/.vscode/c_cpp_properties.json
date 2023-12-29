@@ -7,7 +7,7 @@
                 "D:\\Embedded\\MDK\\Core\\ARM\\ARMCLANG\\include\\arm_linux",
                 "D:\\Embedded\\MDK\\Core\\ARM\\ARMCLANG\\include\\arm_linux_compat",
                 "D:\\Embedded\\MDK\\Core\\ARM\\ARMCLANG\\include\\libcxx",
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\Template-REG"
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\FWlib-LED"
             ],
             "defines": [
                 "__alignof__(x)=",

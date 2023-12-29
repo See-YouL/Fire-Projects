@@ -1,6 +1,6 @@
 Dependencies for Project 'BH-103', Target 'BH-103': (DO NOT MODIFY !)
 CompilerVersion: 6190000::V6.19::ARMCLANG
-F (.\main.c)(0x658CE8B3)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-ID:/Embedded/MDK/Pack/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -DSTM32F10X_HD-o ./objects/main.o -MD)
-I (stm32f10x.h)(0x658CDC6E)
-F (.\startup_stm32f10x_hd.s)(0x4D783CDE)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4-ID:/Embedded/MDK/Pack/Keil/STM32F1xx_DFP/2.4.1/Device/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 538" -Wa,armasm,--pd,"STM32F10X_HD SETA 1"-o ./objects/startup_stm32f10x_hd.o)
-F (.\stm32f10x.h)(0x658CDC6E)()
+F (.\main.c)(0x658EBE8F)(-xc -std=c90 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-ID:/Embedded/MDK/Pack/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="538" -DSTM32F10X_HD-o ./objects/main.o -MD)
+I (stm32f10x.h)(0x658EBE8F)
+F (.\startup_stm32f10x_hd.s)(0x658EBE8F)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4-ID:/Embedded/MDK/Pack/Keil/STM32F1xx_DFP/2.4.1/Device/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 538" -Wa,armasm,--pd,"STM32F10X_HD SETA 1"-o ./objects/startup_stm32f10x_hd.o)
+F (.\stm32f10x.h)(0x658EBE8F)()
