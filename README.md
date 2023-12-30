@@ -802,3 +802,7 @@ GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
 GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHZ;
 GPIO_Init(GPIOB, &GPIO_InitStructure);
 ```
+
+### 增加宏定义来增强代码可移植性
+
+项目地址： **FWlib-LED**

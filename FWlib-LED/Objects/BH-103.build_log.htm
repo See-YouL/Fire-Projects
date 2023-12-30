@@ -22,12 +22,35 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 e:\Personal\IT\Embedded\Stm32\Fire\Fire-Projects\FWlib-LED\BH-103.uvprojx
-Project File Date:  12/29/2023
+Project File Date:  12/30/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'D:\Embedded\MDK\Core\ARM\ARMCLANG\Bin'
 Build target 'BH-103'
-".\Objects\BH-103.axf" - 0 Error(s), 0 Warning(s).
+main.c(17): warning: In file included from...
+./stm32f10x.h(65): warning: no newline at end of file [-Wnewline-eof]
+#endif // !__STM32F10X_H
+                        ^
+main.c(18): warning: In file included from...
+./stm32f10x_gpio.h(64): warning: no newline at end of file [-Wnewline-eof]
+#endif // !__STM32F10X_GPIO
+                           ^
+main.c(26): error: macro name must be an identifier
+#ifdef 0
+       ^
+main.c(54): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  GPIO_InitTypeDef GPIO_InitStructure;
+                   ^
+main.c(66): warning: no previous prototype for function 'SystemInit' [-Wmissing-prototypes]
+void SystemInit(void)
+     ^
+main.c(66): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void SystemInit(void)
+^
+static 
+4 warnings and 1 error generated.
+compiling main.c...
+".\Objects\BH-103.axf" - 1 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -40,6 +63,7 @@ Package Vendor: Keil
   D:/Embedded/MDK/Pack/Keil/STM32F1xx_DFP/2.4.1/Device/Include
 
 <h2>Collection of Component Files used:</h2>
+Target not created.
 Build Time Elapsed:  00:00:01
 </pre>
 </body>
