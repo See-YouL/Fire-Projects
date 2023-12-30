@@ -613,3 +613,182 @@ void someFunction();
 #endif // EXAMPLE_H
 ```
 总之，**虽然在文件名前加上双下划线是一种常见做法，但为了避免与编译器或标准库的内部标识符冲突，建议使用其他方法来确保宏名称的唯一性和安全性**。
+
+#### 增加GPIO初始化结构体
+
+项目地址: **FWlib-LED**
+
+配置GPIO工作模式的宏定义(GPIOMode_TypeDef)参考下图
+
+![GPIO工作模式图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202312301523539.png)
+
+**实际写入寄存器的是bit3-0,bit7-4并不写入寄存器**
+
+*勘误：上拉输入和下拉输入两行的bit3-2应该为10*
+
+- bit1-0: 置0, 配置输出速度，通过GPIOSpeed_TypeDef进行覆盖配置 
+- bit3-2: 配置输入/输出模式
+- bi4: **不写入寄存器**, 用来标志是输入还是输出
+- bit6-5: **不写入寄存器**， 用来判断是上拉输入还是下拉输入
+- bit7: **不写入寄存器**
+
+在stm32f10x_gpio.h中增加宏定义
+
+```c
+// 通过枚举 限定GPIO_Speed的选择
+typedef enum
+{
+    GPIO_Speed_10MHZ = 1, // 01 输出模式，最大速度10MHz
+    GPIO_Speed_2MHZ, // 10 输出模式，最大速度2MHz
+    GPIO_Speed_50MHZ // 11 输出模式，最大速度50MHz
+}GPIOSpeed_TypeDef;
+
+// 通过枚举限定GPIO_Mode的选择
+typedef enum
+{ GPIO_Mode_AIN = 0x0,           // 模拟输入     (0000 0000)b
+  GPIO_Mode_IN_FLOATING = 0x04,  // 浮空输入     (0000 0100)b
+  GPIO_Mode_IPD = 0x28,          // 下拉输入     (0010 1000)b
+  GPIO_Mode_IPU = 0x48,          // 上拉输入     (0100 1000)b
+  
+  GPIO_Mode_Out_OD = 0x14,       // 开漏输出     (0001 0100)b
+  GPIO_Mode_Out_PP = 0x10,       // 推挽输出     (0001 0000)b
+  GPIO_Mode_AF_OD = 0x1C,        // 复用开漏输出 (0001 1100)b
+  GPIO_Mode_AF_PP = 0x18         // 复用推挽输出 (0001 1000)b
+}GPIOMode_TypeDef;
+
+// 定义GPIO初始化结构体
+typedef struct
+{
+    uint16_t GPIO_Pin;
+    uint16_t GPIO_Speed;
+    uint16_t GPIO_Mode;
+}GPIO_InitTypeDef;
+
+void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct);
+```
+
+在stm32f10x_gpio.c中写入GPIO初始化函数(**从库函数中复制**)
+
+```c
+// GPIO初始化函数
+void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
+{
+  uint32_t currentmode = 0x00, currentpin = 0x00, pinpos = 0x00, pos = 0x00;
+  uint32_t tmpreg = 0x00, pinmask = 0x00;
+  
+/*---------------------- GPIO 模式配置 --------------------------*/
+  // 把输入参数GPIO_Mode的低四位暂存在currentmode
+  currentmode = ((uint32_t)GPIO_InitStruct->GPIO_Mode) & ((uint32_t)0x0F);
+	
+  // bit4是1表示输出，bit4是0则是输入 
+  // 判断bit4是1还是0，即首选判断是输入还是输出模式
+  if ((((uint32_t)GPIO_InitStruct->GPIO_Mode) & ((uint32_t)0x10)) != 0x00)
+  { 
+	// 输出模式则要设置输出速度
+    currentmode |= (uint32_t)GPIO_InitStruct->GPIO_Speed;
+  }
+/*-------------GPIO CRL 寄存器配置 CRL寄存器控制着低8位IO- -------*/
+  // 配置端口低8位，即Pin0~Pin7
+  if (((uint32_t)GPIO_InitStruct->GPIO_Pin & ((uint32_t)0x00FF)) != 0x00)
+  {
+	// 先备份CRL寄存器的值
+    tmpreg = GPIOx->CRL;
+		
+	// 循环，从Pin0开始配对，找出具体的Pin
+    for (pinpos = 0x00; pinpos < 0x08; pinpos++)
+    {
+	 // pos的值为1左移pinpos位
+      pos = ((uint32_t)0x01) << pinpos;
+      
+	  // 令pos与输入参数GPIO_PIN作位与运算，为下面的判断作准备
+      currentpin = (GPIO_InitStruct->GPIO_Pin) & pos;
+			
+	  //若currentpin=pos,则找到使用的引脚
+      if (currentpin == pos)
+      {
+		// pinpos的值左移两位（乘以4），因为寄存器中4个寄存器位配置一个引脚
+        pos = pinpos << 2;
+       //把控制这个引脚的4个寄存器位清零，其它寄存器位不变
+        pinmask = ((uint32_t)0x0F) << pos;
+        tmpreg &= ~pinmask;
+				
+        // 向寄存器写入将要配置的引脚的模式
+        tmpreg |= (currentmode << pos);  
+				
+		// 判断是否为下拉输入模式
+        if (GPIO_InitStruct->GPIO_Mode == GPIO_Mode_IPD)
+        {
+		  // 下拉输入模式，引脚默认置0，对BRR寄存器写1可对引脚置0
+          GPIOx->BRR = (((uint32_t)0x01) << pinpos);
+        }				
+        else
+        {
+          // 判断是否为上拉输入模式
+          if (GPIO_InitStruct->GPIO_Mode == GPIO_Mode_IPU)
+          {
+		    // 上拉输入模式，引脚默认值为1，对BSRR寄存器写1可对引脚置1
+            GPIOx->BSRR = (((uint32_t)0x01) << pinpos);
+          }
+        }
+      }
+    }
+		// 把前面处理后的暂存值写入到CRL寄存器之中
+    GPIOx->CRL = tmpreg;
+  }
+/*-------------GPIO CRH 寄存器配置 CRH寄存器控制着高8位IO- -----------*/
+  // 配置端口高8位，即Pin8~Pin15
+  if (GPIO_InitStruct->GPIO_Pin > 0x00FF)
+  {
+		// // 先备份CRH寄存器的值
+    tmpreg = GPIOx->CRH;
+		
+	// 循环，从Pin8开始配对，找出具体的Pin
+    for (pinpos = 0x00; pinpos < 0x08; pinpos++)
+    {
+      pos = (((uint32_t)0x01) << (pinpos + 0x08));
+			
+      // pos与输入参数GPIO_PIN作位与运算
+      currentpin = ((GPIO_InitStruct->GPIO_Pin) & pos);
+			
+	 //若currentpin=pos,则找到使用的引脚
+      if (currentpin == pos)
+      {
+		//pinpos的值左移两位（乘以4），因为寄存器中4个寄存器位配置一个引脚
+        pos = pinpos << 2;
+        
+	    //把控制这个引脚的4个寄存器位清零，其它寄存器位不变
+        pinmask = ((uint32_t)0x0F) << pos;
+        tmpreg &= ~pinmask;
+				
+        // 向寄存器写入将要配置的引脚的模式
+        tmpreg |= (currentmode << pos);
+        
+		// 判断是否为下拉输入模式
+        if (GPIO_InitStruct->GPIO_Mode == GPIO_Mode_IPD)
+        {
+		  // 下拉输入模式，引脚默认置0，对BRR寄存器写1可对引脚置0
+          GPIOx->BRR = (((uint32_t)0x01) << (pinpos + 0x08));
+        }
+         // 判断是否为上拉输入模式
+        if (GPIO_InitStruct->GPIO_Mode == GPIO_Mode_IPU)
+        {
+		  // 上拉输入模式，引脚默认值为1，对BSRR寄存器写1可对引脚置1
+          GPIOx->BSRR = (((uint32_t)0x01) << (pinpos + 0x08));
+        }
+      }
+    }
+	// 把前面处理后的暂存值写入到CRH寄存器之中
+    GPIOx->CRH = tmpreg;
+  }
+}
+```
+
+在main.c中使用GPIO初始化函数
+
+```c
+GPIO_InitTypeDef GPIO_InitStructure;
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHZ;
+GPIO_Init(GPIOB, &GPIO_InitStructure);
+```

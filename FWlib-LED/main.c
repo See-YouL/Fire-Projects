@@ -21,16 +21,13 @@
 int main(void)
 {
   RCC->APB2ENR |= ((1) << 3); // 开启GPIOB的时钟
-  GPIOB->CRL &= ~((0x0F) << (4*1)); // 将GPIOB状态复位
-  GPIOB->CRL |= ((1) << (4*1)); // 将GPIOB设置为推挽输出
 
-  /*----------------------------------------------------------------
-  说明：
-  由于我的开发板，PB0总是点亮蓝灯(本应该是绿灯), 以后的测试换为测试蓝灯，PB1口
-  *---------------------------------------------------------------*/
-  GPIO_SetBits(GPIOB, GPIO_Pin_0); // PB0置1 绿灯灭
-  GPIO_SetBits(GPIOB, GPIO_Pin_1); // PB1置1 蓝灯灭
-  GPIO_SetBits(GPIOB, GPIO_Pin_5); // PB5置1 红灯灭
+  GPIO_InitTypeDef GPIO_InitStructure;
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHZ;
+  GPIO_Init(GPIOB, &GPIO_InitStructure);
+
   GPIO_ResetBits(GPIOB, GPIO_Pin_1); // PB1置0 蓝灯亮
 }
 
