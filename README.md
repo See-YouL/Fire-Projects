@@ -831,18 +831,18 @@ void Delay(uint32_t count)
 
 ```c
 // 增加宏定义以增强代码可移植性
-	LED_B_GPIO_CLK_ENABLE;
-  GPIO_InitTypeDef GPIO_InitStructure;
-  GPIO_InitStructure.GPIO_Pin = LED_B_GPIO_PIN;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHZ;
-  GPIO_Init(GPIOB, &GPIO_InitStructure);
+LED_B_GPIO_CLK_ENABLE;
+GPIO_InitTypeDef GPIO_InitStructure;
+GPIO_InitStructure.GPIO_Pin = LED_B_GPIO_PIN;
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHZ;
+GPIO_Init(GPIOB, &GPIO_InitStructure);
 
-  while(1)
-  {
-    GPIO_SetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN); // PB1置1 蓝灯灭
-    Delay(0xFFFF);
-    GPIO_ResetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN); // PB1置0 蓝灯亮
-    Delay(0xFFFF);
-  }
+while(1)
+{
+  GPIO_SetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN); // PB1置1 蓝灯灭
+  Delay(0xFFFF);
+  GPIO_ResetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN); // PB1置0 蓝灯亮
+  Delay(0xFFFF);
+}
 ```
