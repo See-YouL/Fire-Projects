@@ -862,7 +862,7 @@ while(1)
 4. 内核相关 
   - CMSIS: Cortex微控制器软件接口标准
   - core_cm3.h: 实现了内核里面外设的寄存器映射
-  - core_cm3.c
+  - core_cm3.c: 内核外设的驱动固件库
   - NVIC(嵌套向量中断控制器), SysTick(系统滴答定时器), misc.h, misc.c
 5. 头文件的配置文件 stm32f10x_conf.h里面包含
   - stm32f10x_usart.h
