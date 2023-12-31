@@ -3,6 +3,8 @@
 ## 说明
 
 - 编译器： ARM v6.19
+- C编译版本: C99
+- 固件库版本: V3.5.0
 - MDK version: 538A
 - 芯片包: Keil.STM32F1xx_DFP.2.4.1
 - 芯片型号: STM32F103ZET6
