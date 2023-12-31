@@ -847,3 +847,31 @@ while(1)
 }
 ```
 ## 固件库编程
+
+### STM32固件库文件分析
+
+1. 汇编编写的启动文件 startup_stm32f10x_h.s: 设置堆栈指针,设置PC指针，初始化中断向量表，配置系统时钟，调用C库函数_main最终去C的世界
+2. 时钟配置文件 system_stm32f10x.c: 把外部时钟HSE=8M，经过PLL倍频成72M
+3. 外设相关 
+  - stm32f10x.h: 实现了内核之外的外设的寄存器映射
+  - xx: GPIO, USART, I2C, 
+  - stm32f10x_xx.c: 外设的驱动函数库文件
+  - stm32f10x_xx.h: 存放外设的初始化结构体，外设初始化结构体成员的参数列表，外设固件库的头文件声明
+4. 内核相关 
+  - CMSIS: Cortex微控制器软件接口标准
+  - core_cm3.h: 实现了内核里面外设的寄存器映射
+  - core_cm3.c
+  - NVIC(嵌套向量中断控制器), SysTick(系统滴答定时器), misc.h, misc.c
+5. 头文件的配置文件 stm32f10x_conf.h里面包含
+  - stm32f10x_usart.h
+  - stm32f10x_i2c.h
+  - stm32f10x_spi.h
+  - stm32f10x_adc.h
+  - stm32f10x_fsmc.h
+7. 专门存放终端服务函数的C文件(可以放在其他地方，不一定要放在stm32f10x_it.c中)
+  - stm32f10x_it.c
+  - stm32f10x_it.h
+
+  
+
+
