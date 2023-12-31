@@ -806,3 +806,43 @@ GPIO_Init(GPIOB, &GPIO_InitStructure);
 ### 增加宏定义来增强代码可移植性
 
 项目地址： **FWlib-LED**
+
+在main.c中增加宏定义
+
+```c
+#define LED_B_GPIO_PORT	GPIOB
+#define LED_B_GPIO_CLK_ENABLE (RCC->APB2ENR |= ((1) << 3)) 
+#define LED_B_GPIO_PIN GPIO_Pin_0
+```
+
+在main.c中增加延时函数，实现LED闪烁
+
+```c
+void Delay(uint32_t count)
+{
+  for( ; count != 0; count-- )
+  {
+    ;
+  }
+}
+```
+
+在main.c中使用宏定义后的代码实现LED闪烁
+
+```c
+// 增加宏定义以增强代码可移植性
+	LED_B_GPIO_CLK_ENABLE;
+  GPIO_InitTypeDef GPIO_InitStructure;
+  GPIO_InitStructure.GPIO_Pin = LED_B_GPIO_PIN;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHZ;
+  GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+  while(1)
+  {
+    GPIO_SetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN); // PB1置1 蓝灯灭
+    Delay(0xFFFF);
+    GPIO_ResetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN); // PB1置0 蓝灯亮
+    Delay(0xFFFF);
+  }
+```

@@ -19,11 +19,20 @@
 
 #define LED_B_GPIO_PORT	GPIOB
 #define LED_B_GPIO_CLK_ENABLE (RCC->APB2ENR |= ((1) << 3)) 
-#define LED_B_GPIO_PIN GPIO_Pin_0
+#define LED_B_GPIO_PIN GPIO_Pin_1
+
+void Delay(uint32_t count)
+{
+  for( ; count != 0; count-- )
+  {
+    ;
+  }
+}
 
 int main(void)
 {
-#ifdef 0
+
+#if 0
   // 通过结构体操作寄存器
   RCC->APB2ENR |= ((1) << 3); // 开启GPIOB的时钟
   GPIOB->CRL &= ~((0x0F) << (4*1)); // 将GPIOB状态复位
@@ -57,7 +66,13 @@ int main(void)
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHZ;
   GPIO_Init(GPIOB, &GPIO_InitStructure);
 
-  GPIO_ResetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN); // PB1置0 蓝灯亮
+  while(1)
+  {
+    GPIO_SetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN); // PB1置1 蓝灯灭
+    Delay(0xFFFF);
+    GPIO_ResetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN); // PB1置0 蓝灯亮
+    Delay(0xFFFF);
+  }
 
 #endif // 0 
 }
