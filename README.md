@@ -1027,3 +1027,158 @@ int main() {
 在这个错误的例子中，**第一行的 \ 后面如果有空格，将导致编译错误**。
 
 总之，当在C语言中使用 \ 进行换行时，**确保 \ 是每行的最后一个字符，并且紧接着换行符**，以避免编译错误并保持代码的清晰
+
+### GPIO输入
+
+项目地址: **13-GPIO输入-按键检测**
+
+通过原理图可知**KEY1接PA0口, 按键按下后为高电平**, 原理图如下
+
+![KEY1原理图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401011723631.png)
+
+实现**按下KEY1后蓝灯状态翻转**
+
+在bsp_led.h中宏定义电平翻转函数
+
+```c
+#define LED_B_TOGGLE {LED_B_GPIO_PORT->ODR ^= LED_B_GPIO_PIN;}
+/*----------------------------------------------------------------
+^= 异或运算 (a ^ b) 则ab不同为1，相同则为0
+ODR低16位和GPIO_Pin_1作异或并重新赋值给ODR可实现ODR的Bit0翻转
+若Bit0=1则Bit0 = 1 ^ 1 = 0, 下一次运算时, Bit0=0则Bit0 = 0^1 = 1
+实际上是ODR的Bit0在和1进行异或操作
+----------------------------------------------------------------*/
+```
+
+在bsp_key.h中进行宏定义和函数声明
+
+```c
+#ifndef __BSP_KEY_H
+#define __BSP_KEY_H
+
+#include "stm32f10x.h"
+
+#define KEY_ON 1
+#define KEY_OFF 0
+
+// 宏定义
+#define KEY1_GPIO_PIN GPIO_Pin_0 // stm32f10x_gpio.h中定义
+#define KEY1_GPIO_PORT GPIOA // stm32f10x.h中定义 
+#define KEY1_GPIO_CLK RCC_APB2Periph_GPIOA
+
+// 函数声明
+void KEY_GPIO_Config(void);
+uint8_t Key_Scan(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+
+#endif // !__BSP_KEY_H
+```
+
+在bsp_key.c中写初始化函数和端口扫描函数
+
+```c
+#include "bsp_key.h"
+
+void KEY_GPIO_Config(void)
+{
+    RCC_APB2PeriphClockCmd(KEY1_GPIO_CLK, ENABLE);
+    GPIO_InitTypeDef GPIO_InitStruct;
+    GPIO_InitStruct.GPIO_Pin = KEY1_GPIO_PIN;
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(KEY1_GPIO_PORT, &GPIO_InitStruct);
+}
+
+// 端口扫面函数 检测按下返回1，否则返回0
+uint8_t Key_Scan(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+{
+    if(GPIO_ReadInputDataBit(GPIOx, GPIO_Pin) == KEY_ON)
+    {
+        while(GPIO_ReadInputDataBit(GPIOx, GPIO_Pin) == KEY_ON)
+        {
+            ;
+        }
+
+        return KEY_ON;
+    }
+    else
+    {
+        return KEY_OFF;
+    }
+    
+}
+
+```
+
+在main.c中进行调用
+
+```c
+int main(void)
+{
+    LED_GPIO_Config();
+    KEY_GPIO_Config();
+
+    while(1)
+    {
+        if(Key_Scan(KEY1_GPIO_PORT, KEY1_GPIO_PIN) == KEY_ON)
+        {
+            LED_B_TOGGLE;
+        }
+    }
+}
+```
+
+#### 补充: C语言中的异或操作
+
+在C语言中，异或运算是一种基本的位运算，使用符号 ^ 表示。**异或运算符对两个操作数的对应位进行比较，如果两个相应的位不同，则结果为1，如果相同，则结果为0。**换句话说，它在以下情况下返回1：
+
+- 第一个操作数的位是0，第二个操作数的位是1。
+- 第一个操作数的位是1，第二个操作数的位是0。
+
+**异或运算的特性**
+
+- 交换律：a ^ b 等于 b ^ a。
+- 结合律：(a ^ b) ^ c 等于 a ^ (b ^ c)。
+- 自反性：任何数与自身异或的结果都是0，即 a ^ a 等于 0。
+- 与0的异或：任何数与0异或都等于它本身，即 a ^ 0 等于 a。
+
+**应用**
+
+异或运算在C语言编程中有多种应用：
+
+**值交换**：不使用临时变量交换两个变量的值。
+
+```c
+a = a ^ b;
+b = a ^ b;
+a = a ^ b;
+```
+这种方法虽然巧妙，但**在实际编程中不常用**，因为如果 a 和 b 指向同一内存位置，这会导致结果为0。
+
+**反转特定位**：可以使用异或运算来反转数值中的特定位。
+
+```c
+x = x ^ (1 << n);  // 反转x的第n位
+```
+
+**检查奇偶性**：通过检查数的最低位是否为1，可以使用异或运算来快速检查一个数是奇数还是偶数。
+
+**加密和解密**：由于异或运算的自反性，它可以用于简单的加密和解密操作。
+
+**示例**
+
+```c
+#include <stdio.h>
+
+int main() {
+    unsigned int a = 5;  // 二进制: 0101
+    unsigned int b = 3;  // 二进制: 0011
+
+    // 执行异或运算
+    unsigned int result = a ^ b;  // 结果是 6，二进制: 0110
+
+    printf("Result = %d\n", result);
+    return 0;
+}
+
+```
+
+在这个例子中，5（二进制0101）和3（二进制0011）进行异或运算的结果是6（二进制0110），因为每一位都被相应地比较并计算出结果。

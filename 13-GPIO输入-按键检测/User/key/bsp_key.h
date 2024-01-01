@@ -9,7 +9,7 @@
 // 宏定义
 #define KEY1_GPIO_PIN GPIO_Pin_0 // stm32f10x_gpio.h中定义
 #define KEY1_GPIO_PORT GPIOA // stm32f10x.h中定义 
-#define KEY1_GPIO_CLK RCC_APB2Periph_GPIOB
+#define KEY1_GPIO_CLK RCC_APB2Periph_GPIOA
 
 // 函数声明
 void KEY_GPIO_Config(void);
