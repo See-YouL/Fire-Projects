@@ -1,5 +1,6 @@
 #include "stm32f10x.h"
 #include "bsp_led.h"
+#include "bsp_key.h"
 
 void Delay(uint32_t count)
 {
@@ -17,12 +18,13 @@ void Delay(uint32_t count)
 int main(void)
 {
     LED_GPIO_Config();
+    KEY_GPIO_Config();
 
     while(1)
     {
-        LED_B(OFF);
-        Delay(0xFFF); // 延时
-        LED_B(ON);
-        Delay(0xFFF); // 延时
+        if(Key_Scan(KEY1_GPIO_PORT, KEY1_GPIO_PIN) == KEY_ON)
+        {
+            LED_B_TOGGLE;
+        }
     }
 }
