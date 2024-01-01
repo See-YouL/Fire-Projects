@@ -341,7 +341,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F10X_HD</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\led</IncludePath>
+              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\led;..\User\key</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -532,6 +532,11 @@
               <FileName>bsp_led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\led\bsp_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\key\bsp_key.c</FilePath>
             </File>
           </Files>
         </Group>
