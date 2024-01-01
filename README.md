@@ -876,6 +876,8 @@ while(1)
 
 ### 新建固件库版本工程
 
+项目路径: **Fwlib-Template**
+
 - Doc: 用来存放程序说明的文件，由写程序的人添加
 - Libraries: 存放库文件
 - Project: 存放工程
@@ -883,5 +885,81 @@ while(1)
 
 其余按照视频配置，P18, 视频链接: [按照P18进行库移植](https://www.bilibili.com/video/BV1yW411Y7Gw/?p=18&share_source=copy_web&vd_source=0db47c15b9f51dbaa4548ec2dc55dea4)
   
+
+### GPIO输出-使用固件库点亮LED
+
+项目路径: **12-GPIO输出-使用固件库点亮LED**
+
+在User目录下新建led文件夹，添加bsp_led.c和bsp_led.h
+
+在bsp_led.h中添加所使用的宏定义和函数声明
+
+```c
+#ifndef __BSP_LED_H
+#define __BSP_LED_H
+
+#include "stm32f10x.h"
+
+// 宏定义
+#define LED_B_GPIO_PIN GPIO_Pin_1 // stm32f10x_gpio.h中定义
+#define LED_B_GPIO_PORT GPIOB // stm32f10x.h中定义 
+#define LED_B_GPIO_CLK RCC_APB2Periph_GPIOB
+
+// 函数声明
+void LED_GPIO_Config(void);
+
+#endif // !__BSP_LED_H
+```
+
+在bsp_led.c中添加初始化函数
+
+```c
+// bsp: board support package 板级支持包
+#include "bsp_led.h"
+
+void LED_GPIO_Config(void)
+{
+    RCC_APB2PeriphClockCmd(LED_B_GPIO_CLK, ENABLE);
+    GPIO_InitTypeDef GPIO_InitStruct;
+    GPIO_InitStruct.GPIO_Pin = LED_B_GPIO_PIN;
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(LED_B_GPIO_PORT, &GPIO_InitStruct);
+}
+```
+
+在main.c中调用初始化函数，并进行软件延时，实现LED闪烁
+
+```c
+#include "stm32f10x.h"
+#include "bsp_led.h"
+
+void Delay(uint32_t count)
+{
+    for( ; count != 0; count--)
+    {
+        uint32_t current;
+        for(current = count; current != 0; current--)
+        {
+            ;
+        }
+    }
+    
+}
+
+int main(void)
+{
+    LED_GPIO_Config();
+
+    while(1)
+    {
+        GPIO_SetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN);
+        Delay(0xFFF); // 延时
+        GPIO_ResetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN);
+        Delay(0xFFF); // 延时
+    }
+}
+```
+
 
 

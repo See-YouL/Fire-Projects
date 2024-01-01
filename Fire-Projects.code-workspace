@@ -4,5 +4,9 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"bsp_led.h": "c"
+		}
+	}
 }
