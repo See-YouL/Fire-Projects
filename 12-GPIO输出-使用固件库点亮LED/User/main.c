@@ -20,9 +20,11 @@ int main(void)
 
     while(1)
     {
-        GPIO_SetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN);
+        LED_B(OFF);
+        // GPIO_SetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN);
         Delay(0xFFF); // 延时
-        GPIO_ResetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN);
+        LED_B(ON);
+        // GPIO_ResetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN);
         Delay(0xFFF); // 延时
     }
 }
