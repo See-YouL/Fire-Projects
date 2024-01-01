@@ -2,7 +2,7 @@
 
 ## 说明
 
-- 编译器： ARM v6.19
+- 编译器： ARM v5.06
 - C编译版本: C99
 - 固件库版本: V3.5.0
 - MDK version: 538A
@@ -874,6 +874,14 @@ while(1)
   - stm32f10x_it.c
   - stm32f10x_it.h
 
+### 新建固件库版本工程
+
+- Doc: 用来存放程序说明的文件，由写程序的人添加
+- Libraries: 存放库文件
+- Project: 存放工程
+- User: 用户编写的驱动文件
+
+其余按照视频配置，P18, 视频链接: [按照P18进行库移植](https://www.bilibili.com/video/BV1yW411Y7Gw/?p=18&share_source=copy_web&vd_source=0db47c15b9f51dbaa4548ec2dc55dea4)
   
 
 
