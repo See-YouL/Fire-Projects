@@ -888,7 +888,7 @@ while(1)
 
 ### GPIO输出-使用固件库点亮LED
 
-项目路径: **12-GPIO输出-使用固件库点亮LED**
+项目地址: **12-GPIO输出-使用固件库点亮LED**
 
 在User目录下新建led文件夹，添加bsp_led.c和bsp_led.h
 
@@ -1241,6 +1241,8 @@ unsigned int *alias_address = (unsigned int *)BITBAND_PERIPH(0x40000000, 2);
 - 原子操作：位带操作是原子的，这意味着在多任务或中断驱动的环境中，它们是安全的。
 
 ### 使用位带操作实现GPIO的输出和输入
+
+项目地址: **14-位带操作-GPIO的输出和输入**
 
 **使用位带操作实现GPIO输出: LED_B的闪烁**
 
