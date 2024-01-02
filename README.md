@@ -1240,4 +1240,91 @@ unsigned int *alias_address = (unsigned int *)BITBAND_PERIPH(0x40000000, 2);
 - 地址计算：正确的地址计算对于位带操作至关重要。
 - 原子操作：位带操作是原子的，这意味着在多任务或中断驱动的环境中，它们是安全的。
 
-### 通过位带的方式访问GPIO_ODR
+### 使用位带操作实现GPIO的输出和输入
+
+**使用位带操作实现GPIO输出: LED_B的闪烁**
+
+在main.c中添加位带操作的宏定义
+
+```c
+#define GPIOB_ODR_Addr (GPIOB_BASE+0x0C)
+#define PBout(n) *(unsigned int*)((GPIOB_ODR_Addr&0xF0000000) + 0x02000000 + ((GPIOB_ODR_Addr&0x00FFFFFF)<<5)+(n<<2))
+```
+
+在main.c中使用位带操作
+
+```c
+while(1)
+{
+    PBout(1) = 1;
+    Delay(0xFFF); // 延时
+    PBout(1) = 0;
+    Delay(0xFFF); // 延时
+}
+```
+
+**使用位带操作实现GPIO输入: KEY1和KEY2控制LED_B状态翻转**
+
+在bsp_key.h中添加KEY2的宏定义
+
+```c
+#define KEY2_GPIO_PIN GPIO_Pin_13 // stm32f10x_gpio.h中定义
+#define KEY2_GPIO_PORT GPIOC // stm32f10x.h中定义 
+#define KEY2_GPIO_CLK RCC_APB2Periph_GPIOC
+```
+在bsp.c中增加KEY2的GPIO初始化
+
+```c
+void KEY_GPIO_Config(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct;
+
+    // KEY1 初始化
+    RCC_APB2PeriphClockCmd(KEY1_GPIO_CLK, ENABLE);
+    GPIO_InitStruct.GPIO_Pin = KEY1_GPIO_PIN;
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(KEY1_GPIO_PORT, &GPIO_InitStruct);
+
+    // KEY2 初始化
+    RCC_APB2PeriphClockCmd(KEY2_GPIO_CLK, ENABLE);
+    GPIO_InitStruct.GPIO_Pin = KEY2_GPIO_PIN;
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(KEY2_GPIO_PORT, &GPIO_InitStruct);
+}
+```
+
+在main.c中添加GPIO输入位带操作的宏定义
+
+```c
+#define GPIOA_IDR_Addr (GPIOA_BASE+0x08)
+#define GPIOC_IDR_Addr (GPIOC_BASE+0x08)
+#define PAin(n) *(unsigned int*)((GPIOA_IDR_Addr&0xF0000000) + 0x02000000 + ((GPIOA_IDR_Addr&0x00FFFFFF)<<5)+(n<<2))
+#define PCin(n) *(unsigned int*)((GPIOC_IDR_Addr&0xF0000000) + 0x02000000 + ((GPIOC_IDR_Addr&0x00FFFFFF)<<5)+(n<<2))
+```
+
+在main.c中使用位带操作
+
+```c
+while(1)
+{
+    if(PAin(0) == KEY_ON)
+    {
+        Delay(0xFFF); // 加入软件消抖后可正常运行
+        while(PAin(0) == KEY_ON) // 等待按键释放
+        {
+            ;
+        }
+        LED_B_TOGGLE;
+    }
+
+    if(PCin(13) == KEY_ON)
+    {
+        Delay(0xFFF); // 加入软件消抖后可正常运行
+        while(PCin(13) == KEY_ON) // 等待按键释放
+        {
+            ;
+        }
+        LED_B_TOGGLE;
+    }
+}
+```
