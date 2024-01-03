@@ -1342,14 +1342,19 @@ while(1)
 ;* Description        : STM32F10x High Density Devices vector table for MDK-ARM 
 ;*                      toolchain. 
 ;*                      This module performs:
-;*                      - Set the initial SP
-;*                      - Set the initial PC == Reset_Handler
-;*                      - Set the vector table entries with the exceptions ISR address
+;*                      - Set the initial SP 
+;                       初始化堆栈指针
+;*                      - Set the initial PC == Reset_Handler 
+;                       初始化PC指针 == Reset_Handler程序
+;*                      - Set the vector table entries with the exceptions ISR address 
+;                       初始化中断向量表
 ;*                      - Configure the clock system and also configure the external 
 ;*                        SRAM mounted on STM3210E-EVAL board to be used as data 
-;*                        memory (optional, to be enabled by user)
+;*                        memory (optional, to be enabled by user) 
+;                       配置系统时钟
 ;*                      - Branches to __main in the C library (which eventually
-;*                        calls main()).
+;*                        calls main()). 
+;                       调用C库函数, 最终去到C的世界
 ;*                      After Reset the CortexM3 processor is in Thread mode,
 ;*                      priority is Privileged, and the Stack is set to Main.
 ;* <<< Use Configuration Wizard in Context Menu >>>   
@@ -1362,38 +1367,77 @@ while(1)
 ; INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
 ;*******************************************************************************
 
+;****************************************************************************
+;* 1- 栈的配置
+;****************************************************************************
+
 ; Amount of memory (in bytes) allocated for Stack
 ; Tailor this value to your application needs
-; <h> Stack Configuration
+; <h> Stack Configuration 
 ;   <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
 ; </h>
+; 配置栈: 用于变量存储(局部/全局), 函数调用
 
-Stack_Size      EQU     0x00000400
+Stack_Size      EQU     0x00000400 
+; 宏定义的伪指令，相当于等于，类似与 C 中的 define。
+; 将0x00000400命名为Stack_Size, 0x00000400表示1Kb大小
 
                 AREA    STACK, NOINIT, READWRITE, ALIGN=3
+                ; 告诉汇编器汇编一个新的代码段或者数据段。
+                ; STACK 表示段名，这个可以任意命名
+                ; NOINIT 表示不初始化
+                ; READWRITE 表示可读可写
+                ; ALIGN=3，表示按照 2^3 对齐，即 8 字节对齐
 Stack_Mem       SPACE   Stack_Size
 __initial_sp
+; SPACE：用于分配一定大小的内存空间，单位为字节。这里指定大小等于 Stack_Size。
+; 标号 __initial_sp 紧挨着 SPACE 语句放置，表示栈的结束地址，即栈顶地址，栈是由高向低生长
+的。 
                                                   
+;****************************************************************
+;* 2-堆的配置
+;****************************************************************
+
 ; <h> Heap Configuration
 ;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
 ; </h>
+; 配置堆: 主要用于动态内存的分配, 如malloc()函数
 
 Heap_Size       EQU     0x00000200
+; 将0x00000200命名为Heap_Size, 0x00000200为512Type
 
                 AREA    HEAP, NOINIT, READWRITE, ALIGN=3
+                ; 汇编数据段
+                ; 名字叫HEAP
+                ; 不初始化
+                ; 可读可写
+                ; 2^3即8字节对齐
 __heap_base
 Heap_Mem        SPACE   Heap_Size
 __heap_limit
+; __heap_base 表示对的起始地址
+; SPACE 分配大小为Heap_Size即512字节的内存空间
+; __heap_limit 表示堆的结束地址
+; 堆是由低向高生长的，跟栈的生长方向相反。
 
                 PRESERVE8
+                ; 指定当前文件的堆栈按照 8 字节对齐
                 THUMB
+                ; 表示后面指令兼容 THUMB 指令
 
+;****************************************************************
+;* 3-初始化中断向量表
+;****************************************************************
 
 ; Vector Table Mapped to Address 0 at Reset
                 AREA    RESET, DATA, READONLY
+                ; 区域名称为RESET
+                ; 区域类型为DATA, 与CODE相对,后者用于包含可执行指令
+                ; 区域属性为只读
                 EXPORT  __Vectors
                 EXPORT  __Vectors_End
                 EXPORT  __Vectors_Size
+                ; EXPORT声明标号__Vectors等具有全局属性, 可被外部的文件调用
 
 __Vectors       DCD     __initial_sp               ; Top of Stack
                 DCD     Reset_Handler              ; Reset Handler
@@ -1694,3 +1738,91 @@ __user_initial_stackheap
 ;******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE*****
 
 ```
+
+### EQU指令
+
+作用: The EQU directive is a register-relative address, a PC-relative address, an absolute address, or a 32-bit integer constant. // 为数值常量、寄存器相对值或 PC 相对值提供符号名称。(*可以理解为重命名*)
+
+```assembly
+Stack_Size      EQU     0x00000400 
+; 宏定义的伪指令，相当于等于，类似与 C 中的 define。
+; 将0x00000400命名为Stack_Size, 0x00000400表示1Kb大小
+```
+#### EQU手册说明
+
+![EQU指令](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031428875.png)
+
+### AREA指令
+
+AREA: 汇编一个新的代码段或数据段
+
+```assembly
+AREA    STACK, NOINIT, READWRITE, ALIGN=3
+; 告诉汇编器汇编一个新的代码段或者数据段。
+; STACK 表示段名，这个可以任意命名
+; NOINIT 表示不初始化
+; READWRITE 表示可读可写
+; ALIGN=3，表示按照 2^3 对齐，即 8 字节对齐
+```
+
+#### AREA手册说明 
+
+![AREA](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031529274.png)
+
+![AREA](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031530123.png)
+
+![AREA](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031530696.png)
+
+![AREA](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031531689.png)
+
+### SPACE指令
+
+**SPACE：用于分配一定大小的内存空间，单位为字节。这里指定大小等于 Stack_Size, 标号 __initial_sp 紧挨着 SPACE 语句放置，表示栈的结束地址，即栈顶地址，栈是由高向低生长**
+
+```assembly
+Stack_Mem       SPACE   Stack_Size
+; SPACE：用于分配一定大小的内存空间，单位为字节。这里指定大小等于 Stack_Size。
+__initial_sp
+; 标号 __initial_sp 紧挨着 SPACE 语句放置，表示栈的结束地址，即栈顶地址，栈是由高向低生长
+```
+
+#### SPACE手册说明
+
+![SPACE](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031539781.png)
+
+### PRESERVE8指令
+
+**PRESERVE8：指定当前文件的堆栈按照 8 字节对齐**
+
+#### PRESERVE8手册说明
+
+![PRESERVE8](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031556307.png)
+
+![PRESERVE8](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031557775.png)
+
+### THUMB指令
+
+野火的解释: **THUMB：表示后面指令兼容 THUMB 指令。THUBM 是 ARM 以前的指令集，16bit，现在 Cortex-M系列的都使用 THUMB-2 指令集，THUMB-2 是 32 位的，兼容 16 位和 32 位的指令，是 THUMB的超集**
+
+#### THUMB手册说明
+
+![THUMB](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031600256.png)
+
+### EXPORT指令
+
+**EXPORT：声明一个标号可被外部的文件使用，使标号具有全局属性。如果是 IAR 编译器，则使用的是 GLOBAL 这个指令**
+
+```assembly
+EXPORT  __Vectors
+EXPORT  __Vectors_End
+EXPORT  __Vectors_Size
+; EXPORT声明标号__Vectors等具有全局属性, 可被外部的文件调用
+```
+
+#### EXPORT手册说明
+
+![EXPORT](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031623174.png)
+
+![EXPORT](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031624509.png)
+
+![EXPORT](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031624882.png)
