@@ -1441,8 +1441,8 @@ __heap_limit
                 EXPORT  __Vectors_Size
                 ; EXPORT声明标号__Vectors等具有全局属性, 可被外部的文件调用
 
-__Vectors       DCD     __initial_sp               ; Top of Stack
-                DCD     Reset_Handler              ; Reset Handler
+__Vectors       DCD     __initial_sp               ; Top of Stack ; 栈顶地址
+                DCD     Reset_Handler              ; Reset Handler ; 复位程序地址
                 DCD     NMI_Handler                ; NMI Handler
                 DCD     HardFault_Handler          ; Hard Fault Handler
                 DCD     MemManage_Handler          ; MPU Fault Handler
@@ -1520,27 +1520,51 @@ __Vectors       DCD     __initial_sp               ; Top of Stack
                 DCD     DMA2_Channel3_IRQHandler   ; DMA2 Channel3
                 DCD     DMA2_Channel4_5_IRQHandler ; DMA2 Channel4 & Channel5
 __Vectors_End
+; _Vectors 为向量表起始地址，__Vectors_End 为向量表结束地址
+; 向量表中，DCD 分配了一堆内存，并且以 ESR 的入口地址初始化它们 
 
 __Vectors_Size  EQU  __Vectors_End - __Vectors
+; 向量表的大小为结束地址减去起始地址
 
                 AREA    |.text|, CODE, READONLY
+                ; 定义一个名称为.text 的代码段，只读
                 
+;****************************************************************
+;* 4-复位程序
+;****************************************************************
+
 ; Reset handler
 Reset_Handler   PROC
                 EXPORT  Reset_Handler             [WEAK]
+                ; WEAK 表示弱定义, 如果在其他地方定义了Reset_Handler就使用其他地方的定义
+                ; 可以理解为C++中的"可以重载"
                 IMPORT  __main
                 IMPORT  SystemInit
+                ;表示 SystemInit和 __main 这两个函数均来自外部的文件
+
                 LDR     R0, =SystemInit
+                ; 把SystemInit的地址加载到R0中
                 BLX     R0               
+                ; 跳转到R0执行, 执行完毕后返回
                 LDR     R0, =__main
+                ; 把__main的地址加载到R0中
                 BX      R0
+                ; 跳转到R0执行, 执行完毕后不返回
                 ENDP
                 
+;****************************************************************
+;* 5-中断服务函数
+;****************************************************************
+
 ; Dummy Exception Handlers (infinite loops which can be modified)
+; 中断服务函数均跳转到无限循环
+; 目的是用户在未定义中断服务函数的情况下调用可进入无限循环状态中(兜底作用)
 
 NMI_Handler     PROC
                 EXPORT  NMI_Handler                [WEAK]
                 B       .
+                ; B 表示跳转指令
+                ; . 表示无限循环
                 ENDP
 HardFault_Handler\
                 PROC
@@ -1708,11 +1732,16 @@ DMA2_Channel4_5_IRQHandler
                 ENDP
 
                 ALIGN
+                ; ALIGN 表示4字节对齐(参数缺省时)
+
+;****************************************************************
+;* 6-堆栈的初始化, 由C库函数__main实现
+;****************************************************************
 
 ;*******************************************************************************
 ; User Stack and Heap initialization
 ;*******************************************************************************
-                 IF      :DEF:__MICROLIB
+                 IF      :DEF:__MICROLIB ; __MICROLIB在ide里定义, 在Keil5 MDK中勾选Use MicroLIB选项
                 
                  EXPORT  __initial_sp
                  EXPORT  __heap_base
@@ -1720,7 +1749,7 @@ DMA2_Channel4_5_IRQHandler
                 
                  ELSE
                 
-                 IMPORT  __use_two_region_memory
+                 IMPORT  __use_two_region_memory ; 如果__MICROLIB未定义, 则由用户自己实现
                  EXPORT  __user_initial_stackheap
                  
 __user_initial_stackheap
@@ -1828,3 +1857,92 @@ EXPORT  __Vectors_Size
 ![EXPORT](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031624509.png)
 
 ![EXPORT](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031624882.png)
+
+### DCD指令
+
+**DCD：分配一个或者多个以字为单位的内存，以四字节对齐，并要求初始化这些内存**
+
+#### DCD手册说明
+
+![DCD](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032016385.png)
+
+### PROC指令
+
+**PROC: 定义子程序, 与ENDP成对使用, 表示子程序结束**
+
+#### PROC手册说明
+
+![PROC](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032025440.png)
+
+![PROC](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032026200.png)
+
+### IMPORT指令
+
+**IMPORT：表示该标号来自外部文件，跟 C 语言中的 EXTERN 关键字类似。**
+
+```assembly
+IMPORT  __main
+IMPORT  SystemInit
+;表示 SystemInit和 __main 这两个函数均来自外部的文件
+```
+
+#### IMPORT手册说明
+
+![IMPORT](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032034894.png)
+
+![IMPORT](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032034604.png)
+
+![IMPORT](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032035341.png)
+
+### LDR指令
+
+**LDR: 从存储器中加载字到一个寄存器中**
+
+```assembly
+LDR     R0, =SystemInit
+; 把SystemInit的地址加载到R0中
+BLX     R0               
+; 跳转到R0执行, 执行完毕后返回
+LDR     R0, =__main
+; 把__main的地址加载到R0中
+BX      R0
+; 跳转到R0执行, 执行完毕后不返回
+```
+
+#### LDR手册说明
+
+![LDR](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032046548.png)
+
+![LDR](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032046349.png)
+
+![LDR](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032047305.png)
+
+### BLX指令
+
+**BLX: 跳转到由寄存器给出的地址, 并根据寄存器的LSE确定处理器的状态, 还要把跳转前的下条指令地址保存到LR**
+
+```assembly
+BLX     R0               
+; 跳转到R0执行, 执行完毕后返回
+```
+
+### BX指令
+
+**BX: 跳转到由寄存器/标号给出的地址, 不用返回**
+
+```assembly
+BX      R0
+; 跳转到R0执行, 执行完毕后不返回
+```
+
+### ALIGN指令
+
+**ALIGN：对指令或者数据存放的地址进行对齐，后面会跟一个立即数。缺省表示 4 字节对齐**
+
+#### ALIGN手册说明
+
+![ALIGN](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032103293.png)
+
+![ALIGN](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032103739.png)
+
+![ALIGN](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032103256.png)
