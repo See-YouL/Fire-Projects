@@ -890,7 +890,7 @@ while(1)
 
 ### GPIO输出-使用固件库点亮LED
 
-项目地址: **12-GPIO输出-使用固件库点亮LED**
+项目地址: **12: GPIO输出-使用固件库点亮LED**
 
 在User目录下新建led文件夹，添加bsp_led.c和bsp_led.h
 
@@ -1032,7 +1032,7 @@ int main() {
 
 ### GPIO输入
 
-项目地址: **13-GPIO输入-按键检测**
+项目地址: **13: GPIO输入-按键检测**
 
 通过原理图可知**KEY1接PA0口, 按键按下后为高电平**, 原理图如下
 
@@ -1244,7 +1244,7 @@ unsigned int *alias_address = (unsigned int *)BITBAND_PERIPH(0x40000000, 2);
 
 ### 使用位带操作实现GPIO的输出和输入
 
-项目地址: **14-位带操作-GPIO的输出和输入**
+项目地址: **14: 位带操作-GPIO的输出和输入**
 
 **使用位带操作实现GPIO输出: LED_B的闪烁**
 
