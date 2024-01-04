@@ -1946,3 +1946,43 @@ BX      R0
 ![ALIGN](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032103739.png)
 
 ![ALIGN](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032103256.png)
+
+## 时钟 
+
+### 时钟系统框图
+
+![时钟系统框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-04%2009.47.02.png)
+
+**时钟源选择**
+
+- HSI_RC: 高速内部时钟, RC 震荡产生(频率约为 8MHz)
+- HSE: 高速外部时钟,通过外接晶振产生(频率范围: 4-16MHz)
+- PLL: 锁相环,倍频到72MHz
+ 
+**SYSCLK 系统时钟的选择**
+
+1. HSI_RC 约 8MHz
+2. PLLCLK 倍频至72MHz
+3. HSE_Osc直接使用
+
+**PLL锁相环的选择**
+
+1. HSI_RC 两分频后 
+2. HSE_Osc or HSE_Osc二分频后
+
+**CSS: 时钟监视系统, 监视 HSE_Osc 是否正常工作,若 外部时钟源异常则将 SYSCLK 切换为 HSI_RC**
+
+![时钟系统框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-04%2010.03.07.png)
+
+**时钟源选择**
+
+- LSE_Osc: 低速外部时钟源, 频率为36.768KHz
+- LSI_RC: 低速内部时钟源, 频率约为40KHz, 由 RC 震荡产生
+
+**RTC_CLK(RTC 时钟)的选择**
+
+1. HSE_Osc 128 分频后 
+2. LSE_Osc
+3. LSI_RC
+
+**IWDGCLK独立看门狗时钟由LSI_RC 提供**
