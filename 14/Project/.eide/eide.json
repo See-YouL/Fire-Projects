@@ -131,8 +131,8 @@
     ]
   },
   "outDir": "build",
-  "deviceName": null,
-  "packDir": ".pack/Keil/STM32F1xx_DFP.2.3.0",
+  "deviceName": "STM32F103ZE",
+  "packDir": ".pack/Keil/STM32F1xx_DFP.2.4.1",
   "miscInfo": {
     "uid": "5c22c97b48805b93d6a05b8fcbca6cc6"
   },
