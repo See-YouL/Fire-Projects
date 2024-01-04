@@ -1987,4 +1987,25 @@ BX      R0
 
 **IWDGCLK独立看门狗时钟由LSI_RC 提供**
 
+![系统时钟框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-04%2010.13.53.png)
 
+MCO是一个引脚来输出内部时钟
+
+**MCO 的选择**
+
+1. SYSCLK
+2. HSI
+3. HSE
+4. PLLCLK 二分频
+
+![时钟系统框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-04%2010.26.21.png)
+
+1. USBCLK_48MHz (USB 时钟): 由 PLLCLK经USB_Prescaler预分频至 48MHz
+2. HCLK: SYSCLK->AHB_Prescaler 最高 72MHz
+3. PCLK1: SYSCLK->AHB_Prescaler->APB1_Prescaler 最高36MHz
+4. TIMxCLK(通用定时器时钟): SYSCLK->AHB_Prescaler->APB1_Prescaler->TIM2,3,4_Multiplier
+5. PCKL2: SYSCLK->AHB_Prescaler->APB2_Prescaler 最高72MHz
+5. TIM1CLK(TIM1 时钟): SYSCLK->AHB_Prescal->APB2_Prescaler->TIM1_Multiplier
+6. ADCCLK(ADC 时钟): SYSCLK->AHB_Prescaler->APB2_Prescaler->ADC_Prescaler
+
+![知识总结](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-04%2011.09.39.png)
