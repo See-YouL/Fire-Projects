@@ -6,7 +6,9 @@
 	],
 	"settings": {
 		"files.associations": {
-			"bsp_led.h": "c"
+			"bsp_led.h": "c",
+			"stm32f10x_flash.h": "c",
+			"bsp_rccclkconfig.h": "c"
 		}
 	}
 }

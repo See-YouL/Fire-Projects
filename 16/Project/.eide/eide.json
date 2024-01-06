@@ -10,13 +10,10 @@
     "files": [],
     "folders": [
       {
-        "name": "CMSIS",
+        "name": "STARTUP",
         "files": [
           {
-            "path": "../Libraries/CMSIS/core_cm3.c"
-          },
-          {
-            "path": "../Libraries/CMSIS/system_stm32f10x.c"
+            "path": "../Libraries/CMSIS/startup/startup_stm32f10x_hd.s"
           }
         ],
         "folders": []
@@ -102,15 +99,6 @@
         "folders": []
       },
       {
-        "name": "STARTUP",
-        "files": [
-          {
-            "path": "../Libraries/CMSIS/startup/startup_stm32f10x_hd.s"
-          }
-        ],
-        "folders": []
-      },
-      {
         "name": "USER",
         "files": [
           {
@@ -121,6 +109,21 @@
           },
           {
             "path": "../User/led/bsp_led.c"
+          },
+          {
+            "path": "../User/rcc/bsp_rccclkconfig.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "CMSIS",
+        "files": [
+          {
+            "path": "../Libraries/CMSIS/core_cm3.c"
+          },
+          {
+            "path": "../Libraries/CMSIS/system_stm32f10x.c"
           }
         ],
         "folders": []
@@ -277,9 +280,8 @@
           "../Libraries/STM32F10x_StdPeriph_Driver/inc",
           "../User",
           "../User/led",
-          ".cmsis/include",
-          "RTE/_Target 1",
-          ".eide/deps"
+          "../User/rcc",
+          "RTE/_Target 1"
         ],
         "libList": [],
         "sourceDirList": [],
