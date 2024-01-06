@@ -2,5 +2,7 @@
 
 void HSE_SetSysClk()
 {
-    RCC_HSEConfig();
+    // 使能 HSE
+    RCC_HSEConfig(HSE_ON);
+    RCC_WaitForHSEStartUp
 }
