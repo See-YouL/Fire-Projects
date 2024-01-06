@@ -2152,6 +2152,7 @@ static void SetSysClockTo72(void)
   
  
   /* Wait till HSE is ready and if Time out is reached exit */
+  // 等待 HSE 就绪并作超时处理
   do
   {
     HSEStatus = RCC->CR & RCC_CR_HSERDY;
@@ -2167,28 +2168,36 @@ static void SetSysClockTo72(void)
     HSEStatus = (uint32_t)0x00;
   }  
 
+  // 如果 HSE启动成功, 程序则继续往下执行
   if (HSEStatus == (uint32_t)0x01)
   {
     /* Enable Prefetch Buffer */
+    // 启用 Flsh  预取缓冲区
     FLASH->ACR |= FLASH_ACR_PRFTBE;
 
     /* Flash 2 wait state */
+    // flash 时延两个等待状态
     FLASH->ACR &= (uint32_t)((uint32_t)~FLASH_ACR_LATENCY);
     FLASH->ACR |= (uint32_t)FLASH_ACR_LATENCY_2;    
 
  
     /* HCLK = SYSCLK */
+    // 72MHz
     RCC->CFGR |= (uint32_t)RCC_CFGR_HPRE_DIV1;
       
     /* PCLK2 = HCLK */
+    // 72MHz
     RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE2_DIV1;
     
     /* PCLK1 = HCLK */
+    // 36MHz
     RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE1_DIV2;
 
 /*----------------------------------------------------------------
  * 互联型芯片 F105, F107 以下代码不进行分析
  *---------------------------------------------------------------*/
+
+/**********************************************************************/
 #ifdef STM32F10X_CL
     /* Configure PLLs ------------------------------------------------------*/
     /* PLL2 configuration: PLL2CLK = (HSE / 5) * 8 = 40 MHz */
@@ -2208,24 +2217,29 @@ static void SetSysClockTo72(void)
     
    
     /* PLL configuration: PLLCLK = PREDIV1 * 9 = 72 MHz */ 
+    // 锁相环配置
     RCC->CFGR &= (uint32_t)~(RCC_CFGR_PLLXTPRE | RCC_CFGR_PLLSRC | RCC_CFGR_PLLMULL);
     RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLXTPRE_PREDIV1 | RCC_CFGR_PLLSRC_PREDIV1 | 
                             RCC_CFGR_PLLMULL9); 
 #else    
 
     /* Enable PLL */
+    // 使能 PLL
     RCC->CR |= RCC_CR_PLLON;
 
     /* Wait till PLL is ready */
+    //  等待 PLL 稳定
     while((RCC->CR & RCC_CR_PLLRDY) == 0)
     {
     }
     
     /* Select PLL as system clock source */
+    // 选择 PLLCLK 作为系统时钟
     RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW));
     RCC->CFGR |= (uint32_t)RCC_CFGR_SW_PLL;    
 
     /* Wait till PLL is used as system clock source */
+    // 等待 PLLCLK 切换为系统时钟
     while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != (uint32_t)0x08)
     {
     }
@@ -2233,8 +2247,8 @@ static void SetSysClockTo72(void)
   else
   { /* If HSE fails to start-up, the application will have wrong clock 
          configuration. User can add here some code to deal with this error */
+    // 如果 HSE 启动失败,用户可以在这里添加处理错误的代码
   }
 }
 #endif
-
 ```
