@@ -2503,3 +2503,174 @@ typedef struct
 
 ![NVIC优先级](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401140238595.png)
 
+### 中断编程的顺序
+
+1. 使能中断请求(**使能外设中断, 使能 NVIC 中断**)
+2. 配置中断优先级分组(NVIC_PriorityGroupConfig)
+3. 配置 NVIC 寄存器, 初始化NVIC_InitTypeDef
+4. 编写中断服务函数
+
+## EXTI
+
+### EXTI 输入线
+
+![EXTI 输入线](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-15%2015.13.32.png)
+
+通过寄存器 AFIO_EXTICR1, 2, 3, 4配置
+
+### EXTI 框图讲解
+
+![EXTI 框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-15%2015.18.42.png)
+
+**外部中断流程**
+
+1. 通过 EXTI_RTSR 和 EXTI_FTSR 来配置上升沿/下降沿触发, 触发后边沿检测电路为 1
+2. 通过 EXTI_SWIER 来配置软件中断, 配置后为 1
+3. 经过逻辑与门后, 进入请求挂起寄存器
+4. 通过 EXTI_PR 配置挂起
+5. 通过 EXTI_IMR 配置中断屏蔽
+6. 请求挂起寄存器的逻辑值与中断屏蔽寄存器的逻辑值做逻辑与至 NVIC 中断控制器
+
+ **外部事件流程**
+
+1. 通过 EXTI_RTSR 和 EXTI_FTSR 来配置上升沿/下降沿触发, 触发后边沿检测电路为 1
+2. 通过 EXTI_SWIER 来配置软件中断, 配置后为 1
+3. 经过逻辑与门后, 向下跟事件屏蔽寄存器相与
+4. 通过 EXTI_EMR 配置事件屏蔽
+5. 若为 1 产生脉冲
+
+### EXTI 结构体
+
+EXTI_InitTypeDef
+
+- EXTI_Line : 用于产生中断/事件线
+- EXTI_Mode : EXTI 模式(中断/事件)
+- EXTI_Trigger : 触发(上/下/上下)
+- EXTI_LineCmd :  使能或者失能(IMR/EMR)
+
+**EXTI 的结构体定义**
+
+```c
+/** 
+  * @brief  EXTI Init Structure definition  
+  */
+
+typedef struct
+{
+  uint32_t EXTI_Line;               /*!< Specifies the EXTI lines to be enabled or disabled.
+                                         This parameter can be any combination of @ref EXTI_Lines */
+   
+  EXTIMode_TypeDef EXTI_Mode;       /*!< Specifies the mode for the EXTI lines.
+                                         This parameter can be a value of @ref EXTIMode_TypeDef */
+
+  EXTITrigger_TypeDef EXTI_Trigger; /*!< Specifies the trigger signal active edge for the EXTI lines.
+                                         This parameter can be a value of @ref EXTIMode_TypeDef */
+
+  FunctionalState EXTI_LineCmd;     /*!< Specifies the new state of the selected EXTI lines.
+                                         This parameter can be set either to ENABLE or DISABLE */ 
+}EXTI_InitTypeDef;
+
+/**
+  * @}
+  */
+```
+
+**EXTI_Line 的定义**
+
+```c
+/** @defgroup EXTI_Lines 
+  * @{
+  */
+
+#define EXTI_Line0       ((uint32_t)0x00001)  /*!< External interrupt line 0 */
+#define EXTI_Line1       ((uint32_t)0x00002)  /*!< External interrupt line 1 */
+#define EXTI_Line2       ((uint32_t)0x00004)  /*!< External interrupt line 2 */
+#define EXTI_Line3       ((uint32_t)0x00008)  /*!< External interrupt line 3 */
+#define EXTI_Line4       ((uint32_t)0x00010)  /*!< External interrupt line 4 */
+#define EXTI_Line5       ((uint32_t)0x00020)  /*!< External interrupt line 5 */
+#define EXTI_Line6       ((uint32_t)0x00040)  /*!< External interrupt line 6 */
+#define EXTI_Line7       ((uint32_t)0x00080)  /*!< External interrupt line 7 */
+#define EXTI_Line8       ((uint32_t)0x00100)  /*!< External interrupt line 8 */
+#define EXTI_Line9       ((uint32_t)0x00200)  /*!< External interrupt line 9 */
+#define EXTI_Line10      ((uint32_t)0x00400)  /*!< External interrupt line 10 */
+#define EXTI_Line11      ((uint32_t)0x00800)  /*!< External interrupt line 11 */
+#define EXTI_Line12      ((uint32_t)0x01000)  /*!< External interrupt line 12 */
+#define EXTI_Line13      ((uint32_t)0x02000)  /*!< External interrupt line 13 */
+#define EXTI_Line14      ((uint32_t)0x04000)  /*!< External interrupt line 14 */
+#define EXTI_Line15      ((uint32_t)0x08000)  /*!< External interrupt line 15 */
+#define EXTI_Line16      ((uint32_t)0x10000)  /*!< External interrupt line 16 Connected to the PVD Output */
+#define EXTI_Line17      ((uint32_t)0x20000)  /*!< External interrupt line 17 Connected to the RTC Alarm event */
+#define EXTI_Line18      ((uint32_t)0x40000)  /*!< External interrupt line 18 Connected to the USB Device/USB OTG FS
+                                                   Wakeup from suspend event */                                    
+#define EXTI_Line19      ((uint32_t)0x80000)  /*!< External interrupt line 19 Connected to the Ethernet Wakeup event */
+```
+
+**EXTI_Mode 的定义**
+
+```c
+/** 
+  * @brief  EXTI mode enumeration  
+  */
+
+typedef enum
+{
+  EXTI_Mode_Interrupt = 0x00,
+  EXTI_Mode_Event = 0x04
+}EXTIMode_TypeDef;
+
+#define IS_EXTI_MODE(MODE) (((MODE) == EXTI_Mode_Interrupt) || ((MODE) == EXTI_Mode_Event))
+```
+
+**EXTI_Trigger 的定义**
+
+```c
+/** 
+  * @brief  EXTI Trigger enumeration  
+  */
+
+typedef enum
+{
+  EXTI_Trigger_Rising = 0x08,
+  EXTI_Trigger_Falling = 0x0C,  
+  EXTI_Trigger_Rising_Falling = 0x10
+}EXTITrigger_TypeDef;
+
+#define IS_EXTI_TRIGGER(TRIGGER) (((TRIGGER) == EXTI_Trigger_Rising) || \
+                                  ((TRIGGER) == EXTI_Trigger_Falling) || \
+                                  ((TRIGGER) == EXTI_Trigger_Rising_Falling))
+```
+
+### GPIO 作为 EXTI 输入线的配置
+
+在 stm32f10x_gpio.c 中, 使用 GPIO_EXTILineConfig 函数进行配置
+
+```c
+/**
+  * @brief  Selects the GPIO pin used as EXTI Line.
+  * @param  GPIO_PortSource: selects the GPIO port to be used as source for EXTI lines.
+  *   This parameter can be GPIO_PortSourceGPIOx where x can be (A..G).
+  * @param  GPIO_PinSource: specifies the EXTI line to be configured.
+  *   This parameter can be GPIO_PinSourcex where x can be (0..15).
+  * @retval None
+  */
+void GPIO_EXTILineConfig(uint8_t GPIO_PortSource, uint8_t GPIO_PinSource)
+{
+  uint32_t tmp = 0x00;
+  /* Check the parameters */
+  assert_param(IS_GPIO_EXTI_PORT_SOURCE(GPIO_PortSource));
+  assert_param(IS_GPIO_PIN_SOURCE(GPIO_PinSource));
+  
+  tmp = ((uint32_t)0x0F) << (0x04 * (GPIO_PinSource & (uint8_t)0x03));
+  AFIO->EXTICR[GPIO_PinSource >> 0x02] &= ~tmp;
+  AFIO->EXTICR[GPIO_PinSource >> 0x02] |= (((uint32_t)GPIO_PortSource) << (0x04 * (GPIO_PinSource & (uint8_t)0x03)));
+}
+```
+
+### EXTI中断实验
+
+项目地址: **18 : EXTI 中断实验**
+
+**项目需求:**
+
+1. PA0 连接到 EXTI 用于产生中断, PA0 的电平变化通过按键来控制
+2. 产生一次中断, LED 反转一次
