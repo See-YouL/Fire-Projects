@@ -2675,6 +2675,67 @@ void GPIO_EXTILineConfig(uint8_t GPIO_PortSource, uint8_t GPIO_PinSource)
 1. PA0 连接到 EXTI 用于产生中断, PA0 的电平变化通过按键来控制
 2. 产生一次中断, LED 反转一次
 
+**初始化要连接到EXTI的GPIO**, 在bsp_exti.c中
+
+```c
+// 初始化 Key1(PA0)
+RCC_APB2PeriphClockCmd(KEY1_INT_GPIO_CLK, ENABLE);
+GPIO_InitStruct.GPIO_Pin = KEY1_INT_GPIO_PIN;
+GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+GPIO_Init(KEY1_INT_GPIO_PORT, &GPIO_InitStruct);
+```
+
+**初始化EXTI用于产生中断/事件**, 在bsp_exti.c中
+
+```c
+RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
+GPIO_EXTILineConfig(GPIO_PortSourceGPIOA, GPIO_PinSource0); // 选择输入线
+EXTI_InitStruct.EXTI_Line = EXTI_Line0;                     // 选择EXTI线路
+EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;            // 选择中断模式
+EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Falling;         // 选择触发模式
+EXTI_InitStruct.EXTI_LineCmd = ENABLE;                          // 使能EXTI线路
+EXTI_Init(&EXTI_InitStruct);
+```
+
+**初始化NVIC, 用于处理中断**, 在bsp_exti.c中
+
+```c
+NVIC_InitTypeDef NVIC_InitStruct;
+
+NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1); // 配置中断优先级分组
+
+NVIC_InitStruct.NVIC_IRQChannel = EXTI0_IRQn; // 选择中断源
+NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = 1; // 抢占优先级
+NVIC_InitStruct.NVIC_IRQChannelSubPriority = 1; // 子优先级
+NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE; // 使能中断
+NVIC_Init(&NVIC_InitStruct);
+```
+
+**编写中断服务函数**, 在stm32f10x_it.c中
+
+```c
+/**
+ * @brief EXTI0_IRQHandler: Interrupt handler for EXTI Line 0
+ *
+ * This function is the interrupt handler for EXTI Line 0. It toggles the state of the blue LED.
+ * It checks the interrupt status of EXTI Line 0 and clears the interrupt pending bit.
+ */
+void EXTI0_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(EXTI_Line0) != RESET) // 判断中断位
+  {
+    LED_B_TOGGLE;
+  }
+  EXTI_ClearITPendingBit(EXTI_Line0); // 清除中断标志位
+}
+```
+
+编写电平反转函数, 在bsp_led.h中
+
+```c
+#define LED_B_TOGGLE {LED_B_GPIO_PORT->ODR ^= LED_B_GPIO_PIN;}
+```
+
 ### 补充: 使能AFIO时钟
 
 
