@@ -23,6 +23,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
+#include "bsp_led.h"
+#include "bsp_exti.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -135,6 +137,23 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
 }
+
+// 4. 编写中断服务函数
+/**
+ * @brief EXTI0_IRQHandler: Interrupt handler for EXTI Line 0
+ *
+ * This function is the interrupt handler for EXTI Line 0. It toggles the state of the blue LED.
+ * It checks the interrupt status of EXTI Line 0 and clears the interrupt pending bit.
+ */
+void EXTI0_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(EXTI_Line0) != RESET) // 判断中断位
+  {
+    LED_B_TOGGLE;
+  }
+  EXTI_ClearITPendingBit(EXTI_Line0); // 清除中断标志位
+}
+
 
 /******************************************************************************/
 /*                 STM32F10x Peripherals Interrupt Handlers                   */

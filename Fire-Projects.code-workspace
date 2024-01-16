@@ -8,7 +8,9 @@
 		"files.associations": {
 			"bsp_led.h": "c",
 			"stm32f10x_flash.h": "c",
-			"bsp_rccclkconfig.h": "c"
+			"bsp_rccclkconfig.h": "c",
+			"stm32f10x_exti.h": "c",
+			"misc.h": "c"
 		}
 	}
 }

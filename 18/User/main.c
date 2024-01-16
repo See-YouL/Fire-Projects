@@ -1,5 +1,6 @@
 #include "stm32f10x.h"
 #include "bsp_led.h"
+#include "bsp_exti.h"
 
 void Delay(uint32_t count)
 {
@@ -14,15 +15,19 @@ void Delay(uint32_t count)
     
 }
 
+/**
+ * @brief Main function of the program.
+ * 
+ * This function initializes the LED GPIO and EXTI Key configurations.
+ * It then enters an infinite loop, where no program execution takes place.
+ */
 int main(void)
 {
     LED_GPIO_Config();
+    EXTI_Key_Config();
 
     while(1)
     {
-        LED_B(OFF);
-        Delay(0xFFF); // 延时
-        LED_B(ON);
-        Delay(0xFFF); // 延时
+        ; // 主函数不执行程序
     }
 }

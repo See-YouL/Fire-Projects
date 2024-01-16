@@ -16,6 +16,8 @@
                      GPIO_SetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN);
 // 使用\可以进行换行，其后不能跟空格，\后应该直接回车
 
+#define LED_B_TOGGLE {LED_B_GPIO_PORT->ODR ^= LED_B_GPIO_PIN;}
+
 // 函数声明
 void LED_GPIO_Config(void);
 

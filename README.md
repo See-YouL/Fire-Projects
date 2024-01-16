@@ -2674,3 +2674,36 @@ void GPIO_EXTILineConfig(uint8_t GPIO_PortSource, uint8_t GPIO_PinSource)
 
 1. PA0 连接到 EXTI 用于产生中断, PA0 的电平变化通过按键来控制
 2. 产生一次中断, LED 反转一次
+
+### 补充: 使能AFIO时钟
+
+
+在STM32微控制器系列中，使用外部中断（EXTI）时需要开启AFIO（Alternate Function IO）时钟的原因与STM32的硬件设计和引脚复用功能有关。
+
+AFIO的作用
+
+1. **引脚复用**：STM32的GPIO（通用输入输出）引脚具有多功能性。一个物理引脚可以用作普通的I/O，也可以被配置为特殊功能，如USART、SPI、I2C通信或外部中断（EXTI）等。AFIO（Alternate Function IO）模块负责管理这些引脚的复用功能。
+2. **EXTI配置**：在STM32中，外部中断线（EXTI）可以映射到不同的GPIO引脚上。AFIO模块提供了这种映射功能。例如，如果你想将EXTI0配置为由PA0、PB0、PC0等其中一个引脚触发，就需要通过AFIO模块来设置这种映射。
+
+开启AFIO时钟的原因
+
+**由于AFIO模块负责处理引脚的复用功能，包括EXTI的引脚映射，因此在使用EXTI功能之前，必须确保AFIO模块的时钟是使能的**如果没有使能AFIO时钟，对AFIO寄存器的任何配置操作都不会生效，这意味着EXTI线路无法正确地映射到相应的GPIO引脚上，从而导致外部中断功能无法正常工作。
+
+实际操作
+
+在STM32的标准固件库或HAL（硬件抽象层）库中，通常会看到类似以下的代码片段，用于使能AFIO时钟：
+
+```c
+RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
+```
+或在使用HAL库时：
+
+```c
+__HAL_RCC_AFIO_CLK_ENABLE();
+```
+
+这些函数调用确保了AFIO模块的时钟被使能，从而使得外部中断的相关配置（如引脚映射）能够正确执行。
+
+总结
+
+开启AFIO时钟是使用STM32的EXTI功能的必要步骤，因为AFIO模块控制着GPIO引脚的复用功能，包括将外部中断线路映射到特定的GPIO引脚。未使能AFIO时钟可能导致外部中断配置无效，进而影响整个中断处理机制的正常工作。
