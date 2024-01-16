@@ -3,14 +3,15 @@
         {
             "name": "Target 1",
             "includePath": [
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\12-GPIO输出-使用固件库点亮LED\\Libraries\\CMSIS",
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\12-GPIO输出-使用固件库点亮LED\\Libraries\\STM32F10x_StdPeriph_Driver\\inc",
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\12-GPIO输出-使用固件库点亮LED\\User",
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\12-GPIO输出-使用固件库点亮LED\\User\\led",
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\19\\Libraries\\CMSIS",
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\19\\Libraries\\STM32F10x_StdPeriph_Driver\\inc",
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\19\\User",
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\19\\User\\led",
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\19\\User\\systick",
                 "D:\\Embedded\\MDK\\Core\\ARM\\ARMCC\\include",
                 "D:\\Embedded\\MDK\\Core\\ARM\\ARMCC\\include\\rw",
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\12-GPIO输出-使用固件库点亮LED\\Libraries\\CMSIS\\startup",
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\12-GPIO输出-使用固件库点亮LED\\Libraries\\STM32F10x_StdPeriph_Driver\\src"
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\19\\Libraries\\CMSIS\\startup",
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\19\\Libraries\\STM32F10x_StdPeriph_Driver\\src"
             ],
             "defines": [
                 "USE_STDPERIPH_DRIVER",

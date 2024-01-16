@@ -2893,7 +2893,12 @@ static __INLINE uint32_t SysTick_Config(uint32_t ticks)
    * ----------------------------------------------------------*/
   NVIC_SetPriority (SysTick_IRQn, (1<<__NVIC_PRIO_BITS) - 1);  /* set Priority for Cortex-M0 System Interrupts */
 
+  // 初始化counter的值为0
   SysTick->VAL   = 0;                                          /* Load the SysTick Counter Value */
+
+  // 配置 SysTick的时钟为 72M
+  // 使能中断
+  // 使能 SysTick 
   SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk | 
                    SysTick_CTRL_TICKINT_Msk   | 
                    SysTick_CTRL_ENABLE_Msk;                    /* Enable SysTick IRQ and SysTick Timer */
@@ -2910,3 +2915,95 @@ static __INLINE uint32_t SysTick_Config(uint32_t ticks)
 1. 编写一个微妙延时函数
 2. 编写一个毫秒延时函数
 
+在bsp_systick.c中编写微妙延时函数
+
+```c
+/**
+ * @brief 延时指定的微秒数
+ * @param us 延时的微秒数
+ * @retval None
+ */
+void SysTick_Delay_us(uint32_t us)
+{
+    SysTick_Config(SystemCoreClock / 1000000); // reload 设置为 72, t = 1us
+    
+    for(int i = 0; i < us; i++)
+    {
+        while(!(SysTick->CTRL & (1 << 16)))
+        {
+            ; // 等待CTRL的Bit16置1
+        }
+    }
+
+    SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk; // 状态位清除
+}
+```
+
+在bsp_systick.c中编写毫秒延时函数
+
+```c
+/**
+ * @brief 延时指定的毫秒数
+ * @param ms 延时的毫秒数
+ * @return 无
+ */
+void SysTick_Delay_ms(uint32_t ms)
+{
+    SysTick_Config(SystemCoreClock / 1000); // reload 设置为 72000, t = 1ms
+    
+    for(int i = 0; i < ms; i++)
+    {
+        while(!(SysTick->CTRL & (1 << 16)))
+        {
+            ; // 等待CTRL的Bit16置1
+        }
+    }
+
+    SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk; // 状态位清除
+}
+```
+
+在bsp_systick.h中引用库文件和进行函数声明
+
+```c
+#ifndef __BSP_SYSTICK_H
+#define __BSP_SYSTICK_H
+
+#include "stm32f10x.h"
+#include "core_cm3.h"
+
+void SysTick_Delay_ms(uint32_t ms);
+void SysTick_Delay_us(uint32_t us);
+
+#endif // !__BSP_SYSTICK_H
+
+```
+
+在main.c中调用延时函数,实现LED闪烁
+
+```c
+/**
+ * @brief Main function of the program.
+ * 
+ * This function initializes the LED GPIO and enters an infinite loop. 
+ * In each iteration of the loop, it turns off the blue LED, delays for 0.5 seconds,
+ * turns on the blue LED, and delays for 0.5 seconds again.
+ * 
+ * @return int The exit status of the program.
+ */
+int main(void)
+{
+    LED_GPIO_Config(); // Initialize the LED GPIO
+
+    while(1)
+    {
+        LED_B(OFF); // Turn off the blue LED
+        SysTick_Delay_ms(500); // Delay for 0.5 seconds
+        LED_B(ON); // Turn on the blue LED
+        SysTick_Delay_us(500000); // Delay for 0.5 seconds
+    }
+}
+
+```
+
+## 通信的基本概念
