@@ -2768,3 +2768,145 @@ __HAL_RCC_AFIO_CLK_ENABLE();
 总结
 
 开启AFIO时钟是使用STM32的EXTI功能的必要步骤，因为AFIO模块控制着GPIO引脚的复用功能，包括将外部中断线路映射到特定的GPIO引脚。未使能AFIO时钟可能导致外部中断配置无效，进而影响整个中断处理机制的正常工作。
+
+## SysTick
+
+### SysTick简介
+
+SysTick: 系统定时器, **24位, 只能递减, 存在于内核中**, 嵌套在NVIC中, 所有的Cotex-M内核的单片机都具有这个定时器.
+
+**SysTick 功能框图**
+
+![框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401170017620.png)
+
+*重装载寄存器把值写入递减计数器, 可通过STK_VAL实时查询其中的值, 递减计数器从reload值开始递减, 减为0后可产生中断并且置位COUNTFLAG标志位, 置位后从reload获取值重复以上操作*
+
+**SysTick 寄存器描述**
+
+![SysTick 寄存器描述](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401170023320.png)
+
+**SysTick 定时时间计算**
+
+需要计算的参数
+
+![计算参数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401170025237.png)
+
+计算过程
+
+![计算过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401170025314.png)
+
+- Clk = 72M时
+- reload = 72, t = 1us
+- reload = 72000, t = 1ms
+
+### 补充: SysTick 介绍
+
+
+SysTick（System Tick Timer）是ARM Cortex-M微控制器内核的一个内置组件，用于提供一个简单但高效的系统定时器。这个定时器通常用于实现操作系统的节拍（tick），也可以用于简单的延时功能。
+
+**SysTick的主要特点**
+
+1. 24位递减计数器：SysTick包含一个24位的递减计数器，当计数器值递减到零时，定时器溢出并触发一个中断。
+2. 可编程重载值：可以设置计数器的重载值，这决定了定时器的溢出时间间隔。
+3. 可配置的时钟源：SysTick定时器可以配置为使用内核时钟或外部时钟（通常是内核时钟的一半）。
+4. 自动重载：在计数到零时，计数器会自动重新加载预设的重载值，从而实现周期性定时。
+5. 中断功能：当计数器达到零时，SysTick定时器可以产生一个中断。这个中断可以用于各种定时任务，如操作系统的任务调度。
+
+**应用场景**
+
+1. 操作系统节拍：在实时操作系统（RTOS）中，SysTick常用于生成操作系统的节拍，这对于任务调度和时间管理非常重要。
+2. 延时功能：在不需要RTOS的简单应用中，SysTick可用于生成精确的延时，例如在两个事件之间等待固定的时间。
+3. 时间基准：SysTick还可以作为程序中的时间基准，用于测量时间间隔或产生定时事件。
+
+**配置和使用**
+
+在使用SysTick时，一般需要进行以下配置：
+
+1. 设置重载值：根据所需的定时周期和时钟源频率设置重载值。
+2. 选择时钟源：选择使用内核时钟还是外部时钟作为SysTick的时钟源。
+3. 启用中断（可选）：如果需要在定时器溢出时执行特定操作，可以启
+用SysTick中断。
+4. 启动定时器：启用SysTick定时器开始计数
+
+**编程示例**
+
+在STM32等ARM Cortex-M微控制器上，SysTick的配置和使用通常涉及直接操作其控制和状态寄存器。以下是一个简单的示例：
+
+```c
+SysTick_Config(SystemCoreClock / 1000);  // 配置SysTick产生
+```
+
+### SysTick 源码分析
+
+SysTick_Type定义在core_cm3.h中
+
+```c
+/** @addtogroup CMSIS_CM3_SysTick CMSIS CM3 SysTick
+  memory mapped structure for SysTick
+  @{
+ */
+typedef struct
+{
+  __IO uint32_t CTRL;                         /*!< Offset: 0x00  SysTick Control and Status Register */
+  __IO uint32_t LOAD;                         /*!< Offset: 0x04  SysTick Reload Value Register       */
+  __IO uint32_t VAL;                          /*!< Offset: 0x08  SysTick Current Value Register      */
+  __I  uint32_t CALIB;                        /*!< Offset: 0x0C  SysTick Calibration Register        */
+} SysTick_Type;
+```
+
+SysTick_Config函数在core_cm3.h中定义
+
+```c
+/**
+ * @brief  Initialize and start the SysTick counter and its interrupt.
+ *
+ * @param   ticks   number of ticks between two interrupts
+ * @return  1 = failed, 0 = successful
+ *
+ * Initialise the system tick timer and its interrupt and start the
+ * system tick timer / counter in free running mode to generate 
+ * periodical interrupts.
+ */
+static __INLINE uint32_t SysTick_Config(uint32_t ticks)
+{ 
+  // 判断ticks的值是否大于2^24, 若大于则违法
+  if (ticks > SysTick_LOAD_RELOAD_Msk)  return (1);            /* Reload value impossible */
+                                                               
+  // 初始化reaload寄存器的值
+  SysTick->LOAD  = (ticks & SysTick_LOAD_RELOAD_Msk) - 1;      /* set reload register */
+
+  // 配置中断优先级, 配置为15, 默认为最低的优先级
+  /*-------------------------------------------------------------
+   * 注: 
+   * 内核优先级的判断方式:
+   * 将内核外设的中断优先级的四个位按照外设的中断优先级进行分组
+   * 分组后可判断内核的抢占优先级和响应优先级
+   * 即人为分出抢占和响应优先级
+   * 
+   * 例:
+   * 这里SysTick的中断优先级为15, 二进制为1111
+   * 若分组为2位抢占, 2位响应
+   * 则SysTick的抢占优先级为11即3, 响应优先级为11即3
+   * 若分组为1位抢占, 3位响应
+   * 则SysTick的抢占优先级为1即1, 响应优先级为111即7
+   * 通过该方法可以比较内核优先级与外设的优先级谁更高
+   * ----------------------------------------------------------*/
+  NVIC_SetPriority (SysTick_IRQn, (1<<__NVIC_PRIO_BITS) - 1);  /* set Priority for Cortex-M0 System Interrupts */
+
+  SysTick->VAL   = 0;                                          /* Load the SysTick Counter Value */
+  SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk | 
+                   SysTick_CTRL_TICKINT_Msk   | 
+                   SysTick_CTRL_ENABLE_Msk;                    /* Enable SysTick IRQ and SysTick Timer */
+  return (0);                                                  /* Function successful */
+}
+```
+
+### SysTick 实验
+
+项目地址: **19: SysTick实验**
+
+实验要求:
+
+1. 编写一个微妙延时函数
+2. 编写一个毫秒延时函数
+
