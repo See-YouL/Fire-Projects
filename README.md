@@ -3048,6 +3048,117 @@ int main(void)
 
 ### 串口通信协议简介
 
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171610065.png)
+
+**物理层的常用标准**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171610887.png)
+
+**232和TTL电平区别**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171611637.png)
+
+- TTL: 从芯片出来的基本是TTL电平
+- 232: 负逻辑, 压差大
+
+**232通信通讯结构图**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171631235.png)
+
+**DB9接口图**
+
+![DB9接口](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171634288.png)
+
+**USB转串口通讯结构图**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171644660.png)
+
+**串口到串口通讯结构图**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171655718.png)
+
+**串口数据包的组成**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171658813.png)
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171659831.png)
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171702232.png)
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171703446.png)
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171703050.png)
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171704956.png)
+
 ### STM32串口功能框图讲解
+
+#### 引脚部分讲解
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171708669.png)
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171708578.png)
+
+**引脚对应**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171710068.png)
+
+#### 数据寄存器部分
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171723621.png)
+
+**数据格式**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171725627.png)
+
+**USART_CR1的bit12 M控制字长**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171727509.png)
+
+**USART_CR2的bit[13:12] STOP控制停止位的位数**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171727238.png)
+
+**USART_CR1的bit10(PSE), bit9(PS)来使能校验和选择校验模式**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171730822.png)
+
+**USART_CR1的bit8(PEIE)来使能中断**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171731175.png)
+
+**USART_SR的bit0(PE)来检测校验错误**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171732400.png)
+
+**发送数据部分**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171739676.png)
+
+1. 先将USART_CR1的UE位置1(*使能USART模块*), 再将USART_CR1的TE位置1(*使能发送*)
+2. 数据从CPU或DMA中写入发送数据寄存器(TDR), TDR发送完毕后, USART_SR的TXE位置1(*数据已经被转移到移位寄存器中*)
+3. 发送移位寄存器发送完毕后, USART_SR的TC位置1(*表示发送完成*)
+
+**接收数据部分**
+
+![接收数据部分](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171900970.png)
+
+1. 先将USART_CR1的UE位置1(*使能USART模块*), 再将USART_CR1的RE位置1(*使能接收*)
+2. 数据从RX到接收移位寄存器到接收数据寄存器(RDR), 接收完毕后, USART_SR的RXNE位置1(*收到数据, 可以读出*)
+
+#### 波特率设置
+
+**使用USART_BRR进行配置**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171906798.png)
+
+**波特率的计算公式**
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171909589.png)
+
+- APB2时钟: 72MHz, 挂载USART1
+- APB1时钟: 36MHz, 挂载USART2, 3, 4, 5
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171910703.png)
 
 ### 代码讲解
