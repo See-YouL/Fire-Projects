@@ -1,9 +1,10 @@
-# 野火霸道V2开发板学习笔记
+# STM32F103学习笔记
 
 ## 说明
 
 **本库仅供学习交流使用**
 
+- 开发板: 野火霸道V2开发板
 - 编译器： ARM v5.06
 - C编译版本: C99
 - 固件库版本: V3.5.0
@@ -3008,3 +3009,45 @@ int main(void)
 ```
 
 ## 通信的基本概念
+
+### 串行和并行通信
+
+![串行和并行通信](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171542012.png)
+
+- 串行协议: USART, I2C, SPI, W500, CAN, LIN
+- 并行协议: FSMC, SDIO
+
+![对比](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171546066.png)
+
+### 全双工, 半双工和单工
+
+![全双工,半双工和单工](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171548657.png)
+
+### 同步与异步
+
+*通过时钟信号进行同步, 保证数据传输的准确性*
+
+![同步](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171550768.png)
+
+*通过加入辅助的标识符, 保证数据传输的准确性*
+
+![异步](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171552733.png)
+
+**同步与异步的区别**
+
+![区别](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171554763.png)
+
+
+### 通信的速率
+
+![通信的速率](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171555519.png)
+
+*当用一个二进制位表示一个码元时, 比特率和波特率相等*
+
+## USART - 串口通信
+
+### 串口通信协议简介
+
+### STM32串口功能框图讲解
+
+### 代码讲解
