@@ -3294,3 +3294,25 @@ typedef struct
 ### USB转串口的硬件原理图
 
 ![硬件原理图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401172002602.png)
+
+### 串口GPIO汇总
+
+![串口GPIO](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401220859886.png)
+
+### 补充: 外设的GPIO配置
+
+**在STM32F10x参考手册中的8.1.11节可找到外设的GPIO配置, 其中关于USART部分的GPIO配置如下图**
+
+![USART的GPIO配置](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401220904826.png)
+
+### USART实验1
+
+**项目地址 : 21 - USART**
+
+**实验需求**: 单片机给电脑发送数据, 电脑上位机把数据打印出来; 电脑上位机给单片机发数据, 单片机接收到数据之后立马发回给电脑, 并打印出来.
+
+### USART实验2
+
+**项目地址 : 21 - USART**
+
+**实验需求**: 电脑给单片机发命令, 用于控制开发板上的RGB灯.
