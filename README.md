@@ -3161,4 +3161,136 @@ int main(void)
 
 ![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171910703.png)
 
-### 代码讲解
+###  串口初始化结构体和固件库讲解
+
+在stm32f10x_usart.h中定义串口初始化结构体(异步)
+
+```c
+/** 
+  * @brief  USART Init Structure definition  
+  */ 
+  
+typedef struct
+{
+  // 设置波特率
+  uint32_t USART_BaudRate;            /*!< This member configures the USART communication baud rate.
+                                           The baud rate is computed using the following formula:
+                                            - IntegerDivider = ((PCLKx) / (16 * (USART_InitStruct->USART_BaudRate)))
+                                            - FractionalDivider = ((IntegerDivider - ((u32) IntegerDivider)) * 16) + 0.5 */
+
+  // 设置字长
+  /*-----------------------------------------------------------------------------
+   * 参数如下:
+   * #define USART_WordLength_8b                  ((uint16_t)0x0000)
+   * #define USART_WordLength_9b                  ((uint16_t)0x1000)
+   * ---------------------------------------------------------------------------*/
+  uint16_t USART_WordLength;          /*!< Specifies the number of data bits transmitted or received in a frame.
+                                           This parameter can be a value of @ref USART_Word_Length */
+
+  // 设置停止位
+  /*-----------------------------------------------------------------------------
+   * 参数如下:
+   * #define USART_StopBits_1                     ((uint16_t)0x0000)
+   * #define USART_StopBits_0_5                   ((uint16_t)0x1000)
+   * #define USART_StopBits_2                     ((uint16_t)0x2000)
+   * #define USART_StopBits_1_5                   ((uint16_t)0x3000)
+   * ---------------------------------------------------------------------------*/
+  uint16_t USART_StopBits;            /*!< Specifies the number of stop bits transmitted.
+                                           This parameter can be a value of @ref USART_Stop_Bits */
+
+  // 设置校验
+  /*-----------------------------------------------------------------------------
+   * 参数如下:
+   * #define USART_Parity_No                      ((uint16_t)0x0000)
+   * #define USART_Parity_Even                    ((uint16_t)0x0400)
+   * #define USART_Parity_Odd                     ((uint16_t)0x0600)
+   * ---------------------------------------------------------------------------*/
+  uint16_t USART_Parity;              /*!< Specifies the parity mode.
+                                           This parameter can be a value of @ref USART_Parity
+                                           @note When parity is enabled, the computed parity is inserted
+                                                 at the MSB position of the transmitted data (9th bit when
+                                                 the word length is set to 9 data bits; 8th bit when the
+                                                 word length is set to 8 data bits). */
+ 
+  // 设置模式
+  /*-----------------------------------------------------------------------------
+   * 参数如下:
+   * #define USART_Mode_Rx                        ((uint16_t)0x0004)
+   * #define USART_Mode_Tx                        ((uint16_t)0x0008)
+   * ---------------------------------------------------------------------------*/
+  uint16_t USART_Mode;                /*!< Specifies wether the Receive or Transmit mode is enabled or disabled.
+                                           This parameter can be a value of @ref USART_Mode */
+
+  // 设置硬件控制流
+  /*-----------------------------------------------------------------------------
+   * 参数如下:
+   * #define USART_HardwareFlowControl_None       ((uint16_t)0x0000)
+   * #define USART_HardwareFlowControl_RTS        ((uint16_t)0x0100)
+   * #define USART_HardwareFlowControl_CTS        ((uint16_t)0x0200)
+   * #define USART_HardwareFlowControl_RTS_CTS    ((uint16_t)0x0300)
+   * ---------------------------------------------------------------------------*/
+  uint16_t USART_HardwareFlowControl; /*!< Specifies wether the hardware flow control mode is enabled
+                                           or disabled.
+                                           This parameter can be a value of @ref USART_Hardware_Flow_Control */
+} USART_InitTypeDef;
+```
+
+在stm32f10x_usart.h中定义串口初始化结构体(同步)
+
+```c
+/** 
+  * @brief  USART Clock Init Structure definition  
+  */ 
+  
+typedef struct
+{
+
+  // 设置使能时钟
+  /*-----------------------------------------------------------------------------
+   * 参数如下:
+   * #define USART_Clock_Disable                  ((uint16_t)0x0000)
+   * #define USART_Clock_Enable                   ((uint16_t)0x0800)
+   * ---------------------------------------------------------------------------*/
+  uint16_t USART_Clock;   /*!< Specifies whether the USART clock is enabled or disabled.
+                               This parameter can be a value of @ref USART_Clock */
+
+  // 设置时钟的极性, 即总线空闲时CK引脚保持低电平还是高电平
+  /*-----------------------------------------------------------------------------
+   * 参数如下:
+   * #define USART_CPOL_Low                       ((uint16_t)0x0000)
+   * #define USART_CPOL_High                      ((uint16_t)0x0400)
+   * ---------------------------------------------------------------------------*/
+  uint16_t USART_CPOL;    /*!< Specifies the steady state value of the serial clock.
+                               This parameter can be a value of @ref USART_Clock_Polarity */
+
+  // 设置时钟的相位, 即数据采样的时机为第一个边沿还是第二个边沿
+  /*-----------------------------------------------------------------------------
+   * 参数如下:
+   * #define USART_CPHA_1Edge                     ((uint16_t)0x0000)
+   * #define USART_CPHA_2Edge                     ((uint16_t)0x0200)
+   * ---------------------------------------------------------------------------*/
+  uint16_t USART_CPHA;    /*!< Specifies the clock transition on which the bit capture is made.
+                               This parameter can be a value of @ref USART_Clock_Phase */
+
+  // 设置时钟的最后一个数据位的时钟脉冲是否输出到SCLK引脚
+  /*-----------------------------------------------------------------------------
+   * 参数如下:
+   * #define USART_LastBit_Disable                ((uint16_t)0x0000)
+   * #define USART_LastBit_Enable                 ((uint16_t)0x0100)
+   * ---------------------------------------------------------------------------*/
+  uint16_t USART_LastBit; /*!< Specifies whether the clock pulse corresponding to the last transmitted
+                               data bit (MSB) has to be output on the SCLK pin in synchronous mode.
+                               This parameter can be a value of @ref USART_Last_Bit */
+} USART_ClockInitTypeDef;
+```
+
+- **串口初始化函数**: void USART_Init(USART_TypeDef* USARTx, USART_InitTypeDef* USART_InitStruct);
+- **中断配置函数**: void USART_ITConfig(USART_TypeDef* USARTx, uint16_t USART_IT, FunctionalState NewState);
+- **串口使能函数**: void USART_Cmd(USART_TypeDef* USARTx, FunctionalState NewState);
+- **数据发送函数**: void USART_SendData(USART_TypeDef* USARTx, uint16_t Data);
+- **数据接收函数**: void USART_ReceiveData(USART_TypeDef* USARTx);
+- **中断状态位获取函数**: ITStatus USART_GetITStatus(USART_TypeDef* USARTx, uint16_t USART_IT);
+
+### USB转串口的硬件原理图
+
+![硬件原理图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401172002602.png)
