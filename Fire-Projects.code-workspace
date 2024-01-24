@@ -10,7 +10,9 @@
 			"stm32f10x_flash.h": "c",
 			"bsp_rccclkconfig.h": "c",
 			"stm32f10x_exti.h": "c",
-			"misc.h": "c"
+			"misc.h": "c",
+			"stm32f10x_usart.h": "c",
+			"bsp_usart.h": "c"
 		}
 	}
 }

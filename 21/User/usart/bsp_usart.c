@@ -78,82 +78,123 @@ void USART_Config(void)
 	USART_Cmd(DEBUG_USARTx, ENABLE);	    
 }
 
-/*****************  发送一个字节 **********************/
-void Usart_SendByte(USART_TypeDef * pUSARTx, uint8_t ch)
+/**
+ * @brief 发送一个字节到指定的USART外设
+ * 
+ * @param pUSARTx USART外设指针
+ * @param ch 要发送的字节
+ */
+void Usart_SendByte(USART_TypeDef* pUSARTx, uint8_t ch)
 {
-	/* 发送一个字节数据到USART */
-	USART_SendData(pUSARTx,ch);
-		
-	/* 等待发送数据寄存器为空 */
-	while (USART_GetFlagStatus(pUSARTx, USART_FLAG_TXE) == RESET);	
+	// 发送一个字节
+	USART_SendData(pUSARTx, ch);
+
+	// 等待发送数据寄存器为空
+	while(USART_GetFlagStatus(pUSARTx, USART_FLAG_TXE) == RESET)
+	{
+		;
+	}
 }
 
-/****************** 发送8位的数组 ************************/
-void Usart_SendArray( USART_TypeDef * pUSARTx, uint8_t *array, uint16_t num)
+/**
+ * @brief 发送两个字节的数据
+ * 
+ * @param pUSARTx USART外设指针
+ * @param ch 要发送的16位数据
+ */
+void Usart_SendHalfWord(USART_TypeDef* pUSARTx, uint16_t ch)
 {
-  uint8_t i;
-	
-	for(i=0; i<num; i++)
-  {
-	    /* 发送一个字节数据到USART */
-	    Usart_SendByte(pUSARTx,array[i]);	
-  
-  }
-	/* 等待发送完成 */
-	while(USART_GetFlagStatus(pUSARTx,USART_FLAG_TC)==RESET);
+    uint8_t tmp_h, tmp_l;
+
+    tmp_h = (ch & 0xFF00) >> 8; // 取出高八位
+    tmp_l = (ch & 0xFF) >> 0; // 取出低八位
+
+    USART_SendData(pUSARTx, tmp_h); // 发送高八位
+    while(USART_GetFlagStatus(pUSARTx, USART_FLAG_TXE) == RESET)
+    {
+        ;
+    }
+
+    USART_SendData(pUSARTx, tmp_l); // 发送低八位
+    while(USART_GetFlagStatus(pUSARTx, USART_FLAG_TXE) == RESET)
+    {
+        ;
+    }
 }
 
-/*****************  发送字符串 **********************/
-void Usart_SendString( USART_TypeDef * pUSARTx, char *str)
+/**
+ * @brief Sends an array of bytes over USART.
+ * 
+ * This function sends an array of bytes over the specified USART peripheral.
+ * 
+ * @param pUSARTx The USART peripheral to use.
+ * @param array Pointer to the array of bytes to send.
+ * @param num The number of bytes to send.
+ */
+void Usart_SendArray(USART_TypeDef* pUSARTx, uint8_t* array, uint16_t num)
 {
-	unsigned int k=0;
-  do 
-  {
-      Usart_SendByte( pUSARTx, *(str + k) );
-      k++;
-  } while(*(str + k)!='\0');
-  
-  /* 等待发送完成 */
-  while(USART_GetFlagStatus(pUSARTx,USART_FLAG_TC)==RESET)
-  {}
+	for(uint16_t i = 0; i < num; i++)
+	{
+		Usart_SendByte(pUSARTx, array[i]);
+	}
+	while(USART_GetFlagStatus(pUSARTx, USART_FLAG_TC) == RESET)
+	{
+		;
+	}
 }
 
-/*****************  发送一个16位数 **********************/
-void Usart_SendHalfWord( USART_TypeDef * pUSARTx, uint16_t ch)
+/**
+ * @brief 发送字符串到USART外设
+ * 
+ * @param pUSARTx USART外设指针
+ * @param str 要发送的字符串
+ */
+void Usart_SendString(USART_TypeDef* pUSARTx, uint8_t* str)
 {
-	uint8_t temp_h, temp_l;
-	
-	/* 取出高八位 */
-	temp_h = (ch&0XFF00)>>8;
-	/* 取出低八位 */
-	temp_l = ch&0XFF;
-	
-	/* 发送高八位 */
-	USART_SendData(pUSARTx,temp_h);	
-	while (USART_GetFlagStatus(pUSARTx, USART_FLAG_TXE) == RESET);
-	
-	/* 发送低八位 */
-	USART_SendData(pUSARTx,temp_l);	
-	while (USART_GetFlagStatus(pUSARTx, USART_FLAG_TXE) == RESET);	
+	// 发送数据
+	uint8_t i = 0;
+	do
+	{
+		Usart_SendByte(pUSARTx, *(str + i));
+		i++;
+	} while (*(str + i) != '\0');
+
+	// 等待发送完成
+	while(USART_GetFlagStatus(pUSARTx, USART_FLAG_TC) == RESET)
+	{
+		;
+	}
 }
 
-///重定向c库函数printf到串口，重定向后可使用printf函数
-int fputc(int ch, FILE *f)
+// 重定向c库函数printf, putchar到串口，重定向后可使用printf, putchar函数
+/**
+ * @brief 重定向标准输出函数
+ * @param ch 要发送的字符
+ * @param f 文件指针
+ * @retval 发送的字符
+ */
+int fputc(int ch, FILE* f)
 {
-		/* 发送一个字节数据到串口 */
-		USART_SendData(DEBUG_USARTx, (uint8_t) ch);
-		
-		/* 等待发送完毕 */
-		while (USART_GetFlagStatus(DEBUG_USARTx, USART_FLAG_TXE) == RESET);		
-	
-		return (ch);
+	USART_SendData(DEBUG_USARTx, (uint8_t)ch);
+
+	while (USART_GetFlagStatus(DEBUG_USARTx, USART_FLAG_TXE) == RESET)
+	{
+		;
+	}
+
+	return (ch);
 }
 
-///重定向c库函数scanf到串口，重写向后可使用scanf、getchar等函数
+/**
+ * @brief 重定向c库函数scanf到串口，重写向后可使用scanf、getchar等函数
+ * 
+ * @param f 文件指针
+ * @return int 从串口接收到的数据
+ */
 int fgetc(FILE *f)
 {
-		/* 等待串口输入数据 */
-		while (USART_GetFlagStatus(DEBUG_USARTx, USART_FLAG_RXNE) == RESET);
+	/* 等待串口输入数据 */
+	while (USART_GetFlagStatus(DEBUG_USARTx, USART_FLAG_RXNE) == RESET);
 
-		return (int)USART_ReceiveData(DEBUG_USARTx);
+	return (int)USART_ReceiveData(DEBUG_USARTx);
 }
