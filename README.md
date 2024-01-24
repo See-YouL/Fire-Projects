@@ -3305,6 +3305,14 @@ typedef struct
 
 ![USART的GPIO配置](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401220904826.png)
 
+### 配置串口助手
+
+**本项目使用的串口助手: 野火多功能调试助手V1.0.2.9**
+
+串口配置如下图(*串口配置参数与串口的初始化配置有关, 该配置符合下文代码的初始化*)
+
+![串口助手配置](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401250242370.png)
+
 ### USART实验1
 
 **项目地址 : 21 - USART**
@@ -3699,6 +3707,28 @@ int main(void)
 }
 
 ```
+
+在stm32f10x_it.c中编写中断服务函数实现串口数据的接收并发送
+
+```c
+/**
+ * @brief Interrupt handler for the DEBUG_USART.
+ *
+ * This function is called when there is a receive interrupt from the DEBUG_USART.
+ * It receives data from the DEBUG_USART and sends it back.
+ */
+void DEBUG_USART_IRQHandler(void)
+{
+  uint8_t ucTemp;
+
+  if(USART_GetITStatus(DEBUG_USARTx, USART_IT_RXNE) != RESET)
+  {
+    ucTemp = USART_ReceiveData(DEBUG_USARTx); // Receive data into ucTemp
+    USART_SendData(DEBUG_USARTx, ucTemp); // Send data
+  }
+}
+```
+
 
 ### 补充: 通过重写fputc函数重定向C库函数printf到串口
 
