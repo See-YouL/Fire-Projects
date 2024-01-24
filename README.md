@@ -892,7 +892,7 @@ while(1)
 
 ### GPIO输出-使用固件库点亮LED
 
-项目地址: **12: GPIO输出-使用固件库点亮LED**
+项目地址: **12-GPIO输出-使用固件库点亮LED**
 
 在User目录下新建led文件夹，添加bsp_led.c和bsp_led.h
 
@@ -1034,7 +1034,7 @@ int main() {
 
 ### GPIO输入
 
-项目地址: **13: GPIO输入-按键检测**
+项目地址: **13-GPIO输入-按键检测**
 
 通过原理图可知**KEY1接PA0口, 按键按下后为高电平**, 原理图如下
 
@@ -1246,7 +1246,7 @@ unsigned int *alias_address = (unsigned int *)BITBAND_PERIPH(0x40000000, 2);
 
 ### 使用位带操作实现GPIO的输出和输入
 
-项目地址: **14: 位带操作-GPIO的输出和输入**
+项目地址: **14-位带操作-GPIO的输出和输入**
 
 **使用位带操作实现GPIO输出: LED_B的闪烁**
 
@@ -2257,7 +2257,7 @@ static void SetSysClockTo72(void)
 
 ### HSE配置系统时钟
 
-项目地址: **16: 使用HSE配置系统时钟并使用MCO输出监控系统时钟**
+项目地址: **16-使用HSE配置系统时钟并使用MCO输出监控系统时钟**
 
 在bsp_rccclkconfig.c中写入HSE的配置函数, 参数为倍频因子 
 
@@ -2383,7 +2383,7 @@ int main(void)
 
 ### 使用HSI配置系统时钟并用MCO监控系统时钟
 
-项目地址: **16: 使用HSI配置系统时钟并用MCO监控系统时钟** 
+项目地址: **16-使用HSI配置系统时钟并用MCO监控系统时钟** 
 
 在bsp_rccclkconfig.c中编写HSI配置系统时钟函数
 
@@ -2670,7 +2670,7 @@ void GPIO_EXTILineConfig(uint8_t GPIO_PortSource, uint8_t GPIO_PinSource)
 
 ### EXTI中断实验
 
-项目地址: **18 : EXTI 中断实验**
+项目地址: **18-EXTI**
 
 **项目需求:**
 
@@ -2910,7 +2910,7 @@ static __INLINE uint32_t SysTick_Config(uint32_t ticks)
 
 ### SysTick 实验
 
-项目地址: **19: SysTick实验**
+项目地址: **19-SysTick**
 
 实验要求:
 
@@ -3313,9 +3313,9 @@ typedef struct
 
 ![串口助手配置](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401250242370.png)
 
-### USART实验1
+### USART接收和发送实验
 
-**项目地址 : 21 - USART**
+**项目地址 : 21-USART-接收和发送**
 
 **实验需求**: 单片机给电脑发送数据, 电脑上位机把数据打印出来; 电脑上位机给单片机发数据, 单片机接收到数据之后立马发回给电脑, 并打印出来.
 
@@ -3771,8 +3771,8 @@ int main() {
 
 需要注意的是，具体的串口发送函数实现（比如 sendCharacterToSerialPort）需要根据你的具体硬件和系统来编写。这个示例只是演示了重定向的基本原理。
 
-### USART实验2
+### USART控制RGB灯实验
 
-**项目地址 : 21 - USART**
+**项目地址 : 21-USART-控制RGB灯**
 
 **实验需求**: 电脑给单片机发命令, 用于控制开发板上的RGB灯.
