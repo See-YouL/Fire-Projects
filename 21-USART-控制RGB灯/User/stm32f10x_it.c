@@ -23,7 +23,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
-#include "bsp_usart.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -137,22 +136,6 @@ void SysTick_Handler(void)
 {
 }
 
-/**
- * @brief Interrupt handler for the DEBUG_USART.
- *
- * This function is called when there is a receive interrupt from the DEBUG_USART.
- * It receives data from the DEBUG_USART and sends it back.
- */
-void DEBUG_USART_IRQHandler(void)
-{
-  uint8_t ucTemp;
-
-  if(USART_GetITStatus(DEBUG_USARTx, USART_IT_RXNE) != RESET)
-  {
-    ucTemp = USART_ReceiveData(DEBUG_USARTx); // Receive data into ucTemp
-    USART_SendData(DEBUG_USARTx, ucTemp); // Send data
-  }
-}
  
 
 /******************************************************************************/

@@ -93,15 +93,15 @@
         {
             "name": "USART",
             "includePath": [
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21\\Libraries\\CMSIS",
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21\\Libraries\\STM32F10x_StdPeriph_Driver\\inc",
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21\\User",
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21\\User\\led",
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21\\User\\usart",
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21-USART-控制RGB灯\\Libraries\\CMSIS",
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21-USART-控制RGB灯\\Libraries\\STM32F10x_StdPeriph_Driver\\inc",
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21-USART-控制RGB灯\\User",
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21-USART-控制RGB灯\\User\\led",
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21-USART-控制RGB灯\\User\\usart",
                 "D:\\Embedded\\MDK\\Core\\ARM\\ARMCC\\include",
                 "D:\\Embedded\\MDK\\Core\\ARM\\ARMCC\\include\\rw",
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21\\Libraries\\CMSIS\\startup",
-                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21\\Libraries\\STM32F10x_StdPeriph_Driver\\src"
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21-USART-控制RGB灯\\Libraries\\CMSIS\\startup",
+                "e:\\Personal\\IT\\Embedded\\Stm32\\Fire\\Fire-Projects\\21-USART-控制RGB灯\\Libraries\\STM32F10x_StdPeriph_Driver\\src"
             ],
             "defines": [
                 "USE_STDPERIPH_DRIVER",

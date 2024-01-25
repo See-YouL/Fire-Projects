@@ -4,38 +4,40 @@
 
 int main(void)
 {
+    uint8_t ch = 0;
+
     USART_Config(); // 初始化USART
+    LED_GPIO_Config(); // 初始化LED
 
-    // 发送1字节数据
-    Usart_SendByte(DEBUG_USARTx, 'a');
-    Usart_SendByte(DEBUG_USARTx, '\n');
-
-    // 发送2字节数据
-    Usart_SendHalfWord(DEBUG_USARTx, 0xFF56);
-
-    // 发送数组
-    Usart_SendArray(DEBUG_USARTx, (uint8_t*)"Hello World!", 11);
-    uint8_t array[11] = {"Hello World!"};
-    Usart_SendArray(DEBUG_USARTx, array, 11);
-
-    // 发送字符串
-    Usart_SendString(DEBUG_USARTx, "\nString: Hello World\n");
-
-    // 重定向printf函数
-    printf("printf: Hello World\n");
-
-    // 重定向putchar函数
-    putchar('p');
-    putchar('u');
-    putchar('t');
-    putchar('c');
-    putchar('h');
-    putchar('a');
-    putchar('r');
-    putchar('\n');
+    printf("USART-RGB\n");
+    printf("1:RED, 2:GREEN, 3:BLUE, 4:YELLOW, 5:PURPLE, 6:CYAN, 7:WHITE\n");
+    printf("Others: BLACK\n");
     
+
     while(1)
     {
-        ;
+        ch = getchar();
+        printf("ch = %c\n", ch);
+
+        switch(ch)
+        {
+        case '1': LED_RED;
+            break;
+        case '2': LED_GREEN;
+            break;
+        case '3': LED_BLUE;
+            break;
+        case '4': LED_YELLOW;
+            break;
+        case '5': LED_PURPLE;
+            break;
+        case '6': LED_CYAN;
+            break;
+        case '7': LED_WHITE;
+            break;
+        
+        default: LED_RGBOFF;
+            break;
+        }
     }
 }

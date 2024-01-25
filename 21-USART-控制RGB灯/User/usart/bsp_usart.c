@@ -1,30 +1,6 @@
 #include "bsp_usart.h"
 
  /**
-  * @brief  配置嵌套向量中断控制器NVIC
-  * @param  无
-  * @retval 无
-  */
-static void NVIC_Configuration(void)
-{
-  NVIC_InitTypeDef NVIC_InitStructure;
-  
-  /* 嵌套向量中断控制器组选择 */
-  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
-  
-  /* 配置USART为中断源 */
-  NVIC_InitStructure.NVIC_IRQChannel = DEBUG_USART_IRQ;
-  /* 抢断优先级*/
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
-  /* 子优先级 */
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
-  /* 使能中断 */
-  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-  /* 初始化配置NVIC */
-  NVIC_Init(&NVIC_InitStructure);
-}
-
- /**
   * @brief  USART GPIO 配置,工作参数配置
   * @param  无
   * @retval 无
@@ -68,11 +44,8 @@ void USART_Config(void)
 	// 完成串口的初始化配置
 	USART_Init(DEBUG_USARTx, &USART_InitStructure);
 	
-	// 串口中断优先级配置
-	NVIC_Configuration();
-	
-	// 使能串口接收中断
-	USART_ITConfig(DEBUG_USARTx, USART_IT_RXNE, ENABLE);	
+	// 将中断失能
+	USART_ITConfig(DEBUG_USARTx, USART_IT_RXNE, DISABLE);	
 	
 	// 使能串口
 	USART_Cmd(DEBUG_USARTx, ENABLE);	    
