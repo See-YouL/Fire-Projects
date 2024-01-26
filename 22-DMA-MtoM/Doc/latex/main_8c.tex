@@ -7,17 +7,28 @@ DMA实验1(存储器到存储器)的主函数
 
 {\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
 {\ttfamily \#include "{}bsp\+\_\+led.\+h"{}}\newline
+{\ttfamily \#include "{}bsp\+\_\+dma\+\_\+m2m.\+h"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{main_8c_a20679ea811a6b044d089823921d1c77b}{Delay}} (uint32\+\_\+t count)
-\item 
+void \mbox{\hyperlink{main_8c_a1d3146414c54513a72a7596c2f884c07}{Delay\+\_\+ms}} (uint32\+\_\+t ms)
+\begin{DoxyCompactList}\small\item\em Delays the execution for a specified number of milliseconds. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint32\+\_\+t \mbox{\hyperlink{main_8c_a96c7fa8d5ff9537b15a74dab7eddaadd}{a\+SRC\+\_\+\+Const\+\_\+\+Buffer}} \mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{main_8c_a6eeef06891d613407dde2e65235b6c0f}{a\+DST\+\_\+\+Buffer}} \mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em 定义\+DMA传输目标存储器 存储在内部的\+SRAM中 ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 DMA实验1(存储器到存储器)的主函数 
+
+DMA Memory-\/to-\/\+Memory Transfer Example.
 
 \begin{DoxyAuthor}{Author}
 eric 
@@ -26,20 +37,52 @@ eric
 None 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-2024年1月26日14\+:47\+:55  
+2024年1月26日14\+:47\+:55 
 \end{DoxyDate}
-
+This file contains the main function for a DMA memory-\/to-\/memory transfer example. It initializes the LED, configures the DMA, waits for the DMA transfer to complete, compares the data in two arrays, and controls the LED based on the comparison result. 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{main_8c_a20679ea811a6b044d089823921d1c77b}\label{main_8c_a20679ea811a6b044d089823921d1c77b} 
-\index{main.c@{main.c}!Delay@{Delay}}
-\index{Delay@{Delay}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{Delay()}{Delay()}}
-{\footnotesize\ttfamily void Delay (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{count }\end{DoxyParamCaption})}
+\Hypertarget{main_8c_a1d3146414c54513a72a7596c2f884c07}\label{main_8c_a1d3146414c54513a72a7596c2f884c07} 
+\index{main.c@{main.c}!Delay\_ms@{Delay\_ms}}
+\index{Delay\_ms@{Delay\_ms}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{Delay\_ms()}{Delay\_ms()}}
+{\footnotesize\ttfamily void Delay\+\_\+ms (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ms }\end{DoxyParamCaption})}
 
+
+
+Delays the execution for a specified number of milliseconds. 
+
+(Not Sure) 
+\begin{DoxyParams}{Parameters}
+{\em ms} & The number of milliseconds to delay. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
 \Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
 \index{main.c@{main.c}!main@{main}}
 \index{main@{main}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8c_a6eeef06891d613407dde2e65235b6c0f}\label{main_8c_a6eeef06891d613407dde2e65235b6c0f} 
+\index{main.c@{main.c}!aDST\_Buffer@{aDST\_Buffer}}
+\index{aDST\_Buffer@{aDST\_Buffer}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{aDST\_Buffer}{aDST\_Buffer}}
+{\footnotesize\ttfamily uint32\+\_\+t a\+DST\+\_\+\+Buffer\mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+定义\+DMA传输目标存储器 存储在内部的\+SRAM中 ~\newline
+ 
+
+\Hypertarget{main_8c_a96c7fa8d5ff9537b15a74dab7eddaadd}\label{main_8c_a96c7fa8d5ff9537b15a74dab7eddaadd} 
+\index{main.c@{main.c}!aSRC\_Const\_Buffer@{aSRC\_Const\_Buffer}}
+\index{aSRC\_Const\_Buffer@{aSRC\_Const\_Buffer}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{aSRC\_Const\_Buffer}{aSRC\_Const\_Buffer}}
+{\footnotesize\ttfamily const uint32\+\_\+t a\+SRC\+\_\+\+Const\+\_\+\+Buffer\mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
 

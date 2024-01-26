@@ -9,8 +9,8 @@ var searchData=
   ['hse_5fvalue_6',['HSE_VALUE',['../group___library__configuration__section.html#gaeafcff4f57440c60e64812dddd13e7cb',1,'stm32f10x.h']]],
   ['hse_5fvalue_7',['HSE_Value',['../group___exported__types.html#gab12a1abe6dd0001e7a0487a8b175b28c',1,'stm32f10x.h']]],
   ['hsestartup_5ftimeout_8',['HSEStartUp_TimeOut',['../group___exported__types.html#ga7e69dacd5c3b950b5b1786d7336b30d3',1,'stm32f10x.h']]],
-  ['hsi_5fvalue_9',['HSI_Value',['../group___exported__types.html#ga5718ca1fe0825cdbebb466886cfb5016',1,'stm32f10x.h']]],
-  ['hsi_5fvalue_10',['HSI_VALUE',['../group___library__configuration__section.html#gaaa8c76e274d0f6dd2cefb5d0b17fbc37',1,'stm32f10x.h']]],
+  ['hsi_5fvalue_9',['HSI_VALUE',['../group___library__configuration__section.html#gaaa8c76e274d0f6dd2cefb5d0b17fbc37',1,'stm32f10x.h']]],
+  ['hsi_5fvalue_10',['HSI_Value',['../group___exported__types.html#ga5718ca1fe0825cdbebb466886cfb5016',1,'stm32f10x.h']]],
   ['hsion_5fbitnumber_11',['HSION_BitNumber',['../group___r_c_c___private___defines.html#ga3d3085e491cbef815d223afbe5bf1930',1,'stm32f10x_rcc.c']]],
   ['htr_12',['HTR',['../struct_a_d_c___type_def.html#a297ac2d83a1837bfdc0333474b977de0',1,'ADC_TypeDef']]]
 ];

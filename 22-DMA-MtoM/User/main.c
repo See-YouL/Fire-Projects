@@ -34,6 +34,14 @@ void Delay_ms(uint32_t ms)
     }
 }
 
+/**
+ * @file main.c
+ * @brief DMA Memory-to-Memory Transfer Example
+ *
+ * This file contains the main function for a DMA memory-to-memory transfer example.
+ * It initializes the LED, configures the DMA, waits for the DMA transfer to complete,
+ * compares the data in two arrays, and controls the LED based on the comparison result.
+ */
 int main(void)
 {
     uint8_t status = 0; // 接收比较的结构
