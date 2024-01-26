@@ -1,0 +1,113 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+User/dma/bsp\+\_\+dma\+\_\+m2m.c File Reference}
+\hypertarget{bsp__dma__m2m_8c}{}\label{bsp__dma__m2m_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/User/dma/bsp\_dma\_m2m.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/User/dma/bsp\_dma\_m2m.c}}
+
+
+DMA存储器到存储器模式配置  
+
+
+{\ttfamily \#include "{}bsp\+\_\+dma\+\_\+m2m.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bsp__dma__m2m_8c_ab02e55d9ea8e5048e5610c0dc045a3e6}{M2\+M\+\_\+\+DMA\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em 配置存储器到存储器的\+DMA传输 \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{bsp__dma__m2m_8c_a28e1e2cfd02611fdf35e21c5a15a091b}{Buffercmp}} (const uint32\+\_\+t \texorpdfstring{$\ast$}{*}p\+Buffer, uint32\+\_\+t \texorpdfstring{$\ast$}{*}p\+Buffer1, uint16\+\_\+t Buffer\+Length)
+\begin{DoxyCompactList}\small\item\em 比较两个缓冲区的数据是否相等 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint32\+\_\+t \mbox{\hyperlink{bsp__dma__m2m_8c_a96c7fa8d5ff9537b15a74dab7eddaadd}{a\+SRC\+\_\+\+Const\+\_\+\+Buffer}} \mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{bsp__dma__m2m_8c_a6eeef06891d613407dde2e65235b6c0f}{a\+DST\+\_\+\+Buffer}} \mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em 定义\+DMA传输目标存储器 存储在内部的\+SRAM中 ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+DMA存储器到存储器模式配置 
+
+\begin{DoxyAuthor}{Author}
+eric 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+None 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024年1月26日14\+:43\+:41  
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bsp__dma__m2m_8c_a28e1e2cfd02611fdf35e21c5a15a091b}\label{bsp__dma__m2m_8c_a28e1e2cfd02611fdf35e21c5a15a091b} 
+\index{bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}!Buffercmp@{Buffercmp}}
+\index{Buffercmp@{Buffercmp}!bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}}
+\doxysubsubsection{\texorpdfstring{Buffercmp()}{Buffercmp()}}
+{\footnotesize\ttfamily uint8\+\_\+t Buffercmp (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Buffer,  }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Buffer1,  }\item[{uint16\+\_\+t}]{Buffer\+Length }\end{DoxyParamCaption})}
+
+
+
+比较两个缓冲区的数据是否相等 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Buffer} & 指向第一个缓冲区的指针 \\
+\hline
+{\em p\+Buffer1} & 指向第二个缓冲区的指针 \\
+\hline
+{\em Buffer\+Length} & 缓冲区的长度 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 如果两个缓冲区的数据相等，则返回1；否则返回0 
+\end{DoxyReturn}
+\Hypertarget{bsp__dma__m2m_8c_ab02e55d9ea8e5048e5610c0dc045a3e6}\label{bsp__dma__m2m_8c_ab02e55d9ea8e5048e5610c0dc045a3e6} 
+\index{bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}!M2M\_DMA\_Config@{M2M\_DMA\_Config}}
+\index{M2M\_DMA\_Config@{M2M\_DMA\_Config}!bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}}
+\doxysubsubsection{\texorpdfstring{M2M\_DMA\_Config()}{M2M\_DMA\_Config()}}
+{\footnotesize\ttfamily void M2\+M\+\_\+\+DMA\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+配置存储器到存储器的\+DMA传输 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{bsp__dma__m2m_8c_a6eeef06891d613407dde2e65235b6c0f}\label{bsp__dma__m2m_8c_a6eeef06891d613407dde2e65235b6c0f} 
+\index{bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}!aDST\_Buffer@{aDST\_Buffer}}
+\index{aDST\_Buffer@{aDST\_Buffer}!bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}}
+\doxysubsubsection{\texorpdfstring{aDST\_Buffer}{aDST\_Buffer}}
+{\footnotesize\ttfamily uint32\+\_\+t a\+DST\+\_\+\+Buffer\mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}}
+
+
+
+定义\+DMA传输目标存储器 存储在内部的\+SRAM中 ~\newline
+ 
+
+\Hypertarget{bsp__dma__m2m_8c_a96c7fa8d5ff9537b15a74dab7eddaadd}\label{bsp__dma__m2m_8c_a96c7fa8d5ff9537b15a74dab7eddaadd} 
+\index{bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}!aSRC\_Const\_Buffer@{aSRC\_Const\_Buffer}}
+\index{aSRC\_Const\_Buffer@{aSRC\_Const\_Buffer}!bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}}
+\doxysubsubsection{\texorpdfstring{aSRC\_Const\_Buffer}{aSRC\_Const\_Buffer}}
+{\footnotesize\ttfamily const uint32\+\_\+t a\+SRC\+\_\+\+Const\+\_\+\+Buffer\mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01020304,0x05060708,0x090A0B0C,0x0D0E0F10,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x11121314,0x15161718,0x191A1B1C,0x1D1E1F20,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x21222324,0x25262728,0x292A2B2C,0x2D2E2F30,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x31323334,0x35363738,0x393A3B3C,0x3D3E3F40,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x41424344,0x45464748,0x494A4B4C,0x4D4E4F50,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x51525354,0x55565758,0x595A5B5C,0x5D5E5F60,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x61626364,0x65666768,0x696A6B6C,0x6D6E6F70,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x71727374,0x75767778,0x797A7B7C,0x7D7E7F80\}}
+
+\end{DoxyCode}

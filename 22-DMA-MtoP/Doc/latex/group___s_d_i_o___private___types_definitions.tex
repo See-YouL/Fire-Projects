@@ -1,0 +1,245 @@
+\doxysubsubsection{SDIO\+\_\+\+Private\+\_\+\+Types\+Definitions}
+\hypertarget{group___s_d_i_o___private___types_definitions}{}\label{group___s_d_i_o___private___types_definitions}\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gabf07aced03df5f46d57cea1d4f56d1e3}{SDIO\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___peripheral__memory__map_ga95dd0abbc6767893b4b02935fa846f52}{SDIO\+\_\+\+BASE}} -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gac5d642be874338519fdec175204ca8ed}{CLKCR\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gabf07aced03df5f46d57cea1d4f56d1e3}{SDIO\+\_\+\+OFFSET}} + 0x04)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga6ad1da47f9d84c54eb620b9231ebec86}{CLKEN\+\_\+\+Bit\+Number}}~0x08
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gabfb5772b9b734972b576309f7ca8bf92}{CLKCR\+\_\+\+CLKEN\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gac5d642be874338519fdec175204ca8ed}{CLKCR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga6ad1da47f9d84c54eb620b9231ebec86}{CLKEN\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e}{CMD\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gabf07aced03df5f46d57cea1d4f56d1e3}{SDIO\+\_\+\+OFFSET}} + 0x0C)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gaf88f03a42d76974b55dfb8bda65ade97}{SDIOSUSPEND\+\_\+\+Bit\+Number}}~0x0B
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga931e48aa282e2a937308f57f807e0781}{CMD\+\_\+\+SDIOSUSPEND\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e}{CMD\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gaf88f03a42d76974b55dfb8bda65ade97}{SDIOSUSPEND\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga1d1112c7b804791a0fffd8b317085aeb}{ENCMDCOMPL\+\_\+\+Bit\+Number}}~0x0C
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gade06098d1616639ce5f1b70675280b7c}{CMD\+\_\+\+ENCMDCOMPL\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e}{CMD\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga1d1112c7b804791a0fffd8b317085aeb}{ENCMDCOMPL\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gab6d83a7ccd4a0d9ea9a09fec263fb25f}{NIEN\+\_\+\+Bit\+Number}}~0x0D
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga08623f1d053677de8b20a6f5f5090edd}{CMD\+\_\+\+NIEN\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e}{CMD\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gab6d83a7ccd4a0d9ea9a09fec263fb25f}{NIEN\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gabd4fd3bb700b879f843ccc867db1832e}{ATACMD\+\_\+\+Bit\+Number}}~0x0E
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gabb7e537f931b6fdd3b49e826f2e19d7c}{CMD\+\_\+\+ATACMD\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e}{CMD\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gabd4fd3bb700b879f843ccc867db1832e}{ATACMD\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}{DCTRL\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gabf07aced03df5f46d57cea1d4f56d1e3}{SDIO\+\_\+\+OFFSET}} + 0x2C)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gab2af311e327213503f0dbf3d013b7944}{DMAEN\+\_\+\+Bit\+Number}}~0x03
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga43f7336d4f955c6cf1f676ccbc043fe9}{DCTRL\+\_\+\+DMAEN\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}{DCTRL\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gab2af311e327213503f0dbf3d013b7944}{DMAEN\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga773045c51d3e8daee0c181517c44a2df}{RWSTART\+\_\+\+Bit\+Number}}~0x08
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gac776c39dfac0e1ed007217133e1145c3}{DCTRL\+\_\+\+RWSTART\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}{DCTRL\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga773045c51d3e8daee0c181517c44a2df}{RWSTART\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gae8c0654ad5cba23281bcfa77ef19b9cf}{RWSTOP\+\_\+\+Bit\+Number}}~0x09
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga678da1db835676b0fb1976cf3408e2d1}{DCTRL\+\_\+\+RWSTOP\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}{DCTRL\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gae8c0654ad5cba23281bcfa77ef19b9cf}{RWSTOP\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gad7b722671f65e79d1be2899b643278ad}{RWMOD\+\_\+\+Bit\+Number}}~0x0A
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gad34bfe8650534ce24320ae83886c91e3}{DCTRL\+\_\+\+RWMOD\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}{DCTRL\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gad7b722671f65e79d1be2899b643278ad}{RWMOD\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga37f3e1612e0dae8160be978ebfa54301}{SDIOEN\+\_\+\+Bit\+Number}}~0x0B
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga894f7da62b89ddd9f4b79d066056a3c7}{DCTRL\+\_\+\+SDIOEN\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}{DCTRL\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga37f3e1612e0dae8160be978ebfa54301}{SDIOEN\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gac8d10dd1e49ca9e8a6954146654e9a01}{CLKCR\+\_\+\+CLEAR\+\_\+\+MASK}}~((uint32\+\_\+t)0x\+FFFF8100)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga7e6ec7be68d0fbb8fb4e3725cca9a05c}{PWR\+\_\+\+PWRCTRL\+\_\+\+MASK}}~((uint32\+\_\+t)0x\+FFFFFFFC)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga9e9fc7810b95805aeeb760bbdd87fa9b}{DCTRL\+\_\+\+CLEAR\+\_\+\+MASK}}~((uint32\+\_\+t)0x\+FFFFFF08)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga2325d77090e44221b07f8fba5bc9217e}{CMD\+\_\+\+CLEAR\+\_\+\+MASK}}~((uint32\+\_\+t)0x\+FFFFF800)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga4285ce49b005e3d03ddf9fdc491c4d70}{SDIO\+\_\+\+RESP\+\_\+\+ADDR}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral__memory__map_ga95dd0abbc6767893b4b02935fa846f52}{SDIO\+\_\+\+BASE}} + 0x14))
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___s_d_i_o___private___types_definitions_gabd4fd3bb700b879f843ccc867db1832e}\label{group___s_d_i_o___private___types_definitions_gabd4fd3bb700b879f843ccc867db1832e} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!ATACMD\_BitNumber@{ATACMD\_BitNumber}}
+\index{ATACMD\_BitNumber@{ATACMD\_BitNumber}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{ATACMD\_BitNumber}{ATACMD\_BitNumber}}
+{\footnotesize\ttfamily \#define ATACMD\+\_\+\+Bit\+Number~0x0E}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gac8d10dd1e49ca9e8a6954146654e9a01}\label{group___s_d_i_o___private___types_definitions_gac8d10dd1e49ca9e8a6954146654e9a01} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!CLKCR\_CLEAR\_MASK@{CLKCR\_CLEAR\_MASK}}
+\index{CLKCR\_CLEAR\_MASK@{CLKCR\_CLEAR\_MASK}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{CLKCR\_CLEAR\_MASK}{CLKCR\_CLEAR\_MASK}}
+{\footnotesize\ttfamily \#define CLKCR\+\_\+\+CLEAR\+\_\+\+MASK~((uint32\+\_\+t)0x\+FFFF8100)}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gabfb5772b9b734972b576309f7ca8bf92}\label{group___s_d_i_o___private___types_definitions_gabfb5772b9b734972b576309f7ca8bf92} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!CLKCR\_CLKEN\_BB@{CLKCR\_CLKEN\_BB}}
+\index{CLKCR\_CLKEN\_BB@{CLKCR\_CLKEN\_BB}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{CLKCR\_CLKEN\_BB}{CLKCR\_CLKEN\_BB}}
+{\footnotesize\ttfamily \#define CLKCR\+\_\+\+CLKEN\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gac5d642be874338519fdec175204ca8ed}{CLKCR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga6ad1da47f9d84c54eb620b9231ebec86}{CLKEN\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gac5d642be874338519fdec175204ca8ed}\label{group___s_d_i_o___private___types_definitions_gac5d642be874338519fdec175204ca8ed} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!CLKCR\_OFFSET@{CLKCR\_OFFSET}}
+\index{CLKCR\_OFFSET@{CLKCR\_OFFSET}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{CLKCR\_OFFSET}{CLKCR\_OFFSET}}
+{\footnotesize\ttfamily \#define CLKCR\+\_\+\+OFFSET~(\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gabf07aced03df5f46d57cea1d4f56d1e3}{SDIO\+\_\+\+OFFSET}} + 0x04)}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga6ad1da47f9d84c54eb620b9231ebec86}\label{group___s_d_i_o___private___types_definitions_ga6ad1da47f9d84c54eb620b9231ebec86} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!CLKEN\_BitNumber@{CLKEN\_BitNumber}}
+\index{CLKEN\_BitNumber@{CLKEN\_BitNumber}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{CLKEN\_BitNumber}{CLKEN\_BitNumber}}
+{\footnotesize\ttfamily \#define CLKEN\+\_\+\+Bit\+Number~0x08}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gabb7e537f931b6fdd3b49e826f2e19d7c}\label{group___s_d_i_o___private___types_definitions_gabb7e537f931b6fdd3b49e826f2e19d7c} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!CMD\_ATACMD\_BB@{CMD\_ATACMD\_BB}}
+\index{CMD\_ATACMD\_BB@{CMD\_ATACMD\_BB}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{CMD\_ATACMD\_BB}{CMD\_ATACMD\_BB}}
+{\footnotesize\ttfamily \#define CMD\+\_\+\+ATACMD\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e}{CMD\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gabd4fd3bb700b879f843ccc867db1832e}{ATACMD\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga2325d77090e44221b07f8fba5bc9217e}\label{group___s_d_i_o___private___types_definitions_ga2325d77090e44221b07f8fba5bc9217e} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!CMD\_CLEAR\_MASK@{CMD\_CLEAR\_MASK}}
+\index{CMD\_CLEAR\_MASK@{CMD\_CLEAR\_MASK}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{CMD\_CLEAR\_MASK}{CMD\_CLEAR\_MASK}}
+{\footnotesize\ttfamily \#define CMD\+\_\+\+CLEAR\+\_\+\+MASK~((uint32\+\_\+t)0x\+FFFFF800)}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gade06098d1616639ce5f1b70675280b7c}\label{group___s_d_i_o___private___types_definitions_gade06098d1616639ce5f1b70675280b7c} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!CMD\_ENCMDCOMPL\_BB@{CMD\_ENCMDCOMPL\_BB}}
+\index{CMD\_ENCMDCOMPL\_BB@{CMD\_ENCMDCOMPL\_BB}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{CMD\_ENCMDCOMPL\_BB}{CMD\_ENCMDCOMPL\_BB}}
+{\footnotesize\ttfamily \#define CMD\+\_\+\+ENCMDCOMPL\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e}{CMD\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga1d1112c7b804791a0fffd8b317085aeb}{ENCMDCOMPL\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga08623f1d053677de8b20a6f5f5090edd}\label{group___s_d_i_o___private___types_definitions_ga08623f1d053677de8b20a6f5f5090edd} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!CMD\_NIEN\_BB@{CMD\_NIEN\_BB}}
+\index{CMD\_NIEN\_BB@{CMD\_NIEN\_BB}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{CMD\_NIEN\_BB}{CMD\_NIEN\_BB}}
+{\footnotesize\ttfamily \#define CMD\+\_\+\+NIEN\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e}{CMD\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gab6d83a7ccd4a0d9ea9a09fec263fb25f}{NIEN\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e}\label{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!CMD\_OFFSET@{CMD\_OFFSET}}
+\index{CMD\_OFFSET@{CMD\_OFFSET}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{CMD\_OFFSET}{CMD\_OFFSET}}
+{\footnotesize\ttfamily \#define CMD\+\_\+\+OFFSET~(\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gabf07aced03df5f46d57cea1d4f56d1e3}{SDIO\+\_\+\+OFFSET}} + 0x0C)}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga931e48aa282e2a937308f57f807e0781}\label{group___s_d_i_o___private___types_definitions_ga931e48aa282e2a937308f57f807e0781} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!CMD\_SDIOSUSPEND\_BB@{CMD\_SDIOSUSPEND\_BB}}
+\index{CMD\_SDIOSUSPEND\_BB@{CMD\_SDIOSUSPEND\_BB}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{CMD\_SDIOSUSPEND\_BB}{CMD\_SDIOSUSPEND\_BB}}
+{\footnotesize\ttfamily \#define CMD\+\_\+\+SDIOSUSPEND\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e}{CMD\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gaf88f03a42d76974b55dfb8bda65ade97}{SDIOSUSPEND\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga9e9fc7810b95805aeeb760bbdd87fa9b}\label{group___s_d_i_o___private___types_definitions_ga9e9fc7810b95805aeeb760bbdd87fa9b} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!DCTRL\_CLEAR\_MASK@{DCTRL\_CLEAR\_MASK}}
+\index{DCTRL\_CLEAR\_MASK@{DCTRL\_CLEAR\_MASK}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{DCTRL\_CLEAR\_MASK}{DCTRL\_CLEAR\_MASK}}
+{\footnotesize\ttfamily \#define DCTRL\+\_\+\+CLEAR\+\_\+\+MASK~((uint32\+\_\+t)0x\+FFFFFF08)}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga43f7336d4f955c6cf1f676ccbc043fe9}\label{group___s_d_i_o___private___types_definitions_ga43f7336d4f955c6cf1f676ccbc043fe9} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!DCTRL\_DMAEN\_BB@{DCTRL\_DMAEN\_BB}}
+\index{DCTRL\_DMAEN\_BB@{DCTRL\_DMAEN\_BB}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{DCTRL\_DMAEN\_BB}{DCTRL\_DMAEN\_BB}}
+{\footnotesize\ttfamily \#define DCTRL\+\_\+\+DMAEN\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}{DCTRL\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gab2af311e327213503f0dbf3d013b7944}{DMAEN\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}\label{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!DCTRL\_OFFSET@{DCTRL\_OFFSET}}
+\index{DCTRL\_OFFSET@{DCTRL\_OFFSET}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{DCTRL\_OFFSET}{DCTRL\_OFFSET}}
+{\footnotesize\ttfamily \#define DCTRL\+\_\+\+OFFSET~(\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gabf07aced03df5f46d57cea1d4f56d1e3}{SDIO\+\_\+\+OFFSET}} + 0x2C)}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gad34bfe8650534ce24320ae83886c91e3}\label{group___s_d_i_o___private___types_definitions_gad34bfe8650534ce24320ae83886c91e3} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!DCTRL\_RWMOD\_BB@{DCTRL\_RWMOD\_BB}}
+\index{DCTRL\_RWMOD\_BB@{DCTRL\_RWMOD\_BB}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{DCTRL\_RWMOD\_BB}{DCTRL\_RWMOD\_BB}}
+{\footnotesize\ttfamily \#define DCTRL\+\_\+\+RWMOD\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}{DCTRL\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gad7b722671f65e79d1be2899b643278ad}{RWMOD\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gac776c39dfac0e1ed007217133e1145c3}\label{group___s_d_i_o___private___types_definitions_gac776c39dfac0e1ed007217133e1145c3} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!DCTRL\_RWSTART\_BB@{DCTRL\_RWSTART\_BB}}
+\index{DCTRL\_RWSTART\_BB@{DCTRL\_RWSTART\_BB}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{DCTRL\_RWSTART\_BB}{DCTRL\_RWSTART\_BB}}
+{\footnotesize\ttfamily \#define DCTRL\+\_\+\+RWSTART\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}{DCTRL\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga773045c51d3e8daee0c181517c44a2df}{RWSTART\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga678da1db835676b0fb1976cf3408e2d1}\label{group___s_d_i_o___private___types_definitions_ga678da1db835676b0fb1976cf3408e2d1} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!DCTRL\_RWSTOP\_BB@{DCTRL\_RWSTOP\_BB}}
+\index{DCTRL\_RWSTOP\_BB@{DCTRL\_RWSTOP\_BB}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{DCTRL\_RWSTOP\_BB}{DCTRL\_RWSTOP\_BB}}
+{\footnotesize\ttfamily \#define DCTRL\+\_\+\+RWSTOP\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}{DCTRL\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_gae8c0654ad5cba23281bcfa77ef19b9cf}{RWSTOP\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga894f7da62b89ddd9f4b79d066056a3c7}\label{group___s_d_i_o___private___types_definitions_ga894f7da62b89ddd9f4b79d066056a3c7} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!DCTRL\_SDIOEN\_BB@{DCTRL\_SDIOEN\_BB}}
+\index{DCTRL\_SDIOEN\_BB@{DCTRL\_SDIOEN\_BB}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{DCTRL\_SDIOEN\_BB}{DCTRL\_SDIOEN\_BB}}
+{\footnotesize\ttfamily \#define DCTRL\+\_\+\+SDIOEN\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}{DCTRL\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___s_d_i_o___private___types_definitions_ga37f3e1612e0dae8160be978ebfa54301}{SDIOEN\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gab2af311e327213503f0dbf3d013b7944}\label{group___s_d_i_o___private___types_definitions_gab2af311e327213503f0dbf3d013b7944} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!DMAEN\_BitNumber@{DMAEN\_BitNumber}}
+\index{DMAEN\_BitNumber@{DMAEN\_BitNumber}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{DMAEN\_BitNumber}{DMAEN\_BitNumber}}
+{\footnotesize\ttfamily \#define DMAEN\+\_\+\+Bit\+Number~0x03}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga1d1112c7b804791a0fffd8b317085aeb}\label{group___s_d_i_o___private___types_definitions_ga1d1112c7b804791a0fffd8b317085aeb} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!ENCMDCOMPL\_BitNumber@{ENCMDCOMPL\_BitNumber}}
+\index{ENCMDCOMPL\_BitNumber@{ENCMDCOMPL\_BitNumber}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{ENCMDCOMPL\_BitNumber}{ENCMDCOMPL\_BitNumber}}
+{\footnotesize\ttfamily \#define ENCMDCOMPL\+\_\+\+Bit\+Number~0x0C}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gab6d83a7ccd4a0d9ea9a09fec263fb25f}\label{group___s_d_i_o___private___types_definitions_gab6d83a7ccd4a0d9ea9a09fec263fb25f} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!NIEN\_BitNumber@{NIEN\_BitNumber}}
+\index{NIEN\_BitNumber@{NIEN\_BitNumber}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{NIEN\_BitNumber}{NIEN\_BitNumber}}
+{\footnotesize\ttfamily \#define NIEN\+\_\+\+Bit\+Number~0x0D}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga7e6ec7be68d0fbb8fb4e3725cca9a05c}\label{group___s_d_i_o___private___types_definitions_ga7e6ec7be68d0fbb8fb4e3725cca9a05c} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!PWR\_PWRCTRL\_MASK@{PWR\_PWRCTRL\_MASK}}
+\index{PWR\_PWRCTRL\_MASK@{PWR\_PWRCTRL\_MASK}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{PWR\_PWRCTRL\_MASK}{PWR\_PWRCTRL\_MASK}}
+{\footnotesize\ttfamily \#define PWR\+\_\+\+PWRCTRL\+\_\+\+MASK~((uint32\+\_\+t)0x\+FFFFFFFC)}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gad7b722671f65e79d1be2899b643278ad}\label{group___s_d_i_o___private___types_definitions_gad7b722671f65e79d1be2899b643278ad} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!RWMOD\_BitNumber@{RWMOD\_BitNumber}}
+\index{RWMOD\_BitNumber@{RWMOD\_BitNumber}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{RWMOD\_BitNumber}{RWMOD\_BitNumber}}
+{\footnotesize\ttfamily \#define RWMOD\+\_\+\+Bit\+Number~0x0A}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga773045c51d3e8daee0c181517c44a2df}\label{group___s_d_i_o___private___types_definitions_ga773045c51d3e8daee0c181517c44a2df} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!RWSTART\_BitNumber@{RWSTART\_BitNumber}}
+\index{RWSTART\_BitNumber@{RWSTART\_BitNumber}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{RWSTART\_BitNumber}{RWSTART\_BitNumber}}
+{\footnotesize\ttfamily \#define RWSTART\+\_\+\+Bit\+Number~0x08}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gae8c0654ad5cba23281bcfa77ef19b9cf}\label{group___s_d_i_o___private___types_definitions_gae8c0654ad5cba23281bcfa77ef19b9cf} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!RWSTOP\_BitNumber@{RWSTOP\_BitNumber}}
+\index{RWSTOP\_BitNumber@{RWSTOP\_BitNumber}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{RWSTOP\_BitNumber}{RWSTOP\_BitNumber}}
+{\footnotesize\ttfamily \#define RWSTOP\+\_\+\+Bit\+Number~0x09}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gabf07aced03df5f46d57cea1d4f56d1e3}\label{group___s_d_i_o___private___types_definitions_gabf07aced03df5f46d57cea1d4f56d1e3} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!SDIO\_OFFSET@{SDIO\_OFFSET}}
+\index{SDIO\_OFFSET@{SDIO\_OFFSET}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{SDIO\_OFFSET}{SDIO\_OFFSET}}
+{\footnotesize\ttfamily \#define SDIO\+\_\+\+OFFSET~(\mbox{\hyperlink{group___peripheral__memory__map_ga95dd0abbc6767893b4b02935fa846f52}{SDIO\+\_\+\+BASE}} -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga4285ce49b005e3d03ddf9fdc491c4d70}\label{group___s_d_i_o___private___types_definitions_ga4285ce49b005e3d03ddf9fdc491c4d70} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!SDIO\_RESP\_ADDR@{SDIO\_RESP\_ADDR}}
+\index{SDIO\_RESP\_ADDR@{SDIO\_RESP\_ADDR}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{SDIO\_RESP\_ADDR}{SDIO\_RESP\_ADDR}}
+{\footnotesize\ttfamily \#define SDIO\+\_\+\+RESP\+\_\+\+ADDR~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral__memory__map_ga95dd0abbc6767893b4b02935fa846f52}{SDIO\+\_\+\+BASE}} + 0x14))}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga37f3e1612e0dae8160be978ebfa54301}\label{group___s_d_i_o___private___types_definitions_ga37f3e1612e0dae8160be978ebfa54301} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!SDIOEN\_BitNumber@{SDIOEN\_BitNumber}}
+\index{SDIOEN\_BitNumber@{SDIOEN\_BitNumber}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{SDIOEN\_BitNumber}{SDIOEN\_BitNumber}}
+{\footnotesize\ttfamily \#define SDIOEN\+\_\+\+Bit\+Number~0x0B}
+
+\Hypertarget{group___s_d_i_o___private___types_definitions_gaf88f03a42d76974b55dfb8bda65ade97}\label{group___s_d_i_o___private___types_definitions_gaf88f03a42d76974b55dfb8bda65ade97} 
+\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}!SDIOSUSPEND\_BitNumber@{SDIOSUSPEND\_BitNumber}}
+\index{SDIOSUSPEND\_BitNumber@{SDIOSUSPEND\_BitNumber}!SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection{\texorpdfstring{SDIOSUSPEND\_BitNumber}{SDIOSUSPEND\_BitNumber}}
+{\footnotesize\ttfamily \#define SDIOSUSPEND\+\_\+\+Bit\+Number~0x0B}
+

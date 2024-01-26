@@ -1,0 +1,53 @@
+\doxysection{stm32f10x\+\_\+iwdg.\+h}
+\hypertarget{stm32f10x__iwdg_8h_source}{}\label{stm32f10x__iwdg_8h_source}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_iwdg.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_iwdg.h}}
+\mbox{\hyperlink{stm32f10x__iwdg_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F10x\_IWDG\_H}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \_\_STM32F10x\_IWDG\_H}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f10x_8h}{stm32f10x.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ IWDG\_WriteAccess\_Enable\ \ \ \ \ ((uint16\_t)0x5555)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ IWDG\_WriteAccess\_Disable\ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ IS\_IWDG\_WRITE\_ACCESS(ACCESS)\ (((ACCESS)\ ==\ IWDG\_WriteAccess\_Enable)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((ACCESS)\ ==\ IWDG\_WriteAccess\_Disable))}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ IWDG\_Prescaler\_4\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ IWDG\_Prescaler\_8\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ IWDG\_Prescaler\_16\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ IWDG\_Prescaler\_32\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ IWDG\_Prescaler\_64\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x04)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ IWDG\_Prescaler\_128\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x05)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ IWDG\_Prescaler\_256\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x06)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ IS\_IWDG\_PRESCALER(PRESCALER)\ (((PRESCALER)\ ==\ IWDG\_Prescaler\_4)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ IWDG\_Prescaler\_8)\ \ ||\ \(\backslash\)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ IWDG\_Prescaler\_16)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ IWDG\_Prescaler\_32)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ IWDG\_Prescaler\_64)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ IWDG\_Prescaler\_128)||\ \(\backslash\)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ IWDG\_Prescaler\_256))}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ IWDG\_FLAG\_PVU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0001)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ IWDG\_FLAG\_RVU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0002)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ IS\_IWDG\_FLAG(FLAG)\ (((FLAG)\ ==\ IWDG\_FLAG\_PVU)\ ||\ ((FLAG)\ ==\ IWDG\_FLAG\_RVU))}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ IS\_IWDG\_RELOAD(RELOAD)\ ((RELOAD)\ <=\ 0xFFF)}}
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___i_w_d_g___exported___functions_gae466681e5bdc11b353c508b89d75ca05}{IWDG\_WriteAccessCmd}}(uint16\_t\ IWDG\_WriteAccess);}
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___i_w_d_g___exported___functions_ga4fa7f1cd690533a35ad9e4729c0450a3}{IWDG\_SetPrescaler}}(uint8\_t\ IWDG\_Prescaler);}
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___i_w_d_g___exported___functions_gae2a14752a0431f23cb80cebf202ac365}{IWDG\_SetReload}}(uint16\_t\ Reload);}
+\DoxyCodeLine{00119\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___i_w_d_g___exported___functions_ga7147ebabdc3fef97f532b171a4e70d49}{IWDG\_ReloadCounter}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00120\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___i_w_d_g___exported___functions_ga479b2921c86f8c67b819f5c4bea6bdb6}{IWDG\_Enable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00121\ \mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{FlagStatus}}\ \mbox{\hyperlink{group___i_w_d_g___exported___functions_ga37f050cfbedc0c15f9e0816c0b22011e}{IWDG\_GetFlagStatus}}(uint16\_t\ IWDG\_FLAG);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F10x\_IWDG\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00140\ \textcolor{comment}{/*******************\ (C)\ COPYRIGHT\ 2011\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

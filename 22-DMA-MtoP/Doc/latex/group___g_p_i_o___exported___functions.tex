@@ -1,0 +1,447 @@
+\doxysubsubsection{GPIO\+\_\+\+Exported\+\_\+\+Functions}
+\hypertarget{group___g_p_i_o___exported___functions}{}\label{group___g_p_i_o___exported___functions}\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_gaa60bdf3182c44b5fa818f237042f52ee}{GPIO\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the GPIOx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_ga7f645e6b6146818c3d6c19021e70170c}{GPIO\+\_\+\+AFIODe\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the Alternate Functions (remap, event control and EXTI configuration) registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_ga71abf9404261370d03cca449b88d3a65}{GPIO\+\_\+\+Init}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, \mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIO\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the GPIOx peripheral according to the specified parameters in the GPIO\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_gab28de41278e7f8c63d0851e2733b10df}{GPIO\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIO\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each GPIO\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___g_p_i_o___exported___functions_ga98772ef6b639b3fa06c8ae5ba28d3aaa}{GPIO\+\_\+\+Read\+Input\+Data\+Bit}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified input port pin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___g_p_i_o___exported___functions_ga139a33adc8409288e9f193bbebb5a0f7}{GPIO\+\_\+\+Read\+Input\+Data}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx)
+\begin{DoxyCompactList}\small\item\em Reads the specified GPIO input data port. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___g_p_i_o___exported___functions_ga138270f8695b105b7c6ed405792919c1}{GPIO\+\_\+\+Read\+Output\+Data\+Bit}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified output data port bit. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___g_p_i_o___exported___functions_gaf8938a34280b7dc3e39872a7c17bb323}{GPIO\+\_\+\+Read\+Output\+Data}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx)
+\begin{DoxyCompactList}\small\item\em Reads the specified GPIO output data port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_ga9e1352eed7c6620e18af2d86f6b6ff8e}{GPIO\+\_\+\+Set\+Bits}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets the selected data port bits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_ga6fcd35b207a66608dd2c9d7de9247dc8}{GPIO\+\_\+\+Reset\+Bits}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Clears the selected data port bits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_ga8f7b237fd744d9f7456fbe0da47a9b80}{GPIO\+\_\+\+Write\+Bit}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin, \mbox{\hyperlink{group___g_p_i_o___exported___types_ga176130b21c0e719121470a6042d4cf19}{Bit\+Action}} Bit\+Val)
+\begin{DoxyCompactList}\small\item\em Sets or clears the selected data port bit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_gaa925f19c8547a00c7a0c269a84873bf9}{GPIO\+\_\+\+Write}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t Port\+Val)
+\begin{DoxyCompactList}\small\item\em Writes data to the specified GPIO data port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_gad2f2e615928c69fd0d8c641a7cedaafc}{GPIO\+\_\+\+Pin\+Lock\+Config}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Locks GPIO Pins configuration registers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_ga935f31ed7a86c6cb594cf34313b4b7af}{GPIO\+\_\+\+Event\+Output\+Config}} (uint8\+\_\+t GPIO\+\_\+\+Port\+Source, uint8\+\_\+t GPIO\+\_\+\+Pin\+Source)
+\begin{DoxyCompactList}\small\item\em Selects the GPIO pin used as Event output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_gaf13ab3d59e467df44b492f1cdfe2f588}{GPIO\+\_\+\+Event\+Output\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Event Output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_ga64eb76f6211b840daf9829289df4208b}{GPIO\+\_\+\+Pin\+Remap\+Config}} (uint32\+\_\+t GPIO\+\_\+\+Remap, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Changes the mapping of the specified pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_ga8c1f13646d7418827378032a584da653}{GPIO\+\_\+\+EXTILine\+Config}} (uint8\+\_\+t GPIO\+\_\+\+Port\+Source, uint8\+\_\+t GPIO\+\_\+\+Pin\+Source)
+\begin{DoxyCompactList}\small\item\em Selects the GPIO pin used as EXTI Line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___exported___functions_gacbfad958f684347be0f2c762dc85c3c2}{GPIO\+\_\+\+ETH\+\_\+\+Media\+Interface\+Config}} (uint32\+\_\+t GPIO\+\_\+\+ETH\+\_\+\+Media\+Interface)
+\begin{DoxyCompactList}\small\item\em Selects the Ethernet media interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsection{Function Documentation}
+\Hypertarget{group___g_p_i_o___exported___functions_ga7f645e6b6146818c3d6c19021e70170c}\label{group___g_p_i_o___exported___functions_ga7f645e6b6146818c3d6c19021e70170c} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_AFIODeInit@{GPIO\_AFIODeInit}}
+\index{GPIO\_AFIODeInit@{GPIO\_AFIODeInit}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_AFIODeInit()}{GPIO\_AFIODeInit()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+AFIODe\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Deinitializes the Alternate Functions (remap, event control and EXTI configuration) registers to their default reset values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_gaa60bdf3182c44b5fa818f237042f52ee}\label{group___g_p_i_o___exported___functions_gaa60bdf3182c44b5fa818f237042f52ee} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_DeInit@{GPIO\_DeInit}}
+\index{GPIO\_DeInit@{GPIO\_DeInit}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_DeInit()}{GPIO\_DeInit()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx }\end{DoxyParamCaption})}
+
+
+
+Deinitializes the GPIOx peripheral registers to their default reset values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & where x can be (A..G) to select the GPIO peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_gacbfad958f684347be0f2c762dc85c3c2}\label{group___g_p_i_o___exported___functions_gacbfad958f684347be0f2c762dc85c3c2} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_ETH\_MediaInterfaceConfig@{GPIO\_ETH\_MediaInterfaceConfig}}
+\index{GPIO\_ETH\_MediaInterfaceConfig@{GPIO\_ETH\_MediaInterfaceConfig}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_ETH\_MediaInterfaceConfig()}{GPIO\_ETH\_MediaInterfaceConfig()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+ETH\+\_\+\+Media\+Interface\+Config (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{GPIO\+\_\+\+ETH\+\_\+\+Media\+Interface }\end{DoxyParamCaption})}
+
+
+
+Selects the Ethernet media interface. 
+
+\begin{DoxyNote}{Note}
+This function applies only to STM32 Connectivity line devices. ~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em GPIO\+\_\+\+ETH\+\_\+\+Media\+Interface} & specifies the Media Interface mode. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item GPIO\+\_\+\+ETH\+\_\+\+Media\+Interface\+\_\+\+MII\+: MII mode \item GPIO\+\_\+\+ETH\+\_\+\+Media\+Interface\+\_\+\+RMII\+: RMII mode ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_gaf13ab3d59e467df44b492f1cdfe2f588}\label{group___g_p_i_o___exported___functions_gaf13ab3d59e467df44b492f1cdfe2f588} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_EventOutputCmd@{GPIO\_EventOutputCmd}}
+\index{GPIO\_EventOutputCmd@{GPIO\_EventOutputCmd}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_EventOutputCmd()}{GPIO\_EventOutputCmd()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Event\+Output\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}}}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the Event Output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New\+State} & new state of the Event output. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_ga935f31ed7a86c6cb594cf34313b4b7af}\label{group___g_p_i_o___exported___functions_ga935f31ed7a86c6cb594cf34313b4b7af} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_EventOutputConfig@{GPIO\_EventOutputConfig}}
+\index{GPIO\_EventOutputConfig@{GPIO\_EventOutputConfig}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_EventOutputConfig()}{GPIO\_EventOutputConfig()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Event\+Output\+Config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{GPIO\+\_\+\+Port\+Source,  }\item[{uint8\+\_\+t}]{GPIO\+\_\+\+Pin\+Source }\end{DoxyParamCaption})}
+
+
+
+Selects the GPIO pin used as Event output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIO\+\_\+\+Port\+Source} & selects the GPIO port to be used as source for Event output. This parameter can be GPIO\+\_\+\+Port\+Source\+GPIOx where x can be (A..E). \\
+\hline
+{\em GPIO\+\_\+\+Pin\+Source} & specifies the pin for the Event output. This parameter can be GPIO\+\_\+\+Pin\+Sourcex where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_ga8c1f13646d7418827378032a584da653}\label{group___g_p_i_o___exported___functions_ga8c1f13646d7418827378032a584da653} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_EXTILineConfig@{GPIO\_EXTILineConfig}}
+\index{GPIO\_EXTILineConfig@{GPIO\_EXTILineConfig}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_EXTILineConfig()}{GPIO\_EXTILineConfig()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+EXTILine\+Config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{GPIO\+\_\+\+Port\+Source,  }\item[{uint8\+\_\+t}]{GPIO\+\_\+\+Pin\+Source }\end{DoxyParamCaption})}
+
+
+
+Selects the GPIO pin used as EXTI Line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIO\+\_\+\+Port\+Source} & selects the GPIO port to be used as source for EXTI lines. This parameter can be GPIO\+\_\+\+Port\+Source\+GPIOx where x can be (A..G). \\
+\hline
+{\em GPIO\+\_\+\+Pin\+Source} & specifies the EXTI line to be configured. This parameter can be GPIO\+\_\+\+Pin\+Sourcex where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_ga71abf9404261370d03cca449b88d3a65}\label{group___g_p_i_o___exported___functions_ga71abf9404261370d03cca449b88d3a65} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_Init@{GPIO\_Init}}
+\index{GPIO\_Init@{GPIO\_Init}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_Init()}{GPIO\_Init()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{\mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIO\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Initializes the GPIOx peripheral according to the specified parameters in the GPIO\+\_\+\+Init\+Struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & where x can be (A..G) to select the GPIO peripheral. \\
+\hline
+{\em GPIO\+\_\+\+Init\+Struct} & pointer to a \doxylink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def} structure that contains the configuration information for the specified GPIO peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_gad2f2e615928c69fd0d8c641a7cedaafc}\label{group___g_p_i_o___exported___functions_gad2f2e615928c69fd0d8c641a7cedaafc} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_PinLockConfig@{GPIO\_PinLockConfig}}
+\index{GPIO\_PinLockConfig@{GPIO\_PinLockConfig}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_PinLockConfig()}{GPIO\_PinLockConfig()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Pin\+Lock\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Locks GPIO Pins configuration registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & where x can be (A..G) to select the GPIO peripheral. \\
+\hline
+{\em GPIO\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be any combination of GPIO\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_ga64eb76f6211b840daf9829289df4208b}\label{group___g_p_i_o___exported___functions_ga64eb76f6211b840daf9829289df4208b} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_PinRemapConfig@{GPIO\_PinRemapConfig}}
+\index{GPIO\_PinRemapConfig@{GPIO\_PinRemapConfig}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_PinRemapConfig()}{GPIO\_PinRemapConfig()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Pin\+Remap\+Config (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{GPIO\+\_\+\+Remap,  }\item[{\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}}}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Changes the mapping of the specified pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIO\+\_\+\+Remap} & selects the pin to remap. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item GPIO\+\_\+\+Remap\+\_\+\+SPI1 \+: SPI1 Alternate Function mapping \item GPIO\+\_\+\+Remap\+\_\+\+I2\+C1 \+: I2\+C1 Alternate Function mapping \item GPIO\+\_\+\+Remap\+\_\+\+USART1 \+: USART1 Alternate Function mapping \item GPIO\+\_\+\+Remap\+\_\+\+USART2 \+: USART2 Alternate Function mapping \item GPIO\+\_\+\+Partial\+Remap\+\_\+\+USART3 \+: USART3 Partial Alternate Function mapping \item GPIO\+\_\+\+Full\+Remap\+\_\+\+USART3 \+: USART3 Full Alternate Function mapping \item GPIO\+\_\+\+Partial\+Remap\+\_\+\+TIM1 \+: TIM1 Partial Alternate Function mapping \item GPIO\+\_\+\+Full\+Remap\+\_\+\+TIM1 \+: TIM1 Full Alternate Function mapping \item GPIO\+\_\+\+Partial\+Remap1\+\_\+\+TIM2 \+: TIM2 Partial1 Alternate Function mapping \item GPIO\+\_\+\+Partial\+Remap2\+\_\+\+TIM2 \+: TIM2 Partial2 Alternate Function mapping \item GPIO\+\_\+\+Full\+Remap\+\_\+\+TIM2 \+: TIM2 Full Alternate Function mapping \item GPIO\+\_\+\+Partial\+Remap\+\_\+\+TIM3 \+: TIM3 Partial Alternate Function mapping \item GPIO\+\_\+\+Full\+Remap\+\_\+\+TIM3 \+: TIM3 Full Alternate Function mapping \item GPIO\+\_\+\+Remap\+\_\+\+TIM4 \+: TIM4 Alternate Function mapping \item GPIO\+\_\+\+Remap1\+\_\+\+CAN1 \+: CAN1 Alternate Function mapping \item GPIO\+\_\+\+Remap2\+\_\+\+CAN1 \+: CAN1 Alternate Function mapping \item GPIO\+\_\+\+Remap\+\_\+\+PD01 \+: PD01 Alternate Function mapping \item GPIO\+\_\+\+Remap\+\_\+\+TIM5\+CH4\+\_\+\+LSI \+: LSI connected to TIM5 Channel4 input capture for calibration \item GPIO\+\_\+\+Remap\+\_\+\+ADC1\+\_\+\+ETRGINJ \+: ADC1 External Trigger Injected Conversion remapping \item GPIO\+\_\+\+Remap\+\_\+\+ADC1\+\_\+\+ETRGREG \+: ADC1 External Trigger Regular Conversion remapping \item GPIO\+\_\+\+Remap\+\_\+\+ADC2\+\_\+\+ETRGINJ \+: ADC2 External Trigger Injected Conversion remapping \item GPIO\+\_\+\+Remap\+\_\+\+ADC2\+\_\+\+ETRGREG \+: ADC2 External Trigger Regular Conversion remapping \item GPIO\+\_\+\+Remap\+\_\+\+ETH \+: Ethernet remapping (only for Connectivity line devices) \item GPIO\+\_\+\+Remap\+\_\+\+CAN2 \+: CAN2 remapping (only for Connectivity line devices) \item GPIO\+\_\+\+Remap\+\_\+\+SWJ\+\_\+\+No\+JTRST \+: Full SWJ Enabled (JTAG-\/\+DP + SW-\/\+DP) but without JTRST \item GPIO\+\_\+\+Remap\+\_\+\+SWJ\+\_\+\+JTAGDisable \+: JTAG-\/\+DP Disabled and SW-\/\+DP Enabled \item GPIO\+\_\+\+Remap\+\_\+\+SWJ\+\_\+\+Disable \+: Full SWJ Disabled (JTAG-\/\+DP + SW-\/\+DP) \item GPIO\+\_\+\+Remap\+\_\+\+SPI3 \+: SPI3/\+I2\+S3 Alternate Function mapping (only for Connectivity line devices) When the SPI3/\+I2\+S3 is remapped using this function, the SWJ is configured to Full SWJ Enabled (JTAG-\/\+DP + SW-\/\+DP) but without JTRST. ~\newline
+ \item GPIO\+\_\+\+Remap\+\_\+\+TIM2\+ITR1\+\_\+\+PTP\+\_\+\+SOF \+: Ethernet PTP output or USB OTG SOF (Start of Frame) connected to TIM2 Internal Trigger 1 for calibration (only for Connectivity line devices) If the GPIO\+\_\+\+Remap\+\_\+\+TIM2\+ITR1\+\_\+\+PTP\+\_\+\+SOF is enabled the TIM2 ITR1 is connected to Ethernet PTP output. When Reset TIM2 ITR1 is connected to USB OTG SOF output. ~\newline
+ \item GPIO\+\_\+\+Remap\+\_\+\+PTP\+\_\+\+PPS \+: Ethernet MAC PPS\+\_\+\+PTS output on PB05 (only for Connectivity line devices) \item GPIO\+\_\+\+Remap\+\_\+\+TIM15 \+: TIM15 Alternate Function mapping (only for Value line devices) \item GPIO\+\_\+\+Remap\+\_\+\+TIM16 \+: TIM16 Alternate Function mapping (only for Value line devices) \item GPIO\+\_\+\+Remap\+\_\+\+TIM17 \+: TIM17 Alternate Function mapping (only for Value line devices) \item GPIO\+\_\+\+Remap\+\_\+\+CEC \+: CEC Alternate Function mapping (only for Value line devices) \item GPIO\+\_\+\+Remap\+\_\+\+TIM1\+\_\+\+DMA \+: TIM1 DMA requests mapping (only for Value line devices) \item GPIO\+\_\+\+Remap\+\_\+\+TIM9 \+: TIM9 Alternate Function mapping (only for XL-\/density devices) \item GPIO\+\_\+\+Remap\+\_\+\+TIM10 \+: TIM10 Alternate Function mapping (only for XL-\/density devices) \item GPIO\+\_\+\+Remap\+\_\+\+TIM11 \+: TIM11 Alternate Function mapping (only for XL-\/density devices) \item GPIO\+\_\+\+Remap\+\_\+\+TIM13 \+: TIM13 Alternate Function mapping (only for High density Value line and XL-\/density devices) \item GPIO\+\_\+\+Remap\+\_\+\+TIM14 \+: TIM14 Alternate Function mapping (only for High density Value line and XL-\/density devices) \item GPIO\+\_\+\+Remap\+\_\+\+FSMC\+\_\+\+NADV \+: FSMC\+\_\+\+NADV Alternate Function mapping (only for High density Value line and XL-\/density devices) \item GPIO\+\_\+\+Remap\+\_\+\+TIM67\+\_\+\+DAC\+\_\+\+DMA \+: TIM6/\+TIM7 and DAC DMA requests remapping (only for High density Value line devices) \item GPIO\+\_\+\+Remap\+\_\+\+TIM12 \+: TIM12 Alternate Function mapping (only for High density Value line devices) \item GPIO\+\_\+\+Remap\+\_\+\+MISC \+: Miscellaneous Remap (DMA2 Channel5 Position and DAC Trigger remapping, only for High density Value line devices) ~\newline
+ \end{DoxyItemize}
+\\
+\hline
+{\em New\+State} & new state of the port pin remapping. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_ga139a33adc8409288e9f193bbebb5a0f7}\label{group___g_p_i_o___exported___functions_ga139a33adc8409288e9f193bbebb5a0f7} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_ReadInputData@{GPIO\_ReadInputData}}
+\index{GPIO\_ReadInputData@{GPIO\_ReadInputData}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_ReadInputData()}{GPIO\_ReadInputData()}}
+{\footnotesize\ttfamily uint16\+\_\+t GPIO\+\_\+\+Read\+Input\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx }\end{DoxyParamCaption})}
+
+
+
+Reads the specified GPIO input data port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & where x can be (A..G) to select the GPIO peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em GPIO} & input data port value. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_ga98772ef6b639b3fa06c8ae5ba28d3aaa}\label{group___g_p_i_o___exported___functions_ga98772ef6b639b3fa06c8ae5ba28d3aaa} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_ReadInputDataBit@{GPIO\_ReadInputDataBit}}
+\index{GPIO\_ReadInputDataBit@{GPIO\_ReadInputDataBit}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_ReadInputDataBit()}{GPIO\_ReadInputDataBit()}}
+{\footnotesize\ttfamily uint8\+\_\+t GPIO\+\_\+\+Read\+Input\+Data\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Reads the specified input port pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & where x can be (A..G) to select the GPIO peripheral. \\
+\hline
+{\em GPIO\+\_\+\+Pin} & specifies the port bit to read. This parameter can be GPIO\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & input port pin value. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_gaf8938a34280b7dc3e39872a7c17bb323}\label{group___g_p_i_o___exported___functions_gaf8938a34280b7dc3e39872a7c17bb323} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_ReadOutputData@{GPIO\_ReadOutputData}}
+\index{GPIO\_ReadOutputData@{GPIO\_ReadOutputData}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_ReadOutputData()}{GPIO\_ReadOutputData()}}
+{\footnotesize\ttfamily uint16\+\_\+t GPIO\+\_\+\+Read\+Output\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx }\end{DoxyParamCaption})}
+
+
+
+Reads the specified GPIO output data port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & where x can be (A..G) to select the GPIO peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em GPIO} & output data port value. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_ga138270f8695b105b7c6ed405792919c1}\label{group___g_p_i_o___exported___functions_ga138270f8695b105b7c6ed405792919c1} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_ReadOutputDataBit@{GPIO\_ReadOutputDataBit}}
+\index{GPIO\_ReadOutputDataBit@{GPIO\_ReadOutputDataBit}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_ReadOutputDataBit()}{GPIO\_ReadOutputDataBit()}}
+{\footnotesize\ttfamily uint8\+\_\+t GPIO\+\_\+\+Read\+Output\+Data\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Reads the specified output data port bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & where x can be (A..G) to select the GPIO peripheral. \\
+\hline
+{\em GPIO\+\_\+\+Pin} & specifies the port bit to read. This parameter can be GPIO\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & output port pin value. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_ga6fcd35b207a66608dd2c9d7de9247dc8}\label{group___g_p_i_o___exported___functions_ga6fcd35b207a66608dd2c9d7de9247dc8} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_ResetBits@{GPIO\_ResetBits}}
+\index{GPIO\_ResetBits@{GPIO\_ResetBits}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_ResetBits()}{GPIO\_ResetBits()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Reset\+Bits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Clears the selected data port bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & where x can be (A..G) to select the GPIO peripheral. \\
+\hline
+{\em GPIO\+\_\+\+Pin} & specifies the port bits to be written. This parameter can be any combination of GPIO\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_ga9e1352eed7c6620e18af2d86f6b6ff8e}\label{group___g_p_i_o___exported___functions_ga9e1352eed7c6620e18af2d86f6b6ff8e} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_SetBits@{GPIO\_SetBits}}
+\index{GPIO\_SetBits@{GPIO\_SetBits}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_SetBits()}{GPIO\_SetBits()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Set\+Bits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Sets the selected data port bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & where x can be (A..G) to select the GPIO peripheral. \\
+\hline
+{\em GPIO\+\_\+\+Pin} & specifies the port bits to be written. This parameter can be any combination of GPIO\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_gab28de41278e7f8c63d0851e2733b10df}\label{group___g_p_i_o___exported___functions_gab28de41278e7f8c63d0851e2733b10df} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_StructInit@{GPIO\_StructInit}}
+\index{GPIO\_StructInit@{GPIO\_StructInit}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_StructInit()}{GPIO\_StructInit()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Struct\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIO\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Fills each GPIO\+\_\+\+Init\+Struct member with its default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIO\+\_\+\+Init\+Struct} & \+: pointer to a \doxylink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def} structure which will be initialized. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_gaa925f19c8547a00c7a0c269a84873bf9}\label{group___g_p_i_o___exported___functions_gaa925f19c8547a00c7a0c269a84873bf9} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_Write@{GPIO\_Write}}
+\index{GPIO\_Write@{GPIO\_Write}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_Write()}{GPIO\_Write()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{uint16\+\_\+t}]{Port\+Val }\end{DoxyParamCaption})}
+
+
+
+Writes data to the specified GPIO data port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & where x can be (A..G) to select the GPIO peripheral. \\
+\hline
+{\em Port\+Val} & specifies the value to be written to the port output data register. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___g_p_i_o___exported___functions_ga8f7b237fd744d9f7456fbe0da47a9b80}\label{group___g_p_i_o___exported___functions_ga8f7b237fd744d9f7456fbe0da47a9b80} 
+\index{GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}!GPIO\_WriteBit@{GPIO\_WriteBit}}
+\index{GPIO\_WriteBit@{GPIO\_WriteBit}!GPIO\_Exported\_Functions@{GPIO\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{GPIO\_WriteBit()}{GPIO\_WriteBit()}}
+{\footnotesize\ttfamily void GPIO\+\_\+\+Write\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin,  }\item[{\mbox{\hyperlink{group___g_p_i_o___exported___types_ga176130b21c0e719121470a6042d4cf19}{Bit\+Action}}}]{Bit\+Val }\end{DoxyParamCaption})}
+
+
+
+Sets or clears the selected data port bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & where x can be (A..G) to select the GPIO peripheral. \\
+\hline
+{\em GPIO\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of GPIO\+\_\+\+Pin\+\_\+x where x can be (0..15). \\
+\hline
+{\em Bit\+Val} & specifies the value to be written to the selected bit. This parameter can be one of the Bit\+Action enum values\+: \begin{DoxyItemize}
+\item Bit\+\_\+\+RESET\+: to clear the port pin \item Bit\+\_\+\+SET\+: to set the port pin \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

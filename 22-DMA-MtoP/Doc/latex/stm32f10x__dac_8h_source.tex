@@ -1,0 +1,157 @@
+\doxysection{stm32f10x\+\_\+dac.\+h}
+\hypertarget{stm32f10x__dac_8h_source}{}\label{stm32f10x__dac_8h_source}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_dac.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_dac.h}}
+\mbox{\hyperlink{stm32f10x__dac_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F10x\_DAC\_H}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \_\_STM32F10x\_DAC\_H}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f10x_8h}{stm32f10x.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___init_type_def_a7b26ebaeb51a0157a781f7de8ba779e5}{DAC\_Trigger}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___init_type_def_a6753e78ddd2dc8273444ba01a272d63a}{DAC\_WaveGeneration}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___init_type_def_a27ed27a544d50781b20d59cc55e6cef8}{DAC\_LFSRUnmask\_TriangleAmplitude}};\ }
+\DoxyCodeLine{00063\ \ \ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___init_type_def_ad3e9e01486443e99f19e65a446b03ca6}{DAC\_OutputBuffer}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \}\mbox{\hyperlink{struct_d_a_c___init_type_def}{DAC\_InitTypeDef}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ DAC\_Trigger\_None\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ DAC\_Trigger\_T6\_TRGO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ DAC\_Trigger\_T8\_TRGO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000000C)\ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ DAC\_Trigger\_T3\_TRGO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000000C)\ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ DAC\_Trigger\_T7\_TRGO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000014)\ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ DAC\_Trigger\_T5\_TRGO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000001C)\ }}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ DAC\_Trigger\_T15\_TRGO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000001C)\ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ DAC\_Trigger\_T2\_TRGO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000024)\ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ DAC\_Trigger\_T4\_TRGO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000002C)\ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ DAC\_Trigger\_Ext\_IT9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000034)\ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ DAC\_Trigger\_Software\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x0000003C)\ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ IS\_DAC\_TRIGGER(TRIGGER)\ (((TRIGGER)\ ==\ DAC\_Trigger\_None)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ DAC\_Trigger\_T6\_TRGO)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ DAC\_Trigger\_T8\_TRGO)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ DAC\_Trigger\_T7\_TRGO)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ DAC\_Trigger\_T5\_TRGO)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ DAC\_Trigger\_T2\_TRGO)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ DAC\_Trigger\_T4\_TRGO)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ DAC\_Trigger\_Ext\_IT9)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ DAC\_Trigger\_Software))}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ DAC\_WaveGeneration\_None\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ DAC\_WaveGeneration\_Noise\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ DAC\_WaveGeneration\_Triangle\ \ \ \ \ \ \ \ ((uint32\_t)0x00000080)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ IS\_DAC\_GENERATE\_WAVE(WAVE)\ (((WAVE)\ ==\ DAC\_WaveGeneration\_None)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WAVE)\ ==\ DAC\_WaveGeneration\_Noise)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WAVE)\ ==\ DAC\_WaveGeneration\_Triangle))}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUnmask\_Bit0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUnmask\_Bits1\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000100)\ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUnmask\_Bits2\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000200)\ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUnmask\_Bits3\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000300)\ }}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUnmask\_Bits4\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000400)\ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUnmask\_Bits5\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000500)\ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUnmask\_Bits6\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000600)\ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUnmask\_Bits7\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000700)\ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUnmask\_Bits8\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000800)\ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUnmask\_Bits9\_0\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000900)\ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUnmask\_Bits10\_0\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000A00)\ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ DAC\_LFSRUnmask\_Bits11\_0\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000B00)\ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ DAC\_TriangleAmplitude\_1\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ DAC\_TriangleAmplitude\_3\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000100)\ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ DAC\_TriangleAmplitude\_7\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000200)\ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ DAC\_TriangleAmplitude\_15\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000300)\ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ DAC\_TriangleAmplitude\_31\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000400)\ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ DAC\_TriangleAmplitude\_63\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000500)\ }}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ DAC\_TriangleAmplitude\_127\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000600)\ }}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ DAC\_TriangleAmplitude\_255\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000700)\ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ DAC\_TriangleAmplitude\_511\ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000800)\ }}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ DAC\_TriangleAmplitude\_1023\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000900)\ }}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ DAC\_TriangleAmplitude\_2047\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000A00)\ }}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ DAC\_TriangleAmplitude\_4095\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000B00)\ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ IS\_DAC\_LFSR\_UNMASK\_TRIANGLE\_AMPLITUDE(VALUE)\ (((VALUE)\ ==\ DAC\_LFSRUnmask\_Bit0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUnmask\_Bits1\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUnmask\_Bits2\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUnmask\_Bits3\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUnmask\_Bits4\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUnmask\_Bits5\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUnmask\_Bits6\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUnmask\_Bits7\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUnmask\_Bits8\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUnmask\_Bits9\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUnmask\_Bits10\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_LFSRUnmask\_Bits11\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TriangleAmplitude\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TriangleAmplitude\_3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TriangleAmplitude\_7)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TriangleAmplitude\_15)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TriangleAmplitude\_31)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TriangleAmplitude\_63)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TriangleAmplitude\_127)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TriangleAmplitude\_255)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TriangleAmplitude\_511)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TriangleAmplitude\_1023)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TriangleAmplitude\_2047)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ DAC\_TriangleAmplitude\_4095))}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ DAC\_OutputBuffer\_Enable\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ DAC\_OutputBuffer\_Disable\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ IS\_DAC\_OUTPUT\_BUFFER\_STATE(STATE)\ (((STATE)\ ==\ DAC\_OutputBuffer\_Enable)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STATE)\ ==\ DAC\_OutputBuffer\_Disable))}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ DAC\_Channel\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ DAC\_Channel\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000010)}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ IS\_DAC\_CHANNEL(CHANNEL)\ (((CHANNEL)\ ==\ DAC\_Channel\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ DAC\_Channel\_2))}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ DAC\_Align\_12b\_R\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ DAC\_Align\_12b\_L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ DAC\_Align\_8b\_R\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000008)}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ IS\_DAC\_ALIGN(ALIGN)\ (((ALIGN)\ ==\ DAC\_Align\_12b\_R)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((ALIGN)\ ==\ DAC\_Align\_12b\_L)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((ALIGN)\ ==\ DAC\_Align\_8b\_R))}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ DAC\_Wave\_Noise\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000040)}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ DAC\_Wave\_Triangle\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000080)}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ IS\_DAC\_WAVE(WAVE)\ (((WAVE)\ ==\ DAC\_Wave\_Noise)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WAVE)\ ==\ DAC\_Wave\_Triangle))}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ IS\_DAC\_DATA(DATA)\ ((DATA)\ <=\ 0xFFF0)\ }}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#if\ defined\ (STM32F10X\_LD\_VL)\ ||\ defined\ (STM32F10X\_MD\_VL)\ \ ||\ defined\ (STM32F10X\_HD\_VL)}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ DAC\_IT\_DMAUDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00002000)\ \ }}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ IS\_DAC\_IT(IT)\ (((IT)\ ==\ DAC\_IT\_DMAUDR))\ }}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ DAC\_FLAG\_DMAUDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00002000)\ \ }}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ IS\_DAC\_FLAG(FLAG)\ (((FLAG)\ ==\ DAC\_FLAG\_DMAUDR))\ \ }}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00278\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_a_c___exported___functions_ga1fae225204e1e049d6795319e99ba8bc}{DAC\_DeInit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00279\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_a_c___exported___functions_ga7c59850468ed4bf0659663fe495441da}{DAC\_Init}}(uint32\_t\ DAC\_Channel,\ \mbox{\hyperlink{struct_d_a_c___init_type_def}{DAC\_InitTypeDef}}*\ DAC\_InitStruct);}
+\DoxyCodeLine{00280\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_a_c___exported___functions_gadfc270974d54cb5fa5f92556015c4046}{DAC\_StructInit}}(\mbox{\hyperlink{struct_d_a_c___init_type_def}{DAC\_InitTypeDef}}*\ DAC\_InitStruct);}
+\DoxyCodeLine{00281\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_a_c___exported___functions_ga323e61530d7fa9396c3bce9edb61f733}{DAC\_Cmd}}(uint32\_t\ DAC\_Channel,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#if\ defined\ (STM32F10X\_LD\_VL)\ ||\ defined\ (STM32F10X\_MD\_VL)\ ||\ defined\ (STM32F10X\_HD\_VL)}}
+\DoxyCodeLine{00283\ \textcolor{keywordtype}{void}\ DAC\_ITConfig(uint32\_t\ DAC\_Channel,\ uint32\_t\ DAC\_IT,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00285\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_a_c___exported___functions_ga194cba38f60ace11658824f0250121f4}{DAC\_DMACmd}}(uint32\_t\ DAC\_Channel,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00286\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_a_c___exported___functions_ga46f9f7f6b9520a86e300fe966afe5fb3}{DAC\_SoftwareTriggerCmd}}(uint32\_t\ DAC\_Channel,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00287\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_a_c___exported___functions_gab4d3b364a6b184dcd65f3b294ebf56dc}{DAC\_DualSoftwareTriggerCmd}}(\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00288\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_a_c___exported___functions_gabd51ae6880821d4dcd923969ec19a19e}{DAC\_WaveGenerationCmd}}(uint32\_t\ DAC\_Channel,\ uint32\_t\ DAC\_Wave,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00289\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_a_c___exported___functions_gad06b4230d2b17d1d13f41dce4c782461}{DAC\_SetChannel1Data}}(uint32\_t\ DAC\_Align,\ uint16\_t\ Data);}
+\DoxyCodeLine{00290\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_a_c___exported___functions_ga44e12006ec186791378d132da8541552}{DAC\_SetChannel2Data}}(uint32\_t\ DAC\_Align,\ uint16\_t\ Data);}
+\DoxyCodeLine{00291\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_a_c___exported___functions_ga4ca2cfdf56ab35a23f2517f23d7fbb24}{DAC\_SetDualChannelData}}(uint32\_t\ DAC\_Align,\ uint16\_t\ Data2,\ uint16\_t\ Data1);}
+\DoxyCodeLine{00292\ uint16\_t\ \mbox{\hyperlink{group___d_a_c___exported___functions_ga51274838de1e5dd012a82d7f44d7a50b}{DAC\_GetDataOutputValue}}(uint32\_t\ DAC\_Channel);}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#if\ defined\ (STM32F10X\_LD\_VL)\ ||\ defined\ (STM32F10X\_MD\_VL)\ ||\ defined\ (STM32F10X\_HD\_VL)\ }}
+\DoxyCodeLine{00294\ \mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{FlagStatus}}\ DAC\_GetFlagStatus(uint32\_t\ DAC\_Channel,\ uint32\_t\ DAC\_FLAG);}
+\DoxyCodeLine{00295\ \textcolor{keywordtype}{void}\ DAC\_ClearFlag(uint32\_t\ DAC\_Channel,\ uint32\_t\ DAC\_FLAG);}
+\DoxyCodeLine{00296\ \mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}}\ DAC\_GetITStatus(uint32\_t\ DAC\_Channel,\ uint32\_t\ DAC\_IT);}
+\DoxyCodeLine{00297\ \textcolor{keywordtype}{void}\ DAC\_ClearITPendingBit(uint32\_t\ DAC\_Channel,\ uint32\_t\ DAC\_IT);}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00301\ \}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\_\_STM32F10x\_DAC\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00317\ \textcolor{comment}{/*******************\ (C)\ COPYRIGHT\ 2011\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

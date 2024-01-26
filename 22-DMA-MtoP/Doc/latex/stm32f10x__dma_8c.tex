@@ -1,0 +1,85 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/src/stm32f10x\+\_\+dma.c File Reference}
+\hypertarget{stm32f10x__dma_8c}{}\label{stm32f10x__dma_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_dma.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_dma.c}}
+
+
+This file provides all the DMA firmware functions.  
+
+
+{\ttfamily \#include "{}stm32f10x\+\_\+dma.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f10x\+\_\+rcc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_ga76177263f2b9878765606f3bb8b9cc64}{DMA1\+\_\+\+Channel1\+\_\+\+IT\+\_\+\+Mask}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3475228c998897d0f408a4c5da066186}{DMA\+\_\+\+ISR\+\_\+\+GIF1}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1a1522414af27c7fff2cc27edac1d680}{DMA\+\_\+\+ISR\+\_\+\+TCIF1}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5f83359698adf05854b55705f78d8a5c}{DMA\+\_\+\+ISR\+\_\+\+HTIF1}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga26bfd55e965445ae253a5c5fa8f1769a}{DMA\+\_\+\+ISR\+\_\+\+TEIF1}}))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_ga255d8869e69919c3b5c434088239ae8c}{DMA1\+\_\+\+Channel2\+\_\+\+IT\+\_\+\+Mask}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga44fa823dbb15b829621961efc60d6a95}{DMA\+\_\+\+ISR\+\_\+\+GIF2}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga631741eb4843eda3578808a3d8b527b2}{DMA\+\_\+\+ISR\+\_\+\+TCIF2}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8ee1947aef188f437f37d3ff444f8646}{DMA\+\_\+\+ISR\+\_\+\+HTIF2}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5bcd07efcadd5fef598edec1cca70e38}{DMA\+\_\+\+ISR\+\_\+\+TEIF2}}))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_gabbe4f28c48dc0c3b678cbf4a4fd79e54}{DMA1\+\_\+\+Channel3\+\_\+\+IT\+\_\+\+Mask}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gacb0bd8fb0e580688c5cf617b618bbc17}{DMA\+\_\+\+ISR\+\_\+\+GIF3}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga28664595df654d9d8052fb6f9cc48495}{DMA\+\_\+\+ISR\+\_\+\+TCIF3}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga53bb9a00737c52faffaaa91ff08b34a1}{DMA\+\_\+\+ISR\+\_\+\+HTIF3}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa624379143a2535d7a60d87d59834d10}{DMA\+\_\+\+ISR\+\_\+\+TEIF3}}))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_ga6b67cd69dbebc4d39a13b3d863a4122b}{DMA1\+\_\+\+Channel4\+\_\+\+IT\+\_\+\+Mask}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf4f69823d44810c353af1f0a89eaf180}{DMA\+\_\+\+ISR\+\_\+\+GIF4}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad7d4e46949a35cf037a303bd65a0c87a}{DMA\+\_\+\+ISR\+\_\+\+TCIF4}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga684cf326c770f1ab21c604a5f62907ad}{DMA\+\_\+\+ISR\+\_\+\+HTIF4}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga12fcc1471918f3e7b293b2d825177253}{DMA\+\_\+\+ISR\+\_\+\+TEIF4}}))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_ga44192309991b50231e3af515bf27bef7}{DMA1\+\_\+\+Channel5\+\_\+\+IT\+\_\+\+Mask}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga83d4d9cba635d1e33e3477b773379cfd}{DMA\+\_\+\+ISR\+\_\+\+GIF5}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5ea57d09f13edbd6ad8afe9465e0fa70}{DMA\+\_\+\+ISR\+\_\+\+TCIF5}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3d1f2b8c82b1e20b4311af8ca9576736}{DMA\+\_\+\+ISR\+\_\+\+HTIF5}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga42f9b12c4c80cbb7cd0f94f139c73de3}{DMA\+\_\+\+ISR\+\_\+\+TEIF5}}))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_ga4d6e7845da3456440a947a86e1827244}{DMA1\+\_\+\+Channel6\+\_\+\+IT\+\_\+\+Mask}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gac55f4836aa8e6cfc9bdcadfabf65b5d8}{DMA\+\_\+\+ISR\+\_\+\+GIF6}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2d76395cf6c6ef50e05c96d7ae723058}{DMA\+\_\+\+ISR\+\_\+\+TCIF6}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga41b6d9787aeff76a51581d9488b4604f}{DMA\+\_\+\+ISR\+\_\+\+HTIF6}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gae47d914969922381708ae06c1c71123a}{DMA\+\_\+\+ISR\+\_\+\+TEIF6}}))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_ga510bb442153092ff35e73dcaa845d8d1}{DMA1\+\_\+\+Channel7\+\_\+\+IT\+\_\+\+Mask}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga86f178e879b2d8ceeea351e4750272dd}{DMA\+\_\+\+ISR\+\_\+\+GIF7}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4528af54928542c09502c01827418732}{DMA\+\_\+\+ISR\+\_\+\+TCIF7}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga769016c2b0bf22ff3ad6967b3dc0e2bb}{DMA\+\_\+\+ISR\+\_\+\+HTIF7}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf8333b3c78b7d0a07bd4b1e91e902b31}{DMA\+\_\+\+ISR\+\_\+\+TEIF7}}))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_ga1a8a861830805d87d8f487920525125d}{DMA2\+\_\+\+Channel1\+\_\+\+IT\+\_\+\+Mask}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3475228c998897d0f408a4c5da066186}{DMA\+\_\+\+ISR\+\_\+\+GIF1}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1a1522414af27c7fff2cc27edac1d680}{DMA\+\_\+\+ISR\+\_\+\+TCIF1}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5f83359698adf05854b55705f78d8a5c}{DMA\+\_\+\+ISR\+\_\+\+HTIF1}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga26bfd55e965445ae253a5c5fa8f1769a}{DMA\+\_\+\+ISR\+\_\+\+TEIF1}}))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_ga93ffc8595a8b0f1410b9e8a348fcd480}{DMA2\+\_\+\+Channel2\+\_\+\+IT\+\_\+\+Mask}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga44fa823dbb15b829621961efc60d6a95}{DMA\+\_\+\+ISR\+\_\+\+GIF2}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga631741eb4843eda3578808a3d8b527b2}{DMA\+\_\+\+ISR\+\_\+\+TCIF2}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8ee1947aef188f437f37d3ff444f8646}{DMA\+\_\+\+ISR\+\_\+\+HTIF2}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5bcd07efcadd5fef598edec1cca70e38}{DMA\+\_\+\+ISR\+\_\+\+TEIF2}}))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_ga96bd8d986420e19b3ce94bd67a48b24a}{DMA2\+\_\+\+Channel3\+\_\+\+IT\+\_\+\+Mask}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gacb0bd8fb0e580688c5cf617b618bbc17}{DMA\+\_\+\+ISR\+\_\+\+GIF3}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga28664595df654d9d8052fb6f9cc48495}{DMA\+\_\+\+ISR\+\_\+\+TCIF3}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga53bb9a00737c52faffaaa91ff08b34a1}{DMA\+\_\+\+ISR\+\_\+\+HTIF3}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa624379143a2535d7a60d87d59834d10}{DMA\+\_\+\+ISR\+\_\+\+TEIF3}}))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_gae844f9b933a07a6f75472c3f849cbb5c}{DMA2\+\_\+\+Channel4\+\_\+\+IT\+\_\+\+Mask}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf4f69823d44810c353af1f0a89eaf180}{DMA\+\_\+\+ISR\+\_\+\+GIF4}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad7d4e46949a35cf037a303bd65a0c87a}{DMA\+\_\+\+ISR\+\_\+\+TCIF4}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga684cf326c770f1ab21c604a5f62907ad}{DMA\+\_\+\+ISR\+\_\+\+HTIF4}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga12fcc1471918f3e7b293b2d825177253}{DMA\+\_\+\+ISR\+\_\+\+TEIF4}}))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_gaedaf3e94d362754266807d6ccbab2e3e}{DMA2\+\_\+\+Channel5\+\_\+\+IT\+\_\+\+Mask}}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga83d4d9cba635d1e33e3477b773379cfd}{DMA\+\_\+\+ISR\+\_\+\+GIF5}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5ea57d09f13edbd6ad8afe9465e0fa70}{DMA\+\_\+\+ISR\+\_\+\+TCIF5}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3d1f2b8c82b1e20b4311af8ca9576736}{DMA\+\_\+\+ISR\+\_\+\+HTIF5}} \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga42f9b12c4c80cbb7cd0f94f139c73de3}{DMA\+\_\+\+ISR\+\_\+\+TEIF5}}))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_ga2be62bf481cd44de9ab604efe5595ff6}{FLAG\+\_\+\+Mask}}~((uint32\+\_\+t)0x10000000)
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___private___defines_gac2c71cc75907c7c3467907e766dc4188}{CCR\+\_\+\+CLEAR\+\_\+\+Mask}}~((uint32\+\_\+t)0x\+FFFF800F)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga21ca0d50b13e502db5ab5feb484f9ece}{DMA\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the DMAy Channelx registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga7c3d1b9dc041f8e5f2cfc8d5dd858278}{DMA\+\_\+\+Init}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx, \mbox{\hyperlink{struct_d_m_a___init_type_def}{DMA\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMA\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the DMAy Channelx according to the specified parameters in the DMA\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga0f7f95f750a90a6824f4e9b6f58adc7e}{DMA\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_d_m_a___init_type_def}{DMA\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMA\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each DMA\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga8e7cb6b9ae5f142e2961df879cdaba65}{DMA\+\_\+\+Cmd}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified DMAy Channelx. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga0bb60360be9cd57f96399be2f3b5eb2b}{DMA\+\_\+\+ITConfig}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx, uint32\+\_\+t DMA\+\_\+\+IT, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified DMAy Channelx interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_gade5d9e532814eaa46514cb385fdff709}{DMA\+\_\+\+Set\+Curr\+Data\+Counter}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx, uint16\+\_\+t Data\+Number)
+\begin{DoxyCompactList}\small\item\em Sets the number of data units in the current DMAy Channelx transfer. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___d_m_a___private___functions_ga511b4c402d1ff32d53f28736956cac5d}{DMA\+\_\+\+Get\+Curr\+Data\+Counter}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx)
+\begin{DoxyCompactList}\small\item\em Returns the number of remaining data units in the current DMAy Channelx transfer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___d_m_a___private___functions_gafb30b7a891834c267eefd5d30b688a9f}{DMA\+\_\+\+Get\+Flag\+Status}} (uint32\+\_\+t DMAy\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified DMAy Channelx flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga25cdca360f309c8ceb7c206cd9ad9119}{DMA\+\_\+\+Clear\+Flag}} (uint32\+\_\+t DMAy\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the DMAy Channelx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} \mbox{\hyperlink{group___d_m_a___private___functions_ga9287331247150fe84d03ecd7ad8adb52}{DMA\+\_\+\+Get\+ITStatus}} (uint32\+\_\+t DMAy\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified DMAy Channelx interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga91a7340e5b334a942f3eb1e05ed5f67a}{DMA\+\_\+\+Clear\+ITPending\+Bit}} (uint32\+\_\+t DMAy\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the DMAy Channelx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides all the DMA firmware functions. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

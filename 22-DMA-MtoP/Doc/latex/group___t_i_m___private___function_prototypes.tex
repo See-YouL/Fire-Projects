@@ -1,0 +1,141 @@
+\doxysubsubsection{TIM\+\_\+\+Private\+\_\+\+Function\+Prototypes}
+\hypertarget{group___t_i_m___private___function_prototypes}{}\label{group___t_i_m___private___function_prototypes}\index{TIM\_Private\_FunctionPrototypes@{TIM\_Private\_FunctionPrototypes}}
+\doxysubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{group___t_i_m___private___function_prototypes_gac8dbcb0d903cc0a3491155b5b4fbee65}{TI1\+\_\+\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+ICPolarity, uint16\+\_\+t TIM\+\_\+\+ICSelection, uint16\+\_\+t TIM\+\_\+\+ICFilter)
+\begin{DoxyCompactList}\small\item\em Configure the TI1 as Input. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___t_i_m___private___function_prototypes_gafed528b30af910d7e55ebd1d22a9a58f}{TI2\+\_\+\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+ICPolarity, uint16\+\_\+t TIM\+\_\+\+ICSelection, uint16\+\_\+t TIM\+\_\+\+ICFilter)
+\begin{DoxyCompactList}\small\item\em Configure the TI2 as Input. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___t_i_m___private___function_prototypes_gae0776241db23f0f31950476804dad588}{TI3\+\_\+\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+ICPolarity, uint16\+\_\+t TIM\+\_\+\+ICSelection, uint16\+\_\+t TIM\+\_\+\+ICFilter)
+\begin{DoxyCompactList}\small\item\em Configure the TI3 as Input. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___t_i_m___private___function_prototypes_gaee26c0ada47174264fcd624cad3a91aa}{TI4\+\_\+\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+ICPolarity, uint16\+\_\+t TIM\+\_\+\+ICSelection, uint16\+\_\+t TIM\+\_\+\+ICFilter)
+\begin{DoxyCompactList}\small\item\em Configure the TI4 as Input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsection{Function Documentation}
+\Hypertarget{group___t_i_m___private___function_prototypes_gac8dbcb0d903cc0a3491155b5b4fbee65}\label{group___t_i_m___private___function_prototypes_gac8dbcb0d903cc0a3491155b5b4fbee65} 
+\index{TIM\_Private\_FunctionPrototypes@{TIM\_Private\_FunctionPrototypes}!TI1\_Config@{TI1\_Config}}
+\index{TI1\_Config@{TI1\_Config}!TIM\_Private\_FunctionPrototypes@{TIM\_Private\_FunctionPrototypes}}
+\doxysubsubsubsubsection{\texorpdfstring{TI1\_Config()}{TI1\_Config()}}
+{\footnotesize\ttfamily static void TI1\+\_\+\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{TIMx,  }\item[{uint16\+\_\+t}]{TIM\+\_\+\+ICPolarity,  }\item[{uint16\+\_\+t}]{TIM\+\_\+\+ICSelection,  }\item[{uint16\+\_\+t}]{TIM\+\_\+\+ICFilter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configure the TI1 as Input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TIMx} & where x can be 1 to 17 except 6 and 7 to select the TIM peripheral. \\
+\hline
+{\em TIM\+\_\+\+ICPolarity} & \+: The Input Polarity. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+ICPolarity\+\_\+\+Rising \item TIM\+\_\+\+ICPolarity\+\_\+\+Falling \end{DoxyItemize}
+\\
+\hline
+{\em TIM\+\_\+\+ICSelection} & specifies the input to be used. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+ICSelection\+\_\+\+Direct\+TI\+: TIM Input 1 is selected to be connected to IC1. \item TIM\+\_\+\+ICSelection\+\_\+\+Indirect\+TI\+: TIM Input 1 is selected to be connected to IC2. \item TIM\+\_\+\+ICSelection\+\_\+\+TRC\+: TIM Input 1 is selected to be connected to TRC. \end{DoxyItemize}
+\\
+\hline
+{\em TIM\+\_\+\+ICFilter} & Specifies the Input Capture Filter. This parameter must be a value between 0x00 and 0x0F. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m___private___function_prototypes_gafed528b30af910d7e55ebd1d22a9a58f}\label{group___t_i_m___private___function_prototypes_gafed528b30af910d7e55ebd1d22a9a58f} 
+\index{TIM\_Private\_FunctionPrototypes@{TIM\_Private\_FunctionPrototypes}!TI2\_Config@{TI2\_Config}}
+\index{TI2\_Config@{TI2\_Config}!TIM\_Private\_FunctionPrototypes@{TIM\_Private\_FunctionPrototypes}}
+\doxysubsubsubsubsection{\texorpdfstring{TI2\_Config()}{TI2\_Config()}}
+{\footnotesize\ttfamily static void TI2\+\_\+\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{TIMx,  }\item[{uint16\+\_\+t}]{TIM\+\_\+\+ICPolarity,  }\item[{uint16\+\_\+t}]{TIM\+\_\+\+ICSelection,  }\item[{uint16\+\_\+t}]{TIM\+\_\+\+ICFilter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configure the TI2 as Input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TIMx} & where x can be 1, 2, 3, 4, 5, 8, 9, 12 or 15 to select the TIM peripheral. \\
+\hline
+{\em TIM\+\_\+\+ICPolarity} & \+: The Input Polarity. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+ICPolarity\+\_\+\+Rising \item TIM\+\_\+\+ICPolarity\+\_\+\+Falling \end{DoxyItemize}
+\\
+\hline
+{\em TIM\+\_\+\+ICSelection} & specifies the input to be used. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+ICSelection\+\_\+\+Direct\+TI\+: TIM Input 2 is selected to be connected to IC2. \item TIM\+\_\+\+ICSelection\+\_\+\+Indirect\+TI\+: TIM Input 2 is selected to be connected to IC1. \item TIM\+\_\+\+ICSelection\+\_\+\+TRC\+: TIM Input 2 is selected to be connected to TRC. \end{DoxyItemize}
+\\
+\hline
+{\em TIM\+\_\+\+ICFilter} & Specifies the Input Capture Filter. This parameter must be a value between 0x00 and 0x0F. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m___private___function_prototypes_gae0776241db23f0f31950476804dad588}\label{group___t_i_m___private___function_prototypes_gae0776241db23f0f31950476804dad588} 
+\index{TIM\_Private\_FunctionPrototypes@{TIM\_Private\_FunctionPrototypes}!TI3\_Config@{TI3\_Config}}
+\index{TI3\_Config@{TI3\_Config}!TIM\_Private\_FunctionPrototypes@{TIM\_Private\_FunctionPrototypes}}
+\doxysubsubsubsubsection{\texorpdfstring{TI3\_Config()}{TI3\_Config()}}
+{\footnotesize\ttfamily static void TI3\+\_\+\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{TIMx,  }\item[{uint16\+\_\+t}]{TIM\+\_\+\+ICPolarity,  }\item[{uint16\+\_\+t}]{TIM\+\_\+\+ICSelection,  }\item[{uint16\+\_\+t}]{TIM\+\_\+\+ICFilter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configure the TI3 as Input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TIMx} & where x can be 1, 2, 3, 4, 5 or 8 to select the TIM peripheral. \\
+\hline
+{\em TIM\+\_\+\+ICPolarity} & \+: The Input Polarity. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+ICPolarity\+\_\+\+Rising \item TIM\+\_\+\+ICPolarity\+\_\+\+Falling \end{DoxyItemize}
+\\
+\hline
+{\em TIM\+\_\+\+ICSelection} & specifies the input to be used. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+ICSelection\+\_\+\+Direct\+TI\+: TIM Input 3 is selected to be connected to IC3. \item TIM\+\_\+\+ICSelection\+\_\+\+Indirect\+TI\+: TIM Input 3 is selected to be connected to IC4. \item TIM\+\_\+\+ICSelection\+\_\+\+TRC\+: TIM Input 3 is selected to be connected to TRC. \end{DoxyItemize}
+\\
+\hline
+{\em TIM\+\_\+\+ICFilter} & Specifies the Input Capture Filter. This parameter must be a value between 0x00 and 0x0F. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___t_i_m___private___function_prototypes_gaee26c0ada47174264fcd624cad3a91aa}\label{group___t_i_m___private___function_prototypes_gaee26c0ada47174264fcd624cad3a91aa} 
+\index{TIM\_Private\_FunctionPrototypes@{TIM\_Private\_FunctionPrototypes}!TI4\_Config@{TI4\_Config}}
+\index{TI4\_Config@{TI4\_Config}!TIM\_Private\_FunctionPrototypes@{TIM\_Private\_FunctionPrototypes}}
+\doxysubsubsubsubsection{\texorpdfstring{TI4\_Config()}{TI4\_Config()}}
+{\footnotesize\ttfamily static void TI4\+\_\+\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{TIMx,  }\item[{uint16\+\_\+t}]{TIM\+\_\+\+ICPolarity,  }\item[{uint16\+\_\+t}]{TIM\+\_\+\+ICSelection,  }\item[{uint16\+\_\+t}]{TIM\+\_\+\+ICFilter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configure the TI4 as Input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em TIMx} & where x can be 1, 2, 3, 4, 5 or 8 to select the TIM peripheral. \\
+\hline
+{\em TIM\+\_\+\+ICPolarity} & \+: The Input Polarity. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+ICPolarity\+\_\+\+Rising \item TIM\+\_\+\+ICPolarity\+\_\+\+Falling \end{DoxyItemize}
+\\
+\hline
+{\em TIM\+\_\+\+ICSelection} & specifies the input to be used. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item TIM\+\_\+\+ICSelection\+\_\+\+Direct\+TI\+: TIM Input 4 is selected to be connected to IC4. \item TIM\+\_\+\+ICSelection\+\_\+\+Indirect\+TI\+: TIM Input 4 is selected to be connected to IC3. \item TIM\+\_\+\+ICSelection\+\_\+\+TRC\+: TIM Input 4 is selected to be connected to TRC. \end{DoxyItemize}
+\\
+\hline
+{\em TIM\+\_\+\+ICFilter} & Specifies the Input Capture Filter. This parameter must be a value between 0x00 and 0x0F. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

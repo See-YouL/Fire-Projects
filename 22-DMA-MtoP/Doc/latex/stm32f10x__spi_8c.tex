@@ -1,0 +1,115 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/src/stm32f10x\+\_\+spi.c File Reference}
+\hypertarget{stm32f10x__spi_8c}{}\label{stm32f10x__spi_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_spi.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_spi.c}}
+
+
+This file provides all the SPI firmware functions.  
+
+
+{\ttfamily \#include "{}stm32f10x\+\_\+spi.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f10x\+\_\+rcc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_ga74286f403309d32b56fed10aba2ebf91}{CR1\+\_\+\+SPE\+\_\+\+Set}}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_ga7074d384e7f175968d1497a9275232bf}{CR1\+\_\+\+SPE\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFBF)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_gaded516c1bc1f0cb578174af3e296621b}{I2\+SCFGR\+\_\+\+I2\+SE\+\_\+\+Set}}~((uint16\+\_\+t)0x0400)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_ga0ba63ca824d68ed9a84eafd6f4d64a3a}{I2\+SCFGR\+\_\+\+I2\+SE\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FBFF)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_gaed3a2181ca4095a6488cf6c0ad7a29c6}{CR1\+\_\+\+CRCNext\+\_\+\+Set}}~((uint16\+\_\+t)0x1000)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_gae0b545cdda02753c8e8863e883268011}{CR1\+\_\+\+CRCEN\+\_\+\+Set}}~((uint16\+\_\+t)0x2000)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_gadd72ac04e7b2ff17053db04d240e17b1}{CR1\+\_\+\+CRCEN\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+DFFF)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_gaae3c2720c0b63d7cc26046969a45a6c1}{CR2\+\_\+\+SSOE\+\_\+\+Set}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_ga475caaaef8732d35e4c6fd3f21dc4e3c}{CR2\+\_\+\+SSOE\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFFB)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_ga67f7dd35ea3d1296677e5fc50b88fa90}{CR1\+\_\+\+CLEAR\+\_\+\+Mask}}~((uint16\+\_\+t)0x3040)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_ga6cd1ac4e83d8de8e32a407d1a7971389}{I2\+SCFGR\+\_\+\+CLEAR\+\_\+\+Mask}}~((uint16\+\_\+t)0x\+F040)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_ga71da9dd90bf7bfb6ed1748a1e181677a}{SPI\+\_\+\+Mode\+\_\+\+Select}}~((uint16\+\_\+t)0x\+F7\+FF)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_ga196b1b58421a7ee7dba0b46fb33c621b}{I2\+S\+\_\+\+Mode\+\_\+\+Select}}~((uint16\+\_\+t)0x0800)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_gae1190efd6dbcd06a9c03f4d499d28e4c}{I2\+S2\+\_\+\+CLOCK\+\_\+\+SRC}}~((uint32\+\_\+t)(0x00020000))
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_gabb67971448c15090f3372e3875db3d23}{I2\+S3\+\_\+\+CLOCK\+\_\+\+SRC}}~((uint32\+\_\+t)(0x00040000))
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_gaf9cca755995c8e8f7a4012709ca468f2}{I2\+S\+\_\+\+MUL\+\_\+\+MASK}}~((uint32\+\_\+t)(0x0000\+F000))
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___defines_ga26cdb43c45ac655c792c5af0a6bbb0bf}{I2\+S\+\_\+\+DIV\+\_\+\+MASK}}~((uint32\+\_\+t)(0x000000\+F0))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_gabe36880945fa56785283a9c0092124cc}{SPI\+\_\+\+I2\+S\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the SPIx peripheral registers to their default reset values (Affects also the I2\+Ss). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_ga8dacc1dc48bf08c0f12da409f4889037}{SPI\+\_\+\+Init}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, \mbox{\hyperlink{struct_s_p_i___init_type_def}{SPI\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPI\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the SPIx peripheral according to the specified parameters in the SPI\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_ga53661884ae4a9640df7cbc59187782f7}{I2\+S\+\_\+\+Init}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, \mbox{\hyperlink{struct_i2_s___init_type_def}{I2\+S\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+S\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the SPIx peripheral according to the specified parameters in the I2\+S\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_ga9a0116f88cc2c4478c270f05608703f1}{SPI\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_s_p_i___init_type_def}{SPI\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPI\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each SPI\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_ga7470ec1d0759fdeeb42c7fe71a3b41b7}{I2\+S\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_i2_s___init_type_def}{I2\+S\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+S\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each I2\+S\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_gaa31357879a65ee1ed7223f3b9114dcf3}{SPI\+\_\+\+Cmd}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified SPI peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_gafe061c71bbc5b4224f3f2884dc53739e}{I2\+S\+\_\+\+Cmd}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified SPI peripheral (in I2S mode). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_ga17f4ef132e8ddbf94cb6b1688d181e41}{SPI\+\_\+\+I2\+S\+\_\+\+ITConfig}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, uint8\+\_\+t SPI\+\_\+\+I2\+S\+\_\+\+IT, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified SPI/\+I2S interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_gabed5b91a8576e6d578f364cc0e807e4a}{SPI\+\_\+\+I2\+S\+\_\+\+DMACmd}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, uint16\+\_\+t SPI\+\_\+\+I2\+S\+\_\+\+DMAReq, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the SPIx/\+I2\+Sx DMA interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_gad5af40bebe8dbe3fa8bd476489d7e3da}{SPI\+\_\+\+I2\+S\+\_\+\+Send\+Data}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, uint16\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Transmits a Data through the SPIx/\+I2\+Sx peripheral. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___s_p_i___private___functions_gab77de76547f3bff403236b263b070a30}{SPI\+\_\+\+I2\+S\+\_\+\+Receive\+Data}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the SPIx/\+I2\+Sx peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_ga56fc508a482f032f9eb80e4c63184126}{SPI\+\_\+\+NSSInternal\+Software\+Config}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, uint16\+\_\+t SPI\+\_\+\+NSSInternal\+Soft)
+\begin{DoxyCompactList}\small\item\em Configures internally by software the NSS pin for the selected SPI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_ga4ec54abdedf6cd17403d853a926d91c1}{SPI\+\_\+\+SSOutput\+Cmd}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the SS output for the selected SPI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_gafc82e90841d7879535d655c035709cb1}{SPI\+\_\+\+Data\+Size\+Config}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, uint16\+\_\+t SPI\+\_\+\+Data\+Size)
+\begin{DoxyCompactList}\small\item\em Configures the data size for the selected SPI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_gace8b1058e09bab150b0dbe5978810273}{SPI\+\_\+\+Transmit\+CRC}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx)
+\begin{DoxyCompactList}\small\item\em Transmit the SPIx CRC value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_ga64f7276d119e6cb58afc100f8832adb0}{SPI\+\_\+\+Calculate\+CRC}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the CRC value calculation of the transferred bytes. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___s_p_i___private___functions_ga4c81c193516e82cf0a2fdc149ef20cc6}{SPI\+\_\+\+Get\+CRC}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, uint8\+\_\+t SPI\+\_\+\+CRC)
+\begin{DoxyCompactList}\small\item\em Returns the transmit or the receive CRC register value for the specified SPI. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___s_p_i___private___functions_ga80fb9374cfce670f29128bb78568353f}{SPI\+\_\+\+Get\+CRCPolynomial}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx)
+\begin{DoxyCompactList}\small\item\em Returns the CRC Polynomial register value for the specified SPI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_ga166171c421fc51da7714723524d41b45}{SPI\+\_\+\+Bi\+Directional\+Line\+Config}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, uint16\+\_\+t SPI\+\_\+\+Direction)
+\begin{DoxyCompactList}\small\item\em Selects the data transfer direction in bi-\/directional mode for the specified SPI. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___s_p_i___private___functions_ga1bd785d129e09c5734a876c8f2767204}{SPI\+\_\+\+I2\+S\+\_\+\+Get\+Flag\+Status}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, uint16\+\_\+t SPI\+\_\+\+I2\+S\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified SPI/\+I2S flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_ga3aabd9e2437e213056c0ed9bdfa1a724}{SPI\+\_\+\+I2\+S\+\_\+\+Clear\+Flag}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, uint16\+\_\+t SPI\+\_\+\+I2\+S\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the SPIx CRC Error (CRCERR) flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} \mbox{\hyperlink{group___s_p_i___private___functions_ga72decbc1cd79f8fad92a2204beca6bc5}{SPI\+\_\+\+I2\+S\+\_\+\+Get\+ITStatus}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, uint8\+\_\+t SPI\+\_\+\+I2\+S\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified SPI/\+I2S interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_p_i___private___functions_ga35a524a49ff3d058137060f751e8749f}{SPI\+\_\+\+I2\+S\+\_\+\+Clear\+ITPending\+Bit}} (\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}SPIx, uint8\+\_\+t SPI\+\_\+\+I2\+S\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the SPIx CRC Error (CRCERR) interrupt pending bit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides all the SPI firmware functions. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

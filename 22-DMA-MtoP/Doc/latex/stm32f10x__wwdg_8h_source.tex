@@ -1,0 +1,45 @@
+\doxysection{stm32f10x\+\_\+wwdg.\+h}
+\hypertarget{stm32f10x__wwdg_8h_source}{}\label{stm32f10x__wwdg_8h_source}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_wwdg.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_wwdg.h}}
+\mbox{\hyperlink{stm32f10x__wwdg_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F10x\_WWDG\_H}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \_\_STM32F10x\_WWDG\_H}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f10x_8h}{stm32f10x.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ WWDG\_Prescaler\_1\ \ \ \ ((uint32\_t)0x00000000)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ WWDG\_Prescaler\_2\ \ \ \ ((uint32\_t)0x00000080)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ WWDG\_Prescaler\_4\ \ \ \ ((uint32\_t)0x00000100)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ WWDG\_Prescaler\_8\ \ \ \ ((uint32\_t)0x00000180)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ IS\_WWDG\_PRESCALER(PRESCALER)\ (((PRESCALER)\ ==\ WWDG\_Prescaler\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ WWDG\_Prescaler\_2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ WWDG\_Prescaler\_4)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ WWDG\_Prescaler\_8))}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ IS\_WWDG\_WINDOW\_VALUE(VALUE)\ ((VALUE)\ <=\ 0x7F)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ IS\_WWDG\_COUNTER(COUNTER)\ (((COUNTER)\ >=\ 0x40)\ \&\&\ ((COUNTER)\ <=\ 0x7F))}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___w_w_d_g___exported___functions_ga7130f4dc861b9234b62e73f9f57f89a1}{WWDG\_DeInit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___w_w_d_g___exported___functions_gafeaa2b52c31ba7baca7eb61d2d42e07b}{WWDG\_SetPrescaler}}(uint32\_t\ WWDG\_Prescaler);}
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___w_w_d_g___exported___functions_gaf44a7bf8bf6b11b41cd89ff521fdd5a5}{WWDG\_SetWindowValue}}(uint8\_t\ WindowValue);}
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___w_w_d_g___exported___functions_gac8af66ea5254d3d78b60b9b7c7f29521}{WWDG\_EnableIT}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___w_w_d_g___exported___functions_ga6e44cc35f133b28b9ad861f459bf8d76}{WWDG\_SetCounter}}(uint8\_t\ Counter);}
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___w_w_d_g___exported___functions_ga10dc2554d0b504b5472e3ecf0f02a9e6}{WWDG\_Enable}}(uint8\_t\ Counter);}
+\DoxyCodeLine{00094\ \mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{FlagStatus}}\ \mbox{\hyperlink{group___w_w_d_g___exported___functions_ga7df4882d45918b9b8249dfca1e44fabc}{WWDG\_GetFlagStatus}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___w_w_d_g___exported___functions_gabd2b5a6317c2e1a3ab0795838ce59dd2}{WWDG\_ClearFlag}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F10x\_WWDG\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00115\ \textcolor{comment}{/*******************\ (C)\ COPYRIGHT\ 2011\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

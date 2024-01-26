@@ -1,0 +1,70 @@
+\doxysubsubsection{STM32\+F10x\+\_\+\+System\+\_\+\+Private\+\_\+\+Function\+Prototypes}
+\hypertarget{group___s_t_m32_f10x___system___private___function_prototypes}{}\label{group___s_t_m32_f10x___system___private___function_prototypes}\index{STM32F10x\_System\_Private\_FunctionPrototypes@{STM32F10x\_System\_Private\_FunctionPrototypes}}
+\doxysubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{group___s_t_m32_f10x___system___private___function_prototypes_ga1ee14ac28e60198cc998586807b51e4c}{Set\+Sys\+Clock}} (void)
+\begin{DoxyCompactList}\small\item\em Configures the System clock frequency, HCLK, PCLK2 and PCLK1 prescalers. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___s_t_m32_f10x___system___private___function_prototypes_ga33cc07ebcb658e015d1a4460dea5cf58}{Set\+Sys\+Clock\+To72}} (void)
+\begin{DoxyCompactList}\small\item\em Setup the external memory controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsection{Function Documentation}
+\Hypertarget{group___s_t_m32_f10x___system___private___function_prototypes_ga1ee14ac28e60198cc998586807b51e4c}\label{group___s_t_m32_f10x___system___private___function_prototypes_ga1ee14ac28e60198cc998586807b51e4c} 
+\index{STM32F10x\_System\_Private\_FunctionPrototypes@{STM32F10x\_System\_Private\_FunctionPrototypes}!SetSysClock@{SetSysClock}}
+\index{SetSysClock@{SetSysClock}!STM32F10x\_System\_Private\_FunctionPrototypes@{STM32F10x\_System\_Private\_FunctionPrototypes}}
+\doxysubsubsubsubsection{\texorpdfstring{SetSysClock()}{SetSysClock()}}
+{\footnotesize\ttfamily static void Set\+Sys\+Clock (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configures the System clock frequency, HCLK, PCLK2 and PCLK1 prescalers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___s_t_m32_f10x___system___private___function_prototypes_ga33cc07ebcb658e015d1a4460dea5cf58}\label{group___s_t_m32_f10x___system___private___function_prototypes_ga33cc07ebcb658e015d1a4460dea5cf58} 
+\index{STM32F10x\_System\_Private\_FunctionPrototypes@{STM32F10x\_System\_Private\_FunctionPrototypes}!SetSysClockTo72@{SetSysClockTo72}}
+\index{SetSysClockTo72@{SetSysClockTo72}!STM32F10x\_System\_Private\_FunctionPrototypes@{STM32F10x\_System\_Private\_FunctionPrototypes}}
+\doxysubsubsubsubsection{\texorpdfstring{SetSysClockTo72()}{SetSysClockTo72()}}
+{\footnotesize\ttfamily static void Set\+Sys\+Clock\+To72 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Setup the external memory controller. 
+
+Called in startup\+\_\+stm32f10x.\+s before jump to \+\_\+\+\_\+main 
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Sets System clock frequency to 72MHz and configure HCLK, PCLK2 and PCLK1 prescalers. \begin{DoxyNote}{Note}
+This function should be used only after reset. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

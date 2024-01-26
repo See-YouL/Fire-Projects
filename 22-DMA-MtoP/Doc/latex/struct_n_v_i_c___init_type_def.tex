@@ -1,0 +1,59 @@
+\doxysection{NVIC\+\_\+\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_n_v_i_c___init_type_def}{}\label{struct_n_v_i_c___init_type_def}\index{NVIC\_InitTypeDef@{NVIC\_InitTypeDef}}
+
+
+NVIC Init Structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$misc.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_n_v_i_c___init_type_def_afa04cf6e559bb690bdd9fcb7e3d93dcf}{NVIC\+\_\+\+IRQChannel}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_n_v_i_c___init_type_def_aa3fe262c30188404a6e31f922c5ae513}{NVIC\+\_\+\+IRQChannel\+Preemption\+Priority}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_n_v_i_c___init_type_def_aecc22a002244e3f1f9448dbe46c1db4b}{NVIC\+\_\+\+IRQChannel\+Sub\+Priority}}
+\item 
+\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} \mbox{\hyperlink{struct_n_v_i_c___init_type_def_acb23fabb995fa4980c768825f12f5815}{NVIC\+\_\+\+IRQChannel\+Cmd}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+NVIC Init Structure definition ~\newline
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_n_v_i_c___init_type_def_afa04cf6e559bb690bdd9fcb7e3d93dcf}\label{struct_n_v_i_c___init_type_def_afa04cf6e559bb690bdd9fcb7e3d93dcf} 
+\index{NVIC\_InitTypeDef@{NVIC\_InitTypeDef}!NVIC\_IRQChannel@{NVIC\_IRQChannel}}
+\index{NVIC\_IRQChannel@{NVIC\_IRQChannel}!NVIC\_InitTypeDef@{NVIC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{NVIC\_IRQChannel}{NVIC\_IRQChannel}}
+{\footnotesize\ttfamily uint8\+\_\+t NVIC\+\_\+\+Init\+Type\+Def\+::\+NVIC\+\_\+\+IRQChannel}
+
+Specifies the IRQ channel to be enabled or disabled. This parameter can be a value of \doxylink{group___configuration__section__for___c_m_s_i_s_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type} (For the complete STM32 Devices IRQ Channels list, please refer to \doxylink{stm32f10x_8h}{stm32f10x.\+h} file) \Hypertarget{struct_n_v_i_c___init_type_def_acb23fabb995fa4980c768825f12f5815}\label{struct_n_v_i_c___init_type_def_acb23fabb995fa4980c768825f12f5815} 
+\index{NVIC\_InitTypeDef@{NVIC\_InitTypeDef}!NVIC\_IRQChannelCmd@{NVIC\_IRQChannelCmd}}
+\index{NVIC\_IRQChannelCmd@{NVIC\_IRQChannelCmd}!NVIC\_InitTypeDef@{NVIC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{NVIC\_IRQChannelCmd}{NVIC\_IRQChannelCmd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} NVIC\+\_\+\+Init\+Type\+Def\+::\+NVIC\+\_\+\+IRQChannel\+Cmd}
+
+Specifies whether the IRQ channel defined in NVIC\+\_\+\+IRQChannel will be enabled or disabled. This parameter can be set either to ENABLE or DISABLE \Hypertarget{struct_n_v_i_c___init_type_def_aa3fe262c30188404a6e31f922c5ae513}\label{struct_n_v_i_c___init_type_def_aa3fe262c30188404a6e31f922c5ae513} 
+\index{NVIC\_InitTypeDef@{NVIC\_InitTypeDef}!NVIC\_IRQChannelPreemptionPriority@{NVIC\_IRQChannelPreemptionPriority}}
+\index{NVIC\_IRQChannelPreemptionPriority@{NVIC\_IRQChannelPreemptionPriority}!NVIC\_InitTypeDef@{NVIC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{NVIC\_IRQChannelPreemptionPriority}{NVIC\_IRQChannelPreemptionPriority}}
+{\footnotesize\ttfamily uint8\+\_\+t NVIC\+\_\+\+Init\+Type\+Def\+::\+NVIC\+\_\+\+IRQChannel\+Preemption\+Priority}
+
+Specifies the pre-\/emption priority for the IRQ channel specified in NVIC\+\_\+\+IRQChannel. This parameter can be a value between 0 and 15 as described in the table \doxylink{group___n_v_i_c___priority___table}{NVIC\+\_\+\+Priority\+\_\+\+Table} \Hypertarget{struct_n_v_i_c___init_type_def_aecc22a002244e3f1f9448dbe46c1db4b}\label{struct_n_v_i_c___init_type_def_aecc22a002244e3f1f9448dbe46c1db4b} 
+\index{NVIC\_InitTypeDef@{NVIC\_InitTypeDef}!NVIC\_IRQChannelSubPriority@{NVIC\_IRQChannelSubPriority}}
+\index{NVIC\_IRQChannelSubPriority@{NVIC\_IRQChannelSubPriority}!NVIC\_InitTypeDef@{NVIC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{NVIC\_IRQChannelSubPriority}{NVIC\_IRQChannelSubPriority}}
+{\footnotesize\ttfamily uint8\+\_\+t NVIC\+\_\+\+Init\+Type\+Def\+::\+NVIC\+\_\+\+IRQChannel\+Sub\+Priority}
+
+Specifies the subpriority level for the IRQ channel specified in NVIC\+\_\+\+IRQChannel. This parameter can be a value between 0 and 15 as described in the table \doxylink{group___n_v_i_c___priority___table}{NVIC\+\_\+\+Priority\+\_\+\+Table} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/\mbox{\hyperlink{misc_8h}{misc.\+h}}\end{DoxyCompactItemize}

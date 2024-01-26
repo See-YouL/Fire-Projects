@@ -1,0 +1,75 @@
+\doxysection{Can\+Tx\+Msg Struct Reference}
+\hypertarget{struct_can_tx_msg}{}\label{struct_can_tx_msg}\index{CanTxMsg@{CanTxMsg}}
+
+
+CAN Tx message structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f10x\+\_\+can.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_can_tx_msg_abfb50c8208227f8cf378f29cf9a3a6f3}{Std\+Id}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_can_tx_msg_a33050a95a4cc463b589ff16bdd416f22}{Ext\+Id}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_can_tx_msg_aa4c8568a0e3250a17bd7e116b3e09670}{IDE}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_can_tx_msg_a69f84255db38c6910058f290efdb7302}{RTR}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_can_tx_msg_ab49d0fa602aad2fd9cd007adafc11fc2}{DLC}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_can_tx_msg_aabfbf718f627da26d9e3cf903dc0ad02}{Data}} \mbox{[}8\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+CAN Tx message structure definition ~\newline
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_can_tx_msg_aabfbf718f627da26d9e3cf903dc0ad02}\label{struct_can_tx_msg_aabfbf718f627da26d9e3cf903dc0ad02} 
+\index{CanTxMsg@{CanTxMsg}!Data@{Data}}
+\index{Data@{Data}!CanTxMsg@{CanTxMsg}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily uint8\+\_\+t Can\+Tx\+Msg\+::\+Data\mbox{[}8\mbox{]}}
+
+Contains the data to be transmitted. It ranges from 0 to 0x\+FF. \Hypertarget{struct_can_tx_msg_ab49d0fa602aad2fd9cd007adafc11fc2}\label{struct_can_tx_msg_ab49d0fa602aad2fd9cd007adafc11fc2} 
+\index{CanTxMsg@{CanTxMsg}!DLC@{DLC}}
+\index{DLC@{DLC}!CanTxMsg@{CanTxMsg}}
+\doxysubsubsection{\texorpdfstring{DLC}{DLC}}
+{\footnotesize\ttfamily uint8\+\_\+t Can\+Tx\+Msg\+::\+DLC}
+
+Specifies the length of the frame that will be transmitted. This parameter can be a value between 0 to 8 \Hypertarget{struct_can_tx_msg_a33050a95a4cc463b589ff16bdd416f22}\label{struct_can_tx_msg_a33050a95a4cc463b589ff16bdd416f22} 
+\index{CanTxMsg@{CanTxMsg}!ExtId@{ExtId}}
+\index{ExtId@{ExtId}!CanTxMsg@{CanTxMsg}}
+\doxysubsubsection{\texorpdfstring{ExtId}{ExtId}}
+{\footnotesize\ttfamily uint32\+\_\+t Can\+Tx\+Msg\+::\+Ext\+Id}
+
+Specifies the extended identifier. This parameter can be a value between 0 to 0x1\+FFFFFFF. \Hypertarget{struct_can_tx_msg_aa4c8568a0e3250a17bd7e116b3e09670}\label{struct_can_tx_msg_aa4c8568a0e3250a17bd7e116b3e09670} 
+\index{CanTxMsg@{CanTxMsg}!IDE@{IDE}}
+\index{IDE@{IDE}!CanTxMsg@{CanTxMsg}}
+\doxysubsubsection{\texorpdfstring{IDE}{IDE}}
+{\footnotesize\ttfamily uint8\+\_\+t Can\+Tx\+Msg\+::\+IDE}
+
+Specifies the type of identifier for the message that will be transmitted. This parameter can be a value of \doxylink{group___c_a_n__identifier__type}{CAN\+\_\+identifier\+\_\+type} \Hypertarget{struct_can_tx_msg_a69f84255db38c6910058f290efdb7302}\label{struct_can_tx_msg_a69f84255db38c6910058f290efdb7302} 
+\index{CanTxMsg@{CanTxMsg}!RTR@{RTR}}
+\index{RTR@{RTR}!CanTxMsg@{CanTxMsg}}
+\doxysubsubsection{\texorpdfstring{RTR}{RTR}}
+{\footnotesize\ttfamily uint8\+\_\+t Can\+Tx\+Msg\+::\+RTR}
+
+Specifies the type of frame for the message that will be transmitted. This parameter can be a value of \doxylink{group___c_a_n__remote__transmission__request}{CAN\+\_\+remote\+\_\+transmission\+\_\+request} \Hypertarget{struct_can_tx_msg_abfb50c8208227f8cf378f29cf9a3a6f3}\label{struct_can_tx_msg_abfb50c8208227f8cf378f29cf9a3a6f3} 
+\index{CanTxMsg@{CanTxMsg}!StdId@{StdId}}
+\index{StdId@{StdId}!CanTxMsg@{CanTxMsg}}
+\doxysubsubsection{\texorpdfstring{StdId}{StdId}}
+{\footnotesize\ttfamily uint32\+\_\+t Can\+Tx\+Msg\+::\+Std\+Id}
+
+Specifies the standard identifier. This parameter can be a value between 0 to 0x7\+FF. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/\mbox{\hyperlink{stm32f10x__can_8h}{stm32f10x\+\_\+can.\+h}}\end{DoxyCompactItemize}

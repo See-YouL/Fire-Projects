@@ -1,0 +1,151 @@
+\doxysubsubsection{IWDG\+\_\+\+Exported\+\_\+\+Functions}
+\hypertarget{group___i_w_d_g___exported___functions}{}\label{group___i_w_d_g___exported___functions}\index{IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}}
+\doxysubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___i_w_d_g___exported___functions_gae466681e5bdc11b353c508b89d75ca05}{IWDG\+\_\+\+Write\+Access\+Cmd}} (uint16\+\_\+t IWDG\+\_\+\+Write\+Access)
+\begin{DoxyCompactList}\small\item\em Enables or disables write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_w_d_g___exported___functions_ga4fa7f1cd690533a35ad9e4729c0450a3}{IWDG\+\_\+\+Set\+Prescaler}} (uint8\+\_\+t IWDG\+\_\+\+Prescaler)
+\begin{DoxyCompactList}\small\item\em Sets IWDG Prescaler value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_w_d_g___exported___functions_gae2a14752a0431f23cb80cebf202ac365}{IWDG\+\_\+\+Set\+Reload}} (uint16\+\_\+t Reload)
+\begin{DoxyCompactList}\small\item\em Sets IWDG Reload value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_w_d_g___exported___functions_ga7147ebabdc3fef97f532b171a4e70d49}{IWDG\+\_\+\+Reload\+Counter}} (void)
+\begin{DoxyCompactList}\small\item\em Reloads IWDG counter with value defined in the reload register (write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers disabled). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_w_d_g___exported___functions_ga479b2921c86f8c67b819f5c4bea6bdb6}{IWDG\+\_\+\+Enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enables IWDG (write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers disabled). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___i_w_d_g___exported___functions_ga37f050cfbedc0c15f9e0816c0b22011e}{IWDG\+\_\+\+Get\+Flag\+Status}} (uint16\+\_\+t IWDG\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified IWDG flag is set or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsection{Function Documentation}
+\Hypertarget{group___i_w_d_g___exported___functions_ga479b2921c86f8c67b819f5c4bea6bdb6}\label{group___i_w_d_g___exported___functions_ga479b2921c86f8c67b819f5c4bea6bdb6} 
+\index{IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}!IWDG\_Enable@{IWDG\_Enable}}
+\index{IWDG\_Enable@{IWDG\_Enable}!IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{IWDG\_Enable()}{IWDG\_Enable()}}
+{\footnotesize\ttfamily void IWDG\+\_\+\+Enable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Enables IWDG (write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers disabled). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i_w_d_g___exported___functions_ga37f050cfbedc0c15f9e0816c0b22011e}\label{group___i_w_d_g___exported___functions_ga37f050cfbedc0c15f9e0816c0b22011e} 
+\index{IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}!IWDG\_GetFlagStatus@{IWDG\_GetFlagStatus}}
+\index{IWDG\_GetFlagStatus@{IWDG\_GetFlagStatus}!IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{IWDG\_GetFlagStatus()}{IWDG\_GetFlagStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} IWDG\+\_\+\+Get\+Flag\+Status (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{IWDG\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Checks whether the specified IWDG flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em IWDG\+\_\+\+FLAG} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item IWDG\+\_\+\+FLAG\+\_\+\+PVU\+: Prescaler Value Update on going \item IWDG\+\_\+\+FLAG\+\_\+\+RVU\+: Reload Value Update on going \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of IWDG\+\_\+\+FLAG (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i_w_d_g___exported___functions_ga7147ebabdc3fef97f532b171a4e70d49}\label{group___i_w_d_g___exported___functions_ga7147ebabdc3fef97f532b171a4e70d49} 
+\index{IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}!IWDG\_ReloadCounter@{IWDG\_ReloadCounter}}
+\index{IWDG\_ReloadCounter@{IWDG\_ReloadCounter}!IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{IWDG\_ReloadCounter()}{IWDG\_ReloadCounter()}}
+{\footnotesize\ttfamily void IWDG\+\_\+\+Reload\+Counter (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reloads IWDG counter with value defined in the reload register (write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers disabled). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i_w_d_g___exported___functions_ga4fa7f1cd690533a35ad9e4729c0450a3}\label{group___i_w_d_g___exported___functions_ga4fa7f1cd690533a35ad9e4729c0450a3} 
+\index{IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}!IWDG\_SetPrescaler@{IWDG\_SetPrescaler}}
+\index{IWDG\_SetPrescaler@{IWDG\_SetPrescaler}!IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{IWDG\_SetPrescaler()}{IWDG\_SetPrescaler()}}
+{\footnotesize\ttfamily void IWDG\+\_\+\+Set\+Prescaler (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{IWDG\+\_\+\+Prescaler }\end{DoxyParamCaption})}
+
+
+
+Sets IWDG Prescaler value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em IWDG\+\_\+\+Prescaler} & specifies the IWDG Prescaler value. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item IWDG\+\_\+\+Prescaler\+\_\+4\+: IWDG prescaler set to 4 \item IWDG\+\_\+\+Prescaler\+\_\+8\+: IWDG prescaler set to 8 \item IWDG\+\_\+\+Prescaler\+\_\+16\+: IWDG prescaler set to 16 \item IWDG\+\_\+\+Prescaler\+\_\+32\+: IWDG prescaler set to 32 \item IWDG\+\_\+\+Prescaler\+\_\+64\+: IWDG prescaler set to 64 \item IWDG\+\_\+\+Prescaler\+\_\+128\+: IWDG prescaler set to 128 \item IWDG\+\_\+\+Prescaler\+\_\+256\+: IWDG prescaler set to 256 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i_w_d_g___exported___functions_gae2a14752a0431f23cb80cebf202ac365}\label{group___i_w_d_g___exported___functions_gae2a14752a0431f23cb80cebf202ac365} 
+\index{IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}!IWDG\_SetReload@{IWDG\_SetReload}}
+\index{IWDG\_SetReload@{IWDG\_SetReload}!IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{IWDG\_SetReload()}{IWDG\_SetReload()}}
+{\footnotesize\ttfamily void IWDG\+\_\+\+Set\+Reload (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Reload }\end{DoxyParamCaption})}
+
+
+
+Sets IWDG Reload value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Reload} & specifies the IWDG Reload value. This parameter must be a number between 0 and 0x0\+FFF. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___i_w_d_g___exported___functions_gae466681e5bdc11b353c508b89d75ca05}\label{group___i_w_d_g___exported___functions_gae466681e5bdc11b353c508b89d75ca05} 
+\index{IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}!IWDG\_WriteAccessCmd@{IWDG\_WriteAccessCmd}}
+\index{IWDG\_WriteAccessCmd@{IWDG\_WriteAccessCmd}!IWDG\_Exported\_Functions@{IWDG\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{IWDG\_WriteAccessCmd()}{IWDG\_WriteAccessCmd()}}
+{\footnotesize\ttfamily void IWDG\+\_\+\+Write\+Access\+Cmd (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{IWDG\+\_\+\+Write\+Access }\end{DoxyParamCaption})}
+
+
+
+Enables or disables write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em IWDG\+\_\+\+Write\+Access} & new state of write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item IWDG\+\_\+\+Write\+Access\+\_\+\+Enable\+: Enable write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers \item IWDG\+\_\+\+Write\+Access\+\_\+\+Disable\+: Disable write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

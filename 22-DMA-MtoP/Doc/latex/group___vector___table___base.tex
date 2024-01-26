@@ -1,0 +1,43 @@
+\doxysubsubsubsection{Vector\+\_\+\+Table\+\_\+\+Base}
+\hypertarget{group___vector___table___base}{}\label{group___vector___table___base}\index{Vector\_Table\_Base@{Vector\_Table\_Base}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___vector___table___base_ga8be8181cc3e5d42f6204af306ab50f80}{NVIC\+\_\+\+Vect\+Tab\+\_\+\+RAM}}~((uint32\+\_\+t)0x20000000)
+\item 
+\#define \mbox{\hyperlink{group___vector___table___base_gafbf92fd28a1090b2aa49732ebd5704b5}{NVIC\+\_\+\+Vect\+Tab\+\_\+\+FLASH}}~((uint32\+\_\+t)0x08000000)
+\item 
+\#define \mbox{\hyperlink{group___vector___table___base_ga26b9d493ccb98fcce9a27303078940c8}{IS\+\_\+\+NVIC\+\_\+\+VECTTAB}}(VECTTAB)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___vector___table___base_ga26b9d493ccb98fcce9a27303078940c8}\label{group___vector___table___base_ga26b9d493ccb98fcce9a27303078940c8} 
+\index{Vector\_Table\_Base@{Vector\_Table\_Base}!IS\_NVIC\_VECTTAB@{IS\_NVIC\_VECTTAB}}
+\index{IS\_NVIC\_VECTTAB@{IS\_NVIC\_VECTTAB}!Vector\_Table\_Base@{Vector\_Table\_Base}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_NVIC\_VECTTAB}{IS\_NVIC\_VECTTAB}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+NVIC\+\_\+\+VECTTAB(\begin{DoxyParamCaption}\item[{}]{VECTTAB }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((VECTTAB)\ ==\ \mbox{\hyperlink{group___vector___table___base_ga8be8181cc3e5d42f6204af306ab50f80}{NVIC\_VectTab\_RAM}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VECTTAB)\ ==\ \mbox{\hyperlink{group___vector___table___base_gafbf92fd28a1090b2aa49732ebd5704b5}{NVIC\_VectTab\_FLASH}}))}
+
+\end{DoxyCode}
+\Hypertarget{group___vector___table___base_gafbf92fd28a1090b2aa49732ebd5704b5}\label{group___vector___table___base_gafbf92fd28a1090b2aa49732ebd5704b5} 
+\index{Vector\_Table\_Base@{Vector\_Table\_Base}!NVIC\_VectTab\_FLASH@{NVIC\_VectTab\_FLASH}}
+\index{NVIC\_VectTab\_FLASH@{NVIC\_VectTab\_FLASH}!Vector\_Table\_Base@{Vector\_Table\_Base}}
+\doxysubsubsubsubsubsection{\texorpdfstring{NVIC\_VectTab\_FLASH}{NVIC\_VectTab\_FLASH}}
+{\footnotesize\ttfamily \#define NVIC\+\_\+\+Vect\+Tab\+\_\+\+FLASH~((uint32\+\_\+t)0x08000000)}
+
+\Hypertarget{group___vector___table___base_ga8be8181cc3e5d42f6204af306ab50f80}\label{group___vector___table___base_ga8be8181cc3e5d42f6204af306ab50f80} 
+\index{Vector\_Table\_Base@{Vector\_Table\_Base}!NVIC\_VectTab\_RAM@{NVIC\_VectTab\_RAM}}
+\index{NVIC\_VectTab\_RAM@{NVIC\_VectTab\_RAM}!Vector\_Table\_Base@{Vector\_Table\_Base}}
+\doxysubsubsubsubsubsection{\texorpdfstring{NVIC\_VectTab\_RAM}{NVIC\_VectTab\_RAM}}
+{\footnotesize\ttfamily \#define NVIC\+\_\+\+Vect\+Tab\+\_\+\+RAM~((uint32\+\_\+t)0x20000000)}
+

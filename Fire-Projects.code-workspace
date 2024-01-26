@@ -12,7 +12,8 @@
 			"stm32f10x_exti.h": "c",
 			"misc.h": "c",
 			"stm32f10x_usart.h": "c",
-			"bsp_usart.h": "c"
+			"bsp_usart.h": "c",
+			"bsp_dma_m2p.h": "c"
 		}
 	}
 }

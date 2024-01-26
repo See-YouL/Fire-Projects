@@ -1,0 +1,56 @@
+\doxysection{stm32f10x\+\_\+dbgmcu.\+h}
+\hypertarget{stm32f10x__dbgmcu_8h_source}{}\label{stm32f10x__dbgmcu_8h_source}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_dbgmcu.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_dbgmcu.h}}
+\mbox{\hyperlink{stm32f10x__dbgmcu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F10x\_DBGMCU\_H}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \_\_STM32F10x\_DBGMCU\_H}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f10x_8h}{stm32f10x.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ DBGMCU\_SLEEP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000001)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ DBGMCU\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000002)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ DBGMCU\_STANDBY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ DBGMCU\_IWDG\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000100)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ DBGMCU\_WWDG\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000200)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM1\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000400)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM2\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000800)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM3\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00001000)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM4\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00002000)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ DBGMCU\_CAN1\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00004000)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ DBGMCU\_I2C1\_SMBUS\_TIMEOUT\ \ \ \ ((uint32\_t)0x00008000)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ DBGMCU\_I2C2\_SMBUS\_TIMEOUT\ \ \ \ ((uint32\_t)0x00010000)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM8\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00020000)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM5\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00040000)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM6\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00080000)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM7\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00100000)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ DBGMCU\_CAN2\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00200000)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM15\_STOP\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00400000)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM16\_STOP\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x00800000)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM17\_STOP\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x01000000)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM12\_STOP\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x02000000)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM13\_STOP\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x04000000)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM14\_STOP\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x08000000)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM9\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x10000000)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM10\_STOP\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x20000000)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ DBGMCU\_TIM11\_STOP\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x40000000)}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ IS\_DBGMCU\_PERIPH(PERIPH)\ ((((PERIPH)\ \&\ 0x800000F8)\ ==\ 0x00)\ \&\&\ ((PERIPH)\ !=\ 0x00))}}
+\DoxyCodeLine{00098\ uint32\_t\ \mbox{\hyperlink{group___d_b_g_m_c_u___exported___functions_ga47419e9ca75ab7be4c70feb82faa0511}{DBGMCU\_GetREVID}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00099\ uint32\_t\ \mbox{\hyperlink{group___d_b_g_m_c_u___exported___functions_gac34193c34dbce759bf424957a31b3266}{DBGMCU\_GetDEVID}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_b_g_m_c_u___exported___functions_gadf2f267f855ac1e4c03905c5dcfbd28b}{DBGMCU\_Config}}(uint32\_t\ DBGMCU\_Periph,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F10x\_DBGMCU\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00119\ \textcolor{comment}{/*******************\ (C)\ COPYRIGHT\ 2011\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

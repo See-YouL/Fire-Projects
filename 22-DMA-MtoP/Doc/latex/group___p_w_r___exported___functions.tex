@@ -1,0 +1,223 @@
+\doxysubsubsection{PWR\+\_\+\+Exported\+\_\+\+Functions}
+\hypertarget{group___p_w_r___exported___functions}{}\label{group___p_w_r___exported___functions}\index{PWR\_Exported\_Functions@{PWR\_Exported\_Functions}}
+\doxysubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___p_w_r___exported___functions_gad03a0aac7bc3bc3a9fd012f3769a6990}{PWR\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the PWR peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___p_w_r___exported___functions_ga0741aea35572b1a75f82b74de12df800}{PWR\+\_\+\+Backup\+Access\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables access to the RTC and backup registers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___p_w_r___exported___functions_ga42cad476b816e0a33594a933b3ed1acd}{PWR\+\_\+\+PVDCmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Power Voltage Detector(\+PVD). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___p_w_r___exported___functions_ga237c143ef6aa55abb8049fa7bf24ab8f}{PWR\+\_\+\+PVDLevel\+Config}} (uint32\+\_\+t PWR\+\_\+\+PVDLevel)
+\begin{DoxyCompactList}\small\item\em Configures the voltage threshold detected by the Power Voltage Detector(\+PVD). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___p_w_r___exported___functions_gae5fd6f9336ef8c60d5483651cb0d1a00}{PWR\+\_\+\+Wake\+Up\+Pin\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Wake\+Up Pin functionality. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___p_w_r___exported___functions_ga694676ac06a9baf50eae45adae0118ab}{PWR\+\_\+\+Enter\+STOPMode}} (uint32\+\_\+t PWR\+\_\+\+Regulator, uint8\+\_\+t PWR\+\_\+\+STOPEntry)
+\begin{DoxyCompactList}\small\item\em Enters STOP mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___p_w_r___exported___functions_ga00ddae00a9c327b81b24d2597b0052f3}{PWR\+\_\+\+Enter\+STANDBYMode}} (void)
+\begin{DoxyCompactList}\small\item\em Enters STANDBY mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___p_w_r___exported___functions_gaa980163a4d83304280ee34942464b4ec}{PWR\+\_\+\+Get\+Flag\+Status}} (uint32\+\_\+t PWR\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified PWR flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___p_w_r___exported___functions_ga01c4b2fbd16514b993324e101c3ddf7c}{PWR\+\_\+\+Clear\+Flag}} (uint32\+\_\+t PWR\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the PWR\textquotesingle{}s pending flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsection{Function Documentation}
+\Hypertarget{group___p_w_r___exported___functions_ga0741aea35572b1a75f82b74de12df800}\label{group___p_w_r___exported___functions_ga0741aea35572b1a75f82b74de12df800} 
+\index{PWR\_Exported\_Functions@{PWR\_Exported\_Functions}!PWR\_BackupAccessCmd@{PWR\_BackupAccessCmd}}
+\index{PWR\_BackupAccessCmd@{PWR\_BackupAccessCmd}!PWR\_Exported\_Functions@{PWR\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{PWR\_BackupAccessCmd()}{PWR\_BackupAccessCmd()}}
+{\footnotesize\ttfamily void PWR\+\_\+\+Backup\+Access\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}}}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables access to the RTC and backup registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New\+State} & new state of the access to the RTC and backup registers. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___p_w_r___exported___functions_ga01c4b2fbd16514b993324e101c3ddf7c}\label{group___p_w_r___exported___functions_ga01c4b2fbd16514b993324e101c3ddf7c} 
+\index{PWR\_Exported\_Functions@{PWR\_Exported\_Functions}!PWR\_ClearFlag@{PWR\_ClearFlag}}
+\index{PWR\_ClearFlag@{PWR\_ClearFlag}!PWR\_Exported\_Functions@{PWR\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{PWR\_ClearFlag()}{PWR\_ClearFlag()}}
+{\footnotesize\ttfamily void PWR\+\_\+\+Clear\+Flag (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{PWR\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Clears the PWR\textquotesingle{}s pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PWR\+\_\+\+FLAG} & specifies the flag to clear. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item PWR\+\_\+\+FLAG\+\_\+\+WU\+: Wake Up flag \item PWR\+\_\+\+FLAG\+\_\+\+SB\+: Stand\+By flag \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___p_w_r___exported___functions_gad03a0aac7bc3bc3a9fd012f3769a6990}\label{group___p_w_r___exported___functions_gad03a0aac7bc3bc3a9fd012f3769a6990} 
+\index{PWR\_Exported\_Functions@{PWR\_Exported\_Functions}!PWR\_DeInit@{PWR\_DeInit}}
+\index{PWR\_DeInit@{PWR\_DeInit}!PWR\_Exported\_Functions@{PWR\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{PWR\_DeInit()}{PWR\_DeInit()}}
+{\footnotesize\ttfamily void PWR\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Deinitializes the PWR peripheral registers to their default reset values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___p_w_r___exported___functions_ga00ddae00a9c327b81b24d2597b0052f3}\label{group___p_w_r___exported___functions_ga00ddae00a9c327b81b24d2597b0052f3} 
+\index{PWR\_Exported\_Functions@{PWR\_Exported\_Functions}!PWR\_EnterSTANDBYMode@{PWR\_EnterSTANDBYMode}}
+\index{PWR\_EnterSTANDBYMode@{PWR\_EnterSTANDBYMode}!PWR\_Exported\_Functions@{PWR\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{PWR\_EnterSTANDBYMode()}{PWR\_EnterSTANDBYMode()}}
+{\footnotesize\ttfamily void PWR\+\_\+\+Enter\+STANDBYMode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Enters STANDBY mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___p_w_r___exported___functions_ga694676ac06a9baf50eae45adae0118ab}\label{group___p_w_r___exported___functions_ga694676ac06a9baf50eae45adae0118ab} 
+\index{PWR\_Exported\_Functions@{PWR\_Exported\_Functions}!PWR\_EnterSTOPMode@{PWR\_EnterSTOPMode}}
+\index{PWR\_EnterSTOPMode@{PWR\_EnterSTOPMode}!PWR\_Exported\_Functions@{PWR\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{PWR\_EnterSTOPMode()}{PWR\_EnterSTOPMode()}}
+{\footnotesize\ttfamily void PWR\+\_\+\+Enter\+STOPMode (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{PWR\+\_\+\+Regulator,  }\item[{uint8\+\_\+t}]{PWR\+\_\+\+STOPEntry }\end{DoxyParamCaption})}
+
+
+
+Enters STOP mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PWR\+\_\+\+Regulator} & specifies the regulator state in STOP mode. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item PWR\+\_\+\+Regulator\+\_\+\+ON\+: STOP mode with regulator ON \item PWR\+\_\+\+Regulator\+\_\+\+Low\+Power\+: STOP mode with regulator in low power mode \end{DoxyItemize}
+\\
+\hline
+{\em PWR\+\_\+\+STOPEntry} & specifies if STOP mode in entered with WFI or WFE instruction. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item PWR\+\_\+\+STOPEntry\+\_\+\+WFI\+: enter STOP mode with WFI instruction \item PWR\+\_\+\+STOPEntry\+\_\+\+WFE\+: enter STOP mode with WFE instruction \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___p_w_r___exported___functions_gaa980163a4d83304280ee34942464b4ec}\label{group___p_w_r___exported___functions_gaa980163a4d83304280ee34942464b4ec} 
+\index{PWR\_Exported\_Functions@{PWR\_Exported\_Functions}!PWR\_GetFlagStatus@{PWR\_GetFlagStatus}}
+\index{PWR\_GetFlagStatus@{PWR\_GetFlagStatus}!PWR\_Exported\_Functions@{PWR\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{PWR\_GetFlagStatus()}{PWR\_GetFlagStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} PWR\+\_\+\+Get\+Flag\+Status (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{PWR\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Checks whether the specified PWR flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PWR\+\_\+\+FLAG} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item PWR\+\_\+\+FLAG\+\_\+\+WU\+: Wake Up flag \item PWR\+\_\+\+FLAG\+\_\+\+SB\+: Stand\+By flag \item PWR\+\_\+\+FLAG\+\_\+\+PVDO\+: PVD Output \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of PWR\+\_\+\+FLAG (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___p_w_r___exported___functions_ga42cad476b816e0a33594a933b3ed1acd}\label{group___p_w_r___exported___functions_ga42cad476b816e0a33594a933b3ed1acd} 
+\index{PWR\_Exported\_Functions@{PWR\_Exported\_Functions}!PWR\_PVDCmd@{PWR\_PVDCmd}}
+\index{PWR\_PVDCmd@{PWR\_PVDCmd}!PWR\_Exported\_Functions@{PWR\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{PWR\_PVDCmd()}{PWR\_PVDCmd()}}
+{\footnotesize\ttfamily void PWR\+\_\+\+PVDCmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}}}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the Power Voltage Detector(\+PVD). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New\+State} & new state of the PVD. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___p_w_r___exported___functions_ga237c143ef6aa55abb8049fa7bf24ab8f}\label{group___p_w_r___exported___functions_ga237c143ef6aa55abb8049fa7bf24ab8f} 
+\index{PWR\_Exported\_Functions@{PWR\_Exported\_Functions}!PWR\_PVDLevelConfig@{PWR\_PVDLevelConfig}}
+\index{PWR\_PVDLevelConfig@{PWR\_PVDLevelConfig}!PWR\_Exported\_Functions@{PWR\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{PWR\_PVDLevelConfig()}{PWR\_PVDLevelConfig()}}
+{\footnotesize\ttfamily void PWR\+\_\+\+PVDLevel\+Config (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{PWR\+\_\+\+PVDLevel }\end{DoxyParamCaption})}
+
+
+
+Configures the voltage threshold detected by the Power Voltage Detector(\+PVD). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em PWR\+\_\+\+PVDLevel} & specifies the PVD detection level This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item PWR\+\_\+\+PVDLevel\+\_\+2\+V2\+: PVD detection level set to 2.\+2V \item PWR\+\_\+\+PVDLevel\+\_\+2\+V3\+: PVD detection level set to 2.\+3V \item PWR\+\_\+\+PVDLevel\+\_\+2\+V4\+: PVD detection level set to 2.\+4V \item PWR\+\_\+\+PVDLevel\+\_\+2\+V5\+: PVD detection level set to 2.\+5V \item PWR\+\_\+\+PVDLevel\+\_\+2\+V6\+: PVD detection level set to 2.\+6V \item PWR\+\_\+\+PVDLevel\+\_\+2\+V7\+: PVD detection level set to 2.\+7V \item PWR\+\_\+\+PVDLevel\+\_\+2\+V8\+: PVD detection level set to 2.\+8V \item PWR\+\_\+\+PVDLevel\+\_\+2\+V9\+: PVD detection level set to 2.\+9V \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___p_w_r___exported___functions_gae5fd6f9336ef8c60d5483651cb0d1a00}\label{group___p_w_r___exported___functions_gae5fd6f9336ef8c60d5483651cb0d1a00} 
+\index{PWR\_Exported\_Functions@{PWR\_Exported\_Functions}!PWR\_WakeUpPinCmd@{PWR\_WakeUpPinCmd}}
+\index{PWR\_WakeUpPinCmd@{PWR\_WakeUpPinCmd}!PWR\_Exported\_Functions@{PWR\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{PWR\_WakeUpPinCmd()}{PWR\_WakeUpPinCmd()}}
+{\footnotesize\ttfamily void PWR\+\_\+\+Wake\+Up\+Pin\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}}}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the Wake\+Up Pin functionality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New\+State} & new state of the Wake\+Up Pin functionality. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

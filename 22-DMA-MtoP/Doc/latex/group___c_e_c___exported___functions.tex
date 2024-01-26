@@ -1,0 +1,329 @@
+\doxysubsubsection{CEC\+\_\+\+Exported\+\_\+\+Functions}
+\hypertarget{group___c_e_c___exported___functions}{}\label{group___c_e_c___exported___functions}\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga604c3b15b51a46303c201fa3deac2212}{CEC\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the CEC peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_gaf48aee745a16370372b3eaa7cf3ed22b}{CEC\+\_\+\+Init}} (\mbox{\hyperlink{struct_c_e_c___init_type_def}{CEC\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}CEC\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the CEC peripheral according to the specified parameters in the CEC\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga0c8efa79e5768930e567b3b3ed6e09e9}{CEC\+\_\+\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified CEC peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga8be87c514505cf82eb29334f054fc0bc}{CEC\+\_\+\+ITConfig}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the CEC interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_gacad422ef1f50246b2021b41835b8a95c}{CEC\+\_\+\+Own\+Address\+Config}} (uint8\+\_\+t CEC\+\_\+\+Own\+Address)
+\begin{DoxyCompactList}\small\item\em Defines the Own Address of the CEC device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_gad2fc626e28a82008a29f062975a9af11}{CEC\+\_\+\+Set\+Prescaler}} (uint16\+\_\+t CEC\+\_\+\+Prescaler)
+\begin{DoxyCompactList}\small\item\em Sets the CEC prescaler value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga6897ab26d8f909f9160e9fac54b97441}{CEC\+\_\+\+Send\+Data\+Byte}} (uint8\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Transmits single data through the CEC peripheral. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___c_e_c___exported___functions_ga165837bff6292e7674eff6f8b230da97}{CEC\+\_\+\+Receive\+Data\+Byte}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the CEC peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga71e700461ffe7820d9e1c75da65fd0fb}{CEC\+\_\+\+Start\+Of\+Message}} (void)
+\begin{DoxyCompactList}\small\item\em Starts a new message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga1e2cf6e3a1ac891f2814f9d3f4043574}{CEC\+\_\+\+End\+Of\+Message\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Transmits message with or without an EOM bit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___c_e_c___exported___functions_gaf920706cb350182bf0728c66868053ca}{CEC\+\_\+\+Get\+Flag\+Status}} (uint32\+\_\+t CEC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Gets the CEC flag status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga928b373fb5972204c56f9c64113f8c67}{CEC\+\_\+\+Clear\+Flag}} (uint32\+\_\+t CEC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the CEC\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} \mbox{\hyperlink{group___c_e_c___exported___functions_gaa1940a388d0bfcefe7483fb74cc2ba1d}{CEC\+\_\+\+Get\+ITStatus}} (uint8\+\_\+t CEC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified CEC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_gade646921262a077172c708953822f248}{CEC\+\_\+\+Clear\+ITPending\+Bit}} (uint16\+\_\+t CEC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the CEC\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsection{Function Documentation}
+\Hypertarget{group___c_e_c___exported___functions_ga928b373fb5972204c56f9c64113f8c67}\label{group___c_e_c___exported___functions_ga928b373fb5972204c56f9c64113f8c67} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_ClearFlag@{CEC\_ClearFlag}}
+\index{CEC\_ClearFlag@{CEC\_ClearFlag}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_ClearFlag()}{CEC\_ClearFlag()}}
+{\footnotesize\ttfamily void CEC\+\_\+\+Clear\+Flag (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{CEC\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Clears the CEC\textquotesingle{}s pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em CEC\+\_\+\+FLAG} & specifies the flag to clear. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item CEC\+\_\+\+FLAG\+\_\+\+TERR\+: Tx Error \item CEC\+\_\+\+FLAG\+\_\+\+TBTRF\+: Tx Byte Transfer Request or Block Transfer Finished \item CEC\+\_\+\+FLAG\+\_\+\+RSOM\+: Rx Start Of Message \item CEC\+\_\+\+FLAG\+\_\+\+REOM\+: Rx End Of Message \item CEC\+\_\+\+FLAG\+\_\+\+RERR\+: Rx Error \item CEC\+\_\+\+FLAG\+\_\+\+RBTF\+: Rx Byte/\+Block Transfer Finished \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_gade646921262a077172c708953822f248}\label{group___c_e_c___exported___functions_gade646921262a077172c708953822f248} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_ClearITPendingBit@{CEC\_ClearITPendingBit}}
+\index{CEC\_ClearITPendingBit@{CEC\_ClearITPendingBit}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_ClearITPendingBit()}{CEC\_ClearITPendingBit()}}
+{\footnotesize\ttfamily void CEC\+\_\+\+Clear\+ITPending\+Bit (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{CEC\+\_\+\+IT }\end{DoxyParamCaption})}
+
+
+
+Clears the CEC\textquotesingle{}s interrupt pending bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em CEC\+\_\+\+IT} & specifies the CEC interrupt pending bit to clear. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item CEC\+\_\+\+IT\+\_\+\+TERR\+: Tx Error \item CEC\+\_\+\+IT\+\_\+\+TBTF\+: Tx Block Transfer Finished \item CEC\+\_\+\+IT\+\_\+\+RERR\+: Rx Error \item CEC\+\_\+\+IT\+\_\+\+RBTF\+: Rx Block Transfer Finished \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_ga0c8efa79e5768930e567b3b3ed6e09e9}\label{group___c_e_c___exported___functions_ga0c8efa79e5768930e567b3b3ed6e09e9} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_Cmd@{CEC\_Cmd}}
+\index{CEC\_Cmd@{CEC\_Cmd}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_Cmd()}{CEC\_Cmd()}}
+{\footnotesize\ttfamily void CEC\+\_\+\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}}}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified CEC peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New\+State} & new state of the CEC peripheral. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_ga604c3b15b51a46303c201fa3deac2212}\label{group___c_e_c___exported___functions_ga604c3b15b51a46303c201fa3deac2212} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_DeInit@{CEC\_DeInit}}
+\index{CEC\_DeInit@{CEC\_DeInit}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_DeInit()}{CEC\_DeInit()}}
+{\footnotesize\ttfamily void CEC\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Deinitializes the CEC peripheral registers to their default reset values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_ga1e2cf6e3a1ac891f2814f9d3f4043574}\label{group___c_e_c___exported___functions_ga1e2cf6e3a1ac891f2814f9d3f4043574} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_EndOfMessageCmd@{CEC\_EndOfMessageCmd}}
+\index{CEC\_EndOfMessageCmd@{CEC\_EndOfMessageCmd}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_EndOfMessageCmd()}{CEC\_EndOfMessageCmd()}}
+{\footnotesize\ttfamily void CEC\+\_\+\+End\+Of\+Message\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}}}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Transmits message with or without an EOM bit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New\+State} & new state of the CEC Tx End Of Message. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_gaf920706cb350182bf0728c66868053ca}\label{group___c_e_c___exported___functions_gaf920706cb350182bf0728c66868053ca} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_GetFlagStatus@{CEC\_GetFlagStatus}}
+\index{CEC\_GetFlagStatus@{CEC\_GetFlagStatus}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_GetFlagStatus()}{CEC\_GetFlagStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} CEC\+\_\+\+Get\+Flag\+Status (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{CEC\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Gets the CEC flag status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em CEC\+\_\+\+FLAG} & specifies the CEC flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item CEC\+\_\+\+FLAG\+\_\+\+BTE\+: Bit Timing Error \item CEC\+\_\+\+FLAG\+\_\+\+BPE\+: Bit Period Error \item CEC\+\_\+\+FLAG\+\_\+\+RBTFE\+: Rx Block Transfer Finished Error \item CEC\+\_\+\+FLAG\+\_\+\+SBE\+: Start Bit Error \item CEC\+\_\+\+FLAG\+\_\+\+ACKE\+: Block Acknowledge Error \item CEC\+\_\+\+FLAG\+\_\+\+LINE\+: Line Error \item CEC\+\_\+\+FLAG\+\_\+\+TBTFE\+: Tx Block Transfer Finished Error \item CEC\+\_\+\+FLAG\+\_\+\+TEOM\+: Tx End Of Message \item CEC\+\_\+\+FLAG\+\_\+\+TERR\+: Tx Error \item CEC\+\_\+\+FLAG\+\_\+\+TBTRF\+: Tx Byte Transfer Request or Block Transfer Finished \item CEC\+\_\+\+FLAG\+\_\+\+RSOM\+: Rx Start Of Message \item CEC\+\_\+\+FLAG\+\_\+\+REOM\+: Rx End Of Message \item CEC\+\_\+\+FLAG\+\_\+\+RERR\+: Rx Error \item CEC\+\_\+\+FLAG\+\_\+\+RBTF\+: Rx Byte/\+Block Transfer Finished \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of CEC\+\_\+\+FLAG (SET or RESET) \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_gaa1940a388d0bfcefe7483fb74cc2ba1d}\label{group___c_e_c___exported___functions_gaa1940a388d0bfcefe7483fb74cc2ba1d} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_GetITStatus@{CEC\_GetITStatus}}
+\index{CEC\_GetITStatus@{CEC\_GetITStatus}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_GetITStatus()}{CEC\_GetITStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} CEC\+\_\+\+Get\+ITStatus (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{CEC\+\_\+\+IT }\end{DoxyParamCaption})}
+
+
+
+Checks whether the specified CEC interrupt has occurred or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em CEC\+\_\+\+IT} & specifies the CEC interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item CEC\+\_\+\+IT\+\_\+\+TERR\+: Tx Error \item CEC\+\_\+\+IT\+\_\+\+TBTF\+: Tx Block Transfer Finished \item CEC\+\_\+\+IT\+\_\+\+RERR\+: Rx Error \item CEC\+\_\+\+IT\+\_\+\+RBTF\+: Rx Block Transfer Finished \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of CEC\+\_\+\+IT (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_gaf48aee745a16370372b3eaa7cf3ed22b}\label{group___c_e_c___exported___functions_gaf48aee745a16370372b3eaa7cf3ed22b} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_Init@{CEC\_Init}}
+\index{CEC\_Init@{CEC\_Init}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_Init()}{CEC\_Init()}}
+{\footnotesize\ttfamily void CEC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_e_c___init_type_def}{CEC\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{CEC\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Initializes the CEC peripheral according to the specified parameters in the CEC\+\_\+\+Init\+Struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em CEC\+\_\+\+Init\+Struct} & pointer to an \doxylink{struct_c_e_c___init_type_def}{CEC\+\_\+\+Init\+Type\+Def} structure that contains the configuration information for the specified CEC peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_ga8be87c514505cf82eb29334f054fc0bc}\label{group___c_e_c___exported___functions_ga8be87c514505cf82eb29334f054fc0bc} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_ITConfig@{CEC\_ITConfig}}
+\index{CEC\_ITConfig@{CEC\_ITConfig}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_ITConfig()}{CEC\_ITConfig()}}
+{\footnotesize\ttfamily void CEC\+\_\+\+ITConfig (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}}}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the CEC interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New\+State} & new state of the CEC interrupt. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_gacad422ef1f50246b2021b41835b8a95c}\label{group___c_e_c___exported___functions_gacad422ef1f50246b2021b41835b8a95c} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_OwnAddressConfig@{CEC\_OwnAddressConfig}}
+\index{CEC\_OwnAddressConfig@{CEC\_OwnAddressConfig}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_OwnAddressConfig()}{CEC\_OwnAddressConfig()}}
+{\footnotesize\ttfamily void CEC\+\_\+\+Own\+Address\+Config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{CEC\+\_\+\+Own\+Address }\end{DoxyParamCaption})}
+
+
+
+Defines the Own Address of the CEC device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em CEC\+\_\+\+Own\+Address} & The CEC own address \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_ga165837bff6292e7674eff6f8b230da97}\label{group___c_e_c___exported___functions_ga165837bff6292e7674eff6f8b230da97} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_ReceiveDataByte@{CEC\_ReceiveDataByte}}
+\index{CEC\_ReceiveDataByte@{CEC\_ReceiveDataByte}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_ReceiveDataByte()}{CEC\_ReceiveDataByte()}}
+{\footnotesize\ttfamily uint8\+\_\+t CEC\+\_\+\+Receive\+Data\+Byte (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the most recent received data by the CEC peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & received data. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_ga6897ab26d8f909f9160e9fac54b97441}\label{group___c_e_c___exported___functions_ga6897ab26d8f909f9160e9fac54b97441} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_SendDataByte@{CEC\_SendDataByte}}
+\index{CEC\_SendDataByte@{CEC\_SendDataByte}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_SendDataByte()}{CEC\_SendDataByte()}}
+{\footnotesize\ttfamily void CEC\+\_\+\+Send\+Data\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data }\end{DoxyParamCaption})}
+
+
+
+Transmits single data through the CEC peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Data} & the data to transmit. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_gad2fc626e28a82008a29f062975a9af11}\label{group___c_e_c___exported___functions_gad2fc626e28a82008a29f062975a9af11} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_SetPrescaler@{CEC\_SetPrescaler}}
+\index{CEC\_SetPrescaler@{CEC\_SetPrescaler}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_SetPrescaler()}{CEC\_SetPrescaler()}}
+{\footnotesize\ttfamily void CEC\+\_\+\+Set\+Prescaler (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{CEC\+\_\+\+Prescaler }\end{DoxyParamCaption})}
+
+
+
+Sets the CEC prescaler value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em CEC\+\_\+\+Prescaler} & CEC prescaler new value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___c_e_c___exported___functions_ga71e700461ffe7820d9e1c75da65fd0fb}\label{group___c_e_c___exported___functions_ga71e700461ffe7820d9e1c75da65fd0fb} 
+\index{CEC\_Exported\_Functions@{CEC\_Exported\_Functions}!CEC\_StartOfMessage@{CEC\_StartOfMessage}}
+\index{CEC\_StartOfMessage@{CEC\_StartOfMessage}!CEC\_Exported\_Functions@{CEC\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_StartOfMessage()}{CEC\_StartOfMessage()}}
+{\footnotesize\ttfamily void CEC\+\_\+\+Start\+Of\+Message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Starts a new message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

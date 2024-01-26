@@ -1,0 +1,295 @@
+\chapter{DMA}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{DMA@{DMA}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+ DMA\+: Direct Memory Access, 直接寄存器访问. 主要功能是可以把数据从一个地方搬到另一个地方, 而且不占用\+CPU
+
+
+\begin{DoxyItemize}
+\item DMA1\+: 有7个通道, 可实现\+P-\/\texorpdfstring{$>$}{>}M, M-\/\texorpdfstring{$>$}{>}P, M-\/\texorpdfstring{$>$}{>}M
+\item DMA2\+: 有5个通道, 可实现\+P-\/\texorpdfstring{$>$}{>}M, M-\/\texorpdfstring{$>$}{>}P, M-\/\texorpdfstring{$>$}{>}M({\itshape 只存在于大容量和互联型产品中})
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{补充\+: DMA介绍}{补充\+: DMA介绍}}\label{md__r_e_a_d_m_e_autotoc_md1}
+DMA（\+Direct Memory Access，直接内存访问）是计算机系统中的一种技术，\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}它允许外设或内存模块通过绕过中央处理器（\+CPU）直接与系统内存进行数据传输\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}。\+DMA的目标是提高数据传输效率，减轻\+CPU的负担，使\+CPU能够专注于执行其他任务。
+
+以下是关于\+DMA的一些重要概念和特性：
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}工作原理\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+
+DMA通过在系统总线上控制数据传输而不涉及\+CPU来工作。它可以在\+CPU不介入的情况下，直接将数据从一个位置传输到另一个位置。
+
+
+\begin{DoxyEnumerate}
+\item 配置： CPU负责配置\+DMA，确定源地址、目标地址、传输方向、传输大小等参数。
+\item 启动： 一旦\+DMA被配置，\+CPU就可以启动\+DMA控制器，它将负责管理数据传输。
+\item 传输： DMA控制器在总线上控制数据传输，无需\+CPU的干预。数据在源和目标之间直接传输。
+\item 中断通知： DMA传输完成后，通常会发出一个中断信号，以通知\+CPU或其他系统组件。
+\end{DoxyEnumerate}
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}优点\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+
+
+\begin{DoxyEnumerate}
+\item 提高性能： 通过绕过\+CPU，减轻了\+CPU的负担，使其能够执行其他任务，提高了整体系统性能。
+\item 实时数据传输： 特别适用于实时数据传输，如音频、视频流等。
+\item 高效处理大量数据： 对于大量数据的块传输，\+DMA比\+CPU执行这样的传输更为高效。
+\end{DoxyEnumerate}
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}应用领域\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+
+DMA在多种应用场景中都得到了广泛应用，包括但不限于：
+
+
+\begin{DoxyEnumerate}
+\item 嵌入式系统： 用于处理外设和内存之间的数据传输，例如，处理音频、图像等。
+\item 网络通信： 在网络接口控制器和系统内存之间快速传输数据。
+\item 存储系统： 用于在磁盘、固态硬盘等存储设备和系统内存之间进行数据传输。
+\item 图形处理： 在图形卡和系统内存之间进行大规模图形数据的传输。
+\end{DoxyEnumerate}
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+DMA控制器\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+
+DMA通常由专门的硬件单元，称为\+DMA控制器，来管理。\+DMA控制器的设计和功能因芯片架构而异，但通常包括寄存器用于配置、启动和监视传输。
+
+总的来说，\+DMA是一项重要的技术，对于需要高效数据传输的系统是至关重要的。通过减轻\+CPU的负担，\+DMA提高了系统的整体性能和响应速度。\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{DMA功能框图讲解}{DMA功能框图讲解}}\label{md__r_e_a_d_m_e_autotoc_md2}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{DMA请求映射}{DMA请求映射}}\label{md__r_e_a_d_m_e_autotoc_md3}
+DMA1请求映射
+
+
+
+DMA2请求映射
+
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{DMA仲裁器}{DMA仲裁器}}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+
+{\itshape 软件配置在寄存器\+DMA\+\_\+\+CCRx\+:PL\mbox{[}1\+:0\mbox{]}进行通道优先级配置}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{\texorpdfstring{DMA固件库-\/初始化结构体}{DMA固件库-\/初始化结构体}}\label{md__r_e_a_d_m_e_autotoc_md5}
+初始化结构体在stm32f10x\+\_\+dma.\+h文件中
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 外设地址}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 由寄存器\ DMA\_CPARx\ 进行配置}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\ \ uint32\_t\ DMA\_PeripheralBaseAddr;\ }
+\DoxyCodeLine{\ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 存储器地址}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 由寄存器\ DMA\_CMARx\ 进行配置}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\ \ uint32\_t\ DMA\_MemoryBaseAddr;\ \ \ \ \ }
+\DoxyCodeLine{\ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 传输方向}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ P-\/>M\ 和\ M-\/>P\ 由寄存器\ DMA\_CCRx:DIR[4]\ 进行配置}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ M-\/>M\ 由寄存器\ DMA\_CCRx:MEM2MEM[14]\ 进行配置}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\ \ uint32\_t\ DMA\_DIR;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 缓冲区大小,\ 传输数目}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 由寄存器\ DMA\_CNDTRx\ 进行配置}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\ \ uint32\_t\ DMA\_BufferSize;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 外设增量模式}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 由寄存器\ DMA\_CCRx:PINC[6]\ 进行配置}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\ \ uint32\_t\ DMA\_PeripheralInc;\ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 存储器增量模式}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 由寄存器\ DMA\_CCRx:MINC[7]\ 进行配置}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\ \ uint32\_t\ DMA\_MemoryInc;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 外设数据宽度}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 由寄存器\ DMA\_CCRx:PSIZE[9:8]\ 进行配置}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\ \ uint32\_t\ DMA\_PeripheralDataSize;\ }
+\DoxyCodeLine{\ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 存储器数据宽度}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 由寄存器\ DMA\_CCRx:MSIZE[11:10]\ 进行配置}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\ \ uint32\_t\ DMA\_MemoryDataSize;\ \ \ \ \ }
+\DoxyCodeLine{\ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 传输模式}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 由寄存器\ DMA\_CCRx:CIRC[5]\ 进行配置}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 通过\ DMA\_ISR\ 判断传输状态来判断传输完成,\ 传输一半,\ 传输错误}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\ \ uint32\_t\ DMA\_Mode;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 优先级}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 由寄存器\ DMA\_CCRx:PL[1:0]\ 进行配置}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\ \ uint32\_t\ DMA\_Priority;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 存储器到存储器模式}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *\ 由寄存器\ DMA\_CCRx:MEM2MEM[14]\ 进行配置}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\ \ uint32\_t\ DMA\_M2M;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\}\mbox{\hyperlink{struct_d_m_a___init_type_def}{DMA\_InitTypeDef}};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysection{\texorpdfstring{DMA固件库-\/固件库函数}{DMA固件库-\/固件库函数}}\label{md__r_e_a_d_m_e_autotoc_md6}
+在stm32f10x\+\_\+dma.\+h文件中可以找到\+DMA固件库函数的声明, 以下是常用的函数
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_m_a___exported___functions_ga7c3d1b9dc041f8e5f2cfc8d5dd858278}{DMA\_Init}}(\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\_Channel\_TypeDef}}*\ DMAy\_Channelx,\ \mbox{\hyperlink{struct_d_m_a___init_type_def}{DMA\_InitTypeDef}}*\ DMA\_InitStruct);\ \textcolor{comment}{//\ 初始化函数}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___d_m_a___exported___functions_ga8e7cb6b9ae5f142e2961df879cdaba65}{DMA\_Cmd}}(\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\_Channel\_TypeDef}}*\ DMAy\_Channelx,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);\ \textcolor{comment}{//\ 使能DMA}}
+\DoxyCodeLine{\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{FlagStatus}}\ \mbox{\hyperlink{group___d_m_a___exported___functions_gafb30b7a891834c267eefd5d30b688a9f}{DMA\_GetFlagStatus}}(uint32\_t\ DMAy\_FLAG);\ \textcolor{comment}{//\ 判断标志位}}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysection{\texorpdfstring{DMA实验1\+: M to M}{DMA实验1\+: M to M}}\label{md__r_e_a_d_m_e_autotoc_md7}
+{\bfseries{项目地址}}\+:
+
+{\bfseries{实验需求}}\+: FLASH to SRAM, 把内部\+FLASH的数据传输到内部的\+SRAM
+
+在bsp\+\_\+dma\+\_\+m2m.\+h增加宏定义
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ 当使用存储器到存储器模式时候，通道可以随便选，没有硬性的规定}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ M2M\_DMA\_CHANNEL\ \ \ \ \ DMA1\_Channel6}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ M2M\_DMA\_CLOCK\ \ \ \ \ \ \ RCC\_AHBPeriph\_DMA1}}
+\DoxyCodeLine{\textcolor{comment}{//\ 传输完成标志}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ M2M\_DMA\_FLAG\_TC\ \ \ \ \ DMA1\_FLAG\_TC6}}
+\DoxyCodeLine{\textcolor{comment}{//\ 要发送的数据大小}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ BUFFER\_SIZE\ \ \ \ \ 32}}
+
+\end{DoxyCode}
+
+
+在bsp\+\_\+dma\+\_\+m2m.\+c中定义源和目标变量
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{/*\ 定义aSRC\_Const\_Buffer数组作为DMA传输数据源}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ const关键字将aSRC\_Const\_Buffer数组变量定义为常量类型}}
+\DoxyCodeLine{\textcolor{comment}{\ *\ 表示数据存储在内部的FLASH中}}
+\DoxyCodeLine{\textcolor{comment}{\ */}}
+\DoxyCodeLine{\textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{bsp__dma__m2m_8c_a96c7fa8d5ff9537b15a74dab7eddaadd}{aSRC\_Const\_Buffer}}[\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\_SIZE}}]=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01020304,0x05060708,0x090A0B0C,0x0D0E0F10,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x11121314,0x15161718,0x191A1B1C,0x1D1E1F20,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x21222324,0x25262728,0x292A2B2C,0x2D2E2F30,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x31323334,0x35363738,0x393A3B3C,0x3D3E3F40,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x41424344,0x45464748,0x494A4B4C,0x4D4E4F50,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x51525354,0x55565758,0x595A5B5C,0x5D5E5F60,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x61626364,0x65666768,0x696A6B6C,0x6D6E6F70,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x71727374,0x75767778,0x797A7B7C,0x7D7E7F80\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{uint32\_t\ \mbox{\hyperlink{bsp__dma__m2m_8c_a6eeef06891d613407dde2e65235b6c0f}{aDST\_Buffer}}[\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\_SIZE}}];}
+
+\end{DoxyCode}
+ 在bsp\+\_\+dma\+\_\+m2m.\+c中增加\+DMA初始化函数
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{bsp__dma__m2m_8c_ab02e55d9ea8e5048e5610c0dc045a3e6}{M2M\_DMA\_Config}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_d_m_a___init_type_def}{DMA\_InitTypeDef}}\ DMA\_InitStructure;\ \textcolor{comment}{//\ 定义DMA初始化结构体变量}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group___r_c_c___exported___functions_gae0b30d8598b8393bdba9c3fefba3a968}{RCC\_AHBPeriphClockCmd}}(\mbox{\hyperlink{bsp__dma__m2m_8h_ad8fdda0a09d17b5044100ea6b2f6f6fa}{M2M\_DMA\_CLOCK}},\ \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf}{ENABLE}});\ \textcolor{comment}{//\ 打开DMA时钟}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ DMA\_InitStructure.\mbox{\hyperlink{struct_d_m_a___init_type_def_a232af556de7c2eec9a82d448730bd86d}{DMA\_PeripheralBaseAddr}}\ =\ (uint32\_t)\mbox{\hyperlink{bsp__dma__m2m_8c_a96c7fa8d5ff9537b15a74dab7eddaadd}{aSRC\_Const\_Buffer}};\ \textcolor{comment}{//\ 配置外设地址,\ 实际将FLASH的数据配置成了外设}}
+\DoxyCodeLine{\ \ \ \ DMA\_InitStructure.\mbox{\hyperlink{struct_d_m_a___init_type_def_a41e7d463f0cfbcedf3170d7d27d088df}{DMA\_MemoryBaseAddr}}\ =\ (uint32\_t)\mbox{\hyperlink{bsp__dma__m2m_8c_a6eeef06891d613407dde2e65235b6c0f}{aDST\_Buffer}};\ \textcolor{comment}{//\ 配置存储器地址}}
+\DoxyCodeLine{\ \ \ \ DMA\_InitStructure.\mbox{\hyperlink{struct_d_m_a___init_type_def_a91b47435ccf4a40efa97bbbe631789e1}{DMA\_DIR}}\ =\ \mbox{\hyperlink{group___d_m_a__data__transfer__direction_ga5ce120a044359410136695a2c05df68e}{DMA\_DIR\_PeripheralSRC}};\ \textcolor{comment}{//\ 配置传输方向，从外设读取数据发送到存储器}}
+\DoxyCodeLine{\ \ \ \ DMA\_InitStructure.\mbox{\hyperlink{struct_d_m_a___init_type_def_a999df57215b28b3b1b3b6836c4952ca5}{DMA\_BufferSize}}\ =\ \mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\_SIZE}};\ \textcolor{comment}{//\ 配置传输数据大小}}
+\DoxyCodeLine{\ \ \ \ DMA\_InitStructure.\mbox{\hyperlink{struct_d_m_a___init_type_def_ad4d427790f9a089ca0257a358fc263c2}{DMA\_PeripheralInc}}\ =\ \mbox{\hyperlink{group___d_m_a__peripheral__incremented__mode_gaf7921ea423fb60701a091c508cd0f33a}{DMA\_PeripheralInc\_Enable}};\ \textcolor{comment}{//\ 配置外设地址自增}}
+\DoxyCodeLine{\ \ \ \ DMA\_InitStructure.\mbox{\hyperlink{struct_d_m_a___init_type_def_aaf69c680a297ec01a2ed613289e691a1}{DMA\_MemoryInc}}\ =\ \mbox{\hyperlink{group___d_m_a__memory__incremented__mode_ga4e8cb23d039c74bbbf365d7678835bbb}{DMA\_MemoryInc\_Enable}};\ \textcolor{comment}{//\ 配置存储器地址自增}}
+\DoxyCodeLine{\ \ \ \ DMA\_InitStructure.\mbox{\hyperlink{struct_d_m_a___init_type_def_afb46aaadfb80a7e19277c868bd252554}{DMA\_PeripheralDataSize}}\ =\ \mbox{\hyperlink{group___d_m_a__peripheral__data__size_ga516ea7a40945d8325fe73e079b245ea1}{DMA\_PeripheralDataSize\_Word}};\ \textcolor{comment}{//\ 配置外设数据大小}}
+\DoxyCodeLine{\ \ \ \ DMA\_InitStructure.\mbox{\hyperlink{struct_d_m_a___init_type_def_a74bb71921c4d198d6cf1979c120f694f}{DMA\_MemoryDataSize}}\ =\ \mbox{\hyperlink{group___d_m_a__memory__data__size_gaff403722a6f82d4b34c9ef306507bb98}{DMA\_MemoryDataSize\_Word}};\ \textcolor{comment}{//\ 配置存储器数据大小}}
+\DoxyCodeLine{\ \ \ \ DMA\_InitStructure.\mbox{\hyperlink{struct_d_m_a___init_type_def_a8adbe6f3e46471d109afaa3111dce220}{DMA\_Mode}}\ =\ \mbox{\hyperlink{group___d_m_a__circular__normal__mode_ga36400f5b5095f1102ede4760d7a5959c}{DMA\_Mode\_Normal}};\ \textcolor{comment}{//\ 配置传输模式，非循环模式}}
+\DoxyCodeLine{\ \ \ \ DMA\_InitStructure.\mbox{\hyperlink{struct_d_m_a___init_type_def_ab9a17bd51778478cbd728c868206dca0}{DMA\_Priority}}\ =\ \mbox{\hyperlink{group___d_m_a__priority__level_gae2441c0b4d4ba9945a6f4f7d08045a8e}{DMA\_Priority\_High}};\ \textcolor{comment}{//\ 配置传输通道优先级}}
+\DoxyCodeLine{\ \ \ \ DMA\_InitStructure.\mbox{\hyperlink{struct_d_m_a___init_type_def_a57944cc447e6fcde4e9aa6229d3b4c5d}{DMA\_M2M}}\ =\ \mbox{\hyperlink{group___d_m_a__memory__to__memory_ga046a1de15235c254c0511c08cae3065a}{DMA\_M2M\_Enable}};\ \textcolor{comment}{//\ 配置存储器到存储器模式}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group___d_m_a___exported___functions_ga7c3d1b9dc041f8e5f2cfc8d5dd858278}{DMA\_Init}}(\mbox{\hyperlink{bsp__dma__m2m_8h_afeb623eb076fdfe098f21a06c363cc46}{M2M\_DMA\_CHANNEL}},\ \&DMA\_InitStructure);\ \textcolor{comment}{//\ 初始化DMA通道}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group___d_m_a___exported___functions_ga25cdca360f309c8ceb7c206cd9ad9119}{DMA\_ClearFlag}}(\mbox{\hyperlink{bsp__dma__m2m_8h_ae137671d49af4a1bd3ccb63bdfc4758a}{M2M\_DMA\_FLAG\_TC}});\ \textcolor{comment}{//\ 清除DMA通道传输完成标志位}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group___d_m_a___exported___functions_ga8e7cb6b9ae5f142e2961df879cdaba65}{DMA\_Cmd}}(\mbox{\hyperlink{bsp__dma__m2m_8h_afeb623eb076fdfe098f21a06c363cc46}{M2M\_DMA\_CHANNEL}},\ \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf}{ENABLE}});\ \textcolor{comment}{//\ 使能DMA通道}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+在bsp\+\_\+dma\+\_\+m2m.\+c中增加判断数据相等的函数
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{uint8\_t\ \mbox{\hyperlink{bsp__dma__m2m_8c_a28e1e2cfd02611fdf35e21c5a15a091b}{Buffercmp}}(\textcolor{keyword}{const}\ uint32\_t*\ pBuffer,\ uint32\_t*\ pBuffer1,\ uint16\_t\ BufferLength)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{/*\ 数据长度递减\ */}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(BufferLength-\/-\/)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 判断两个数据源是否对应相等\ */}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(*pBuffer\ !=\ *pBuffer1)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 对应数据源不相等马上退出函数，并返回0\ */}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 递增两个数据源的地址指针\ */}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ pBuffer++;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ pBuffer1++;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{/*\ 完成判断并且对应数据相对\ */}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 1;\ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+在main.\+c函数中进行测试
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ 声明以下变量来自外部文件}}
+\DoxyCodeLine{\textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{bsp__dma__m2m_8c_a96c7fa8d5ff9537b15a74dab7eddaadd}{aSRC\_Const\_Buffer}}[\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\_SIZE}}];}
+\DoxyCodeLine{\textcolor{keyword}{extern}\ uint32\_t\ \mbox{\hyperlink{bsp__dma__m2m_8c_a6eeef06891d613407dde2e65235b6c0f}{aDST\_Buffer}}[\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\_SIZE}}];}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8c_a1d3146414c54513a72a7596c2f884c07}{Delay\_ms}}(uint32\_t\ ms)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ uint32\_t\ i\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(i\ =\ 0;\ i\ <\ ms;\ i++)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ uint16\_t\ j\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(j\ =\ 0;\ j\ <\ 1000;\ j++)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ ;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ uint8\_t\ status\ =\ 0;\ \textcolor{comment}{//\ 接收比较的结构}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{bsp__led_8c_a89d2c2ccc2981f0583aa6e4c8f043298}{LED\_GPIO\_Config}}();\ \textcolor{comment}{//\ 初始化LED}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{bsp__dma__m2m_8c_ab02e55d9ea8e5048e5610c0dc045a3e6}{M2M\_DMA\_Config}}();\ \textcolor{comment}{//\ 初始化DMA}}
+\DoxyCodeLine{\ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 等待DMA1传送完毕}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(\mbox{\hyperlink{group___d_m_a___exported___functions_gafb30b7a891834c267eefd5d30b688a9f}{DMA\_GetFlagStatus}}(\mbox{\hyperlink{bsp__dma__m2m_8h_ae137671d49af4a1bd3ccb63bdfc4758a}{M2M\_DMA\_FLAG\_TC}})\ ==\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{bsp__led_8h_ae3c73853c6d0a1eca2c7d9797f6494ea}{LED\_YELLOW}};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{main_8c_a1d3146414c54513a72a7596c2f884c07}{Delay\_ms}}(10000);\ \textcolor{comment}{//\ DMA初始化完成后亮黄灯}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ status\ =\ \mbox{\hyperlink{bsp__dma__m2m_8c_a28e1e2cfd02611fdf35e21c5a15a091b}{Buffercmp}}(\mbox{\hyperlink{bsp__dma__m2m_8c_a96c7fa8d5ff9537b15a74dab7eddaadd}{aSRC\_Const\_Buffer}},\ \mbox{\hyperlink{bsp__dma__m2m_8c_a6eeef06891d613407dde2e65235b6c0f}{aDST\_Buffer}},\ \mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\_SIZE}});\ \textcolor{comment}{//\ 比较两个数组的数据是否相等}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(status\ ==\ 0)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__led_8h_a31e20330f8ce94e0dd10b005a15c5898}{LED\_RED}};\ \textcolor{comment}{//\ 数据不相等亮红灯}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__led_8h_aca338dbd19d7940923334629f6e5f3b7}{LED\_GREEN}};\ \textcolor{comment}{//\ 数据相等亮绿灯}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}(1)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

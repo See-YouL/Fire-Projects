@@ -1,0 +1,76 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/stm32f10x\+\_\+iwdg.h File Reference}
+\hypertarget{stm32f10x__iwdg_8h}{}\label{stm32f10x__iwdg_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_iwdg.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_iwdg.h}}
+
+
+This file contains all the functions prototypes for the IWDG firmware library.  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___write_access_ga86f4b926f4351e19ea069f98c2e65f91}{IWDG\+\_\+\+Write\+Access\+\_\+\+Enable}}~((uint16\+\_\+t)0x5555)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___write_access_ga4b395cf5b2d7ab18fc71a5f779f758cc}{IWDG\+\_\+\+Write\+Access\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___write_access_gaa89c93332f5977175f8d416b7492de18}{IS\+\_\+\+IWDG\+\_\+\+WRITE\+\_\+\+ACCESS}}(ACCESS)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g__prescaler_ga82a058c196d5a9cd7ea2f2202b394ba0}{IWDG\+\_\+\+Prescaler\+\_\+4}}~((uint8\+\_\+t)0x00)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g__prescaler_ga59763b9a127c67adf5d11474188996a1}{IWDG\+\_\+\+Prescaler\+\_\+8}}~((uint8\+\_\+t)0x01)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g__prescaler_gafa81d30511ff5ec74bb38ed71f5bb66e}{IWDG\+\_\+\+Prescaler\+\_\+16}}~((uint8\+\_\+t)0x02)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g__prescaler_gaa8b091b6e4102513b1e3a1c4eb6756ba}{IWDG\+\_\+\+Prescaler\+\_\+32}}~((uint8\+\_\+t)0x03)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g__prescaler_ga7ea813c73ae0acb40acb60e7d3956910}{IWDG\+\_\+\+Prescaler\+\_\+64}}~((uint8\+\_\+t)0x04)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g__prescaler_gaea6bf96c2fd5a6f3b9574e7898096641}{IWDG\+\_\+\+Prescaler\+\_\+128}}~((uint8\+\_\+t)0x05)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g__prescaler_ga7d6e918748185639049644c970db2b43}{IWDG\+\_\+\+Prescaler\+\_\+256}}~((uint8\+\_\+t)0x06)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g__prescaler_gab1e0695c1a22840d5be7c7fad283f4ba}{IS\+\_\+\+IWDG\+\_\+\+PRESCALER}}(PRESCALER)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___flag_gae20afcf399fad1534e79a8d30ea86c9c}{IWDG\+\_\+\+FLAG\+\_\+\+PVU}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___flag_ga3731bf2711c234ffe5b405fb6634ebca}{IWDG\+\_\+\+FLAG\+\_\+\+RVU}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___flag_ga5be9ae9ba267cf09a00523ef3e219293}{IS\+\_\+\+IWDG\+\_\+\+FLAG}}(FLAG)~(((FLAG) == \mbox{\hyperlink{group___i_w_d_g___flag_gae20afcf399fad1534e79a8d30ea86c9c}{IWDG\+\_\+\+FLAG\+\_\+\+PVU}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((FLAG) == \mbox{\hyperlink{group___i_w_d_g___flag_ga3731bf2711c234ffe5b405fb6634ebca}{IWDG\+\_\+\+FLAG\+\_\+\+RVU}}))
+\item 
+\#define \mbox{\hyperlink{group___i_w_d_g___flag_ga7c319e96bded8e3c38c6a42a1b335c68}{IS\+\_\+\+IWDG\+\_\+\+RELOAD}}(RELOAD)~((RELOAD) $<$= 0x\+FFF)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___i_w_d_g___exported___functions_gae466681e5bdc11b353c508b89d75ca05}{IWDG\+\_\+\+Write\+Access\+Cmd}} (uint16\+\_\+t IWDG\+\_\+\+Write\+Access)
+\begin{DoxyCompactList}\small\item\em Enables or disables write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_w_d_g___exported___functions_ga4fa7f1cd690533a35ad9e4729c0450a3}{IWDG\+\_\+\+Set\+Prescaler}} (uint8\+\_\+t IWDG\+\_\+\+Prescaler)
+\begin{DoxyCompactList}\small\item\em Sets IWDG Prescaler value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_w_d_g___exported___functions_gae2a14752a0431f23cb80cebf202ac365}{IWDG\+\_\+\+Set\+Reload}} (uint16\+\_\+t Reload)
+\begin{DoxyCompactList}\small\item\em Sets IWDG Reload value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_w_d_g___exported___functions_ga7147ebabdc3fef97f532b171a4e70d49}{IWDG\+\_\+\+Reload\+Counter}} (void)
+\begin{DoxyCompactList}\small\item\em Reloads IWDG counter with value defined in the reload register (write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers disabled). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i_w_d_g___exported___functions_ga479b2921c86f8c67b819f5c4bea6bdb6}{IWDG\+\_\+\+Enable}} (void)
+\begin{DoxyCompactList}\small\item\em Enables IWDG (write access to IWDG\+\_\+\+PR and IWDG\+\_\+\+RLR registers disabled). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___i_w_d_g___exported___functions_ga37f050cfbedc0c15f9e0816c0b22011e}{IWDG\+\_\+\+Get\+Flag\+Status}} (uint16\+\_\+t IWDG\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified IWDG flag is set or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the IWDG firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

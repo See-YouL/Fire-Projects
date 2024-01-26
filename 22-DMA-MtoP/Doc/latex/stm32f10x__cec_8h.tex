@@ -1,0 +1,128 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/stm32f10x\+\_\+cec.h File Reference}
+\hypertarget{stm32f10x__cec_8h}{}\label{stm32f10x__cec_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_cec.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_cec.h}}
+
+
+This file contains all the functions prototypes for the CEC firmware library.  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_c_e_c___init_type_def}{CEC\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em CEC Init structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___bit_timing___mode_gaf6866e5087bb01c1ea4e20a207a1f691}{CEC\+\_\+\+Bit\+Timing\+Std\+Mode}}~((uint16\+\_\+t)0x00)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___bit_timing___mode_ga4fd44675c774985d1f6cd8976b18c947}{CEC\+\_\+\+Bit\+Timing\+Err\+Free\+Mode}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8b06cd4e47f4235d8880e1ba0e56e2d7}{CEC\+\_\+\+CFGR\+\_\+\+BTEM}}
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___bit_timing___mode_ga55494269b2c9c55c11130a429f418a8d}{IS\+\_\+\+CEC\+\_\+\+BIT\+\_\+\+TIMING\+\_\+\+ERROR\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___bit_period___mode_ga746ce0a831dfd76a47add310662c7f07}{CEC\+\_\+\+Bit\+Period\+Std\+Mode}}~((uint16\+\_\+t)0x00)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___bit_period___mode_ga5bf4c1b257b837770d4d59c93cca6902}{CEC\+\_\+\+Bit\+Period\+Flexible\+Mode}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga48c747693ec4dac8e4288ae4c0949def}{CEC\+\_\+\+CFGR\+\_\+\+BPEM}}
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___bit_period___mode_ga3414347854a83bf70748624ec5b8dd49}{IS\+\_\+\+CEC\+\_\+\+BIT\+\_\+\+PERIOD\+\_\+\+ERROR\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__interrupts__definition_ga25f97d245f29e04a2d2bbc840389e6b5}{CEC\+\_\+\+IT\+\_\+\+TERR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga273caacb035cb2ec64c721fa6c747c35}{CEC\+\_\+\+CSR\+\_\+\+TERR}}
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__interrupts__definition_ga12b00fb3989f9ce9f2f7fc0094c0747d}{CEC\+\_\+\+IT\+\_\+\+TBTRF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga650bba50140fa01d98abe80bf004a9b6}{CEC\+\_\+\+CSR\+\_\+\+TBTRF}}
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__interrupts__definition_gac015ebba728a69eeb84be1bc56a58ac0}{CEC\+\_\+\+IT\+\_\+\+RERR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2e33f1d4724efa45fce87ae2fcba6cff}{CEC\+\_\+\+CSR\+\_\+\+RERR}}
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__interrupts__definition_ga42834131bf077a878e84470ae98f1bb4}{CEC\+\_\+\+IT\+\_\+\+RBTF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa325807f8f3d4bdf8e989eeef208ca5a}{CEC\+\_\+\+CSR\+\_\+\+RBTF}}
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__interrupts__definition_ga7f553a4a3346c676101d81a024a9cba8}{IS\+\_\+\+CEC\+\_\+\+GET\+\_\+\+IT}}(IT)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___own___address_ga0659314b0be6092e73aa373394816557}{IS\+\_\+\+CEC\+\_\+\+ADDRESS}}(ADDRESS)~((ADDRESS) $<$ 0x10)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___prescaler_ga88ad62af56298609444942b8f05b6d23}{IS\+\_\+\+CEC\+\_\+\+PRESCALER}}(PRESCALER)~((PRESCALER) $<$= 0x3\+FFF)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_ga66e91438a7df5d00db3c5410d8f7d456}{CEC\+\_\+\+FLAG\+\_\+\+BTE}}~((uint32\+\_\+t)0x10010000)
+\begin{DoxyCompactList}\small\item\em ESR register flags ~\newline
+ \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_gaf2a5d5dcbc57fc0cf7cfa988533a2a09}{CEC\+\_\+\+FLAG\+\_\+\+BPE}}~((uint32\+\_\+t)0x10020000)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_gafdfca815014dee4a458083337795c336}{CEC\+\_\+\+FLAG\+\_\+\+RBTFE}}~((uint32\+\_\+t)0x10040000)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_gac77db62c05af2462ed3f1b64cef2e136}{CEC\+\_\+\+FLAG\+\_\+\+SBE}}~((uint32\+\_\+t)0x10080000)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_ga1583b7a221e54f2f19cb121bf310547c}{CEC\+\_\+\+FLAG\+\_\+\+ACKE}}~((uint32\+\_\+t)0x10100000)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_gaf751970725df12976dc6c8356910143a}{CEC\+\_\+\+FLAG\+\_\+\+LINE}}~((uint32\+\_\+t)0x10200000)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_gaae90fd2f95085e113b6943bb35d899ba}{CEC\+\_\+\+FLAG\+\_\+\+TBTFE}}~((uint32\+\_\+t)0x10400000)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_gad0adfb11294f562f2c8dc555f69e25e0}{CEC\+\_\+\+FLAG\+\_\+\+TEOM}}~((uint32\+\_\+t)0x00000002)
+\begin{DoxyCompactList}\small\item\em CSR register flags ~\newline
+ \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_ga7edc608ca7b4ea74dd4d795fa3214c11}{CEC\+\_\+\+FLAG\+\_\+\+TERR}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_gaeb02634fdd06f4ea0990e2cf23cf200e}{CEC\+\_\+\+FLAG\+\_\+\+TBTRF}}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_ga4e352d4f48e3b197edf150860703d2bf}{CEC\+\_\+\+FLAG\+\_\+\+RSOM}}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_gaffeaec4eafbf1efbd88139b9bb0654a7}{CEC\+\_\+\+FLAG\+\_\+\+REOM}}~((uint32\+\_\+t)0x00000020)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_gac2376c2b958536ab414574f60cb5d75a}{CEC\+\_\+\+FLAG\+\_\+\+RERR}}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_gae73c6ec73ab8ad57b18d3bd416baf2d3}{CEC\+\_\+\+FLAG\+\_\+\+RBTF}}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_ga418911667f82a12dd097f7fac7ad4e89}{IS\+\_\+\+CEC\+\_\+\+CLEAR\+\_\+\+FLAG}}(FLAG)~((((FLAG) \& (uint32\+\_\+t)0x\+FFFFFF03) == 0x00) \&\& ((FLAG) != 0x00))
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__flags__definition_ga929b30d90f6807e9f72976596b0b850b}{IS\+\_\+\+CEC\+\_\+\+GET\+\_\+\+FLAG}}(FLAG)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga604c3b15b51a46303c201fa3deac2212}{CEC\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the CEC peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_gaf48aee745a16370372b3eaa7cf3ed22b}{CEC\+\_\+\+Init}} (\mbox{\hyperlink{struct_c_e_c___init_type_def}{CEC\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}CEC\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the CEC peripheral according to the specified parameters in the CEC\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga0c8efa79e5768930e567b3b3ed6e09e9}{CEC\+\_\+\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified CEC peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga8be87c514505cf82eb29334f054fc0bc}{CEC\+\_\+\+ITConfig}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the CEC interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_gacad422ef1f50246b2021b41835b8a95c}{CEC\+\_\+\+Own\+Address\+Config}} (uint8\+\_\+t CEC\+\_\+\+Own\+Address)
+\begin{DoxyCompactList}\small\item\em Defines the Own Address of the CEC device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_gad2fc626e28a82008a29f062975a9af11}{CEC\+\_\+\+Set\+Prescaler}} (uint16\+\_\+t CEC\+\_\+\+Prescaler)
+\begin{DoxyCompactList}\small\item\em Sets the CEC prescaler value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga6897ab26d8f909f9160e9fac54b97441}{CEC\+\_\+\+Send\+Data\+Byte}} (uint8\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Transmits single data through the CEC peripheral. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___c_e_c___exported___functions_ga165837bff6292e7674eff6f8b230da97}{CEC\+\_\+\+Receive\+Data\+Byte}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the CEC peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga71e700461ffe7820d9e1c75da65fd0fb}{CEC\+\_\+\+Start\+Of\+Message}} (void)
+\begin{DoxyCompactList}\small\item\em Starts a new message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga1e2cf6e3a1ac891f2814f9d3f4043574}{CEC\+\_\+\+End\+Of\+Message\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Transmits message with or without an EOM bit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___c_e_c___exported___functions_gaf920706cb350182bf0728c66868053ca}{CEC\+\_\+\+Get\+Flag\+Status}} (uint32\+\_\+t CEC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Gets the CEC flag status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_ga928b373fb5972204c56f9c64113f8c67}{CEC\+\_\+\+Clear\+Flag}} (uint32\+\_\+t CEC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the CEC\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} \mbox{\hyperlink{group___c_e_c___exported___functions_gaa1940a388d0bfcefe7483fb74cc2ba1d}{CEC\+\_\+\+Get\+ITStatus}} (uint8\+\_\+t CEC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified CEC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_e_c___exported___functions_gade646921262a077172c708953822f248}{CEC\+\_\+\+Clear\+ITPending\+Bit}} (uint16\+\_\+t CEC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the CEC\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the CEC firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }
