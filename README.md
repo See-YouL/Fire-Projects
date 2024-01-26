@@ -4784,6 +4784,8 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 
 ![地址及数据方向](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270243764.png)
 
+**I2C采用高位先行, 由高位到低位进行传输**
+
 **一般使用7位表示I2C上的设备地址, 设备地址加上其后的读写位可以凑成8位即1字节方便传输**
 
 例如, 某设备在I2C上的设备地址为7位的0x78(0b01111000), 可加入读写位凑到八位
@@ -4799,6 +4801,83 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 2. 在第9个时钟信号时: 数据接收端获得SDA控制权, 发送应答信号(低电平表示应答)
 
 ### STM32的I2C特性及架构
+
+![STM32的I2C特性及架构](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270305500.png)
+
+- 软件模拟协议: 较为繁琐
+- 硬件模拟协议: 较为方便, 减轻CPU负担
+
+*STM32硬件的I2C逻辑可能会有问题*
+
+**STM32的I2C架构分析**
+
+![STM32的I2C架构分析](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270315440.png)
+
+**I2C的通讯引脚**
+
+![I2C的通讯引脚](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270346561.png)
+
+![I2C的通讯引脚](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270316720.png)
+
+*勘误: I2C1_SCL默认映射到PB5, I2C1_SDA默认映射到PB7, 图片中有误*
+
+**STM32兼容smbus协议**
+
+**时钟控制逻辑**
+
+![时钟控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270347794.png)
+![时钟控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270325594.png)
+
+*Tpck1: 指的是APB1时钟周期(1/36MHz)*
+
+**计算时钟频率的方法**
+
+![计算时钟频率的方法](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270333989.png)
+
+**实际就是解未知数CCR的一元一次方程**
+
+**数据控制逻辑**
+
+![数据控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270347332.png)
+
+![数据控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270337311.png)
+
+1. 将8位数据写入数据寄存器(DR)
+2. 数据寄存器里面的数据会被发送到数据移位寄存器
+
+**整体控制逻辑**
+
+![整体控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270348369.png)
+
+![整体控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270355991.png)
+
+### STM32硬件I2C的通讯过程
+
+**STM32作为主发送器的通讯过程**
+
+![STM32作为主发送器的通讯过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270357886.png)
+
+*勘误: EV8_2: TxE=1, BTF=1, 请求设置停止位. TxE和BTF位由硬件在产生停止条件时清除*
+
+- EV5: 在正常产生S起始信号后会产生EV5事件(I2C_SRx:SB[0]置1表示起始条件已发送)
+- EV6: 在正常发送SLAVE ADDRESS和R/!W位后会产生EV6事件(I2C_SRx:ADDR[1]置1表示地址发送结束)
+- EV8: 在正常数据发送完毕后会产生EV8事件(I2C_SRx:TxE[7]置1表示数据寄存器空)
+- EV8_2: 在从机发送结束应答后会产生EV8_2事件(I2C_SRx:TxE[7]置1表示数据寄存器空, I2C_SRx:BTF[2]置1表示字节发送结束, I2C_CRx:STOP[9]置1表示在当前字节传输或在当前起始条件发出后产生停止条件, 产生停止条件后由硬件清除TxE和BTF位)
+
+**STM32作为主接收器的通讯过程**
+
+![STM32作为主接收器的通讯过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270423471.png)
+
+*勘误: EV7_1: RxNE=1, 读DR寄存器清除该事件. 设置ACK=0和STOP请求*
+
+- EV5: 在正常产生S起始信号后会产生EV5事件(I2C_SRx:SB[0]置1表示起始条件已发送)
+- EV6: 在正常发送SLAVE ADDRESS和R/!W位后会产生EV6事件(I2C_SRx:ADDR[1]置1表示地址发送结束)
+- EV7: 在正常数据发送完毕后会产生EV7事件(I2C_SRx:RxNE[6]置1表示数据寄存器(接收时)非空)
+- EV7_1: 在主机发送结束应答后会产生EV7_1事件(I2C_SRx:RxNE[6]置1表示数据寄存器(接收时)非空, I2C_CRx:ACK[10]置0表示设置为无应答返回, I2C_CRx:STOP[9]置1表示在当前字节传输或释放SCL和SDA线)
+
+**标志位的清除方法**
+
+每个状态标志位的清除方法各不相同, 使用库函数的方法可以较方便的清除寄存器的标志位
 
 ### I2C初始化结构体
 
