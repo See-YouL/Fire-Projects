@@ -4574,3 +4574,77 @@ int main(void)
     }
 }
 ```
+
+## 常用存储器
+
+### 存储器的种类
+
+易失性和非易失性区别在于**掉电数据是否会丢失**, 易失性存储器**读写速度相对较快**
+
+- 易失性存储器(RAM)
+ - DRAM(动态RAM, 常用于PC机)
+  - SDRAM(STM32F429)
+  - DDR SDRAM
+  - DDRII SDRAM
+  - DDRIII SDRAM(常用于PC机)
+ - SRAM(静态RAM, STM32F103)
+- 非易失性存储器
+ - ROM(半导体类)
+  - MASK ROM(对于STM32可读不可写)
+  - PROM(可编程ROM)
+   - OTPROM(可写一次的ROM)
+   - EPROM(可用高电压擦除的ROM)
+   - EEPROM(STM32F103, 可用较低电压3.3V擦除的ROM)
+ - FLASH(半导体类)
+  - NOR FLASH(一般用来存储程序)
+  - NAND FLASH(一般用来存储数据)
+ - 光盘
+ - 软盘
+ - 机械硬盘 
+
+### RAM存储器(易失性存储器)
+
+RAM介绍
+
+![RAM介绍](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401262322421.png)
+
+DRAM的存储单元结构
+
+![DRAM的存储单元结构](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401262327533.png)
+
+**DRAM通过电容充放电与MOS管配合产生高低电平**, 需要配合电平检测阈值来减少电容漏电带来的影响 
+
+SRAM的存储单元结构
+
+![SRAM的存储单元结构](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401262328328.png)
+
+**SRAM以锁存器结构来存储数据**, 锁存器结构在没有输入的情况下会一直保持原来的状态
+
+SRAM和DRAM的比较
+
+![SRAM和DRAM的比较](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401262336065.png)
+
+SDRAM使用同步通信方式
+
+![SDRAM同步通信](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401262341860.png)
+
+SRAM使用异步方式通信
+
+![SRAM异步通信](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270000903.png)
+
+### 非易失性存储器
+
+ROM简介
+
+![ROM简介](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270001764.png)
+
+FLASH简介
+
+![FLASH简介](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270007166.png)
+
+**在嵌入式开发中选择 NOR FLASH 主要因为坏区较少, 基于字节读写可以支持XIP**
+
+*XIP(Execute In Place，就地执行)功能，它是一种特性，允许直接从 Flash 存储器中执行代码，而无需将代码首先复制到RAM中。XIP功能在嵌入式系统中很常见，它带来了一些优势，包括更少的RAM使用和更快的启动速度*
+
+与ROM不同, FLASH必须先按块擦除数据后才能写入数据
+
