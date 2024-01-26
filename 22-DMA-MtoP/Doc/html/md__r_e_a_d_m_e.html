@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>22-DMA-MtoP: DMA</title>
+<title>22-DMA-MtoP: DMA实验2: M to P</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,196 +72,170 @@ $(function() {
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">DMA</div></div>
+  <div class="headertitle"><div class="title">DMA实验2: M to P</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> DMA: Direct Memory Access, 直接寄存器访问. 主要功能是可以把数据从一个地方搬到另一个地方, 而且不占用CPU</p>
-<ul>
-<li>DMA1: 有7个通道, 可实现P-&gt;M, M-&gt;P, M-&gt;M</li>
-<li>DMA2: 有5个通道, 可实现P-&gt;M, M-&gt;P, M-&gt;M(<em>只存在于大容量和互联型产品中</em>)</li>
-</ul>
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> <b>实验需求</b>: SRAM to 串口, 同时LED灯闪烁, 演示DMA数据不需占用CPU</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-补充: DMA介绍</h1>
-<p>DMA（Direct Memory Access，直接内存访问）是计算机系统中的一种技术，**它允许外设或内存模块通过绕过中央处理器（CPU）直接与系统内存进行数据传输**。DMA的目标是提高数据传输效率，减轻CPU的负担，使CPU能够专注于执行其他任务。</p>
-<p>以下是关于DMA的一些重要概念和特性：</p>
-<p>**工作原理**：</p>
-<p>DMA通过在系统总线上控制数据传输而不涉及CPU来工作。它可以在CPU不介入的情况下，直接将数据从一个位置传输到另一个位置。</p>
-<ol type="1">
-<li>配置： CPU负责配置DMA，确定源地址、目标地址、传输方向、传输大小等参数。</li>
-<li>启动： 一旦DMA被配置，CPU就可以启动DMA控制器，它将负责管理数据传输。</li>
-<li>传输： DMA控制器在总线上控制数据传输，无需CPU的干预。数据在源和目标之间直接传输。</li>
-<li>中断通知： DMA传输完成后，通常会发出一个中断信号，以通知CPU或其他系统组件。</li>
-</ol>
-<p>**优点**：</p>
-<ol type="1">
-<li>提高性能： 通过绕过CPU，减轻了CPU的负担，使其能够执行其他任务，提高了整体系统性能。</li>
-<li>实时数据传输： 特别适用于实时数据传输，如音频、视频流等。</li>
-<li>高效处理大量数据： 对于大量数据的块传输，DMA比CPU执行这样的传输更为高效。</li>
-</ol>
-<p>**应用领域**：</p>
-<p>DMA在多种应用场景中都得到了广泛应用，包括但不限于：</p>
-<ol type="1">
-<li>嵌入式系统： 用于处理外设和内存之间的数据传输，例如，处理音频、图像等。</li>
-<li>网络通信： 在网络接口控制器和系统内存之间快速传输数据。</li>
-<li>存储系统： 用于在磁盘、固态硬盘等存储设备和系统内存之间进行数据传输。</li>
-<li>图形处理： 在图形卡和系统内存之间进行大规模图形数据的传输。</li>
-</ol>
-<p>**DMA控制器**：</p>
-<p>DMA通常由专门的硬件单元，称为DMA控制器，来管理。DMA控制器的设计和功能因芯片架构而异，但通常包括寄存器用于配置、启动和监视传输。</p>
-<p>总的来说，DMA是一项重要的技术，对于需要高效数据传输的系统是至关重要的。通过减轻CPU的负担，DMA提高了系统的整体性能和响应速度。</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
-DMA功能框图讲解</h1>
-<p><img src="https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401261122722.png" alt="DMA功能框图讲解" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md3"></a>
-DMA请求映射</h1>
-<p>DMA1请求映射</p>
-<p><img src="https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401261126729.png" alt="DMA1请求映射" class="inline"/></p>
-<p>DMA2请求映射</p>
-<p><img src="https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401261127579.png" alt="DMA2请求映射" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md4"></a>
-DMA仲裁器</h1>
-<p><img src="https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401261128690.png" alt="DMA仲裁器" class="inline"/></p>
-<p><em>软件配置在寄存器DMA_CCRx:PL[1:0]进行通道优先级配置</em></p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-DMA固件库-初始化结构体</h1>
-<p>初始化结构体在stm32f10x_dma.h文件中</p>
+在bsp_dma_m2p.h中加入宏定义</h1>
+<div class="fragment"><div class="line"><span class="comment">// 串口工作参数宏定义</span></div>
+<div class="line"><span class="preprocessor">#define  DEBUG_USARTx                   USART1</span></div>
+<div class="line"><span class="preprocessor">#define  DEBUG_USART_CLK                RCC_APB2Periph_USART1</span></div>
+<div class="line"><span class="preprocessor">#define  DEBUG_USART_APBxClkCmd         RCC_APB2PeriphClockCmd</span></div>
+<div class="line"><span class="preprocessor">#define  DEBUG_USART_BAUDRATE           115200</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// USART GPIO 引脚宏定义</span></div>
+<div class="line"><span class="preprocessor">#define  DEBUG_USART_GPIO_CLK           (RCC_APB2Periph_GPIOA)</span></div>
+<div class="line"><span class="preprocessor">#define  DEBUG_USART_GPIO_APBxClkCmd    RCC_APB2PeriphClockCmd</span></div>
+<div class="line"><span class="preprocessor">#define  DEBUG_USART_TX_GPIO_PORT       GPIOA   </span></div>
+<div class="line"><span class="preprocessor">#define  DEBUG_USART_TX_GPIO_PIN        GPIO_Pin_9</span></div>
+<div class="line"><span class="preprocessor">#define  DEBUG_USART_RX_GPIO_PORT       GPIOA</span></div>
+<div class="line"><span class="preprocessor">#define  DEBUG_USART_RX_GPIO_PIN        GPIO_Pin_10</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#define USART_TX_DMA_CLK RCC_AHBPeriph_DMA1 </span><span class="comment">// 串口DMA时钟</span></div>
+<div class="line"><span class="preprocessor">#define  USART_TX_DMA_CHANNEL     DMA1_Channel4 </span><span class="comment">// 串口对应的DMA请求通道</span></div>
+<div class="line"><span class="preprocessor">#define  USART_DR_ADDRESS        (USART1_BASE+0x04) </span><span class="comment">// 外设寄存器地址</span></div>
+<div class="line"><span class="preprocessor">#define  SENDBUFF_SIZE            5000 </span><span class="comment">// 一次发送的数据量</span></div>
+<div class="line"><span class="preprocessor">#define  USART_TX_DMA_FLAG_TC DMA1_FLAG_TC4 </span><span class="comment">// 标志位</span></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
+在bsp_dma_m2p.c中加入USART的初始化函数</h1>
 <div class="fragment"><div class="line"> </div>
-<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="bsp__dma__m2p_8c.html#ae9720bf2dbb461c28e0205b050f1a0bb">USART_Config</a>(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">  <span class="comment">/*--------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="comment">   * 外设地址</span></div>
-<div class="line"><span class="comment">   * 由寄存器 DMA_CPARx 进行配置</span></div>
-<div class="line"><span class="comment">   *---------------------------------------------------------------------------- */</span></div>
-<div class="line">  uint32_t DMA_PeripheralBaseAddr; </div>
-<div class="line">  <span class="comment">/*--------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="comment">   * 存储器地址</span></div>
-<div class="line"><span class="comment">   * 由寄存器 DMA_CMARx 进行配置</span></div>
-<div class="line"><span class="comment">   *---------------------------------------------------------------------------- */</span></div>
-<div class="line">  uint32_t DMA_MemoryBaseAddr;     </div>
-<div class="line">  <span class="comment">/*--------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="comment">   * 传输方向</span></div>
-<div class="line"><span class="comment">   * P-&gt;M 和 M-&gt;P 由寄存器 DMA_CCRx:DIR[4] 进行配置</span></div>
-<div class="line"><span class="comment">   * M-&gt;M 由寄存器 DMA_CCRx:MEM2MEM[14] 进行配置</span></div>
-<div class="line"><span class="comment">   *--------------------------------------------------------------------------------*/</span></div>
-<div class="line">  uint32_t DMA_DIR;                </div>
-<div class="line">  <span class="comment">/*--------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="comment">   * 缓冲区大小, 传输数目</span></div>
-<div class="line"><span class="comment">   * 由寄存器 DMA_CNDTRx 进行配置</span></div>
-<div class="line"><span class="comment">   *-------------------------------------------------------------------------------*/</span></div>
-<div class="line">  uint32_t DMA_BufferSize;         </div>
-<div class="line">  <span class="comment">/*--------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="comment">   * 外设增量模式</span></div>
-<div class="line"><span class="comment">   * 由寄存器 DMA_CCRx:PINC[6] 进行配置</span></div>
-<div class="line"><span class="comment">   *--------------------------------------------------------------------------------*/</span></div>
-<div class="line">  uint32_t DMA_PeripheralInc;      </div>
-<div class="line">  <span class="comment">/*--------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="comment">   * 存储器增量模式</span></div>
-<div class="line"><span class="comment">   * 由寄存器 DMA_CCRx:MINC[7] 进行配置</span></div>
-<div class="line"><span class="comment">   *--------------------------------------------------------------------------------*/</span></div>
-<div class="line">  uint32_t DMA_MemoryInc;          </div>
-<div class="line">  <span class="comment">/*--------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="comment">   * 外设数据宽度</span></div>
-<div class="line"><span class="comment">   * 由寄存器 DMA_CCRx:PSIZE[9:8] 进行配置</span></div>
-<div class="line"><span class="comment">   *--------------------------------------------------------------------------------*/</span></div>
-<div class="line">  uint32_t DMA_PeripheralDataSize; </div>
-<div class="line">  <span class="comment">/*--------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="comment">   * 存储器数据宽度</span></div>
-<div class="line"><span class="comment">   * 由寄存器 DMA_CCRx:MSIZE[11:10] 进行配置</span></div>
-<div class="line"><span class="comment">   *--------------------------------------------------------------------------------*/</span></div>
-<div class="line">  uint32_t DMA_MemoryDataSize;     </div>
-<div class="line">  <span class="comment">/*--------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="comment">   * 传输模式</span></div>
-<div class="line"><span class="comment">   * 由寄存器 DMA_CCRx:CIRC[5] 进行配置</span></div>
-<div class="line"><span class="comment">   * 通过 DMA_ISR 判断传输状态来判断传输完成, 传输一半, 传输错误</span></div>
-<div class="line"><span class="comment">   *--------------------------------------------------------------------------------*/</span></div>
-<div class="line">  uint32_t DMA_Mode;               </div>
-<div class="line">  <span class="comment">/*--------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="comment">   * 优先级</span></div>
-<div class="line"><span class="comment">   * 由寄存器 DMA_CCRx:PL[1:0] 进行配置</span></div>
-<div class="line"><span class="comment">   *--------------------------------------------------------------------------------*/</span></div>
-<div class="line">  uint32_t DMA_Priority;           </div>
-<div class="line">  <span class="comment">/*--------------------------------------------------------------------------------</span></div>
-<div class="line"><span class="comment">   * 存储器到存储器模式</span></div>
-<div class="line"><span class="comment">   * 由寄存器 DMA_CCRx:MEM2MEM[14] 进行配置</span></div>
-<div class="line"><span class="comment">   *--------------------------------------------------------------------------------*/</span></div>
-<div class="line">  uint32_t DMA_M2M;                </div>
-<div class="line">}<a class="code hl_struct" href="struct_d_m_a___init_type_def.html">DMA_InitTypeDef</a>;</div>
-<div class="ttc" id="astruct_d_m_a___init_type_def_html"><div class="ttname"><a href="struct_d_m_a___init_type_def.html">DMA_InitTypeDef</a></div><div class="ttdoc">DMA Init structure definition.</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:51</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
-DMA固件库-固件库函数</h1>
-<p>在stm32f10x_dma.h文件中可以找到DMA固件库函数的声明, 以下是常用的函数</p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga7c3d1b9dc041f8e5f2cfc8d5dd858278">DMA_Init</a>(<a class="code hl_struct" href="struct_d_m_a___channel___type_def.html">DMA_Channel_TypeDef</a>* DMAy_Channelx, <a class="code hl_struct" href="struct_d_m_a___init_type_def.html">DMA_InitTypeDef</a>* DMA_InitStruct); <span class="comment">// 初始化函数</span></div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga8e7cb6b9ae5f142e2961df879cdaba65">DMA_Cmd</a>(<a class="code hl_struct" href="struct_d_m_a___channel___type_def.html">DMA_Channel_TypeDef</a>* DMAy_Channelx, <a class="code hl_enumeration" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState); <span class="comment">// 使能DMA</span></div>
-<div class="line"><a class="code hl_enumeration" href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a> <a class="code hl_function" href="group___d_m_a___exported___functions.html#gafb30b7a891834c267eefd5d30b688a9f">DMA_GetFlagStatus</a>(uint32_t DMAy_FLAG); <span class="comment">// 判断标志位</span></div>
+<div class="line">    <a class="code hl_struct" href="struct_g_p_i_o___init_type_def.html">GPIO_InitTypeDef</a> GPIO_InitStructure;</div>
+<div class="line">    <a class="code hl_struct" href="struct_u_s_a_r_t___init_type_def.html">USART_InitTypeDef</a> USART_InitStructure;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 打开串口GPIO的时钟</span></div>
+<div class="line">    <a class="code hl_define" href="bsp__dma__m2p_8h.html#a693b0cd655516067ce7ff0e35c887497">DEBUG_USART_GPIO_APBxClkCmd</a>(<a class="code hl_define" href="bsp__dma__m2p_8h.html#a6cb3d99c7be121319caafdc1645feba6">DEBUG_USART_GPIO_CLK</a>, <a class="code hl_enumvalue" href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 打开串口外设的时钟</span></div>
+<div class="line">    <a class="code hl_define" href="bsp__dma__m2p_8h.html#a47dede86fdd87b40f3062912789245bb">DEBUG_USART_APBxClkCmd</a>(<a class="code hl_define" href="bsp__dma__m2p_8h.html#afed6907eaab6877f77e04ec3fc42b425">DEBUG_USART_CLK</a>, <a class="code hl_enumvalue" href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 将USART Tx的GPIO配置为推挽复用模式</span></div>
+<div class="line">    GPIO_InitStructure.<a class="code hl_variable" href="struct_g_p_i_o___init_type_def.html#a35fc26fc58226126c5b99478a472e5e9">GPIO_Pin</a> = <a class="code hl_define" href="bsp__dma__m2p_8h.html#a9990264960ebac5ab34bec7fa46575cd">DEBUG_USART_TX_GPIO_PIN</a>;</div>
+<div class="line">    GPIO_InitStructure.<a class="code hl_variable" href="struct_g_p_i_o___init_type_def.html#a55bd77e335c2bfeec9caa5dc922b791b">GPIO_Mode</a> = <a class="code hl_enumvalue" href="group___g_p_i_o___exported___types.html#gga1347339e1c84a196fabbb31205eec5d4a5c7a69abc1bf31a8d24e896ed94bded9">GPIO_Mode_AF_PP</a>;</div>
+<div class="line">    GPIO_InitStructure.<a class="code hl_variable" href="struct_g_p_i_o___init_type_def.html#ac05832cacebc861a9acf5294d702c16b">GPIO_Speed</a> = <a class="code hl_enumvalue" href="group___g_p_i_o___exported___types.html#gga062ad92b67b4a1f301c161022cf3ba8ea9c47db10456202ac05134b12738ce581">GPIO_Speed_50MHz</a>;</div>
+<div class="line">    <a class="code hl_function" href="group___g_p_i_o___exported___functions.html#ga71abf9404261370d03cca449b88d3a65">GPIO_Init</a>(<a class="code hl_define" href="bsp__dma__m2p_8h.html#a091ae7961859a90d17bb46ce23570c84">DEBUG_USART_TX_GPIO_PORT</a>, &amp;GPIO_InitStructure);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 将USART Rx的GPIO配置为浮空输入模式</span></div>
+<div class="line">    GPIO_InitStructure.<a class="code hl_variable" href="struct_g_p_i_o___init_type_def.html#a35fc26fc58226126c5b99478a472e5e9">GPIO_Pin</a> = <a class="code hl_define" href="bsp__dma__m2p_8h.html#a6704ac7dc934406065861dd0b2a9b9af">DEBUG_USART_RX_GPIO_PIN</a>;</div>
+<div class="line">    GPIO_InitStructure.<a class="code hl_variable" href="struct_g_p_i_o___init_type_def.html#a55bd77e335c2bfeec9caa5dc922b791b">GPIO_Mode</a> = <a class="code hl_enumvalue" href="group___g_p_i_o___exported___types.html#gga1347339e1c84a196fabbb31205eec5d4a0e3d2ce89b42f093d327a5e42e4d7cc2">GPIO_Mode_IN_FLOATING</a>;</div>
+<div class="line">    <a class="code hl_function" href="group___g_p_i_o___exported___functions.html#ga71abf9404261370d03cca449b88d3a65">GPIO_Init</a>(<a class="code hl_define" href="bsp__dma__m2p_8h.html#a1bab3a04682087812a25adc2447d68e3">DEBUG_USART_RX_GPIO_PORT</a>, &amp;GPIO_InitStructure);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 配置串口的工作参数</span></div>
+<div class="line">    <span class="comment">// 配置波特率</span></div>
+<div class="line">    USART_InitStructure.<a class="code hl_variable" href="struct_u_s_a_r_t___init_type_def.html#a6f763cb0e6044f838ee764ce437997b2">USART_BaudRate</a> = <a class="code hl_define" href="bsp__dma__m2p_8h.html#a7ff41aaae2fa2e227e6b47894130275a">DEBUG_USART_BAUDRATE</a>;</div>
+<div class="line">    <span class="comment">// 配置 针数据字长</span></div>
+<div class="line">    USART_InitStructure.<a class="code hl_variable" href="struct_u_s_a_r_t___init_type_def.html#a16d1fb7ccc2b51964f1bcfcbfba6d89d">USART_WordLength</a> = <a class="code hl_define" href="group___u_s_a_r_t___word___length.html#ga08682faddc657df85a93627b5a146c25">USART_WordLength_8b</a>;</div>
+<div class="line">    <span class="comment">// 配置停止位</span></div>
+<div class="line">    USART_InitStructure.<a class="code hl_variable" href="struct_u_s_a_r_t___init_type_def.html#ac745bceb79a6c4c2640fd8e8ce6639d6">USART_StopBits</a> = <a class="code hl_define" href="group___u_s_a_r_t___stop___bits.html#gae2cb35620ba001f0d63e9e0be93e4a05">USART_StopBits_1</a>;</div>
+<div class="line">    <span class="comment">// 配置校验位</span></div>
+<div class="line">    USART_InitStructure.<a class="code hl_variable" href="struct_u_s_a_r_t___init_type_def.html#a5ae66aba755bac37c5cf0dfbf529e2ed">USART_Parity</a> = <a class="code hl_define" href="group___u_s_a_r_t___parity.html#gab9deebcb0a859360dfec85074abaa3aa">USART_Parity_No</a> ;</div>
+<div class="line">    <span class="comment">// 配置硬件流控制</span></div>
+<div class="line">    USART_InitStructure.<a class="code hl_variable" href="struct_u_s_a_r_t___init_type_def.html#a9996edf3bfd90c36f03b4075969703f5">USART_HardwareFlowControl</a> = <a class="code hl_define" href="group___u_s_a_r_t___hardware___flow___control.html#gaf3deaf4429b88db7753ee203f4797bd3">USART_HardwareFlowControl_None</a>;</div>
+<div class="line">    <span class="comment">// 配置工作模式，收发一起</span></div>
+<div class="line">    USART_InitStructure.<a class="code hl_variable" href="struct_u_s_a_r_t___init_type_def.html#a7d944d35d7d1fc79a63f249615148584">USART_Mode</a> = <a class="code hl_define" href="group___u_s_a_r_t___mode.html#gafefcc3d3c1a1f83b425784fa6289aecf">USART_Mode_Rx</a> | <a class="code hl_define" href="group___u_s_a_r_t___mode.html#ga22b2813509a062435ea68d086ec565b4">USART_Mode_Tx</a>;</div>
+<div class="line">    <span class="comment">// 完成串口的初始化配置</span></div>
+<div class="line">    <a class="code hl_function" href="group___u_s_a_r_t___exported___functions.html#ga98da340ea0324002ba1b4263e91ab2ff">USART_Init</a>(<a class="code hl_define" href="bsp__dma__m2p_8h.html#a53fd4b6f533e839273891855c5c90266">DEBUG_USARTx</a>, &amp;USART_InitStructure); </div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 使能串口</span></div>
+<div class="line">    <a class="code hl_function" href="group___u_s_a_r_t___exported___functions.html#ga45e51626739c5f22a6567c8a85d1d85e">USART_Cmd</a>(<a class="code hl_define" href="bsp__dma__m2p_8h.html#a53fd4b6f533e839273891855c5c90266">DEBUG_USARTx</a>, <a class="code hl_enumvalue" href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a>);        </div>
+<div class="line">}</div>
+<div class="ttc" id="absp__dma__m2p_8c_html_ae9720bf2dbb461c28e0205b050f1a0bb"><div class="ttname"><a href="bsp__dma__m2p_8c.html#ae9720bf2dbb461c28e0205b050f1a0bb">USART_Config</a></div><div class="ttdeci">void USART_Config(void)</div><div class="ttdoc">USART GPIO 配置,工作参数配置</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.c:20</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_a091ae7961859a90d17bb46ce23570c84"><div class="ttname"><a href="bsp__dma__m2p_8h.html#a091ae7961859a90d17bb46ce23570c84">DEBUG_USART_TX_GPIO_PORT</a></div><div class="ttdeci">#define DEBUG_USART_TX_GPIO_PORT</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:26</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_a1bab3a04682087812a25adc2447d68e3"><div class="ttname"><a href="bsp__dma__m2p_8h.html#a1bab3a04682087812a25adc2447d68e3">DEBUG_USART_RX_GPIO_PORT</a></div><div class="ttdeci">#define DEBUG_USART_RX_GPIO_PORT</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:28</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_a47dede86fdd87b40f3062912789245bb"><div class="ttname"><a href="bsp__dma__m2p_8h.html#a47dede86fdd87b40f3062912789245bb">DEBUG_USART_APBxClkCmd</a></div><div class="ttdeci">#define DEBUG_USART_APBxClkCmd</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:20</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_a53fd4b6f533e839273891855c5c90266"><div class="ttname"><a href="bsp__dma__m2p_8h.html#a53fd4b6f533e839273891855c5c90266">DEBUG_USARTx</a></div><div class="ttdeci">#define DEBUG_USARTx</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:18</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_a6704ac7dc934406065861dd0b2a9b9af"><div class="ttname"><a href="bsp__dma__m2p_8h.html#a6704ac7dc934406065861dd0b2a9b9af">DEBUG_USART_RX_GPIO_PIN</a></div><div class="ttdeci">#define DEBUG_USART_RX_GPIO_PIN</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:29</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_a693b0cd655516067ce7ff0e35c887497"><div class="ttname"><a href="bsp__dma__m2p_8h.html#a693b0cd655516067ce7ff0e35c887497">DEBUG_USART_GPIO_APBxClkCmd</a></div><div class="ttdeci">#define DEBUG_USART_GPIO_APBxClkCmd</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:25</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_a6cb3d99c7be121319caafdc1645feba6"><div class="ttname"><a href="bsp__dma__m2p_8h.html#a6cb3d99c7be121319caafdc1645feba6">DEBUG_USART_GPIO_CLK</a></div><div class="ttdeci">#define DEBUG_USART_GPIO_CLK</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:24</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_a7ff41aaae2fa2e227e6b47894130275a"><div class="ttname"><a href="bsp__dma__m2p_8h.html#a7ff41aaae2fa2e227e6b47894130275a">DEBUG_USART_BAUDRATE</a></div><div class="ttdeci">#define DEBUG_USART_BAUDRATE</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:21</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_a9990264960ebac5ab34bec7fa46575cd"><div class="ttname"><a href="bsp__dma__m2p_8h.html#a9990264960ebac5ab34bec7fa46575cd">DEBUG_USART_TX_GPIO_PIN</a></div><div class="ttdeci">#define DEBUG_USART_TX_GPIO_PIN</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:27</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_afed6907eaab6877f77e04ec3fc42b425"><div class="ttname"><a href="bsp__dma__m2p_8h.html#afed6907eaab6877f77e04ec3fc42b425">DEBUG_USART_CLK</a></div><div class="ttdeci">#define DEBUG_USART_CLK</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:19</div></div>
+<div class="ttc" id="agroup___exported__types_html_ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf"><div class="ttname"><a href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a></div><div class="ttdeci">@ ENABLE</div><div class="ttdef"><b>Definition</b> stm32f10x.h:521</div></div>
+<div class="ttc" id="agroup___g_p_i_o___exported___functions_html_ga71abf9404261370d03cca449b88d3a65"><div class="ttname"><a href="group___g_p_i_o___exported___functions.html#ga71abf9404261370d03cca449b88d3a65">GPIO_Init</a></div><div class="ttdeci">void GPIO_Init(GPIO_TypeDef *GPIOx, GPIO_InitTypeDef *GPIO_InitStruct)</div><div class="ttdoc">Initializes the GPIOx peripheral according to the specified parameters in the GPIO_InitStruct.</div><div class="ttdef"><b>Definition</b> stm32f10x_gpio.c:173</div></div>
+<div class="ttc" id="agroup___g_p_i_o___exported___types_html_gga062ad92b67b4a1f301c161022cf3ba8ea9c47db10456202ac05134b12738ce581"><div class="ttname"><a href="group___g_p_i_o___exported___types.html#gga062ad92b67b4a1f301c161022cf3ba8ea9c47db10456202ac05134b12738ce581">GPIO_Speed_50MHz</a></div><div class="ttdeci">@ GPIO_Speed_50MHz</div><div class="ttdef"><b>Definition</b> stm32f10x_gpio.h:62</div></div>
+<div class="ttc" id="agroup___g_p_i_o___exported___types_html_gga1347339e1c84a196fabbb31205eec5d4a0e3d2ce89b42f093d327a5e42e4d7cc2"><div class="ttname"><a href="group___g_p_i_o___exported___types.html#gga1347339e1c84a196fabbb31205eec5d4a0e3d2ce89b42f093d327a5e42e4d7cc2">GPIO_Mode_IN_FLOATING</a></div><div class="ttdeci">@ GPIO_Mode_IN_FLOATING</div><div class="ttdef"><b>Definition</b> stm32f10x_gpio.h:73</div></div>
+<div class="ttc" id="agroup___g_p_i_o___exported___types_html_gga1347339e1c84a196fabbb31205eec5d4a5c7a69abc1bf31a8d24e896ed94bded9"><div class="ttname"><a href="group___g_p_i_o___exported___types.html#gga1347339e1c84a196fabbb31205eec5d4a5c7a69abc1bf31a8d24e896ed94bded9">GPIO_Mode_AF_PP</a></div><div class="ttdeci">@ GPIO_Mode_AF_PP</div><div class="ttdef"><b>Definition</b> stm32f10x_gpio.h:79</div></div>
+<div class="ttc" id="agroup___u_s_a_r_t___exported___functions_html_ga45e51626739c5f22a6567c8a85d1d85e"><div class="ttname"><a href="group___u_s_a_r_t___exported___functions.html#ga45e51626739c5f22a6567c8a85d1d85e">USART_Cmd</a></div><div class="ttdeci">void USART_Cmd(USART_TypeDef *USARTx, FunctionalState NewState)</div><div class="ttdoc">Enables or disables the specified USART peripheral.</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.c:351</div></div>
+<div class="ttc" id="agroup___u_s_a_r_t___exported___functions_html_ga98da340ea0324002ba1b4263e91ab2ff"><div class="ttname"><a href="group___u_s_a_r_t___exported___functions.html#ga98da340ea0324002ba1b4263e91ab2ff">USART_Init</a></div><div class="ttdeci">void USART_Init(USART_TypeDef *USARTx, USART_InitTypeDef *USART_InitStruct)</div><div class="ttdoc">Initializes the USARTx peripheral according to the specified parameters in the USART_InitStruct .</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.c:176</div></div>
+<div class="ttc" id="agroup___u_s_a_r_t___hardware___flow___control_html_gaf3deaf4429b88db7753ee203f4797bd3"><div class="ttname"><a href="group___u_s_a_r_t___hardware___flow___control.html#gaf3deaf4429b88db7753ee203f4797bd3">USART_HardwareFlowControl_None</a></div><div class="ttdeci">#define USART_HardwareFlowControl_None</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:178</div></div>
+<div class="ttc" id="agroup___u_s_a_r_t___mode_html_ga22b2813509a062435ea68d086ec565b4"><div class="ttname"><a href="group___u_s_a_r_t___mode.html#ga22b2813509a062435ea68d086ec565b4">USART_Mode_Tx</a></div><div class="ttdeci">#define USART_Mode_Tx</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:169</div></div>
+<div class="ttc" id="agroup___u_s_a_r_t___mode_html_gafefcc3d3c1a1f83b425784fa6289aecf"><div class="ttname"><a href="group___u_s_a_r_t___mode.html#gafefcc3d3c1a1f83b425784fa6289aecf">USART_Mode_Rx</a></div><div class="ttdeci">#define USART_Mode_Rx</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:168</div></div>
+<div class="ttc" id="agroup___u_s_a_r_t___parity_html_gab9deebcb0a859360dfec85074abaa3aa"><div class="ttname"><a href="group___u_s_a_r_t___parity.html#gab9deebcb0a859360dfec85074abaa3aa">USART_Parity_No</a></div><div class="ttdeci">#define USART_Parity_No</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:154</div></div>
+<div class="ttc" id="agroup___u_s_a_r_t___stop___bits_html_gae2cb35620ba001f0d63e9e0be93e4a05"><div class="ttname"><a href="group___u_s_a_r_t___stop___bits.html#gae2cb35620ba001f0d63e9e0be93e4a05">USART_StopBits_1</a></div><div class="ttdeci">#define USART_StopBits_1</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:138</div></div>
+<div class="ttc" id="agroup___u_s_a_r_t___word___length_html_ga08682faddc657df85a93627b5a146c25"><div class="ttname"><a href="group___u_s_a_r_t___word___length.html#ga08682faddc657df85a93627b5a146c25">USART_WordLength_8b</a></div><div class="ttdeci">#define USART_WordLength_8b</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:125</div></div>
+<div class="ttc" id="astruct_g_p_i_o___init_type_def_html"><div class="ttname"><a href="struct_g_p_i_o___init_type_def.html">GPIO_InitTypeDef</a></div><div class="ttdoc">GPIO Init structure definition</div><div class="ttdef"><b>Definition</b> stm32f10x_gpio.h:92</div></div>
+<div class="ttc" id="astruct_g_p_i_o___init_type_def_html_a35fc26fc58226126c5b99478a472e5e9"><div class="ttname"><a href="struct_g_p_i_o___init_type_def.html#a35fc26fc58226126c5b99478a472e5e9">GPIO_InitTypeDef::GPIO_Pin</a></div><div class="ttdeci">uint16_t GPIO_Pin</div><div class="ttdef"><b>Definition</b> stm32f10x_gpio.h:93</div></div>
+<div class="ttc" id="astruct_g_p_i_o___init_type_def_html_a55bd77e335c2bfeec9caa5dc922b791b"><div class="ttname"><a href="struct_g_p_i_o___init_type_def.html#a55bd77e335c2bfeec9caa5dc922b791b">GPIO_InitTypeDef::GPIO_Mode</a></div><div class="ttdeci">GPIOMode_TypeDef GPIO_Mode</div><div class="ttdef"><b>Definition</b> stm32f10x_gpio.h:99</div></div>
+<div class="ttc" id="astruct_g_p_i_o___init_type_def_html_ac05832cacebc861a9acf5294d702c16b"><div class="ttname"><a href="struct_g_p_i_o___init_type_def.html#ac05832cacebc861a9acf5294d702c16b">GPIO_InitTypeDef::GPIO_Speed</a></div><div class="ttdeci">GPIOSpeed_TypeDef GPIO_Speed</div><div class="ttdef"><b>Definition</b> stm32f10x_gpio.h:96</div></div>
+<div class="ttc" id="astruct_u_s_a_r_t___init_type_def_html"><div class="ttname"><a href="struct_u_s_a_r_t___init_type_def.html">USART_InitTypeDef</a></div><div class="ttdoc">USART Init Structure definition</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:51</div></div>
+<div class="ttc" id="astruct_u_s_a_r_t___init_type_def_html_a16d1fb7ccc2b51964f1bcfcbfba6d89d"><div class="ttname"><a href="struct_u_s_a_r_t___init_type_def.html#a16d1fb7ccc2b51964f1bcfcbfba6d89d">USART_InitTypeDef::USART_WordLength</a></div><div class="ttdeci">uint16_t USART_WordLength</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:57</div></div>
+<div class="ttc" id="astruct_u_s_a_r_t___init_type_def_html_a5ae66aba755bac37c5cf0dfbf529e2ed"><div class="ttname"><a href="struct_u_s_a_r_t___init_type_def.html#a5ae66aba755bac37c5cf0dfbf529e2ed">USART_InitTypeDef::USART_Parity</a></div><div class="ttdeci">uint16_t USART_Parity</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:63</div></div>
+<div class="ttc" id="astruct_u_s_a_r_t___init_type_def_html_a6f763cb0e6044f838ee764ce437997b2"><div class="ttname"><a href="struct_u_s_a_r_t___init_type_def.html#a6f763cb0e6044f838ee764ce437997b2">USART_InitTypeDef::USART_BaudRate</a></div><div class="ttdeci">uint32_t USART_BaudRate</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:52</div></div>
+<div class="ttc" id="astruct_u_s_a_r_t___init_type_def_html_a7d944d35d7d1fc79a63f249615148584"><div class="ttname"><a href="struct_u_s_a_r_t___init_type_def.html#a7d944d35d7d1fc79a63f249615148584">USART_InitTypeDef::USART_Mode</a></div><div class="ttdeci">uint16_t USART_Mode</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:70</div></div>
+<div class="ttc" id="astruct_u_s_a_r_t___init_type_def_html_a9996edf3bfd90c36f03b4075969703f5"><div class="ttname"><a href="struct_u_s_a_r_t___init_type_def.html#a9996edf3bfd90c36f03b4075969703f5">USART_InitTypeDef::USART_HardwareFlowControl</a></div><div class="ttdeci">uint16_t USART_HardwareFlowControl</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:73</div></div>
+<div class="ttc" id="astruct_u_s_a_r_t___init_type_def_html_ac745bceb79a6c4c2640fd8e8ce6639d6"><div class="ttname"><a href="struct_u_s_a_r_t___init_type_def.html#ac745bceb79a6c4c2640fd8e8ce6639d6">USART_InitTypeDef::USART_StopBits</a></div><div class="ttdeci">uint16_t USART_StopBits</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:60</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
+在bsp_dma_m2p.c中加入USARTx_TX DMA配置, 实现内存到外设(USART1-&gt;DR)</h1>
+<div class="fragment"><div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="bsp__dma__m2p_8c.html#a159c123526e5bfa3352f384285db5a6d">USARTx_DMA_Config</a>(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">        <a class="code hl_struct" href="struct_d_m_a___init_type_def.html">DMA_InitTypeDef</a> DMA_InitStructure;</div>
+<div class="line">    </div>
+<div class="line">        <span class="comment">// 开启DMA时钟</span></div>
+<div class="line">        <a class="code hl_function" href="group___r_c_c___exported___functions.html#gae0b30d8598b8393bdba9c3fefba3a968">RCC_AHBPeriphClockCmd</a>(<a class="code hl_define" href="bsp__dma__m2p_8h.html#a0409832fda690702148e88e97a383676">USART_TX_DMA_CLK</a>, <a class="code hl_enumvalue" href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a>);</div>
+<div class="line">        <span class="comment">// 设置DMA源地址：串口数据寄存器地址*/</span></div>
+<div class="line">        DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a232af556de7c2eec9a82d448730bd86d">DMA_PeripheralBaseAddr</a> = <a class="code hl_define" href="bsp__dma__m2p_8h.html#a6386f4510dfb8cd07c86eb32eb12b901">USART_DR_ADDRESS</a>;</div>
+<div class="line">        <span class="comment">// 内存地址(要传输的变量的指针)</span></div>
+<div class="line">        DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a41e7d463f0cfbcedf3170d7d27d088df">DMA_MemoryBaseAddr</a> = (<a class="code hl_typedef" href="group___exported__types.html#gafaa62991928fb9fb18ff0db62a040aba">u32</a>)<a class="code hl_variable" href="bsp__dma__m2p_8c.html#ad0be6bea973e44b948cee6fe0e755fcb">SendBuff</a>;</div>
+<div class="line">        <span class="comment">// 方向：从内存到外设    </span></div>
+<div class="line">        DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a91b47435ccf4a40efa97bbbe631789e1">DMA_DIR</a> = <a class="code hl_define" href="group___d_m_a__data__transfer__direction.html#ga51567b748ddac277743c65c20275971a">DMA_DIR_PeripheralDST</a>;</div>
+<div class="line">        <span class="comment">// 传输大小 </span></div>
+<div class="line">        DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a999df57215b28b3b1b3b6836c4952ca5">DMA_BufferSize</a> = <a class="code hl_define" href="bsp__dma__m2p_8h.html#affc4739854f3670ccc0279a9accf0e89">SENDBUFF_SIZE</a>;</div>
+<div class="line">        <span class="comment">// 外设地址不增       </span></div>
+<div class="line">        DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#ad4d427790f9a089ca0257a358fc263c2">DMA_PeripheralInc</a> = <a class="code hl_define" href="group___d_m_a__peripheral__incremented__mode.html#ga0fe3ff9c67bec802dd239fd17c3dbd31">DMA_PeripheralInc_Disable</a>;</div>
+<div class="line">        <span class="comment">// 内存地址自增</span></div>
+<div class="line">        DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#aaf69c680a297ec01a2ed613289e691a1">DMA_MemoryInc</a> = <a class="code hl_define" href="group___d_m_a__memory__incremented__mode.html#ga4e8cb23d039c74bbbf365d7678835bbb">DMA_MemoryInc_Enable</a>;</div>
+<div class="line">        <span class="comment">// 外设数据单位   </span></div>
+<div class="line">        DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#afb46aaadfb80a7e19277c868bd252554">DMA_PeripheralDataSize</a> = <a class="code hl_define" href="group___d_m_a__peripheral__data__size.html#ga7577035ae4ff413164000227a8cea346">DMA_PeripheralDataSize_Byte</a>;</div>
+<div class="line">        <span class="comment">// 内存数据单位</span></div>
+<div class="line">        DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a74bb71921c4d198d6cf1979c120f694f">DMA_MemoryDataSize</a> = <a class="code hl_define" href="group___d_m_a__memory__data__size.html#gad6093bccb60ff9adf81e21c73c58ba17">DMA_MemoryDataSize_Byte</a>;  </div>
+<div class="line">        <span class="comment">// DMA模式，一次或者循环模式</span></div>
+<div class="line">        DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a8adbe6f3e46471d109afaa3111dce220">DMA_Mode</a> = <a class="code hl_define" href="group___d_m_a__circular__normal__mode.html#ga36400f5b5095f1102ede4760d7a5959c">DMA_Mode_Normal</a> ;</div>
+<div class="line">        <span class="comment">// DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;  </span></div>
+<div class="line">        <span class="comment">// 优先级：中    </span></div>
+<div class="line">        DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#ab9a17bd51778478cbd728c868206dca0">DMA_Priority</a> = <a class="code hl_define" href="group___d_m_a__priority__level.html#ga8e0d4a958f4288c6c759945789490f38">DMA_Priority_Medium</a>; </div>
+<div class="line">        <span class="comment">// 禁止内存到内存的传输</span></div>
+<div class="line">        DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a57944cc447e6fcde4e9aa6229d3b4c5d">DMA_M2M</a> = <a class="code hl_define" href="group___d_m_a__memory__to__memory.html#ga86e0a7076f0badd509fac6576f3b5355">DMA_M2M_Disable</a>;</div>
+<div class="line">        <span class="comment">// 配置DMA通道         </span></div>
+<div class="line">        <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga7c3d1b9dc041f8e5f2cfc8d5dd858278">DMA_Init</a>(<a class="code hl_define" href="bsp__dma__m2p_8h.html#ab8482dba61154b7a745d949a244065a2">USART_TX_DMA_CHANNEL</a>, &amp;DMA_InitStructure);     </div>
+<div class="line">        <span class="comment">// 清除TC标志位</span></div>
+<div class="line">        <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga25cdca360f309c8ceb7c206cd9ad9119">DMA_ClearFlag</a>(<a class="code hl_define" href="bsp__dma__m2p_8h.html#a8e6dff858459b1c89a392246d466e587">USART_TX_DMA_FLAG_TC</a>);</div>
+<div class="line">        <span class="comment">// 使能DMA</span></div>
+<div class="line">        <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga8e7cb6b9ae5f142e2961df879cdaba65">DMA_Cmd</a> (<a class="code hl_define" href="bsp__dma__m2p_8h.html#ab8482dba61154b7a745d949a244065a2">USART_TX_DMA_CHANNEL</a>, <a class="code hl_enumvalue" href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a>);</div>
+<div class="line">}</div>
+<div class="ttc" id="absp__dma__m2p_8c_html_a159c123526e5bfa3352f384285db5a6d"><div class="ttname"><a href="bsp__dma__m2p_8c.html#a159c123526e5bfa3352f384285db5a6d">USARTx_DMA_Config</a></div><div class="ttdeci">void USARTx_DMA_Config(void)</div><div class="ttdoc">USARTx TX DMA 配置，内存到外设(USART1-&gt;DR)</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.c:68</div></div>
+<div class="ttc" id="absp__dma__m2p_8c_html_ad0be6bea973e44b948cee6fe0e755fcb"><div class="ttname"><a href="bsp__dma__m2p_8c.html#ad0be6bea973e44b948cee6fe0e755fcb">SendBuff</a></div><div class="ttdeci">uint8_t SendBuff[SENDBUFF_SIZE]</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.c:13</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_a0409832fda690702148e88e97a383676"><div class="ttname"><a href="bsp__dma__m2p_8h.html#a0409832fda690702148e88e97a383676">USART_TX_DMA_CLK</a></div><div class="ttdeci">#define USART_TX_DMA_CLK</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:31</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_a6386f4510dfb8cd07c86eb32eb12b901"><div class="ttname"><a href="bsp__dma__m2p_8h.html#a6386f4510dfb8cd07c86eb32eb12b901">USART_DR_ADDRESS</a></div><div class="ttdeci">#define USART_DR_ADDRESS</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:33</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_a8e6dff858459b1c89a392246d466e587"><div class="ttname"><a href="bsp__dma__m2p_8h.html#a8e6dff858459b1c89a392246d466e587">USART_TX_DMA_FLAG_TC</a></div><div class="ttdeci">#define USART_TX_DMA_FLAG_TC</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:35</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_ab8482dba61154b7a745d949a244065a2"><div class="ttname"><a href="bsp__dma__m2p_8h.html#ab8482dba61154b7a745d949a244065a2">USART_TX_DMA_CHANNEL</a></div><div class="ttdeci">#define USART_TX_DMA_CHANNEL</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:32</div></div>
+<div class="ttc" id="absp__dma__m2p_8h_html_affc4739854f3670ccc0279a9accf0e89"><div class="ttname"><a href="bsp__dma__m2p_8h.html#affc4739854f3670ccc0279a9accf0e89">SENDBUFF_SIZE</a></div><div class="ttdeci">#define SENDBUFF_SIZE</div><div class="ttdef"><b>Definition</b> bsp_dma_m2p.h:34</div></div>
+<div class="ttc" id="agroup___d_m_a___exported___functions_html_ga25cdca360f309c8ceb7c206cd9ad9119"><div class="ttname"><a href="group___d_m_a___exported___functions.html#ga25cdca360f309c8ceb7c206cd9ad9119">DMA_ClearFlag</a></div><div class="ttdeci">void DMA_ClearFlag(uint32_t DMAy_FLAG)</div><div class="ttdoc">Clears the DMAy Channelx's pending flags.</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.c:523</div></div>
 <div class="ttc" id="agroup___d_m_a___exported___functions_html_ga7c3d1b9dc041f8e5f2cfc8d5dd858278"><div class="ttname"><a href="group___d_m_a___exported___functions.html#ga7c3d1b9dc041f8e5f2cfc8d5dd858278">DMA_Init</a></div><div class="ttdeci">void DMA_Init(DMA_Channel_TypeDef *DMAy_Channelx, DMA_InitTypeDef *DMA_InitStruct)</div><div class="ttdoc">Initializes the DMAy Channelx according to the specified parameters in the DMA_InitStruct.</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.c:202</div></div>
 <div class="ttc" id="agroup___d_m_a___exported___functions_html_ga8e7cb6b9ae5f142e2961df879cdaba65"><div class="ttname"><a href="group___d_m_a___exported___functions.html#ga8e7cb6b9ae5f142e2961df879cdaba65">DMA_Cmd</a></div><div class="ttdeci">void DMA_Cmd(DMA_Channel_TypeDef *DMAy_Channelx, FunctionalState NewState)</div><div class="ttdoc">Enables or disables the specified DMAy Channelx.</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.c:294</div></div>
-<div class="ttc" id="agroup___d_m_a___exported___functions_html_gafb30b7a891834c267eefd5d30b688a9f"><div class="ttname"><a href="group___d_m_a___exported___functions.html#gafb30b7a891834c267eefd5d30b688a9f">DMA_GetFlagStatus</a></div><div class="ttdeci">FlagStatus DMA_GetFlagStatus(uint32_t DMAy_FLAG)</div><div class="ttdoc">Checks whether the specified DMAy Channelx flag is set or not.</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.c:433</div></div>
-<div class="ttc" id="agroup___exported__types_html_ga89136caac2e14c55151f527ac02daaff"><div class="ttname"><a href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a></div><div class="ttdeci">FlagStatus</div><div class="ttdef"><b>Definition</b> stm32f10x.h:519</div></div>
-<div class="ttc" id="agroup___exported__types_html_gac9a7e9a35d2513ec15c3b537aaa4fba1"><div class="ttname"><a href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a></div><div class="ttdeci">FunctionalState</div><div class="ttdef"><b>Definition</b> stm32f10x.h:521</div></div>
-<div class="ttc" id="astruct_d_m_a___channel___type_def_html"><div class="ttname"><a href="struct_d_m_a___channel___type_def.html">DMA_Channel_TypeDef</a></div><div class="ttdoc">DMA Controller.</div><div class="ttdef"><b>Definition</b> stm32f10x.h:799</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
-DMA实验1: M to M</h1>
-<p><b>项目地址</b>:</p>
-<p><b>实验需求</b>: FLASH to SRAM, 把内部FLASH的数据传输到内部的SRAM</p>
-<p>在bsp_dma_m2m.h增加宏定义</p>
-<div class="fragment"><div class="line"><span class="comment">// 当使用存储器到存储器模式时候，通道可以随便选，没有硬性的规定</span></div>
-<div class="line"><span class="preprocessor">#define M2M_DMA_CHANNEL     DMA1_Channel6</span></div>
-<div class="line"><span class="preprocessor">#define M2M_DMA_CLOCK       RCC_AHBPeriph_DMA1</span></div>
-<div class="line"><span class="comment">// 传输完成标志</span></div>
-<div class="line"><span class="preprocessor">#define M2M_DMA_FLAG_TC     DMA1_FLAG_TC6</span></div>
-<div class="line"><span class="comment">// 要发送的数据大小</span></div>
-<div class="line"><span class="preprocessor">#define BUFFER_SIZE     32</span></div>
-</div><!-- fragment --><p>在bsp_dma_m2m.c中定义源和目标变量</p>
-<div class="fragment"><div class="line"><span class="comment">/* 定义aSRC_Const_Buffer数组作为DMA传输数据源</span></div>
-<div class="line"><span class="comment"> * const关键字将aSRC_Const_Buffer数组变量定义为常量类型</span></div>
-<div class="line"><span class="comment"> * 表示数据存储在内部的FLASH中</span></div>
-<div class="line"><span class="comment"> */</span></div>
-<div class="line"><span class="keyword">const</span> uint32_t aSRC_Const_Buffer[BUFFER_SIZE]= {</div>
-<div class="line">                                    0x01020304,0x05060708,0x090A0B0C,0x0D0E0F10,</div>
-<div class="line">                                    0x11121314,0x15161718,0x191A1B1C,0x1D1E1F20,</div>
-<div class="line">                                    0x21222324,0x25262728,0x292A2B2C,0x2D2E2F30,</div>
-<div class="line">                                    0x31323334,0x35363738,0x393A3B3C,0x3D3E3F40,</div>
-<div class="line">                                    0x41424344,0x45464748,0x494A4B4C,0x4D4E4F50,</div>
-<div class="line">                                    0x51525354,0x55565758,0x595A5B5C,0x5D5E5F60,</div>
-<div class="line">                                    0x61626364,0x65666768,0x696A6B6C,0x6D6E6F70,</div>
-<div class="line">                                    0x71727374,0x75767778,0x797A7B7C,0x7D7E7F80};</div>
-<div class="line"> </div>
-<div class="line">uint32_t aDST_Buffer[BUFFER_SIZE];</div>
-</div><!-- fragment --><p> 在bsp_dma_m2m.c中增加DMA初始化函数</p>
-<div class="fragment"><div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> M2M_DMA_Config(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
-<div class="line">    <a class="code hl_struct" href="struct_d_m_a___init_type_def.html">DMA_InitTypeDef</a> DMA_InitStructure; <span class="comment">// 定义DMA初始化结构体变量</span></div>
-<div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="group___r_c_c___exported___functions.html#gae0b30d8598b8393bdba9c3fefba3a968">RCC_AHBPeriphClockCmd</a>(M2M_DMA_CLOCK, <a class="code hl_enumvalue" href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a>); <span class="comment">// 打开DMA时钟</span></div>
-<div class="line"> </div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a232af556de7c2eec9a82d448730bd86d">DMA_PeripheralBaseAddr</a> = (uint32_t)aSRC_Const_Buffer; <span class="comment">// 配置外设地址, 实际将FLASH的数据配置成了外设</span></div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a41e7d463f0cfbcedf3170d7d27d088df">DMA_MemoryBaseAddr</a> = (uint32_t)aDST_Buffer; <span class="comment">// 配置存储器地址</span></div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a91b47435ccf4a40efa97bbbe631789e1">DMA_DIR</a> = <a class="code hl_define" href="group___d_m_a__data__transfer__direction.html#ga5ce120a044359410136695a2c05df68e">DMA_DIR_PeripheralSRC</a>; <span class="comment">// 配置传输方向，从外设读取数据发送到存储器</span></div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a999df57215b28b3b1b3b6836c4952ca5">DMA_BufferSize</a> = BUFFER_SIZE; <span class="comment">// 配置传输数据大小</span></div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#ad4d427790f9a089ca0257a358fc263c2">DMA_PeripheralInc</a> = <a class="code hl_define" href="group___d_m_a__peripheral__incremented__mode.html#gaf7921ea423fb60701a091c508cd0f33a">DMA_PeripheralInc_Enable</a>; <span class="comment">// 配置外设地址自增</span></div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#aaf69c680a297ec01a2ed613289e691a1">DMA_MemoryInc</a> = <a class="code hl_define" href="group___d_m_a__memory__incremented__mode.html#ga4e8cb23d039c74bbbf365d7678835bbb">DMA_MemoryInc_Enable</a>; <span class="comment">// 配置存储器地址自增</span></div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#afb46aaadfb80a7e19277c868bd252554">DMA_PeripheralDataSize</a> = <a class="code hl_define" href="group___d_m_a__peripheral__data__size.html#ga516ea7a40945d8325fe73e079b245ea1">DMA_PeripheralDataSize_Word</a>; <span class="comment">// 配置外设数据大小</span></div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a74bb71921c4d198d6cf1979c120f694f">DMA_MemoryDataSize</a> = <a class="code hl_define" href="group___d_m_a__memory__data__size.html#gaff403722a6f82d4b34c9ef306507bb98">DMA_MemoryDataSize_Word</a>; <span class="comment">// 配置存储器数据大小</span></div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a8adbe6f3e46471d109afaa3111dce220">DMA_Mode</a> = <a class="code hl_define" href="group___d_m_a__circular__normal__mode.html#ga36400f5b5095f1102ede4760d7a5959c">DMA_Mode_Normal</a>; <span class="comment">// 配置传输模式，非循环模式</span></div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#ab9a17bd51778478cbd728c868206dca0">DMA_Priority</a> = <a class="code hl_define" href="group___d_m_a__priority__level.html#gae2441c0b4d4ba9945a6f4f7d08045a8e">DMA_Priority_High</a>; <span class="comment">// 配置传输通道优先级</span></div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a57944cc447e6fcde4e9aa6229d3b4c5d">DMA_M2M</a> = <a class="code hl_define" href="group___d_m_a__memory__to__memory.html#ga046a1de15235c254c0511c08cae3065a">DMA_M2M_Enable</a>; <span class="comment">// 配置存储器到存储器模式</span></div>
-<div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga7c3d1b9dc041f8e5f2cfc8d5dd858278">DMA_Init</a>(M2M_DMA_CHANNEL, &amp;DMA_InitStructure); <span class="comment">// 初始化DMA通道</span></div>
-<div class="line">    <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga25cdca360f309c8ceb7c206cd9ad9119">DMA_ClearFlag</a>(M2M_DMA_FLAG_TC); <span class="comment">// 清除DMA通道传输完成标志位</span></div>
-<div class="line">    <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga8e7cb6b9ae5f142e2961df879cdaba65">DMA_Cmd</a>(M2M_DMA_CHANNEL, <a class="code hl_enumvalue" href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a>); <span class="comment">// 使能DMA通道</span></div>
-<div class="line">}</div>
-<div class="ttc" id="agroup___d_m_a___exported___functions_html_ga25cdca360f309c8ceb7c206cd9ad9119"><div class="ttname"><a href="group___d_m_a___exported___functions.html#ga25cdca360f309c8ceb7c206cd9ad9119">DMA_ClearFlag</a></div><div class="ttdeci">void DMA_ClearFlag(uint32_t DMAy_FLAG)</div><div class="ttdoc">Clears the DMAy Channelx's pending flags.</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.c:523</div></div>
 <div class="ttc" id="agroup___d_m_a__circular__normal__mode_html_ga36400f5b5095f1102ede4760d7a5959c"><div class="ttname"><a href="group___d_m_a__circular__normal__mode.html#ga36400f5b5095f1102ede4760d7a5959c">DMA_Mode_Normal</a></div><div class="ttdeci">#define DMA_Mode_Normal</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:177</div></div>
-<div class="ttc" id="agroup___d_m_a__data__transfer__direction_html_ga5ce120a044359410136695a2c05df68e"><div class="ttname"><a href="group___d_m_a__data__transfer__direction.html#ga5ce120a044359410136695a2c05df68e">DMA_DIR_PeripheralSRC</a></div><div class="ttdeci">#define DMA_DIR_PeripheralSRC</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:113</div></div>
-<div class="ttc" id="agroup___d_m_a__memory__data__size_html_gaff403722a6f82d4b34c9ef306507bb98"><div class="ttname"><a href="group___d_m_a__memory__data__size.html#gaff403722a6f82d4b34c9ef306507bb98">DMA_MemoryDataSize_Word</a></div><div class="ttdeci">#define DMA_MemoryDataSize_Word</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:164</div></div>
+<div class="ttc" id="agroup___d_m_a__data__transfer__direction_html_ga51567b748ddac277743c65c20275971a"><div class="ttname"><a href="group___d_m_a__data__transfer__direction.html#ga51567b748ddac277743c65c20275971a">DMA_DIR_PeripheralDST</a></div><div class="ttdeci">#define DMA_DIR_PeripheralDST</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:112</div></div>
+<div class="ttc" id="agroup___d_m_a__memory__data__size_html_gad6093bccb60ff9adf81e21c73c58ba17"><div class="ttname"><a href="group___d_m_a__memory__data__size.html#gad6093bccb60ff9adf81e21c73c58ba17">DMA_MemoryDataSize_Byte</a></div><div class="ttdeci">#define DMA_MemoryDataSize_Byte</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:162</div></div>
 <div class="ttc" id="agroup___d_m_a__memory__incremented__mode_html_ga4e8cb23d039c74bbbf365d7678835bbb"><div class="ttname"><a href="group___d_m_a__memory__incremented__mode.html#ga4e8cb23d039c74bbbf365d7678835bbb">DMA_MemoryInc_Enable</a></div><div class="ttdeci">#define DMA_MemoryInc_Enable</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:136</div></div>
-<div class="ttc" id="agroup___d_m_a__memory__to__memory_html_ga046a1de15235c254c0511c08cae3065a"><div class="ttname"><a href="group___d_m_a__memory__to__memory.html#ga046a1de15235c254c0511c08cae3065a">DMA_M2M_Enable</a></div><div class="ttdeci">#define DMA_M2M_Enable</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:203</div></div>
-<div class="ttc" id="agroup___d_m_a__peripheral__data__size_html_ga516ea7a40945d8325fe73e079b245ea1"><div class="ttname"><a href="group___d_m_a__peripheral__data__size.html#ga516ea7a40945d8325fe73e079b245ea1">DMA_PeripheralDataSize_Word</a></div><div class="ttdeci">#define DMA_PeripheralDataSize_Word</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:150</div></div>
-<div class="ttc" id="agroup___d_m_a__peripheral__incremented__mode_html_gaf7921ea423fb60701a091c508cd0f33a"><div class="ttname"><a href="group___d_m_a__peripheral__incremented__mode.html#gaf7921ea423fb60701a091c508cd0f33a">DMA_PeripheralInc_Enable</a></div><div class="ttdeci">#define DMA_PeripheralInc_Enable</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:124</div></div>
-<div class="ttc" id="agroup___d_m_a__priority__level_html_gae2441c0b4d4ba9945a6f4f7d08045a8e"><div class="ttname"><a href="group___d_m_a__priority__level.html#gae2441c0b4d4ba9945a6f4f7d08045a8e">DMA_Priority_High</a></div><div class="ttdeci">#define DMA_Priority_High</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:188</div></div>
-<div class="ttc" id="agroup___exported__types_html_ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf"><div class="ttname"><a href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a></div><div class="ttdeci">@ ENABLE</div><div class="ttdef"><b>Definition</b> stm32f10x.h:521</div></div>
+<div class="ttc" id="agroup___d_m_a__memory__to__memory_html_ga86e0a7076f0badd509fac6576f3b5355"><div class="ttname"><a href="group___d_m_a__memory__to__memory.html#ga86e0a7076f0badd509fac6576f3b5355">DMA_M2M_Disable</a></div><div class="ttdeci">#define DMA_M2M_Disable</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:204</div></div>
+<div class="ttc" id="agroup___d_m_a__peripheral__data__size_html_ga7577035ae4ff413164000227a8cea346"><div class="ttname"><a href="group___d_m_a__peripheral__data__size.html#ga7577035ae4ff413164000227a8cea346">DMA_PeripheralDataSize_Byte</a></div><div class="ttdeci">#define DMA_PeripheralDataSize_Byte</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:148</div></div>
+<div class="ttc" id="agroup___d_m_a__peripheral__incremented__mode_html_ga0fe3ff9c67bec802dd239fd17c3dbd31"><div class="ttname"><a href="group___d_m_a__peripheral__incremented__mode.html#ga0fe3ff9c67bec802dd239fd17c3dbd31">DMA_PeripheralInc_Disable</a></div><div class="ttdeci">#define DMA_PeripheralInc_Disable</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:125</div></div>
+<div class="ttc" id="agroup___d_m_a__priority__level_html_ga8e0d4a958f4288c6c759945789490f38"><div class="ttname"><a href="group___d_m_a__priority__level.html#ga8e0d4a958f4288c6c759945789490f38">DMA_Priority_Medium</a></div><div class="ttdeci">#define DMA_Priority_Medium</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:189</div></div>
+<div class="ttc" id="agroup___exported__types_html_gafaa62991928fb9fb18ff0db62a040aba"><div class="ttname"><a href="group___exported__types.html#gafaa62991928fb9fb18ff0db62a040aba">u32</a></div><div class="ttdeci">uint32_t u32</div><div class="ttdef"><b>Definition</b> stm32f10x.h:503</div></div>
 <div class="ttc" id="agroup___r_c_c___exported___functions_html_gae0b30d8598b8393bdba9c3fefba3a968"><div class="ttname"><a href="group___r_c_c___exported___functions.html#gae0b30d8598b8393bdba9c3fefba3a968">RCC_AHBPeriphClockCmd</a></div><div class="ttdeci">void RCC_AHBPeriphClockCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState)</div><div class="ttdoc">Enables or disables the AHB peripheral clock.</div><div class="ttdef"><b>Definition</b> stm32f10x_rcc.c:1064</div></div>
+<div class="ttc" id="astruct_d_m_a___init_type_def_html"><div class="ttname"><a href="struct_d_m_a___init_type_def.html">DMA_InitTypeDef</a></div><div class="ttdoc">DMA Init structure definition.</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:51</div></div>
 <div class="ttc" id="astruct_d_m_a___init_type_def_html_a232af556de7c2eec9a82d448730bd86d"><div class="ttname"><a href="struct_d_m_a___init_type_def.html#a232af556de7c2eec9a82d448730bd86d">DMA_InitTypeDef::DMA_PeripheralBaseAddr</a></div><div class="ttdeci">uint32_t DMA_PeripheralBaseAddr</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:52</div></div>
 <div class="ttc" id="astruct_d_m_a___init_type_def_html_a41e7d463f0cfbcedf3170d7d27d088df"><div class="ttname"><a href="struct_d_m_a___init_type_def.html#a41e7d463f0cfbcedf3170d7d27d088df">DMA_InitTypeDef::DMA_MemoryBaseAddr</a></div><div class="ttdeci">uint32_t DMA_MemoryBaseAddr</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:54</div></div>
 <div class="ttc" id="astruct_d_m_a___init_type_def_html_a57944cc447e6fcde4e9aa6229d3b4c5d"><div class="ttname"><a href="struct_d_m_a___init_type_def.html#a57944cc447e6fcde4e9aa6229d3b4c5d">DMA_InitTypeDef::DMA_M2M</a></div><div class="ttdeci">uint32_t DMA_M2M</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:83</div></div>
@@ -273,80 +247,39 @@ DMA实验1: M to M</h1>
 <div class="ttc" id="astruct_d_m_a___init_type_def_html_ab9a17bd51778478cbd728c868206dca0"><div class="ttname"><a href="struct_d_m_a___init_type_def.html#ab9a17bd51778478cbd728c868206dca0">DMA_InitTypeDef::DMA_Priority</a></div><div class="ttdeci">uint32_t DMA_Priority</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:80</div></div>
 <div class="ttc" id="astruct_d_m_a___init_type_def_html_ad4d427790f9a089ca0257a358fc263c2"><div class="ttname"><a href="struct_d_m_a___init_type_def.html#ad4d427790f9a089ca0257a358fc263c2">DMA_InitTypeDef::DMA_PeripheralInc</a></div><div class="ttdeci">uint32_t DMA_PeripheralInc</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:63</div></div>
 <div class="ttc" id="astruct_d_m_a___init_type_def_html_afb46aaadfb80a7e19277c868bd252554"><div class="ttname"><a href="struct_d_m_a___init_type_def.html#afb46aaadfb80a7e19277c868bd252554">DMA_InitTypeDef::DMA_PeripheralDataSize</a></div><div class="ttdeci">uint32_t DMA_PeripheralDataSize</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:69</div></div>
-</div><!-- fragment --><p>在bsp_dma_m2m.c中增加判断数据相等的函数</p>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+在bsp_dma_m2p.c中声明在内存的变量</h1>
+<div class="fragment"><div class="line">uint8_t <a class="code hl_variable" href="bsp__dma__m2p_8c.html#ad0be6bea973e44b948cee6fe0e755fcb">SendBuff</a>[<a class="code hl_define" href="bsp__dma__m2p_8h.html#affc4739854f3670ccc0279a9accf0e89">SENDBUFF_SIZE</a>];</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+在main.c中声明外部变量</h1>
+<div class="fragment"><div class="line"><span class="keyword">extern</span> uint8_t <a class="code hl_variable" href="bsp__dma__m2p_8c.html#ad0be6bea973e44b948cee6fe0e755fcb">SendBuff</a>[<a class="code hl_define" href="bsp__dma__m2p_8h.html#affc4739854f3670ccc0279a9accf0e89">SENDBUFF_SIZE</a>];</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
+在main.c中测试DMA, 实现DMA将储存器中的数据发送到USART-&gt;DR, 并实现LED1闪烁</h1>
 <div class="fragment"><div class="line"> </div>
-<div class="line">uint8_t Buffercmp(<span class="keyword">const</span> uint32_t* pBuffer, uint32_t* pBuffer1, uint16_t BufferLength)</div>
-<div class="line">{</div>
-<div class="line">    <span class="comment">/* 数据长度递减 */</span></div>
-<div class="line">    <span class="keywordflow">while</span>(BufferLength--)</div>
-<div class="line">    {</div>
-<div class="line">        <span class="comment">/* 判断两个数据源是否对应相等 */</span></div>
-<div class="line">        <span class="keywordflow">if</span>(*pBuffer != *pBuffer1)</div>
-<div class="line">        {</div>
-<div class="line">            <span class="comment">/* 对应数据源不相等马上退出函数，并返回0 */</span></div>
-<div class="line">            <span class="keywordflow">return</span> 0;</div>
-<div class="line">        }</div>
-<div class="line">        <span class="comment">/* 递增两个数据源的地址指针 */</span></div>
-<div class="line">        pBuffer++;</div>
-<div class="line">        pBuffer1++;</div>
-<div class="line">    }</div>
-<div class="line">    <span class="comment">/* 完成判断并且对应数据相对 */</span></div>
-<div class="line">    <span class="keywordflow">return</span> 1;  </div>
-<div class="line">}</div>
-</div><!-- fragment --><p>在main.c函数中进行测试</p>
-<div class="fragment"><div class="line"><span class="comment">// 声明以下变量来自外部文件</span></div>
-<div class="line"><span class="keyword">extern</span> <span class="keyword">const</span> uint32_t aSRC_Const_Buffer[BUFFER_SIZE];</div>
-<div class="line"><span class="keyword">extern</span> uint32_t aDST_Buffer[BUFFER_SIZE];</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="main_8c.html#a1d3146414c54513a72a7596c2f884c07">Delay_ms</a>(uint32_t ms)</div>
-<div class="line">{</div>
-<div class="line">    uint32_t i = 0;</div>
-<div class="line">    <span class="keywordflow">for</span>(i = 0; i &lt; ms; i++)</div>
-<div class="line">    {</div>
-<div class="line">        uint16_t j = 0;</div>
-<div class="line">        <span class="keywordflow">for</span>(j = 0; j &lt; 1000; j++)</div>
-<div class="line">        {</div>
-<div class="line">            ;</div>
-<div class="line">        }</div>
-<div class="line">    }</div>
-<div class="line">}</div>
-<div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    uint8_t status = 0; <span class="comment">// 接收比较的结构</span></div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="bsp__led_8c.html#a89d2c2ccc2981f0583aa6e4c8f043298">LED_GPIO_Config</a>(); <span class="comment">// 初始化LED</span></div>
-<div class="line">    M2M_DMA_Config(); <span class="comment">// 初始化DMA</span></div>
-<div class="line">     </div>
-<div class="line">    <span class="comment">// 等待DMA1传送完毕</span></div>
-<div class="line">    <span class="keywordflow">while</span>(<a class="code hl_function" href="group___d_m_a___exported___functions.html#gafb30b7a891834c267eefd5d30b688a9f">DMA_GetFlagStatus</a>(M2M_DMA_FLAG_TC) == <a class="code hl_enumvalue" href="group___exported__types.html#gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05">RESET</a>)</div>
+<div class="line">    <a class="code hl_function" href="bsp__dma__m2p_8c.html#ae9720bf2dbb461c28e0205b050f1a0bb">USART_Config</a>(); <span class="comment">// 串口初始化</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(uint16_t i = 0; i &lt; <a class="code hl_define" href="bsp__dma__m2p_8h.html#affc4739854f3670ccc0279a9accf0e89">SENDBUFF_SIZE</a>; i++)</div>
 <div class="line">    {</div>
-<div class="line">        ;</div>
+<div class="line">        <a class="code hl_variable" href="bsp__dma__m2p_8c.html#ad0be6bea973e44b948cee6fe0e755fcb">SendBuff</a>[i] = <span class="charliteral">&#39;P&#39;</span>;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_define" href="bsp__led_8h.html#ae3c73853c6d0a1eca2c7d9797f6494ea">LED_YELLOW</a>;</div>
-<div class="line">    <a class="code hl_function" href="main_8c.html#a1d3146414c54513a72a7596c2f884c07">Delay_ms</a>(10000); <span class="comment">// DMA初始化完成后亮黄灯</span></div>
-<div class="line"> </div>
-<div class="line">    status = Buffercmp(aSRC_Const_Buffer, aDST_Buffer, BUFFER_SIZE); <span class="comment">// 比较两个数组的数据是否相等</span></div>
-<div class="line">    <span class="keywordflow">if</span>(status == 0)</div>
-<div class="line">    {</div>
-<div class="line">        <a class="code hl_define" href="bsp__led_8h.html#a31e20330f8ce94e0dd10b005a15c5898">LED_RED</a>; <span class="comment">// 数据不相等亮红灯</span></div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">    {</div>
-<div class="line">        <a class="code hl_define" href="bsp__led_8h.html#aca338dbd19d7940923334629f6e5f3b7">LED_GREEN</a>; <span class="comment">// 数据相等亮绿灯</span></div>
-<div class="line">    }</div>
+<div class="line">    <a class="code hl_function" href="bsp__dma__m2p_8c.html#a159c123526e5bfa3352f384285db5a6d">USARTx_DMA_Config</a>(); <span class="comment">// 初始化DMA</span></div>
+<div class="line">    <a class="code hl_function" href="group___u_s_a_r_t___exported___functions.html#ga902857f199ebfba21c63d725354af66f">USART_DMACmd</a>(<a class="code hl_define" href="bsp__dma__m2p_8h.html#a53fd4b6f533e839273891855c5c90266">DEBUG_USARTx</a>, <a class="code hl_define" href="group___u_s_a_r_t___d_m_a___requests.html#gae38097d8f82ba969c9812194022cae9a">USART_DMAReq_Tx</a>, <a class="code hl_enumvalue" href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a>); <span class="comment">// 使能DMA发送</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">while</span>(1)</div>
 <div class="line">    {</div>
-<div class="line">        ;</div>
+<div class="line">        <a class="code hl_define" href="bsp__led_8h.html#a267fdbba1d750146b73da35c1731fd17">LED1_TOGGLE</a>;</div>
+<div class="line">        <a class="code hl_function" href="main_8c.html#a1d3146414c54513a72a7596c2f884c07">Delay_ms</a>(10000);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="absp__led_8c_html_a89d2c2ccc2981f0583aa6e4c8f043298"><div class="ttname"><a href="bsp__led_8c.html#a89d2c2ccc2981f0583aa6e4c8f043298">LED_GPIO_Config</a></div><div class="ttdeci">void LED_GPIO_Config(void)</div><div class="ttdoc">初始化控制LED的IO</div><div class="ttdef"><b>Definition</b> bsp_led.c:25</div></div>
-<div class="ttc" id="absp__led_8h_html_a31e20330f8ce94e0dd10b005a15c5898"><div class="ttname"><a href="bsp__led_8h.html#a31e20330f8ce94e0dd10b005a15c5898">LED_RED</a></div><div class="ttdeci">#define LED_RED</div><div class="ttdef"><b>Definition</b> bsp_led.h:71</div></div>
-<div class="ttc" id="absp__led_8h_html_aca338dbd19d7940923334629f6e5f3b7"><div class="ttname"><a href="bsp__led_8h.html#aca338dbd19d7940923334629f6e5f3b7">LED_GREEN</a></div><div class="ttdeci">#define LED_GREEN</div><div class="ttdef"><b>Definition</b> bsp_led.h:77</div></div>
-<div class="ttc" id="absp__led_8h_html_ae3c73853c6d0a1eca2c7d9797f6494ea"><div class="ttname"><a href="bsp__led_8h.html#ae3c73853c6d0a1eca2c7d9797f6494ea">LED_YELLOW</a></div><div class="ttdeci">#define LED_YELLOW</div><div class="ttdef"><b>Definition</b> bsp_led.h:90</div></div>
-<div class="ttc" id="agroup___exported__types_html_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05"><div class="ttname"><a href="group___exported__types.html#gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05">RESET</a></div><div class="ttdeci">@ RESET</div><div class="ttdef"><b>Definition</b> stm32f10x.h:519</div></div>
+<div class="ttc" id="absp__led_8h_html_a267fdbba1d750146b73da35c1731fd17"><div class="ttname"><a href="bsp__led_8h.html#a267fdbba1d750146b73da35c1731fd17">LED1_TOGGLE</a></div><div class="ttdeci">#define LED1_TOGGLE</div><div class="ttdef"><b>Definition</b> bsp_led.h:56</div></div>
+<div class="ttc" id="agroup___u_s_a_r_t___d_m_a___requests_html_gae38097d8f82ba969c9812194022cae9a"><div class="ttname"><a href="group___u_s_a_r_t___d_m_a___requests.html#gae38097d8f82ba969c9812194022cae9a">USART_DMAReq_Tx</a></div><div class="ttdeci">#define USART_DMAReq_Tx</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.h:272</div></div>
+<div class="ttc" id="agroup___u_s_a_r_t___exported___functions_html_ga902857f199ebfba21c63d725354af66f"><div class="ttname"><a href="group___u_s_a_r_t___exported___functions.html#ga902857f199ebfba21c63d725354af66f">USART_DMACmd</a></div><div class="ttdeci">void USART_DMACmd(USART_TypeDef *USARTx, uint16_t USART_DMAReq, FunctionalState NewState)</div><div class="ttdoc">Enables or disables the USART�s DMA interface.</div><div class="ttdef"><b>Definition</b> stm32f10x_usart.c:448</div></div>
 <div class="ttc" id="amain_8c_html_a1d3146414c54513a72a7596c2f884c07"><div class="ttname"><a href="main_8c.html#a1d3146414c54513a72a7596c2f884c07">Delay_ms</a></div><div class="ttdeci">void Delay_ms(uint32_t ms)</div><div class="ttdoc">Delays the execution for a specified number of milliseconds.</div><div class="ttdef"><b>Definition</b> main.c:22</div></div>
 <div class="ttc" id="amain_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdoc">实现DMA将储存器中的数据发送到USART-&gt;DR, 并实现LED1闪烁</div><div class="ttdef"><b>Definition</b> main.c:40</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->

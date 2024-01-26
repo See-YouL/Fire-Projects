@@ -5,7 +5,7 @@ var searchData=
   ['nmi_5fhandler_2',['NMI_Handler',['../group___s_t_m32_f10x___std_periph___template.html#ga6ad7a5e3ee69cb6db6a6b9111ba898bc',1,'NMI_Handler(void):&#160;stm32f10x_it.c'],['../group___s_t_m32_f10x___std_periph___template.html#ga6ad7a5e3ee69cb6db6a6b9111ba898bc',1,'NMI_Handler(void):&#160;stm32f10x_it.c']]],
   ['nonmaskableint_5firqn_3',['NonMaskableInt_IRQn',['../group___configuration__section__for___c_m_s_i_s.html#gga666eb0caeb12ec0e281415592ae89083ade177d9c70c89e084093024b932a4e30',1,'stm32f10x.h']]],
   ['nor_5fsram_5fcontroller_4',['NOR_SRAM_Controller',['../group___n_o_r___s_r_a_m___controller.html',1,'']]],
-  ['note_3a_5',['IMPORTANT NOTE:',['../group___s_t_m32_f10x___system___private___defines.html#autotoc_md8',1,'']]],
+  ['note_3a_5',['IMPORTANT NOTE:',['../group___s_t_m32_f10x___system___private___defines.html#autotoc_md7',1,'']]],
   ['nvic_6',['NVIC',['../group___c_m_s_i_s___c_m3___n_v_i_c.html',1,'CMSIS CM3 NVIC'],['../group___c_m_s_i_s___c_m3___core_debug.html#gac8e97e8ce56ae9f57da1363a937f8a17',1,'NVIC:&#160;core_cm3.h']]],
   ['nvic_5fbase_7',['NVIC_BASE',['../group___c_m_s_i_s___c_m3___core_debug.html#gaa0288691785a5f868238e0468b39523d',1,'core_cm3.h']]],
   ['nvic_5fclearpendingirq_8',['NVIC_ClearPendingIRQ',['../group___c_m_s_i_s___c_m3___core_debug.html#ga282ff517bfe5576374541c3b752e9988',1,'core_cm3.h']]],
