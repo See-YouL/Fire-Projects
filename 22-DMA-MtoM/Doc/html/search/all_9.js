@@ -287,7 +287,7 @@ var searchData=
   ['ier_284',['IER',['../struct_c_a_n___type_def.html#a530babbc4b9584c93a1bf87d6ce8b8dc',1,'CAN_TypeDef']]],
   ['ifcr_285',['IFCR',['../struct_d_m_a___type_def.html#a30576220ca1968e61666d92092e8911e',1,'DMA_TypeDef']]],
   ['imcr_286',['IMCR',['../group___c_m_s_i_s___c_m3___core_debug.html#gab2e87d8bb0e3ce9b8e0e4a6a6695228a',1,'ITM_Type']]],
-  ['important_20note_3a_287',['IMPORTANT NOTE:',['../group___s_t_m32_f10x___system___private___defines.html#autotoc_md0',1,'']]],
+  ['important_20note_3a_287',['IMPORTANT NOTE:',['../group___s_t_m32_f10x___system___private___defines.html#autotoc_md8',1,'']]],
   ['imr_288',['IMR',['../struct_e_x_t_i___type_def.html#a17d061db586d4a5aa646b68495a8e6a4',1,'EXTI_TypeDef']]],
   ['inak_5ftimeout_289',['INAK_TIMEOUT',['../group___c_a_n___private___defines.html#ga60a32132df242146efd3e9f7a079f0f0',1,'stm32f10x_can.c']]],
   ['interface_290',['Interface',['../group___c_m_s_i_s___c_m3___core_debug_interface.html',1,'CMSIS CM3 Core Debug Interface'],['../group___c_m_s_i_s___c_m3___core___function_interface.html',1,'CMSIS CM3 Core Function Interface']]],
