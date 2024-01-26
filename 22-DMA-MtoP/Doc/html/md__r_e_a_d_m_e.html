@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>22-DMA-MtoM: DMA</title>
+<title>22-DMA-MtoP: DMA</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">22-DMA-MtoM<span id="projectnumber">&#160;beta 0.01</span>
+   <div id="projectname">22-DMA-MtoP<span id="projectnumber">&#160;beta 0.01</span>
    </div>
-   <div id="projectbrief">DMA实验存储器到存储器</div>
+   <div id="projectbrief">DMA实验存储器到外设</div>
   </td>
  </tr>
  </tbody>
@@ -216,7 +216,7 @@ DMA实验1: M to M</h1>
 <div class="line"><span class="comment"> * const关键字将aSRC_Const_Buffer数组变量定义为常量类型</span></div>
 <div class="line"><span class="comment"> * 表示数据存储在内部的FLASH中</span></div>
 <div class="line"><span class="comment"> */</span></div>
-<div class="line"><span class="keyword">const</span> uint32_t <a class="code hl_variable" href="bsp__dma__m2m_8c.html#a96c7fa8d5ff9537b15a74dab7eddaadd">aSRC_Const_Buffer</a>[<a class="code hl_define" href="bsp__dma__m2m_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>]= {</div>
+<div class="line"><span class="keyword">const</span> uint32_t aSRC_Const_Buffer[BUFFER_SIZE]= {</div>
 <div class="line">                                    0x01020304,0x05060708,0x090A0B0C,0x0D0E0F10,</div>
 <div class="line">                                    0x11121314,0x15161718,0x191A1B1C,0x1D1E1F20,</div>
 <div class="line">                                    0x21222324,0x25262728,0x292A2B2C,0x2D2E2F30,</div>
@@ -226,22 +226,19 @@ DMA实验1: M to M</h1>
 <div class="line">                                    0x61626364,0x65666768,0x696A6B6C,0x6D6E6F70,</div>
 <div class="line">                                    0x71727374,0x75767778,0x797A7B7C,0x7D7E7F80};</div>
 <div class="line"> </div>
-<div class="line">uint32_t <a class="code hl_variable" href="bsp__dma__m2m_8c.html#a6eeef06891d613407dde2e65235b6c0f">aDST_Buffer</a>[<a class="code hl_define" href="bsp__dma__m2m_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>];</div>
-<div class="ttc" id="absp__dma__m2m_8c_html_a6eeef06891d613407dde2e65235b6c0f"><div class="ttname"><a href="bsp__dma__m2m_8c.html#a6eeef06891d613407dde2e65235b6c0f">aDST_Buffer</a></div><div class="ttdeci">uint32_t aDST_Buffer[BUFFER_SIZE]</div><div class="ttdoc">定义DMA传输目标存储器 存储在内部的SRAM中</div><div class="ttdef"><b>Definition</b> bsp_dma_m2m.c:32</div></div>
-<div class="ttc" id="absp__dma__m2m_8c_html_a96c7fa8d5ff9537b15a74dab7eddaadd"><div class="ttname"><a href="bsp__dma__m2m_8c.html#a96c7fa8d5ff9537b15a74dab7eddaadd">aSRC_Const_Buffer</a></div><div class="ttdeci">const uint32_t aSRC_Const_Buffer[BUFFER_SIZE]</div><div class="ttdef"><b>Definition</b> bsp_dma_m2m.c:18</div></div>
-<div class="ttc" id="absp__dma__m2m_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="bsp__dma__m2m_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> bsp_dma_m2m.h:22</div></div>
+<div class="line">uint32_t aDST_Buffer[BUFFER_SIZE];</div>
 </div><!-- fragment --><p> 在bsp_dma_m2m.c中增加DMA初始化函数</p>
 <div class="fragment"><div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="bsp__dma__m2m_8c.html#ab02e55d9ea8e5048e5610c0dc045a3e6">M2M_DMA_Config</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><span class="keywordtype">void</span> M2M_DMA_Config(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_struct" href="struct_d_m_a___init_type_def.html">DMA_InitTypeDef</a> DMA_InitStructure; <span class="comment">// 定义DMA初始化结构体变量</span></div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="group___r_c_c___exported___functions.html#gae0b30d8598b8393bdba9c3fefba3a968">RCC_AHBPeriphClockCmd</a>(<a class="code hl_define" href="bsp__dma__m2m_8h.html#ad8fdda0a09d17b5044100ea6b2f6f6fa">M2M_DMA_CLOCK</a>, <a class="code hl_enumvalue" href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a>); <span class="comment">// 打开DMA时钟</span></div>
+<div class="line">    <a class="code hl_function" href="group___r_c_c___exported___functions.html#gae0b30d8598b8393bdba9c3fefba3a968">RCC_AHBPeriphClockCmd</a>(M2M_DMA_CLOCK, <a class="code hl_enumvalue" href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a>); <span class="comment">// 打开DMA时钟</span></div>
 <div class="line"> </div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a232af556de7c2eec9a82d448730bd86d">DMA_PeripheralBaseAddr</a> = (uint32_t)<a class="code hl_variable" href="bsp__dma__m2m_8c.html#a96c7fa8d5ff9537b15a74dab7eddaadd">aSRC_Const_Buffer</a>; <span class="comment">// 配置外设地址, 实际将FLASH的数据配置成了外设</span></div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a41e7d463f0cfbcedf3170d7d27d088df">DMA_MemoryBaseAddr</a> = (uint32_t)<a class="code hl_variable" href="bsp__dma__m2m_8c.html#a6eeef06891d613407dde2e65235b6c0f">aDST_Buffer</a>; <span class="comment">// 配置存储器地址</span></div>
+<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a232af556de7c2eec9a82d448730bd86d">DMA_PeripheralBaseAddr</a> = (uint32_t)aSRC_Const_Buffer; <span class="comment">// 配置外设地址, 实际将FLASH的数据配置成了外设</span></div>
+<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a41e7d463f0cfbcedf3170d7d27d088df">DMA_MemoryBaseAddr</a> = (uint32_t)aDST_Buffer; <span class="comment">// 配置存储器地址</span></div>
 <div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a91b47435ccf4a40efa97bbbe631789e1">DMA_DIR</a> = <a class="code hl_define" href="group___d_m_a__data__transfer__direction.html#ga5ce120a044359410136695a2c05df68e">DMA_DIR_PeripheralSRC</a>; <span class="comment">// 配置传输方向，从外设读取数据发送到存储器</span></div>
-<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a999df57215b28b3b1b3b6836c4952ca5">DMA_BufferSize</a> = <a class="code hl_define" href="bsp__dma__m2m_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>; <span class="comment">// 配置传输数据大小</span></div>
+<div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a999df57215b28b3b1b3b6836c4952ca5">DMA_BufferSize</a> = BUFFER_SIZE; <span class="comment">// 配置传输数据大小</span></div>
 <div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#ad4d427790f9a089ca0257a358fc263c2">DMA_PeripheralInc</a> = <a class="code hl_define" href="group___d_m_a__peripheral__incremented__mode.html#gaf7921ea423fb60701a091c508cd0f33a">DMA_PeripheralInc_Enable</a>; <span class="comment">// 配置外设地址自增</span></div>
 <div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#aaf69c680a297ec01a2ed613289e691a1">DMA_MemoryInc</a> = <a class="code hl_define" href="group___d_m_a__memory__incremented__mode.html#ga4e8cb23d039c74bbbf365d7678835bbb">DMA_MemoryInc_Enable</a>; <span class="comment">// 配置存储器地址自增</span></div>
 <div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#afb46aaadfb80a7e19277c868bd252554">DMA_PeripheralDataSize</a> = <a class="code hl_define" href="group___d_m_a__peripheral__data__size.html#ga516ea7a40945d8325fe73e079b245ea1">DMA_PeripheralDataSize_Word</a>; <span class="comment">// 配置外设数据大小</span></div>
@@ -250,14 +247,10 @@ DMA实验1: M to M</h1>
 <div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#ab9a17bd51778478cbd728c868206dca0">DMA_Priority</a> = <a class="code hl_define" href="group___d_m_a__priority__level.html#gae2441c0b4d4ba9945a6f4f7d08045a8e">DMA_Priority_High</a>; <span class="comment">// 配置传输通道优先级</span></div>
 <div class="line">    DMA_InitStructure.<a class="code hl_variable" href="struct_d_m_a___init_type_def.html#a57944cc447e6fcde4e9aa6229d3b4c5d">DMA_M2M</a> = <a class="code hl_define" href="group___d_m_a__memory__to__memory.html#ga046a1de15235c254c0511c08cae3065a">DMA_M2M_Enable</a>; <span class="comment">// 配置存储器到存储器模式</span></div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga7c3d1b9dc041f8e5f2cfc8d5dd858278">DMA_Init</a>(<a class="code hl_define" href="bsp__dma__m2m_8h.html#afeb623eb076fdfe098f21a06c363cc46">M2M_DMA_CHANNEL</a>, &amp;DMA_InitStructure); <span class="comment">// 初始化DMA通道</span></div>
-<div class="line">    <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga25cdca360f309c8ceb7c206cd9ad9119">DMA_ClearFlag</a>(<a class="code hl_define" href="bsp__dma__m2m_8h.html#ae137671d49af4a1bd3ccb63bdfc4758a">M2M_DMA_FLAG_TC</a>); <span class="comment">// 清除DMA通道传输完成标志位</span></div>
-<div class="line">    <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga8e7cb6b9ae5f142e2961df879cdaba65">DMA_Cmd</a>(<a class="code hl_define" href="bsp__dma__m2m_8h.html#afeb623eb076fdfe098f21a06c363cc46">M2M_DMA_CHANNEL</a>, <a class="code hl_enumvalue" href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a>); <span class="comment">// 使能DMA通道</span></div>
+<div class="line">    <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga7c3d1b9dc041f8e5f2cfc8d5dd858278">DMA_Init</a>(M2M_DMA_CHANNEL, &amp;DMA_InitStructure); <span class="comment">// 初始化DMA通道</span></div>
+<div class="line">    <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga25cdca360f309c8ceb7c206cd9ad9119">DMA_ClearFlag</a>(M2M_DMA_FLAG_TC); <span class="comment">// 清除DMA通道传输完成标志位</span></div>
+<div class="line">    <a class="code hl_function" href="group___d_m_a___exported___functions.html#ga8e7cb6b9ae5f142e2961df879cdaba65">DMA_Cmd</a>(M2M_DMA_CHANNEL, <a class="code hl_enumvalue" href="group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf">ENABLE</a>); <span class="comment">// 使能DMA通道</span></div>
 <div class="line">}</div>
-<div class="ttc" id="absp__dma__m2m_8c_html_ab02e55d9ea8e5048e5610c0dc045a3e6"><div class="ttname"><a href="bsp__dma__m2m_8c.html#ab02e55d9ea8e5048e5610c0dc045a3e6">M2M_DMA_Config</a></div><div class="ttdeci">void M2M_DMA_Config(void)</div><div class="ttdoc">配置存储器到存储器的DMA传输</div><div class="ttdef"><b>Definition</b> bsp_dma_m2m.c:40</div></div>
-<div class="ttc" id="absp__dma__m2m_8h_html_ad8fdda0a09d17b5044100ea6b2f6f6fa"><div class="ttname"><a href="bsp__dma__m2m_8h.html#ad8fdda0a09d17b5044100ea6b2f6f6fa">M2M_DMA_CLOCK</a></div><div class="ttdeci">#define M2M_DMA_CLOCK</div><div class="ttdef"><b>Definition</b> bsp_dma_m2m.h:18</div></div>
-<div class="ttc" id="absp__dma__m2m_8h_html_ae137671d49af4a1bd3ccb63bdfc4758a"><div class="ttname"><a href="bsp__dma__m2m_8h.html#ae137671d49af4a1bd3ccb63bdfc4758a">M2M_DMA_FLAG_TC</a></div><div class="ttdeci">#define M2M_DMA_FLAG_TC</div><div class="ttdef"><b>Definition</b> bsp_dma_m2m.h:20</div></div>
-<div class="ttc" id="absp__dma__m2m_8h_html_afeb623eb076fdfe098f21a06c363cc46"><div class="ttname"><a href="bsp__dma__m2m_8h.html#afeb623eb076fdfe098f21a06c363cc46">M2M_DMA_CHANNEL</a></div><div class="ttdeci">#define M2M_DMA_CHANNEL</div><div class="ttdef"><b>Definition</b> bsp_dma_m2m.h:17</div></div>
 <div class="ttc" id="agroup___d_m_a___exported___functions_html_ga25cdca360f309c8ceb7c206cd9ad9119"><div class="ttname"><a href="group___d_m_a___exported___functions.html#ga25cdca360f309c8ceb7c206cd9ad9119">DMA_ClearFlag</a></div><div class="ttdeci">void DMA_ClearFlag(uint32_t DMAy_FLAG)</div><div class="ttdoc">Clears the DMAy Channelx's pending flags.</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.c:523</div></div>
 <div class="ttc" id="agroup___d_m_a__circular__normal__mode_html_ga36400f5b5095f1102ede4760d7a5959c"><div class="ttname"><a href="group___d_m_a__circular__normal__mode.html#ga36400f5b5095f1102ede4760d7a5959c">DMA_Mode_Normal</a></div><div class="ttdeci">#define DMA_Mode_Normal</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:177</div></div>
 <div class="ttc" id="agroup___d_m_a__data__transfer__direction_html_ga5ce120a044359410136695a2c05df68e"><div class="ttname"><a href="group___d_m_a__data__transfer__direction.html#ga5ce120a044359410136695a2c05df68e">DMA_DIR_PeripheralSRC</a></div><div class="ttdeci">#define DMA_DIR_PeripheralSRC</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:113</div></div>
@@ -282,7 +275,7 @@ DMA实验1: M to M</h1>
 <div class="ttc" id="astruct_d_m_a___init_type_def_html_afb46aaadfb80a7e19277c868bd252554"><div class="ttname"><a href="struct_d_m_a___init_type_def.html#afb46aaadfb80a7e19277c868bd252554">DMA_InitTypeDef::DMA_PeripheralDataSize</a></div><div class="ttdeci">uint32_t DMA_PeripheralDataSize</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:69</div></div>
 </div><!-- fragment --><p>在bsp_dma_m2m.c中增加判断数据相等的函数</p>
 <div class="fragment"><div class="line"> </div>
-<div class="line">uint8_t <a class="code hl_function" href="bsp__dma__m2m_8c.html#a28e1e2cfd02611fdf35e21c5a15a091b">Buffercmp</a>(<span class="keyword">const</span> uint32_t* pBuffer, uint32_t* pBuffer1, uint16_t BufferLength)</div>
+<div class="line">uint8_t Buffercmp(<span class="keyword">const</span> uint32_t* pBuffer, uint32_t* pBuffer1, uint16_t BufferLength)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">/* 数据长度递减 */</span></div>
 <div class="line">    <span class="keywordflow">while</span>(BufferLength--)</div>
@@ -300,11 +293,10 @@ DMA实验1: M to M</h1>
 <div class="line">    <span class="comment">/* 完成判断并且对应数据相对 */</span></div>
 <div class="line">    <span class="keywordflow">return</span> 1;  </div>
 <div class="line">}</div>
-<div class="ttc" id="absp__dma__m2m_8c_html_a28e1e2cfd02611fdf35e21c5a15a091b"><div class="ttname"><a href="bsp__dma__m2m_8c.html#a28e1e2cfd02611fdf35e21c5a15a091b">Buffercmp</a></div><div class="ttdeci">uint8_t Buffercmp(const uint32_t *pBuffer, uint32_t *pBuffer1, uint16_t BufferLength)</div><div class="ttdoc">比较两个缓冲区的数据是否相等</div><div class="ttdef"><b>Definition</b> bsp_dma_m2m.c:71</div></div>
 </div><!-- fragment --><p>在main.c函数中进行测试</p>
 <div class="fragment"><div class="line"><span class="comment">// 声明以下变量来自外部文件</span></div>
-<div class="line"><span class="keyword">extern</span> <span class="keyword">const</span> uint32_t <a class="code hl_variable" href="bsp__dma__m2m_8c.html#a96c7fa8d5ff9537b15a74dab7eddaadd">aSRC_Const_Buffer</a>[<a class="code hl_define" href="bsp__dma__m2m_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>];</div>
-<div class="line"><span class="keyword">extern</span> uint32_t <a class="code hl_variable" href="bsp__dma__m2m_8c.html#a6eeef06891d613407dde2e65235b6c0f">aDST_Buffer</a>[<a class="code hl_define" href="bsp__dma__m2m_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>];</div>
+<div class="line"><span class="keyword">extern</span> <span class="keyword">const</span> uint32_t aSRC_Const_Buffer[BUFFER_SIZE];</div>
+<div class="line"><span class="keyword">extern</span> uint32_t aDST_Buffer[BUFFER_SIZE];</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="main_8c.html#a1d3146414c54513a72a7596c2f884c07">Delay_ms</a>(uint32_t ms)</div>
 <div class="line">{</div>
@@ -324,10 +316,10 @@ DMA实验1: M to M</h1>
 <div class="line">    uint8_t status = 0; <span class="comment">// 接收比较的结构</span></div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_function" href="bsp__led_8c.html#a89d2c2ccc2981f0583aa6e4c8f043298">LED_GPIO_Config</a>(); <span class="comment">// 初始化LED</span></div>
-<div class="line">    <a class="code hl_function" href="bsp__dma__m2m_8c.html#ab02e55d9ea8e5048e5610c0dc045a3e6">M2M_DMA_Config</a>(); <span class="comment">// 初始化DMA</span></div>
+<div class="line">    M2M_DMA_Config(); <span class="comment">// 初始化DMA</span></div>
 <div class="line">     </div>
 <div class="line">    <span class="comment">// 等待DMA1传送完毕</span></div>
-<div class="line">    <span class="keywordflow">while</span>(<a class="code hl_function" href="group___d_m_a___exported___functions.html#gafb30b7a891834c267eefd5d30b688a9f">DMA_GetFlagStatus</a>(<a class="code hl_define" href="bsp__dma__m2m_8h.html#ae137671d49af4a1bd3ccb63bdfc4758a">M2M_DMA_FLAG_TC</a>) == <a class="code hl_enumvalue" href="group___exported__types.html#gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05">RESET</a>)</div>
+<div class="line">    <span class="keywordflow">while</span>(<a class="code hl_function" href="group___d_m_a___exported___functions.html#gafb30b7a891834c267eefd5d30b688a9f">DMA_GetFlagStatus</a>(M2M_DMA_FLAG_TC) == <a class="code hl_enumvalue" href="group___exported__types.html#gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05">RESET</a>)</div>
 <div class="line">    {</div>
 <div class="line">        ;</div>
 <div class="line">    }</div>
@@ -335,7 +327,7 @@ DMA实验1: M to M</h1>
 <div class="line">    <a class="code hl_define" href="bsp__led_8h.html#ae3c73853c6d0a1eca2c7d9797f6494ea">LED_YELLOW</a>;</div>
 <div class="line">    <a class="code hl_function" href="main_8c.html#a1d3146414c54513a72a7596c2f884c07">Delay_ms</a>(10000); <span class="comment">// DMA初始化完成后亮黄灯</span></div>
 <div class="line"> </div>
-<div class="line">    status = <a class="code hl_function" href="bsp__dma__m2m_8c.html#a28e1e2cfd02611fdf35e21c5a15a091b">Buffercmp</a>(<a class="code hl_variable" href="bsp__dma__m2m_8c.html#a96c7fa8d5ff9537b15a74dab7eddaadd">aSRC_Const_Buffer</a>, <a class="code hl_variable" href="bsp__dma__m2m_8c.html#a6eeef06891d613407dde2e65235b6c0f">aDST_Buffer</a>, <a class="code hl_define" href="bsp__dma__m2m_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>); <span class="comment">// 比较两个数组的数据是否相等</span></div>
+<div class="line">    status = Buffercmp(aSRC_Const_Buffer, aDST_Buffer, BUFFER_SIZE); <span class="comment">// 比较两个数组的数据是否相等</span></div>
 <div class="line">    <span class="keywordflow">if</span>(status == 0)</div>
 <div class="line">    {</div>
 <div class="line">        <a class="code hl_define" href="bsp__led_8h.html#a31e20330f8ce94e0dd10b005a15c5898">LED_RED</a>; <span class="comment">// 数据不相等亮红灯</span></div>
@@ -355,8 +347,8 @@ DMA实验1: M to M</h1>
 <div class="ttc" id="absp__led_8h_html_aca338dbd19d7940923334629f6e5f3b7"><div class="ttname"><a href="bsp__led_8h.html#aca338dbd19d7940923334629f6e5f3b7">LED_GREEN</a></div><div class="ttdeci">#define LED_GREEN</div><div class="ttdef"><b>Definition</b> bsp_led.h:77</div></div>
 <div class="ttc" id="absp__led_8h_html_ae3c73853c6d0a1eca2c7d9797f6494ea"><div class="ttname"><a href="bsp__led_8h.html#ae3c73853c6d0a1eca2c7d9797f6494ea">LED_YELLOW</a></div><div class="ttdeci">#define LED_YELLOW</div><div class="ttdef"><b>Definition</b> bsp_led.h:90</div></div>
 <div class="ttc" id="agroup___exported__types_html_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05"><div class="ttname"><a href="group___exported__types.html#gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05">RESET</a></div><div class="ttdeci">@ RESET</div><div class="ttdef"><b>Definition</b> stm32f10x.h:519</div></div>
-<div class="ttc" id="amain_8c_html_a1d3146414c54513a72a7596c2f884c07"><div class="ttname"><a href="main_8c.html#a1d3146414c54513a72a7596c2f884c07">Delay_ms</a></div><div class="ttdeci">void Delay_ms(uint32_t ms)</div><div class="ttdoc">Delays the execution for a specified number of milliseconds.</div><div class="ttdef"><b>Definition</b> main.c:24</div></div>
-<div class="ttc" id="amain_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdef"><b>Definition</b> main.c:45</div></div>
+<div class="ttc" id="amain_8c_html_a1d3146414c54513a72a7596c2f884c07"><div class="ttname"><a href="main_8c.html#a1d3146414c54513a72a7596c2f884c07">Delay_ms</a></div><div class="ttdeci">void Delay_ms(uint32_t ms)</div><div class="ttdoc">Delays the execution for a specified number of milliseconds.</div><div class="ttdef"><b>Definition</b> main.c:22</div></div>
+<div class="ttc" id="amain_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdoc">实现DMA将储存器中的数据发送到USART-&gt;DR, 并实现LED1闪烁</div><div class="ttdef"><b>Definition</b> main.c:40</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

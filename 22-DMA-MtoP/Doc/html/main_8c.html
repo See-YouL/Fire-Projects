@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>22-DMA-MtoM: E:/Personal/IT/Embedded/Stm32/Fire/Fire-Projects/22-DMA-MtoM/User/main.c File Reference</title>
+<title>22-DMA-MtoP: E:/Personal/IT/Embedded/Stm32/Fire/Fire-Projects/22-DMA-MtoP/User/main.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">22-DMA-MtoM<span id="projectnumber">&#160;beta 0.01</span>
+   <div id="projectname">22-DMA-MtoP<span id="projectnumber">&#160;beta 0.01</span>
    </div>
-   <div id="projectbrief">DMA实验存储器到存储器</div>
+   <div id="projectbrief">DMA实验存储器到外设</div>
   </td>
  </tr>
  </tbody>
@@ -83,11 +83,11 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>DMA实验1(存储器到存储器)的主函数  
+<p>SRAM to 串口, 同时LED灯闪烁, 演示DMA数据不需占用CPU.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="stm32f10x_8h_source.html">stm32f10x.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bsp__led_8h_source.html">bsp_led.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="bsp__dma__m2m_8h_source.html">bsp_dma_m2m.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bsp__dma__m2p_8h_source.html">bsp_dma_m2p.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -95,24 +95,19 @@ Functions</h2></td></tr>
 <tr class="memdesc:a1d3146414c54513a72a7596c2f884c07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays the execution for a specified number of milliseconds.  <br /></td></tr>
 <tr class="separator:a1d3146414c54513a72a7596c2f884c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">实现DMA将储存器中的数据发送到USART-&gt;DR, 并实现LED1闪烁  <br /></td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a96c7fa8d5ff9537b15a74dab7eddaadd" id="r_a96c7fa8d5ff9537b15a74dab7eddaadd"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96c7fa8d5ff9537b15a74dab7eddaadd">aSRC_Const_Buffer</a> [<a class="el" href="bsp__dma__m2m_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>]</td></tr>
-<tr class="separator:a96c7fa8d5ff9537b15a74dab7eddaadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eeef06891d613407dde2e65235b6c0f" id="r_a6eeef06891d613407dde2e65235b6c0f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6eeef06891d613407dde2e65235b6c0f">aDST_Buffer</a> [<a class="el" href="bsp__dma__m2m_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>]</td></tr>
-<tr class="memdesc:a6eeef06891d613407dde2e65235b6c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">定义DMA传输目标存储器 存储在内部的SRAM中 <br  />
-  <br /></td></tr>
-<tr class="separator:a6eeef06891d613407dde2e65235b6c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0be6bea973e44b948cee6fe0e755fcb" id="r_ad0be6bea973e44b948cee6fe0e755fcb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0be6bea973e44b948cee6fe0e755fcb">SendBuff</a> [<a class="el" href="bsp__dma__m2p_8h.html#affc4739854f3670ccc0279a9accf0e89">SENDBUFF_SIZE</a>]</td></tr>
+<tr class="separator:ad0be6bea973e44b948cee6fe0e755fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>DMA实验1(存储器到存储器)的主函数 </p>
-<p>DMA Memory-to-Memory Transfer Example.</p>
+<div class="textblock"><p>SRAM to 串口, 同时LED灯闪烁, 演示DMA数据不需占用CPU. </p>
 <dl class="section author"><dt>Author</dt><dd>eric </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>None </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2024年1月26日14:47:55 </dd></dl>
-<p>This file contains the main function for a DMA memory-to-memory transfer example. It initializes the LED, configures the DMA, waits for the DMA transfer to complete, compares the data in two arrays, and controls the LED based on the comparison result. </p>
+<dl class="section date"><dt>Date</dt><dd>26-January-2024  </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a1d3146414c54513a72a7596c2f884c07" name="a1d3146414c54513a72a7596c2f884c07"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d3146414c54513a72a7596c2f884c07">&#9670;&#160;</a></span>Delay_ms()</h2>
@@ -155,11 +150,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>实现DMA将储存器中的数据发送到USART-&gt;DR, 并实现LED1闪烁 </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a6eeef06891d613407dde2e65235b6c0f" name="a6eeef06891d613407dde2e65235b6c0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6eeef06891d613407dde2e65235b6c0f">&#9670;&#160;</a></span>aDST_Buffer</h2>
+<a id="ad0be6bea973e44b948cee6fe0e755fcb" name="ad0be6bea973e44b948cee6fe0e755fcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0be6bea973e44b948cee6fe0e755fcb">&#9670;&#160;</a></span>SendBuff</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,32 +166,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t aDST_Buffer[<a class="el" href="bsp__dma__m2m_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>定义DMA传输目标存储器 存储在内部的SRAM中 <br  />
- </p>
-
-</div>
-</div>
-<a id="a96c7fa8d5ff9537b15a74dab7eddaadd" name="a96c7fa8d5ff9537b15a74dab7eddaadd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96c7fa8d5ff9537b15a74dab7eddaadd">&#9670;&#160;</a></span>aSRC_Const_Buffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const uint32_t aSRC_Const_Buffer[<a class="el" href="bsp__dma__m2m_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>]</td>
+          <td class="memname">uint8_t SendBuff[<a class="el" href="bsp__dma__m2p_8h.html#affc4739854f3670ccc0279a9accf0e89">SENDBUFF_SIZE</a>]</td>
         </tr>
       </table>
   </td>

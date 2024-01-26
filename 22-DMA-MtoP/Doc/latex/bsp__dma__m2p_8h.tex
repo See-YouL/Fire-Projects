@@ -1,0 +1,199 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+P/\+User/dma/bsp\+\_\+dma\+\_\+m2p.h File Reference}
+\hypertarget{bsp__dma__m2p_8h}{}\label{bsp__dma__m2p_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoP/User/dma/bsp\_dma\_m2p.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoP/User/dma/bsp\_dma\_m2p.h}}
+
+
+DMA存储器到外设配置头文件  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_a53fd4b6f533e839273891855c5c90266}{DEBUG\+\_\+\+USARTx}}~\mbox{\hyperlink{group___peripheral__declaration_ga92871691058ff7ccffd7635930cb08da}{USART1}}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_afed6907eaab6877f77e04ec3fc42b425}{DEBUG\+\_\+\+USART\+\_\+\+CLK}}~\mbox{\hyperlink{group___a_p_b2__peripheral_ga14e1b3b6d84801c223a37a954b5b1910}{RCC\+\_\+\+APB2\+Periph\+\_\+\+USART1}}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_a47dede86fdd87b40f3062912789245bb}{DEBUG\+\_\+\+USART\+\_\+\+APBx\+Clk\+Cmd}}~\mbox{\hyperlink{group___r_c_c___exported___functions_ga56ff55caf8d835351916b40dd030bc87}{RCC\+\_\+\+APB2\+Periph\+Clock\+Cmd}}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_a7ff41aaae2fa2e227e6b47894130275a}{DEBUG\+\_\+\+USART\+\_\+\+BAUDRATE}}~115200
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_a6cb3d99c7be121319caafdc1645feba6}{DEBUG\+\_\+\+USART\+\_\+\+GPIO\+\_\+\+CLK}}~(\mbox{\hyperlink{group___a_p_b2__peripheral_ga44b92fbf2e288796b1acbce2708f3636}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOA}})
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_a693b0cd655516067ce7ff0e35c887497}{DEBUG\+\_\+\+USART\+\_\+\+GPIO\+\_\+\+APBx\+Clk\+Cmd}}~\mbox{\hyperlink{group___r_c_c___exported___functions_ga56ff55caf8d835351916b40dd030bc87}{RCC\+\_\+\+APB2\+Periph\+Clock\+Cmd}}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_a091ae7961859a90d17bb46ce23570c84}{DEBUG\+\_\+\+USART\+\_\+\+TX\+\_\+\+GPIO\+\_\+\+PORT}}~\mbox{\hyperlink{group___peripheral__declaration_gac485358099728ddae050db37924dd6b7}{GPIOA}}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_a9990264960ebac5ab34bec7fa46575cd}{DEBUG\+\_\+\+USART\+\_\+\+TX\+\_\+\+GPIO\+\_\+\+PIN}}~\mbox{\hyperlink{group___g_p_i_o__pins__define_gaad1891082d5d6bcac06c2729a9fdd2f0}{GPIO\+\_\+\+Pin\+\_\+9}}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_a1bab3a04682087812a25adc2447d68e3}{DEBUG\+\_\+\+USART\+\_\+\+RX\+\_\+\+GPIO\+\_\+\+PORT}}~\mbox{\hyperlink{group___peripheral__declaration_gac485358099728ddae050db37924dd6b7}{GPIOA}}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_a6704ac7dc934406065861dd0b2a9b9af}{DEBUG\+\_\+\+USART\+\_\+\+RX\+\_\+\+GPIO\+\_\+\+PIN}}~\mbox{\hyperlink{group___g_p_i_o__pins__define_ga726af6407ba60ac60f02057227c2d348}{GPIO\+\_\+\+Pin\+\_\+10}}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_a0409832fda690702148e88e97a383676}{USART\+\_\+\+TX\+\_\+\+DMA\+\_\+\+CLK}}~\mbox{\hyperlink{group___a_h_b__peripheral_gaf32783f8481c4343726994073918b3ff}{RCC\+\_\+\+AHBPeriph\+\_\+\+DMA1}}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_ab8482dba61154b7a745d949a244065a2}{USART\+\_\+\+TX\+\_\+\+DMA\+\_\+\+CHANNEL}}~\mbox{\hyperlink{group___peripheral__declaration_gad2c42743316bf64da557130061b1f56a}{DMA1\+\_\+\+Channel4}}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_a6386f4510dfb8cd07c86eb32eb12b901}{USART\+\_\+\+DR\+\_\+\+ADDRESS}}~(\mbox{\hyperlink{group___peripheral__memory__map_ga86162ab3f740db9026c1320d46938b4d}{USART1\+\_\+\+BASE}}+0x04)
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_affc4739854f3670ccc0279a9accf0e89}{SENDBUFF\+\_\+\+SIZE}}~5000
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2p_8h_a8e6dff858459b1c89a392246d466e587}{USART\+\_\+\+TX\+\_\+\+DMA\+\_\+\+FLAG\+\_\+\+TC}}~\mbox{\hyperlink{group___d_m_a__flags__definition_ga78f2798eca161493d5dc6058f65b0f17}{DMA1\+\_\+\+FLAG\+\_\+\+TC4}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bsp__dma__m2p_8h_ae9720bf2dbb461c28e0205b050f1a0bb}{USART\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em USART GPIO 配置,工作参数配置 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__dma__m2p_8h_a159c123526e5bfa3352f384285db5a6d}{USARTx\+\_\+\+DMA\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em USARTx TX DMA 配置，内存到外设(USART1-\/\texorpdfstring{$>$}{>}DR) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+DMA存储器到外设配置头文件 
+
+\begin{DoxyAuthor}{Author}
+eric 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+None 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+26-\/January-\/2024  
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{bsp__dma__m2p_8h_a47dede86fdd87b40f3062912789245bb}\label{bsp__dma__m2p_8h_a47dede86fdd87b40f3062912789245bb} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!DEBUG\_USART\_APBxClkCmd@{DEBUG\_USART\_APBxClkCmd}}
+\index{DEBUG\_USART\_APBxClkCmd@{DEBUG\_USART\_APBxClkCmd}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_USART\_APBxClkCmd}{DEBUG\_USART\_APBxClkCmd}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+USART\+\_\+\+APBx\+Clk\+Cmd~\mbox{\hyperlink{group___r_c_c___exported___functions_ga56ff55caf8d835351916b40dd030bc87}{RCC\+\_\+\+APB2\+Periph\+Clock\+Cmd}}}
+
+\Hypertarget{bsp__dma__m2p_8h_a7ff41aaae2fa2e227e6b47894130275a}\label{bsp__dma__m2p_8h_a7ff41aaae2fa2e227e6b47894130275a} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!DEBUG\_USART\_BAUDRATE@{DEBUG\_USART\_BAUDRATE}}
+\index{DEBUG\_USART\_BAUDRATE@{DEBUG\_USART\_BAUDRATE}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_USART\_BAUDRATE}{DEBUG\_USART\_BAUDRATE}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+USART\+\_\+\+BAUDRATE~115200}
+
+\Hypertarget{bsp__dma__m2p_8h_afed6907eaab6877f77e04ec3fc42b425}\label{bsp__dma__m2p_8h_afed6907eaab6877f77e04ec3fc42b425} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!DEBUG\_USART\_CLK@{DEBUG\_USART\_CLK}}
+\index{DEBUG\_USART\_CLK@{DEBUG\_USART\_CLK}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_USART\_CLK}{DEBUG\_USART\_CLK}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+USART\+\_\+\+CLK~\mbox{\hyperlink{group___a_p_b2__peripheral_ga14e1b3b6d84801c223a37a954b5b1910}{RCC\+\_\+\+APB2\+Periph\+\_\+\+USART1}}}
+
+\Hypertarget{bsp__dma__m2p_8h_a693b0cd655516067ce7ff0e35c887497}\label{bsp__dma__m2p_8h_a693b0cd655516067ce7ff0e35c887497} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!DEBUG\_USART\_GPIO\_APBxClkCmd@{DEBUG\_USART\_GPIO\_APBxClkCmd}}
+\index{DEBUG\_USART\_GPIO\_APBxClkCmd@{DEBUG\_USART\_GPIO\_APBxClkCmd}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_USART\_GPIO\_APBxClkCmd}{DEBUG\_USART\_GPIO\_APBxClkCmd}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+USART\+\_\+\+GPIO\+\_\+\+APBx\+Clk\+Cmd~\mbox{\hyperlink{group___r_c_c___exported___functions_ga56ff55caf8d835351916b40dd030bc87}{RCC\+\_\+\+APB2\+Periph\+Clock\+Cmd}}}
+
+\Hypertarget{bsp__dma__m2p_8h_a6cb3d99c7be121319caafdc1645feba6}\label{bsp__dma__m2p_8h_a6cb3d99c7be121319caafdc1645feba6} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!DEBUG\_USART\_GPIO\_CLK@{DEBUG\_USART\_GPIO\_CLK}}
+\index{DEBUG\_USART\_GPIO\_CLK@{DEBUG\_USART\_GPIO\_CLK}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_USART\_GPIO\_CLK}{DEBUG\_USART\_GPIO\_CLK}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+USART\+\_\+\+GPIO\+\_\+\+CLK~(\mbox{\hyperlink{group___a_p_b2__peripheral_ga44b92fbf2e288796b1acbce2708f3636}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOA}})}
+
+\Hypertarget{bsp__dma__m2p_8h_a6704ac7dc934406065861dd0b2a9b9af}\label{bsp__dma__m2p_8h_a6704ac7dc934406065861dd0b2a9b9af} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!DEBUG\_USART\_RX\_GPIO\_PIN@{DEBUG\_USART\_RX\_GPIO\_PIN}}
+\index{DEBUG\_USART\_RX\_GPIO\_PIN@{DEBUG\_USART\_RX\_GPIO\_PIN}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_USART\_RX\_GPIO\_PIN}{DEBUG\_USART\_RX\_GPIO\_PIN}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+USART\+\_\+\+RX\+\_\+\+GPIO\+\_\+\+PIN~\mbox{\hyperlink{group___g_p_i_o__pins__define_ga726af6407ba60ac60f02057227c2d348}{GPIO\+\_\+\+Pin\+\_\+10}}}
+
+\Hypertarget{bsp__dma__m2p_8h_a1bab3a04682087812a25adc2447d68e3}\label{bsp__dma__m2p_8h_a1bab3a04682087812a25adc2447d68e3} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!DEBUG\_USART\_RX\_GPIO\_PORT@{DEBUG\_USART\_RX\_GPIO\_PORT}}
+\index{DEBUG\_USART\_RX\_GPIO\_PORT@{DEBUG\_USART\_RX\_GPIO\_PORT}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_USART\_RX\_GPIO\_PORT}{DEBUG\_USART\_RX\_GPIO\_PORT}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+USART\+\_\+\+RX\+\_\+\+GPIO\+\_\+\+PORT~\mbox{\hyperlink{group___peripheral__declaration_gac485358099728ddae050db37924dd6b7}{GPIOA}}}
+
+\Hypertarget{bsp__dma__m2p_8h_a9990264960ebac5ab34bec7fa46575cd}\label{bsp__dma__m2p_8h_a9990264960ebac5ab34bec7fa46575cd} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!DEBUG\_USART\_TX\_GPIO\_PIN@{DEBUG\_USART\_TX\_GPIO\_PIN}}
+\index{DEBUG\_USART\_TX\_GPIO\_PIN@{DEBUG\_USART\_TX\_GPIO\_PIN}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_USART\_TX\_GPIO\_PIN}{DEBUG\_USART\_TX\_GPIO\_PIN}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+USART\+\_\+\+TX\+\_\+\+GPIO\+\_\+\+PIN~\mbox{\hyperlink{group___g_p_i_o__pins__define_gaad1891082d5d6bcac06c2729a9fdd2f0}{GPIO\+\_\+\+Pin\+\_\+9}}}
+
+\Hypertarget{bsp__dma__m2p_8h_a091ae7961859a90d17bb46ce23570c84}\label{bsp__dma__m2p_8h_a091ae7961859a90d17bb46ce23570c84} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!DEBUG\_USART\_TX\_GPIO\_PORT@{DEBUG\_USART\_TX\_GPIO\_PORT}}
+\index{DEBUG\_USART\_TX\_GPIO\_PORT@{DEBUG\_USART\_TX\_GPIO\_PORT}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_USART\_TX\_GPIO\_PORT}{DEBUG\_USART\_TX\_GPIO\_PORT}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+USART\+\_\+\+TX\+\_\+\+GPIO\+\_\+\+PORT~\mbox{\hyperlink{group___peripheral__declaration_gac485358099728ddae050db37924dd6b7}{GPIOA}}}
+
+\Hypertarget{bsp__dma__m2p_8h_a53fd4b6f533e839273891855c5c90266}\label{bsp__dma__m2p_8h_a53fd4b6f533e839273891855c5c90266} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!DEBUG\_USARTx@{DEBUG\_USARTx}}
+\index{DEBUG\_USARTx@{DEBUG\_USARTx}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_USARTx}{DEBUG\_USARTx}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+USARTx~\mbox{\hyperlink{group___peripheral__declaration_ga92871691058ff7ccffd7635930cb08da}{USART1}}}
+
+\Hypertarget{bsp__dma__m2p_8h_affc4739854f3670ccc0279a9accf0e89}\label{bsp__dma__m2p_8h_affc4739854f3670ccc0279a9accf0e89} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!SENDBUFF\_SIZE@{SENDBUFF\_SIZE}}
+\index{SENDBUFF\_SIZE@{SENDBUFF\_SIZE}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{SENDBUFF\_SIZE}{SENDBUFF\_SIZE}}
+{\footnotesize\ttfamily \#define SENDBUFF\+\_\+\+SIZE~5000}
+
+\Hypertarget{bsp__dma__m2p_8h_a6386f4510dfb8cd07c86eb32eb12b901}\label{bsp__dma__m2p_8h_a6386f4510dfb8cd07c86eb32eb12b901} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!USART\_DR\_ADDRESS@{USART\_DR\_ADDRESS}}
+\index{USART\_DR\_ADDRESS@{USART\_DR\_ADDRESS}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{USART\_DR\_ADDRESS}{USART\_DR\_ADDRESS}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+DR\+\_\+\+ADDRESS~(\mbox{\hyperlink{group___peripheral__memory__map_ga86162ab3f740db9026c1320d46938b4d}{USART1\+\_\+\+BASE}}+0x04)}
+
+\Hypertarget{bsp__dma__m2p_8h_ab8482dba61154b7a745d949a244065a2}\label{bsp__dma__m2p_8h_ab8482dba61154b7a745d949a244065a2} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!USART\_TX\_DMA\_CHANNEL@{USART\_TX\_DMA\_CHANNEL}}
+\index{USART\_TX\_DMA\_CHANNEL@{USART\_TX\_DMA\_CHANNEL}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{USART\_TX\_DMA\_CHANNEL}{USART\_TX\_DMA\_CHANNEL}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+TX\+\_\+\+DMA\+\_\+\+CHANNEL~\mbox{\hyperlink{group___peripheral__declaration_gad2c42743316bf64da557130061b1f56a}{DMA1\+\_\+\+Channel4}}}
+
+\Hypertarget{bsp__dma__m2p_8h_a0409832fda690702148e88e97a383676}\label{bsp__dma__m2p_8h_a0409832fda690702148e88e97a383676} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!USART\_TX\_DMA\_CLK@{USART\_TX\_DMA\_CLK}}
+\index{USART\_TX\_DMA\_CLK@{USART\_TX\_DMA\_CLK}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{USART\_TX\_DMA\_CLK}{USART\_TX\_DMA\_CLK}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+TX\+\_\+\+DMA\+\_\+\+CLK~\mbox{\hyperlink{group___a_h_b__peripheral_gaf32783f8481c4343726994073918b3ff}{RCC\+\_\+\+AHBPeriph\+\_\+\+DMA1}}}
+
+\Hypertarget{bsp__dma__m2p_8h_a8e6dff858459b1c89a392246d466e587}\label{bsp__dma__m2p_8h_a8e6dff858459b1c89a392246d466e587} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!USART\_TX\_DMA\_FLAG\_TC@{USART\_TX\_DMA\_FLAG\_TC}}
+\index{USART\_TX\_DMA\_FLAG\_TC@{USART\_TX\_DMA\_FLAG\_TC}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{USART\_TX\_DMA\_FLAG\_TC}{USART\_TX\_DMA\_FLAG\_TC}}
+{\footnotesize\ttfamily \#define USART\+\_\+\+TX\+\_\+\+DMA\+\_\+\+FLAG\+\_\+\+TC~\mbox{\hyperlink{group___d_m_a__flags__definition_ga78f2798eca161493d5dc6058f65b0f17}{DMA1\+\_\+\+FLAG\+\_\+\+TC4}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bsp__dma__m2p_8h_ae9720bf2dbb461c28e0205b050f1a0bb}\label{bsp__dma__m2p_8h_ae9720bf2dbb461c28e0205b050f1a0bb} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!USART\_Config@{USART\_Config}}
+\index{USART\_Config@{USART\_Config}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{USART\_Config()}{USART\_Config()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+USART GPIO 配置,工作参数配置 
+
+
+\begin{DoxyParams}{Parameters}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{bsp__dma__m2p_8h_a159c123526e5bfa3352f384285db5a6d}\label{bsp__dma__m2p_8h_a159c123526e5bfa3352f384285db5a6d} 
+\index{bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}!USARTx\_DMA\_Config@{USARTx\_DMA\_Config}}
+\index{USARTx\_DMA\_Config@{USARTx\_DMA\_Config}!bsp\_dma\_m2p.h@{bsp\_dma\_m2p.h}}
+\doxysubsubsection{\texorpdfstring{USARTx\_DMA\_Config()}{USARTx\_DMA\_Config()}}
+{\footnotesize\ttfamily void USARTx\+\_\+\+DMA\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+USARTx TX DMA 配置，内存到外设(USART1-\/\texorpdfstring{$>$}{>}DR) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}

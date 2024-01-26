@@ -1,0 +1,37 @@
+\doxysection{bsp\+\_\+dma\+\_\+m2p.\+h}
+\hypertarget{bsp__dma__m2p_8h_source}{}\label{bsp__dma__m2p_8h_source}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoP/User/dma/bsp\_dma\_m2p.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoP/User/dma/bsp\_dma\_m2p.h}}
+\mbox{\hyperlink{bsp__dma__m2p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ \_\_BSP\_DMA\_M2P\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ \_\_BSP\_DMA\_M2P\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f10x_8h}{stm32f10x.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ 串口工作参数宏定义}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USARTx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ USART1}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_CLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RCC\_APB2Periph\_USART1}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_APBxClkCmd\ \ \ \ \ \ \ \ \ RCC\_APB2PeriphClockCmd}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_BAUDRATE\ \ \ \ \ \ \ \ \ \ \ 115200}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ USART\ GPIO\ 引脚宏定义}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_GPIO\_CLK\ \ \ \ \ \ \ \ \ \ \ (RCC\_APB2Periph\_GPIOA)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_GPIO\_APBxClkCmd\ \ \ \ RCC\_APB2PeriphClockCmd}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_TX\_GPIO\_PORT\ \ \ \ \ \ \ GPIOA\ \ \ }}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_TX\_GPIO\_PIN\ \ \ \ \ \ \ \ GPIO\_Pin\_9}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_RX\_GPIO\_PORT\ \ \ \ \ \ \ GPIOA}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_RX\_GPIO\_PIN\ \ \ \ \ \ \ \ GPIO\_Pin\_10}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ USART\_TX\_DMA\_CLK\ RCC\_AHBPeriph\_DMA1\ }\textcolor{comment}{//\ 串口DMA时钟}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \ USART\_TX\_DMA\_CHANNEL\ \ \ \ \ DMA1\_Channel4\ }\textcolor{comment}{//\ 串口对应的DMA请求通道}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ \ USART\_DR\_ADDRESS\ \ \ \ \ \ \ \ (USART1\_BASE+0x04)\ }\textcolor{comment}{//\ 外设寄存器地址}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ \ SENDBUFF\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ 5000\ }\textcolor{comment}{//\ 一次发送的数据量}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ \ USART\_TX\_DMA\_FLAG\_TC\ DMA1\_FLAG\_TC4\ }\textcolor{comment}{//\ 标志位}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bsp__dma__m2p_8h_ae9720bf2dbb461c28e0205b050f1a0bb}{USART\_Config}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bsp__dma__m2p_8h_a159c123526e5bfa3352f384285db5a6d}{USARTx\_DMA\_Config}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_\_BSP\_DMA\_M2P\_H}}
+
+\end{DoxyCode}

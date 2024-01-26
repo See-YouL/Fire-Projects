@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>22-DMA-MtoM: File Members</title>
+<title>22-DMA-MtoP: File Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">22-DMA-MtoM<span id="projectnumber">&#160;beta 0.01</span>
+   <div id="projectname">22-DMA-MtoP<span id="projectnumber">&#160;beta 0.01</span>
    </div>
-   <div id="projectbrief">DMA实验存储器到存储器</div>
+   <div id="projectbrief">DMA实验存储器到外设</div>
   </td>
  </tr>
  </tbody>
@@ -102,6 +102,7 @@ $(function() {
 <li>USART_ClockInit()&#160;:&#160;<a class="el" href="group___u_s_a_r_t___exported___functions.html#gadb50c7a2175c91acd3728f8eefd0c63d">stm32f10x_usart.h</a>, <a class="el" href="group___u_s_a_r_t___private___functions.html#gadb50c7a2175c91acd3728f8eefd0c63d">stm32f10x_usart.c</a></li>
 <li>USART_ClockStructInit()&#160;:&#160;<a class="el" href="group___u_s_a_r_t___exported___functions.html#ga59df27d0adda18b16ee28d47672cc724">stm32f10x_usart.h</a>, <a class="el" href="group___u_s_a_r_t___private___functions.html#ga59df27d0adda18b16ee28d47672cc724">stm32f10x_usart.c</a></li>
 <li>USART_Cmd()&#160;:&#160;<a class="el" href="group___u_s_a_r_t___exported___functions.html#ga45e51626739c5f22a6567c8a85d1d85e">stm32f10x_usart.h</a>, <a class="el" href="group___u_s_a_r_t___private___functions.html#ga45e51626739c5f22a6567c8a85d1d85e">stm32f10x_usart.c</a></li>
+<li>USART_Config()&#160;:&#160;<a class="el" href="bsp__dma__m2p_8c.html#ae9720bf2dbb461c28e0205b050f1a0bb">bsp_dma_m2p.c</a>, <a class="el" href="bsp__dma__m2p_8h.html#ae9720bf2dbb461c28e0205b050f1a0bb">bsp_dma_m2p.h</a></li>
 <li>USART_CPHA_1Edge&#160;:&#160;<a class="el" href="group___u_s_a_r_t___clock___phase.html#gab6c0fb052fb9bc418cf368c1a0e4643b">stm32f10x_usart.h</a></li>
 <li>USART_CPHA_2Edge&#160;:&#160;<a class="el" href="group___u_s_a_r_t___clock___phase.html#ga66344d0725f1300e9d0f8f1708111f25">stm32f10x_usart.h</a></li>
 <li>USART_CPOL_High&#160;:&#160;<a class="el" href="group___u_s_a_r_t___clock___polarity.html#ga4ba6946dd9f0b4fd38115f24798c210f">stm32f10x_usart.h</a></li>
@@ -148,6 +149,7 @@ $(function() {
 <li>USART_DMACmd()&#160;:&#160;<a class="el" href="group___u_s_a_r_t___exported___functions.html#ga902857f199ebfba21c63d725354af66f">stm32f10x_usart.h</a>, <a class="el" href="group___u_s_a_r_t___private___functions.html#ga902857f199ebfba21c63d725354af66f">stm32f10x_usart.c</a></li>
 <li>USART_DMAReq_Rx&#160;:&#160;<a class="el" href="group___u_s_a_r_t___d_m_a___requests.html#gaf33c13abb942251afab3297d8b8362ca">stm32f10x_usart.h</a></li>
 <li>USART_DMAReq_Tx&#160;:&#160;<a class="el" href="group___u_s_a_r_t___d_m_a___requests.html#gae38097d8f82ba969c9812194022cae9a">stm32f10x_usart.h</a></li>
+<li>USART_DR_ADDRESS&#160;:&#160;<a class="el" href="bsp__dma__m2p_8h.html#a6386f4510dfb8cd07c86eb32eb12b901">bsp_dma_m2p.h</a></li>
 <li>USART_DR_DR&#160;:&#160;<a class="el" href="group___peripheral___registers___bits___definition.html#gad84ad1e1d0202b41021e2d6e40486bff">stm32f10x.h</a></li>
 <li>USART_FLAG_CTS&#160;:&#160;<a class="el" href="group___u_s_a_r_t___flags.html#ga94b7272319cca88a65075d5cb6048441">stm32f10x_usart.h</a></li>
 <li>USART_FLAG_FE&#160;:&#160;<a class="el" href="group___u_s_a_r_t___flags.html#ga3551a32bac49a2ec040e5fdafcc9c4bd">stm32f10x_usart.h</a></li>
@@ -230,11 +232,15 @@ $(function() {
 <li>USART_StopBits_1_5&#160;:&#160;<a class="el" href="group___u_s_a_r_t___stop___bits.html#ga30897cc46d5b3790a9b14ffaba354527">stm32f10x_usart.h</a></li>
 <li>USART_StopBits_2&#160;:&#160;<a class="el" href="group___u_s_a_r_t___stop___bits.html#ga652058b6be2f48ac0d82d0e75537fc81">stm32f10x_usart.h</a></li>
 <li>USART_StructInit()&#160;:&#160;<a class="el" href="group___u_s_a_r_t___exported___functions.html#ga34e1faa2f312496c16cfd05155f4c8b1">stm32f10x_usart.h</a>, <a class="el" href="group___u_s_a_r_t___private___functions.html#ga34e1faa2f312496c16cfd05155f4c8b1">stm32f10x_usart.c</a></li>
+<li>USART_TX_DMA_CHANNEL&#160;:&#160;<a class="el" href="bsp__dma__m2p_8h.html#ab8482dba61154b7a745d949a244065a2">bsp_dma_m2p.h</a></li>
+<li>USART_TX_DMA_CLK&#160;:&#160;<a class="el" href="bsp__dma__m2p_8h.html#a0409832fda690702148e88e97a383676">bsp_dma_m2p.h</a></li>
+<li>USART_TX_DMA_FLAG_TC&#160;:&#160;<a class="el" href="bsp__dma__m2p_8h.html#a8e6dff858459b1c89a392246d466e587">bsp_dma_m2p.h</a></li>
 <li>USART_WakeUp_AddressMark&#160;:&#160;<a class="el" href="group___u_s_a_r_t___wake_up__methods.html#ga9f63c1671060682adee91b9a2f3202e4">stm32f10x_usart.h</a></li>
 <li>USART_WakeUp_IdleLine&#160;:&#160;<a class="el" href="group___u_s_a_r_t___wake_up__methods.html#ga9646d71590d5cef29ee12da0bb431d92">stm32f10x_usart.h</a></li>
 <li>USART_WakeUpConfig()&#160;:&#160;<a class="el" href="group___u_s_a_r_t___exported___functions.html#ga4965417c2412c36e462fcad50a8d5393">stm32f10x_usart.h</a>, <a class="el" href="group___u_s_a_r_t___private___functions.html#ga4965417c2412c36e462fcad50a8d5393">stm32f10x_usart.c</a></li>
 <li>USART_WordLength_8b&#160;:&#160;<a class="el" href="group___u_s_a_r_t___word___length.html#ga08682faddc657df85a93627b5a146c25">stm32f10x_usart.h</a></li>
 <li>USART_WordLength_9b&#160;:&#160;<a class="el" href="group___u_s_a_r_t___word___length.html#gae7dd162142660e09e2321aa3f33dc4d2">stm32f10x_usart.h</a></li>
+<li>USARTx_DMA_Config()&#160;:&#160;<a class="el" href="bsp__dma__m2p_8c.html#a159c123526e5bfa3352f384285db5a6d">bsp_dma_m2p.c</a>, <a class="el" href="bsp__dma__m2p_8h.html#a159c123526e5bfa3352f384285db5a6d">bsp_dma_m2p.h</a></li>
 <li>USB_ADDR0_RX_ADDR0_RX&#160;:&#160;<a class="el" href="group___peripheral___registers___bits___definition.html#gaee2b98ee0d9a41d8836f8580e863ca11">stm32f10x.h</a></li>
 <li>USB_ADDR0_TX_ADDR0_TX&#160;:&#160;<a class="el" href="group___peripheral___registers___bits___definition.html#gae45ee53c334b9a5b7a76c6a67a8cb5b9">stm32f10x.h</a></li>
 <li>USB_ADDR1_RX_ADDR1_RX&#160;:&#160;<a class="el" href="group___peripheral___registers___bits___definition.html#ga8f6f7121f0fcf86c1f6cb40320c9fce3">stm32f10x.h</a></li>

@@ -1,34 +1,29 @@
-\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+User/main.c File Reference}
-\hypertarget{main_8c}{}\label{main_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/User/main.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/User/main.c}}
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+P/\+User/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoP/User/main.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoP/User/main.c}}
 
 
-DMA实验1(存储器到存储器)的主函数  
+SRAM to 串口, 同时\+LED灯闪烁, 演示\+DMA数据不需占用\+CPU.  
 
 
 {\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
 {\ttfamily \#include "{}bsp\+\_\+led.\+h"{}}\newline
-{\ttfamily \#include "{}bsp\+\_\+dma\+\_\+m2m.\+h"{}}\newline
+{\ttfamily \#include "{}bsp\+\_\+dma\+\_\+m2p.\+h"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{main_8c_a1d3146414c54513a72a7596c2f884c07}{Delay\+\_\+ms}} (uint32\+\_\+t ms)
 \begin{DoxyCompactList}\small\item\em Delays the execution for a specified number of milliseconds. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 实现\+DMA将储存器中的数据发送到\+USART-\/\texorpdfstring{$>$}{>}DR, 并实现\+LED1闪烁 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const uint32\+\_\+t \mbox{\hyperlink{main_8c_a96c7fa8d5ff9537b15a74dab7eddaadd}{a\+SRC\+\_\+\+Const\+\_\+\+Buffer}} \mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}
-\item 
-uint32\+\_\+t \mbox{\hyperlink{main_8c_a6eeef06891d613407dde2e65235b6c0f}{a\+DST\+\_\+\+Buffer}} \mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}
-\begin{DoxyCompactList}\small\item\em 定义\+DMA传输目标存储器 存储在内部的\+SRAM中 ~\newline
- \end{DoxyCompactList}\end{DoxyCompactItemize}
+uint8\+\_\+t \mbox{\hyperlink{main_8c_ad0be6bea973e44b948cee6fe0e755fcb}{Send\+Buff}} \mbox{[}\mbox{\hyperlink{bsp__dma__m2p_8h_affc4739854f3670ccc0279a9accf0e89}{SENDBUFF\+\_\+\+SIZE}}\mbox{]}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-DMA实验1(存储器到存储器)的主函数 
-
-DMA Memory-\/to-\/\+Memory Transfer Example.
+SRAM to 串口, 同时\+LED灯闪烁, 演示\+DMA数据不需占用\+CPU. 
 
 \begin{DoxyAuthor}{Author}
 eric 
@@ -37,9 +32,9 @@ eric
 None 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-2024年1月26日14\+:47\+:55 
+26-\/January-\/2024  
 \end{DoxyDate}
-This file contains the main function for a DMA memory-\/to-\/memory transfer example. It initializes the LED, configures the DMA, waits for the DMA transfer to complete, compares the data in two arrays, and controls the LED based on the comparison result. 
+
 
 \doxysubsection{Function Documentation}
 \Hypertarget{main_8c_a1d3146414c54513a72a7596c2f884c07}\label{main_8c_a1d3146414c54513a72a7596c2f884c07} 
@@ -68,21 +63,17 @@ None.
 
 
 
+实现\+DMA将储存器中的数据发送到\+USART-\/\texorpdfstring{$>$}{>}DR, 并实现\+LED1闪烁 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
 \doxysubsection{Variable Documentation}
-\Hypertarget{main_8c_a6eeef06891d613407dde2e65235b6c0f}\label{main_8c_a6eeef06891d613407dde2e65235b6c0f} 
-\index{main.c@{main.c}!aDST\_Buffer@{aDST\_Buffer}}
-\index{aDST\_Buffer@{aDST\_Buffer}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{aDST\_Buffer}{aDST\_Buffer}}
-{\footnotesize\ttfamily uint32\+\_\+t a\+DST\+\_\+\+Buffer\mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
-
-
-
-定义\+DMA传输目标存储器 存储在内部的\+SRAM中 ~\newline
- 
-
-\Hypertarget{main_8c_a96c7fa8d5ff9537b15a74dab7eddaadd}\label{main_8c_a96c7fa8d5ff9537b15a74dab7eddaadd} 
-\index{main.c@{main.c}!aSRC\_Const\_Buffer@{aSRC\_Const\_Buffer}}
-\index{aSRC\_Const\_Buffer@{aSRC\_Const\_Buffer}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{aSRC\_Const\_Buffer}{aSRC\_Const\_Buffer}}
-{\footnotesize\ttfamily const uint32\+\_\+t a\+SRC\+\_\+\+Const\+\_\+\+Buffer\mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+\Hypertarget{main_8c_ad0be6bea973e44b948cee6fe0e755fcb}\label{main_8c_ad0be6bea973e44b948cee6fe0e755fcb} 
+\index{main.c@{main.c}!SendBuff@{SendBuff}}
+\index{SendBuff@{SendBuff}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{SendBuff}{SendBuff}}
+{\footnotesize\ttfamily uint8\+\_\+t Send\+Buff\mbox{[}\mbox{\hyperlink{bsp__dma__m2p_8h_affc4739854f3670ccc0279a9accf0e89}{SENDBUFF\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
 
