@@ -1,0 +1,217 @@
+\doxysection{stm32f10x\+\_\+spi.\+h}
+\hypertarget{stm32f10x__spi_8h_source}{}\label{stm32f10x__spi_8h_source}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_spi.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_spi.h}}
+\mbox{\hyperlink{stm32f10x__spi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F10x\_SPI\_H}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \_\_STM32F10x\_SPI\_H}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f10x_8h}{stm32f10x.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ uint16\_t\ \mbox{\hyperlink{struct_s_p_i___init_type_def_a8cf0fefa76b9238a41997db14eac62a9}{SPI\_Direction}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ uint16\_t\ \mbox{\hyperlink{struct_s_p_i___init_type_def_a578435d3b3a17baa5d5ff87447aa697f}{SPI\_Mode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ uint16\_t\ \mbox{\hyperlink{struct_s_p_i___init_type_def_a0e63950d46a6483f9b7048b8c97800b8}{SPI\_DataSize}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ uint16\_t\ \mbox{\hyperlink{struct_s_p_i___init_type_def_a1fe46794d91fd950e06da06b0e488997}{SPI\_CPOL}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ uint16\_t\ \mbox{\hyperlink{struct_s_p_i___init_type_def_acdaac9259c45f137e804f90122edb129}{SPI\_CPHA}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ uint16\_t\ \mbox{\hyperlink{struct_s_p_i___init_type_def_a6c1ea4b5e3d147b74799efa42e3903c6}{SPI\_NSS}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ uint16\_t\ \mbox{\hyperlink{struct_s_p_i___init_type_def_adfcf6178b6a117643111c13403f32e71}{SPI\_BaudRatePrescaler}};\ \ \ }
+\DoxyCodeLine{00077\ \ \ uint16\_t\ \mbox{\hyperlink{struct_s_p_i___init_type_def_ace7ca292c290953f8a6ae86f79949f5b}{SPI\_FirstBit}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ uint16\_t\ \mbox{\hyperlink{struct_s_p_i___init_type_def_aee6460416ade6c4016aac2bd64cae0eb}{SPI\_CRCPolynomial}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \}\mbox{\hyperlink{struct_s_p_i___init_type_def}{SPI\_InitTypeDef}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ uint16\_t\ \mbox{\hyperlink{struct_i2_s___init_type_def_aa57e5190eac245c0873a00849b1bd239}{I2S\_Mode}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ uint16\_t\ \mbox{\hyperlink{struct_i2_s___init_type_def_ae987936e7cb9a962ee388c98f8c872b7}{I2S\_Standard}};\ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ uint16\_t\ \mbox{\hyperlink{struct_i2_s___init_type_def_ad5e59034081427fd638983c10f18e833}{I2S\_DataFormat}};\ \ \ }
+\DoxyCodeLine{00099\ \ \ uint16\_t\ \mbox{\hyperlink{struct_i2_s___init_type_def_ae7aaf79b7f392d79ac2f7b35a24e5d1a}{I2S\_MCLKOutput}};\ \ \ }
+\DoxyCodeLine{00102\ \ \ uint32\_t\ \mbox{\hyperlink{struct_i2_s___init_type_def_a87674c5fbccad53b7646565f35d1fc0a}{I2S\_AudioFreq}};\ \ \ \ }
+\DoxyCodeLine{00105\ \ \ uint16\_t\ \mbox{\hyperlink{struct_i2_s___init_type_def_aeb7741728520734ec2eab95d2143778c}{I2S\_CPOL}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \}\mbox{\hyperlink{struct_i2_s___init_type_def}{I2S\_InitTypeDef}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ IS\_SPI\_ALL\_PERIPH(PERIPH)\ (((PERIPH)\ ==\ SPI1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ SPI2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ SPI3))}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ IS\_SPI\_23\_PERIPH(PERIPH)\ (((PERIPH)\ ==\ SPI2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ SPI3))}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ SPI\_Direction\_2Lines\_FullDuplex\ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ SPI\_Direction\_2Lines\_RxOnly\ \ \ \ \ ((uint16\_t)0x0400)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ SPI\_Direction\_1Line\_Rx\ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x8000)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ SPI\_Direction\_1Line\_Tx\ \ \ \ \ \ \ \ \ \ ((uint16\_t)0xC000)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ IS\_SPI\_DIRECTION\_MODE(MODE)\ (((MODE)\ ==\ SPI\_Direction\_2Lines\_FullDuplex)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ SPI\_Direction\_2Lines\_RxOnly)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ SPI\_Direction\_1Line\_Rx)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ SPI\_Direction\_1Line\_Tx))}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ SPI\_Mode\_Master\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0104)}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ SPI\_Mode\_Slave\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ IS\_SPI\_MODE(MODE)\ (((MODE)\ ==\ SPI\_Mode\_Master)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ SPI\_Mode\_Slave))}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ SPI\_DataSize\_16b\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0800)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ SPI\_DataSize\_8b\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ IS\_SPI\_DATASIZE(DATASIZE)\ (((DATASIZE)\ ==\ SPI\_DataSize\_16b)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DATASIZE)\ ==\ SPI\_DataSize\_8b))}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ SPI\_CPOL\_Low\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ SPI\_CPOL\_High\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0002)}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ IS\_SPI\_CPOL(CPOL)\ (((CPOL)\ ==\ SPI\_CPOL\_Low)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CPOL)\ ==\ SPI\_CPOL\_High))}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ SPI\_CPHA\_1Edge\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ SPI\_CPHA\_2Edge\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0001)}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ IS\_SPI\_CPHA(CPHA)\ (((CPHA)\ ==\ SPI\_CPHA\_1Edge)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CPHA)\ ==\ SPI\_CPHA\_2Edge))}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ SPI\_NSS\_Soft\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0200)}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ SPI\_NSS\_Hard\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ IS\_SPI\_NSS(NSS)\ (((NSS)\ ==\ SPI\_NSS\_Soft)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((NSS)\ ==\ SPI\_NSS\_Hard))}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ SPI\_BaudRatePrescaler\_2\ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ SPI\_BaudRatePrescaler\_4\ \ \ \ \ \ \ \ \ ((uint16\_t)0x0008)}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ SPI\_BaudRatePrescaler\_8\ \ \ \ \ \ \ \ \ ((uint16\_t)0x0010)}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ SPI\_BaudRatePrescaler\_16\ \ \ \ \ \ \ \ ((uint16\_t)0x0018)}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ SPI\_BaudRatePrescaler\_32\ \ \ \ \ \ \ \ ((uint16\_t)0x0020)}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ SPI\_BaudRatePrescaler\_64\ \ \ \ \ \ \ \ ((uint16\_t)0x0028)}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ SPI\_BaudRatePrescaler\_128\ \ \ \ \ \ \ ((uint16\_t)0x0030)}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ SPI\_BaudRatePrescaler\_256\ \ \ \ \ \ \ ((uint16\_t)0x0038)}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ IS\_SPI\_BAUDRATE\_PRESCALER(PRESCALER)\ (((PRESCALER)\ ==\ SPI\_BaudRatePrescaler\_2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ SPI\_BaudRatePrescaler\_4)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ SPI\_BaudRatePrescaler\_8)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ SPI\_BaudRatePrescaler\_16)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ SPI\_BaudRatePrescaler\_32)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ SPI\_BaudRatePrescaler\_64)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ SPI\_BaudRatePrescaler\_128)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PRESCALER)\ ==\ SPI\_BaudRatePrescaler\_256))}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ SPI\_FirstBit\_MSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ SPI\_FirstBit\_LSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0080)}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ IS\_SPI\_FIRST\_BIT(BIT)\ (((BIT)\ ==\ SPI\_FirstBit\_MSB)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BIT)\ ==\ SPI\_FirstBit\_LSB))}}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ I2S\_Mode\_SlaveTx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#define\ I2S\_Mode\_SlaveRx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0100)}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ I2S\_Mode\_MasterTx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0200)}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ I2S\_Mode\_MasterRx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0300)}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ IS\_I2S\_MODE(MODE)\ (((MODE)\ ==\ I2S\_Mode\_SlaveTx)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ I2S\_Mode\_SlaveRx)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ I2S\_Mode\_MasterTx)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ I2S\_Mode\_MasterRx)\ )}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ I2S\_Standard\_Phillips\ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#define\ I2S\_Standard\_MSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0010)}}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ I2S\_Standard\_LSB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0020)}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ I2S\_Standard\_PCMShort\ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0030)}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ I2S\_Standard\_PCMLong\ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x00B0)}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ IS\_I2S\_STANDARD(STANDARD)\ (((STANDARD)\ ==\ I2S\_Standard\_Phillips)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STANDARD)\ ==\ I2S\_Standard\_MSB)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STANDARD)\ ==\ I2S\_Standard\_LSB)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STANDARD)\ ==\ I2S\_Standard\_PCMShort)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STANDARD)\ ==\ I2S\_Standard\_PCMLong))}}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\#define\ I2S\_DataFormat\_16b\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#define\ I2S\_DataFormat\_16bextended\ \ \ \ \ \ ((uint16\_t)0x0001)}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#define\ I2S\_DataFormat\_24b\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0003)}}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#define\ I2S\_DataFormat\_32b\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0005)}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ IS\_I2S\_DATA\_FORMAT(FORMAT)\ (((FORMAT)\ ==\ I2S\_DataFormat\_16b)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FORMAT)\ ==\ I2S\_DataFormat\_16bextended)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FORMAT)\ ==\ I2S\_DataFormat\_24b)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FORMAT)\ ==\ I2S\_DataFormat\_32b))}}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#define\ I2S\_MCLKOutput\_Enable\ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0200)}}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#define\ I2S\_MCLKOutput\_Disable\ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ IS\_I2S\_MCLK\_OUTPUT(OUTPUT)\ (((OUTPUT)\ ==\ I2S\_MCLKOutput\_Enable)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((OUTPUT)\ ==\ I2S\_MCLKOutput\_Disable))}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ I2S\_AudioFreq\_192k\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)192000)}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ I2S\_AudioFreq\_96k\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)96000)}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ I2S\_AudioFreq\_48k\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)48000)}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ I2S\_AudioFreq\_44k\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)44100)}}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ I2S\_AudioFreq\_32k\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)32000)}}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ I2S\_AudioFreq\_22k\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)22050)}}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ I2S\_AudioFreq\_16k\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)16000)}}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ I2S\_AudioFreq\_11k\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)11025)}}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ I2S\_AudioFreq\_8k\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)8000)}}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#define\ I2S\_AudioFreq\_Default\ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)2)}}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ IS\_I2S\_AUDIO\_FREQ(FREQ)\ ((((FREQ)\ >=\ I2S\_AudioFreq\_8k)\ \&\&\ \(\backslash\)}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FREQ)\ <=\ I2S\_AudioFreq\_192k))\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FREQ)\ ==\ I2S\_AudioFreq\_Default))}}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#define\ I2S\_CPOL\_Low\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)}}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#define\ I2S\_CPOL\_High\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0008)}}
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\#define\ IS\_I2S\_CPOL(CPOL)\ (((CPOL)\ ==\ I2S\_CPOL\_Low)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CPOL)\ ==\ I2S\_CPOL\_High))}}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ SPI\_I2S\_DMAReq\_Tx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0002)}}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ SPI\_I2S\_DMAReq\_Rx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0001)}}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#define\ IS\_SPI\_I2S\_DMAREQ(DMAREQ)\ ((((DMAREQ)\ \&\ (uint16\_t)0xFFFC)\ ==\ 0x00)\ \&\&\ ((DMAREQ)\ !=\ 0x00))}}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ SPI\_NSSInternalSoft\_Set\ \ \ \ \ \ \ \ \ ((uint16\_t)0x0100)}}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ SPI\_NSSInternalSoft\_Reset\ \ \ \ \ \ \ ((uint16\_t)0xFEFF)}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ IS\_SPI\_NSS\_INTERNAL(INTERNAL)\ (((INTERNAL)\ ==\ SPI\_NSSInternalSoft\_Set)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((INTERNAL)\ ==\ SPI\_NSSInternalSoft\_Reset))}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ SPI\_CRC\_Tx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)}}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ SPI\_CRC\_Rx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)}}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ IS\_SPI\_CRC(CRC)\ (((CRC)\ ==\ SPI\_CRC\_Tx)\ ||\ ((CRC)\ ==\ SPI\_CRC\_Rx))}}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ SPI\_Direction\_Rx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0xBFFF)}}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#define\ SPI\_Direction\_Tx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x4000)}}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ IS\_SPI\_DIRECTION(DIRECTION)\ (((DIRECTION)\ ==\ SPI\_Direction\_Rx)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DIRECTION)\ ==\ SPI\_Direction\_Tx))}}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ SPI\_I2S\_IT\_TXE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x71)}}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#define\ SPI\_I2S\_IT\_RXNE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x60)}}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ SPI\_I2S\_IT\_ERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x50)}}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ IS\_SPI\_I2S\_CONFIG\_IT(IT)\ (((IT)\ ==\ SPI\_I2S\_IT\_TXE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ SPI\_I2S\_IT\_RXNE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ SPI\_I2S\_IT\_ERR))}}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\#define\ SPI\_I2S\_IT\_OVR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x56)}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#define\ SPI\_IT\_MODF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x55)}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ SPI\_IT\_CRCERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x54)}}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ I2S\_IT\_UDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x53)}}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ IS\_SPI\_I2S\_CLEAR\_IT(IT)\ (((IT)\ ==\ SPI\_IT\_CRCERR))}}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#define\ IS\_SPI\_I2S\_GET\_IT(IT)\ (((IT)\ ==\ SPI\_I2S\_IT\_RXNE)\ ||\ ((IT)\ ==\ SPI\_I2S\_IT\_TXE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ I2S\_IT\_UDR)\ ||\ ((IT)\ ==\ SPI\_IT\_CRCERR)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ SPI\_IT\_MODF)\ ||\ ((IT)\ ==\ SPI\_I2S\_IT\_OVR))}}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ SPI\_I2S\_FLAG\_RXNE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0001)}}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ SPI\_I2S\_FLAG\_TXE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0002)}}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ I2S\_FLAG\_CHSIDE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0004)}}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ I2S\_FLAG\_UDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0008)}}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ SPI\_FLAG\_CRCERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0010)}}
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#define\ SPI\_FLAG\_MODF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0020)}}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#define\ SPI\_I2S\_FLAG\_OVR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0040)}}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ SPI\_I2S\_FLAG\_BSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0080)}}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#define\ IS\_SPI\_I2S\_CLEAR\_FLAG(FLAG)\ (((FLAG)\ ==\ SPI\_FLAG\_CRCERR))}}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ IS\_SPI\_I2S\_GET\_FLAG(FLAG)\ (((FLAG)\ ==\ SPI\_I2S\_FLAG\_BSY)\ ||\ ((FLAG)\ ==\ SPI\_I2S\_FLAG\_OVR)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ SPI\_FLAG\_MODF)\ ||\ ((FLAG)\ ==\ SPI\_FLAG\_CRCERR)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ I2S\_FLAG\_UDR)\ ||\ ((FLAG)\ ==\ I2S\_FLAG\_CHSIDE)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ SPI\_I2S\_FLAG\_TXE)\ ||\ ((FLAG)\ ==\ SPI\_I2S\_FLAG\_RXNE))}}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#define\ IS\_SPI\_CRC\_POLYNOMIAL(POLYNOMIAL)\ ((POLYNOMIAL)\ >=\ 0x1)}}
+\DoxyCodeLine{00446\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_gabe36880945fa56785283a9c0092124cc}{SPI\_I2S\_DeInit}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx);}
+\DoxyCodeLine{00447\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga8dacc1dc48bf08c0f12da409f4889037}{SPI\_Init}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ \mbox{\hyperlink{struct_s_p_i___init_type_def}{SPI\_InitTypeDef}}*\ SPI\_InitStruct);}
+\DoxyCodeLine{00448\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga53661884ae4a9640df7cbc59187782f7}{I2S\_Init}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ \mbox{\hyperlink{struct_i2_s___init_type_def}{I2S\_InitTypeDef}}*\ I2S\_InitStruct);}
+\DoxyCodeLine{00449\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga9a0116f88cc2c4478c270f05608703f1}{SPI\_StructInit}}(\mbox{\hyperlink{struct_s_p_i___init_type_def}{SPI\_InitTypeDef}}*\ SPI\_InitStruct);}
+\DoxyCodeLine{00450\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga7470ec1d0759fdeeb42c7fe71a3b41b7}{I2S\_StructInit}}(\mbox{\hyperlink{struct_i2_s___init_type_def}{I2S\_InitTypeDef}}*\ I2S\_InitStruct);}
+\DoxyCodeLine{00451\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_gaa31357879a65ee1ed7223f3b9114dcf3}{SPI\_Cmd}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00452\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_gafe061c71bbc5b4224f3f2884dc53739e}{I2S\_Cmd}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00453\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga17f4ef132e8ddbf94cb6b1688d181e41}{SPI\_I2S\_ITConfig}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ uint8\_t\ SPI\_I2S\_IT,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00454\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_gabed5b91a8576e6d578f364cc0e807e4a}{SPI\_I2S\_DMACmd}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ uint16\_t\ SPI\_I2S\_DMAReq,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00455\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_gad5af40bebe8dbe3fa8bd476489d7e3da}{SPI\_I2S\_SendData}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ uint16\_t\ Data);}
+\DoxyCodeLine{00456\ uint16\_t\ \mbox{\hyperlink{group___s_p_i___exported___functions_gab77de76547f3bff403236b263b070a30}{SPI\_I2S\_ReceiveData}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx);}
+\DoxyCodeLine{00457\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga56fc508a482f032f9eb80e4c63184126}{SPI\_NSSInternalSoftwareConfig}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ uint16\_t\ SPI\_NSSInternalSoft);}
+\DoxyCodeLine{00458\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga4ec54abdedf6cd17403d853a926d91c1}{SPI\_SSOutputCmd}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00459\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_gafc82e90841d7879535d655c035709cb1}{SPI\_DataSizeConfig}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ uint16\_t\ SPI\_DataSize);}
+\DoxyCodeLine{00460\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_gace8b1058e09bab150b0dbe5978810273}{SPI\_TransmitCRC}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx);}
+\DoxyCodeLine{00461\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga64f7276d119e6cb58afc100f8832adb0}{SPI\_CalculateCRC}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00462\ uint16\_t\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga4c81c193516e82cf0a2fdc149ef20cc6}{SPI\_GetCRC}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ uint8\_t\ SPI\_CRC);}
+\DoxyCodeLine{00463\ uint16\_t\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga80fb9374cfce670f29128bb78568353f}{SPI\_GetCRCPolynomial}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx);}
+\DoxyCodeLine{00464\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga166171c421fc51da7714723524d41b45}{SPI\_BiDirectionalLineConfig}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ uint16\_t\ SPI\_Direction);}
+\DoxyCodeLine{00465\ \mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{FlagStatus}}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga1bd785d129e09c5734a876c8f2767204}{SPI\_I2S\_GetFlagStatus}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ uint16\_t\ SPI\_I2S\_FLAG);}
+\DoxyCodeLine{00466\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga3aabd9e2437e213056c0ed9bdfa1a724}{SPI\_I2S\_ClearFlag}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ uint16\_t\ SPI\_I2S\_FLAG);}
+\DoxyCodeLine{00467\ \mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga72decbc1cd79f8fad92a2204beca6bc5}{SPI\_I2S\_GetITStatus}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ uint8\_t\ SPI\_I2S\_IT);}
+\DoxyCodeLine{00468\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___s_p_i___exported___functions_ga35a524a49ff3d058137060f751e8749f}{SPI\_I2S\_ClearITPendingBit}}(\mbox{\hyperlink{struct_s_p_i___type_def}{SPI\_TypeDef}}*\ SPIx,\ uint8\_t\ SPI\_I2S\_IT);}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00471\ \}}
+\DoxyCodeLine{00472\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\_\_STM32F10x\_SPI\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00487\ \textcolor{comment}{/*******************\ (C)\ COPYRIGHT\ 2011\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

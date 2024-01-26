@@ -1,0 +1,27 @@
+var misc_8h =
+[
+    [ "IS_NVIC_LP", "group___system___low___power.html#ga985896f03bc1d7b3da17a212f1bc3de9", null ],
+    [ "IS_NVIC_OFFSET", "group___preemption___priority___group.html#ga1184bbb97d758385f98ab40dd5e5af59", null ],
+    [ "IS_NVIC_PREEMPTION_PRIORITY", "group___preemption___priority___group.html#gaf30fd8f5960c2e28a772d8f16bb156dd", null ],
+    [ "IS_NVIC_PRIORITY_GROUP", "group___preemption___priority___group.html#ga6569304a39fe4f91bd59b6a586c8ede9", null ],
+    [ "IS_NVIC_SUB_PRIORITY", "group___preemption___priority___group.html#ga010705bc997dcff935b965b372cba61d", null ],
+    [ "IS_NVIC_VECTTAB", "group___vector___table___base.html#ga26b9d493ccb98fcce9a27303078940c8", null ],
+    [ "IS_SYSTICK_CLK_SOURCE", "group___sys_tick__clock__source.html#ga22d6291f6aed29442cf4cd9098fa0784", null ],
+    [ "NVIC_LP_SEVONPEND", "group___system___low___power.html#ga10748d2b2875afd122f6476864ad6cae", null ],
+    [ "NVIC_LP_SLEEPDEEP", "group___system___low___power.html#gaeec2d10922fa9ec5e65398667b303253", null ],
+    [ "NVIC_LP_SLEEPONEXIT", "group___system___low___power.html#ga368dc13a9c762a307c07cfa2e3ef59ad", null ],
+    [ "NVIC_PriorityGroup_0", "group___preemption___priority___group.html#gaeac0cf537f65d17bc19aee2410b2b60e", null ],
+    [ "NVIC_PriorityGroup_1", "group___preemption___priority___group.html#ga89bf0bf9e70f1a372a541b1b8d7493aa", null ],
+    [ "NVIC_PriorityGroup_2", "group___preemption___priority___group.html#ga505002e8b76aef65499ca371e40ec8b4", null ],
+    [ "NVIC_PriorityGroup_3", "group___preemption___priority___group.html#ga49bdbee77d4a70339d63c80462d49b4d", null ],
+    [ "NVIC_PriorityGroup_4", "group___preemption___priority___group.html#gaf9020c585da2a299328f0b06dee391a2", null ],
+    [ "NVIC_VectTab_FLASH", "group___vector___table___base.html#gafbf92fd28a1090b2aa49732ebd5704b5", null ],
+    [ "NVIC_VectTab_RAM", "group___vector___table___base.html#ga8be8181cc3e5d42f6204af306ab50f80", null ],
+    [ "SysTick_CLKSource_HCLK", "group___sys_tick__clock__source.html#ga8a885ce2632ad4c35e229bb7c6e60191", null ],
+    [ "SysTick_CLKSource_HCLK_Div8", "group___sys_tick__clock__source.html#ga545c387ce43db90f15faad5f354f890d", null ],
+    [ "NVIC_Init", "group___m_i_s_c___exported___functions.html#ga4ab373ed0870c06fca5eb51d639adf41", null ],
+    [ "NVIC_PriorityGroupConfig", "group___m_i_s_c___exported___functions.html#gadfb1f34f803ce54c976643db8c484442", null ],
+    [ "NVIC_SetVectorTable", "group___m_i_s_c___exported___functions.html#ga1145208ad70edfc2fab19b8b8ef1b1a1", null ],
+    [ "NVIC_SystemLPConfig", "group___m_i_s_c___exported___functions.html#gae21011c5232f5b8f366acbecd12a1d4a", null ],
+    [ "SysTick_CLKSourceConfig", "group___m_i_s_c___exported___functions.html#ga2777d255bb06ad62bb6372a9db1ff385", null ]
+];

@@ -1,0 +1,153 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/src/stm32f10x\+\_\+usart.c File Reference}
+\hypertarget{stm32f10x__usart_8c}{}\label{stm32f10x__usart_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_usart.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_usart.c}}
+
+
+This file provides all the USART firmware functions.  
+
+
+{\ttfamily \#include "{}stm32f10x\+\_\+usart.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f10x\+\_\+rcc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga95f5821be56b1a5dbfdd38fdb37ed54c}{CR1\+\_\+\+UE\+\_\+\+Set}}~((uint16\+\_\+t)0x2000)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga9c75a44192cb3dbbbf509cddfc47481c}{CR1\+\_\+\+UE\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+DFFF)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_gae4045dea092c3cbfe07d14fef39195ce}{CR1\+\_\+\+WAKE\+\_\+\+Mask}}~((uint16\+\_\+t)0x\+F7\+FF)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga5cb566b7c5e126e5ef11dd25bba50ffa}{CR1\+\_\+\+RWU\+\_\+\+Set}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga064a46d19ffffddd410e969798d335ee}{CR1\+\_\+\+RWU\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFFD)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga2813b7fa1263aecfeefa48f8a55938b9}{CR1\+\_\+\+SBK\+\_\+\+Set}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga67f7dd35ea3d1296677e5fc50b88fa90}{CR1\+\_\+\+CLEAR\+\_\+\+Mask}}~((uint16\+\_\+t)0x\+E9\+F3)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga080c343a5a95d4419789b94405c27764}{CR2\+\_\+\+Address\+\_\+\+Mask}}~((uint16\+\_\+t)0x\+FFF0)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_gabc3f2b022d70a11fd0605e58cb23023f}{CR2\+\_\+\+LINEN\+\_\+\+Set}}~((uint16\+\_\+t)0x4000)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga7b8fbe7be4c85c16ea1c1e3c9fa95b05}{CR2\+\_\+\+LINEN\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+BFFF)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga9b365a89de44809a52895090e9050646}{CR2\+\_\+\+LBDL\+\_\+\+Mask}}~((uint16\+\_\+t)0x\+FFDF)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga8a2294276016f30cb361a7f54ad07cd4}{CR2\+\_\+\+STOP\+\_\+\+CLEAR\+\_\+\+Mask}}~((uint16\+\_\+t)0x\+CFFF)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga846e1873279b2b0798cc34d76bd80592}{CR2\+\_\+\+CLOCK\+\_\+\+CLEAR\+\_\+\+Mask}}~((uint16\+\_\+t)0x\+F0\+FF)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_gab47df7b36b4f1315953f6aa45de2fb61}{CR3\+\_\+\+SCEN\+\_\+\+Set}}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga294c473dc7f8ff3e9cbaa0675c8c75f3}{CR3\+\_\+\+SCEN\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFDF)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga950cc9f7251709854754add7d9aaca60}{CR3\+\_\+\+NACK\+\_\+\+Set}}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_gabed0cac273ff4faf009e8c35243c1e10}{CR3\+\_\+\+NACK\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFEF)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga0c5c30ea9777d0c8c6f1b5ff85dfca3c}{CR3\+\_\+\+HDSEL\+\_\+\+Set}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga762c72448ba24f3487dfa457a8dcc9fc}{CR3\+\_\+\+HDSEL\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFF7)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_gaea5d8d002a34c3a587719533db2c17f9}{CR3\+\_\+\+IRLP\+\_\+\+Mask}}~((uint16\+\_\+t)0x\+FFFB)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga085e8ef6bc8f5de45c5be95971715f7f}{CR3\+\_\+\+CLEAR\+\_\+\+Mask}}~((uint16\+\_\+t)0x\+FCFF)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_gad5dd1d08f3836f9a3c3f3cc0c66a8b8f}{CR3\+\_\+\+IREN\+\_\+\+Set}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_gad1520358de97e48fe18780e5cc5296bd}{CR3\+\_\+\+IREN\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFFD)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga2fe593d0c308e2245bb66905930b3ebb}{GTPR\+\_\+\+LSB\+\_\+\+Mask}}~((uint16\+\_\+t)0x00\+FF)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga405b4222892bafdf1d084de5efd24d70}{GTPR\+\_\+\+MSB\+\_\+\+Mask}}~((uint16\+\_\+t)0x\+FF00)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga401c753d4de6ab56fcb026c91b8c8487}{IT\+\_\+\+Mask}}~((uint16\+\_\+t)0x001F)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga11495857ca81074790c376317382140f}{CR1\+\_\+\+OVER8\+\_\+\+Set}}~((\mbox{\hyperlink{group___exported__types_gace9d960e74685e2cd84b36132dbbf8aa}{u16}})0x8000)  /\texorpdfstring{$\ast$}{*} USART OVER8 mode Enable Mask \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_gaf84165f2974000906c495b3c27dc5121}{CR1\+\_\+\+OVER8\+\_\+\+Reset}}~((\mbox{\hyperlink{group___exported__types_gace9d960e74685e2cd84b36132dbbf8aa}{u16}})0x7\+FFF)  /\texorpdfstring{$\ast$}{*} USART OVER8 mode Disable Mask \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_gac512024dda541435acfe0b50de925105}{CR3\+\_\+\+ONEBITE\+\_\+\+Set}}~((\mbox{\hyperlink{group___exported__types_gace9d960e74685e2cd84b36132dbbf8aa}{u16}})0x0800)  /\texorpdfstring{$\ast$}{*} USART ONEBITE mode Enable Mask \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___private___defines_ga55dc289819dde550630df98267bbef52}{CR3\+\_\+\+ONEBITE\+\_\+\+Reset}}~((\mbox{\hyperlink{group___exported__types_gace9d960e74685e2cd84b36132dbbf8aa}{u16}})0x\+F7\+FF)  /\texorpdfstring{$\ast$}{*} USART ONEBITE mode Disable Mask \texorpdfstring{$\ast$}{*}/
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga2f8e1ce72da21b6539d8e1f299ec3b0d}{USART\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the USARTx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga98da340ea0324002ba1b4263e91ab2ff}{USART\+\_\+\+Init}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{struct_u_s_a_r_t___init_type_def}{USART\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}USART\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the USARTx peripheral according to the specified parameters in the USART\+\_\+\+Init\+Struct . \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga34e1faa2f312496c16cfd05155f4c8b1}{USART\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_u_s_a_r_t___init_type_def}{USART\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}USART\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each USART\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_gadb50c7a2175c91acd3728f8eefd0c63d}{USART\+\_\+\+Clock\+Init}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{struct_u_s_a_r_t___clock_init_type_def}{USART\+\_\+\+Clock\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}USART\+\_\+\+Clock\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the USARTx peripheral Clock according to the specified parameters in the USART\+\_\+\+Clock\+Init\+Struct . \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga59df27d0adda18b16ee28d47672cc724}{USART\+\_\+\+Clock\+Struct\+Init}} (\mbox{\hyperlink{struct_u_s_a_r_t___clock_init_type_def}{USART\+\_\+\+Clock\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}USART\+\_\+\+Clock\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each USART\+\_\+\+Clock\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga45e51626739c5f22a6567c8a85d1d85e}{USART\+\_\+\+Cmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified USART peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga6d8f2dd1f34060ae7e386e3e5d56b6f6}{USART\+\_\+\+ITConfig}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+IT, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified USART interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga902857f199ebfba21c63d725354af66f}{USART\+\_\+\+DMACmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+DMAReq, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART’s DMA interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga65ec9928817f3f031dd9a4dfc95d6666}{USART\+\_\+\+Set\+Address}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint8\+\_\+t USART\+\_\+\+Address)
+\begin{DoxyCompactList}\small\item\em Sets the address of the USART node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga4965417c2412c36e462fcad50a8d5393}{USART\+\_\+\+Wake\+Up\+Config}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+Wake\+Up)
+\begin{DoxyCompactList}\small\item\em Selects the USART Wake\+Up method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_gac27b78ce445a16fe33851d2f87781c02}{USART\+\_\+\+Receiver\+Wake\+Up\+Cmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Determines if the USART is in mute mode or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga7bc2d291831cbc5e53e73337308029b5}{USART\+\_\+\+LINBreak\+Detect\+Length\+Config}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+LINBreak\+Detect\+Length)
+\begin{DoxyCompactList}\small\item\em Sets the USART LIN Break detection length. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga9fdd6296f4ca4acdfcbd58bf56bd4185}{USART\+\_\+\+LINCmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART’s LIN mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga0b43d42da9540f446d494bf69823c6fb}{USART\+\_\+\+Send\+Data}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Transmits single data through the USARTx peripheral. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___u_s_a_r_t___private___functions_gac67a91845b0b1d54d31bdfb1c5e9867c}{USART\+\_\+\+Receive\+Data}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the USARTx peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga39a3d33e23ee28529fa8f7259ce6811e}{USART\+\_\+\+Send\+Break}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx)
+\begin{DoxyCompactList}\small\item\em Transmits break characters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_gac4a35c6acd71ae7e0d67c1f03f0a8777}{USART\+\_\+\+Set\+Guard\+Time}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint8\+\_\+t USART\+\_\+\+Guard\+Time)
+\begin{DoxyCompactList}\small\item\em Sets the specified USART guard time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_gaf5da8f2eee8245425584d85d4f62cc33}{USART\+\_\+\+Set\+Prescaler}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint8\+\_\+t USART\+\_\+\+Prescaler)
+\begin{DoxyCompactList}\small\item\em Sets the system clock prescaler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_gabd1347e244c623447151ba3a5e986c5f}{USART\+\_\+\+Smart\+Card\+Cmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART’s Smart Card mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga62e22f47e38aa53f2edce8771f7a5dfa}{USART\+\_\+\+Smart\+Card\+NACKCmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables NACK transmission. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_gaaa23b05fe0e1896bad90da7f82750831}{USART\+\_\+\+Half\+Duplex\+Cmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART’s Half Duplex communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga3897bab07491d9239f8a238a9a7cddea}{USART\+\_\+\+Over\+Sampling8\+Cmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s 8x oversampling mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga3ed89ea8765d851510cfe90f7d90cbbb}{USART\+\_\+\+One\+Bit\+Method\+Cmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s one bit sampling method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga81a0cd36199040bf6d266b57babd678e}{USART\+\_\+\+Ir\+DAConfig}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+Ir\+DAMode)
+\begin{DoxyCompactList}\small\item\em Configures the USART\textquotesingle{}s Ir\+DA interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_gabff56ebb494fdfadcc6ef4fe9ac8dd24}{USART\+\_\+\+Ir\+DACmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s Ir\+DA interface. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga144630722defc9e312f0ad280b68e9da}{USART\+\_\+\+Get\+Flag\+Status}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified USART flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_gad962e148fc466ae1b45b288f6c91d966}{USART\+\_\+\+Clear\+Flag}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the USARTx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga93d8f031241bcdbe938d091a85295445}{USART\+\_\+\+Get\+ITStatus}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified USART interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___private___functions_ga1fc25d0338695063be5e50156955d9bc}{USART\+\_\+\+Clear\+ITPending\+Bit}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the USARTx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides all the USART firmware functions. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

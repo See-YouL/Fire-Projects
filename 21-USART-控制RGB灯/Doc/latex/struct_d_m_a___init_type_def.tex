@@ -1,0 +1,116 @@
+\doxysection{DMA\+\_\+\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_d_m_a___init_type_def}{}\label{struct_d_m_a___init_type_def}\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+
+
+DMA Init structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32f10x\+\_\+dma.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a232af556de7c2eec9a82d448730bd86d}{DMA\+\_\+\+Peripheral\+Base\+Addr}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a41e7d463f0cfbcedf3170d7d27d088df}{DMA\+\_\+\+Memory\+Base\+Addr}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a91b47435ccf4a40efa97bbbe631789e1}{DMA\+\_\+\+DIR}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a999df57215b28b3b1b3b6836c4952ca5}{DMA\+\_\+\+Buffer\+Size}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_ad4d427790f9a089ca0257a358fc263c2}{DMA\+\_\+\+Peripheral\+Inc}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_aaf69c680a297ec01a2ed613289e691a1}{DMA\+\_\+\+Memory\+Inc}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_afb46aaadfb80a7e19277c868bd252554}{DMA\+\_\+\+Peripheral\+Data\+Size}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a74bb71921c4d198d6cf1979c120f694f}{DMA\+\_\+\+Memory\+Data\+Size}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a8adbe6f3e46471d109afaa3111dce220}{DMA\+\_\+\+Mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_ab9a17bd51778478cbd728c868206dca0}{DMA\+\_\+\+Priority}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_d_m_a___init_type_def_a57944cc447e6fcde4e9aa6229d3b4c5d}{DMA\+\_\+\+M2M}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+DMA Init structure definition. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_d_m_a___init_type_def_a999df57215b28b3b1b3b6836c4952ca5}\label{struct_d_m_a___init_type_def_a999df57215b28b3b1b3b6836c4952ca5} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!DMA\_BufferSize@{DMA\_BufferSize}}
+\index{DMA\_BufferSize@{DMA\_BufferSize}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMA\_BufferSize}{DMA\_BufferSize}}
+{\footnotesize\ttfamily uint32\+\_\+t DMA\+\_\+\+Init\+Type\+Def\+::\+DMA\+\_\+\+Buffer\+Size}
+
+Specifies the buffer size, in data unit, of the specified Channel. The data unit is equal to the configuration set in DMA\+\_\+\+Peripheral\+Data\+Size or DMA\+\_\+\+Memory\+Data\+Size members depending in the transfer direction. \Hypertarget{struct_d_m_a___init_type_def_a91b47435ccf4a40efa97bbbe631789e1}\label{struct_d_m_a___init_type_def_a91b47435ccf4a40efa97bbbe631789e1} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!DMA\_DIR@{DMA\_DIR}}
+\index{DMA\_DIR@{DMA\_DIR}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMA\_DIR}{DMA\_DIR}}
+{\footnotesize\ttfamily uint32\+\_\+t DMA\+\_\+\+Init\+Type\+Def\+::\+DMA\+\_\+\+DIR}
+
+Specifies if the peripheral is the source or destination. This parameter can be a value of \doxylink{group___d_m_a__data__transfer__direction}{DMA\+\_\+data\+\_\+transfer\+\_\+direction} \Hypertarget{struct_d_m_a___init_type_def_a57944cc447e6fcde4e9aa6229d3b4c5d}\label{struct_d_m_a___init_type_def_a57944cc447e6fcde4e9aa6229d3b4c5d} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!DMA\_M2M@{DMA\_M2M}}
+\index{DMA\_M2M@{DMA\_M2M}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMA\_M2M}{DMA\_M2M}}
+{\footnotesize\ttfamily uint32\+\_\+t DMA\+\_\+\+Init\+Type\+Def\+::\+DMA\+\_\+\+M2M}
+
+Specifies if the DMAy Channelx will be used in memory-\/to-\/memory transfer. This parameter can be a value of \doxylink{group___d_m_a__memory__to__memory}{DMA\+\_\+memory\+\_\+to\+\_\+memory} \Hypertarget{struct_d_m_a___init_type_def_a41e7d463f0cfbcedf3170d7d27d088df}\label{struct_d_m_a___init_type_def_a41e7d463f0cfbcedf3170d7d27d088df} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!DMA\_MemoryBaseAddr@{DMA\_MemoryBaseAddr}}
+\index{DMA\_MemoryBaseAddr@{DMA\_MemoryBaseAddr}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMA\_MemoryBaseAddr}{DMA\_MemoryBaseAddr}}
+{\footnotesize\ttfamily uint32\+\_\+t DMA\+\_\+\+Init\+Type\+Def\+::\+DMA\+\_\+\+Memory\+Base\+Addr}
+
+Specifies the memory base address for DMAy Channelx. \Hypertarget{struct_d_m_a___init_type_def_a74bb71921c4d198d6cf1979c120f694f}\label{struct_d_m_a___init_type_def_a74bb71921c4d198d6cf1979c120f694f} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!DMA\_MemoryDataSize@{DMA\_MemoryDataSize}}
+\index{DMA\_MemoryDataSize@{DMA\_MemoryDataSize}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMA\_MemoryDataSize}{DMA\_MemoryDataSize}}
+{\footnotesize\ttfamily uint32\+\_\+t DMA\+\_\+\+Init\+Type\+Def\+::\+DMA\+\_\+\+Memory\+Data\+Size}
+
+Specifies the Memory data width. This parameter can be a value of \doxylink{group___d_m_a__memory__data__size}{DMA\+\_\+memory\+\_\+data\+\_\+size} \Hypertarget{struct_d_m_a___init_type_def_aaf69c680a297ec01a2ed613289e691a1}\label{struct_d_m_a___init_type_def_aaf69c680a297ec01a2ed613289e691a1} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!DMA\_MemoryInc@{DMA\_MemoryInc}}
+\index{DMA\_MemoryInc@{DMA\_MemoryInc}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMA\_MemoryInc}{DMA\_MemoryInc}}
+{\footnotesize\ttfamily uint32\+\_\+t DMA\+\_\+\+Init\+Type\+Def\+::\+DMA\+\_\+\+Memory\+Inc}
+
+Specifies whether the memory address register is incremented or not. This parameter can be a value of \doxylink{group___d_m_a__memory__incremented__mode}{DMA\+\_\+memory\+\_\+incremented\+\_\+mode} \Hypertarget{struct_d_m_a___init_type_def_a8adbe6f3e46471d109afaa3111dce220}\label{struct_d_m_a___init_type_def_a8adbe6f3e46471d109afaa3111dce220} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!DMA\_Mode@{DMA\_Mode}}
+\index{DMA\_Mode@{DMA\_Mode}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMA\_Mode}{DMA\_Mode}}
+{\footnotesize\ttfamily uint32\+\_\+t DMA\+\_\+\+Init\+Type\+Def\+::\+DMA\+\_\+\+Mode}
+
+Specifies the operation mode of the DMAy Channelx. This parameter can be a value of \doxylink{group___d_m_a__circular__normal__mode}{DMA\+\_\+circular\+\_\+normal\+\_\+mode}. \begin{DoxyNote}{Note}
+\+: The circular buffer mode cannot be used if the memory-\/to-\/memory data transfer is configured on the selected Channel 
+\end{DoxyNote}
+\Hypertarget{struct_d_m_a___init_type_def_a232af556de7c2eec9a82d448730bd86d}\label{struct_d_m_a___init_type_def_a232af556de7c2eec9a82d448730bd86d} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!DMA\_PeripheralBaseAddr@{DMA\_PeripheralBaseAddr}}
+\index{DMA\_PeripheralBaseAddr@{DMA\_PeripheralBaseAddr}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMA\_PeripheralBaseAddr}{DMA\_PeripheralBaseAddr}}
+{\footnotesize\ttfamily uint32\+\_\+t DMA\+\_\+\+Init\+Type\+Def\+::\+DMA\+\_\+\+Peripheral\+Base\+Addr}
+
+Specifies the peripheral base address for DMAy Channelx. \Hypertarget{struct_d_m_a___init_type_def_afb46aaadfb80a7e19277c868bd252554}\label{struct_d_m_a___init_type_def_afb46aaadfb80a7e19277c868bd252554} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!DMA\_PeripheralDataSize@{DMA\_PeripheralDataSize}}
+\index{DMA\_PeripheralDataSize@{DMA\_PeripheralDataSize}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMA\_PeripheralDataSize}{DMA\_PeripheralDataSize}}
+{\footnotesize\ttfamily uint32\+\_\+t DMA\+\_\+\+Init\+Type\+Def\+::\+DMA\+\_\+\+Peripheral\+Data\+Size}
+
+Specifies the Peripheral data width. This parameter can be a value of \doxylink{group___d_m_a__peripheral__data__size}{DMA\+\_\+peripheral\+\_\+data\+\_\+size} \Hypertarget{struct_d_m_a___init_type_def_ad4d427790f9a089ca0257a358fc263c2}\label{struct_d_m_a___init_type_def_ad4d427790f9a089ca0257a358fc263c2} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!DMA\_PeripheralInc@{DMA\_PeripheralInc}}
+\index{DMA\_PeripheralInc@{DMA\_PeripheralInc}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMA\_PeripheralInc}{DMA\_PeripheralInc}}
+{\footnotesize\ttfamily uint32\+\_\+t DMA\+\_\+\+Init\+Type\+Def\+::\+DMA\+\_\+\+Peripheral\+Inc}
+
+Specifies whether the Peripheral address register is incremented or not. This parameter can be a value of \doxylink{group___d_m_a__peripheral__incremented__mode}{DMA\+\_\+peripheral\+\_\+incremented\+\_\+mode} \Hypertarget{struct_d_m_a___init_type_def_ab9a17bd51778478cbd728c868206dca0}\label{struct_d_m_a___init_type_def_ab9a17bd51778478cbd728c868206dca0} 
+\index{DMA\_InitTypeDef@{DMA\_InitTypeDef}!DMA\_Priority@{DMA\_Priority}}
+\index{DMA\_Priority@{DMA\_Priority}!DMA\_InitTypeDef@{DMA\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMA\_Priority}{DMA\_Priority}}
+{\footnotesize\ttfamily uint32\+\_\+t DMA\+\_\+\+Init\+Type\+Def\+::\+DMA\+\_\+\+Priority}
+
+Specifies the software priority for the DMAy Channelx. This parameter can be a value of \doxylink{group___d_m_a__priority__level}{DMA\+\_\+priority\+\_\+level} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/21-\/\+USART-\/控制\+RGB灯/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/\mbox{\hyperlink{stm32f10x__dma_8h}{stm32f10x\+\_\+dma.\+h}}\end{DoxyCompactItemize}

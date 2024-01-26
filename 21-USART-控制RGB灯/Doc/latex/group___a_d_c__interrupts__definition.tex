@@ -1,0 +1,59 @@
+\doxysubsubsubsection{ADC\+\_\+interrupts\+\_\+definition}
+\hypertarget{group___a_d_c__interrupts__definition}{}\label{group___a_d_c__interrupts__definition}\index{ADC\_interrupts\_definition@{ADC\_interrupts\_definition}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__interrupts__definition_ga0ad335d835f54415194d448019569e00}{ADC\+\_\+\+IT\+\_\+\+EOC}}~((uint16\+\_\+t)0x0220)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__interrupts__definition_ga2f5c7f9900c24250a0c6ccaa7cbca946}{ADC\+\_\+\+IT\+\_\+\+AWD}}~((uint16\+\_\+t)0x0140)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__interrupts__definition_gad439fc0cd69706704d47aeabfeddb631}{ADC\+\_\+\+IT\+\_\+\+JEOC}}~((uint16\+\_\+t)0x0480)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__interrupts__definition_gaf5f8d35930becff402eeb8220641432f}{IS\+\_\+\+ADC\+\_\+\+IT}}(IT)~((((IT) \& (uint16\+\_\+t)0x\+F81F) == 0x00) \&\& ((IT) != 0x00))
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__interrupts__definition_gacae69f04de1a0033f065864d868c006e}{IS\+\_\+\+ADC\+\_\+\+GET\+\_\+\+IT}}(IT)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___a_d_c__interrupts__definition_ga2f5c7f9900c24250a0c6ccaa7cbca946}\label{group___a_d_c__interrupts__definition_ga2f5c7f9900c24250a0c6ccaa7cbca946} 
+\index{ADC\_interrupts\_definition@{ADC\_interrupts\_definition}!ADC\_IT\_AWD@{ADC\_IT\_AWD}}
+\index{ADC\_IT\_AWD@{ADC\_IT\_AWD}!ADC\_interrupts\_definition@{ADC\_interrupts\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{ADC\_IT\_AWD}{ADC\_IT\_AWD}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+IT\+\_\+\+AWD~((uint16\+\_\+t)0x0140)}
+
+\Hypertarget{group___a_d_c__interrupts__definition_ga0ad335d835f54415194d448019569e00}\label{group___a_d_c__interrupts__definition_ga0ad335d835f54415194d448019569e00} 
+\index{ADC\_interrupts\_definition@{ADC\_interrupts\_definition}!ADC\_IT\_EOC@{ADC\_IT\_EOC}}
+\index{ADC\_IT\_EOC@{ADC\_IT\_EOC}!ADC\_interrupts\_definition@{ADC\_interrupts\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{ADC\_IT\_EOC}{ADC\_IT\_EOC}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+IT\+\_\+\+EOC~((uint16\+\_\+t)0x0220)}
+
+\Hypertarget{group___a_d_c__interrupts__definition_gad439fc0cd69706704d47aeabfeddb631}\label{group___a_d_c__interrupts__definition_gad439fc0cd69706704d47aeabfeddb631} 
+\index{ADC\_interrupts\_definition@{ADC\_interrupts\_definition}!ADC\_IT\_JEOC@{ADC\_IT\_JEOC}}
+\index{ADC\_IT\_JEOC@{ADC\_IT\_JEOC}!ADC\_interrupts\_definition@{ADC\_interrupts\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{ADC\_IT\_JEOC}{ADC\_IT\_JEOC}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+IT\+\_\+\+JEOC~((uint16\+\_\+t)0x0480)}
+
+\Hypertarget{group___a_d_c__interrupts__definition_gacae69f04de1a0033f065864d868c006e}\label{group___a_d_c__interrupts__definition_gacae69f04de1a0033f065864d868c006e} 
+\index{ADC\_interrupts\_definition@{ADC\_interrupts\_definition}!IS\_ADC\_GET\_IT@{IS\_ADC\_GET\_IT}}
+\index{IS\_ADC\_GET\_IT@{IS\_ADC\_GET\_IT}!ADC\_interrupts\_definition@{ADC\_interrupts\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_ADC\_GET\_IT}{IS\_ADC\_GET\_IT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+GET\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{IT }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((IT)\ ==\ \mbox{\hyperlink{group___a_d_c__interrupts__definition_ga0ad335d835f54415194d448019569e00}{ADC\_IT\_EOC}})\ ||\ ((IT)\ ==\ \mbox{\hyperlink{group___a_d_c__interrupts__definition_ga2f5c7f9900c24250a0c6ccaa7cbca946}{ADC\_IT\_AWD}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ \mbox{\hyperlink{group___a_d_c__interrupts__definition_gad439fc0cd69706704d47aeabfeddb631}{ADC\_IT\_JEOC}}))}
+
+\end{DoxyCode}
+\Hypertarget{group___a_d_c__interrupts__definition_gaf5f8d35930becff402eeb8220641432f}\label{group___a_d_c__interrupts__definition_gaf5f8d35930becff402eeb8220641432f} 
+\index{ADC\_interrupts\_definition@{ADC\_interrupts\_definition}!IS\_ADC\_IT@{IS\_ADC\_IT}}
+\index{IS\_ADC\_IT@{IS\_ADC\_IT}!ADC\_interrupts\_definition@{ADC\_interrupts\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_ADC\_IT}{IS\_ADC\_IT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{IT }\end{DoxyParamCaption})~((((IT) \& (uint16\+\_\+t)0x\+F81F) == 0x00) \&\& ((IT) != 0x00))}
+

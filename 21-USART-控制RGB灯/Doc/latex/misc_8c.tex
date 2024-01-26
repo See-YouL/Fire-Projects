@@ -1,0 +1,46 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/21-\/\+USART-\/控制\+RGB灯/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/src/misc.c File Reference}
+\hypertarget{misc_8c}{}\label{misc_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/src/misc.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/src/misc.c}}
+
+
+This file provides all the miscellaneous firmware functions (add-\/on to CMSIS functions).  
+
+
+{\ttfamily \#include "{}misc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___m_i_s_c___private___defines_gad6905141fba3a2d8d5570db40805dc6a}{AIRCR\+\_\+\+VECTKEY\+\_\+\+MASK}}~((uint32\+\_\+t)0x05\+FA0000)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___m_i_s_c___private___functions_gadfb1f34f803ce54c976643db8c484442}{NVIC\+\_\+\+Priority\+Group\+Config}} (uint32\+\_\+t NVIC\+\_\+\+Priority\+Group)
+\begin{DoxyCompactList}\small\item\em Configures the priority grouping\+: pre-\/emption priority and subpriority. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_i_s_c___private___functions_ga4ab373ed0870c06fca5eb51d639adf41}{NVIC\+\_\+\+Init}} (\mbox{\hyperlink{struct_n_v_i_c___init_type_def}{NVIC\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}NVIC\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the NVIC peripheral according to the specified parameters in the NVIC\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_i_s_c___private___functions_ga1145208ad70edfc2fab19b8b8ef1b1a1}{NVIC\+\_\+\+Set\+Vector\+Table}} (uint32\+\_\+t NVIC\+\_\+\+Vect\+Tab, uint32\+\_\+t Offset)
+\begin{DoxyCompactList}\small\item\em Sets the vector table location and Offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_i_s_c___private___functions_gae21011c5232f5b8f366acbecd12a1d4a}{NVIC\+\_\+\+System\+LPConfig}} (uint8\+\_\+t Low\+Power\+Mode, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Selects the condition for the system to enter low power mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_i_s_c___private___functions_ga2777d255bb06ad62bb6372a9db1ff385}{Sys\+Tick\+\_\+\+CLKSource\+Config}} (uint32\+\_\+t Sys\+Tick\+\_\+\+CLKSource)
+\begin{DoxyCompactList}\small\item\em Configures the Sys\+Tick clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides all the miscellaneous firmware functions (add-\/on to CMSIS functions). 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

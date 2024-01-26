@@ -1,0 +1,124 @@
+\doxysection{bsp\+\_\+usart.\+h}
+\hypertarget{bsp__usart_8h_source}{}\label{bsp__usart_8h_source}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/User/usart/bsp\_usart.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/User/usart/bsp\_usart.h}}
+\mbox{\hyperlink{bsp__usart_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_BSP\_USART\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_BSP\_USART\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f10x_8h}{stm32f10x.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00013\ \ \textcolor{comment}{//\ 通过条件编译选择串口,\ 使用的串口置1，其余置0}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \#define\ DEBUG\_USART1\ 1}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \#define\ DEBUG\_USART2\ 0}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \#define\ DEBUG\_USART3\ 0}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \#define\ DEBUG\_USART4\ 0}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \#define\ DEBUG\_USART5\ 0}}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#if\ DEBUG\_USART1}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ 串口1-\/USART1}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USARTx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ USART1}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_CLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RCC\_APB2Periph\_USART1}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_APBxClkCmd\ \ \ \ \ \ \ \ \ RCC\_APB2PeriphClockCmd}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_BAUDRATE\ \ \ \ \ \ \ \ \ \ \ 115200}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ USART\ GPIO\ 引脚宏定义}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_GPIO\_CLK\ \ \ \ \ \ \ \ \ \ \ (RCC\_APB2Periph\_GPIOA)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_GPIO\_APBxClkCmd\ \ \ \ RCC\_APB2PeriphClockCmd}}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_TX\_GPIO\_PORT\ \ \ \ \ \ \ GPIOA\ \ \ }}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_TX\_GPIO\_PIN\ \ \ \ \ \ \ \ GPIO\_Pin\_9}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_RX\_GPIO\_PORT\ \ \ \ \ \ \ GPIOA}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_RX\_GPIO\_PIN\ \ \ \ \ \ \ \ GPIO\_Pin\_10}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_IRQ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ USART1\_IRQn}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_IRQHandler\ \ \ \ \ \ \ \ \ USART1\_IRQHandler}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#elif\ DEBUG\_USART2}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ 串口2-\/USART2}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USARTx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ USART2}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_CLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RCC\_APB1Periph\_USART2}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_APBxClkCmd\ \ \ \ \ \ \ \ \ RCC\_APB1PeriphClockCmd}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_BAUDRATE\ \ \ \ \ \ \ \ \ \ \ 115200}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ USART\ GPIO\ 引脚宏定义}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_GPIO\_CLK\ \ \ \ \ \ \ \ \ \ \ (RCC\_APB2Periph\_GPIOA)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_GPIO\_APBxClkCmd\ \ \ \ RCC\_APB2PeriphClockCmd}}
+\DoxyCodeLine{00049\ \ \ \ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_TX\_GPIO\_PORT\ \ \ \ \ \ \ GPIOA\ \ \ }}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_TX\_GPIO\_PIN\ \ \ \ \ \ \ \ GPIO\_Pin\_2}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_RX\_GPIO\_PORT\ \ \ \ \ \ \ GPIOA}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_RX\_GPIO\_PIN\ \ \ \ \ \ \ \ GPIO\_Pin\_3}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_IRQ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ USART2\_IRQn}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_IRQHandler\ \ \ \ \ \ \ \ \ USART2\_IRQHandler}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#elif\ DEBUG\_USART3}}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ 串口3-\/USART3}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USARTx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ USART3}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_CLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RCC\_APB1Periph\_USART3}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_APBxClkCmd\ \ \ \ \ \ \ \ \ RCC\_APB1PeriphClockCmd}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_BAUDRATE\ \ \ \ \ \ \ \ \ \ \ 115200}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ USART\ GPIO\ 引脚宏定义}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_GPIO\_CLK\ \ \ \ \ \ \ \ \ \ \ (RCC\_APB2Periph\_GPIOB)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_GPIO\_APBxClkCmd\ \ \ \ RCC\_APB2PeriphClockCmd}}
+\DoxyCodeLine{00068\ \ \ \ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_TX\_GPIO\_PORT\ \ \ \ \ \ \ GPIOB\ \ \ }}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_TX\_GPIO\_PIN\ \ \ \ \ \ \ \ GPIO\_Pin\_10}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_RX\_GPIO\_PORT\ \ \ \ \ \ \ GPIOB}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_RX\_GPIO\_PIN\ \ \ \ \ \ \ \ GPIO\_Pin\_11}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_IRQ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ USART3\_IRQn}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_IRQHandler\ \ \ \ \ \ \ \ \ USART3\_IRQHandler}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#elif\ DEBUG\_USART4}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//串口4-\/UART4}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USARTx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UART4}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_CLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RCC\_APB1Periph\_UART4}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_APBxClkCmd\ \ \ \ \ \ \ \ \ RCC\_APB1PeriphClockCmd}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_BAUDRATE\ \ \ \ \ \ \ \ \ \ \ 115200}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ USART\ GPIO\ 引脚宏定义}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_GPIO\_CLK\ \ \ \ \ \ \ \ \ \ \ (RCC\_APB2Periph\_GPIOC)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_GPIO\_APBxClkCmd\ \ \ \ RCC\_APB2PeriphClockCmd}}
+\DoxyCodeLine{00087\ \ \ \ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_TX\_GPIO\_PORT\ \ \ \ \ \ \ GPIOC\ \ \ }}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_TX\_GPIO\_PIN\ \ \ \ \ \ \ \ GPIO\_Pin\_10}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_RX\_GPIO\_PORT\ \ \ \ \ \ \ GPIOC}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_RX\_GPIO\_PIN\ \ \ \ \ \ \ \ GPIO\_Pin\_11}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_IRQ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UART4\_IRQn}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_IRQHandler\ \ \ \ \ \ \ \ \ UART4\_IRQHandler}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#elif\ DEBUG\_UART5}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ 串口5-\/UART5}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USARTx\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UART5}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_CLK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RCC\_APB1Periph\_UART5}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_APBxClkCmd\ \ \ \ \ \ \ \ \ RCC\_APB1PeriphClockCmd}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_BAUDRATE\ \ \ \ \ \ \ \ \ \ \ 115200}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ USART\ GPIO\ 引脚宏定义}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_GPIO\_CLK\ \ \ \ \ \ \ \ \ \ \ (RCC\_APB2Periph\_GPIOC|RCC\_APB2Periph\_GPIOD)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_GPIO\_APBxClkCmd\ \ \ \ RCC\_APB2PeriphClockCmd}}
+\DoxyCodeLine{00106\ \ \ \ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_TX\_GPIO\_PORT\ \ \ \ \ \ \ GPIOC\ \ \ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_TX\_GPIO\_PIN\ \ \ \ \ \ \ \ GPIO\_Pin\_12}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_RX\_GPIO\_PORT\ \ \ \ \ \ \ GPIOD}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_RX\_GPIO\_PIN\ \ \ \ \ \ \ \ GPIO\_Pin\_2}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_IRQ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UART5\_IRQn}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ \ DEBUG\_USART\_IRQHandler\ \ \ \ \ \ \ \ \ UART5\_IRQHandler}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bsp__usart_8h_ae9720bf2dbb461c28e0205b050f1a0bb}{USART\_Config}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bsp__usart_8h_adb4b049dd4c3bc2a52fd1ce263a904b5}{Usart\_SendByte}}(\ \mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\_TypeDef}}\ *\ pUSARTx,\ uint8\_t\ ch);}
+\DoxyCodeLine{00119\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bsp__usart_8h_a909b7c31efd7acf63342bcec9dea5f6f}{Usart\_SendHalfWord}}(\ \mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\_TypeDef}}\ *\ pUSARTx,\ uint16\_t\ ch);}
+\DoxyCodeLine{00120\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bsp__usart_8h_acbf2a00998db738ba52b8292c486ef12}{Usart\_SendArray}}(\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\_TypeDef}}*\ pUSARTx,\ uint8\_t*\ array,\ uint16\_t\ num);}
+\DoxyCodeLine{00121\ \ \textcolor{comment}{//\ void\ Usart\_SendString(\ USART\_TypeDef\ *\ pUSARTx,\ char\ *str);}}
+\DoxyCodeLine{00122\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bsp__usart_8h_a78e47eb176afafebb243cd3eb32b7141}{Usart\_SendString}}(\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\_TypeDef}}*\ pUSARTx,\ uint8\_t*\ str);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_\_BSP\_USART\_H}}
+
+\end{DoxyCode}

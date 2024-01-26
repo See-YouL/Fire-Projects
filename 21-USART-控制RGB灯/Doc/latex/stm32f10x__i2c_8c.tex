@@ -1,0 +1,171 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/21-\/\+USART-\/控制\+RGB灯/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/src/stm32f10x\+\_\+i2c.c File Reference}
+\hypertarget{stm32f10x__i2c_8c}{}\label{stm32f10x__i2c_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_i2c.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_i2c.c}}
+
+
+This file provides all the I2C firmware functions.  
+
+
+{\ttfamily \#include "{}stm32f10x\+\_\+i2c.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f10x\+\_\+rcc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga913b708338087f3ffc2fba2b05a38917}{CR1\+\_\+\+PE\+\_\+\+Set}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga21dc289f16c502a2bc0a88e1514a8ee0}{CR1\+\_\+\+PE\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFFE)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga53820dd338da9779d039718148184ef9}{CR1\+\_\+\+START\+\_\+\+Set}}~((uint16\+\_\+t)0x0100)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gacc62242e31a380aec2ef9f836b3cf19d}{CR1\+\_\+\+START\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FEFF)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gac14ffc5548d2c30d21c49612c57e52be}{CR1\+\_\+\+STOP\+\_\+\+Set}}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gac44124bc7b468c7dee8188712e407e02}{CR1\+\_\+\+STOP\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FDFF)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga1f74487a0fbffdcd8a4c440c732dc316}{CR1\+\_\+\+ACK\+\_\+\+Set}}~((uint16\+\_\+t)0x0400)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gaa8bcbe2f6089d896aff8e7770368aada}{CR1\+\_\+\+ACK\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FBFF)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gadcd99a681046a2315f4bc72c9f461f0e}{CR1\+\_\+\+ENGC\+\_\+\+Set}}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gab51161052b055a5eecb0aad447a776e5}{CR1\+\_\+\+ENGC\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFBF)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga0e067bb108052ea0e8e49feb194c2ca0}{CR1\+\_\+\+SWRST\+\_\+\+Set}}~((uint16\+\_\+t)0x8000)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gab41b615034ed8f830ef4900a0fcefc39}{CR1\+\_\+\+SWRST\+\_\+\+Reset}}~((uint16\+\_\+t)0x7\+FFF)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gad0ab853d291338d4cf3aee736353f0b8}{CR1\+\_\+\+PEC\+\_\+\+Set}}~((uint16\+\_\+t)0x1000)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gabb6969dfa44c3539ef93f04f8136c3c7}{CR1\+\_\+\+PEC\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+EFFF)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga7fdf69341e5debc3244812012ae332e6}{CR1\+\_\+\+ENPEC\+\_\+\+Set}}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gabd33104d7b8e4673fa330f4ca3a97e44}{CR1\+\_\+\+ENPEC\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFDF)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga73cfd7b486b4279fc6a83de64ab23985}{CR1\+\_\+\+ENARP\+\_\+\+Set}}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga173b065ec9b7b33c0fa0bf71c0fa2207}{CR1\+\_\+\+ENARP\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFEF)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gac4abee43c3523527780f200adf465bc0}{CR1\+\_\+\+NOSTRETCH\+\_\+\+Set}}~((uint16\+\_\+t)0x0080)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga9a1609fd4bbcc38fc6423836730c8fa0}{CR1\+\_\+\+NOSTRETCH\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FF7F)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga67f7dd35ea3d1296677e5fc50b88fa90}{CR1\+\_\+\+CLEAR\+\_\+\+Mask}}~((uint16\+\_\+t)0x\+FBF5)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gafe82da50fa03bd5ecb36340da64c87ca}{CR2\+\_\+\+DMAEN\+\_\+\+Set}}~((uint16\+\_\+t)0x0800)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gabe742f89a768e29b9a2d86f7782991a6}{CR2\+\_\+\+DMAEN\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+F7\+FF)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga3604dd2f23b0f15a088ef6fe9731485a}{CR2\+\_\+\+LAST\+\_\+\+Set}}~((uint16\+\_\+t)0x1000)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga904e044226182269485936bad8314f84}{CR2\+\_\+\+LAST\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+EFFF)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga2bcf74bd8fc3aaa931faf750d1afe405}{CR2\+\_\+\+FREQ\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFC0)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gaeb56bf422fd13e68c82783df63f425ab}{OAR1\+\_\+\+ADD0\+\_\+\+Set}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gac5c2ac4577b70e1d7618b7fa1d715e3a}{OAR1\+\_\+\+ADD0\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFFE)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga859551657f688e5efdb3f573e78ee979}{OAR2\+\_\+\+ENDUAL\+\_\+\+Set}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gaae86eb7689c73e34388cfbd03b8d9ecd}{OAR2\+\_\+\+ENDUAL\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FFFE)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga243036db699954e290f48e6743323054}{OAR2\+\_\+\+ADD2\+\_\+\+Reset}}~((uint16\+\_\+t)0x\+FF01)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga3af49180596b283514782708ac85606e}{CCR\+\_\+\+FS\+\_\+\+Set}}~((uint16\+\_\+t)0x8000)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga07695fd4c06df54def77840118f83a0d}{CCR\+\_\+\+CCR\+\_\+\+Set}}~((uint16\+\_\+t)0x0\+FFF)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_ga2be62bf481cd44de9ab604efe5595ff6}{FLAG\+\_\+\+Mask}}~((uint32\+\_\+t)0x00\+FFFFFF)
+\item 
+\#define \mbox{\hyperlink{group___i2_c___private___defines_gab99e12994e073c2a681a6cf68492b3e2}{ITEN\+\_\+\+Mask}}~((uint32\+\_\+t)0x07000000)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga2ee214364603059ad5d9089f749f5bfd}{I2\+C\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the I2\+Cx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_gaac29465bca70fbc91c2f922ab67bb88e}{I2\+C\+\_\+\+Init}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{struct_i2_c___init_type_def}{I2\+C\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+C\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the I2\+Cx peripheral according to the specified parameters in the I2\+C\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga08582aca6d7d7910cd5cbff0d9def350}{I2\+C\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_i2_c___init_type_def}{I2\+C\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+C\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each I2\+C\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga7e1323c9133c2cb424dfb5b10b7d2f0b}{I2\+C\+\_\+\+Cmd}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga38502ce11e5ec923e0f6476aaa35b45c}{I2\+C\+\_\+\+DMACmd}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C DMA requests. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_gab2e994c5681eb6ec7c26a03ffe1de060}{I2\+C\+\_\+\+DMALast\+Transfer\+Cmd}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Specifies if the next DMA transfer will be the last one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga36c522b471588be9779c878222ccb20f}{I2\+C\+\_\+\+Generate\+START}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Generates I2\+Cx communication START condition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga5c92cb573ca0ae58cc465e5400246561}{I2\+C\+\_\+\+Generate\+STOP}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Generates I2\+Cx communication STOP condition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga7bb44e894d68a7991f564c43fb187486}{I2\+C\+\_\+\+Acknowledge\+Config}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C acknowledge feature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga7be2cc634a613c8e3539137e897a22df}{I2\+C\+\_\+\+Own\+Address2\+Config}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint8\+\_\+t Address)
+\begin{DoxyCompactList}\small\item\em Configures the specified I2C own address2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga02145a333a56e79557d6ef4ea03fc313}{I2\+C\+\_\+\+Dual\+Address\+Cmd}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C dual addressing mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga65c740fc8d7b3b9f15cc432d8699d471}{I2\+C\+\_\+\+General\+Call\+Cmd}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C general call feature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga58fed146a06cb81d2940604e460de047}{I2\+C\+\_\+\+ITConfig}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+IT, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga7bd9e70b8eafde0dd5eb42b0d95fe1a9}{I2\+C\+\_\+\+Send\+Data}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint8\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Sends a data byte through the I2\+Cx peripheral. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___i2_c___private___functions_gaeaaa4b6f77f50eb57465148c55d27fb2}{I2\+C\+\_\+\+Receive\+Data}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the I2\+Cx peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga009fc2a5b2313c36da39ece39a1156a6}{I2\+C\+\_\+\+Send7bit\+Address}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint8\+\_\+t Address, uint8\+\_\+t I2\+C\+\_\+\+Direction)
+\begin{DoxyCompactList}\small\item\em Transmits the address byte to select the slave device. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___i2_c___private___functions_ga8021dc796d15f997356b0583d6346805}{I2\+C\+\_\+\+Read\+Register}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint8\+\_\+t I2\+C\+\_\+\+Register)
+\begin{DoxyCompactList}\small\item\em Reads the specified I2C register and returns its value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga1289c908aeb882443aba323b459c638b}{I2\+C\+\_\+\+Software\+Reset\+Cmd}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C software reset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_gad08ebffc3a234d84e6405ec115bd74f1}{I2\+C\+\_\+\+NACKPosition\+Config}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+NACKPosition)
+\begin{DoxyCompactList}\small\item\em Selects the specified I2C NACK position in master receiver mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga75a810776d9710d2f6d9c5d9e93241c6}{I2\+C\+\_\+\+SMBus\+Alert\+Config}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+SMBus\+Alert)
+\begin{DoxyCompactList}\small\item\em Drives the SMBus\+Alert pin high or low for the specified I2C. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_gaa27d1440290fe601e730b6980999afe3}{I2\+C\+\_\+\+Transmit\+PEC}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C PEC transfer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga5d0f939bdd45542502827bf408f24161}{I2\+C\+\_\+\+PECPosition\+Config}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+PECPosition)
+\begin{DoxyCompactList}\small\item\em Selects the specified I2C PEC position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_gae86801251359226c35745e0a258388b0}{I2\+C\+\_\+\+Calculate\+PEC}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the PEC value calculation of the transferred bytes. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___i2_c___private___functions_ga7bf75e7c27c0e1d73e70fc0e1c7cd1dd}{I2\+C\+\_\+\+Get\+PEC}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em Returns the PEC value for the specified I2C. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga66d86742bf1be58b17ef8779ffc79d02}{I2\+C\+\_\+\+ARPCmd}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C ARP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga7459feb3b1dfcd3e4f6574002ca7d3bd}{I2\+C\+\_\+\+Stretch\+Clock\+Cmd}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified I2C Clock stretching. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_gaa570f76bc34e5b0531b29b1a90af1275}{I2\+C\+\_\+\+Fast\+Mode\+Duty\+Cycle\+Config}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint16\+\_\+t I2\+C\+\_\+\+Duty\+Cycle)
+\begin{DoxyCompactList}\small\item\em Selects the specified I2C fast mode duty cycle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga8333b96c67f83cba354b3407fcbb6ee8}{Error\+Status}} \mbox{\hyperlink{group___i2_c___private___functions_ga2d5701342f9d4c1f09bf9d3cdcacc326}{I2\+C\+\_\+\+Check\+Event}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+EVENT)
+\begin{DoxyCompactList}\small\item\em I2C State Monitoring Functions. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___i2_c___private___functions_ga29237aea9b5a3ead33167e1d027e9f1a}{I2\+C\+\_\+\+Get\+Last\+Event}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx)
+\begin{DoxyCompactList}\small\item\em 2) Advanced state monitoring \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___i2_c___private___functions_ga15c95d0ed124f029621a2061b1677ee7}{I2\+C\+\_\+\+Get\+Flag\+Status}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em 3) Flag-\/based state monitoring \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga9d4f8fe9f7232696114b5578b1223963}{I2\+C\+\_\+\+Clear\+Flag}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the I2\+Cx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} \mbox{\hyperlink{group___i2_c___private___functions_ga447771fbbd94a56f3570b9f430a069ba}{I2\+C\+\_\+\+Get\+ITStatus}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified I2C interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___i2_c___private___functions_ga110dda440fa200b5f77349df19b3e6bb}{I2\+C\+\_\+\+Clear\+ITPending\+Bit}} (\mbox{\hyperlink{struct_i2_c___type_def}{I2\+C\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}I2\+Cx, uint32\+\_\+t I2\+C\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the I2\+Cx�s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides all the I2C firmware functions. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

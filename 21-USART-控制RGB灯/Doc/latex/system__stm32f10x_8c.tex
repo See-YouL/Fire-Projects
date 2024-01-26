@@ -1,0 +1,66 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/21-\/\+USART-\/控制\+RGB灯/\+Libraries/\+CMSIS/system\+\_\+stm32f10x.c File Reference}
+\hypertarget{system__stm32f10x_8c}{}\label{system__stm32f10x_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/CMSIS/system\_stm32f10x.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/CMSIS/system\_stm32f10x.c}}
+
+
+CMSIS Cortex-\/\+M3 Device Peripheral Access Layer System Source File.  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_t_m32_f10x___system___private___defines_ga69649cc38f34627cfb48b51062ebd390}{SYSCLK\+\_\+\+FREQ\+\_\+72\+MHz}}~72000000
+\item 
+\#define \mbox{\hyperlink{group___s_t_m32_f10x___system___private___defines_ga40e1495541cbb4acbe3f1819bd87a9fe}{VECT\+\_\+\+TAB\+\_\+\+OFFSET}}~0x0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{group___s_t_m32_f10x___system___private___function_prototypes_ga1ee14ac28e60198cc998586807b51e4c}{Set\+Sys\+Clock}} (void)
+\begin{DoxyCompactList}\small\item\em Configures the System clock frequency, HCLK, PCLK2 and PCLK1 prescalers. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___s_t_m32_f10x___system___private___function_prototypes_ga33cc07ebcb658e015d1a4460dea5cf58}{Set\+Sys\+Clock\+To72}} (void)
+\begin{DoxyCompactList}\small\item\em Setup the external memory controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f10x___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2}{System\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Setup the microcontroller system Initialize the Embedded Flash Interface, the PLL and update the System\+Core\+Clock variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f10x___system___private___functions_gae0c36a9591fe6e9c45ecb21a794f0f0f}{System\+Core\+Clock\+Update}} (void)
+\begin{DoxyCompactList}\small\item\em Update System\+Core\+Clock variable according to Clock Register Values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___s_t_m32_f10x___system___private___variables_gaa3cd3e43291e81e795d642b79b6088e6}{System\+Core\+Clock}} = \mbox{\hyperlink{group___s_t_m32_f10x___system___private___defines_ga69649cc38f34627cfb48b51062ebd390}{SYSCLK\+\_\+\+FREQ\+\_\+72\+MHz}}
+\item 
+\mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_gaf63697ed9952cc71e1225efe205f6cd3}{\+\_\+\+\_\+I}} uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f10x___system___private___variables_gacdc3ef54c0704c90e69a8a84fb2d970d}{AHBPresc\+Table}} \mbox{[}16\mbox{]} = \{0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+CMSIS Cortex-\/\+M3 Device Peripheral Access Layer System Source File. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+
+\begin{DoxyEnumerate}
+\item This file provides two functions and one global variable to be called from user application\+:
+\begin{DoxyItemize}
+\item \doxylink{group___s_t_m32_f10x___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2}{System\+Init()}\+: Setups the system clock (System clock source, PLL Multiplier factors, AHB/\+APBx prescalers and Flash settings). This function is called at startup just after reset and before branch to main program. This call is made inside the "{}startup\+\_\+stm32f10x\+\_\+xx.\+s"{} file.
+\item System\+Core\+Clock variable\+: Contains the core clock (HCLK), it can be used by the user application to setup the Sys\+Tick timer or configure other parameters.
+\item \doxylink{group___s_t_m32_f10x___system___private___functions_gae0c36a9591fe6e9c45ecb21a794f0f0f}{System\+Core\+Clock\+Update()}\+: Updates the variable System\+Core\+Clock and must be called whenever the core clock is changed during program execution.
+\end{DoxyItemize}
+\item After each device reset the HSI (8 MHz) is used as system clock source. Then \doxylink{group___s_t_m32_f10x___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2}{System\+Init()} function is called, in "{}startup\+\_\+stm32f10x\+\_\+xx.\+s"{} file, to configure the system clock before to branch to main program.
+\item If the system clock source selected by user fails to startup, the \doxylink{group___s_t_m32_f10x___system___private___functions_ga93f514700ccf00d08dbdcff7f1224eb2}{System\+Init()} function will do nothing and HSI still used as system clock source. User can add some code to deal with this issue inside the \doxylink{group___s_t_m32_f10x___system___private___function_prototypes_ga1ee14ac28e60198cc998586807b51e4c}{Set\+Sys\+Clock()} function.
+\item The default value of HSE crystal is set to 8 MHz (or 25 MHz, depedning on the product used), refer to "{}\+HSE\+\_\+\+VALUE"{} define in "{}stm32f10x.\+h"{} file. When HSE is used as system clock source, directly or through PLL, and you are using different crystal you have to adapt the HSE value to your own configuration.
+\end{DoxyEnumerate}
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

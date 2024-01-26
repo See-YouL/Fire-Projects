@@ -1,0 +1,339 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/21-\/\+USART-\/控制\+RGB灯/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/stm32f10x\+\_\+sdio.h File Reference}
+\hypertarget{stm32f10x__sdio_8h}{}\label{stm32f10x__sdio_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_sdio.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_sdio.h}}
+
+
+This file contains all the functions prototypes for the SDIO firmware library.  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_i_o___init_type_def}{SDIO\+\_\+\+Init\+Type\+Def}}
+\item 
+struct \mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def}{SDIO\+\_\+\+Cmd\+Init\+Type\+Def}}
+\item 
+struct \mbox{\hyperlink{struct_s_d_i_o___data_init_type_def}{SDIO\+\_\+\+Data\+Init\+Type\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___clock___edge_ga6d0f902037762a3048d95303c0037313}{SDIO\+\_\+\+Clock\+Edge\+\_\+\+Rising}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___clock___edge_ga7be68024e3e2fe1994def85bc944189b}{SDIO\+\_\+\+Clock\+Edge\+\_\+\+Falling}}~((uint32\+\_\+t)0x00002000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___clock___edge_ga63420b10a52e3d82a89a45f20dc41786}{IS\+\_\+\+SDIO\+\_\+\+CLOCK\+\_\+\+EDGE}}(EDGE)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___clock___bypass_gacc168d55136a0c6575e5afd7a6550343}{SDIO\+\_\+\+Clock\+Bypass\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___clock___bypass_ga5e1e9f7e05ea62dd2315eb556bc10e5c}{SDIO\+\_\+\+Clock\+Bypass\+\_\+\+Enable}}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___clock___bypass_ga5d5a2fcdd3150e4a89c5aa1efd738dec}{IS\+\_\+\+SDIO\+\_\+\+CLOCK\+\_\+\+BYPASS}}(BYPASS)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___clock___power___save_ga032aa5fb2dfd7ba5dbd60a3845c82ba0}{SDIO\+\_\+\+Clock\+Power\+Save\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___clock___power___save_ga9f5b66a0044c4ff36a3eb1ec758f7ea7}{SDIO\+\_\+\+Clock\+Power\+Save\+\_\+\+Enable}}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___clock___power___save_ga41988203e5d4e35a755aa604f1876cd3}{IS\+\_\+\+SDIO\+\_\+\+CLOCK\+\_\+\+POWER\+\_\+\+SAVE}}(SAVE)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___bus___wide_ga9c333b57937c5cc0a173a58519f9250a}{SDIO\+\_\+\+Bus\+Wide\+\_\+1b}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___bus___wide_ga79815d1d798b28a2d3750ad25466ff1b}{SDIO\+\_\+\+Bus\+Wide\+\_\+4b}}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___bus___wide_ga4d864f5c4e1af298146afc1d680081e9}{SDIO\+\_\+\+Bus\+Wide\+\_\+8b}}~((uint32\+\_\+t)0x00001000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___bus___wide_gaa5c6ad922117d5df3213631bf68fde5b}{IS\+\_\+\+SDIO\+\_\+\+BUS\+\_\+\+WIDE}}(WIDE)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___hardware___flow___control_ga7529a3c8a11ac685bde4aafa12c8a977}{SDIO\+\_\+\+Hardware\+Flow\+Control\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___hardware___flow___control_gab6cfef6778d829f3dcefc6c2bad7c9aa}{SDIO\+\_\+\+Hardware\+Flow\+Control\+\_\+\+Enable}}~((uint32\+\_\+t)0x00004000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___hardware___flow___control_gad8be549f8348479d064dff21343ae411}{IS\+\_\+\+SDIO\+\_\+\+HARDWARE\+\_\+\+FLOW\+\_\+\+CONTROL}}(CONTROL)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___power___state_gab2f36a68fc50795ea74a7e98b4ac2d37}{SDIO\+\_\+\+Power\+State\+\_\+\+OFF}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___power___state_ga0aacd8c94effe8066c6d447fc884d217}{SDIO\+\_\+\+Power\+State\+\_\+\+ON}}~((uint32\+\_\+t)0x00000003)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___power___state_gad0dae767c2024de1769efb1feccc14ef}{IS\+\_\+\+SDIO\+\_\+\+POWER\+\_\+\+STATE}}(STATE)~(((STATE) == \mbox{\hyperlink{group___s_d_i_o___power___state_gab2f36a68fc50795ea74a7e98b4ac2d37}{SDIO\+\_\+\+Power\+State\+\_\+\+OFF}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((STATE) == \mbox{\hyperlink{group___s_d_i_o___power___state_ga0aacd8c94effe8066c6d447fc884d217}{SDIO\+\_\+\+Power\+State\+\_\+\+ON}}))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gabb076105e18355a260c40a379511e72f}{SDIO\+\_\+\+IT\+\_\+\+CCRCFAIL}}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gaf3321305cb4e24419185a4b92ead299a}{SDIO\+\_\+\+IT\+\_\+\+DCRCFAIL}}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_ga3c2fdef0993f10e65d4fddbdf71febed}{SDIO\+\_\+\+IT\+\_\+\+CTIMEOUT}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gaf5ce4bfa8459ccbe892791e5cdc26a6f}{SDIO\+\_\+\+IT\+\_\+\+DTIMEOUT}}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_ga93d4dbe3162b8507b2834a3e29e6c648}{SDIO\+\_\+\+IT\+\_\+\+TXUNDERR}}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_ga272953292e1b43b2108b00e75db76512}{SDIO\+\_\+\+IT\+\_\+\+RXOVERR}}~((uint32\+\_\+t)0x00000020)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_ga6df3bb694dc00e250cd22e16a03d6910}{SDIO\+\_\+\+IT\+\_\+\+CMDREND}}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gaf9d8fc4651c4b7555fb9ee4e5af6ca63}{SDIO\+\_\+\+IT\+\_\+\+CMDSENT}}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_ga6cc1c521b64fc57b844336f7f175dd1e}{SDIO\+\_\+\+IT\+\_\+\+DATAEND}}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_ga55f7e65ed1b70d5a6abdc3cc41b55766}{SDIO\+\_\+\+IT\+\_\+\+STBITERR}}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gaa1b1fb453a3ce3b10928aaeada2b2186}{SDIO\+\_\+\+IT\+\_\+\+DBCKEND}}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gae73ae9bc72eaeedc2a37221697bc33e2}{SDIO\+\_\+\+IT\+\_\+\+CMDACT}}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_ga811e683588ab887abb0101defafdb51e}{SDIO\+\_\+\+IT\+\_\+\+TXACT}}~((uint32\+\_\+t)0x00001000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_ga1d9a59a2415b57bdf9827423cb6ce3a0}{SDIO\+\_\+\+IT\+\_\+\+RXACT}}~((uint32\+\_\+t)0x00002000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gaf538ae7dd73d55e76069e8710858038a}{SDIO\+\_\+\+IT\+\_\+\+TXFIFOHE}}~((uint32\+\_\+t)0x00004000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gadcbc1a0de8b9df83b5c6c839b4739c87}{SDIO\+\_\+\+IT\+\_\+\+RXFIFOHF}}~((uint32\+\_\+t)0x00008000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_ga3ec471bd9233561d6e929ebac6362b75}{SDIO\+\_\+\+IT\+\_\+\+TXFIFOF}}~((uint32\+\_\+t)0x00010000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gae60a1d8e5a7caff85d84e513b093b8a8}{SDIO\+\_\+\+IT\+\_\+\+RXFIFOF}}~((uint32\+\_\+t)0x00020000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gabff1466c2f2effbe30b80a11c132d7c0}{SDIO\+\_\+\+IT\+\_\+\+TXFIFOE}}~((uint32\+\_\+t)0x00040000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_ga80b01aaf64c873d21bfa95e5d98d8766}{SDIO\+\_\+\+IT\+\_\+\+RXFIFOE}}~((uint32\+\_\+t)0x00080000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gac8e5744e6d977182a6fc7484a6f1195e}{SDIO\+\_\+\+IT\+\_\+\+TXDAVL}}~((uint32\+\_\+t)0x00100000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gaf236079642db95772334d1e9b9b27570}{SDIO\+\_\+\+IT\+\_\+\+RXDAVL}}~((uint32\+\_\+t)0x00200000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gaf5d7559460a9ff1fccc82d815de25cb4}{SDIO\+\_\+\+IT\+\_\+\+SDIOIT}}~((uint32\+\_\+t)0x00400000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_gae045cd5ba681d2df8b1031b8f659139a}{SDIO\+\_\+\+IT\+\_\+\+CEATAEND}}~((uint32\+\_\+t)0x00800000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___interrupt__sources_ga0e413e92ec50bab73042e8965acc3e6c}{IS\+\_\+\+SDIO\+\_\+\+IT}}(IT)~((((IT) \& (uint32\+\_\+t)0x\+FF000000) == 0x00) \&\& ((IT) != (uint32\+\_\+t)0x00))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___command___index_gae988f9f37c4ebb5f5f9866acb30f2880}{IS\+\_\+\+SDIO\+\_\+\+CMD\+\_\+\+INDEX}}(INDEX)~((INDEX) $<$ 0x40)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___response___type_ga308b8ef0e79ba451644dda923bb3ac41}{SDIO\+\_\+\+Response\+\_\+\+No}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___response___type_ga1f61768f90641648fd5c12e8d2f7e508}{SDIO\+\_\+\+Response\+\_\+\+Short}}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___response___type_ga1a11a8750612b344214f846784046bb0}{SDIO\+\_\+\+Response\+\_\+\+Long}}~((uint32\+\_\+t)0x000000\+C0)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___response___type_gae4df2359c9b637694b9baa220c16e062}{IS\+\_\+\+SDIO\+\_\+\+RESPONSE}}(RESPONSE)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___wait___interrupt___state_ga266294e1ffd7a4b45e62bff753ca44b2}{SDIO\+\_\+\+Wait\+\_\+\+No}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___wait___interrupt___state_ga3914bbe26a656c8e151272ccdc12c71c}{SDIO\+\_\+\+Wait\+\_\+\+IT}}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___wait___interrupt___state_ga2a4104023a7f8403ddd159ec3bbb8592}{SDIO\+\_\+\+Wait\+\_\+\+Pend}}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___wait___interrupt___state_ga7ee5c289c8e06a76b849808d15b03810}{IS\+\_\+\+SDIO\+\_\+\+WAIT}}(WAIT)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___c_p_s_m___state_ga996751273ad238e255a740f7c2844c6c}{SDIO\+\_\+\+CPSM\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___c_p_s_m___state_gad437cefe89d6175aa074a1c40b909ebc}{SDIO\+\_\+\+CPSM\+\_\+\+Enable}}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___c_p_s_m___state_ga58cf04903dab015106e4e0937bef443b}{IS\+\_\+\+SDIO\+\_\+\+CPSM}}(CPSM)~(((CPSM) == \mbox{\hyperlink{group___s_d_i_o___c_p_s_m___state_gad437cefe89d6175aa074a1c40b909ebc}{SDIO\+\_\+\+CPSM\+\_\+\+Enable}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((CPSM) == \mbox{\hyperlink{group___s_d_i_o___c_p_s_m___state_ga996751273ad238e255a740f7c2844c6c}{SDIO\+\_\+\+CPSM\+\_\+\+Disable}}))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___response___registers_ga9d78943952cf0e36736313d949520a2d}{SDIO\+\_\+\+RESP1}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___response___registers_gabd551272af4161844b5358fd3c3c379c}{SDIO\+\_\+\+RESP2}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___response___registers_gae9887669a72395d54d600829a959d2f4}{SDIO\+\_\+\+RESP3}}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___response___registers_ga57c3f6414198e5497736e398c02a1d9e}{SDIO\+\_\+\+RESP4}}~((uint32\+\_\+t)0x0000000C)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___response___registers_gaea6a7f75a5e677d50ba5c9ae2d3a7839}{IS\+\_\+\+SDIO\+\_\+\+RESP}}(RESP)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___length_ga57dd64db3f69d18625ea8ca82c009fad}{IS\+\_\+\+SDIO\+\_\+\+DATA\+\_\+\+LENGTH}}(LENGTH)~((LENGTH) $<$= 0x01\+FFFFFF)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_gaa86e90ddc3426b242a5230b3360c620d}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+1b}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_ga7209d9d52635b66df85712c6fcd668ea}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+2b}}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_ga59cbaecfdebd63177d1208c268626f0a}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+4b}}~((uint32\+\_\+t)0x00000020)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_ga14f91159c8c4faf49a335ed9b6a94d0b}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+8b}}~((uint32\+\_\+t)0x00000030)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_ga52a7bdab9a75edd94d9c1152e8b078e2}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+16b}}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_gad0f89aa989c0cedf8d69eb28548413ca}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+32b}}~((uint32\+\_\+t)0x00000050)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_ga981c219228ae8df11a501e15843338d4}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+64b}}~((uint32\+\_\+t)0x00000060)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_gaba545c3a5e0f3296341d89a647cb9751}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+128b}}~((uint32\+\_\+t)0x00000070)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_gaa099d7706f98a4fa6eb88277dc6680cf}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+256b}}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_gaa619848f7700962c5b7065f43e286e0b}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+512b}}~((uint32\+\_\+t)0x00000090)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_ga7dad3c1c33e63a00eb6301b0a1135baf}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+1024b}}~((uint32\+\_\+t)0x000000\+A0)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_ga41eb937621c7ffcf2688c6bc0ea31464}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+2048b}}~((uint32\+\_\+t)0x000000\+B0)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_ga360411488abdbaf9eee9b99fca793f79}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+4096b}}~((uint32\+\_\+t)0x000000\+C0)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_gaf61913f3eff52c0f728db9ffbdaca7d2}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+8192b}}~((uint32\+\_\+t)0x000000\+D0)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_gae80bc49dbed677f7087d523c31fe10ae}{SDIO\+\_\+\+Data\+Block\+Size\+\_\+16384b}}~((uint32\+\_\+t)0x000000\+E0)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___data___block___size_ga25ce8d64134659c479d61aa681761948}{IS\+\_\+\+SDIO\+\_\+\+BLOCK\+\_\+\+SIZE}}(SIZE)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___transfer___direction_gaef8af0ffa4ea04b3362338d268cc0935}{SDIO\+\_\+\+Transfer\+Dir\+\_\+\+To\+Card}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___transfer___direction_ga55a6d9613d3e2e7762296b45d0d13222}{SDIO\+\_\+\+Transfer\+Dir\+\_\+\+To\+SDIO}}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___transfer___direction_gaf84b8004cfef6a5a525b20db8a83c2f7}{IS\+\_\+\+SDIO\+\_\+\+TRANSFER\+\_\+\+DIR}}(DIR)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___transfer___type_ga5b54ada18cc4072ceff1d98ee4b69972}{SDIO\+\_\+\+Transfer\+Mode\+\_\+\+Block}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___transfer___type_gadd0cafe0a80e6b6cc5c22d838cbb2e28}{SDIO\+\_\+\+Transfer\+Mode\+\_\+\+Stream}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___transfer___type_gaf7565ea93f9ed01558bdc9ad80dac763}{IS\+\_\+\+SDIO\+\_\+\+TRANSFER\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___d_p_s_m___state_ga156a9f6ab87a46dcb99ddd7462ca064b}{SDIO\+\_\+\+DPSM\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___d_p_s_m___state_ga22bc12465c1cf839145619a859276c37}{SDIO\+\_\+\+DPSM\+\_\+\+Enable}}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___d_p_s_m___state_gac87a2d7a8fc417a4514d733be50e6d63}{IS\+\_\+\+SDIO\+\_\+\+DPSM}}(DPSM)~(((DPSM) == \mbox{\hyperlink{group___s_d_i_o___d_p_s_m___state_ga22bc12465c1cf839145619a859276c37}{SDIO\+\_\+\+DPSM\+\_\+\+Enable}}) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((DPSM) == \mbox{\hyperlink{group___s_d_i_o___d_p_s_m___state_ga156a9f6ab87a46dcb99ddd7462ca064b}{SDIO\+\_\+\+DPSM\+\_\+\+Disable}}))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga8ff1f3960378e05ec3c949940e1c49d0}{SDIO\+\_\+\+FLAG\+\_\+\+CCRCFAIL}}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga6de936ea11cbc79444d519268ad9f9bd}{SDIO\+\_\+\+FLAG\+\_\+\+DCRCFAIL}}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga7389f64ff6cfa4f459bf852b5faede30}{SDIO\+\_\+\+FLAG\+\_\+\+CTIMEOUT}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga2d2fd219dd9fea522862195ab9568345}{SDIO\+\_\+\+FLAG\+\_\+\+DTIMEOUT}}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gabd18f8e5d5387a38dccbe1bf28ae5dbc}{SDIO\+\_\+\+FLAG\+\_\+\+TXUNDERR}}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gad49d60039e40d31b734cfacf90caa84f}{SDIO\+\_\+\+FLAG\+\_\+\+RXOVERR}}~((uint32\+\_\+t)0x00000020)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga083531db75a1e4c05c47578763d53af1}{SDIO\+\_\+\+FLAG\+\_\+\+CMDREND}}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gac81f3837aac17a6aed7310a8ea460f17}{SDIO\+\_\+\+FLAG\+\_\+\+CMDSENT}}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gaaacb2f6207c149e05f8bdd70e5d49926}{SDIO\+\_\+\+FLAG\+\_\+\+DATAEND}}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gae83f7cb3fa1183898131f3de47c2333e}{SDIO\+\_\+\+FLAG\+\_\+\+STBITERR}}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga5452d8033567821709bd7d5f06547b70}{SDIO\+\_\+\+FLAG\+\_\+\+DBCKEND}}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gad12a9b2bd30e7b907cbabfd92fc645b3}{SDIO\+\_\+\+FLAG\+\_\+\+CMDACT}}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gad5d075c98012586b169ec131aab2eeb5}{SDIO\+\_\+\+FLAG\+\_\+\+TXACT}}~((uint32\+\_\+t)0x00001000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gacc935dd830338970890a05922dff8ab7}{SDIO\+\_\+\+FLAG\+\_\+\+RXACT}}~((uint32\+\_\+t)0x00002000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gae9277461d3c8984dc31af318e2df1959}{SDIO\+\_\+\+FLAG\+\_\+\+TXFIFOHE}}~((uint32\+\_\+t)0x00004000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga8c5942ae3df21efad2d7c61a46015758}{SDIO\+\_\+\+FLAG\+\_\+\+RXFIFOHF}}~((uint32\+\_\+t)0x00008000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gad3ca936300ef251639a4cfbe2f63b6b8}{SDIO\+\_\+\+FLAG\+\_\+\+TXFIFOF}}~((uint32\+\_\+t)0x00010000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gaf92cb783f000b8d946fe8ace81b51df2}{SDIO\+\_\+\+FLAG\+\_\+\+RXFIFOF}}~((uint32\+\_\+t)0x00020000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gac41ef05773abad79b4b0c443a77733db}{SDIO\+\_\+\+FLAG\+\_\+\+TXFIFOE}}~((uint32\+\_\+t)0x00040000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga59ea7e2dc22df742053c5e525b98599d}{SDIO\+\_\+\+FLAG\+\_\+\+RXFIFOE}}~((uint32\+\_\+t)0x00080000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga9c6620d6b16b6af19d3e14f40e688631}{SDIO\+\_\+\+FLAG\+\_\+\+TXDAVL}}~((uint32\+\_\+t)0x00100000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga7558b354658171bb6aa1b6f1e16d8e21}{SDIO\+\_\+\+FLAG\+\_\+\+RXDAVL}}~((uint32\+\_\+t)0x00200000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gae888ec1c9885c35a5f8e01bcffe324a1}{SDIO\+\_\+\+FLAG\+\_\+\+SDIOIT}}~((uint32\+\_\+t)0x00400000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga3c8d09a405944948e7a1c5493d49aff1}{SDIO\+\_\+\+FLAG\+\_\+\+CEATAEND}}~((uint32\+\_\+t)0x00800000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga04b3c3c316e112172abacbf5e316f24a}{IS\+\_\+\+SDIO\+\_\+\+FLAG}}(FLAG)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_ga8a093bc0b51901676fd5da7087d8ab3a}{IS\+\_\+\+SDIO\+\_\+\+CLEAR\+\_\+\+FLAG}}(FLAG)~((((FLAG) \& (uint32\+\_\+t)0x\+FF3\+FF800) == 0x00) \&\& ((FLAG) != (uint32\+\_\+t)0x00))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gaef42c81f1f6250d8f9f438f4e16d1e98}{IS\+\_\+\+SDIO\+\_\+\+GET\+\_\+\+IT}}(IT)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___flags_gaf829b01d8c3e9a1e4e04d39abdc8c355}{IS\+\_\+\+SDIO\+\_\+\+CLEAR\+\_\+\+IT}}(IT)~((((IT) \& (uint32\+\_\+t)0x\+FF3\+FF800) == 0x00) \&\& ((IT) != (uint32\+\_\+t)0x00))
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___read___wait___mode_ga5d73b50fed8b2589f337a6301f22f41c}{SDIO\+\_\+\+Read\+Wait\+Mode\+\_\+\+CLK}}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___read___wait___mode_ga3d6952d82468b49dcc7abd5b9e02039f}{SDIO\+\_\+\+Read\+Wait\+Mode\+\_\+\+DATA2}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___s_d_i_o___read___wait___mode_ga35144093f5b3553a62c2248896eead4d}{IS\+\_\+\+SDIO\+\_\+\+READWAIT\+\_\+\+MODE}}(MODE)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_gac359d2c6c67a2590f8f9b720c0e4ff1b}{SDIO\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the SDIO peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_gad40764a8e37c0ed5c9141ae338ff0203}{SDIO\+\_\+\+Init}} (\mbox{\hyperlink{struct_s_d_i_o___init_type_def}{SDIO\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}SDIO\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the SDIO peripheral according to the specified parameters in the SDIO\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga778d338c29df4fae9ef69432e6df32ad}{SDIO\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_s_d_i_o___init_type_def}{SDIO\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}SDIO\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each SDIO\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga7243b857d6b323748ff3a493b265bedc}{SDIO\+\_\+\+Clock\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the SDIO Clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga36ecca32b904de74218fbe65cd5f5270}{SDIO\+\_\+\+Set\+Power\+State}} (uint32\+\_\+t SDIO\+\_\+\+Power\+State)
+\begin{DoxyCompactList}\small\item\em Sets the power status of the controller. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga3a19de2c7cd51645702213f64a1758ed}{SDIO\+\_\+\+Get\+Power\+State}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the power status of the controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga208f51237ef43288735829dbaed37f00}{SDIO\+\_\+\+ITConfig}} (uint32\+\_\+t SDIO\+\_\+\+IT, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the SDIO interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_gad36fde5ec0ce0c2089b9d971c2271e6e}{SDIO\+\_\+\+DMACmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the SDIO DMA request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga7117d2f702703f6c0a66bc07707cab23}{SDIO\+\_\+\+Send\+Command}} (\mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def}{SDIO\+\_\+\+Cmd\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}SDIO\+\_\+\+Cmd\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the SDIO Command according to the specified parameters in the SDIO\+\_\+\+Cmd\+Init\+Struct and send the command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga09d9e89f49c87c82aec79c97b7068e24}{SDIO\+\_\+\+Cmd\+Struct\+Init}} (\mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def}{SDIO\+\_\+\+Cmd\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}SDIO\+\_\+\+Cmd\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each SDIO\+\_\+\+Cmd\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga9badf271c818e09da301d715c4ad0e5b}{SDIO\+\_\+\+Get\+Command\+Response}} (void)
+\begin{DoxyCompactList}\small\item\em Returns command index of last command for which response received. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga5c1e859511840e8cca6a9a768bce220b}{SDIO\+\_\+\+Get\+Response}} (uint32\+\_\+t SDIO\+\_\+\+RESP)
+\begin{DoxyCompactList}\small\item\em Returns response received from the card for the last command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_gad65d896ae919683585bda44a1e2afae4}{SDIO\+\_\+\+Data\+Config}} (\mbox{\hyperlink{struct_s_d_i_o___data_init_type_def}{SDIO\+\_\+\+Data\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}SDIO\+\_\+\+Data\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the SDIO data path according to the specified parameters in the SDIO\+\_\+\+Data\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_gaa83209c09e921521aca2587fb5b22ea2}{SDIO\+\_\+\+Data\+Struct\+Init}} (\mbox{\hyperlink{struct_s_d_i_o___data_init_type_def}{SDIO\+\_\+\+Data\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}SDIO\+\_\+\+Data\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each SDIO\+\_\+\+Data\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga7a28aaa2c25a9a5a8db1f49b0e8c9d0a}{SDIO\+\_\+\+Get\+Data\+Counter}} (void)
+\begin{DoxyCompactList}\small\item\em Returns number of remaining data bytes to be transferred. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga4e8ac755ef3c31ecd4ed2708df19187e}{SDIO\+\_\+\+Read\+Data}} (void)
+\begin{DoxyCompactList}\small\item\em Read one data word from Rx FIFO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga361008b5252aa33b5f2b5823ee3d7240}{SDIO\+\_\+\+Write\+Data}} (uint32\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Write one data word to Tx FIFO. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga9a3343983a2d68b5164a1c89797d2dd6}{SDIO\+\_\+\+Get\+FIFOCount}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the number of words left to be written to or read from FIFO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_gac88f914d9a68a83abc2265ec8a7b79fc}{SDIO\+\_\+\+Start\+SDIORead\+Wait}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Starts the SD I/O Read Wait operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_gaca6b25eb2debb73ac827c66f0ebcf837}{SDIO\+\_\+\+Stop\+SDIORead\+Wait}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Stops the SD I/O Read Wait operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga2baac4ea1bb6c2d94345d2712604338a}{SDIO\+\_\+\+Set\+SDIORead\+Wait\+Mode}} (uint32\+\_\+t SDIO\+\_\+\+Read\+Wait\+Mode)
+\begin{DoxyCompactList}\small\item\em Sets one of the two options of inserting read wait interval. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga24e210c185d5a7855cbaff4472a8f8d1}{SDIO\+\_\+\+Set\+SDIOOperation}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the SD I/O Mode Operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga9264137a01a1ab81d03bc80a3b3120fc}{SDIO\+\_\+\+Send\+SDIOSuspend\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the SD I/O Mode suspend command sending. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga1bbe98c629812bc62121d9c8b2c5e21b}{SDIO\+\_\+\+Command\+Completion\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the command completion signal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_gab44b8cbc21be000a291563076159503b}{SDIO\+\_\+\+CEATAITCmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the CE-\/\+ATA interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga8dc7f17804bdb745b42f6647c8487b4c}{SDIO\+\_\+\+Send\+CEATACmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Sends CE-\/\+ATA command (CMD61). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga644514b4b3c95c5c4326d99cd166f6f9}{SDIO\+\_\+\+Get\+Flag\+Status}} (uint32\+\_\+t SDIO\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified SDIO flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga7aff4efdeb528229135f9f285e53518a}{SDIO\+\_\+\+Clear\+Flag}} (uint32\+\_\+t SDIO\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the SDIO\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga2d64af1f3df0f99cb518f9a89bbd02ac}{SDIO\+\_\+\+Get\+ITStatus}} (uint32\+\_\+t SDIO\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified SDIO interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d_i_o___exported___functions_ga048e07fd86321cd01b2a22c071c3149b}{SDIO\+\_\+\+Clear\+ITPending\+Bit}} (uint32\+\_\+t SDIO\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the SDIO\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the SDIO firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

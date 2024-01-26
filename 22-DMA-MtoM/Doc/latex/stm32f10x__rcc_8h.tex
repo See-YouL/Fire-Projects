@@ -1,0 +1,391 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/stm32f10x\+\_\+rcc.h File Reference}
+\hypertarget{stm32f10x__rcc_8h}{}\label{stm32f10x__rcc_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_rcc.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_rcc.h}}
+
+
+This file contains all the functions prototypes for the RCC firmware library.  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_c_c___clocks_type_def}{RCC\+\_\+\+Clocks\+Type\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___h_s_e__configuration_ga1616626d23fbce440398578855df6f97}{RCC\+\_\+\+HSE\+\_\+\+OFF}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___h_s_e__configuration_gabc4f70a44776c557af20496b04d9a9db}{RCC\+\_\+\+HSE\+\_\+\+ON}}~((uint32\+\_\+t)0x00010000)
+\item 
+\#define \mbox{\hyperlink{group___h_s_e__configuration_ga09061e9909d5f588baa7bfb0f7edd9fa}{RCC\+\_\+\+HSE\+\_\+\+Bypass}}~((uint32\+\_\+t)0x00040000)
+\item 
+\#define \mbox{\hyperlink{group___h_s_e__configuration_ga287bbcafd73d07ec915c2f793301908a}{IS\+\_\+\+RCC\+\_\+\+HSE}}(HSE)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__entry__clock__source_ga53194dd3e2986980b156a3e8e456df06}{RCC\+\_\+\+PLLSource\+\_\+\+HSI\+\_\+\+Div2}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__entry__clock__source_ga62f02bf60a89bdef0d3a8137da3f4c2d}{RCC\+\_\+\+PLLSource\+\_\+\+HSE\+\_\+\+Div1}}~((uint32\+\_\+t)0x00010000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__entry__clock__source_ga24863bc670737a2f5abce546a49e620c}{RCC\+\_\+\+PLLSource\+\_\+\+HSE\+\_\+\+Div2}}~((uint32\+\_\+t)0x00030000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__entry__clock__source_ga8a8a84a16989bb4e5aca1af65ccf9a1b}{IS\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+SOURCE}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_ga91b3b28fa4d56693d1eb361e24f317af}{RCC\+\_\+\+PLLMul\+\_\+2}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_gafc2dd6c503b9ee6e0cfbec6d7d3a3e00}{RCC\+\_\+\+PLLMul\+\_\+3}}~((uint32\+\_\+t)0x00040000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_ga897be2cbbdabb6035bfe9bd515d6897f}{RCC\+\_\+\+PLLMul\+\_\+4}}~((uint32\+\_\+t)0x00080000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_gad45e4f8edbbf4d49ded913e83e3a2d06}{RCC\+\_\+\+PLLMul\+\_\+5}}~((uint32\+\_\+t)0x000\+C0000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_ga2eea74b9955e556b302f4d446dd68eb4}{RCC\+\_\+\+PLLMul\+\_\+6}}~((uint32\+\_\+t)0x00100000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_ga1c307e520d53fa21bc60efcb71c03e01}{RCC\+\_\+\+PLLMul\+\_\+7}}~((uint32\+\_\+t)0x00140000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_ga8c1f1c5fe591f062078acf603bfbfb06}{RCC\+\_\+\+PLLMul\+\_\+8}}~((uint32\+\_\+t)0x00180000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_ga984bc5a117e3c6066e2fc7b29a0affda}{RCC\+\_\+\+PLLMul\+\_\+9}}~((uint32\+\_\+t)0x001\+C0000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_ga572881d8c1e6c5b635198b286a2f4087}{RCC\+\_\+\+PLLMul\+\_\+10}}~((uint32\+\_\+t)0x00200000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_ga15da9e109b8556e96bdb9543347366c9}{RCC\+\_\+\+PLLMul\+\_\+11}}~((uint32\+\_\+t)0x00240000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_ga5c6729e9c63b3e84d1a86a6b0f571f88}{RCC\+\_\+\+PLLMul\+\_\+12}}~((uint32\+\_\+t)0x00280000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_ga78b3638b79c30920c09f18206daafc7a}{RCC\+\_\+\+PLLMul\+\_\+13}}~((uint32\+\_\+t)0x002\+C0000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_ga457e11adfe1e815eeb5f38de61a94328}{RCC\+\_\+\+PLLMul\+\_\+14}}~((uint32\+\_\+t)0x00300000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_gaad1fbc2e251391b4c469e39ccf05d642}{RCC\+\_\+\+PLLMul\+\_\+15}}~((uint32\+\_\+t)0x00340000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_ga98118a80e57ed822485df8a8bef3cb1f}{RCC\+\_\+\+PLLMul\+\_\+16}}~((uint32\+\_\+t)0x00380000)
+\item 
+\#define \mbox{\hyperlink{group___p_l_l__multiplication__factor_gaad04edea77632618678f528dcb2b0cd5}{IS\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+MUL}}(MUL)
+\item 
+\#define \mbox{\hyperlink{group___system__clock__source_ga0f392254e74dd965c48edd5aad148e20}{RCC\+\_\+\+SYSCLKSource\+\_\+\+HSI}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___system__clock__source_gabeae110e41833842f8620647ea0ce85a}{RCC\+\_\+\+SYSCLKSource\+\_\+\+HSE}}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___system__clock__source_ga9301b7a07a7cb8c2c6ed87b619c1c966}{RCC\+\_\+\+SYSCLKSource\+\_\+\+PLLCLK}}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___system__clock__source_gaae9d6172a72b0a90cb3703aa59258c57}{IS\+\_\+\+RCC\+\_\+\+SYSCLK\+\_\+\+SOURCE}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__clock__source_gadc3ac37d90c2082d640e5948fac0878f}{RCC\+\_\+\+SYSCLK\+\_\+\+Div1}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__clock__source_gacadd82156776154a07d128b454fc69fd}{RCC\+\_\+\+SYSCLK\+\_\+\+Div2}}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__clock__source_ga458f8ae63164e878930dbebd7643f087}{RCC\+\_\+\+SYSCLK\+\_\+\+Div4}}~((uint32\+\_\+t)0x00000090)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__clock__source_gade72fe3aca89f3e8c4fe8692ea217912}{RCC\+\_\+\+SYSCLK\+\_\+\+Div8}}~((uint32\+\_\+t)0x000000\+A0)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__clock__source_gaefd8df4be9c9dbd9cebfb2384933500a}{RCC\+\_\+\+SYSCLK\+\_\+\+Div16}}~((uint32\+\_\+t)0x000000\+B0)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__clock__source_gab6a2c2d4e945c607259988a9b6df26e5}{RCC\+\_\+\+SYSCLK\+\_\+\+Div64}}~((uint32\+\_\+t)0x000000\+C0)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__clock__source_ga1a28926fcb86112058a365e01fe9a46b}{RCC\+\_\+\+SYSCLK\+\_\+\+Div128}}~((uint32\+\_\+t)0x000000\+D0)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__clock__source_gaa28bb876893b3267a813fc98a462d5ee}{RCC\+\_\+\+SYSCLK\+\_\+\+Div256}}~((uint32\+\_\+t)0x000000\+E0)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__clock__source_gab5b4588c455d6327bc96f131ed6698ab}{RCC\+\_\+\+SYSCLK\+\_\+\+Div512}}~((uint32\+\_\+t)0x000000\+F0)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__clock__source_ga6e9f1c193a2f41bcb3c2f7fa8459b5b3}{IS\+\_\+\+RCC\+\_\+\+HCLK}}(HCLK)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1___a_p_b2__clock__source_gae62b4a39ae69cc221f2ab7d4518bfb76}{RCC\+\_\+\+HCLK\+\_\+\+Div1}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1___a_p_b2__clock__source_ga177bb3648def9a961c16f93f15ca0f62}{RCC\+\_\+\+HCLK\+\_\+\+Div2}}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1___a_p_b2__clock__source_gafd8cf0e32a3ea5648cdc054766bc2017}{RCC\+\_\+\+HCLK\+\_\+\+Div4}}~((uint32\+\_\+t)0x00000500)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1___a_p_b2__clock__source_gab2e2b6e0b8fe22d6638b672918b22097}{RCC\+\_\+\+HCLK\+\_\+\+Div8}}~((uint32\+\_\+t)0x00000600)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1___a_p_b2__clock__source_ga6353aaa0b302fdd5d946fd21756e2273}{RCC\+\_\+\+HCLK\+\_\+\+Div16}}~((uint32\+\_\+t)0x00000700)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1___a_p_b2__clock__source_gab70f1257ea47c1da4def8e351af4d9f2}{IS\+\_\+\+RCC\+\_\+\+PCLK}}(PCLK)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___interrupt__source_ga2b4ef277c1b71f96e0bef4b9a72fca94}{RCC\+\_\+\+IT\+\_\+\+LSIRDY}}~((uint8\+\_\+t)0x01)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___interrupt__source_gad6b6e78a426850f595ef180d292a673d}{RCC\+\_\+\+IT\+\_\+\+LSERDY}}~((uint8\+\_\+t)0x02)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___interrupt__source_ga69637e51b71f73f519c8c0a0613d042f}{RCC\+\_\+\+IT\+\_\+\+HSIRDY}}~((uint8\+\_\+t)0x04)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___interrupt__source_gad13eaede352bca59611e6cae68665866}{RCC\+\_\+\+IT\+\_\+\+HSERDY}}~((uint8\+\_\+t)0x08)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___interrupt__source_ga68d48e7811fb58f2649dce6cf0d823d9}{RCC\+\_\+\+IT\+\_\+\+PLLRDY}}~((uint8\+\_\+t)0x10)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___interrupt__source_ga9bb34a4912d2084dc1c0834eb53aa7a3}{RCC\+\_\+\+IT\+\_\+\+CSS}}~((uint8\+\_\+t)0x80)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___interrupt__source_ga710d72ccf88ddbec09b033c81a571a83}{IS\+\_\+\+RCC\+\_\+\+IT}}(IT)~((((IT) \& (uint8\+\_\+t)0x\+E0) == 0x00) \&\& ((IT) != 0x00))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___interrupt__source_ga7a1b771d6d9c2d8346ab58a1f046f6a6}{IS\+\_\+\+RCC\+\_\+\+GET\+\_\+\+IT}}(IT)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___interrupt__source_ga8374741e47d696accd1a72647650ba63}{IS\+\_\+\+RCC\+\_\+\+CLEAR\+\_\+\+IT}}(IT)~((((IT) \& (uint8\+\_\+t)0x60) == 0x00) \&\& ((IT) != 0x00))
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___device__clock__source_ga5e7a39e25fc37fd2b90edfe66bf1f53f}{RCC\+\_\+\+USBCLKSource\+\_\+\+PLLCLK\+\_\+1\+Div5}}~((uint8\+\_\+t)0x00)
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___device__clock__source_ga8162727793b5690d6b96ad0cc7ce3866}{RCC\+\_\+\+USBCLKSource\+\_\+\+PLLCLK\+\_\+\+Div1}}~((uint8\+\_\+t)0x01)
+\item 
+\#define \mbox{\hyperlink{group___u_s_b___device__clock__source_ga484f7834b5506d9879ed84660c894250}{IS\+\_\+\+RCC\+\_\+\+USBCLK\+\_\+\+SOURCE}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__clock__source_ga6c341971f2f161320ad150faa3636b41}{RCC\+\_\+\+PCLK2\+\_\+\+Div2}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__clock__source_gaecc7a9370fb7d7772d9c90888792084c}{RCC\+\_\+\+PCLK2\+\_\+\+Div4}}~((uint32\+\_\+t)0x00004000)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__clock__source_gaffb34a845f94f4ea741a45998d28deb3}{RCC\+\_\+\+PCLK2\+\_\+\+Div6}}~((uint32\+\_\+t)0x00008000)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__clock__source_ga77d5c803e2d31a806467bb7db9d24cd0}{RCC\+\_\+\+PCLK2\+\_\+\+Div8}}~((uint32\+\_\+t)0x0000\+C000)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__clock__source_ga6a9c4fb239566f0f3d44c8cc266e528b}{IS\+\_\+\+RCC\+\_\+\+ADCCLK}}(ADCCLK)
+\item 
+\#define \mbox{\hyperlink{group___l_s_e__configuration_ga6645c27708d0cad1a4ab61d2abb24c77}{RCC\+\_\+\+LSE\+\_\+\+OFF}}~((uint8\+\_\+t)0x00)
+\item 
+\#define \mbox{\hyperlink{group___l_s_e__configuration_gac981ea636c2f215e4473901e0912f55a}{RCC\+\_\+\+LSE\+\_\+\+ON}}~((uint8\+\_\+t)0x01)
+\item 
+\#define \mbox{\hyperlink{group___l_s_e__configuration_gac911af00bffa1bd1b1676f582a8a88e1}{RCC\+\_\+\+LSE\+\_\+\+Bypass}}~((uint8\+\_\+t)0x04)
+\item 
+\#define \mbox{\hyperlink{group___l_s_e__configuration_ga95d2678bf8f46e932e7cba75619a4d2c}{IS\+\_\+\+RCC\+\_\+\+LSE}}(LSE)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__clock__source_ga18c0c40ff4289148c9fa44c6848d5552}{RCC\+\_\+\+RTCCLKSource\+\_\+\+LSE}}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__clock__source_ga7758c87e4584bfa76cb99c726b7162c3}{RCC\+\_\+\+RTCCLKSource\+\_\+\+LSI}}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__clock__source_gada0bedcd0afa5104ec0ef398d1ac2778}{RCC\+\_\+\+RTCCLKSource\+\_\+\+HSE\+\_\+\+Div128}}~((uint32\+\_\+t)0x00000300)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__clock__source_gae76a0340b02b5342e756fa0d2112ebf5}{IS\+\_\+\+RCC\+\_\+\+RTCCLK\+\_\+\+SOURCE}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__peripheral_gaf32783f8481c4343726994073918b3ff}{RCC\+\_\+\+AHBPeriph\+\_\+\+DMA1}}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__peripheral_ga5afb68e40dc0b0f1aa00466e49bc9e70}{RCC\+\_\+\+AHBPeriph\+\_\+\+DMA2}}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__peripheral_ga8aec305b766b1c0ae297f8e1be103bd1}{RCC\+\_\+\+AHBPeriph\+\_\+\+SRAM}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__peripheral_ga4277d70aa6b5e0b1ec6c8fb8180aac08}{RCC\+\_\+\+AHBPeriph\+\_\+\+FLITF}}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__peripheral_gaef0cd08bcf96323324f328675ccd5ac3}{RCC\+\_\+\+AHBPeriph\+\_\+\+CRC}}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__peripheral_ga857dbf7044a974efb142c4450eafd609}{RCC\+\_\+\+AHBPeriph\+\_\+\+FSMC}}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__peripheral_gaa2664a55eedcedff22532982ae753566}{RCC\+\_\+\+AHBPeriph\+\_\+\+SDIO}}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \mbox{\hyperlink{group___a_h_b__peripheral_ga5fbf97a9c9f5742c94cde6ffe389aedc}{IS\+\_\+\+RCC\+\_\+\+AHB\+\_\+\+PERIPH}}(PERIPH)~((((PERIPH) \& 0x\+FFFFFAA8) == 0x00) \&\& ((PERIPH) != 0x00))
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga5aa9469879ffa019d4836b0d297104c5}{RCC\+\_\+\+APB2\+Periph\+\_\+\+AFIO}}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga44b92fbf2e288796b1acbce2708f3636}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOA}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga8c8909c3640508e9ce31dff80010a6dd}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOB}}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_gaf1f4b467becee1ff31ba2c54328a0115}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOC}}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga177200a365084af306e98389edeba42b}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOD}}~((uint32\+\_\+t)0x00000020)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_gabc736c9892278ccd15848c6137d991fc}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOE}}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga2dbb1e1116b57621c585e1b52c894bda}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOF}}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_gaba82756d2060b97c62eb555242361b2e}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOG}}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_gacd24acb2cd5ca208652157f6c13d3145}{RCC\+\_\+\+APB2\+Periph\+\_\+\+ADC1}}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga4fd76e573e827702568d6064e33448b5}{RCC\+\_\+\+APB2\+Periph\+\_\+\+ADC2}}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga0d9babf212897db0b3aa852f8a71160b}{RCC\+\_\+\+APB2\+Periph\+\_\+\+TIM1}}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga289cc086580f4b6a080ea0ed3dd4a7af}{RCC\+\_\+\+APB2\+Periph\+\_\+\+SPI1}}~((uint32\+\_\+t)0x00001000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_gac951d41a08140a7d38a4faff8dd1e03e}{RCC\+\_\+\+APB2\+Periph\+\_\+\+TIM8}}~((uint32\+\_\+t)0x00002000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga14e1b3b6d84801c223a37a954b5b1910}{RCC\+\_\+\+APB2\+Periph\+\_\+\+USART1}}~((uint32\+\_\+t)0x00004000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga371d55bbf17bf965a213c59f2d276d72}{RCC\+\_\+\+APB2\+Periph\+\_\+\+ADC3}}~((uint32\+\_\+t)0x00008000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga774f9082c3331890c06b9fd9deafe549}{RCC\+\_\+\+APB2\+Periph\+\_\+\+TIM15}}~((uint32\+\_\+t)0x00010000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga739d0a5fe583f07f5b6fa320f2d2e53a}{RCC\+\_\+\+APB2\+Periph\+\_\+\+TIM16}}~((uint32\+\_\+t)0x00020000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga5a6217b6200d6679dc7bee4522d6038a}{RCC\+\_\+\+APB2\+Periph\+\_\+\+TIM17}}~((uint32\+\_\+t)0x00040000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga24d0145dc172bc27ed580770cf15e4d9}{RCC\+\_\+\+APB2\+Periph\+\_\+\+TIM9}}~((uint32\+\_\+t)0x00080000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga75069120ecbe86920b39c2b75c909438}{RCC\+\_\+\+APB2\+Periph\+\_\+\+TIM10}}~((uint32\+\_\+t)0x00100000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_gaba591104f4e31b1e8ce98c269035850f}{RCC\+\_\+\+APB2\+Periph\+\_\+\+TIM11}}~((uint32\+\_\+t)0x00200000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b2__peripheral_ga89a2b95e60e90a51b26b53cc4c0e7b14}{IS\+\_\+\+RCC\+\_\+\+APB2\+\_\+\+PERIPH}}(PERIPH)~((((PERIPH) \& 0x\+FFC00002) == 0x00) \&\& ((PERIPH) != 0x00))
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga742bab2f04cebe587574b53f7107aeaf}{RCC\+\_\+\+APB1\+Periph\+\_\+\+TIM2}}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_gad4454f63a511a256e55aad55c03beb76}{RCC\+\_\+\+APB1\+Periph\+\_\+\+TIM3}}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga80f9f3720804a97210b723696bd94d83}{RCC\+\_\+\+APB1\+Periph\+\_\+\+TIM4}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga4905c26000a571fa01fc057fe31d254a}{RCC\+\_\+\+APB1\+Periph\+\_\+\+TIM5}}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga4974e8b8f11d54fbc0bac1988ff6254c}{RCC\+\_\+\+APB1\+Periph\+\_\+\+TIM6}}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga9415b0c46db5318bdee3f868c16b8d35}{RCC\+\_\+\+APB1\+Periph\+\_\+\+TIM7}}~((uint32\+\_\+t)0x00000020)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga0a4ec40233160ca20adaa571073e7bcd}{RCC\+\_\+\+APB1\+Periph\+\_\+\+TIM12}}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga34397b722f46f31e898136fb51a7523a}{RCC\+\_\+\+APB1\+Periph\+\_\+\+TIM13}}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga7100c45768eea1484f6fd519b53e287d}{RCC\+\_\+\+APB1\+Periph\+\_\+\+TIM14}}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_gad84e40be78ddc40b8eae1c2b0898f6b1}{RCC\+\_\+\+APB1\+Periph\+\_\+\+WWDG}}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_gaa21f1dfb4fcf241c6f85a048eaca29df}{RCC\+\_\+\+APB1\+Periph\+\_\+\+SPI2}}~((uint32\+\_\+t)0x00004000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_gabb0b40e839ef7403b086482e89d56f35}{RCC\+\_\+\+APB1\+Periph\+\_\+\+SPI3}}~((uint32\+\_\+t)0x00008000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_gaa69c77220b943a42a4bacb8a3bf87dd0}{RCC\+\_\+\+APB1\+Periph\+\_\+\+USART2}}~((uint32\+\_\+t)0x00020000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_gaf72838a63d7d6200f251c1eb334cbaac}{RCC\+\_\+\+APB1\+Periph\+\_\+\+USART3}}~((uint32\+\_\+t)0x00040000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga839d7ae3386622158210ecf53d9cd989}{RCC\+\_\+\+APB1\+Periph\+\_\+\+UART4}}~((uint32\+\_\+t)0x00080000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_gaa00c73f88a7af45fb29df97b07acd856}{RCC\+\_\+\+APB1\+Periph\+\_\+\+UART5}}~((uint32\+\_\+t)0x00100000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga594f87d504f7d63697d841033d1538f6}{RCC\+\_\+\+APB1\+Periph\+\_\+\+I2\+C1}}~((uint32\+\_\+t)0x00200000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga8eaeded403b5a2277fbfb3896c639416}{RCC\+\_\+\+APB1\+Periph\+\_\+\+I2\+C2}}~((uint32\+\_\+t)0x00400000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga69a1b3de9a59155bc8455eea5a15e3e4}{RCC\+\_\+\+APB1\+Periph\+\_\+\+USB}}~((uint32\+\_\+t)0x00800000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga7f1d940739de0134ae89e9e04214989d}{RCC\+\_\+\+APB1\+Periph\+\_\+\+CAN1}}~((uint32\+\_\+t)0x02000000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga62801597b97816751c038acb1466179c}{RCC\+\_\+\+APB1\+Periph\+\_\+\+CAN2}}~((uint32\+\_\+t)0x04000000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga2a26b65d0e38030e414a9d39276645b1}{RCC\+\_\+\+APB1\+Periph\+\_\+\+BKP}}~((uint32\+\_\+t)0x08000000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga59ae4e17d5b35a934b1614f8ee883834}{RCC\+\_\+\+APB1\+Periph\+\_\+\+PWR}}~((uint32\+\_\+t)0x10000000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_ga8d019a727701634822c19371b6aaabb5}{RCC\+\_\+\+APB1\+Periph\+\_\+\+DAC}}~((uint32\+\_\+t)0x20000000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_gaa96437b649e13586945f40dac318a0ae}{RCC\+\_\+\+APB1\+Periph\+\_\+\+CEC}}~((uint32\+\_\+t)0x40000000)
+\item 
+\#define \mbox{\hyperlink{group___a_p_b1__peripheral_gab68e85308494436c4c55a69c42a79f36}{IS\+\_\+\+RCC\+\_\+\+APB1\+\_\+\+PERIPH}}(PERIPH)~((((PERIPH) \& 0x81013600) == 0x00) \&\& ((PERIPH) != 0x00))
+\item 
+\#define \mbox{\hyperlink{group___clock__source__to__output__on___m_c_o__pin_ga1f39ff9f5606d3ad56e221d253be17d3}{RCC\+\_\+\+MCO\+\_\+\+No\+Clock}}~((uint8\+\_\+t)0x00)
+\item 
+\#define \mbox{\hyperlink{group___clock__source__to__output__on___m_c_o__pin_gab766ad89492ffe915de3438aaa96891b}{RCC\+\_\+\+MCO\+\_\+\+SYSCLK}}~((uint8\+\_\+t)0x04)
+\item 
+\#define \mbox{\hyperlink{group___clock__source__to__output__on___m_c_o__pin_ga7206cdf03826781dc4fb1b094475d744}{RCC\+\_\+\+MCO\+\_\+\+HSI}}~((uint8\+\_\+t)0x05)
+\item 
+\#define \mbox{\hyperlink{group___clock__source__to__output__on___m_c_o__pin_ga8bd64bbefd2a725a0cfe2f2902dd9b0f}{RCC\+\_\+\+MCO\+\_\+\+HSE}}~((uint8\+\_\+t)0x06)
+\item 
+\#define \mbox{\hyperlink{group___clock__source__to__output__on___m_c_o__pin_ga1ce4233675bd7bdcb0220ed10ee7d8be}{RCC\+\_\+\+MCO\+\_\+\+PLLCLK\+\_\+\+Div2}}~((uint8\+\_\+t)0x07)
+\item 
+\#define \mbox{\hyperlink{group___clock__source__to__output__on___m_c_o__pin_ga0c2d4d6aa8881e01b8c06d8816284b73}{IS\+\_\+\+RCC\+\_\+\+MCO}}(MCO)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_ga827d986723e7ce652fa733bb8184d216}{RCC\+\_\+\+FLAG\+\_\+\+HSIRDY}}~((uint8\+\_\+t)0x21)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_ga173edf47bec93cf269a0e8d0fec9997c}{RCC\+\_\+\+FLAG\+\_\+\+HSERDY}}~((uint8\+\_\+t)0x31)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_gaf82d8afb18d9df75db1d6c08b9c50046}{RCC\+\_\+\+FLAG\+\_\+\+PLLRDY}}~((uint8\+\_\+t)0x39)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_gac9fb963db446c16e46a18908f7fe1927}{RCC\+\_\+\+FLAG\+\_\+\+LSERDY}}~((uint8\+\_\+t)0x41)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_ga8c5e4992314d347597621bfe7ab10d72}{RCC\+\_\+\+FLAG\+\_\+\+LSIRDY}}~((uint8\+\_\+t)0x61)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_gabfc3ab5d4a8a94ec1c9f38794ce37ad6}{RCC\+\_\+\+FLAG\+\_\+\+PINRST}}~((uint8\+\_\+t)0x7A)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_ga39ad309070f416720207eece5da7dc2c}{RCC\+\_\+\+FLAG\+\_\+\+PORRST}}~((uint8\+\_\+t)0x7B)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_gaf7852615e9b19f0b2dbc8d08c7594b52}{RCC\+\_\+\+FLAG\+\_\+\+SFTRST}}~((uint8\+\_\+t)0x7C)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_gaac46bac8a97cf16635ff7ffc1e6c657f}{RCC\+\_\+\+FLAG\+\_\+\+IWDGRST}}~((uint8\+\_\+t)0x7D)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_gaa80b60b2d497ccd7b7de1075009999a7}{RCC\+\_\+\+FLAG\+\_\+\+WWDGRST}}~((uint8\+\_\+t)0x7E)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_ga67049531354aed7546971163d02c9920}{RCC\+\_\+\+FLAG\+\_\+\+LPWRRST}}~((uint8\+\_\+t)0x7F)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_gaa27dea5bb62b26d0881e649770252158}{IS\+\_\+\+RCC\+\_\+\+FLAG}}(FLAG)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___flag_gafda50a08dc048f7c272bf04ec9c2c2b7}{IS\+\_\+\+RCC\+\_\+\+CALIBRATION\+\_\+\+VALUE}}(VALUE)~((VALUE) $<$= 0x1F)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga413f6422be11b1334abe60b3bff2e062}{RCC\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Resets the RCC clock configuration to the default reset state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga432b3281546d23345642d55f8670a93d}{RCC\+\_\+\+HSEConfig}} (uint32\+\_\+t RCC\+\_\+\+HSE)
+\begin{DoxyCompactList}\small\item\em Configures the External High Speed oscillator (HSE). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga8333b96c67f83cba354b3407fcbb6ee8}{Error\+Status}} \mbox{\hyperlink{group___r_c_c___exported___functions_gae0f15692614dd048ee4110a056f001dc}{RCC\+\_\+\+Wait\+For\+HSEStart\+Up}} (void)
+\begin{DoxyCompactList}\small\item\em Waits for HSE start-\/up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_gaa2d6a35f5c2e0f86317c3beb222677fc}{RCC\+\_\+\+Adjust\+HSICalibration\+Value}} (uint8\+\_\+t HSICalibration\+Value)
+\begin{DoxyCompactList}\small\item\em Adjusts the Internal High Speed oscillator (HSI) calibration value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga0c6772a1e43765909495f57815ef69e2}{RCC\+\_\+\+HSICmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Internal High Speed oscillator (HSI). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga0f67634cbe721f2c42f022d2a93229c8}{RCC\+\_\+\+PLLConfig}} (uint32\+\_\+t RCC\+\_\+\+PLLSource, uint32\+\_\+t RCC\+\_\+\+PLLMul)
+\begin{DoxyCompactList}\small\item\em Configures the PLL clock source and multiplication factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga84dee53c75e58fdb53571716593c2272}{RCC\+\_\+\+PLLCmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the PLL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga3551a36a8f0a3dc96a74d6b939048337}{RCC\+\_\+\+SYSCLKConfig}} (uint32\+\_\+t RCC\+\_\+\+SYSCLKSource)
+\begin{DoxyCompactList}\small\item\em Configures the system clock (SYSCLK). \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_c_c___exported___functions_gaaeb32311c208b2a980841c9c884a41ea}{RCC\+\_\+\+Get\+SYSCLKSource}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the clock source used as system clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga9d0aec72e236c6cdf3a3a82dfb525491}{RCC\+\_\+\+HCLKConfig}} (uint32\+\_\+t RCC\+\_\+\+SYSCLK)
+\begin{DoxyCompactList}\small\item\em Configures the AHB clock (HCLK). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga448137346d4292985d4e7a61dd1a824f}{RCC\+\_\+\+PCLK1\+Config}} (uint32\+\_\+t RCC\+\_\+\+HCLK)
+\begin{DoxyCompactList}\small\item\em Configures the Low Speed APB clock (PCLK1). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga09f9c010a4adca9e036da42c2ca6126a}{RCC\+\_\+\+PCLK2\+Config}} (uint32\+\_\+t RCC\+\_\+\+HCLK)
+\begin{DoxyCompactList}\small\item\em Configures the High Speed APB clock (PCLK2). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_gaa953aa226e9ce45300d535941e4dfe2f}{RCC\+\_\+\+ITConfig}} (uint8\+\_\+t RCC\+\_\+\+IT, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified RCC interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga895b3ff3d143c990f1cd0146aa260081}{RCC\+\_\+\+USBCLKConfig}} (uint32\+\_\+t RCC\+\_\+\+USBCLKSource)
+\begin{DoxyCompactList}\small\item\em Configures the USB clock (USBCLK). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_gadda89cdb838bf49e5fa10f3f774530a4}{RCC\+\_\+\+ADCCLKConfig}} (uint32\+\_\+t RCC\+\_\+\+PCLK2)
+\begin{DoxyCompactList}\small\item\em Configures the ADC clock (ADCCLK). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga65209ab5c3589b249c7d70f978735ca6}{RCC\+\_\+\+LSEConfig}} (uint8\+\_\+t RCC\+\_\+\+LSE)
+\begin{DoxyCompactList}\small\item\em Configures the External Low Speed oscillator (LSE). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga81e3ca29fd154ac2019bba6936d6d5ed}{RCC\+\_\+\+LSICmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Internal Low Speed oscillator (LSI). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga1473d8a5a020642966359611c44181b0}{RCC\+\_\+\+RTCCLKConfig}} (uint32\+\_\+t RCC\+\_\+\+RTCCLKSource)
+\begin{DoxyCompactList}\small\item\em Configures the RTC clock (RTCCLK). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga9802f84846df2cea8e369234ed13b159}{RCC\+\_\+\+RTCCLKCmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the RTC clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga3e9944fd1ed734275222bbb3e3f29993}{RCC\+\_\+\+Get\+Clocks\+Freq}} (\mbox{\hyperlink{struct_r_c_c___clocks_type_def}{RCC\+\_\+\+Clocks\+Type\+Def}} \texorpdfstring{$\ast$}{*}RCC\+\_\+\+Clocks)
+\begin{DoxyCompactList}\small\item\em Returns the frequencies of different on chip clocks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_gae0b30d8598b8393bdba9c3fefba3a968}{RCC\+\_\+\+AHBPeriph\+Clock\+Cmd}} (uint32\+\_\+t RCC\+\_\+\+AHBPeriph, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the AHB peripheral clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga56ff55caf8d835351916b40dd030bc87}{RCC\+\_\+\+APB2\+Periph\+Clock\+Cmd}} (uint32\+\_\+t RCC\+\_\+\+APB2\+Periph, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the High Speed APB (APB2) peripheral clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_gaee7cc5d73af7fe1986fceff8afd3973e}{RCC\+\_\+\+APB1\+Periph\+Clock\+Cmd}} (uint32\+\_\+t RCC\+\_\+\+APB1\+Periph, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Low Speed APB (APB1) peripheral clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_gad94553850ac07106a27ee85fec37efdf}{RCC\+\_\+\+APB2\+Periph\+Reset\+Cmd}} (uint32\+\_\+t RCC\+\_\+\+APB2\+Periph, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases High Speed APB (APB2) peripheral reset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_gab197ae4369c10b92640a733b40ed2801}{RCC\+\_\+\+APB1\+Periph\+Reset\+Cmd}} (uint32\+\_\+t RCC\+\_\+\+APB1\+Periph, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases Low Speed APB (APB1) peripheral reset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga636c3b72f35391e67f12a551b15fa54a}{RCC\+\_\+\+Backup\+Reset\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Forces or releases the Backup domain reset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga0ff1fd7b9a8a49cdda11b7d7261c3494}{RCC\+\_\+\+Clock\+Security\+System\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Clock Security System. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga8f62b86c6ca8ae6585ba1cec79431fe5}{RCC\+\_\+\+MCOConfig}} (uint8\+\_\+t RCC\+\_\+\+MCO)
+\begin{DoxyCompactList}\small\item\em Selects the clock source to output on MCO pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___r_c_c___exported___functions_ga2897bdc52f272031c44fb1f72205d295}{RCC\+\_\+\+Get\+Flag\+Status}} (uint8\+\_\+t RCC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified RCC flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga53f909dbb15a54124419084ebda97d72}{RCC\+\_\+\+Clear\+Flag}} (void)
+\begin{DoxyCompactList}\small\item\em Clears the RCC reset flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} \mbox{\hyperlink{group___r_c_c___exported___functions_ga6126c99f398ee4be410ad76ae3aee18f}{RCC\+\_\+\+Get\+ITStatus}} (uint8\+\_\+t RCC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified RCC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_c_c___exported___functions_ga529842d165910f8f87e26115da36089b}{RCC\+\_\+\+Clear\+ITPending\+Bit}} (uint8\+\_\+t RCC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the RCC\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the RCC firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

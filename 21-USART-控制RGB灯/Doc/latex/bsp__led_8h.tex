@@ -1,0 +1,393 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/21-\/\+USART-\/控制\+RGB灯/\+User/led/bsp\+\_\+led.h File Reference}
+\hypertarget{bsp__led_8h}{}\label{bsp__led_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/User/led/bsp\_led.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/User/led/bsp\_led.h}}
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a5d97443b4011e40e47164445dc1adde0}{LED1\+\_\+\+GPIO\+\_\+\+PORT}}~\mbox{\hyperlink{group___peripheral__declaration_ga68b66ac73be4c836db878a42e1fea3cd}{GPIOB}}                 /\texorpdfstring{$\ast$}{*} GPIO端口 \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a07055149c7565de2c3142b33b136fd12}{LED1\+\_\+\+GPIO\+\_\+\+CLK}}~\mbox{\hyperlink{group___a_p_b2__peripheral_ga8c8909c3640508e9ce31dff80010a6dd}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOB}}  /\texorpdfstring{$\ast$}{*} GPIO端口时钟 \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a2e813d7da8f4e7486dec75bf8a5ba51b}{LED1\+\_\+\+GPIO\+\_\+\+PIN}}~\mbox{\hyperlink{group___g_p_i_o__pins__define_ga32dbe930f52ce5ab60190c65e9dc741e}{GPIO\+\_\+\+Pin\+\_\+5}}           /\texorpdfstring{$\ast$}{*} 连接到\+SCL时钟线的\+GPIO \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_af88822ae4b79d37c7735ce1160b59f68}{LED2\+\_\+\+GPIO\+\_\+\+PORT}}~\mbox{\hyperlink{group___peripheral__declaration_ga68b66ac73be4c836db878a42e1fea3cd}{GPIOB}}                 /\texorpdfstring{$\ast$}{*} GPIO端口 \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a972d10beb8aa0aa7a6edf70e5a6200ff}{LED2\+\_\+\+GPIO\+\_\+\+CLK}}~\mbox{\hyperlink{group___a_p_b2__peripheral_ga8c8909c3640508e9ce31dff80010a6dd}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOB}}  /\texorpdfstring{$\ast$}{*} GPIO端口时钟 \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a207c8d6e8a2981f01cfb64bbc46d58af}{LED2\+\_\+\+GPIO\+\_\+\+PIN}}~\mbox{\hyperlink{group___g_p_i_o__pins__define_gab305b8d1be9f89bf2b4a05589b456049}{GPIO\+\_\+\+Pin\+\_\+0}}           /\texorpdfstring{$\ast$}{*} 连接到\+SCL时钟线的\+GPIO \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a050f4b3a1f402476f9541dfe975d2143}{LED3\+\_\+\+GPIO\+\_\+\+PORT}}~\mbox{\hyperlink{group___peripheral__declaration_ga68b66ac73be4c836db878a42e1fea3cd}{GPIOB}}                 /\texorpdfstring{$\ast$}{*} GPIO端口 \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_af4e64981a3f4584fb771aa4cbc093c61}{LED3\+\_\+\+GPIO\+\_\+\+CLK}}~\mbox{\hyperlink{group___a_p_b2__peripheral_ga8c8909c3640508e9ce31dff80010a6dd}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOB}}  /\texorpdfstring{$\ast$}{*} GPIO端口时钟 \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a881396135710b524771a0a622080a355}{LED3\+\_\+\+GPIO\+\_\+\+PIN}}~\mbox{\hyperlink{group___g_p_i_o__pins__define_ga29db642c26f1fa0fffc3ecadcd30f82b}{GPIO\+\_\+\+Pin\+\_\+1}}           /\texorpdfstring{$\ast$}{*} 连接到\+SCL时钟线的\+GPIO \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_ad76d1750a6cdeebd506bfcd6752554d2}{ON}}~0
+\begin{DoxyCompactList}\small\item\em the macro definition to trigger the led on or off 1 -\/ off 0 -\/ on \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a29e413f6725b2ba32d165ffaa35b01e5}{OFF}}~1
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a756fe74f0124a2699e7715cfd5284530}{LED1}}(a)
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a17589d6720c4f4af810d2187ea18fc78}{LED2}}(a)
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a95e1ee39f8554bfa8d198ec07717d1cd}{LED3}}(a)
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_abc73791cfda547c8abb23a372ee6902b}{digital\+Hi}}(p,  i)~\{p-\/$>$BSRR=i;\}
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a391cae26eebfbe2a536bf4cf588b3c98}{digital\+Lo}}(p,  i)~\{p-\/$>$BRR=i;\}
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_aae98584b0a393e75aebc1cc22057ede4}{digital\+Toggle}}(p,  i)~\{p-\/$>$ODR \texorpdfstring{$^\wedge$}{\string^}=i;\}
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a267fdbba1d750146b73da35c1731fd17}{LED1\+\_\+\+TOGGLE}}~\mbox{\hyperlink{bsp__led_8h_aae98584b0a393e75aebc1cc22057ede4}{digital\+Toggle}}(\mbox{\hyperlink{bsp__led_8h_a5d97443b4011e40e47164445dc1adde0}{LED1\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a2e813d7da8f4e7486dec75bf8a5ba51b}{LED1\+\_\+\+GPIO\+\_\+\+PIN}})
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a343fd2d3ce61b84f88ddfaea32c67c58}{LED1\+\_\+\+OFF}}~\mbox{\hyperlink{bsp__led_8h_abc73791cfda547c8abb23a372ee6902b}{digital\+Hi}}(\mbox{\hyperlink{bsp__led_8h_a5d97443b4011e40e47164445dc1adde0}{LED1\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a2e813d7da8f4e7486dec75bf8a5ba51b}{LED1\+\_\+\+GPIO\+\_\+\+PIN}})
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_aadd4c7ae0cd4e9bbb17f7055dd51fe08}{LED1\+\_\+\+ON}}~\mbox{\hyperlink{bsp__led_8h_a391cae26eebfbe2a536bf4cf588b3c98}{digital\+Lo}}(\mbox{\hyperlink{bsp__led_8h_a5d97443b4011e40e47164445dc1adde0}{LED1\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a2e813d7da8f4e7486dec75bf8a5ba51b}{LED1\+\_\+\+GPIO\+\_\+\+PIN}})
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_acd16785845ce7004334b91a98707f8eb}{LED2\+\_\+\+TOGGLE}}~\mbox{\hyperlink{bsp__led_8h_aae98584b0a393e75aebc1cc22057ede4}{digital\+Toggle}}(\mbox{\hyperlink{bsp__led_8h_af88822ae4b79d37c7735ce1160b59f68}{LED2\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a207c8d6e8a2981f01cfb64bbc46d58af}{LED2\+\_\+\+GPIO\+\_\+\+PIN}})
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_ac6468b1df4dfabcca0bb142044d6f976}{LED2\+\_\+\+OFF}}~\mbox{\hyperlink{bsp__led_8h_abc73791cfda547c8abb23a372ee6902b}{digital\+Hi}}(\mbox{\hyperlink{bsp__led_8h_af88822ae4b79d37c7735ce1160b59f68}{LED2\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a207c8d6e8a2981f01cfb64bbc46d58af}{LED2\+\_\+\+GPIO\+\_\+\+PIN}})
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_ab55f588eb2c5177d3f7806e60d379fba}{LED2\+\_\+\+ON}}~\mbox{\hyperlink{bsp__led_8h_a391cae26eebfbe2a536bf4cf588b3c98}{digital\+Lo}}(\mbox{\hyperlink{bsp__led_8h_af88822ae4b79d37c7735ce1160b59f68}{LED2\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a207c8d6e8a2981f01cfb64bbc46d58af}{LED2\+\_\+\+GPIO\+\_\+\+PIN}})
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a0702de219624c9cb1bdb4ea9b25ee62d}{LED3\+\_\+\+TOGGLE}}~\mbox{\hyperlink{bsp__led_8h_aae98584b0a393e75aebc1cc22057ede4}{digital\+Toggle}}(\mbox{\hyperlink{bsp__led_8h_a050f4b3a1f402476f9541dfe975d2143}{LED3\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a881396135710b524771a0a622080a355}{LED3\+\_\+\+GPIO\+\_\+\+PIN}})
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a0a18a6978d9c62c42afc3917d2f258b8}{LED3\+\_\+\+OFF}}~\mbox{\hyperlink{bsp__led_8h_abc73791cfda547c8abb23a372ee6902b}{digital\+Hi}}(\mbox{\hyperlink{bsp__led_8h_a050f4b3a1f402476f9541dfe975d2143}{LED3\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a881396135710b524771a0a622080a355}{LED3\+\_\+\+GPIO\+\_\+\+PIN}})
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_ac69b87cb5151087202d5a354c87eb492}{LED3\+\_\+\+ON}}~\mbox{\hyperlink{bsp__led_8h_a391cae26eebfbe2a536bf4cf588b3c98}{digital\+Lo}}(\mbox{\hyperlink{bsp__led_8h_a050f4b3a1f402476f9541dfe975d2143}{LED3\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a881396135710b524771a0a622080a355}{LED3\+\_\+\+GPIO\+\_\+\+PIN}})
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a31e20330f8ce94e0dd10b005a15c5898}{LED\+\_\+\+RED}}
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_aca338dbd19d7940923334629f6e5f3b7}{LED\+\_\+\+GREEN}}
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_ae2e40566d27689f8581d7b0f12271d45}{LED\+\_\+\+BLUE}}
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_ae3c73853c6d0a1eca2c7d9797f6494ea}{LED\+\_\+\+YELLOW}}
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_ac5af042948d7ce66dcecf2fe02f5a526}{LED\+\_\+\+PURPLE}}
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a67600b15a0ecfbbd6fab29dd4dfde468}{LED\+\_\+\+CYAN}}
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a0998333b3a54bf7e3a466c41287853ba}{LED\+\_\+\+WHITE}}
+\item 
+\#define \mbox{\hyperlink{bsp__led_8h_aca4924d24fa91da85137926002f3850f}{LED\+\_\+\+RGBOFF}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bsp__led_8h_a89d2c2ccc2981f0583aa6e4c8f043298}{LED\+\_\+\+GPIO\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em 初始化控制\+LED的\+IO \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{bsp__led_8h_abc73791cfda547c8abb23a372ee6902b}\label{bsp__led_8h_abc73791cfda547c8abb23a372ee6902b} 
+\index{bsp\_led.h@{bsp\_led.h}!digitalHi@{digitalHi}}
+\index{digitalHi@{digitalHi}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{digitalHi}{digitalHi}}
+{\footnotesize\ttfamily \#define digital\+Hi(\begin{DoxyParamCaption}\item[{}]{p,  }\item[{}]{i }\end{DoxyParamCaption})~\{p-\/$>$BSRR=i;\}}
+
+\Hypertarget{bsp__led_8h_a391cae26eebfbe2a536bf4cf588b3c98}\label{bsp__led_8h_a391cae26eebfbe2a536bf4cf588b3c98} 
+\index{bsp\_led.h@{bsp\_led.h}!digitalLo@{digitalLo}}
+\index{digitalLo@{digitalLo}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{digitalLo}{digitalLo}}
+{\footnotesize\ttfamily \#define digital\+Lo(\begin{DoxyParamCaption}\item[{}]{p,  }\item[{}]{i }\end{DoxyParamCaption})~\{p-\/$>$BRR=i;\}}
+
+\Hypertarget{bsp__led_8h_aae98584b0a393e75aebc1cc22057ede4}\label{bsp__led_8h_aae98584b0a393e75aebc1cc22057ede4} 
+\index{bsp\_led.h@{bsp\_led.h}!digitalToggle@{digitalToggle}}
+\index{digitalToggle@{digitalToggle}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{digitalToggle}{digitalToggle}}
+{\footnotesize\ttfamily \#define digital\+Toggle(\begin{DoxyParamCaption}\item[{}]{p,  }\item[{}]{i }\end{DoxyParamCaption})~\{p-\/$>$ODR \texorpdfstring{$^\wedge$}{\string^}=i;\}}
+
+\Hypertarget{bsp__led_8h_a756fe74f0124a2699e7715cfd5284530}\label{bsp__led_8h_a756fe74f0124a2699e7715cfd5284530} 
+\index{bsp\_led.h@{bsp\_led.h}!LED1@{LED1}}
+\index{LED1@{LED1}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED1}{LED1}}
+{\footnotesize\ttfamily \#define LED1(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a)\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_SetBits(\mbox{\hyperlink{bsp__led_8h_a5d97443b4011e40e47164445dc1adde0}{LED1\_GPIO\_PORT}},\mbox{\hyperlink{bsp__led_8h_a2e813d7da8f4e7486dec75bf8a5ba51b}{LED1\_GPIO\_PIN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_ResetBits(\mbox{\hyperlink{bsp__led_8h_a5d97443b4011e40e47164445dc1adde0}{LED1\_GPIO\_PORT}},\mbox{\hyperlink{bsp__led_8h_a2e813d7da8f4e7486dec75bf8a5ba51b}{LED1\_GPIO\_PIN}})}
+
+\end{DoxyCode}
+\Hypertarget{bsp__led_8h_a07055149c7565de2c3142b33b136fd12}\label{bsp__led_8h_a07055149c7565de2c3142b33b136fd12} 
+\index{bsp\_led.h@{bsp\_led.h}!LED1\_GPIO\_CLK@{LED1\_GPIO\_CLK}}
+\index{LED1\_GPIO\_CLK@{LED1\_GPIO\_CLK}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED1\_GPIO\_CLK}{LED1\_GPIO\_CLK}}
+{\footnotesize\ttfamily \#define LED1\+\_\+\+GPIO\+\_\+\+CLK~\mbox{\hyperlink{group___a_p_b2__peripheral_ga8c8909c3640508e9ce31dff80010a6dd}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOB}}  /\texorpdfstring{$\ast$}{*} GPIO端口时钟 \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{bsp__led_8h_a2e813d7da8f4e7486dec75bf8a5ba51b}\label{bsp__led_8h_a2e813d7da8f4e7486dec75bf8a5ba51b} 
+\index{bsp\_led.h@{bsp\_led.h}!LED1\_GPIO\_PIN@{LED1\_GPIO\_PIN}}
+\index{LED1\_GPIO\_PIN@{LED1\_GPIO\_PIN}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED1\_GPIO\_PIN}{LED1\_GPIO\_PIN}}
+{\footnotesize\ttfamily \#define LED1\+\_\+\+GPIO\+\_\+\+PIN~\mbox{\hyperlink{group___g_p_i_o__pins__define_ga32dbe930f52ce5ab60190c65e9dc741e}{GPIO\+\_\+\+Pin\+\_\+5}}           /\texorpdfstring{$\ast$}{*} 连接到\+SCL时钟线的\+GPIO \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{bsp__led_8h_a5d97443b4011e40e47164445dc1adde0}\label{bsp__led_8h_a5d97443b4011e40e47164445dc1adde0} 
+\index{bsp\_led.h@{bsp\_led.h}!LED1\_GPIO\_PORT@{LED1\_GPIO\_PORT}}
+\index{LED1\_GPIO\_PORT@{LED1\_GPIO\_PORT}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED1\_GPIO\_PORT}{LED1\_GPIO\_PORT}}
+{\footnotesize\ttfamily \#define LED1\+\_\+\+GPIO\+\_\+\+PORT~\mbox{\hyperlink{group___peripheral__declaration_ga68b66ac73be4c836db878a42e1fea3cd}{GPIOB}}                 /\texorpdfstring{$\ast$}{*} GPIO端口 \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{bsp__led_8h_a343fd2d3ce61b84f88ddfaea32c67c58}\label{bsp__led_8h_a343fd2d3ce61b84f88ddfaea32c67c58} 
+\index{bsp\_led.h@{bsp\_led.h}!LED1\_OFF@{LED1\_OFF}}
+\index{LED1\_OFF@{LED1\_OFF}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED1\_OFF}{LED1\_OFF}}
+{\footnotesize\ttfamily \#define LED1\+\_\+\+OFF~\mbox{\hyperlink{bsp__led_8h_abc73791cfda547c8abb23a372ee6902b}{digital\+Hi}}(\mbox{\hyperlink{bsp__led_8h_a5d97443b4011e40e47164445dc1adde0}{LED1\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a2e813d7da8f4e7486dec75bf8a5ba51b}{LED1\+\_\+\+GPIO\+\_\+\+PIN}})}
+
+\Hypertarget{bsp__led_8h_aadd4c7ae0cd4e9bbb17f7055dd51fe08}\label{bsp__led_8h_aadd4c7ae0cd4e9bbb17f7055dd51fe08} 
+\index{bsp\_led.h@{bsp\_led.h}!LED1\_ON@{LED1\_ON}}
+\index{LED1\_ON@{LED1\_ON}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED1\_ON}{LED1\_ON}}
+{\footnotesize\ttfamily \#define LED1\+\_\+\+ON~\mbox{\hyperlink{bsp__led_8h_a391cae26eebfbe2a536bf4cf588b3c98}{digital\+Lo}}(\mbox{\hyperlink{bsp__led_8h_a5d97443b4011e40e47164445dc1adde0}{LED1\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a2e813d7da8f4e7486dec75bf8a5ba51b}{LED1\+\_\+\+GPIO\+\_\+\+PIN}})}
+
+\Hypertarget{bsp__led_8h_a267fdbba1d750146b73da35c1731fd17}\label{bsp__led_8h_a267fdbba1d750146b73da35c1731fd17} 
+\index{bsp\_led.h@{bsp\_led.h}!LED1\_TOGGLE@{LED1\_TOGGLE}}
+\index{LED1\_TOGGLE@{LED1\_TOGGLE}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED1\_TOGGLE}{LED1\_TOGGLE}}
+{\footnotesize\ttfamily \#define LED1\+\_\+\+TOGGLE~\mbox{\hyperlink{bsp__led_8h_aae98584b0a393e75aebc1cc22057ede4}{digital\+Toggle}}(\mbox{\hyperlink{bsp__led_8h_a5d97443b4011e40e47164445dc1adde0}{LED1\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a2e813d7da8f4e7486dec75bf8a5ba51b}{LED1\+\_\+\+GPIO\+\_\+\+PIN}})}
+
+\Hypertarget{bsp__led_8h_a17589d6720c4f4af810d2187ea18fc78}\label{bsp__led_8h_a17589d6720c4f4af810d2187ea18fc78} 
+\index{bsp\_led.h@{bsp\_led.h}!LED2@{LED2}}
+\index{LED2@{LED2}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED2}{LED2}}
+{\footnotesize\ttfamily \#define LED2(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a)\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_SetBits(\mbox{\hyperlink{bsp__led_8h_af88822ae4b79d37c7735ce1160b59f68}{LED2\_GPIO\_PORT}},\mbox{\hyperlink{bsp__led_8h_a207c8d6e8a2981f01cfb64bbc46d58af}{LED2\_GPIO\_PIN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_ResetBits(\mbox{\hyperlink{bsp__led_8h_af88822ae4b79d37c7735ce1160b59f68}{LED2\_GPIO\_PORT}},\mbox{\hyperlink{bsp__led_8h_a207c8d6e8a2981f01cfb64bbc46d58af}{LED2\_GPIO\_PIN}})}
+
+\end{DoxyCode}
+\Hypertarget{bsp__led_8h_a972d10beb8aa0aa7a6edf70e5a6200ff}\label{bsp__led_8h_a972d10beb8aa0aa7a6edf70e5a6200ff} 
+\index{bsp\_led.h@{bsp\_led.h}!LED2\_GPIO\_CLK@{LED2\_GPIO\_CLK}}
+\index{LED2\_GPIO\_CLK@{LED2\_GPIO\_CLK}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED2\_GPIO\_CLK}{LED2\_GPIO\_CLK}}
+{\footnotesize\ttfamily \#define LED2\+\_\+\+GPIO\+\_\+\+CLK~\mbox{\hyperlink{group___a_p_b2__peripheral_ga8c8909c3640508e9ce31dff80010a6dd}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOB}}  /\texorpdfstring{$\ast$}{*} GPIO端口时钟 \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{bsp__led_8h_a207c8d6e8a2981f01cfb64bbc46d58af}\label{bsp__led_8h_a207c8d6e8a2981f01cfb64bbc46d58af} 
+\index{bsp\_led.h@{bsp\_led.h}!LED2\_GPIO\_PIN@{LED2\_GPIO\_PIN}}
+\index{LED2\_GPIO\_PIN@{LED2\_GPIO\_PIN}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED2\_GPIO\_PIN}{LED2\_GPIO\_PIN}}
+{\footnotesize\ttfamily \#define LED2\+\_\+\+GPIO\+\_\+\+PIN~\mbox{\hyperlink{group___g_p_i_o__pins__define_gab305b8d1be9f89bf2b4a05589b456049}{GPIO\+\_\+\+Pin\+\_\+0}}           /\texorpdfstring{$\ast$}{*} 连接到\+SCL时钟线的\+GPIO \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{bsp__led_8h_af88822ae4b79d37c7735ce1160b59f68}\label{bsp__led_8h_af88822ae4b79d37c7735ce1160b59f68} 
+\index{bsp\_led.h@{bsp\_led.h}!LED2\_GPIO\_PORT@{LED2\_GPIO\_PORT}}
+\index{LED2\_GPIO\_PORT@{LED2\_GPIO\_PORT}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED2\_GPIO\_PORT}{LED2\_GPIO\_PORT}}
+{\footnotesize\ttfamily \#define LED2\+\_\+\+GPIO\+\_\+\+PORT~\mbox{\hyperlink{group___peripheral__declaration_ga68b66ac73be4c836db878a42e1fea3cd}{GPIOB}}                 /\texorpdfstring{$\ast$}{*} GPIO端口 \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{bsp__led_8h_ac6468b1df4dfabcca0bb142044d6f976}\label{bsp__led_8h_ac6468b1df4dfabcca0bb142044d6f976} 
+\index{bsp\_led.h@{bsp\_led.h}!LED2\_OFF@{LED2\_OFF}}
+\index{LED2\_OFF@{LED2\_OFF}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED2\_OFF}{LED2\_OFF}}
+{\footnotesize\ttfamily \#define LED2\+\_\+\+OFF~\mbox{\hyperlink{bsp__led_8h_abc73791cfda547c8abb23a372ee6902b}{digital\+Hi}}(\mbox{\hyperlink{bsp__led_8h_af88822ae4b79d37c7735ce1160b59f68}{LED2\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a207c8d6e8a2981f01cfb64bbc46d58af}{LED2\+\_\+\+GPIO\+\_\+\+PIN}})}
+
+\Hypertarget{bsp__led_8h_ab55f588eb2c5177d3f7806e60d379fba}\label{bsp__led_8h_ab55f588eb2c5177d3f7806e60d379fba} 
+\index{bsp\_led.h@{bsp\_led.h}!LED2\_ON@{LED2\_ON}}
+\index{LED2\_ON@{LED2\_ON}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED2\_ON}{LED2\_ON}}
+{\footnotesize\ttfamily \#define LED2\+\_\+\+ON~\mbox{\hyperlink{bsp__led_8h_a391cae26eebfbe2a536bf4cf588b3c98}{digital\+Lo}}(\mbox{\hyperlink{bsp__led_8h_af88822ae4b79d37c7735ce1160b59f68}{LED2\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a207c8d6e8a2981f01cfb64bbc46d58af}{LED2\+\_\+\+GPIO\+\_\+\+PIN}})}
+
+\Hypertarget{bsp__led_8h_acd16785845ce7004334b91a98707f8eb}\label{bsp__led_8h_acd16785845ce7004334b91a98707f8eb} 
+\index{bsp\_led.h@{bsp\_led.h}!LED2\_TOGGLE@{LED2\_TOGGLE}}
+\index{LED2\_TOGGLE@{LED2\_TOGGLE}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED2\_TOGGLE}{LED2\_TOGGLE}}
+{\footnotesize\ttfamily \#define LED2\+\_\+\+TOGGLE~\mbox{\hyperlink{bsp__led_8h_aae98584b0a393e75aebc1cc22057ede4}{digital\+Toggle}}(\mbox{\hyperlink{bsp__led_8h_af88822ae4b79d37c7735ce1160b59f68}{LED2\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a207c8d6e8a2981f01cfb64bbc46d58af}{LED2\+\_\+\+GPIO\+\_\+\+PIN}})}
+
+\Hypertarget{bsp__led_8h_a95e1ee39f8554bfa8d198ec07717d1cd}\label{bsp__led_8h_a95e1ee39f8554bfa8d198ec07717d1cd} 
+\index{bsp\_led.h@{bsp\_led.h}!LED3@{LED3}}
+\index{LED3@{LED3}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED3}{LED3}}
+{\footnotesize\ttfamily \#define LED3(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a)\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_SetBits(\mbox{\hyperlink{bsp__led_8h_a050f4b3a1f402476f9541dfe975d2143}{LED3\_GPIO\_PORT}},\mbox{\hyperlink{bsp__led_8h_a881396135710b524771a0a622080a355}{LED3\_GPIO\_PIN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_ResetBits(\mbox{\hyperlink{bsp__led_8h_a050f4b3a1f402476f9541dfe975d2143}{LED3\_GPIO\_PORT}},\mbox{\hyperlink{bsp__led_8h_a881396135710b524771a0a622080a355}{LED3\_GPIO\_PIN}})}
+
+\end{DoxyCode}
+\Hypertarget{bsp__led_8h_af4e64981a3f4584fb771aa4cbc093c61}\label{bsp__led_8h_af4e64981a3f4584fb771aa4cbc093c61} 
+\index{bsp\_led.h@{bsp\_led.h}!LED3\_GPIO\_CLK@{LED3\_GPIO\_CLK}}
+\index{LED3\_GPIO\_CLK@{LED3\_GPIO\_CLK}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED3\_GPIO\_CLK}{LED3\_GPIO\_CLK}}
+{\footnotesize\ttfamily \#define LED3\+\_\+\+GPIO\+\_\+\+CLK~\mbox{\hyperlink{group___a_p_b2__peripheral_ga8c8909c3640508e9ce31dff80010a6dd}{RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOB}}  /\texorpdfstring{$\ast$}{*} GPIO端口时钟 \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{bsp__led_8h_a881396135710b524771a0a622080a355}\label{bsp__led_8h_a881396135710b524771a0a622080a355} 
+\index{bsp\_led.h@{bsp\_led.h}!LED3\_GPIO\_PIN@{LED3\_GPIO\_PIN}}
+\index{LED3\_GPIO\_PIN@{LED3\_GPIO\_PIN}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED3\_GPIO\_PIN}{LED3\_GPIO\_PIN}}
+{\footnotesize\ttfamily \#define LED3\+\_\+\+GPIO\+\_\+\+PIN~\mbox{\hyperlink{group___g_p_i_o__pins__define_ga29db642c26f1fa0fffc3ecadcd30f82b}{GPIO\+\_\+\+Pin\+\_\+1}}           /\texorpdfstring{$\ast$}{*} 连接到\+SCL时钟线的\+GPIO \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{bsp__led_8h_a050f4b3a1f402476f9541dfe975d2143}\label{bsp__led_8h_a050f4b3a1f402476f9541dfe975d2143} 
+\index{bsp\_led.h@{bsp\_led.h}!LED3\_GPIO\_PORT@{LED3\_GPIO\_PORT}}
+\index{LED3\_GPIO\_PORT@{LED3\_GPIO\_PORT}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED3\_GPIO\_PORT}{LED3\_GPIO\_PORT}}
+{\footnotesize\ttfamily \#define LED3\+\_\+\+GPIO\+\_\+\+PORT~\mbox{\hyperlink{group___peripheral__declaration_ga68b66ac73be4c836db878a42e1fea3cd}{GPIOB}}                 /\texorpdfstring{$\ast$}{*} GPIO端口 \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{bsp__led_8h_a0a18a6978d9c62c42afc3917d2f258b8}\label{bsp__led_8h_a0a18a6978d9c62c42afc3917d2f258b8} 
+\index{bsp\_led.h@{bsp\_led.h}!LED3\_OFF@{LED3\_OFF}}
+\index{LED3\_OFF@{LED3\_OFF}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED3\_OFF}{LED3\_OFF}}
+{\footnotesize\ttfamily \#define LED3\+\_\+\+OFF~\mbox{\hyperlink{bsp__led_8h_abc73791cfda547c8abb23a372ee6902b}{digital\+Hi}}(\mbox{\hyperlink{bsp__led_8h_a050f4b3a1f402476f9541dfe975d2143}{LED3\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a881396135710b524771a0a622080a355}{LED3\+\_\+\+GPIO\+\_\+\+PIN}})}
+
+\Hypertarget{bsp__led_8h_ac69b87cb5151087202d5a354c87eb492}\label{bsp__led_8h_ac69b87cb5151087202d5a354c87eb492} 
+\index{bsp\_led.h@{bsp\_led.h}!LED3\_ON@{LED3\_ON}}
+\index{LED3\_ON@{LED3\_ON}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED3\_ON}{LED3\_ON}}
+{\footnotesize\ttfamily \#define LED3\+\_\+\+ON~\mbox{\hyperlink{bsp__led_8h_a391cae26eebfbe2a536bf4cf588b3c98}{digital\+Lo}}(\mbox{\hyperlink{bsp__led_8h_a050f4b3a1f402476f9541dfe975d2143}{LED3\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a881396135710b524771a0a622080a355}{LED3\+\_\+\+GPIO\+\_\+\+PIN}})}
+
+\Hypertarget{bsp__led_8h_a0702de219624c9cb1bdb4ea9b25ee62d}\label{bsp__led_8h_a0702de219624c9cb1bdb4ea9b25ee62d} 
+\index{bsp\_led.h@{bsp\_led.h}!LED3\_TOGGLE@{LED3\_TOGGLE}}
+\index{LED3\_TOGGLE@{LED3\_TOGGLE}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED3\_TOGGLE}{LED3\_TOGGLE}}
+{\footnotesize\ttfamily \#define LED3\+\_\+\+TOGGLE~\mbox{\hyperlink{bsp__led_8h_aae98584b0a393e75aebc1cc22057ede4}{digital\+Toggle}}(\mbox{\hyperlink{bsp__led_8h_a050f4b3a1f402476f9541dfe975d2143}{LED3\+\_\+\+GPIO\+\_\+\+PORT}},\mbox{\hyperlink{bsp__led_8h_a881396135710b524771a0a622080a355}{LED3\+\_\+\+GPIO\+\_\+\+PIN}})}
+
+\Hypertarget{bsp__led_8h_ae2e40566d27689f8581d7b0f12271d45}\label{bsp__led_8h_ae2e40566d27689f8581d7b0f12271d45} 
+\index{bsp\_led.h@{bsp\_led.h}!LED\_BLUE@{LED\_BLUE}}
+\index{LED\_BLUE@{LED\_BLUE}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_BLUE}{LED\_BLUE}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+BLUE}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__led_8h_a343fd2d3ce61b84f88ddfaea32c67c58}{LED1\_OFF}};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED2\_OFF\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED3\_ON}
+
+\end{DoxyCode}
+\Hypertarget{bsp__led_8h_a67600b15a0ecfbbd6fab29dd4dfde468}\label{bsp__led_8h_a67600b15a0ecfbbd6fab29dd4dfde468} 
+\index{bsp\_led.h@{bsp\_led.h}!LED\_CYAN@{LED\_CYAN}}
+\index{LED\_CYAN@{LED\_CYAN}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_CYAN}{LED\_CYAN}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+CYAN}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__led_8h_a343fd2d3ce61b84f88ddfaea32c67c58}{LED1\_OFF}};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED2\_ON\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED3\_ON}
+
+\end{DoxyCode}
+\Hypertarget{bsp__led_8h_aca338dbd19d7940923334629f6e5f3b7}\label{bsp__led_8h_aca338dbd19d7940923334629f6e5f3b7} 
+\index{bsp\_led.h@{bsp\_led.h}!LED\_GREEN@{LED\_GREEN}}
+\index{LED\_GREEN@{LED\_GREEN}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_GREEN}{LED\_GREEN}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+GREEN}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__led_8h_a343fd2d3ce61b84f88ddfaea32c67c58}{LED1\_OFF}};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED2\_ON\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED3\_OFF}
+
+\end{DoxyCode}
+\Hypertarget{bsp__led_8h_ac5af042948d7ce66dcecf2fe02f5a526}\label{bsp__led_8h_ac5af042948d7ce66dcecf2fe02f5a526} 
+\index{bsp\_led.h@{bsp\_led.h}!LED\_PURPLE@{LED\_PURPLE}}
+\index{LED\_PURPLE@{LED\_PURPLE}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_PURPLE}{LED\_PURPLE}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+PURPLE}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__led_8h_aadd4c7ae0cd4e9bbb17f7055dd51fe08}{LED1\_ON}};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED2\_OFF\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED3\_ON}
+
+\end{DoxyCode}
+\Hypertarget{bsp__led_8h_a31e20330f8ce94e0dd10b005a15c5898}\label{bsp__led_8h_a31e20330f8ce94e0dd10b005a15c5898} 
+\index{bsp\_led.h@{bsp\_led.h}!LED\_RED@{LED\_RED}}
+\index{LED\_RED@{LED\_RED}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_RED}{LED\_RED}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+RED}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__led_8h_aadd4c7ae0cd4e9bbb17f7055dd51fe08}{LED1\_ON}};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED2\_OFF\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED3\_OFF}
+
+\end{DoxyCode}
+\Hypertarget{bsp__led_8h_aca4924d24fa91da85137926002f3850f}\label{bsp__led_8h_aca4924d24fa91da85137926002f3850f} 
+\index{bsp\_led.h@{bsp\_led.h}!LED\_RGBOFF@{LED\_RGBOFF}}
+\index{LED\_RGBOFF@{LED\_RGBOFF}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_RGBOFF}{LED\_RGBOFF}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+RGBOFF}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__led_8h_a343fd2d3ce61b84f88ddfaea32c67c58}{LED1\_OFF}};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED2\_OFF\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED3\_OFF}
+
+\end{DoxyCode}
+\Hypertarget{bsp__led_8h_a0998333b3a54bf7e3a466c41287853ba}\label{bsp__led_8h_a0998333b3a54bf7e3a466c41287853ba} 
+\index{bsp\_led.h@{bsp\_led.h}!LED\_WHITE@{LED\_WHITE}}
+\index{LED\_WHITE@{LED\_WHITE}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_WHITE}{LED\_WHITE}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+WHITE}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__led_8h_aadd4c7ae0cd4e9bbb17f7055dd51fe08}{LED1\_ON}};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED2\_ON\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED3\_ON}
+
+\end{DoxyCode}
+\Hypertarget{bsp__led_8h_ae3c73853c6d0a1eca2c7d9797f6494ea}\label{bsp__led_8h_ae3c73853c6d0a1eca2c7d9797f6494ea} 
+\index{bsp\_led.h@{bsp\_led.h}!LED\_YELLOW@{LED\_YELLOW}}
+\index{LED\_YELLOW@{LED\_YELLOW}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_YELLOW}{LED\_YELLOW}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+YELLOW}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__led_8h_aadd4c7ae0cd4e9bbb17f7055dd51fe08}{LED1\_ON}};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED2\_ON\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LED3\_OFF}
+
+\end{DoxyCode}
+\Hypertarget{bsp__led_8h_a29e413f6725b2ba32d165ffaa35b01e5}\label{bsp__led_8h_a29e413f6725b2ba32d165ffaa35b01e5} 
+\index{bsp\_led.h@{bsp\_led.h}!OFF@{OFF}}
+\index{OFF@{OFF}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{OFF}{OFF}}
+{\footnotesize\ttfamily \#define OFF~1}
+
+\Hypertarget{bsp__led_8h_ad76d1750a6cdeebd506bfcd6752554d2}\label{bsp__led_8h_ad76d1750a6cdeebd506bfcd6752554d2} 
+\index{bsp\_led.h@{bsp\_led.h}!ON@{ON}}
+\index{ON@{ON}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{ON}{ON}}
+{\footnotesize\ttfamily \#define ON~0}
+
+
+
+the macro definition to trigger the led on or off 1 -\/ off 0 -\/ on 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bsp__led_8h_a89d2c2ccc2981f0583aa6e4c8f043298}\label{bsp__led_8h_a89d2c2ccc2981f0583aa6e4c8f043298} 
+\index{bsp\_led.h@{bsp\_led.h}!LED\_GPIO\_Config@{LED\_GPIO\_Config}}
+\index{LED\_GPIO\_Config@{LED\_GPIO\_Config}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_GPIO\_Config()}{LED\_GPIO\_Config()}}
+{\footnotesize\ttfamily void LED\+\_\+\+GPIO\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+初始化控制\+LED的\+IO 
+
+
+\begin{DoxyParams}{Parameters}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}

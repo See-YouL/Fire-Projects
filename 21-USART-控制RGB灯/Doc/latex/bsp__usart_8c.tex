@@ -1,0 +1,155 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/21-\/\+USART-\/控制\+RGB灯/\+User/usart/bsp\+\_\+usart.c File Reference}
+\hypertarget{bsp__usart_8c}{}\label{bsp__usart_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/User/usart/bsp\_usart.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/User/usart/bsp\_usart.c}}
+{\ttfamily \#include "{}bsp\+\_\+usart.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bsp__usart_8c_ae9720bf2dbb461c28e0205b050f1a0bb}{USART\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em USART GPIO 配置,工作参数配置 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__usart_8c_adb4b049dd4c3bc2a52fd1ce263a904b5}{Usart\+\_\+\+Send\+Byte}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}p\+USARTx, uint8\+\_\+t ch)
+\begin{DoxyCompactList}\small\item\em 发送一个字节到指定的\+USART外设 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__usart_8c_a909b7c31efd7acf63342bcec9dea5f6f}{Usart\+\_\+\+Send\+Half\+Word}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}p\+USARTx, uint16\+\_\+t ch)
+\begin{DoxyCompactList}\small\item\em 发送两个字节的数据 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__usart_8c_acbf2a00998db738ba52b8292c486ef12}{Usart\+\_\+\+Send\+Array}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}p\+USARTx, uint8\+\_\+t \texorpdfstring{$\ast$}{*}array, uint16\+\_\+t num)
+\begin{DoxyCompactList}\small\item\em Sends an array of bytes over USART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__usart_8c_a78e47eb176afafebb243cd3eb32b7141}{Usart\+\_\+\+Send\+String}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}p\+USARTx, uint8\+\_\+t \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em 发送字符串到\+USART外设 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{bsp__usart_8c_abac7707b6be5733e890091048fcb99a2}{fputc}} (int ch, FILE \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em 重定向标准输出函数 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{bsp__usart_8c_a2c4fad5f95f4c5242c3ea25d791df6e5}{fgetc}} (FILE \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em 重定向c库函数scanf到串口，重写向后可使用scanf、getchar等函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bsp__usart_8c_a2c4fad5f95f4c5242c3ea25d791df6e5}\label{bsp__usart_8c_a2c4fad5f95f4c5242c3ea25d791df6e5} 
+\index{bsp\_usart.c@{bsp\_usart.c}!fgetc@{fgetc}}
+\index{fgetc@{fgetc}!bsp\_usart.c@{bsp\_usart.c}}
+\doxysubsubsection{\texorpdfstring{fgetc()}{fgetc()}}
+{\footnotesize\ttfamily int fgetc (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{f }\end{DoxyParamCaption})}
+
+
+
+重定向c库函数scanf到串口，重写向后可使用scanf、getchar等函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & 文件指针 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 从串口接收到的数据 
+\end{DoxyReturn}
+\Hypertarget{bsp__usart_8c_abac7707b6be5733e890091048fcb99a2}\label{bsp__usart_8c_abac7707b6be5733e890091048fcb99a2} 
+\index{bsp\_usart.c@{bsp\_usart.c}!fputc@{fputc}}
+\index{fputc@{fputc}!bsp\_usart.c@{bsp\_usart.c}}
+\doxysubsubsection{\texorpdfstring{fputc()}{fputc()}}
+{\footnotesize\ttfamily int fputc (\begin{DoxyParamCaption}\item[{int}]{ch,  }\item[{FILE \texorpdfstring{$\ast$}{*}}]{f }\end{DoxyParamCaption})}
+
+
+
+重定向标准输出函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & 要发送的字符 \\
+\hline
+{\em f} & 文件指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 发送的字符} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{bsp__usart_8c_ae9720bf2dbb461c28e0205b050f1a0bb}\label{bsp__usart_8c_ae9720bf2dbb461c28e0205b050f1a0bb} 
+\index{bsp\_usart.c@{bsp\_usart.c}!USART\_Config@{USART\_Config}}
+\index{USART\_Config@{USART\_Config}!bsp\_usart.c@{bsp\_usart.c}}
+\doxysubsubsection{\texorpdfstring{USART\_Config()}{USART\_Config()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+USART GPIO 配置,工作参数配置 
+
+
+\begin{DoxyParams}{Parameters}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{bsp__usart_8c_acbf2a00998db738ba52b8292c486ef12}\label{bsp__usart_8c_acbf2a00998db738ba52b8292c486ef12} 
+\index{bsp\_usart.c@{bsp\_usart.c}!Usart\_SendArray@{Usart\_SendArray}}
+\index{Usart\_SendArray@{Usart\_SendArray}!bsp\_usart.c@{bsp\_usart.c}}
+\doxysubsubsection{\texorpdfstring{Usart\_SendArray()}{Usart\_SendArray()}}
+{\footnotesize\ttfamily void Usart\+\_\+\+Send\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{p\+USARTx,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{array,  }\item[{uint16\+\_\+t}]{num }\end{DoxyParamCaption})}
+
+
+
+Sends an array of bytes over USART. 
+
+This function sends an array of bytes over the specified USART peripheral.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+USARTx} & The USART peripheral to use. \\
+\hline
+{\em array} & Pointer to the array of bytes to send. \\
+\hline
+{\em num} & The number of bytes to send. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{bsp__usart_8c_adb4b049dd4c3bc2a52fd1ce263a904b5}\label{bsp__usart_8c_adb4b049dd4c3bc2a52fd1ce263a904b5} 
+\index{bsp\_usart.c@{bsp\_usart.c}!Usart\_SendByte@{Usart\_SendByte}}
+\index{Usart\_SendByte@{Usart\_SendByte}!bsp\_usart.c@{bsp\_usart.c}}
+\doxysubsubsection{\texorpdfstring{Usart\_SendByte()}{Usart\_SendByte()}}
+{\footnotesize\ttfamily void Usart\+\_\+\+Send\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{p\+USARTx,  }\item[{uint8\+\_\+t}]{ch }\end{DoxyParamCaption})}
+
+
+
+发送一个字节到指定的\+USART外设 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+USARTx} & USART外设指针 \\
+\hline
+{\em ch} & 要发送的字节 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{bsp__usart_8c_a909b7c31efd7acf63342bcec9dea5f6f}\label{bsp__usart_8c_a909b7c31efd7acf63342bcec9dea5f6f} 
+\index{bsp\_usart.c@{bsp\_usart.c}!Usart\_SendHalfWord@{Usart\_SendHalfWord}}
+\index{Usart\_SendHalfWord@{Usart\_SendHalfWord}!bsp\_usart.c@{bsp\_usart.c}}
+\doxysubsubsection{\texorpdfstring{Usart\_SendHalfWord()}{Usart\_SendHalfWord()}}
+{\footnotesize\ttfamily void Usart\+\_\+\+Send\+Half\+Word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{p\+USARTx,  }\item[{uint16\+\_\+t}]{ch }\end{DoxyParamCaption})}
+
+
+
+发送两个字节的数据 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+USARTx} & USART外设指针 \\
+\hline
+{\em ch} & 要发送的16位数据 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{bsp__usart_8c_a78e47eb176afafebb243cd3eb32b7141}\label{bsp__usart_8c_a78e47eb176afafebb243cd3eb32b7141} 
+\index{bsp\_usart.c@{bsp\_usart.c}!Usart\_SendString@{Usart\_SendString}}
+\index{Usart\_SendString@{Usart\_SendString}!bsp\_usart.c@{bsp\_usart.c}}
+\doxysubsubsection{\texorpdfstring{Usart\_SendString()}{Usart\_SendString()}}
+{\footnotesize\ttfamily void Usart\+\_\+\+Send\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{p\+USARTx,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+发送字符串到\+USART外设 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+USARTx} & USART外设指针 \\
+\hline
+{\em str} & 要发送的字符串 \\
+\hline
+\end{DoxyParams}

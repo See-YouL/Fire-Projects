@@ -1,0 +1,264 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/21-\/\+USART-\/控制\+RGB灯/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/stm32f10x\+\_\+fsmc.h File Reference}
+\hypertarget{stm32f10x__fsmc_8h}{}\label{stm32f10x__fsmc_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_fsmc.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_fsmc.h}}
+
+
+This file contains all the functions prototypes for the FSMC firmware library.  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_s_m_c___n_o_r_s_r_a_m_timing_init_type_def}{FSMC\+\_\+\+NORSRAMTiming\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Timing parameters For NOR/\+SRAM Banks ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_f_s_m_c___n_o_r_s_r_a_m_init_type_def}{FSMC\+\_\+\+NORSRAMInit\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em FSMC NOR/\+SRAM Init structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def}{FSMC\+\_\+\+NAND\+\_\+\+PCCARDTiming\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Timing parameters For FSMC NAND and PCCARD Banks. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_f_s_m_c___n_a_n_d_init_type_def}{FSMC\+\_\+\+NANDInit\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em FSMC NAND Init structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_f_s_m_c___p_c_c_a_r_d_init_type_def}{FSMC\+\_\+\+PCCARDInit\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em FSMC PCCARD Init structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___n_o_r_s_r_a_m___bank_ga514a05828041fa1a13d464c9e4a0a4a9}{FSMC\+\_\+\+Bank1\+\_\+\+NORSRAM1}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___n_o_r_s_r_a_m___bank_gaef52862c652370b9a658478d275dd956}{FSMC\+\_\+\+Bank1\+\_\+\+NORSRAM2}}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___n_o_r_s_r_a_m___bank_ga151b02506a318ac77382b52f3b5e16f4}{FSMC\+\_\+\+Bank1\+\_\+\+NORSRAM3}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___n_o_r_s_r_a_m___bank_ga1083572834aa084d21e6698c280f8f74}{FSMC\+\_\+\+Bank1\+\_\+\+NORSRAM4}}~((uint32\+\_\+t)0x00000006)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___n_a_n_d___bank_ga294e7134aa329a09e56b61eec9882a27}{FSMC\+\_\+\+Bank2\+\_\+\+NAND}}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___n_a_n_d___bank_gaf72def0732c026b0245d721ee371c85b}{FSMC\+\_\+\+Bank3\+\_\+\+NAND}}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___p_c_c_a_r_d___bank_gad08ce7c7afc462f3d9ef085b05d42387}{FSMC\+\_\+\+Bank4\+\_\+\+PCCARD}}~((uint32\+\_\+t)0x00001000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___exported___constants_ga3e3bed3dd83d38e63f11ac4cbcb87304}{IS\+\_\+\+FSMC\+\_\+\+NORSRAM\+\_\+\+BANK}}(BANK)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___exported___constants_ga725bada099197f15f49dc0c5be00e19b}{IS\+\_\+\+FSMC\+\_\+\+NAND\+\_\+\+BANK}}(BANK)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___exported___constants_ga884e28a365a738ad8a3199ee279a1f77}{IS\+\_\+\+FSMC\+\_\+\+GETFLAG\+\_\+\+BANK}}(BANK)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___exported___constants_gaca216ea0c184b78f23df15296a10bac0}{IS\+\_\+\+FSMC\+\_\+\+IT\+\_\+\+BANK}}(BANK)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___data___address___bus___multiplexing_ga62d92adbcbcc1d6ec9a04de1b343744a}{FSMC\+\_\+\+Data\+Address\+Mux\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___data___address___bus___multiplexing_ga1dd4d12e63aaf29dbb8ae4b613f2aa15}{FSMC\+\_\+\+Data\+Address\+Mux\+\_\+\+Enable}}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___data___address___bus___multiplexing_ga546fcab8c1b751b4a959ba2ce5b35d79}{IS\+\_\+\+FSMC\+\_\+\+MUX}}(MUX)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___memory___type_ga8a24e8da42e67dcf6fb2f43659aa49cf}{FSMC\+\_\+\+Memory\+Type\+\_\+\+SRAM}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___memory___type_gae3e680998b2fee8d56222634f5268a75}{FSMC\+\_\+\+Memory\+Type\+\_\+\+PSRAM}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___memory___type_ga8b9390abe7c281947c550bf4365649e5}{FSMC\+\_\+\+Memory\+Type\+\_\+\+NOR}}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___memory___type_ga255cd500e141f4ac024cf5f896921233}{IS\+\_\+\+FSMC\+\_\+\+MEMORY}}(MEMORY)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___data___width_ga5753e089830f19af70a724766e3c329f}{FSMC\+\_\+\+Memory\+Data\+Width\+\_\+8b}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___data___width_ga65d85c3072e6790ae760ca2248e46df6}{FSMC\+\_\+\+Memory\+Data\+Width\+\_\+16b}}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___data___width_ga003d52b62f5950fb041f73f15ce20171}{IS\+\_\+\+FSMC\+\_\+\+MEMORY\+\_\+\+WIDTH}}(WIDTH)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___burst___access___mode_ga26fc544945415e350563a9b00684850c}{FSMC\+\_\+\+Burst\+Access\+Mode\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___burst___access___mode_ga841831dfacfdd8889dafe26cc594bf02}{FSMC\+\_\+\+Burst\+Access\+Mode\+\_\+\+Enable}}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___burst___access___mode_gaf8736659c5064c3c03753d7874401e71}{IS\+\_\+\+FSMC\+\_\+\+BURSTMODE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___asynchronous_wait_ga36c0dad6fe6c0e01632d3312c8f4c4cb}{FSMC\+\_\+\+Asynchronous\+Wait\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___asynchronous_wait_gaff524bfa697106ede7d4b557a5ad7d8c}{FSMC\+\_\+\+Asynchronous\+Wait\+\_\+\+Enable}}~((uint32\+\_\+t)0x00008000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___asynchronous_wait_ga52d579de825316ee058baf11bfb749d6}{IS\+\_\+\+FSMC\+\_\+\+ASYNWAIT}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait___signal___polarity_ga7dc72fdfc6225e5daa9b8efee8dff49f}{FSMC\+\_\+\+Wait\+Signal\+Polarity\+\_\+\+Low}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait___signal___polarity_ga3418f29249a261edb1359d1bcdc43661}{FSMC\+\_\+\+Wait\+Signal\+Polarity\+\_\+\+High}}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait___signal___polarity_gabc5321807d5184fe5cdb7848e1be7bc6}{IS\+\_\+\+FSMC\+\_\+\+WAIT\+\_\+\+POLARITY}}(POLARITY)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wrap___mode_ga6041f0d3055ea3811a5a19560092f266}{FSMC\+\_\+\+Wrap\+Mode\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wrap___mode_gad07eb0ae0362b2f94071d0dab6473fda}{FSMC\+\_\+\+Wrap\+Mode\+\_\+\+Enable}}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wrap___mode_ga0751d74b7fb1e17f6cedea091e8ebfc8}{IS\+\_\+\+FSMC\+\_\+\+WRAP\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait___timing_ga62c6855a7cc65b20024085f09cdc65e8}{FSMC\+\_\+\+Wait\+Signal\+Active\+\_\+\+Before\+Wait\+State}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait___timing_gae905fc59e5d99091d132d7c221c8b6d4}{FSMC\+\_\+\+Wait\+Signal\+Active\+\_\+\+During\+Wait\+State}}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait___timing_ga3edb40c756afa8bb78550b7e22ded093}{IS\+\_\+\+FSMC\+\_\+\+WAIT\+\_\+\+SIGNAL\+\_\+\+ACTIVE}}(ACTIVE)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___write___operation_ga74176320484248f06abae854170f9d9f}{FSMC\+\_\+\+Write\+Operation\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___write___operation_ga2478beb6dd8861b34a16b8a57a795e56}{FSMC\+\_\+\+Write\+Operation\+\_\+\+Enable}}~((uint32\+\_\+t)0x00001000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___write___operation_ga87fc20d11761caa66c3e7d77a3a7d3e3}{IS\+\_\+\+FSMC\+\_\+\+WRITE\+\_\+\+OPERATION}}(OPERATION)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait___signal_ga6ea66c8ddee073281c421533bdff7e19}{FSMC\+\_\+\+Wait\+Signal\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait___signal_gaf809e339f1cdc9d0a815fd98712e9ee3}{FSMC\+\_\+\+Wait\+Signal\+\_\+\+Enable}}~((uint32\+\_\+t)0x00002000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait___signal_gae617db4f15c82850d4f5c927f9a7db3e}{IS\+\_\+\+FSMC\+\_\+\+WAITE\+\_\+\+SIGNAL}}(SIGNAL)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___extended___mode_ga5a1f1acdc44328158f59012748980dd3}{FSMC\+\_\+\+Extended\+Mode\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___extended___mode_gaef9ff4c81a52fdb0471d2c4422271d2a}{FSMC\+\_\+\+Extended\+Mode\+\_\+\+Enable}}~((uint32\+\_\+t)0x00004000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___extended___mode_ga79849ea07bf2a8f09989a6babd9e66e2}{IS\+\_\+\+FSMC\+\_\+\+EXTENDED\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___write___burst_ga65a49ecd05b3a128e8908c6a625adae7}{FSMC\+\_\+\+Write\+Burst\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___write___burst_ga1b2b66a0eb42778c2cc9a05003cf7655}{FSMC\+\_\+\+Write\+Burst\+\_\+\+Enable}}~((uint32\+\_\+t)0x00080000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___write___burst_gab7b03a33fab765827832abbf07d01a10}{IS\+\_\+\+FSMC\+\_\+\+WRITE\+\_\+\+BURST}}(BURST)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___address___setup___time_ga8b77d090338011abc1be7f4a420e2d8f}{IS\+\_\+\+FSMC\+\_\+\+ADDRESS\+\_\+\+SETUP\+\_\+\+TIME}}(TIME)~((TIME) $<$= 0xF)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___address___hold___time_gae7d031a5b95ad00acf67e9bc95064998}{IS\+\_\+\+FSMC\+\_\+\+ADDRESS\+\_\+\+HOLD\+\_\+\+TIME}}(TIME)~((TIME) $<$= 0xF)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___data___setup___time_ga3d923de775489e844913b29e77e8cca7}{IS\+\_\+\+FSMC\+\_\+\+DATASETUP\+\_\+\+TIME}}(TIME)~(((TIME) $>$ 0) \&\& ((TIME) $<$= 0x\+FF))
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___bus___turn__around___duration_ga9ec626f30679a18af91bf48c52d9260d}{IS\+\_\+\+FSMC\+\_\+\+TURNAROUND\+\_\+\+TIME}}(TIME)~((TIME) $<$= 0xF)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___c_l_k___division_ga9e5321b02ea049fd076ba705acd06b5f}{IS\+\_\+\+FSMC\+\_\+\+CLK\+\_\+\+DIV}}(DIV)~((DIV) $<$= 0xF)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___data___latency_ga1ab8659a9631d8bb4f57d8be8580155c}{IS\+\_\+\+FSMC\+\_\+\+DATA\+\_\+\+LATENCY}}(LATENCY)~((LATENCY) $<$= 0xF)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___access___mode_gae0f299b51c12257311694c4a8f5c00c3}{FSMC\+\_\+\+Access\+Mode\+\_\+A}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___access___mode_ga2d6ce7481eb5e0e86fda727c646e4109}{FSMC\+\_\+\+Access\+Mode\+\_\+B}}~((uint32\+\_\+t)0x10000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___access___mode_ga83ffa035cf2e95c957b67a2e8b879e86}{FSMC\+\_\+\+Access\+Mode\+\_\+C}}~((uint32\+\_\+t)0x20000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___access___mode_ga7c632e7ebeb0c0ab4919bb60b8714c7b}{FSMC\+\_\+\+Access\+Mode\+\_\+D}}~((uint32\+\_\+t)0x30000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___access___mode_ga1844335f297ea30e9d7fae09ce562092}{IS\+\_\+\+FSMC\+\_\+\+ACCESS\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait__feature_ga8a31f05576e66546fbbcdb06ff67da7d}{FSMC\+\_\+\+Waitfeature\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait__feature_ga3113366130dfbf6d116f1afb94af1726}{FSMC\+\_\+\+Waitfeature\+\_\+\+Enable}}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait__feature_ga07c2585b517df2c7afbe3ba16c22f236}{IS\+\_\+\+FSMC\+\_\+\+WAIT\+\_\+\+FEATURE}}(FEATURE)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___e_c_c_ga9a3264c0718f5023fd106abea7ef806d}{FSMC\+\_\+\+ECC\+\_\+\+Disable}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___e_c_c_ga9d940243830695412d4c98228bb5b763}{FSMC\+\_\+\+ECC\+\_\+\+Enable}}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___e_c_c_gaf1a7cb45edd8707bf4ea8aac96799c77}{IS\+\_\+\+FSMC\+\_\+\+ECC\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___e_c_c___page___size_gaaa1661267b44e6728fa64aca79de54b3}{FSMC\+\_\+\+ECCPage\+Size\+\_\+256\+Bytes}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___e_c_c___page___size_gacb4da17c28dde89e38ff4ed40497f6b5}{FSMC\+\_\+\+ECCPage\+Size\+\_\+512\+Bytes}}~((uint32\+\_\+t)0x00020000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___e_c_c___page___size_ga8137931c96b63ec7e6f80a8c7391433f}{FSMC\+\_\+\+ECCPage\+Size\+\_\+1024\+Bytes}}~((uint32\+\_\+t)0x00040000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___e_c_c___page___size_gab8f3ae95becd59e71a976b97ded904b8}{FSMC\+\_\+\+ECCPage\+Size\+\_\+2048\+Bytes}}~((uint32\+\_\+t)0x00060000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___e_c_c___page___size_gaec2e9e434685a1756bd171699248f65a}{FSMC\+\_\+\+ECCPage\+Size\+\_\+4096\+Bytes}}~((uint32\+\_\+t)0x00080000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___e_c_c___page___size_gab6877a99ddf02e7aa95cf04896ce731d}{FSMC\+\_\+\+ECCPage\+Size\+\_\+8192\+Bytes}}~((uint32\+\_\+t)0x000\+A0000)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___e_c_c___page___size_ga58fefa0d55875775a88f54ad7498178f}{IS\+\_\+\+FSMC\+\_\+\+ECCPAGE\+\_\+\+SIZE}}(SIZE)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___t_c_l_r___setup___time_ga324848d0d9c0d2aad7ab70873b4a15e9}{IS\+\_\+\+FSMC\+\_\+\+TCLR\+\_\+\+TIME}}(TIME)~((TIME) $<$= 0x\+FF)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___t_a_r___setup___time_ga5b9e0f64c44ab68afca90cd28dedd8e3}{IS\+\_\+\+FSMC\+\_\+\+TAR\+\_\+\+TIME}}(TIME)~((TIME) $<$= 0x\+FF)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___setup___time_ga4f2fbb8f6ec492cc241a49c468e0d98d}{IS\+\_\+\+FSMC\+\_\+\+SETUP\+\_\+\+TIME}}(TIME)~((TIME) $<$= 0x\+FF)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___wait___setup___time_ga5c0efc48afb916ceff32868940f81613}{IS\+\_\+\+FSMC\+\_\+\+WAIT\+\_\+\+TIME}}(TIME)~((TIME) $<$= 0x\+FF)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___hold___setup___time_gab2abc8eb967495f2a2bafec8162d6385}{IS\+\_\+\+FSMC\+\_\+\+HOLD\+\_\+\+TIME}}(TIME)~((TIME) $<$= 0x\+FF)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___hi_z___setup___time_gaeb6295e8cc1a524f060c5e780f868033}{IS\+\_\+\+FSMC\+\_\+\+HIZ\+\_\+\+TIME}}(TIME)~((TIME) $<$= 0x\+FF)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___interrupt__sources_gac483854bd6f90d8c7899a597a0c0ab1a}{FSMC\+\_\+\+IT\+\_\+\+Rising\+Edge}}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___interrupt__sources_ga59b5839854074008fb36fa86ec50a0c7}{FSMC\+\_\+\+IT\+\_\+\+Level}}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___interrupt__sources_ga8e4b9589c9981c900b5f2e84581a9693}{FSMC\+\_\+\+IT\+\_\+\+Falling\+Edge}}~((uint32\+\_\+t)0x00000020)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___interrupt__sources_ga40a38f097a75f27a700e626905fa9a38}{IS\+\_\+\+FSMC\+\_\+\+IT}}(IT)~((((IT) \& (uint32\+\_\+t)0x\+FFFFFFC7) == 0x00000000) \&\& ((IT) != 0x00000000))
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___interrupt__sources_gae2a57d0b15e025212489ec1421ff245d}{IS\+\_\+\+FSMC\+\_\+\+GET\+\_\+\+IT}}(IT)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___flags_ga5aadbd5d9f1b6a25bcc1fc6f3bf4c9cc}{FSMC\+\_\+\+FLAG\+\_\+\+Rising\+Edge}}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___flags_ga25868d35780998a52190c424ebb3823f}{FSMC\+\_\+\+FLAG\+\_\+\+Level}}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___flags_gaaaa85bce06ed962874686ad7af0f0cb7}{FSMC\+\_\+\+FLAG\+\_\+\+Falling\+Edge}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___flags_ga8da2bd0b9d11877aaebaba0c77e8b0cc}{FSMC\+\_\+\+FLAG\+\_\+\+FEMPT}}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___flags_gab8674160ef7884f939e07041bbf5b18b}{IS\+\_\+\+FSMC\+\_\+\+GET\+\_\+\+FLAG}}(FLAG)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___flags_ga1114bf56b54e726831b38fc8c5daa14e}{IS\+\_\+\+FSMC\+\_\+\+CLEAR\+\_\+\+FLAG}}(FLAG)~((((FLAG) \& (uint32\+\_\+t)0x\+FFFFFFF8) == 0x00000000) \&\& ((FLAG) != 0x00000000))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_gaab3e6648e8a584e73785361ac960eded}{FSMC\+\_\+\+NORSRAMDe\+Init}} (uint32\+\_\+t FSMC\+\_\+\+Bank)
+\begin{DoxyCompactList}\small\item\em Deinitializes the FSMC NOR/\+SRAM Banks registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_gafb749503293474a68555961bd8f120e1}{FSMC\+\_\+\+NANDDe\+Init}} (uint32\+\_\+t FSMC\+\_\+\+Bank)
+\begin{DoxyCompactList}\small\item\em Deinitializes the FSMC NAND Banks registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_ga2f53ccf3a4f3c80a5a56fb47ccd47ccd}{FSMC\+\_\+\+PCCARDDe\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the FSMC PCCARD Bank registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_ga9c27816e8b17394c9ee1ce9298917b4a}{FSMC\+\_\+\+NORSRAMInit}} (\mbox{\hyperlink{struct_f_s_m_c___n_o_r_s_r_a_m_init_type_def}{FSMC\+\_\+\+NORSRAMInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}FSMC\+\_\+\+NORSRAMInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the FSMC NOR/\+SRAM Banks according to the specified parameters in the FSMC\+\_\+\+NORSRAMInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_ga9f81ccc4e126c11f1eb33077b1a68e6f}{FSMC\+\_\+\+NANDInit}} (\mbox{\hyperlink{struct_f_s_m_c___n_a_n_d_init_type_def}{FSMC\+\_\+\+NANDInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}FSMC\+\_\+\+NANDInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the FSMC NAND Banks according to the specified parameters in the FSMC\+\_\+\+NANDInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_gacee1351363e7700a296faa1734a910aa}{FSMC\+\_\+\+PCCARDInit}} (\mbox{\hyperlink{struct_f_s_m_c___p_c_c_a_r_d_init_type_def}{FSMC\+\_\+\+PCCARDInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}FSMC\+\_\+\+PCCARDInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the FSMC PCCARD Bank according to the specified parameters in the FSMC\+\_\+\+PCCARDInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_gaf33e6dfc34f62d16a0cb416de9e83d28}{FSMC\+\_\+\+NORSRAMStruct\+Init}} (\mbox{\hyperlink{struct_f_s_m_c___n_o_r_s_r_a_m_init_type_def}{FSMC\+\_\+\+NORSRAMInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}FSMC\+\_\+\+NORSRAMInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each FSMC\+\_\+\+NORSRAMInit\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_ga8283ad94ad8e83d49d5b77d1c7e17862}{FSMC\+\_\+\+NANDStruct\+Init}} (\mbox{\hyperlink{struct_f_s_m_c___n_a_n_d_init_type_def}{FSMC\+\_\+\+NANDInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}FSMC\+\_\+\+NANDInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each FSMC\+\_\+\+NANDInit\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_ga7a64ba0e0545b3f1913c9d1d28c05e62}{FSMC\+\_\+\+PCCARDStruct\+Init}} (\mbox{\hyperlink{struct_f_s_m_c___p_c_c_a_r_d_init_type_def}{FSMC\+\_\+\+PCCARDInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}FSMC\+\_\+\+PCCARDInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each FSMC\+\_\+\+PCCARDInit\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_gaf943f0f2680168d3a95a3c2c9f3eca2a}{FSMC\+\_\+\+NORSRAMCmd}} (uint32\+\_\+t FSMC\+\_\+\+Bank, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified NOR/\+SRAM Memory Bank. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_ga33ec7c39ea4d42e92c72c6e517d8235c}{FSMC\+\_\+\+NANDCmd}} (uint32\+\_\+t FSMC\+\_\+\+Bank, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified NAND Memory Bank. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_ga2d410151ceb3428c6a1bf374a0472cde}{FSMC\+\_\+\+PCCARDCmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the PCCARD Memory Bank. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_ga5800301fc39bbe998a18ebd9ff191cdc}{FSMC\+\_\+\+NANDECCCmd}} (uint32\+\_\+t FSMC\+\_\+\+Bank, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the FSMC NAND ECC feature. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___f_s_m_c___exported___functions_gaad6d4f5b5a41684ce053fea55bdb98d8}{FSMC\+\_\+\+Get\+ECC}} (uint32\+\_\+t FSMC\+\_\+\+Bank)
+\begin{DoxyCompactList}\small\item\em Returns the error correction code register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_ga217027ae3cd213b9076b6a1be197064c}{FSMC\+\_\+\+ITConfig}} (uint32\+\_\+t FSMC\+\_\+\+Bank, uint32\+\_\+t FSMC\+\_\+\+IT, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified FSMC interrupts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___f_s_m_c___exported___functions_gae00355115b078f483f0771057bb849c4}{FSMC\+\_\+\+Get\+Flag\+Status}} (uint32\+\_\+t FSMC\+\_\+\+Bank, uint32\+\_\+t FSMC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified FSMC flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_ga697618f2de0ad9a8a82461ddbebd5264}{FSMC\+\_\+\+Clear\+Flag}} (uint32\+\_\+t FSMC\+\_\+\+Bank, uint32\+\_\+t FSMC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the FSMC\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} \mbox{\hyperlink{group___f_s_m_c___exported___functions_ga7fce9ca889d33cd8b8b7413875dd4d73}{FSMC\+\_\+\+Get\+ITStatus}} (uint32\+\_\+t FSMC\+\_\+\+Bank, uint32\+\_\+t FSMC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified FSMC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___exported___functions_gad9387e7674b8a376256a3378649e004e}{FSMC\+\_\+\+Clear\+ITPending\+Bit}} (uint32\+\_\+t FSMC\+\_\+\+Bank, uint32\+\_\+t FSMC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the FSMC\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the FSMC firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

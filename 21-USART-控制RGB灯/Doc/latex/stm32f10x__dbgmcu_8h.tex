@@ -1,0 +1,94 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/21-\/\+USART-\/控制\+RGB灯/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/stm32f10x\+\_\+dbgmcu.h File Reference}
+\hypertarget{stm32f10x__dbgmcu_8h}{}\label{stm32f10x__dbgmcu_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_dbgmcu.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_dbgmcu.h}}
+
+
+This file contains all the functions prototypes for the DBGMCU firmware library.  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga1c457289646b9d9814b93fbb994c9930}{DBGMCU\+\_\+\+SLEEP}}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga4a71bcfa6868672674b5410d2fd372f4}{DBGMCU\+\_\+\+STOP}}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga6eb848845f9207ffdccd0590da192002}{DBGMCU\+\_\+\+STANDBY}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga5b8b38b5589a2e26a57325553b5dfe23}{DBGMCU\+\_\+\+IWDG\+\_\+\+STOP}}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga9ecfb95a943e2ad165395fff4fa12770}{DBGMCU\+\_\+\+WWDG\+\_\+\+STOP}}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga017fb3101a3569426e82b066cb2f8848}{DBGMCU\+\_\+\+TIM1\+\_\+\+STOP}}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga8ba3a77260f748793c903468a4608bd1}{DBGMCU\+\_\+\+TIM2\+\_\+\+STOP}}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga28c01c2c30bed78e51d997007986fac9}{DBGMCU\+\_\+\+TIM3\+\_\+\+STOP}}~((uint32\+\_\+t)0x00001000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_gac87363a4018e2b23a907cfaf836494f1}{DBGMCU\+\_\+\+TIM4\+\_\+\+STOP}}~((uint32\+\_\+t)0x00002000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga5ef70e050d1a95f350b6585336a55ca8}{DBGMCU\+\_\+\+CAN1\+\_\+\+STOP}}~((uint32\+\_\+t)0x00004000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga1c0566af96833376cf1af98449cc914b}{DBGMCU\+\_\+\+I2\+C1\+\_\+\+SMBUS\+\_\+\+TIMEOUT}}~((uint32\+\_\+t)0x00008000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga316f8eba36b7a796dd3c6b7d6640b4bf}{DBGMCU\+\_\+\+I2\+C2\+\_\+\+SMBUS\+\_\+\+TIMEOUT}}~((uint32\+\_\+t)0x00010000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_gaa66feea7d5f2c253fe3f431f9dd4bd1e}{DBGMCU\+\_\+\+TIM8\+\_\+\+STOP}}~((uint32\+\_\+t)0x00020000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_gaf97e21534b3aa9482af496497a37ff4b}{DBGMCU\+\_\+\+TIM5\+\_\+\+STOP}}~((uint32\+\_\+t)0x00040000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga076cf7d18c7019e99f5f15962ab317eb}{DBGMCU\+\_\+\+TIM6\+\_\+\+STOP}}~((uint32\+\_\+t)0x00080000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_gaf593ca16ee6d3f1fabc549878f3f87f0}{DBGMCU\+\_\+\+TIM7\+\_\+\+STOP}}~((uint32\+\_\+t)0x00100000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_gace53677f1b7b9a52b592cf2b0f3f7178}{DBGMCU\+\_\+\+CAN2\+\_\+\+STOP}}~((uint32\+\_\+t)0x00200000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga68f2b4e7feb0a1f1e4b437a104c30f03}{DBGMCU\+\_\+\+TIM15\+\_\+\+STOP}}~((uint32\+\_\+t)0x00400000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga8a0698403a9c76115bc607ee0149193f}{DBGMCU\+\_\+\+TIM16\+\_\+\+STOP}}~((uint32\+\_\+t)0x00800000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_gabf3a93a60431c892bdf36ff02081badc}{DBGMCU\+\_\+\+TIM17\+\_\+\+STOP}}~((uint32\+\_\+t)0x01000000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga4814287cef24f57e795b0f5b0174b49c}{DBGMCU\+\_\+\+TIM12\+\_\+\+STOP}}~((uint32\+\_\+t)0x02000000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_gae0dd8a28977b261b013fa1ecda79b289}{DBGMCU\+\_\+\+TIM13\+\_\+\+STOP}}~((uint32\+\_\+t)0x04000000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga731f63d66045abee68dbc634070df051}{DBGMCU\+\_\+\+TIM14\+\_\+\+STOP}}~((uint32\+\_\+t)0x08000000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga560c557a0d0839dba04f7f2b47851109}{DBGMCU\+\_\+\+TIM9\+\_\+\+STOP}}~((uint32\+\_\+t)0x10000000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga1f0ae2f78e1f9d7eb819bf49b13b5327}{DBGMCU\+\_\+\+TIM10\+\_\+\+STOP}}~((uint32\+\_\+t)0x20000000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_gade03e5368c3bf8a2f43fc046f1d87f30}{DBGMCU\+\_\+\+TIM11\+\_\+\+STOP}}~((uint32\+\_\+t)0x40000000)
+\item 
+\#define \mbox{\hyperlink{group___d_b_g_m_c_u___exported___constants_ga96d44dc7861b6a3f364942704f323a45}{IS\+\_\+\+DBGMCU\+\_\+\+PERIPH}}(PERIPH)~((((PERIPH) \& 0x800000\+F8) == 0x00) \&\& ((PERIPH) != 0x00))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___d_b_g_m_c_u___exported___functions_ga47419e9ca75ab7be4c70feb82faa0511}{DBGMCU\+\_\+\+Get\+REVID}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the device revision identifier. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___d_b_g_m_c_u___exported___functions_gac34193c34dbce759bf424957a31b3266}{DBGMCU\+\_\+\+Get\+DEVID}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the device identifier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_b_g_m_c_u___exported___functions_gadf2f267f855ac1e4c03905c5dcfbd28b}{DBGMCU\+\_\+\+Config}} (uint32\+\_\+t DBGMCU\+\_\+\+Periph, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Configures the specified peripheral and low power mode behavior when the MCU under Debug mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the DBGMCU firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

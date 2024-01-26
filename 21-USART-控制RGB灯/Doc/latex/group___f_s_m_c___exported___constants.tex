@@ -1,0 +1,91 @@
+\doxysubsubsection{FSMC\+\_\+\+Exported\+\_\+\+Constants}
+\hypertarget{group___f_s_m_c___exported___constants}{}\label{group___f_s_m_c___exported___constants}\index{FSMC\_Exported\_Constants@{FSMC\_Exported\_Constants}}
+\doxysubsubsubsubsection*{Topics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___f_s_m_c___n_o_r_s_r_a_m___bank}{FSMC\+\_\+\+NORSRAM\+\_\+\+Bank}}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___f_s_m_c___n_a_n_d___bank}{FSMC\+\_\+\+NAND\+\_\+\+Bank}}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___f_s_m_c___p_c_c_a_r_d___bank}{FSMC\+\_\+\+PCCARD\+\_\+\+Bank}}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___n_o_r___s_r_a_m___controller}{NOR\+\_\+\+SRAM\+\_\+\+Controller}}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___n_a_n_d___p_c_c_a_r_d___controller}{NAND\+\_\+\+PCCARD\+\_\+\+Controller}}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___exported___constants_ga3e3bed3dd83d38e63f11ac4cbcb87304}{IS\+\_\+\+FSMC\+\_\+\+NORSRAM\+\_\+\+BANK}}(BANK)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___exported___constants_ga725bada099197f15f49dc0c5be00e19b}{IS\+\_\+\+FSMC\+\_\+\+NAND\+\_\+\+BANK}}(BANK)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___exported___constants_ga884e28a365a738ad8a3199ee279a1f77}{IS\+\_\+\+FSMC\+\_\+\+GETFLAG\+\_\+\+BANK}}(BANK)
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___exported___constants_gaca216ea0c184b78f23df15296a10bac0}{IS\+\_\+\+FSMC\+\_\+\+IT\+\_\+\+BANK}}(BANK)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___f_s_m_c___exported___constants_ga884e28a365a738ad8a3199ee279a1f77}\label{group___f_s_m_c___exported___constants_ga884e28a365a738ad8a3199ee279a1f77} 
+\index{FSMC\_Exported\_Constants@{FSMC\_Exported\_Constants}!IS\_FSMC\_GETFLAG\_BANK@{IS\_FSMC\_GETFLAG\_BANK}}
+\index{IS\_FSMC\_GETFLAG\_BANK@{IS\_FSMC\_GETFLAG\_BANK}!FSMC\_Exported\_Constants@{FSMC\_Exported\_Constants}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_FSMC\_GETFLAG\_BANK}{IS\_FSMC\_GETFLAG\_BANK}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FSMC\+\_\+\+GETFLAG\+\_\+\+BANK(\begin{DoxyParamCaption}\item[{}]{BANK }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((BANK)\ ==\ \mbox{\hyperlink{group___f_s_m_c___n_a_n_d___bank_ga294e7134aa329a09e56b61eec9882a27}{FSMC\_Bank2\_NAND}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ \mbox{\hyperlink{group___f_s_m_c___n_a_n_d___bank_gaf72def0732c026b0245d721ee371c85b}{FSMC\_Bank3\_NAND}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ \mbox{\hyperlink{group___f_s_m_c___p_c_c_a_r_d___bank_gad08ce7c7afc462f3d9ef085b05d42387}{FSMC\_Bank4\_PCCARD}}))}
+
+\end{DoxyCode}
+\Hypertarget{group___f_s_m_c___exported___constants_gaca216ea0c184b78f23df15296a10bac0}\label{group___f_s_m_c___exported___constants_gaca216ea0c184b78f23df15296a10bac0} 
+\index{FSMC\_Exported\_Constants@{FSMC\_Exported\_Constants}!IS\_FSMC\_IT\_BANK@{IS\_FSMC\_IT\_BANK}}
+\index{IS\_FSMC\_IT\_BANK@{IS\_FSMC\_IT\_BANK}!FSMC\_Exported\_Constants@{FSMC\_Exported\_Constants}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_FSMC\_IT\_BANK}{IS\_FSMC\_IT\_BANK}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FSMC\+\_\+\+IT\+\_\+\+BANK(\begin{DoxyParamCaption}\item[{}]{BANK }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((BANK)\ ==\ \mbox{\hyperlink{group___f_s_m_c___n_a_n_d___bank_ga294e7134aa329a09e56b61eec9882a27}{FSMC\_Bank2\_NAND}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ \mbox{\hyperlink{group___f_s_m_c___n_a_n_d___bank_gaf72def0732c026b0245d721ee371c85b}{FSMC\_Bank3\_NAND}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ \mbox{\hyperlink{group___f_s_m_c___p_c_c_a_r_d___bank_gad08ce7c7afc462f3d9ef085b05d42387}{FSMC\_Bank4\_PCCARD}}))}
+
+\end{DoxyCode}
+\Hypertarget{group___f_s_m_c___exported___constants_ga725bada099197f15f49dc0c5be00e19b}\label{group___f_s_m_c___exported___constants_ga725bada099197f15f49dc0c5be00e19b} 
+\index{FSMC\_Exported\_Constants@{FSMC\_Exported\_Constants}!IS\_FSMC\_NAND\_BANK@{IS\_FSMC\_NAND\_BANK}}
+\index{IS\_FSMC\_NAND\_BANK@{IS\_FSMC\_NAND\_BANK}!FSMC\_Exported\_Constants@{FSMC\_Exported\_Constants}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_FSMC\_NAND\_BANK}{IS\_FSMC\_NAND\_BANK}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FSMC\+\_\+\+NAND\+\_\+\+BANK(\begin{DoxyParamCaption}\item[{}]{BANK }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((BANK)\ ==\ \mbox{\hyperlink{group___f_s_m_c___n_a_n_d___bank_ga294e7134aa329a09e56b61eec9882a27}{FSMC\_Bank2\_NAND}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ \mbox{\hyperlink{group___f_s_m_c___n_a_n_d___bank_gaf72def0732c026b0245d721ee371c85b}{FSMC\_Bank3\_NAND}}))}
+
+\end{DoxyCode}
+\Hypertarget{group___f_s_m_c___exported___constants_ga3e3bed3dd83d38e63f11ac4cbcb87304}\label{group___f_s_m_c___exported___constants_ga3e3bed3dd83d38e63f11ac4cbcb87304} 
+\index{FSMC\_Exported\_Constants@{FSMC\_Exported\_Constants}!IS\_FSMC\_NORSRAM\_BANK@{IS\_FSMC\_NORSRAM\_BANK}}
+\index{IS\_FSMC\_NORSRAM\_BANK@{IS\_FSMC\_NORSRAM\_BANK}!FSMC\_Exported\_Constants@{FSMC\_Exported\_Constants}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_FSMC\_NORSRAM\_BANK}{IS\_FSMC\_NORSRAM\_BANK}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FSMC\+\_\+\+NORSRAM\+\_\+\+BANK(\begin{DoxyParamCaption}\item[{}]{BANK }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((BANK)\ ==\ \mbox{\hyperlink{group___f_s_m_c___n_o_r_s_r_a_m___bank_ga514a05828041fa1a13d464c9e4a0a4a9}{FSMC\_Bank1\_NORSRAM1}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ \mbox{\hyperlink{group___f_s_m_c___n_o_r_s_r_a_m___bank_gaef52862c652370b9a658478d275dd956}{FSMC\_Bank1\_NORSRAM2}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ \mbox{\hyperlink{group___f_s_m_c___n_o_r_s_r_a_m___bank_ga151b02506a318ac77382b52f3b5e16f4}{FSMC\_Bank1\_NORSRAM3}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((BANK)\ ==\ \mbox{\hyperlink{group___f_s_m_c___n_o_r_s_r_a_m___bank_ga1083572834aa084d21e6698c280f8f74}{FSMC\_Bank1\_NORSRAM4}}))}
+
+\end{DoxyCode}
+\input{group___f_s_m_c___n_o_r_s_r_a_m___bank}
+\input{group___f_s_m_c___n_a_n_d___bank}
+\input{group___f_s_m_c___p_c_c_a_r_d___bank}
+\input{group___n_o_r___s_r_a_m___controller}
+\input{group___n_a_n_d___p_c_c_a_r_d___controller}

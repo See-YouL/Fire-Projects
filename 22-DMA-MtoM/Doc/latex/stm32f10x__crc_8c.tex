@@ -1,0 +1,43 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/src/stm32f10x\+\_\+crc.c File Reference}
+\hypertarget{stm32f10x__crc_8c}{}\label{stm32f10x__crc_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_crc.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_crc.c}}
+
+
+This file provides all the CRC firmware functions.  
+
+
+{\ttfamily \#include "{}stm32f10x\+\_\+crc.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___c_r_c___private___functions_ga506467d5ef873a5a4ade4ae83cb110f6}{CRC\+\_\+\+Reset\+DR}} (void)
+\begin{DoxyCompactList}\small\item\em Resets the CRC Data register (DR). \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_r_c___private___functions_ga5407fdbb8e8c9be6322cc8856ae5db3b}{CRC\+\_\+\+Calc\+CRC}} (uint32\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Computes the 32-\/bit CRC of a given data word(32-\/bit). \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_r_c___private___functions_gab15ebf620615c360048fb4f45b15fae6}{CRC\+\_\+\+Calc\+Block\+CRC}} (uint32\+\_\+t p\+Buffer\mbox{[}$\,$\mbox{]}, uint32\+\_\+t Buffer\+Length)
+\begin{DoxyCompactList}\small\item\em Computes the 32-\/bit CRC of a given buffer of data word(32-\/bit). \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_r_c___private___functions_gab62db4561b0558f3c8ed53887fe7de8b}{CRC\+\_\+\+Get\+CRC}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the current CRC value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_r_c___private___functions_ga769c9a42be57b972ae61bbada0f2e46a}{CRC\+\_\+\+Set\+IDRegister}} (uint8\+\_\+t IDValue)
+\begin{DoxyCompactList}\small\item\em Stores a 8-\/bit data in the Independent Data(\+ID) register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___c_r_c___private___functions_gaf869f6e9c3ca0ae0822cfad1abea7e5f}{CRC\+\_\+\+Get\+IDRegister}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the 8-\/bit data stored in the Independent Data(\+ID) register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides all the CRC firmware functions. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

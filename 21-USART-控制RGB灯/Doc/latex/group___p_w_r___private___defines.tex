@@ -1,0 +1,101 @@
+\doxysubsubsection{PWR\+\_\+\+Private\+\_\+\+Defines}
+\hypertarget{group___p_w_r___private___defines}{}\label{group___p_w_r___private___defines}\index{PWR\_Private\_Defines@{PWR\_Private\_Defines}}
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___p_w_r___private___defines_ga7f88bce73931300319824f22578f90de}{PWR\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___peripheral__memory__map_gac691ec23dace8b7a649a25acb110217a}{PWR\+\_\+\+BASE}} -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})
+\item 
+\#define \mbox{\hyperlink{group___p_w_r___private___defines_gafa1d3d0ea72132df651c76fc1bdffffc}{CR\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___p_w_r___private___defines_ga7f88bce73931300319824f22578f90de}{PWR\+\_\+\+OFFSET}} + 0x00)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r___private___defines_ga36ff45d972bf94f31f172fd53cf44d23}{DBP\+\_\+\+Bit\+Number}}~0x08
+\item 
+\#define \mbox{\hyperlink{group___p_w_r___private___defines_ga799ab60bdbcfc1076cf2d7f206d09b0c}{CR\+\_\+\+DBP\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_gafa1d3d0ea72132df651c76fc1bdffffc}{CR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___p_w_r___private___defines_ga36ff45d972bf94f31f172fd53cf44d23}{DBP\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___p_w_r___private___defines_ga17d618eb800c401ef9c6789c9374eaf8}{PVDE\+\_\+\+Bit\+Number}}~0x04
+\item 
+\#define \mbox{\hyperlink{group___p_w_r___private___defines_ga49f51ef8285a6be76fd204d49a00709c}{CR\+\_\+\+PVDE\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_gafa1d3d0ea72132df651c76fc1bdffffc}{CR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___p_w_r___private___defines_ga17d618eb800c401ef9c6789c9374eaf8}{PVDE\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___p_w_r___private___defines_ga984cbe73312b6d3d355c5053763d499a}{CSR\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___p_w_r___private___defines_ga7f88bce73931300319824f22578f90de}{PWR\+\_\+\+OFFSET}} + 0x04)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r___private___defines_ga94fe0520e8f9b71fa2b99c0565ec70ea}{EWUP\+\_\+\+Bit\+Number}}~0x08
+\item 
+\#define \mbox{\hyperlink{group___p_w_r___private___defines_gaaff864595f697850b19173b0bca991b0}{CSR\+\_\+\+EWUP\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_ga984cbe73312b6d3d355c5053763d499a}{CSR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___p_w_r___private___defines_ga94fe0520e8f9b71fa2b99c0565ec70ea}{EWUP\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___p_w_r___private___defines_ga8ee6bf9218f3c476629dd9ee70deef21}{CR\+\_\+\+DS\+\_\+\+MASK}}~((uint32\+\_\+t)0x\+FFFFFFFC)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r___private___defines_gac4a30eebdd1d292331a578b189962e77}{CR\+\_\+\+PLS\+\_\+\+MASK}}~((uint32\+\_\+t)0x\+FFFFFF1F)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___p_w_r___private___defines_ga799ab60bdbcfc1076cf2d7f206d09b0c}\label{group___p_w_r___private___defines_ga799ab60bdbcfc1076cf2d7f206d09b0c} 
+\index{PWR\_Private\_Defines@{PWR\_Private\_Defines}!CR\_DBP\_BB@{CR\_DBP\_BB}}
+\index{CR\_DBP\_BB@{CR\_DBP\_BB}!PWR\_Private\_Defines@{PWR\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CR\_DBP\_BB}{CR\_DBP\_BB}}
+{\footnotesize\ttfamily \#define CR\+\_\+\+DBP\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_gafa1d3d0ea72132df651c76fc1bdffffc}{CR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___p_w_r___private___defines_ga36ff45d972bf94f31f172fd53cf44d23}{DBP\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___p_w_r___private___defines_ga8ee6bf9218f3c476629dd9ee70deef21}\label{group___p_w_r___private___defines_ga8ee6bf9218f3c476629dd9ee70deef21} 
+\index{PWR\_Private\_Defines@{PWR\_Private\_Defines}!CR\_DS\_MASK@{CR\_DS\_MASK}}
+\index{CR\_DS\_MASK@{CR\_DS\_MASK}!PWR\_Private\_Defines@{PWR\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CR\_DS\_MASK}{CR\_DS\_MASK}}
+{\footnotesize\ttfamily \#define CR\+\_\+\+DS\+\_\+\+MASK~((uint32\+\_\+t)0x\+FFFFFFFC)}
+
+\Hypertarget{group___p_w_r___private___defines_gafa1d3d0ea72132df651c76fc1bdffffc}\label{group___p_w_r___private___defines_gafa1d3d0ea72132df651c76fc1bdffffc} 
+\index{PWR\_Private\_Defines@{PWR\_Private\_Defines}!CR\_OFFSET@{CR\_OFFSET}}
+\index{CR\_OFFSET@{CR\_OFFSET}!PWR\_Private\_Defines@{PWR\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CR\_OFFSET}{CR\_OFFSET}}
+{\footnotesize\ttfamily \#define CR\+\_\+\+OFFSET~(\mbox{\hyperlink{group___p_w_r___private___defines_ga7f88bce73931300319824f22578f90de}{PWR\+\_\+\+OFFSET}} + 0x00)}
+
+\Hypertarget{group___p_w_r___private___defines_gac4a30eebdd1d292331a578b189962e77}\label{group___p_w_r___private___defines_gac4a30eebdd1d292331a578b189962e77} 
+\index{PWR\_Private\_Defines@{PWR\_Private\_Defines}!CR\_PLS\_MASK@{CR\_PLS\_MASK}}
+\index{CR\_PLS\_MASK@{CR\_PLS\_MASK}!PWR\_Private\_Defines@{PWR\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CR\_PLS\_MASK}{CR\_PLS\_MASK}}
+{\footnotesize\ttfamily \#define CR\+\_\+\+PLS\+\_\+\+MASK~((uint32\+\_\+t)0x\+FFFFFF1F)}
+
+\Hypertarget{group___p_w_r___private___defines_ga49f51ef8285a6be76fd204d49a00709c}\label{group___p_w_r___private___defines_ga49f51ef8285a6be76fd204d49a00709c} 
+\index{PWR\_Private\_Defines@{PWR\_Private\_Defines}!CR\_PVDE\_BB@{CR\_PVDE\_BB}}
+\index{CR\_PVDE\_BB@{CR\_PVDE\_BB}!PWR\_Private\_Defines@{PWR\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CR\_PVDE\_BB}{CR\_PVDE\_BB}}
+{\footnotesize\ttfamily \#define CR\+\_\+\+PVDE\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_gafa1d3d0ea72132df651c76fc1bdffffc}{CR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___p_w_r___private___defines_ga17d618eb800c401ef9c6789c9374eaf8}{PVDE\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___p_w_r___private___defines_gaaff864595f697850b19173b0bca991b0}\label{group___p_w_r___private___defines_gaaff864595f697850b19173b0bca991b0} 
+\index{PWR\_Private\_Defines@{PWR\_Private\_Defines}!CSR\_EWUP\_BB@{CSR\_EWUP\_BB}}
+\index{CSR\_EWUP\_BB@{CSR\_EWUP\_BB}!PWR\_Private\_Defines@{PWR\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CSR\_EWUP\_BB}{CSR\_EWUP\_BB}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+EWUP\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_ga984cbe73312b6d3d355c5053763d499a}{CSR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___p_w_r___private___defines_ga94fe0520e8f9b71fa2b99c0565ec70ea}{EWUP\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___p_w_r___private___defines_ga984cbe73312b6d3d355c5053763d499a}\label{group___p_w_r___private___defines_ga984cbe73312b6d3d355c5053763d499a} 
+\index{PWR\_Private\_Defines@{PWR\_Private\_Defines}!CSR\_OFFSET@{CSR\_OFFSET}}
+\index{CSR\_OFFSET@{CSR\_OFFSET}!PWR\_Private\_Defines@{PWR\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CSR\_OFFSET}{CSR\_OFFSET}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+OFFSET~(\mbox{\hyperlink{group___p_w_r___private___defines_ga7f88bce73931300319824f22578f90de}{PWR\+\_\+\+OFFSET}} + 0x04)}
+
+\Hypertarget{group___p_w_r___private___defines_ga36ff45d972bf94f31f172fd53cf44d23}\label{group___p_w_r___private___defines_ga36ff45d972bf94f31f172fd53cf44d23} 
+\index{PWR\_Private\_Defines@{PWR\_Private\_Defines}!DBP\_BitNumber@{DBP\_BitNumber}}
+\index{DBP\_BitNumber@{DBP\_BitNumber}!PWR\_Private\_Defines@{PWR\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{DBP\_BitNumber}{DBP\_BitNumber}}
+{\footnotesize\ttfamily \#define DBP\+\_\+\+Bit\+Number~0x08}
+
+\Hypertarget{group___p_w_r___private___defines_ga94fe0520e8f9b71fa2b99c0565ec70ea}\label{group___p_w_r___private___defines_ga94fe0520e8f9b71fa2b99c0565ec70ea} 
+\index{PWR\_Private\_Defines@{PWR\_Private\_Defines}!EWUP\_BitNumber@{EWUP\_BitNumber}}
+\index{EWUP\_BitNumber@{EWUP\_BitNumber}!PWR\_Private\_Defines@{PWR\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{EWUP\_BitNumber}{EWUP\_BitNumber}}
+{\footnotesize\ttfamily \#define EWUP\+\_\+\+Bit\+Number~0x08}
+
+\Hypertarget{group___p_w_r___private___defines_ga17d618eb800c401ef9c6789c9374eaf8}\label{group___p_w_r___private___defines_ga17d618eb800c401ef9c6789c9374eaf8} 
+\index{PWR\_Private\_Defines@{PWR\_Private\_Defines}!PVDE\_BitNumber@{PVDE\_BitNumber}}
+\index{PVDE\_BitNumber@{PVDE\_BitNumber}!PWR\_Private\_Defines@{PWR\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{PVDE\_BitNumber}{PVDE\_BitNumber}}
+{\footnotesize\ttfamily \#define PVDE\+\_\+\+Bit\+Number~0x04}
+
+\Hypertarget{group___p_w_r___private___defines_ga7f88bce73931300319824f22578f90de}\label{group___p_w_r___private___defines_ga7f88bce73931300319824f22578f90de} 
+\index{PWR\_Private\_Defines@{PWR\_Private\_Defines}!PWR\_OFFSET@{PWR\_OFFSET}}
+\index{PWR\_OFFSET@{PWR\_OFFSET}!PWR\_Private\_Defines@{PWR\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{PWR\_OFFSET}{PWR\_OFFSET}}
+{\footnotesize\ttfamily \#define PWR\+\_\+\+OFFSET~(\mbox{\hyperlink{group___peripheral__memory__map_gac691ec23dace8b7a649a25acb110217a}{PWR\+\_\+\+BASE}} -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})}
+

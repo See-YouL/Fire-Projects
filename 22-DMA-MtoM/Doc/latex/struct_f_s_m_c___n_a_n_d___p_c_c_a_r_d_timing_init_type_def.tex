@@ -1,0 +1,57 @@
+\doxysection{FSMC\+\_\+\+NAND\+\_\+\+PCCARDTiming\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def}{}\label{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def}\index{FSMC\_NAND\_PCCARDTimingInitTypeDef@{FSMC\_NAND\_PCCARDTimingInitTypeDef}}
+
+
+Timing parameters For FSMC NAND and PCCARD Banks.  
+
+
+
+
+{\ttfamily \#include $<$stm32f10x\+\_\+fsmc.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def_a31632aeb49269a29a39e3b191590b6dc}{FSMC\+\_\+\+Setup\+Time}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def_a99a7d54ed2674faa5a4e0f2669812855}{FSMC\+\_\+\+Wait\+Setup\+Time}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def_ae2b53c2cfd55ff277f453613dcf7c8b2}{FSMC\+\_\+\+Hold\+Setup\+Time}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def_a8a2a2a9e71dbf276fddad2bb32c0d256}{FSMC\+\_\+\+Hi\+ZSetup\+Time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Timing parameters For FSMC NAND and PCCARD Banks. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def_a8a2a2a9e71dbf276fddad2bb32c0d256}\label{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def_a8a2a2a9e71dbf276fddad2bb32c0d256} 
+\index{FSMC\_NAND\_PCCARDTimingInitTypeDef@{FSMC\_NAND\_PCCARDTimingInitTypeDef}!FSMC\_HiZSetupTime@{FSMC\_HiZSetupTime}}
+\index{FSMC\_HiZSetupTime@{FSMC\_HiZSetupTime}!FSMC\_NAND\_PCCARDTimingInitTypeDef@{FSMC\_NAND\_PCCARDTimingInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{FSMC\_HiZSetupTime}{FSMC\_HiZSetupTime}}
+{\footnotesize\ttfamily uint32\+\_\+t FSMC\+\_\+\+NAND\+\_\+\+PCCARDTiming\+Init\+Type\+Def\+::\+FSMC\+\_\+\+Hi\+ZSetup\+Time}
+
+Defines the number of HCLK clock cycles during which the databus is kept in HiZ after the start of a NAND-\/\+Flash write access to common/\+Attribute or I/O memory space (depending on the memory space timing to be configured). This parameter can be a number between 0x00 and 0x\+FF \Hypertarget{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def_ae2b53c2cfd55ff277f453613dcf7c8b2}\label{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def_ae2b53c2cfd55ff277f453613dcf7c8b2} 
+\index{FSMC\_NAND\_PCCARDTimingInitTypeDef@{FSMC\_NAND\_PCCARDTimingInitTypeDef}!FSMC\_HoldSetupTime@{FSMC\_HoldSetupTime}}
+\index{FSMC\_HoldSetupTime@{FSMC\_HoldSetupTime}!FSMC\_NAND\_PCCARDTimingInitTypeDef@{FSMC\_NAND\_PCCARDTimingInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{FSMC\_HoldSetupTime}{FSMC\_HoldSetupTime}}
+{\footnotesize\ttfamily uint32\+\_\+t FSMC\+\_\+\+NAND\+\_\+\+PCCARDTiming\+Init\+Type\+Def\+::\+FSMC\+\_\+\+Hold\+Setup\+Time}
+
+Defines the number of HCLK clock cycles to hold address (and data for write access) after the command deassertion for NAND-\/\+Flash read or write access to common/\+Attribute or I/O memory space (depending on the memory space timing to be configured). This parameter can be a number between 0x00 and 0x\+FF \Hypertarget{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def_a31632aeb49269a29a39e3b191590b6dc}\label{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def_a31632aeb49269a29a39e3b191590b6dc} 
+\index{FSMC\_NAND\_PCCARDTimingInitTypeDef@{FSMC\_NAND\_PCCARDTimingInitTypeDef}!FSMC\_SetupTime@{FSMC\_SetupTime}}
+\index{FSMC\_SetupTime@{FSMC\_SetupTime}!FSMC\_NAND\_PCCARDTimingInitTypeDef@{FSMC\_NAND\_PCCARDTimingInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{FSMC\_SetupTime}{FSMC\_SetupTime}}
+{\footnotesize\ttfamily uint32\+\_\+t FSMC\+\_\+\+NAND\+\_\+\+PCCARDTiming\+Init\+Type\+Def\+::\+FSMC\+\_\+\+Setup\+Time}
+
+Defines the number of HCLK cycles to setup address before the command assertion for NAND-\/\+Flash read or write access to common/\+Attribute or I/O memory space (depending on the memory space timing to be configured). This parameter can be a value between 0 and 0x\+FF. \Hypertarget{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def_a99a7d54ed2674faa5a4e0f2669812855}\label{struct_f_s_m_c___n_a_n_d___p_c_c_a_r_d_timing_init_type_def_a99a7d54ed2674faa5a4e0f2669812855} 
+\index{FSMC\_NAND\_PCCARDTimingInitTypeDef@{FSMC\_NAND\_PCCARDTimingInitTypeDef}!FSMC\_WaitSetupTime@{FSMC\_WaitSetupTime}}
+\index{FSMC\_WaitSetupTime@{FSMC\_WaitSetupTime}!FSMC\_NAND\_PCCARDTimingInitTypeDef@{FSMC\_NAND\_PCCARDTimingInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{FSMC\_WaitSetupTime}{FSMC\_WaitSetupTime}}
+{\footnotesize\ttfamily uint32\+\_\+t FSMC\+\_\+\+NAND\+\_\+\+PCCARDTiming\+Init\+Type\+Def\+::\+FSMC\+\_\+\+Wait\+Setup\+Time}
+
+Defines the minimum number of HCLK cycles to assert the command for NAND-\/\+Flash read or write access to common/\+Attribute or I/O memory space (depending on the memory space timing to be configured). This parameter can be a number between 0x00 and 0x\+FF 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/\mbox{\hyperlink{stm32f10x__fsmc_8h}{stm32f10x\+\_\+fsmc.\+h}}\end{DoxyCompactItemize}

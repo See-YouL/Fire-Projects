@@ -1,0 +1,141 @@
+\doxysubsubsubsection{TIM\+\_\+\+Flags}
+\hypertarget{group___t_i_m___flags}{}\label{group___t_i_m___flags}\index{TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga97eba66f792c88e08131bd0d2a0e530d}{TIM\+\_\+\+FLAG\+\_\+\+Update}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gaa7eb8be054b9bd217a9abb1c8687cc55}{TIM\+\_\+\+FLAG\+\_\+\+CC1}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga9cae242f1c51b31839ffc5bc007c82a7}{TIM\+\_\+\+FLAG\+\_\+\+CC2}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga052c380f922219659810e4fceb574a7c}{TIM\+\_\+\+FLAG\+\_\+\+CC3}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gafd0dc57b56941f8b8250d66e289542db}{TIM\+\_\+\+FLAG\+\_\+\+CC4}}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gad454d70205ce5bbf3b3c0e7e43d6df62}{TIM\+\_\+\+FLAG\+\_\+\+COM}}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gaeca2f17eea738dbec7eee8ecbe442814}{TIM\+\_\+\+FLAG\+\_\+\+Trigger}}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga166571a1d5ca2bfca5d923eaa22f6deb}{TIM\+\_\+\+FLAG\+\_\+\+Break}}~((uint16\+\_\+t)0x0080)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga38dfb7d1ed00af77d70bc3be28500108}{TIM\+\_\+\+FLAG\+\_\+\+CC1\+OF}}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga4df0c71d3e695c214d49802942e04590}{TIM\+\_\+\+FLAG\+\_\+\+CC2\+OF}}~((uint16\+\_\+t)0x0400)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gac81f24eaffdf83c2db9d2e6078a00919}{TIM\+\_\+\+FLAG\+\_\+\+CC3\+OF}}~((uint16\+\_\+t)0x0800)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gafc8b04654766d98ba2c6fed601895a20}{TIM\+\_\+\+FLAG\+\_\+\+CC4\+OF}}~((uint16\+\_\+t)0x1000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga6406de8131ae53ee29740c3e8627b098}{IS\+\_\+\+TIM\+\_\+\+GET\+\_\+\+FLAG}}(FLAG)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gae60a1b5900de8354b2a4f017b2bd4f94}{IS\+\_\+\+TIM\+\_\+\+CLEAR\+\_\+\+FLAG}}(TIM\+\_\+\+FLAG)~((((TIM\+\_\+\+FLAG) \& (uint16\+\_\+t)0x\+E100) == 0x0000) \&\& ((TIM\+\_\+\+FLAG) != 0x0000))
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___t_i_m___flags_gae60a1b5900de8354b2a4f017b2bd4f94}\label{group___t_i_m___flags_gae60a1b5900de8354b2a4f017b2bd4f94} 
+\index{TIM\_Flags@{TIM\_Flags}!IS\_TIM\_CLEAR\_FLAG@{IS\_TIM\_CLEAR\_FLAG}}
+\index{IS\_TIM\_CLEAR\_FLAG@{IS\_TIM\_CLEAR\_FLAG}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_TIM\_CLEAR\_FLAG}{IS\_TIM\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+TIM\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{TIM\+\_\+\+FLAG }\end{DoxyParamCaption})~((((TIM\+\_\+\+FLAG) \& (uint16\+\_\+t)0x\+E100) == 0x0000) \&\& ((TIM\+\_\+\+FLAG) != 0x0000))}
+
+\Hypertarget{group___t_i_m___flags_ga6406de8131ae53ee29740c3e8627b098}\label{group___t_i_m___flags_ga6406de8131ae53ee29740c3e8627b098} 
+\index{TIM\_Flags@{TIM\_Flags}!IS\_TIM\_GET\_FLAG@{IS\_TIM\_GET\_FLAG}}
+\index{IS\_TIM\_GET\_FLAG@{IS\_TIM\_GET\_FLAG}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_TIM\_GET\_FLAG}{IS\_TIM\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+TIM\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{FLAG }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((FLAG)\ ==\ \mbox{\hyperlink{group___t_i_m___flags_ga97eba66f792c88e08131bd0d2a0e530d}{TIM\_FLAG\_Update}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___t_i_m___flags_gaa7eb8be054b9bd217a9abb1c8687cc55}{TIM\_FLAG\_CC1}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___t_i_m___flags_ga9cae242f1c51b31839ffc5bc007c82a7}{TIM\_FLAG\_CC2}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___t_i_m___flags_ga052c380f922219659810e4fceb574a7c}{TIM\_FLAG\_CC3}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___t_i_m___flags_gafd0dc57b56941f8b8250d66e289542db}{TIM\_FLAG\_CC4}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___t_i_m___flags_gad454d70205ce5bbf3b3c0e7e43d6df62}{TIM\_FLAG\_COM}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___t_i_m___flags_gaeca2f17eea738dbec7eee8ecbe442814}{TIM\_FLAG\_Trigger}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___t_i_m___flags_ga166571a1d5ca2bfca5d923eaa22f6deb}{TIM\_FLAG\_Break}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___t_i_m___flags_ga38dfb7d1ed00af77d70bc3be28500108}{TIM\_FLAG\_CC1OF}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___t_i_m___flags_ga4df0c71d3e695c214d49802942e04590}{TIM\_FLAG\_CC2OF}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___t_i_m___flags_gac81f24eaffdf83c2db9d2e6078a00919}{TIM\_FLAG\_CC3OF}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___t_i_m___flags_gafc8b04654766d98ba2c6fed601895a20}{TIM\_FLAG\_CC4OF}}))}
+
+\end{DoxyCode}
+\Hypertarget{group___t_i_m___flags_ga166571a1d5ca2bfca5d923eaa22f6deb}\label{group___t_i_m___flags_ga166571a1d5ca2bfca5d923eaa22f6deb} 
+\index{TIM\_Flags@{TIM\_Flags}!TIM\_FLAG\_Break@{TIM\_FLAG\_Break}}
+\index{TIM\_FLAG\_Break@{TIM\_FLAG\_Break}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{TIM\_FLAG\_Break}{TIM\_FLAG\_Break}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+FLAG\+\_\+\+Break~((uint16\+\_\+t)0x0080)}
+
+\Hypertarget{group___t_i_m___flags_gaa7eb8be054b9bd217a9abb1c8687cc55}\label{group___t_i_m___flags_gaa7eb8be054b9bd217a9abb1c8687cc55} 
+\index{TIM\_Flags@{TIM\_Flags}!TIM\_FLAG\_CC1@{TIM\_FLAG\_CC1}}
+\index{TIM\_FLAG\_CC1@{TIM\_FLAG\_CC1}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{TIM\_FLAG\_CC1}{TIM\_FLAG\_CC1}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+FLAG\+\_\+\+CC1~((uint16\+\_\+t)0x0002)}
+
+\Hypertarget{group___t_i_m___flags_ga38dfb7d1ed00af77d70bc3be28500108}\label{group___t_i_m___flags_ga38dfb7d1ed00af77d70bc3be28500108} 
+\index{TIM\_Flags@{TIM\_Flags}!TIM\_FLAG\_CC1OF@{TIM\_FLAG\_CC1OF}}
+\index{TIM\_FLAG\_CC1OF@{TIM\_FLAG\_CC1OF}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{TIM\_FLAG\_CC1OF}{TIM\_FLAG\_CC1OF}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+FLAG\+\_\+\+CC1\+OF~((uint16\+\_\+t)0x0200)}
+
+\Hypertarget{group___t_i_m___flags_ga9cae242f1c51b31839ffc5bc007c82a7}\label{group___t_i_m___flags_ga9cae242f1c51b31839ffc5bc007c82a7} 
+\index{TIM\_Flags@{TIM\_Flags}!TIM\_FLAG\_CC2@{TIM\_FLAG\_CC2}}
+\index{TIM\_FLAG\_CC2@{TIM\_FLAG\_CC2}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{TIM\_FLAG\_CC2}{TIM\_FLAG\_CC2}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+FLAG\+\_\+\+CC2~((uint16\+\_\+t)0x0004)}
+
+\Hypertarget{group___t_i_m___flags_ga4df0c71d3e695c214d49802942e04590}\label{group___t_i_m___flags_ga4df0c71d3e695c214d49802942e04590} 
+\index{TIM\_Flags@{TIM\_Flags}!TIM\_FLAG\_CC2OF@{TIM\_FLAG\_CC2OF}}
+\index{TIM\_FLAG\_CC2OF@{TIM\_FLAG\_CC2OF}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{TIM\_FLAG\_CC2OF}{TIM\_FLAG\_CC2OF}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+FLAG\+\_\+\+CC2\+OF~((uint16\+\_\+t)0x0400)}
+
+\Hypertarget{group___t_i_m___flags_ga052c380f922219659810e4fceb574a7c}\label{group___t_i_m___flags_ga052c380f922219659810e4fceb574a7c} 
+\index{TIM\_Flags@{TIM\_Flags}!TIM\_FLAG\_CC3@{TIM\_FLAG\_CC3}}
+\index{TIM\_FLAG\_CC3@{TIM\_FLAG\_CC3}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{TIM\_FLAG\_CC3}{TIM\_FLAG\_CC3}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+FLAG\+\_\+\+CC3~((uint16\+\_\+t)0x0008)}
+
+\Hypertarget{group___t_i_m___flags_gac81f24eaffdf83c2db9d2e6078a00919}\label{group___t_i_m___flags_gac81f24eaffdf83c2db9d2e6078a00919} 
+\index{TIM\_Flags@{TIM\_Flags}!TIM\_FLAG\_CC3OF@{TIM\_FLAG\_CC3OF}}
+\index{TIM\_FLAG\_CC3OF@{TIM\_FLAG\_CC3OF}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{TIM\_FLAG\_CC3OF}{TIM\_FLAG\_CC3OF}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+FLAG\+\_\+\+CC3\+OF~((uint16\+\_\+t)0x0800)}
+
+\Hypertarget{group___t_i_m___flags_gafd0dc57b56941f8b8250d66e289542db}\label{group___t_i_m___flags_gafd0dc57b56941f8b8250d66e289542db} 
+\index{TIM\_Flags@{TIM\_Flags}!TIM\_FLAG\_CC4@{TIM\_FLAG\_CC4}}
+\index{TIM\_FLAG\_CC4@{TIM\_FLAG\_CC4}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{TIM\_FLAG\_CC4}{TIM\_FLAG\_CC4}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+FLAG\+\_\+\+CC4~((uint16\+\_\+t)0x0010)}
+
+\Hypertarget{group___t_i_m___flags_gafc8b04654766d98ba2c6fed601895a20}\label{group___t_i_m___flags_gafc8b04654766d98ba2c6fed601895a20} 
+\index{TIM\_Flags@{TIM\_Flags}!TIM\_FLAG\_CC4OF@{TIM\_FLAG\_CC4OF}}
+\index{TIM\_FLAG\_CC4OF@{TIM\_FLAG\_CC4OF}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{TIM\_FLAG\_CC4OF}{TIM\_FLAG\_CC4OF}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+FLAG\+\_\+\+CC4\+OF~((uint16\+\_\+t)0x1000)}
+
+\Hypertarget{group___t_i_m___flags_gad454d70205ce5bbf3b3c0e7e43d6df62}\label{group___t_i_m___flags_gad454d70205ce5bbf3b3c0e7e43d6df62} 
+\index{TIM\_Flags@{TIM\_Flags}!TIM\_FLAG\_COM@{TIM\_FLAG\_COM}}
+\index{TIM\_FLAG\_COM@{TIM\_FLAG\_COM}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{TIM\_FLAG\_COM}{TIM\_FLAG\_COM}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+FLAG\+\_\+\+COM~((uint16\+\_\+t)0x0020)}
+
+\Hypertarget{group___t_i_m___flags_gaeca2f17eea738dbec7eee8ecbe442814}\label{group___t_i_m___flags_gaeca2f17eea738dbec7eee8ecbe442814} 
+\index{TIM\_Flags@{TIM\_Flags}!TIM\_FLAG\_Trigger@{TIM\_FLAG\_Trigger}}
+\index{TIM\_FLAG\_Trigger@{TIM\_FLAG\_Trigger}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{TIM\_FLAG\_Trigger}{TIM\_FLAG\_Trigger}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+FLAG\+\_\+\+Trigger~((uint16\+\_\+t)0x0040)}
+
+\Hypertarget{group___t_i_m___flags_ga97eba66f792c88e08131bd0d2a0e530d}\label{group___t_i_m___flags_ga97eba66f792c88e08131bd0d2a0e530d} 
+\index{TIM\_Flags@{TIM\_Flags}!TIM\_FLAG\_Update@{TIM\_FLAG\_Update}}
+\index{TIM\_FLAG\_Update@{TIM\_FLAG\_Update}!TIM\_Flags@{TIM\_Flags}}
+\doxysubsubsubsubsubsection{\texorpdfstring{TIM\_FLAG\_Update}{TIM\_FLAG\_Update}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+FLAG\+\_\+\+Update~((uint16\+\_\+t)0x0001)}
+

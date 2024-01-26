@@ -1,0 +1,28 @@
+\doxysection{bsp\+\_\+led.\+h}
+\hypertarget{bsp__led_8h_source}{}\label{bsp__led_8h_source}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/User/led/bsp\_led.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/User/led/bsp\_led.h}}
+\mbox{\hyperlink{bsp__led_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_BSP\_LED\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_BSP\_LED\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f10x_8h}{stm32f10x.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ 宏定义}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ LED\_B\_GPIO\_PIN\ GPIO\_Pin\_1\ }\textcolor{comment}{//\ stm32f10x\_gpio.h中定义}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ LED\_B\_GPIO\_PORT\ GPIOB\ }\textcolor{comment}{//\ stm32f10x.h中定义\ }}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ LED\_B\_GPIO\_CLK\ RCC\_APB2Periph\_GPIOB}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ ON\ 1\ }}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ OFF\ 0}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ LED\_B(a)\ if\ (a)\(\backslash\)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_ResetBits(LED\_B\_GPIO\_PORT,\ LED\_B\_GPIO\_PIN);\ \(\backslash\)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\(\backslash\)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_SetBits(LED\_B\_GPIO\_PORT,\ LED\_B\_GPIO\_PIN);}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ 使用\(\backslash\)可以进行换行，其后不能跟空格，\(\backslash\)后应该直接回车}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ 函数声明}}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bsp__led_8h_a89d2c2ccc2981f0583aa6e4c8f043298}{LED\_GPIO\_Config}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !\_\_BSP\_LED\_H}}
+
+\end{DoxyCode}

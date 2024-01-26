@@ -1,0 +1,56 @@
+\doxysection{stm32f10x\+\_\+rtc.\+h}
+\hypertarget{stm32f10x__rtc_8h_source}{}\label{stm32f10x__rtc_8h_source}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_rtc.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_rtc.h}}
+\mbox{\hyperlink{stm32f10x__rtc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F10x\_RTC\_H}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \_\_STM32F10x\_RTC\_H}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f10x_8h}{stm32f10x.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ RTC\_IT\_OW\ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0004)\ \ }}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ RTC\_IT\_ALR\ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0002)\ \ }}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ RTC\_IT\_SEC\ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0001)\ \ }}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ IS\_RTC\_IT(IT)\ ((((IT)\ \&\ (uint16\_t)0xFFF8)\ ==\ 0x00)\ \&\&\ ((IT)\ !=\ 0x00))}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ IS\_RTC\_GET\_IT(IT)\ (((IT)\ ==\ RTC\_IT\_OW)\ ||\ ((IT)\ ==\ RTC\_IT\_ALR)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ RTC\_IT\_SEC))}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_RTOFF\ \ \ \ \ \ \ ((uint16\_t)0x0020)\ \ }}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_RSF\ \ \ \ \ \ \ \ \ ((uint16\_t)0x0008)\ \ }}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_OW\ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0004)\ \ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_ALR\ \ \ \ \ \ \ \ \ ((uint16\_t)0x0002)\ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ RTC\_FLAG\_SEC\ \ \ \ \ \ \ \ \ ((uint16\_t)0x0001)\ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ IS\_RTC\_CLEAR\_FLAG(FLAG)\ ((((FLAG)\ \&\ (uint16\_t)0xFFF0)\ ==\ 0x00)\ \&\&\ ((FLAG)\ !=\ 0x00))}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ IS\_RTC\_GET\_FLAG(FLAG)\ (((FLAG)\ ==\ RTC\_FLAG\_RTOFF)\ ||\ ((FLAG)\ ==\ RTC\_FLAG\_RSF)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ RTC\_FLAG\_OW)\ ||\ ((FLAG)\ ==\ RTC\_FLAG\_ALR)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ RTC\_FLAG\_SEC))}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ IS\_RTC\_PRESCALER(PRESCALER)\ ((PRESCALER)\ <=\ 0xFFFFF)}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___r_t_c___exported___functions_ga175dfe88866234730c1ec40d2221c4f4}{RTC\_ITConfig}}(uint16\_t\ RTC\_IT,\ \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{FunctionalState}}\ NewState);}
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___r_t_c___exported___functions_ga23612d9da2fe057a0cd72c684e5b438a}{RTC\_EnterConfigMode}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___r_t_c___exported___functions_ga7585aa6e2dbb497173b2fd03bac0d304}{RTC\_ExitConfigMode}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00106\ uint32\_t\ \ \mbox{\hyperlink{group___r_t_c___exported___functions_ga6edb19a0ad8414a40610341121c5ea6c}{RTC\_GetCounter}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___r_t_c___exported___functions_gafa81ec17158de1d1a7740eca81b9fb65}{RTC\_SetCounter}}(uint32\_t\ CounterValue);}
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___r_t_c___exported___functions_gaf76be6071d1ba65b009e0791069e602c}{RTC\_SetPrescaler}}(uint32\_t\ PrescalerValue);}
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___r_t_c___exported___functions_gaec644c636a30ab5e287ba60ffc77132c}{RTC\_SetAlarm}}(uint32\_t\ AlarmValue);}
+\DoxyCodeLine{00110\ uint32\_t\ \ \mbox{\hyperlink{group___r_t_c___exported___functions_gaa4f00e0469fedcf6cbf23760e6d801ed}{RTC\_GetDivider}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___r_t_c___exported___functions_gaa0a406ef860d5231748c5f0d82673036}{RTC\_WaitForLastTask}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00112\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___r_t_c___exported___functions_gaca4346e0dc15dccc15179786b28450db}{RTC\_WaitForSynchro}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00113\ \mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{FlagStatus}}\ \mbox{\hyperlink{group___r_t_c___exported___functions_ga21a85e5f846cb4552d5e76420779f3f6}{RTC\_GetFlagStatus}}(uint16\_t\ RTC\_FLAG);}
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___r_t_c___exported___functions_gacefb05730a77ffaa273c1ac3ade1a22f}{RTC\_ClearFlag}}(uint16\_t\ RTC\_FLAG);}
+\DoxyCodeLine{00115\ \mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}}\ \mbox{\hyperlink{group___r_t_c___exported___functions_ga23274ad8aa28e86d5b0d58eee295db21}{RTC\_GetITStatus}}(uint16\_t\ RTC\_IT);}
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___r_t_c___exported___functions_ga62b9a04d89a11f28db7dcfd50d9ee768}{RTC\_ClearITPendingBit}}(uint16\_t\ RTC\_IT);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00119\ \}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F10x\_RTC\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00135\ \textcolor{comment}{/*******************\ (C)\ COPYRIGHT\ 2011\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

@@ -1,0 +1,89 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/21-\/\+USART-\/控制\+RGB灯/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/src/stm32f10x\+\_\+bkp.c File Reference}
+\hypertarget{stm32f10x__bkp_8c}{}\label{stm32f10x__bkp_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_bkp.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_bkp.c}}
+
+
+This file provides all the BKP firmware functions.  
+
+
+{\ttfamily \#include "{}stm32f10x\+\_\+bkp.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f10x\+\_\+rcc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_gaaaf71f474657e7c0c5b0d6ba9697cf5d}{BKP\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaa15d5a9f40794105397ba5ea567c4ae1}{BKP\+\_\+\+BASE}} -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_gafa1d3d0ea72132df651c76fc1bdffffc}{CR\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___b_k_p___private___defines_gaaaf71f474657e7c0c5b0d6ba9697cf5d}{BKP\+\_\+\+OFFSET}} + 0x30)
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_ga4af1869d665b8804104b6754c787820a}{TPAL\+\_\+\+Bit\+Number}}~0x01
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_gaa36e52f37b9fa6982bd224a6dcb86f78}{CR\+\_\+\+TPAL\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_gafa1d3d0ea72132df651c76fc1bdffffc}{CR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___b_k_p___private___defines_ga4af1869d665b8804104b6754c787820a}{TPAL\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_ga8c68be900246b028ff4af93ad119eb98}{TPE\+\_\+\+Bit\+Number}}~0x00
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_ga6c11e801c2c1aa87ec2feaefe12bbb96}{CR\+\_\+\+TPE\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_gafa1d3d0ea72132df651c76fc1bdffffc}{CR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___b_k_p___private___defines_ga8c68be900246b028ff4af93ad119eb98}{TPE\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_ga984cbe73312b6d3d355c5053763d499a}{CSR\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___b_k_p___private___defines_gaaaf71f474657e7c0c5b0d6ba9697cf5d}{BKP\+\_\+\+OFFSET}} + 0x34)
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_gac62e6ae9548498efa47fb72637545117}{TPIE\+\_\+\+Bit\+Number}}~0x02
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_ga1f6dcf729994613b21f554ca371d393c}{CSR\+\_\+\+TPIE\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_ga984cbe73312b6d3d355c5053763d499a}{CSR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___b_k_p___private___defines_gac62e6ae9548498efa47fb72637545117}{TPIE\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_gac8b1b82c7029c05e720c50585762bcf2}{TIF\+\_\+\+Bit\+Number}}~0x09
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_ga8d9e7cac2321fae6d257e8c1316264e3}{CSR\+\_\+\+TIF\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_ga984cbe73312b6d3d355c5053763d499a}{CSR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___b_k_p___private___defines_gac8b1b82c7029c05e720c50585762bcf2}{TIF\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_gaeb8676e7543d93df60cf7c63fd795672}{TEF\+\_\+\+Bit\+Number}}~0x08
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_gad60539cc791a26701d414aee529ea203}{CSR\+\_\+\+TEF\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_ga984cbe73312b6d3d355c5053763d499a}{CSR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___b_k_p___private___defines_gaeb8676e7543d93df60cf7c63fd795672}{TEF\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_ga61a540c5dd9d18e936b8fd3e01f7f6ff}{RTCCR\+\_\+\+CAL\+\_\+\+MASK}}~((uint16\+\_\+t)0x\+FF80)
+\item 
+\#define \mbox{\hyperlink{group___b_k_p___private___defines_ga4bda91755d5ae28e9e487e946917a1ec}{RTCCR\+\_\+\+MASK}}~((uint16\+\_\+t)0x\+FC7F)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___b_k_p___private___functions_gaabff4d8f5ebf4fd9a840bcc9042ca226}{BKP\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the BKP peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_k_p___private___functions_gae216446d641d075fb575ce6dbe2ff4c1}{BKP\+\_\+\+Tamper\+Pin\+Level\+Config}} (uint16\+\_\+t BKP\+\_\+\+Tamper\+Pin\+Level)
+\begin{DoxyCompactList}\small\item\em Configures the Tamper Pin active level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_k_p___private___functions_ga3a0cdff9ad8238ade2c67e2b70f530ac}{BKP\+\_\+\+Tamper\+Pin\+Cmd}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Tamper Pin activation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_k_p___private___functions_gab8dbd0c4773f6edb98a28c8ff6a2ead0}{BKP\+\_\+\+ITConfig}} (\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Tamper Pin Interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_k_p___private___functions_ga3d1b22b3c6a79f7b423616a0af1885bf}{BKP\+\_\+\+RTCOutput\+Config}} (uint16\+\_\+t BKP\+\_\+\+RTCOutput\+Source)
+\begin{DoxyCompactList}\small\item\em Select the RTC output source to output on the Tamper pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_k_p___private___functions_gad34db08a944450d2e7d56d0fd8db2bca}{BKP\+\_\+\+Set\+RTCCalibration\+Value}} (uint8\+\_\+t Calibration\+Value)
+\begin{DoxyCompactList}\small\item\em Sets RTC Clock Calibration value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_k_p___private___functions_ga18d220387db651b3cb71fad5c092e041}{BKP\+\_\+\+Write\+Backup\+Register}} (uint16\+\_\+t BKP\+\_\+\+DR, uint16\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Writes user data to the specified Data Backup Register. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___b_k_p___private___functions_ga359d8fbc945e0f4e34fedbe037d842c8}{BKP\+\_\+\+Read\+Backup\+Register}} (uint16\+\_\+t BKP\+\_\+\+DR)
+\begin{DoxyCompactList}\small\item\em Reads data from the specified Data Backup Register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___b_k_p___private___functions_gacc9aedde760383f0bd146f0d77a547db}{BKP\+\_\+\+Get\+Flag\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Checks whether the Tamper Pin Event flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_k_p___private___functions_ga3f3aea5b0a3d8d5d79b0b506928351ea}{BKP\+\_\+\+Clear\+Flag}} (void)
+\begin{DoxyCompactList}\small\item\em Clears Tamper Pin Event pending flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} \mbox{\hyperlink{group___b_k_p___private___functions_ga99566c9f1f17f499020606cb63511494}{BKP\+\_\+\+Get\+ITStatus}} (void)
+\begin{DoxyCompactList}\small\item\em Checks whether the Tamper Pin Interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_k_p___private___functions_ga6a93ef8e40959bb10fea670e2040ad74}{BKP\+\_\+\+Clear\+ITPending\+Bit}} (void)
+\begin{DoxyCompactList}\small\item\em Clears Tamper Pin Interrupt pending bit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides all the BKP firmware functions. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

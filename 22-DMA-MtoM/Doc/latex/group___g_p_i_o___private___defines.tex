@@ -1,0 +1,117 @@
+\doxysubsubsection{GPIO\+\_\+\+Private\+\_\+\+Defines}
+\hypertarget{group___g_p_i_o___private___defines}{}\label{group___g_p_i_o___private___defines}\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_ga0ecdd0dd5180e1ee385c22f66a2cd660}{AFIO\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___peripheral__memory__map_ga5f7e3eacfcf4c313c25012795148a680}{AFIO\+\_\+\+BASE}} -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_gaf8c24f39392c89142f1b97a418669d5d}{EVCR\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___g_p_i_o___private___defines_ga0ecdd0dd5180e1ee385c22f66a2cd660}{AFIO\+\_\+\+OFFSET}} + 0x00)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_ga8e4fdee57fe3447cdbc5d00ccab60c18}{EVOE\+\_\+\+Bit\+Number}}~((uint8\+\_\+t)0x07)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_ga6e4f8c4e3def38811ac6c03b4f64240b}{EVCR\+\_\+\+EVOE\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___g_p_i_o___private___defines_gaf8c24f39392c89142f1b97a418669d5d}{EVCR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___g_p_i_o___private___defines_ga8e4fdee57fe3447cdbc5d00ccab60c18}{EVOE\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_ga472f80f63d09e365d283675f3466c8a1}{MAPR\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___g_p_i_o___private___defines_ga0ecdd0dd5180e1ee385c22f66a2cd660}{AFIO\+\_\+\+OFFSET}} + 0x04)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_gad4a9bbd669109039291f942d923ff8ae}{MII\+\_\+\+RMII\+\_\+\+SEL\+\_\+\+Bit\+Number}}~((\mbox{\hyperlink{group___exported__types_ga92c50087ca0e64fa93fc59402c55f8ca}{u8}})0x17)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_ga00e75433e8a45d7a55c021397cb85aa9}{MAPR\+\_\+\+MII\+\_\+\+RMII\+\_\+\+SEL\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___g_p_i_o___private___defines_ga472f80f63d09e365d283675f3466c8a1}{MAPR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___g_p_i_o___private___defines_gad4a9bbd669109039291f942d923ff8ae}{MII\+\_\+\+RMII\+\_\+\+SEL\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_ga97d20e77a588a767e1a775dd4299d1c5}{EVCR\+\_\+\+PORTPINCONFIG\+\_\+\+MASK}}~((uint16\+\_\+t)0x\+FF80)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_ga338d54179ac0da2af2363e3a930bf374}{LSB\+\_\+\+MASK}}~((uint16\+\_\+t)0x\+FFFF)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_gafa4eba58b1839413acb4591da00e7559}{DBGAFR\+\_\+\+POSITION\+\_\+\+MASK}}~((uint32\+\_\+t)0x000\+F0000)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_ga47a1cd3c0505a7be3e161671237d8460}{DBGAFR\+\_\+\+SWJCFG\+\_\+\+MASK}}~((uint32\+\_\+t)0x\+F0\+FFFFFF)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_gaab83406f875057e96458940ca9519b7d}{DBGAFR\+\_\+\+LOCATION\+\_\+\+MASK}}~((uint32\+\_\+t)0x00200000)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___private___defines_gaea2fa480dea4d6e061eaa1417a9196dc}{DBGAFR\+\_\+\+NUMBITS\+\_\+\+MASK}}~((uint32\+\_\+t)0x00100000)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___g_p_i_o___private___defines_ga0ecdd0dd5180e1ee385c22f66a2cd660}\label{group___g_p_i_o___private___defines_ga0ecdd0dd5180e1ee385c22f66a2cd660} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!AFIO\_OFFSET@{AFIO\_OFFSET}}
+\index{AFIO\_OFFSET@{AFIO\_OFFSET}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{AFIO\_OFFSET}{AFIO\_OFFSET}}
+{\footnotesize\ttfamily \#define AFIO\+\_\+\+OFFSET~(\mbox{\hyperlink{group___peripheral__memory__map_ga5f7e3eacfcf4c313c25012795148a680}{AFIO\+\_\+\+BASE}} -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})}
+
+\Hypertarget{group___g_p_i_o___private___defines_gaab83406f875057e96458940ca9519b7d}\label{group___g_p_i_o___private___defines_gaab83406f875057e96458940ca9519b7d} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!DBGAFR\_LOCATION\_MASK@{DBGAFR\_LOCATION\_MASK}}
+\index{DBGAFR\_LOCATION\_MASK@{DBGAFR\_LOCATION\_MASK}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{DBGAFR\_LOCATION\_MASK}{DBGAFR\_LOCATION\_MASK}}
+{\footnotesize\ttfamily \#define DBGAFR\+\_\+\+LOCATION\+\_\+\+MASK~((uint32\+\_\+t)0x00200000)}
+
+\Hypertarget{group___g_p_i_o___private___defines_gaea2fa480dea4d6e061eaa1417a9196dc}\label{group___g_p_i_o___private___defines_gaea2fa480dea4d6e061eaa1417a9196dc} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!DBGAFR\_NUMBITS\_MASK@{DBGAFR\_NUMBITS\_MASK}}
+\index{DBGAFR\_NUMBITS\_MASK@{DBGAFR\_NUMBITS\_MASK}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{DBGAFR\_NUMBITS\_MASK}{DBGAFR\_NUMBITS\_MASK}}
+{\footnotesize\ttfamily \#define DBGAFR\+\_\+\+NUMBITS\+\_\+\+MASK~((uint32\+\_\+t)0x00100000)}
+
+\Hypertarget{group___g_p_i_o___private___defines_gafa4eba58b1839413acb4591da00e7559}\label{group___g_p_i_o___private___defines_gafa4eba58b1839413acb4591da00e7559} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!DBGAFR\_POSITION\_MASK@{DBGAFR\_POSITION\_MASK}}
+\index{DBGAFR\_POSITION\_MASK@{DBGAFR\_POSITION\_MASK}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{DBGAFR\_POSITION\_MASK}{DBGAFR\_POSITION\_MASK}}
+{\footnotesize\ttfamily \#define DBGAFR\+\_\+\+POSITION\+\_\+\+MASK~((uint32\+\_\+t)0x000\+F0000)}
+
+\Hypertarget{group___g_p_i_o___private___defines_ga47a1cd3c0505a7be3e161671237d8460}\label{group___g_p_i_o___private___defines_ga47a1cd3c0505a7be3e161671237d8460} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!DBGAFR\_SWJCFG\_MASK@{DBGAFR\_SWJCFG\_MASK}}
+\index{DBGAFR\_SWJCFG\_MASK@{DBGAFR\_SWJCFG\_MASK}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{DBGAFR\_SWJCFG\_MASK}{DBGAFR\_SWJCFG\_MASK}}
+{\footnotesize\ttfamily \#define DBGAFR\+\_\+\+SWJCFG\+\_\+\+MASK~((uint32\+\_\+t)0x\+F0\+FFFFFF)}
+
+\Hypertarget{group___g_p_i_o___private___defines_ga6e4f8c4e3def38811ac6c03b4f64240b}\label{group___g_p_i_o___private___defines_ga6e4f8c4e3def38811ac6c03b4f64240b} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!EVCR\_EVOE\_BB@{EVCR\_EVOE\_BB}}
+\index{EVCR\_EVOE\_BB@{EVCR\_EVOE\_BB}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{EVCR\_EVOE\_BB}{EVCR\_EVOE\_BB}}
+{\footnotesize\ttfamily \#define EVCR\+\_\+\+EVOE\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___g_p_i_o___private___defines_gaf8c24f39392c89142f1b97a418669d5d}{EVCR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___g_p_i_o___private___defines_ga8e4fdee57fe3447cdbc5d00ccab60c18}{EVOE\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___g_p_i_o___private___defines_gaf8c24f39392c89142f1b97a418669d5d}\label{group___g_p_i_o___private___defines_gaf8c24f39392c89142f1b97a418669d5d} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!EVCR\_OFFSET@{EVCR\_OFFSET}}
+\index{EVCR\_OFFSET@{EVCR\_OFFSET}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{EVCR\_OFFSET}{EVCR\_OFFSET}}
+{\footnotesize\ttfamily \#define EVCR\+\_\+\+OFFSET~(\mbox{\hyperlink{group___g_p_i_o___private___defines_ga0ecdd0dd5180e1ee385c22f66a2cd660}{AFIO\+\_\+\+OFFSET}} + 0x00)}
+
+\Hypertarget{group___g_p_i_o___private___defines_ga97d20e77a588a767e1a775dd4299d1c5}\label{group___g_p_i_o___private___defines_ga97d20e77a588a767e1a775dd4299d1c5} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!EVCR\_PORTPINCONFIG\_MASK@{EVCR\_PORTPINCONFIG\_MASK}}
+\index{EVCR\_PORTPINCONFIG\_MASK@{EVCR\_PORTPINCONFIG\_MASK}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{EVCR\_PORTPINCONFIG\_MASK}{EVCR\_PORTPINCONFIG\_MASK}}
+{\footnotesize\ttfamily \#define EVCR\+\_\+\+PORTPINCONFIG\+\_\+\+MASK~((uint16\+\_\+t)0x\+FF80)}
+
+\Hypertarget{group___g_p_i_o___private___defines_ga8e4fdee57fe3447cdbc5d00ccab60c18}\label{group___g_p_i_o___private___defines_ga8e4fdee57fe3447cdbc5d00ccab60c18} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!EVOE\_BitNumber@{EVOE\_BitNumber}}
+\index{EVOE\_BitNumber@{EVOE\_BitNumber}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{EVOE\_BitNumber}{EVOE\_BitNumber}}
+{\footnotesize\ttfamily \#define EVOE\+\_\+\+Bit\+Number~((uint8\+\_\+t)0x07)}
+
+\Hypertarget{group___g_p_i_o___private___defines_ga338d54179ac0da2af2363e3a930bf374}\label{group___g_p_i_o___private___defines_ga338d54179ac0da2af2363e3a930bf374} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!LSB\_MASK@{LSB\_MASK}}
+\index{LSB\_MASK@{LSB\_MASK}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{LSB\_MASK}{LSB\_MASK}}
+{\footnotesize\ttfamily \#define LSB\+\_\+\+MASK~((uint16\+\_\+t)0x\+FFFF)}
+
+\Hypertarget{group___g_p_i_o___private___defines_ga00e75433e8a45d7a55c021397cb85aa9}\label{group___g_p_i_o___private___defines_ga00e75433e8a45d7a55c021397cb85aa9} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!MAPR\_MII\_RMII\_SEL\_BB@{MAPR\_MII\_RMII\_SEL\_BB}}
+\index{MAPR\_MII\_RMII\_SEL\_BB@{MAPR\_MII\_RMII\_SEL\_BB}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{MAPR\_MII\_RMII\_SEL\_BB}{MAPR\_MII\_RMII\_SEL\_BB}}
+{\footnotesize\ttfamily \#define MAPR\+\_\+\+MII\+\_\+\+RMII\+\_\+\+SEL\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___g_p_i_o___private___defines_ga472f80f63d09e365d283675f3466c8a1}{MAPR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___g_p_i_o___private___defines_gad4a9bbd669109039291f942d923ff8ae}{MII\+\_\+\+RMII\+\_\+\+SEL\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___g_p_i_o___private___defines_ga472f80f63d09e365d283675f3466c8a1}\label{group___g_p_i_o___private___defines_ga472f80f63d09e365d283675f3466c8a1} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!MAPR\_OFFSET@{MAPR\_OFFSET}}
+\index{MAPR\_OFFSET@{MAPR\_OFFSET}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{MAPR\_OFFSET}{MAPR\_OFFSET}}
+{\footnotesize\ttfamily \#define MAPR\+\_\+\+OFFSET~(\mbox{\hyperlink{group___g_p_i_o___private___defines_ga0ecdd0dd5180e1ee385c22f66a2cd660}{AFIO\+\_\+\+OFFSET}} + 0x04)}
+
+\Hypertarget{group___g_p_i_o___private___defines_gad4a9bbd669109039291f942d923ff8ae}\label{group___g_p_i_o___private___defines_gad4a9bbd669109039291f942d923ff8ae} 
+\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}!MII\_RMII\_SEL\_BitNumber@{MII\_RMII\_SEL\_BitNumber}}
+\index{MII\_RMII\_SEL\_BitNumber@{MII\_RMII\_SEL\_BitNumber}!GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{MII\_RMII\_SEL\_BitNumber}{MII\_RMII\_SEL\_BitNumber}}
+{\footnotesize\ttfamily \#define MII\+\_\+\+RMII\+\_\+\+SEL\+\_\+\+Bit\+Number~((\mbox{\hyperlink{group___exported__types_ga92c50087ca0e64fa93fc59402c55f8ca}{u8}})0x17)}
+

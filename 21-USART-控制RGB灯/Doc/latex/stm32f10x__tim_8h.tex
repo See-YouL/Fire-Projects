@@ -1,0 +1,735 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/21-\/\+USART-\/控制\+RGB灯/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/stm32f10x\+\_\+tim.h File Reference}
+\hypertarget{stm32f10x__tim_8h}{}\label{stm32f10x__tim_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_tim.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/21-\/USART-\/控制RGB灯/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_tim.h}}
+
+
+This file contains all the functions prototypes for the TIM firmware library.  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t_i_m___time_base_init_type_def}{TIM\+\_\+\+Time\+Base\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em TIM Time Base Init structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_i_m___o_c_init_type_def}{TIM\+\_\+\+OCInit\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em TIM Output Compare Init structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_i_m___i_c_init_type_def}{TIM\+\_\+\+ICInit\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em TIM Input Capture Init structure definition ~\newline
+ \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_i_m___b_d_t_r_init_type_def}{TIM\+\_\+\+BDTRInit\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em BDTR structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___exported__constants_ga71710da28a59c007a1d2ddee18a5ffcc}{IS\+\_\+\+TIM\+\_\+\+ALL\+\_\+\+PERIPH}}(PERIPH)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___exported__constants_ga1abea04e3837b7683d8e8dc33441677f}{IS\+\_\+\+TIM\+\_\+\+LIST1\+\_\+\+PERIPH}}(PERIPH)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___exported__constants_ga3c489ac3294f0d8f2ec097da909bc8e0}{IS\+\_\+\+TIM\+\_\+\+LIST2\+\_\+\+PERIPH}}(PERIPH)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___exported__constants_ga2d80541c542755ac3f2aca078bd98adb}{IS\+\_\+\+TIM\+\_\+\+LIST3\+\_\+\+PERIPH}}(PERIPH)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___exported__constants_ga9c2699fd3d0c0901f8ac706c3d2dfe10}{IS\+\_\+\+TIM\+\_\+\+LIST4\+\_\+\+PERIPH}}(PERIPH)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___exported__constants_ga90232c3966a578fbd9be2b228f225cb4}{IS\+\_\+\+TIM\+\_\+\+LIST5\+\_\+\+PERIPH}}(PERIPH)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___exported__constants_ga99fabffbddc9ca930f80a4480daeecbe}{IS\+\_\+\+TIM\+\_\+\+LIST6\+\_\+\+PERIPH}}(PERIPH)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___exported__constants_ga421bba71d6e8fbe9a9d422ecd59e79be}{IS\+\_\+\+TIM\+\_\+\+LIST7\+\_\+\+PERIPH}}(PERIPH)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___exported__constants_ga120d98895bd48d628028753212b68233}{IS\+\_\+\+TIM\+\_\+\+LIST8\+\_\+\+PERIPH}}(PERIPH)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___exported__constants_ga24ff46311f2d074ec6bd93f2972d1d9b}{IS\+\_\+\+TIM\+\_\+\+LIST9\+\_\+\+PERIPH}}(PERIPH)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__and___p_w_m__modes_ga54d5745fade3b2f8ea1325e7447ca760}{TIM\+\_\+\+OCMode\+\_\+\+Timing}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__and___p_w_m__modes_ga76bac57d41dc67218772f9c745c77102}{TIM\+\_\+\+OCMode\+\_\+\+Active}}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__and___p_w_m__modes_gae0c350d7adaea14a37cabc2ab762695f}{TIM\+\_\+\+OCMode\+\_\+\+Inactive}}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__and___p_w_m__modes_ga8b8adb6e81fe88bd14d44430f7f97021}{TIM\+\_\+\+OCMode\+\_\+\+Toggle}}~((uint16\+\_\+t)0x0030)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__and___p_w_m__modes_gaefbe32dddc9630fbcc48b302b50d15fc}{TIM\+\_\+\+OCMode\+\_\+\+PWM1}}~((uint16\+\_\+t)0x0060)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__and___p_w_m__modes_ga722d8f33a795ef82ed7ae76dfbb7613d}{TIM\+\_\+\+OCMode\+\_\+\+PWM2}}~((uint16\+\_\+t)0x0070)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__and___p_w_m__modes_ga93d898976e236c135bfd02a0c213c8ec}{IS\+\_\+\+TIM\+\_\+\+OC\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__and___p_w_m__modes_ga45f530dd241d3b0787b5c2d62cd1b98f}{IS\+\_\+\+TIM\+\_\+\+OCM}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___one___pulse___mode_ga99d934fdbc54ea4ee2cf5c86860f9227}{TIM\+\_\+\+OPMode\+\_\+\+Single}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___one___pulse___mode_gad921d739c86bf48dca12442a81ad68ad}{TIM\+\_\+\+OPMode\+\_\+\+Repetitive}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___one___pulse___mode_ga3f4a4305b4feacb4322eb4a358e54637}{IS\+\_\+\+TIM\+\_\+\+OPM\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___channel_ga69ea7f558f02c63dd1082d784d2449bd}{TIM\+\_\+\+Channel\+\_\+1}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___channel_ga03d7da8269a87a560f68985b4bd80931}{TIM\+\_\+\+Channel\+\_\+2}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___channel_ga012711b19e8c91f6f352801a3dc0bcc9}{TIM\+\_\+\+Channel\+\_\+3}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___channel_ga7414888c40d066af235bc1f80b99bd9d}{TIM\+\_\+\+Channel\+\_\+4}}~((uint16\+\_\+t)0x000C)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___channel_gae9721e3731e5fd983c83a9c1d32ef03d}{IS\+\_\+\+TIM\+\_\+\+CHANNEL}}(CHANNEL)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___channel_gacbf272b7a14f63b38bdbf18577835dce}{IS\+\_\+\+TIM\+\_\+\+PWMI\+\_\+\+CHANNEL}}(CHANNEL)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___channel_ga6f44459b7dfc4138bbc2c3795311c48c}{IS\+\_\+\+TIM\+\_\+\+COMPLEMENTARY\+\_\+\+CHANNEL}}(CHANNEL)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___clock___division___c_k_d_ga88691a07b3976791977d280045b3c850}{TIM\+\_\+\+CKD\+\_\+\+DIV1}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___clock___division___c_k_d_ga46a5fd6a173a7e88528a6e4084a08665}{TIM\+\_\+\+CKD\+\_\+\+DIV2}}~((uint16\+\_\+t)0x0100)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___clock___division___c_k_d_gac2e5c030f964f9b4c92fa8129fb923bc}{TIM\+\_\+\+CKD\+\_\+\+DIV4}}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___clock___division___c_k_d_ga9298ec9ad2d578a4c54e6c0dd4c03946}{IS\+\_\+\+TIM\+\_\+\+CKD\+\_\+\+DIV}}(DIV)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___counter___mode_gaf4cd3ce74af3122507b77c8f6e79c832}{TIM\+\_\+\+Counter\+Mode\+\_\+\+Up}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___counter___mode_gadd7c4200d185bdcd9e64ae80e6b200b0}{TIM\+\_\+\+Counter\+Mode\+\_\+\+Down}}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___counter___mode_gac07392e9637f8a0d115d4ba9a002ae93}{TIM\+\_\+\+Counter\+Mode\+\_\+\+Center\+Aligned1}}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___counter___mode_ga3793122e4c123a99e46fc2f04acea0d4}{TIM\+\_\+\+Counter\+Mode\+\_\+\+Center\+Aligned2}}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___counter___mode_ga65d9bc01ffa287cd7cf200d08c20a1ce}{TIM\+\_\+\+Counter\+Mode\+\_\+\+Center\+Aligned3}}~((uint16\+\_\+t)0x0060)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___counter___mode_ga9543fec190793e800d5d1b1b853636f5}{IS\+\_\+\+TIM\+\_\+\+COUNTER\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___polarity_gaba2f2de6fd722b8973e0eddeb8644022}{TIM\+\_\+\+OCPolarity\+\_\+\+High}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___polarity_ga9f4b11953dbd2c6f836b6913469dcf54}{TIM\+\_\+\+OCPolarity\+\_\+\+Low}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___polarity_ga1c2ee68d587d4f48d935c82fe4c3fe1e}{IS\+\_\+\+TIM\+\_\+\+OC\+\_\+\+POLARITY}}(POLARITY)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___n___polarity_gaa62288888d4f6858bee6b3cd9086ae3f}{TIM\+\_\+\+OCNPolarity\+\_\+\+High}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___n___polarity_ga9582560b2e7dae2e8dc3b65909b0c9cf}{TIM\+\_\+\+OCNPolarity\+\_\+\+Low}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___n___polarity_gad7385dee1d2b6ce0daf23ceaac4439cd}{IS\+\_\+\+TIM\+\_\+\+OCN\+\_\+\+POLARITY}}(POLARITY)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__state_ga4ad0f484cfa16b5190654da8278940d0}{TIM\+\_\+\+Output\+State\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__state_ga65afdda8761b6ac5ed0c0ad67c05dffe}{TIM\+\_\+\+Output\+State\+\_\+\+Enable}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__state_ga5848617f830d2de688eaff50ed279679}{IS\+\_\+\+TIM\+\_\+\+OUTPUT\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___n__state_gade8506a50fd6ba58273e9da81f6b0b54}{TIM\+\_\+\+Output\+NState\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___n__state_gac4c08f9d66ce138c6978668020526c6f}{TIM\+\_\+\+Output\+NState\+\_\+\+Enable}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___n__state_ga81e27a982d9707f699451f30314c4274}{IS\+\_\+\+TIM\+\_\+\+OUTPUTN\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___capture___compare__state_ga6acaeb60dad50ce9799ae9f62ed7719a}{TIM\+\_\+\+CCx\+\_\+\+Enable}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___capture___compare__state_gaa1441f66393b9daa9f97efb29b364cd3}{TIM\+\_\+\+CCx\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___capture___compare__state_ga5b7461e8c9c25f6fa082118c95b02ba1}{IS\+\_\+\+TIM\+\_\+\+CCX}}(CCX)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___capture___compare___n__state_gab534ddf23d317eb912564292c1cede2d}{TIM\+\_\+\+CCx\+N\+\_\+\+Enable}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___capture___compare___n__state_ga0d7d46aeba33ed197aa39775bc527d7d}{TIM\+\_\+\+CCx\+N\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___capture___compare___n__state_gad5a9f961e44c8d7c24066ac37ec79cbc}{IS\+\_\+\+TIM\+\_\+\+CCXN}}(CCXN)
+\item 
+\#define \mbox{\hyperlink{group___break___input__enable__disable_gae7fbc11ac043454b2a880bffe98fdb8c}{TIM\+\_\+\+Break\+\_\+\+Enable}}~((uint16\+\_\+t)0x1000)
+\item 
+\#define \mbox{\hyperlink{group___break___input__enable__disable_ga31ba16dd70ad4d99adc911f7bf6662e5}{TIM\+\_\+\+Break\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___break___input__enable__disable_ga29dd5484bdc69a467387bd8059b69f0e}{IS\+\_\+\+TIM\+\_\+\+BREAK\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___break___polarity_ga565656ca81d17f9a1807afe3971dff6e}{TIM\+\_\+\+Break\+Polarity\+\_\+\+Low}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___break___polarity_gabd4b72079548fd8903413a348539542b}{TIM\+\_\+\+Break\+Polarity\+\_\+\+High}}~((uint16\+\_\+t)0x2000)
+\item 
+\#define \mbox{\hyperlink{group___break___polarity_gaa29e33e74c5ff10972357ddd3f47f078}{IS\+\_\+\+TIM\+\_\+\+BREAK\+\_\+\+POLARITY}}(POLARITY)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___a_o_e___bit___set___reset_gaa416873d01fe62fe8d3f9c8bb7853fa1}{TIM\+\_\+\+Automatic\+Output\+\_\+\+Enable}}~((uint16\+\_\+t)0x4000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___a_o_e___bit___set___reset_ga0f80ba4fbadd434bc82ca63e904ace41}{TIM\+\_\+\+Automatic\+Output\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___a_o_e___bit___set___reset_gaabce6b8865d80929bf69c6c3c7780846}{IS\+\_\+\+TIM\+\_\+\+AUTOMATIC\+\_\+\+OUTPUT\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___lock__level_ga84d318c62d3e5dfe7082610d03e11f2f}{TIM\+\_\+\+LOCKLevel\+\_\+\+OFF}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___lock__level_ga7e4326fc7756ebf5e9eb9776c2734aea}{TIM\+\_\+\+LOCKLevel\+\_\+1}}~((uint16\+\_\+t)0x0100)
+\item 
+\#define \mbox{\hyperlink{group___lock__level_ga91bdf218f766e6a10b7a7df407250d25}{TIM\+\_\+\+LOCKLevel\+\_\+2}}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \mbox{\hyperlink{group___lock__level_gaa0a0c1ffd9dc582d6571780c1747920b}{TIM\+\_\+\+LOCKLevel\+\_\+3}}~((uint16\+\_\+t)0x0300)
+\item 
+\#define \mbox{\hyperlink{group___lock__level_gacf5e70717f6d13af301331bb043f5d48}{IS\+\_\+\+TIM\+\_\+\+LOCK\+\_\+\+LEVEL}}(LEVEL)
+\item 
+\#define \mbox{\hyperlink{group___o_s_s_i___off___state___selection__for___idle__mode__state_gaf643ec0d2edb6c8fb725d00210b3d071}{TIM\+\_\+\+OSSIState\+\_\+\+Enable}}~((uint16\+\_\+t)0x0400)
+\item 
+\#define \mbox{\hyperlink{group___o_s_s_i___off___state___selection__for___idle__mode__state_gae1962736fd5cad82e97a5814ef6758bd}{TIM\+\_\+\+OSSIState\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___o_s_s_i___off___state___selection__for___idle__mode__state_gad24fc8836152903b408239284cecfab1}{IS\+\_\+\+TIM\+\_\+\+OSSI\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___o_s_s_r___off___state___selection__for___run__mode__state_ga3703ba6189db045bec48c864289f997e}{TIM\+\_\+\+OSSRState\+\_\+\+Enable}}~((uint16\+\_\+t)0x0800)
+\item 
+\#define \mbox{\hyperlink{group___o_s_s_r___off___state___selection__for___run__mode__state_ga766dfd8b3c32ec1b8b446f0e2dbe7b97}{TIM\+\_\+\+OSSRState\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___o_s_s_r___off___state___selection__for___run__mode__state_ga48b4f15f6346e28087edbb9af2ba4f63}{IS\+\_\+\+TIM\+\_\+\+OSSR\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___idle___state_ga86d8f895a1ec584323f6c02c7edfad4c}{TIM\+\_\+\+OCIdle\+State\+\_\+\+Set}}~((uint16\+\_\+t)0x0100)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___idle___state_gace5465bc9e90ba7862b3af9e6cc9b97e}{TIM\+\_\+\+OCIdle\+State\+\_\+\+Reset}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___idle___state_ga69c62dcc15f9d39108b19b64205d689e}{IS\+\_\+\+TIM\+\_\+\+OCIDLE\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___n___idle___state_ga980392da6eb5bedcbf7ed353e1073f99}{TIM\+\_\+\+OCNIdle\+State\+\_\+\+Set}}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___n___idle___state_ga329a32820cdba0af9c4b7a04177e8fdd}{TIM\+\_\+\+OCNIdle\+State\+\_\+\+Reset}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___n___idle___state_ga0987091d1d03ba2db065efb66eff3951}{IS\+\_\+\+TIM\+\_\+\+OCNIDLE\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___polarity_gabe598596b7dbcac446a4918105fa95a6}{TIM\+\_\+\+ICPolarity\+\_\+\+Rising}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___polarity_ga70c6f5ed30a236bac4c690928e742243}{TIM\+\_\+\+ICPolarity\+\_\+\+Falling}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___polarity_ga4632a6425d407c0d28b610b2d31cccc8}{TIM\+\_\+\+ICPolarity\+\_\+\+Both\+Edge}}~((uint16\+\_\+t)0x000A)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___polarity_ga6aff2fe442fd9662a0bb8731134cda89}{IS\+\_\+\+TIM\+\_\+\+IC\+\_\+\+POLARITY}}(POLARITY)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___polarity_gaaae722dd6c33a224df267c703824b94c}{IS\+\_\+\+TIM\+\_\+\+IC\+\_\+\+POLARITY\+\_\+\+LITE}}(POLARITY)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___selection_ga3d38876044457b7faefe951d367ac8c3}{TIM\+\_\+\+ICSelection\+\_\+\+Direct\+TI}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___selection_ga2289b684133ac0b81ddfcd860d01b144}{TIM\+\_\+\+ICSelection\+\_\+\+Indirect\+TI}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___selection_ga2cd464e97ffd6ea3208ec65672f9a373}{TIM\+\_\+\+ICSelection\+\_\+\+TRC}}~((uint16\+\_\+t)0x0003)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___selection_ga623d8592109f4702829ae7fc3806bcb8}{IS\+\_\+\+TIM\+\_\+\+IC\+\_\+\+SELECTION}}(SELECTION)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___prescaler_ga8acb44abe3147d883685c1f9f1ce410e}{TIM\+\_\+\+ICPSC\+\_\+\+DIV1}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___prescaler_ga1d8a7b66add914e2ddd910d2d700978f}{TIM\+\_\+\+ICPSC\+\_\+\+DIV2}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___prescaler_gaf5a675046430fa0f0c95b0dac612828f}{TIM\+\_\+\+ICPSC\+\_\+\+DIV4}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___prescaler_ga5086cb03c89a5c67b199d20b605f00cb}{TIM\+\_\+\+ICPSC\+\_\+\+DIV8}}~((uint16\+\_\+t)0x000C)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___prescaler_ga91d219d7a210eb0a4bb49d72bda6b321}{IS\+\_\+\+TIM\+\_\+\+IC\+\_\+\+PRESCALER}}(PRESCALER)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m__interrupt__sources_ga8fb63577fec9a3e7c7f5f3eb775ee624}{TIM\+\_\+\+IT\+\_\+\+Update}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m__interrupt__sources_ga02267a938ab4722c5013fffa447cf5a6}{TIM\+\_\+\+IT\+\_\+\+CC1}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m__interrupt__sources_ga60f6b6c424b62ca58d3fafd8f5955e4f}{TIM\+\_\+\+IT\+\_\+\+CC2}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m__interrupt__sources_ga6aef020aebafd9e585283fbbaf8b841f}{TIM\+\_\+\+IT\+\_\+\+CC3}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m__interrupt__sources_ga1dce7f1bc32a258f2964cb7c05f413a6}{TIM\+\_\+\+IT\+\_\+\+CC4}}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m__interrupt__sources_gaeb7eff6c39922814e7ee47c0820c3d9f}{TIM\+\_\+\+IT\+\_\+\+COM}}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m__interrupt__sources_ga339629d21f2490729b28905f5c04bad1}{TIM\+\_\+\+IT\+\_\+\+Trigger}}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m__interrupt__sources_gad16adab3ac1a4a552a86da069702f24b}{TIM\+\_\+\+IT\+\_\+\+Break}}~((uint16\+\_\+t)0x0080)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m__interrupt__sources_ga14fce0f8dbe0925e45b415b34bd162c9}{IS\+\_\+\+TIM\+\_\+\+IT}}(IT)~((((IT) \& (uint16\+\_\+t)0x\+FF00) == 0x0000) \&\& ((IT) != 0x0000))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m__interrupt__sources_ga38e9d740c8d4ed8fcaced73816c124e6}{IS\+\_\+\+TIM\+\_\+\+GET\+\_\+\+IT}}(IT)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_ga73bca5b14da2d5026fa3877d0db53740}{TIM\+\_\+\+DMABase\+\_\+\+CR1}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_ga50e894f0d2cecc1ff3a3578098c3246e}{TIM\+\_\+\+DMABase\+\_\+\+CR2}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_ga748e24ac0675caa55869d6ba506448df}{TIM\+\_\+\+DMABase\+\_\+\+SMCR}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_gaeddacbbc2adf9705feac250f077d8c93}{TIM\+\_\+\+DMABase\+\_\+\+DIER}}~((uint16\+\_\+t)0x0003)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_ga5cda07a11a76bbb24a7d5bb680814d31}{TIM\+\_\+\+DMABase\+\_\+\+SR}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_gab5e6f6c3fea100896d13ce317a6ccd8e}{TIM\+\_\+\+DMABase\+\_\+\+EGR}}~((uint16\+\_\+t)0x0005)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_gaab384496cff3e54d8179fc0db727c7ee}{TIM\+\_\+\+DMABase\+\_\+\+CCMR1}}~((uint16\+\_\+t)0x0006)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_ga4989f74592ab359f30bd7c4a4a457571}{TIM\+\_\+\+DMABase\+\_\+\+CCMR2}}~((uint16\+\_\+t)0x0007)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_ga6935639db5738662520e8d0eb7116dd6}{TIM\+\_\+\+DMABase\+\_\+\+CCER}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_gacab604257d144cf3a59b360cbc958ec9}{TIM\+\_\+\+DMABase\+\_\+\+CNT}}~((uint16\+\_\+t)0x0009)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_gab8dd06970f235fe9f6997e0975237388}{TIM\+\_\+\+DMABase\+\_\+\+PSC}}~((uint16\+\_\+t)0x000A)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_gaab8a66f70e59b5916b4bba344746d652}{TIM\+\_\+\+DMABase\+\_\+\+ARR}}~((uint16\+\_\+t)0x000B)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_ga97f9edceee5c99b32aaa2c6daf849b7d}{TIM\+\_\+\+DMABase\+\_\+\+RCR}}~((uint16\+\_\+t)0x000C)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_ga235a47fa47fd19594a111e6e48c0d5a2}{TIM\+\_\+\+DMABase\+\_\+\+CCR1}}~((uint16\+\_\+t)0x000D)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_ga0e2150dcd3afe31ecb793aa471b3b972}{TIM\+\_\+\+DMABase\+\_\+\+CCR2}}~((uint16\+\_\+t)0x000E)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_ga590c90085bd2b206b941dff2731fed74}{TIM\+\_\+\+DMABase\+\_\+\+CCR3}}~((uint16\+\_\+t)0x000F)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_ga5e84a16e7d8ea369a3a55bb6fe1f2171}{TIM\+\_\+\+DMABase\+\_\+\+CCR4}}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_gaaff22bbf3091c47783c1c68b648c8605}{TIM\+\_\+\+DMABase\+\_\+\+BDTR}}~((uint16\+\_\+t)0x0011)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_ga59e2206e4e03b9d55c9fb5a24e29b01c}{TIM\+\_\+\+DMABase\+\_\+\+DCR}}~((uint16\+\_\+t)0x0012)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___base__address_gaf565551f2619b1368fed7ef1ba7414de}{IS\+\_\+\+TIM\+\_\+\+DMA\+\_\+\+BASE}}(BASE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gab87f91f1c5583b9888cb6bb37fc639e2}{TIM\+\_\+\+DMABurst\+Length\+\_\+1\+Transfer}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga829504c3e8c90a9445f6a223bc3034f8}{TIM\+\_\+\+DMABurst\+Length\+\_\+2\+Transfers}}~((uint16\+\_\+t)0x0100)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga3a99863a0925e0cc9a11b91aade66f11}{TIM\+\_\+\+DMABurst\+Length\+\_\+3\+Transfers}}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga84bfeb309593a1ac580e233bf7514b36}{TIM\+\_\+\+DMABurst\+Length\+\_\+4\+Transfers}}~((uint16\+\_\+t)0x0300)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga44f8aa51fbe8887a5f3c37a0e776902c}{TIM\+\_\+\+DMABurst\+Length\+\_\+5\+Transfers}}~((uint16\+\_\+t)0x0400)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga8be40a21654eea72e9c1bf9922675b22}{TIM\+\_\+\+DMABurst\+Length\+\_\+6\+Transfers}}~((uint16\+\_\+t)0x0500)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gaf2ae83bd73b0e92b73e5ebfc11f9bfad}{TIM\+\_\+\+DMABurst\+Length\+\_\+7\+Transfers}}~((uint16\+\_\+t)0x0600)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga8a760d7114425596736b0ecdbe5fdea6}{TIM\+\_\+\+DMABurst\+Length\+\_\+8\+Transfers}}~((uint16\+\_\+t)0x0700)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga98b208205c133557a9d67a0921559a66}{TIM\+\_\+\+DMABurst\+Length\+\_\+9\+Transfers}}~((uint16\+\_\+t)0x0800)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga2fc09f2148cf6ebddc8e67116212259c}{TIM\+\_\+\+DMABurst\+Length\+\_\+10\+Transfers}}~((uint16\+\_\+t)0x0900)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga0ca63a3caeaf1e85bd54961891949de7}{TIM\+\_\+\+DMABurst\+Length\+\_\+11\+Transfers}}~((uint16\+\_\+t)0x0\+A00)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga9160d52913bbd7ad1e663ff943d01852}{TIM\+\_\+\+DMABurst\+Length\+\_\+12\+Transfers}}~((uint16\+\_\+t)0x0\+B00)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga11485e9eee8a6a7edc1df868755eab85}{TIM\+\_\+\+DMABurst\+Length\+\_\+13\+Transfers}}~((uint16\+\_\+t)0x0\+C00)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gab1a097ca7404e518839df99795443fb0}{TIM\+\_\+\+DMABurst\+Length\+\_\+14\+Transfers}}~((uint16\+\_\+t)0x0\+D00)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gad13373f5fd246557a4fc487dc43c37ec}{TIM\+\_\+\+DMABurst\+Length\+\_\+15\+Transfers}}~((uint16\+\_\+t)0x0\+E00)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gafb644e6033f7b46c602b02754b69fde0}{TIM\+\_\+\+DMABurst\+Length\+\_\+16\+Transfers}}~((uint16\+\_\+t)0x0\+F00)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga5b2c97f650a3c1726965187d852b8cc5}{TIM\+\_\+\+DMABurst\+Length\+\_\+17\+Transfers}}~((uint16\+\_\+t)0x1000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gaed9f2afef174079f6eb6927abd995b9b}{TIM\+\_\+\+DMABurst\+Length\+\_\+18\+Transfers}}~((uint16\+\_\+t)0x1100)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gafd09cf0887b01a15101ba7dd6e2b4ba7}{IS\+\_\+\+TIM\+\_\+\+DMA\+\_\+\+LENGTH}}(LENGTH)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a__sources_ga013a49e5cceb263f01941aef968dea9c}{TIM\+\_\+\+DMA\+\_\+\+Update}}~((uint16\+\_\+t)0x0100)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a__sources_ga33b93e8bb82fe8e167b9e9c962c54f83}{TIM\+\_\+\+DMA\+\_\+\+CC1}}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a__sources_ga792f73196a8e7424655592097d7a3fd5}{TIM\+\_\+\+DMA\+\_\+\+CC2}}~((uint16\+\_\+t)0x0400)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a__sources_ga3eb2dadbd3109bced45935fb53deeee1}{TIM\+\_\+\+DMA\+\_\+\+CC3}}~((uint16\+\_\+t)0x0800)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a__sources_ga59495cf79894dfe5e5b2029863aed956}{TIM\+\_\+\+DMA\+\_\+\+CC4}}~((uint16\+\_\+t)0x1000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a__sources_gac5f4c56e944bda8ba0c23b97275020ba}{TIM\+\_\+\+DMA\+\_\+\+COM}}~((uint16\+\_\+t)0x2000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a__sources_ga81ad169a378969524e61396337d84a0a}{TIM\+\_\+\+DMA\+\_\+\+Trigger}}~((uint16\+\_\+t)0x4000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___d_m_a__sources_gafb9cb1995ea4cd37db6032d80a49cd47}{IS\+\_\+\+TIM\+\_\+\+DMA\+\_\+\+SOURCE}}(SOURCE)~((((SOURCE) \& (uint16\+\_\+t)0x80\+FF) == 0x0000) \&\& ((SOURCE) != 0x0000))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___external___trigger___prescaler_ga1b21757d5d1b708edca7e20481797e96}{TIM\+\_\+\+Ext\+TRGPSC\+\_\+\+OFF}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___external___trigger___prescaler_ga446ed7f1bc28bcb295c43886da582e47}{TIM\+\_\+\+Ext\+TRGPSC\+\_\+\+DIV2}}~((uint16\+\_\+t)0x1000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___external___trigger___prescaler_ga1de0031af7654fac2f29705f1da146c6}{TIM\+\_\+\+Ext\+TRGPSC\+\_\+\+DIV4}}~((uint16\+\_\+t)0x2000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___external___trigger___prescaler_gac2fe5014d69a93ce0a22b9f3f5a7d19a}{TIM\+\_\+\+Ext\+TRGPSC\+\_\+\+DIV8}}~((uint16\+\_\+t)0x3000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___external___trigger___prescaler_ga615587e6aae397d9fe8166004e7324f2}{IS\+\_\+\+TIM\+\_\+\+EXT\+\_\+\+PRESCALER}}(PRESCALER)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___internal___trigger___selection_gab7cf2b7db3956d4fd1e5a5d84f4891e7}{TIM\+\_\+\+TS\+\_\+\+ITR0}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___internal___trigger___selection_gad90fbca297153ca9c0112a67ea2c6cb3}{TIM\+\_\+\+TS\+\_\+\+ITR1}}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___internal___trigger___selection_ga8599ba58a5f911d648503c7ac55d4320}{TIM\+\_\+\+TS\+\_\+\+ITR2}}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___internal___trigger___selection_ga63183e611b91c5847040172c0069514d}{TIM\+\_\+\+TS\+\_\+\+ITR3}}~((uint16\+\_\+t)0x0030)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___internal___trigger___selection_ga8c89554efc693e679c94b5a749af123c}{TIM\+\_\+\+TS\+\_\+\+TI1\+F\+\_\+\+ED}}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___internal___trigger___selection_ga38d3514d54bcdb0ea8ac8bd91c5832b5}{TIM\+\_\+\+TS\+\_\+\+TI1\+FP1}}~((uint16\+\_\+t)0x0050)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___internal___trigger___selection_ga0ed58a269bccd3f22d19cc9a2ba3123f}{TIM\+\_\+\+TS\+\_\+\+TI2\+FP2}}~((uint16\+\_\+t)0x0060)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___internal___trigger___selection_gaece08e02e056613a882aa7ff0a6ccc2d}{TIM\+\_\+\+TS\+\_\+\+ETRF}}~((uint16\+\_\+t)0x0070)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___internal___trigger___selection_ga36e47cf625c695a368a68280e950dfbc}{IS\+\_\+\+TIM\+\_\+\+TRIGGER\+\_\+\+SELECTION}}(SELECTION)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___internal___trigger___selection_ga1ce6c387021e2fdaf3fa3d7cd3eae962}{IS\+\_\+\+TIM\+\_\+\+INTERNAL\+\_\+\+TRIGGER\+\_\+\+SELECTION}}(SELECTION)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___t_ix___external___clock___source_ga237daecde6e1f75509acc80a9ccce820}{TIM\+\_\+\+TIx\+External\+CLK1\+Source\+\_\+\+TI1}}~((uint16\+\_\+t)0x0050)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___t_ix___external___clock___source_gafa3c6345a7e1c3668b2e7e4d61a79491}{TIM\+\_\+\+TIx\+External\+CLK1\+Source\+\_\+\+TI2}}~((uint16\+\_\+t)0x0060)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___t_ix___external___clock___source_gaa1a749bc38d434902b69a45d50ee0889}{TIM\+\_\+\+TIx\+External\+CLK1\+Source\+\_\+\+TI1\+ED}}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___t_ix___external___clock___source_gabfa9cd6cf6e9df4bff8d6cdf16c6b374}{IS\+\_\+\+TIM\+\_\+\+TIXCLK\+\_\+\+SOURCE}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___external___trigger___polarity_ga96f3959a02c0491ab8d65cfa384ce7e3}{TIM\+\_\+\+Ext\+TRGPolarity\+\_\+\+Inverted}}~((uint16\+\_\+t)0x8000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___external___trigger___polarity_ga63fe7c58c491d2a812d5621b71c2d0c5}{TIM\+\_\+\+Ext\+TRGPolarity\+\_\+\+Non\+Inverted}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___external___trigger___polarity_ga489ea1fed28375dec49cf1b8dfac47ca}{IS\+\_\+\+TIM\+\_\+\+EXT\+\_\+\+POLARITY}}(POLARITY)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___prescaler___reload___mode_gad76dd05a3ae4e44e040e0e083bd460bf}{TIM\+\_\+\+PSCReload\+Mode\+\_\+\+Update}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___prescaler___reload___mode_ga9ba55481ccdcb64268b7b9f2095bfc17}{TIM\+\_\+\+PSCReload\+Mode\+\_\+\+Immediate}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___prescaler___reload___mode_ga156317fc6b2c1f6f2e1da9dfa555ecf4}{IS\+\_\+\+TIM\+\_\+\+PRESCALER\+\_\+\+RELOAD}}(RELOAD)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___forced___action_ga19d3769825f1dfdbdbde3edb60310b99}{TIM\+\_\+\+Forced\+Action\+\_\+\+Active}}~((uint16\+\_\+t)0x0050)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___forced___action_ga79656f2193ec5e12a15d0ae5b025d273}{TIM\+\_\+\+Forced\+Action\+\_\+\+In\+Active}}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___forced___action_gaa2cb16f281d32c95ab974dc5157bfa63}{IS\+\_\+\+TIM\+\_\+\+FORCED\+\_\+\+ACTION}}(ACTION)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___encoder___mode_gabc63e3617a938382f87439ec58768b8e}{TIM\+\_\+\+Encoder\+Mode\+\_\+\+TI1}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___encoder___mode_ga5627a2d5d47b7301c7dbb29d20ae00e3}{TIM\+\_\+\+Encoder\+Mode\+\_\+\+TI2}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___encoder___mode_ga12511f903de08f1a634ff7828757f081}{TIM\+\_\+\+Encoder\+Mode\+\_\+\+TI12}}~((uint16\+\_\+t)0x0003)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___encoder___mode_ga9dd5baa6b2a44e0f25068a650cbfdd1b}{IS\+\_\+\+TIM\+\_\+\+ENCODER\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___event___source_ga5bff72fbe94b1ae5a710e402c9868b23}{TIM\+\_\+\+Event\+Source\+\_\+\+Update}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___event___source_gaa634c46d4ac521ad16e25be97b487e8a}{TIM\+\_\+\+Event\+Source\+\_\+\+CC1}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___event___source_ga5e2082a09552acc9c7e9577f104ba15a}{TIM\+\_\+\+Event\+Source\+\_\+\+CC2}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___event___source_gafeb8538e3b00d938e061e5051f83836b}{TIM\+\_\+\+Event\+Source\+\_\+\+CC3}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___event___source_gab60e3190e6c09d2d067f2c689d614979}{TIM\+\_\+\+Event\+Source\+\_\+\+CC4}}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___event___source_ga4c06981037fae91786f966aa9b4b3435}{TIM\+\_\+\+Event\+Source\+\_\+\+COM}}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___event___source_ga24835bf5eac25eed90069208dce22564}{TIM\+\_\+\+Event\+Source\+\_\+\+Trigger}}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___event___source_gad6f9b5366d93c73ff005273c50c9f00a}{TIM\+\_\+\+Event\+Source\+\_\+\+Break}}~((uint16\+\_\+t)0x0080)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___event___source_ga4ac88c3e43c8250114ea81a6e052d58a}{IS\+\_\+\+TIM\+\_\+\+EVENT\+\_\+\+SOURCE}}(SOURCE)~((((SOURCE) \& (uint16\+\_\+t)0x\+FF00) == 0x0000) \&\& ((SOURCE) != 0x0000))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___update___source_ga32c67bc3f8211a2c7b44ee9fe1523875}{TIM\+\_\+\+Update\+Source\+\_\+\+Global}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___update___source_ga6f50423cdb011137ae8cd303ccd2080c}{TIM\+\_\+\+Update\+Source\+\_\+\+Regular}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___update___source_ga7c916798d8f5f4a828afadceb5d38a95}{IS\+\_\+\+TIM\+\_\+\+UPDATE\+\_\+\+SOURCE}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___preload___state_gad647db2e7a89bd6db3c787680afccf8f}{TIM\+\_\+\+OCPreload\+\_\+\+Enable}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___preload___state_ga0cbcc3c4d90d61d85550db2173737ed6}{TIM\+\_\+\+OCPreload\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___preload___state_ga48cc07c5e87b5fd7549b7668f1598ab5}{IS\+\_\+\+TIM\+\_\+\+OCPRELOAD\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___fast___state_ga0cfb598c985363ee7004e52c97c524a3}{TIM\+\_\+\+OCFast\+\_\+\+Enable}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___fast___state_gab3d39f8797953cb58754205169d8278e}{TIM\+\_\+\+OCFast\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___fast___state_ga65ad85cb4ba48660e8f519a1f6c298d2}{IS\+\_\+\+TIM\+\_\+\+OCFAST\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___clear___state_ga1b7bce48b3e1478aad98c95fbbe7a6e0}{TIM\+\_\+\+OCClear\+\_\+\+Enable}}~((uint16\+\_\+t)0x0080)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___clear___state_gadb09946cb5dded7520baf4b19173204d}{TIM\+\_\+\+OCClear\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare___clear___state_ga5297586b42da9263ac4f767c83202fed}{IS\+\_\+\+TIM\+\_\+\+OCCLEAR\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___trigger___output___source_gafb039ed39279a4d1134b234797b1cdfb}{TIM\+\_\+\+TRGOSource\+\_\+\+Reset}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___trigger___output___source_gaa228ba6cfafcf676e33e3ee35cb7fc1c}{TIM\+\_\+\+TRGOSource\+\_\+\+Enable}}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___trigger___output___source_ga8a73c717070ab1a0ef90326780f20aef}{TIM\+\_\+\+TRGOSource\+\_\+\+Update}}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___trigger___output___source_ga2d044b472c021f5484b9f71eb9ca69f1}{TIM\+\_\+\+TRGOSource\+\_\+\+OC1}}~((uint16\+\_\+t)0x0030)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___trigger___output___source_ga7cb70a2a026dc02136bdbb3dcc483d6c}{TIM\+\_\+\+TRGOSource\+\_\+\+OC1\+Ref}}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___trigger___output___source_ga059f9f6cf96c833180eb3cdf5e56bd04}{TIM\+\_\+\+TRGOSource\+\_\+\+OC2\+Ref}}~((uint16\+\_\+t)0x0050)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___trigger___output___source_ga40943bc1c3f22b983c683cbf0e87a218}{TIM\+\_\+\+TRGOSource\+\_\+\+OC3\+Ref}}~((uint16\+\_\+t)0x0060)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___trigger___output___source_gafc81561599199912d613c65f760919bc}{TIM\+\_\+\+TRGOSource\+\_\+\+OC4\+Ref}}~((uint16\+\_\+t)0x0070)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___trigger___output___source_gadf4e4e0422bd9c108b184884781d2d46}{IS\+\_\+\+TIM\+\_\+\+TRGO\+\_\+\+SOURCE}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___slave___mode_gaac1cec731f1a5e680a038c4f472f74af}{TIM\+\_\+\+Slave\+Mode\+\_\+\+Reset}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___slave___mode_ga1f36c870b926f70b32f274bbc0bc39a5}{TIM\+\_\+\+Slave\+Mode\+\_\+\+Gated}}~((uint16\+\_\+t)0x0005)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___slave___mode_ga9e7726c04ee1bafec97226f08adf5677}{TIM\+\_\+\+Slave\+Mode\+\_\+\+Trigger}}~((uint16\+\_\+t)0x0006)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___slave___mode_ga34427a693157ab177fead9871185bd35}{TIM\+\_\+\+Slave\+Mode\+\_\+\+External1}}~((uint16\+\_\+t)0x0007)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___slave___mode_ga7f0e666bc968c56df7f1f6c2465c89fb}{IS\+\_\+\+TIM\+\_\+\+SLAVE\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___master___slave___mode_gaef5da910ae6952fce424b440ea39f69a}{TIM\+\_\+\+Master\+Slave\+Mode\+\_\+\+Enable}}~((uint16\+\_\+t)0x0080)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___master___slave___mode_ga8d4c7c0f57469f384b1327bb323d28a3}{TIM\+\_\+\+Master\+Slave\+Mode\+\_\+\+Disable}}~((uint16\+\_\+t)0x0000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___master___slave___mode_ga53146701cf287a0eca43b9232dffac60}{IS\+\_\+\+TIM\+\_\+\+MSM\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga97eba66f792c88e08131bd0d2a0e530d}{TIM\+\_\+\+FLAG\+\_\+\+Update}}~((uint16\+\_\+t)0x0001)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gaa7eb8be054b9bd217a9abb1c8687cc55}{TIM\+\_\+\+FLAG\+\_\+\+CC1}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga9cae242f1c51b31839ffc5bc007c82a7}{TIM\+\_\+\+FLAG\+\_\+\+CC2}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga052c380f922219659810e4fceb574a7c}{TIM\+\_\+\+FLAG\+\_\+\+CC3}}~((uint16\+\_\+t)0x0008)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gafd0dc57b56941f8b8250d66e289542db}{TIM\+\_\+\+FLAG\+\_\+\+CC4}}~((uint16\+\_\+t)0x0010)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gad454d70205ce5bbf3b3c0e7e43d6df62}{TIM\+\_\+\+FLAG\+\_\+\+COM}}~((uint16\+\_\+t)0x0020)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gaeca2f17eea738dbec7eee8ecbe442814}{TIM\+\_\+\+FLAG\+\_\+\+Trigger}}~((uint16\+\_\+t)0x0040)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga166571a1d5ca2bfca5d923eaa22f6deb}{TIM\+\_\+\+FLAG\+\_\+\+Break}}~((uint16\+\_\+t)0x0080)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga38dfb7d1ed00af77d70bc3be28500108}{TIM\+\_\+\+FLAG\+\_\+\+CC1\+OF}}~((uint16\+\_\+t)0x0200)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga4df0c71d3e695c214d49802942e04590}{TIM\+\_\+\+FLAG\+\_\+\+CC2\+OF}}~((uint16\+\_\+t)0x0400)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gac81f24eaffdf83c2db9d2e6078a00919}{TIM\+\_\+\+FLAG\+\_\+\+CC3\+OF}}~((uint16\+\_\+t)0x0800)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gafc8b04654766d98ba2c6fed601895a20}{TIM\+\_\+\+FLAG\+\_\+\+CC4\+OF}}~((uint16\+\_\+t)0x1000)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_ga6406de8131ae53ee29740c3e8627b098}{IS\+\_\+\+TIM\+\_\+\+GET\+\_\+\+FLAG}}(FLAG)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___flags_gae60a1b5900de8354b2a4f017b2bd4f94}{IS\+\_\+\+TIM\+\_\+\+CLEAR\+\_\+\+FLAG}}(TIM\+\_\+\+FLAG)~((((TIM\+\_\+\+FLAG) \& (uint16\+\_\+t)0x\+E100) == 0x0000) \&\& ((TIM\+\_\+\+FLAG) != 0x0000))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___input___capture___filer___value_ga19ecc5fc2e1ce1697c3dbbb9809ca243}{IS\+\_\+\+TIM\+\_\+\+IC\+\_\+\+FILTER}}(ICFILTER)~((ICFILTER) $<$= 0xF)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___external___trigger___filter_ga500df0646edcf07316a55a652502ca87}{IS\+\_\+\+TIM\+\_\+\+EXT\+\_\+\+FILTER}}(EXTFILTER)~((EXTFILTER) $<$= 0xF)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_gad915c67fae262b887f4f074809448309}{TIM\+\_\+\+DMABurst\+Length\+\_\+1\+Byte}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gab87f91f1c5583b9888cb6bb37fc639e2}{TIM\+\_\+\+DMABurst\+Length\+\_\+1\+Transfer}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_gabed2d89b663148923f4a7ca63d62d947}{TIM\+\_\+\+DMABurst\+Length\+\_\+2\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga829504c3e8c90a9445f6a223bc3034f8}{TIM\+\_\+\+DMABurst\+Length\+\_\+2\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_gad06dbc68a994da99b017a18a7197c0ad}{TIM\+\_\+\+DMABurst\+Length\+\_\+3\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga3a99863a0925e0cc9a11b91aade66f11}{TIM\+\_\+\+DMABurst\+Length\+\_\+3\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_ga620ce560a1d7a6d6769cacd2a2ead48d}{TIM\+\_\+\+DMABurst\+Length\+\_\+4\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga84bfeb309593a1ac580e233bf7514b36}{TIM\+\_\+\+DMABurst\+Length\+\_\+4\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_gaf9ac4a4cfd3dcfb7ba859898e702c881}{TIM\+\_\+\+DMABurst\+Length\+\_\+5\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga44f8aa51fbe8887a5f3c37a0e776902c}{TIM\+\_\+\+DMABurst\+Length\+\_\+5\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_ga7a9cc659b4fc010a31815254f6b57e3f}{TIM\+\_\+\+DMABurst\+Length\+\_\+6\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga8be40a21654eea72e9c1bf9922675b22}{TIM\+\_\+\+DMABurst\+Length\+\_\+6\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_ga5833cc5442c40a97a6a90bcd34a2e773}{TIM\+\_\+\+DMABurst\+Length\+\_\+7\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gaf2ae83bd73b0e92b73e5ebfc11f9bfad}{TIM\+\_\+\+DMABurst\+Length\+\_\+7\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_gab7c002a9f06f7c238e15a0c61f047062}{TIM\+\_\+\+DMABurst\+Length\+\_\+8\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga8a760d7114425596736b0ecdbe5fdea6}{TIM\+\_\+\+DMABurst\+Length\+\_\+8\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_ga2868d400329e705b89c1e425c9cb4fed}{TIM\+\_\+\+DMABurst\+Length\+\_\+9\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga98b208205c133557a9d67a0921559a66}{TIM\+\_\+\+DMABurst\+Length\+\_\+9\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_ga99141ca3210700d07d098d161b42cdf3}{TIM\+\_\+\+DMABurst\+Length\+\_\+10\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga2fc09f2148cf6ebddc8e67116212259c}{TIM\+\_\+\+DMABurst\+Length\+\_\+10\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_ga1a4ab1c8a8469f0d28aafb902615f6db}{TIM\+\_\+\+DMABurst\+Length\+\_\+11\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga0ca63a3caeaf1e85bd54961891949de7}{TIM\+\_\+\+DMABurst\+Length\+\_\+11\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_ga41a8cee7ca5e9035a04c0920ab0f3f66}{TIM\+\_\+\+DMABurst\+Length\+\_\+12\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga9160d52913bbd7ad1e663ff943d01852}{TIM\+\_\+\+DMABurst\+Length\+\_\+12\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_ga79a0397f1c33cc2d0a8b5bdd94eca845}{TIM\+\_\+\+DMABurst\+Length\+\_\+13\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga11485e9eee8a6a7edc1df868755eab85}{TIM\+\_\+\+DMABurst\+Length\+\_\+13\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_gae1e210b9c3609e854e05c3594aa01c01}{TIM\+\_\+\+DMABurst\+Length\+\_\+14\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gab1a097ca7404e518839df99795443fb0}{TIM\+\_\+\+DMABurst\+Length\+\_\+14\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_ga3ca90d9fa3c80590175ba42baac57098}{TIM\+\_\+\+DMABurst\+Length\+\_\+15\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gad13373f5fd246557a4fc487dc43c37ec}{TIM\+\_\+\+DMABurst\+Length\+\_\+15\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_ga672117a7dafcd778fe8e86db423b07e9}{TIM\+\_\+\+DMABurst\+Length\+\_\+16\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gafb644e6033f7b46c602b02754b69fde0}{TIM\+\_\+\+DMABurst\+Length\+\_\+16\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_gacffd0dc1f04aa06624a4980dcae6eede}{TIM\+\_\+\+DMABurst\+Length\+\_\+17\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_ga5b2c97f650a3c1726965187d852b8cc5}{TIM\+\_\+\+DMABurst\+Length\+\_\+17\+Transfers}}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___legacy_ga9c4d457417b1ba72ed0ae9886a75547a}{TIM\+\_\+\+DMABurst\+Length\+\_\+18\+Bytes}}~\mbox{\hyperlink{group___t_i_m___d_m_a___burst___length_gaed9f2afef174079f6eb6927abd995b9b}{TIM\+\_\+\+DMABurst\+Length\+\_\+18\+Transfers}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga1659cc0ce503ac151568e0c7c02b1ba5}{TIM\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the TIMx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga83fd58c9416802d9638bbe1715c98932}{TIM\+\_\+\+Time\+Base\+Init}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___time_base_init_type_def}{TIM\+\_\+\+Time\+Base\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+Time\+Base\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the TIMx Time Base Unit peripheral according to the specified parameters in the TIM\+\_\+\+Time\+Base\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gafcdb6ff00158862aef7fed5e7a554a3e}{TIM\+\_\+\+OC1\+Init}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___o_c_init_type_def}{TIM\+\_\+\+OCInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+OCInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the TIMx Channel1 according to the specified parameters in the TIM\+\_\+\+OCInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga2017455121d910d6ff63ac6f219842c5}{TIM\+\_\+\+OC2\+Init}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___o_c_init_type_def}{TIM\+\_\+\+OCInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+OCInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the TIMx Channel2 according to the specified parameters in the TIM\+\_\+\+OCInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga90d4a358d4e6d4c5ed17dc1d6beb5f30}{TIM\+\_\+\+OC3\+Init}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___o_c_init_type_def}{TIM\+\_\+\+OCInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+OCInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the TIMx Channel3 according to the specified parameters in the TIM\+\_\+\+OCInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga64571ebbb58cac39a9e760050175f11c}{TIM\+\_\+\+OC4\+Init}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___o_c_init_type_def}{TIM\+\_\+\+OCInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+OCInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the TIMx Channel4 according to the specified parameters in the TIM\+\_\+\+OCInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga9e6a153dd6552e4e1188eba227316f7f}{TIM\+\_\+\+ICInit}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___i_c_init_type_def}{TIM\+\_\+\+ICInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+ICInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the TIM peripheral according to the specified parameters in the TIM\+\_\+\+ICInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gaa71f9296556310f85628d6c748a06475}{TIM\+\_\+\+PWMIConfig}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___i_c_init_type_def}{TIM\+\_\+\+ICInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+ICInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Configures the TIM peripheral according to the specified parameters in the TIM\+\_\+\+ICInit\+Struct to measure an external PWM signal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga3df4ba3f0727f63ce621e2b2e6035d4f}{TIM\+\_\+\+BDTRConfig}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___b_d_t_r_init_type_def}{TIM\+\_\+\+BDTRInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+BDTRInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Configures the\+: Break feature, dead time, Lock level, the OSSI, the OSSR State and the AOE(automatic output enable). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga1556a0b9a5d53506875fd7de0cbc6b1f}{TIM\+\_\+\+Time\+Base\+Struct\+Init}} (\mbox{\hyperlink{struct_t_i_m___time_base_init_type_def}{TIM\+\_\+\+Time\+Base\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+Time\+Base\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each TIM\+\_\+\+Time\+Base\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga394683c78ae02837882e36014e11643e}{TIM\+\_\+\+OCStruct\+Init}} (\mbox{\hyperlink{struct_t_i_m___o_c_init_type_def}{TIM\+\_\+\+OCInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+OCInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each TIM\+\_\+\+OCInit\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga5005dac8e4e8a4c7fc2a0ef05b77cc50}{TIM\+\_\+\+ICStruct\+Init}} (\mbox{\hyperlink{struct_t_i_m___i_c_init_type_def}{TIM\+\_\+\+ICInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+ICInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each TIM\+\_\+\+ICInit\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gaea0f49938cda8ae0738162194798afc6}{TIM\+\_\+\+BDTRStruct\+Init}} (\mbox{\hyperlink{struct_t_i_m___b_d_t_r_init_type_def}{TIM\+\_\+\+BDTRInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+BDTRInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each TIM\+\_\+\+BDTRInit\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga2bdc275bcbd2ce9d1ba632e6c89896b7}{TIM\+\_\+\+Cmd}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified TIM peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga3e59ebced2ab8e0b817c460f1670e97d}{TIM\+\_\+\+Ctrl\+PWMOutputs}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIM peripheral Main Outputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga70e3d6c09d55ee69002e154c85cd40e4}{TIM\+\_\+\+ITConfig}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+IT, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified TIM interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga38bd4ffda920dd4f7655a0a2c6100a6e}{TIM\+\_\+\+Generate\+Event}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Event\+Source)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx event to be generate by software. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gad7156f84c436c8ac92cd789611826d09}{TIM\+\_\+\+DMAConfig}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+DMABase, uint16\+\_\+t TIM\+\_\+\+DMABurst\+Length)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx\textquotesingle{}s DMA interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga24700389cfa3ea9b42234933b23f1399}{TIM\+\_\+\+DMACmd}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+DMASource, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIMx\textquotesingle{}s DMA Requests. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga2394f0221709c0659874f9a4184cf86e}{TIM\+\_\+\+Internal\+Clock\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx internal Clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gabef227d21d9e121e6a4ec5ab6223f5a9}{TIM\+\_\+\+ITRx\+External\+Clock\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Input\+Trigger\+Source)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Internal Trigger as External Clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gaf460e7d9c9969044e364130e209937fc}{TIM\+\_\+\+TIx\+External\+Clock\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+TIx\+External\+CLKSource, uint16\+\_\+t TIM\+\_\+\+ICPolarity, uint16\+\_\+t ICFilter)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Trigger as External Clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga47c05638b93aabcd641dbc8859e1b2df}{TIM\+\_\+\+ETRClock\+Mode1\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Ext\+TRGPrescaler, uint16\+\_\+t TIM\+\_\+\+Ext\+TRGPolarity, uint16\+\_\+t Ext\+TRGFilter)
+\begin{DoxyCompactList}\small\item\em Configures the External clock Mode1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga0a9cbcbab32326cbbdaf4c111f59ec20}{TIM\+\_\+\+ETRClock\+Mode2\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Ext\+TRGPrescaler, uint16\+\_\+t TIM\+\_\+\+Ext\+TRGPolarity, uint16\+\_\+t Ext\+TRGFilter)
+\begin{DoxyCompactList}\small\item\em Configures the External clock Mode2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga8bdde400b7a30f3e747fe8e4962c0abe}{TIM\+\_\+\+ETRConfig}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Ext\+TRGPrescaler, uint16\+\_\+t TIM\+\_\+\+Ext\+TRGPolarity, uint16\+\_\+t Ext\+TRGFilter)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx External Trigger (ETR). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga45c6fd9041baf7f64c121e0172f305c7}{TIM\+\_\+\+Prescaler\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Prescaler, uint16\+\_\+t TIM\+\_\+\+PSCReload\+Mode)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Prescaler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga93941c1db20bf3794f377307df90a67b}{TIM\+\_\+\+Counter\+Mode\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Counter\+Mode)
+\begin{DoxyCompactList}\small\item\em Specifies the TIMx Counter Mode to be used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga4252583c6ae8a73d6fc66f7e951dbc35}{TIM\+\_\+\+Select\+Input\+Trigger}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Input\+Trigger\+Source)
+\begin{DoxyCompactList}\small\item\em Selects the Input Trigger source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga0fc7e76c47a3bd1ba1ebc71427832b51}{TIM\+\_\+\+Encoder\+Interface\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Encoder\+Mode, uint16\+\_\+t TIM\+\_\+\+IC1\+Polarity, uint16\+\_\+t TIM\+\_\+\+IC2\+Polarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Encoder Interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga4f58c12e6493a0d8b9555c9097b831d6}{TIM\+\_\+\+Forced\+OC1\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Forced\+Action)
+\begin{DoxyCompactList}\small\item\em Forces the TIMx output 1 waveform to active or inactive level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga3d2902b6fbab8dd55cd531055ffcc63d}{TIM\+\_\+\+Forced\+OC2\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Forced\+Action)
+\begin{DoxyCompactList}\small\item\em Forces the TIMx output 2 waveform to active or inactive level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga920b0fb4ca44fceffd1c3e441feebd8f}{TIM\+\_\+\+Forced\+OC3\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Forced\+Action)
+\begin{DoxyCompactList}\small\item\em Forces the TIMx output 3 waveform to active or inactive level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gaf0a0bbe74251e56d4b835d20b0a3aa63}{TIM\+\_\+\+Forced\+OC4\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Forced\+Action)
+\begin{DoxyCompactList}\small\item\em Forces the TIMx output 4 waveform to active or inactive level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga42b44b9fc2b0798d733720dd6bac1ac0}{TIM\+\_\+\+ARRPreload\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables TIMx peripheral Preload register on ARR. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gaff2e7f9959b1b36e830df028c14accc8}{TIM\+\_\+\+Select\+COM}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Selects the TIM peripheral Commutation event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga5273cb65acb885fe7982827b1c6b7d75}{TIM\+\_\+\+Select\+CCDMA}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Selects the TIMx peripheral Capture Compare DMA source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga0a935254e44312b1d78e8684a58db3c1}{TIM\+\_\+\+CCPreload\+Control}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Sets or Resets the TIM peripheral Capture Compare Preload Control bit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga60e6c29ad8f919bef616cf8e3306dd64}{TIM\+\_\+\+OC1\+Preload\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPreload)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIMx peripheral Preload register on CCR1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga75b4614c6dd2cd52f2c5becdb6590c10}{TIM\+\_\+\+OC2\+Preload\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPreload)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIMx peripheral Preload register on CCR2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga8b2391685a519e60e596b7d596f86f09}{TIM\+\_\+\+OC3\+Preload\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPreload)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIMx peripheral Preload register on CCR3. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga8bf4dfb35ff0c7b494dd96579f50b1ec}{TIM\+\_\+\+OC4\+Preload\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPreload)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIMx peripheral Preload register on CCR4. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gaec82031ca62f31f5483195c09752a83a}{TIM\+\_\+\+OC1\+Fast\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCFast)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Output Compare 1 Fast feature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga413359c87f46c69f1ffe2dc8fb3a65e7}{TIM\+\_\+\+OC2\+Fast\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCFast)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Output Compare 2 Fast feature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gab2f3698e6e56bd9b0a4be7056ba789e1}{TIM\+\_\+\+OC3\+Fast\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCFast)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Output Compare 3 Fast feature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga58279a04e8ea5333f1079d3cce8dde12}{TIM\+\_\+\+OC4\+Fast\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCFast)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Output Compare 4 Fast feature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga34e926cd8a99cfcc7480b2d6de5118b6}{TIM\+\_\+\+Clear\+OC1\+Ref}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCClear)
+\begin{DoxyCompactList}\small\item\em Clears or safeguards the OCREF1 signal on an external event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gac474ebc815d24c8a589969e0c68b27b0}{TIM\+\_\+\+Clear\+OC2\+Ref}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCClear)
+\begin{DoxyCompactList}\small\item\em Clears or safeguards the OCREF2 signal on an external event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga0bd9476a14bd346c319945ec4fa2bc67}{TIM\+\_\+\+Clear\+OC3\+Ref}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCClear)
+\begin{DoxyCompactList}\small\item\em Clears or safeguards the OCREF3 signal on an external event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gaeee5fa66b26e7c6f71850272dc3028f3}{TIM\+\_\+\+Clear\+OC4\+Ref}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCClear)
+\begin{DoxyCompactList}\small\item\em Clears or safeguards the OCREF4 signal on an external event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga03878f78163485c8a3508cff2111c297}{TIM\+\_\+\+OC1\+Polarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx channel 1 polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga3cb91578e7dd34ea7d09862482960445}{TIM\+\_\+\+OC1\+NPolarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCNPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Channel 1N polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga6831cacaac1ef50291af94db94450797}{TIM\+\_\+\+OC2\+Polarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx channel 2 polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga2fa6ea3a89f446b52b4e699272b70cad}{TIM\+\_\+\+OC2\+NPolarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCNPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Channel 2N polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga1ef43b03fe666495e80aac9741ae7ab0}{TIM\+\_\+\+OC3\+Polarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx channel 3 polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gac710acc5b682e892584fc6f089f61dc2}{TIM\+\_\+\+OC3\+NPolarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCNPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Channel 3N polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gad678410f7c7244f83daad93ce9d1056e}{TIM\+\_\+\+OC4\+Polarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx channel 4 polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga3ecc4647d9ede261beb5e0535cf29ebb}{TIM\+\_\+\+CCx\+Cmd}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Channel, uint16\+\_\+t TIM\+\_\+\+CCx)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIM Capture Compare Channel x. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga304ff7c8a1615498da749bf2507e9f2b}{TIM\+\_\+\+CCx\+NCmd}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Channel, uint16\+\_\+t TIM\+\_\+\+CCxN)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIM Capture Compare Channel xN. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga83ea0af5a7c1af521236ce5e4d2c42b0}{TIM\+\_\+\+Select\+OCxM}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Channel, uint16\+\_\+t TIM\+\_\+\+OCMode)
+\begin{DoxyCompactList}\small\item\em Selects the TIM Output Compare Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gace2384dd33e849a054f61b8e1fc7e7c3}{TIM\+\_\+\+Update\+Disable\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or Disables the TIMx Update event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga1d7a8f952e209de142499e67a653fc1f}{TIM\+\_\+\+Update\+Request\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Update\+Source)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Update Request Interrupt source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga42c2d1025a3937c9d9f38631af86ffa4}{TIM\+\_\+\+Select\+Hall\+Sensor}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIMx\textquotesingle{}s Hall sensor interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gadd2cca5fac6c1291dc4339098d5c9562}{TIM\+\_\+\+Select\+One\+Pulse\+Mode}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OPMode)
+\begin{DoxyCompactList}\small\item\em Selects the TIMx\textquotesingle{}s One Pulse Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga28745aaa549e2067e42c19569209e6c6}{TIM\+\_\+\+Select\+Output\+Trigger}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+TRGOSource)
+\begin{DoxyCompactList}\small\item\em Selects the TIMx Trigger Output Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga2f19ce1d90990691cf037e419ba08003}{TIM\+\_\+\+Select\+Slave\+Mode}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Slave\+Mode)
+\begin{DoxyCompactList}\small\item\em Selects the TIMx Slave Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga4dcc3d11b670c381d0ff9cb7e9fd01e2}{TIM\+\_\+\+Select\+Master\+Slave\+Mode}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Master\+Slave\+Mode)
+\begin{DoxyCompactList}\small\item\em Sets or Resets the TIMx Master/\+Slave Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gaad2c31dc9c551b48f08b96ba49c4aa44}{TIM\+\_\+\+Set\+Counter}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Counter)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Counter Register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga7880e4c00002d6421f9059a2ed841d5c}{TIM\+\_\+\+Set\+Autoreload}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Autoreload)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Autoreload Register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gab3a6031f187cb8af62eb09a67b4fd2ad}{TIM\+\_\+\+Set\+Compare1}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Compare1)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Capture Compare1 Register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga0175ef4fabade443909002a63d4e9758}{TIM\+\_\+\+Set\+Compare2}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Compare2)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Capture Compare2 Register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga416df50f4223351e366ae40a4ec163ae}{TIM\+\_\+\+Set\+Compare3}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Compare3)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Capture Compare3 Register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gaf428edf474804691d6f587e78c97a082}{TIM\+\_\+\+Set\+Compare4}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Compare4)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Capture Compare4 Register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_gaf0f684dea88e222de9689d8ed0ca8805}{TIM\+\_\+\+Set\+IC1\+Prescaler}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+ICPSC)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Input Capture 1 prescaler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga3cc4869b5fe73271808512c89322a325}{TIM\+\_\+\+Set\+IC2\+Prescaler}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+ICPSC)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Input Capture 2 prescaler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga76f906383b8132ebe00dffadb70cf7f9}{TIM\+\_\+\+Set\+IC3\+Prescaler}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+ICPSC)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Input Capture 3 prescaler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga0f2c784271356d6b64b8c0da64dbdbc2}{TIM\+\_\+\+Set\+IC4\+Prescaler}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+ICPSC)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Input Capture 4 prescaler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga20ef804dc32c723662d11ee7da3baab2}{TIM\+\_\+\+Set\+Clock\+Division}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+CKD)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Clock Division value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___t_i_m___exported___functions_ga29eb9f7151ceea94c3988539a5ee91cf}{TIM\+\_\+\+Get\+Capture1}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Gets the TIMx Input Capture 1 value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___t_i_m___exported___functions_ga437fcf00ee9d0a9df9150cc120efc5ad}{TIM\+\_\+\+Get\+Capture2}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Gets the TIMx Input Capture 2 value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___t_i_m___exported___functions_gab71d1d3d8a15f3be9e74dca51fcca5fa}{TIM\+\_\+\+Get\+Capture3}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Gets the TIMx Input Capture 3 value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___t_i_m___exported___functions_ga09049af04c8345849c6f82ccfae242a6}{TIM\+\_\+\+Get\+Capture4}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Gets the TIMx Input Capture 4 value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___t_i_m___exported___functions_gab6826b144ae70e206f51ae8af5318a93}{TIM\+\_\+\+Get\+Counter}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Gets the TIMx Counter value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___t_i_m___exported___functions_ga427eb6e533480e02a27cd0ca876183d6}{TIM\+\_\+\+Get\+Prescaler}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Gets the TIMx Prescaler value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___t_i_m___exported___functions_ga0adcbbd5e838ec8642e7a9b80075f41f}{TIM\+\_\+\+Get\+Flag\+Status}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified TIM flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga46568c7b254941dc53e785342d60baf3}{TIM\+\_\+\+Clear\+Flag}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the TIMx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} \mbox{\hyperlink{group___t_i_m___exported___functions_ga0827a0b411707304f76d33050727c24d}{TIM\+\_\+\+Get\+ITStatus}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the TIM interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___exported___functions_ga9eb1e95af71ed380f51a2c6d585cc5d6}{TIM\+\_\+\+Clear\+ITPending\+Bit}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the TIMx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the TIM firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

@@ -1,0 +1,117 @@
+\doxysubsubsection{CEC\+\_\+\+Private\+\_\+\+Defines}
+\hypertarget{group___c_e_c___private___defines}{}\label{group___c_e_c___private___defines}\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_ga675324bd8967b75f32554f50210821af}{CEC\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaacb77bc44b3f8c87ab98f241e760e440}{CEC\+\_\+\+BASE}} -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_ga8682298330c3b9bae1992e4f1a0af985}{CFGR\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___c_e_c___private___defines_ga675324bd8967b75f32554f50210821af}{CEC\+\_\+\+OFFSET}} + 0x00)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_ga321e547b9574b065127c882e09a4f7e7}{PE\+\_\+\+Bit\+Number}}~0x00
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_ga9d1f044508cda5ad8213bd7bc5c4363d}{CFGR\+\_\+\+PE\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___c_e_c___private___defines_ga8682298330c3b9bae1992e4f1a0af985}{CFGR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___c_e_c___private___defines_ga321e547b9574b065127c882e09a4f7e7}{PE\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_ga57731312db52f3498312a56e98166fad}{IE\+\_\+\+Bit\+Number}}~0x01
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_gac7fe35cf912353ca51a56c5f1f25b2fb}{CFGR\+\_\+\+IE\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___c_e_c___private___defines_ga8682298330c3b9bae1992e4f1a0af985}{CFGR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___c_e_c___private___defines_ga57731312db52f3498312a56e98166fad}{IE\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_ga984cbe73312b6d3d355c5053763d499a}{CSR\+\_\+\+OFFSET}}~(\mbox{\hyperlink{group___c_e_c___private___defines_ga675324bd8967b75f32554f50210821af}{CEC\+\_\+\+OFFSET}} + 0x10)
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_ga1a470abab836eba7b451950938708946}{TSOM\+\_\+\+Bit\+Number}}~0x00
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_ga4971cc50b0ead4a493e2a9c03966c826}{CSR\+\_\+\+TSOM\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_ga984cbe73312b6d3d355c5053763d499a}{CSR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___c_e_c___private___defines_ga1a470abab836eba7b451950938708946}{TSOM\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_gac86378eff7728e5cfca5480ab2dbef0b}{TEOM\+\_\+\+Bit\+Number}}~0x01
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_ga9ac493d98ce1f6d82b778ace0f2bc7bb}{CSR\+\_\+\+TEOM\+\_\+\+BB}}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_ga984cbe73312b6d3d355c5053763d499a}{CSR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___c_e_c___private___defines_gac86378eff7728e5cfca5480ab2dbef0b}{TEOM\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_gaaedf9b8df17534f5eaf75ec1ca3fbd7a}{CFGR\+\_\+\+CLEAR\+\_\+\+Mask}}~(uint8\+\_\+t)(0x\+F3)        /\texorpdfstring{$\ast$}{*} CFGR register Mask \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{group___c_e_c___private___defines_ga2be62bf481cd44de9ab604efe5595ff6}{FLAG\+\_\+\+Mask}}~((uint32\+\_\+t)0x00\+FFFFFF) /\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___peripheral__declaration_ga7d03f4d873d59ff8bc76b6c9b576f3e3}{CEC}} FLAG mask \texorpdfstring{$\ast$}{*}/
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+
+
+\doxysubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___c_e_c___private___defines_ga675324bd8967b75f32554f50210821af}\label{group___c_e_c___private___defines_ga675324bd8967b75f32554f50210821af} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!CEC\_OFFSET@{CEC\_OFFSET}}
+\index{CEC\_OFFSET@{CEC\_OFFSET}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CEC\_OFFSET}{CEC\_OFFSET}}
+{\footnotesize\ttfamily \#define CEC\+\_\+\+OFFSET~(\mbox{\hyperlink{group___peripheral__memory__map_gaacb77bc44b3f8c87ab98f241e760e440}{CEC\+\_\+\+BASE}} -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})}
+
+\Hypertarget{group___c_e_c___private___defines_gaaedf9b8df17534f5eaf75ec1ca3fbd7a}\label{group___c_e_c___private___defines_gaaedf9b8df17534f5eaf75ec1ca3fbd7a} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!CFGR\_CLEAR\_Mask@{CFGR\_CLEAR\_Mask}}
+\index{CFGR\_CLEAR\_Mask@{CFGR\_CLEAR\_Mask}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CFGR\_CLEAR\_Mask}{CFGR\_CLEAR\_Mask}}
+{\footnotesize\ttfamily \#define CFGR\+\_\+\+CLEAR\+\_\+\+Mask~(uint8\+\_\+t)(0x\+F3)        /\texorpdfstring{$\ast$}{*} CFGR register Mask \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{group___c_e_c___private___defines_gac7fe35cf912353ca51a56c5f1f25b2fb}\label{group___c_e_c___private___defines_gac7fe35cf912353ca51a56c5f1f25b2fb} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!CFGR\_IE\_BB@{CFGR\_IE\_BB}}
+\index{CFGR\_IE\_BB@{CFGR\_IE\_BB}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CFGR\_IE\_BB}{CFGR\_IE\_BB}}
+{\footnotesize\ttfamily \#define CFGR\+\_\+\+IE\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___c_e_c___private___defines_ga8682298330c3b9bae1992e4f1a0af985}{CFGR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___c_e_c___private___defines_ga57731312db52f3498312a56e98166fad}{IE\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___c_e_c___private___defines_ga8682298330c3b9bae1992e4f1a0af985}\label{group___c_e_c___private___defines_ga8682298330c3b9bae1992e4f1a0af985} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!CFGR\_OFFSET@{CFGR\_OFFSET}}
+\index{CFGR\_OFFSET@{CFGR\_OFFSET}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CFGR\_OFFSET}{CFGR\_OFFSET}}
+{\footnotesize\ttfamily \#define CFGR\+\_\+\+OFFSET~(\mbox{\hyperlink{group___c_e_c___private___defines_ga675324bd8967b75f32554f50210821af}{CEC\+\_\+\+OFFSET}} + 0x00)}
+
+\Hypertarget{group___c_e_c___private___defines_ga9d1f044508cda5ad8213bd7bc5c4363d}\label{group___c_e_c___private___defines_ga9d1f044508cda5ad8213bd7bc5c4363d} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!CFGR\_PE\_BB@{CFGR\_PE\_BB}}
+\index{CFGR\_PE\_BB@{CFGR\_PE\_BB}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CFGR\_PE\_BB}{CFGR\_PE\_BB}}
+{\footnotesize\ttfamily \#define CFGR\+\_\+\+PE\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___c_e_c___private___defines_ga8682298330c3b9bae1992e4f1a0af985}{CFGR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___c_e_c___private___defines_ga321e547b9574b065127c882e09a4f7e7}{PE\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___c_e_c___private___defines_ga984cbe73312b6d3d355c5053763d499a}\label{group___c_e_c___private___defines_ga984cbe73312b6d3d355c5053763d499a} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!CSR\_OFFSET@{CSR\_OFFSET}}
+\index{CSR\_OFFSET@{CSR\_OFFSET}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CSR\_OFFSET}{CSR\_OFFSET}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+OFFSET~(\mbox{\hyperlink{group___c_e_c___private___defines_ga675324bd8967b75f32554f50210821af}{CEC\+\_\+\+OFFSET}} + 0x10)}
+
+\Hypertarget{group___c_e_c___private___defines_ga9ac493d98ce1f6d82b778ace0f2bc7bb}\label{group___c_e_c___private___defines_ga9ac493d98ce1f6d82b778ace0f2bc7bb} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!CSR\_TEOM\_BB@{CSR\_TEOM\_BB}}
+\index{CSR\_TEOM\_BB@{CSR\_TEOM\_BB}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CSR\_TEOM\_BB}{CSR\_TEOM\_BB}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+TEOM\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_ga984cbe73312b6d3d355c5053763d499a}{CSR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___c_e_c___private___defines_gac86378eff7728e5cfca5480ab2dbef0b}{TEOM\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___c_e_c___private___defines_ga4971cc50b0ead4a493e2a9c03966c826}\label{group___c_e_c___private___defines_ga4971cc50b0ead4a493e2a9c03966c826} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!CSR\_TSOM\_BB@{CSR\_TSOM\_BB}}
+\index{CSR\_TSOM\_BB@{CSR\_TSOM\_BB}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{CSR\_TSOM\_BB}{CSR\_TSOM\_BB}}
+{\footnotesize\ttfamily \#define CSR\+\_\+\+TSOM\+\_\+\+BB~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (\mbox{\hyperlink{group___b_k_p___private___defines_ga984cbe73312b6d3d355c5053763d499a}{CSR\+\_\+\+OFFSET}} \texorpdfstring{$\ast$}{*} 32) + (\mbox{\hyperlink{group___c_e_c___private___defines_ga1a470abab836eba7b451950938708946}{TSOM\+\_\+\+Bit\+Number}} \texorpdfstring{$\ast$}{*} 4))}
+
+\Hypertarget{group___c_e_c___private___defines_ga2be62bf481cd44de9ab604efe5595ff6}\label{group___c_e_c___private___defines_ga2be62bf481cd44de9ab604efe5595ff6} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!FLAG\_Mask@{FLAG\_Mask}}
+\index{FLAG\_Mask@{FLAG\_Mask}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{FLAG\_Mask}{FLAG\_Mask}}
+{\footnotesize\ttfamily \#define FLAG\+\_\+\+Mask~((uint32\+\_\+t)0x00\+FFFFFF) /\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group___peripheral__declaration_ga7d03f4d873d59ff8bc76b6c9b576f3e3}{CEC}} FLAG mask \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{group___c_e_c___private___defines_ga57731312db52f3498312a56e98166fad}\label{group___c_e_c___private___defines_ga57731312db52f3498312a56e98166fad} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!IE\_BitNumber@{IE\_BitNumber}}
+\index{IE\_BitNumber@{IE\_BitNumber}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{IE\_BitNumber}{IE\_BitNumber}}
+{\footnotesize\ttfamily \#define IE\+\_\+\+Bit\+Number~0x01}
+
+\Hypertarget{group___c_e_c___private___defines_ga321e547b9574b065127c882e09a4f7e7}\label{group___c_e_c___private___defines_ga321e547b9574b065127c882e09a4f7e7} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!PE\_BitNumber@{PE\_BitNumber}}
+\index{PE\_BitNumber@{PE\_BitNumber}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{PE\_BitNumber}{PE\_BitNumber}}
+{\footnotesize\ttfamily \#define PE\+\_\+\+Bit\+Number~0x00}
+
+\Hypertarget{group___c_e_c___private___defines_gac86378eff7728e5cfca5480ab2dbef0b}\label{group___c_e_c___private___defines_gac86378eff7728e5cfca5480ab2dbef0b} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!TEOM\_BitNumber@{TEOM\_BitNumber}}
+\index{TEOM\_BitNumber@{TEOM\_BitNumber}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{TEOM\_BitNumber}{TEOM\_BitNumber}}
+{\footnotesize\ttfamily \#define TEOM\+\_\+\+Bit\+Number~0x01}
+
+\Hypertarget{group___c_e_c___private___defines_ga1a470abab836eba7b451950938708946}\label{group___c_e_c___private___defines_ga1a470abab836eba7b451950938708946} 
+\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}!TSOM\_BitNumber@{TSOM\_BitNumber}}
+\index{TSOM\_BitNumber@{TSOM\_BitNumber}!CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection{\texorpdfstring{TSOM\_BitNumber}{TSOM\_BitNumber}}
+{\footnotesize\ttfamily \#define TSOM\+\_\+\+Bit\+Number~0x00}
+

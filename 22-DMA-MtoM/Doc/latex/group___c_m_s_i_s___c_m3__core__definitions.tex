@@ -1,0 +1,103 @@
+\doxysection{CM3 Core Definitions}
+\hypertarget{group___c_m_s_i_s___c_m3__core__definitions}{}\label{group___c_m_s_i_s___c_m3__core__definitions}\index{CM3 Core Definitions@{CM3 Core Definitions}}
+
+
+This file defines all structures and symbols for CMSIS core\+:  
+
+
+\doxysubsubsection*{Topics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__register}{CMSIS CM3 Core Register}}
+\begin{DoxyCompactList}\small\item\em \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_gac1c1120e9fe082fac8225c60143ac79a}{\+\_\+\+\_\+\+CM3\+\_\+\+CMSIS\+\_\+\+VERSION\+\_\+\+MAIN}}~(0x01)
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_ga9ff7a998d4b8b3c87bfaca6e78607950}{\+\_\+\+\_\+\+CM3\+\_\+\+CMSIS\+\_\+\+VERSION\+\_\+\+SUB}}~(0x30)
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_gaf888c651cd8c93fd25364f9e74306a1c}{\+\_\+\+\_\+\+CM3\+\_\+\+CMSIS\+\_\+\+VERSION}}~((\mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_gac1c1120e9fe082fac8225c60143ac79a}{\+\_\+\+\_\+\+CM3\+\_\+\+CMSIS\+\_\+\+VERSION\+\_\+\+MAIN}} $<$$<$ 16) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_ga9ff7a998d4b8b3c87bfaca6e78607950}{\+\_\+\+\_\+\+CM3\+\_\+\+CMSIS\+\_\+\+VERSION\+\_\+\+SUB}})
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_ga63ea62503c88acab19fcf3d5743009e3}{\+\_\+\+\_\+\+CORTEX\+\_\+M}}~(0x03)
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_gae3fe3587d5100c787e02102ce3944460}{\+\_\+\+\_\+\+NVIC\+\_\+\+PRIO\+\_\+\+BITS}}~4
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_gaf63697ed9952cc71e1225efe205f6cd3}{\+\_\+\+\_\+I}}~volatile const
+\begin{DoxyCompactList}\small\item\em IO definitions. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_ga7e25d9380f9ef903923964322e71f2f6}{\+\_\+\+\_\+O}}~volatile
+\item 
+\#define \mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_gaec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}}~volatile
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file defines all structures and symbols for CMSIS core\+: 
+
+
+\begin{DoxyItemize}
+\item CMSIS version number
+\item Cortex-\/M core registers and bitfields
+\item Cortex-\/M core peripheral base address 
+\end{DoxyItemize}
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group___c_m_s_i_s___c_m3__core__definitions_gaf888c651cd8c93fd25364f9e74306a1c}\label{group___c_m_s_i_s___c_m3__core__definitions_gaf888c651cd8c93fd25364f9e74306a1c} 
+\index{CM3 Core Definitions@{CM3 Core Definitions}!\_\_CM3\_CMSIS\_VERSION@{\_\_CM3\_CMSIS\_VERSION}}
+\index{\_\_CM3\_CMSIS\_VERSION@{\_\_CM3\_CMSIS\_VERSION}!CM3 Core Definitions@{CM3 Core Definitions}}
+\doxysubsubsection{\texorpdfstring{\_\_CM3\_CMSIS\_VERSION}{\_\_CM3\_CMSIS\_VERSION}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+CM3\+\_\+\+CMSIS\+\_\+\+VERSION~((\mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_gac1c1120e9fe082fac8225c60143ac79a}{\+\_\+\+\_\+\+CM3\+\_\+\+CMSIS\+\_\+\+VERSION\+\_\+\+MAIN}} $<$$<$ 16) \texorpdfstring{$\vert$}{|} \mbox{\hyperlink{group___c_m_s_i_s___c_m3__core__definitions_ga9ff7a998d4b8b3c87bfaca6e78607950}{\+\_\+\+\_\+\+CM3\+\_\+\+CMSIS\+\_\+\+VERSION\+\_\+\+SUB}})}
+
+CMSIS HAL version number ~\newline
+ \Hypertarget{group___c_m_s_i_s___c_m3__core__definitions_gac1c1120e9fe082fac8225c60143ac79a}\label{group___c_m_s_i_s___c_m3__core__definitions_gac1c1120e9fe082fac8225c60143ac79a} 
+\index{CM3 Core Definitions@{CM3 Core Definitions}!\_\_CM3\_CMSIS\_VERSION\_MAIN@{\_\_CM3\_CMSIS\_VERSION\_MAIN}}
+\index{\_\_CM3\_CMSIS\_VERSION\_MAIN@{\_\_CM3\_CMSIS\_VERSION\_MAIN}!CM3 Core Definitions@{CM3 Core Definitions}}
+\doxysubsubsection{\texorpdfstring{\_\_CM3\_CMSIS\_VERSION\_MAIN}{\_\_CM3\_CMSIS\_VERSION\_MAIN}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+CM3\+\_\+\+CMSIS\+\_\+\+VERSION\+\_\+\+MAIN~(0x01)}
+
+\mbox{[}31\+:16\mbox{]} CMSIS HAL main version \Hypertarget{group___c_m_s_i_s___c_m3__core__definitions_ga9ff7a998d4b8b3c87bfaca6e78607950}\label{group___c_m_s_i_s___c_m3__core__definitions_ga9ff7a998d4b8b3c87bfaca6e78607950} 
+\index{CM3 Core Definitions@{CM3 Core Definitions}!\_\_CM3\_CMSIS\_VERSION\_SUB@{\_\_CM3\_CMSIS\_VERSION\_SUB}}
+\index{\_\_CM3\_CMSIS\_VERSION\_SUB@{\_\_CM3\_CMSIS\_VERSION\_SUB}!CM3 Core Definitions@{CM3 Core Definitions}}
+\doxysubsubsection{\texorpdfstring{\_\_CM3\_CMSIS\_VERSION\_SUB}{\_\_CM3\_CMSIS\_VERSION\_SUB}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+CM3\+\_\+\+CMSIS\+\_\+\+VERSION\+\_\+\+SUB~(0x30)}
+
+\mbox{[}15\+:0\mbox{]} CMSIS HAL sub version ~\newline
+ \Hypertarget{group___c_m_s_i_s___c_m3__core__definitions_ga63ea62503c88acab19fcf3d5743009e3}\label{group___c_m_s_i_s___c_m3__core__definitions_ga63ea62503c88acab19fcf3d5743009e3} 
+\index{CM3 Core Definitions@{CM3 Core Definitions}!\_\_CORTEX\_M@{\_\_CORTEX\_M}}
+\index{\_\_CORTEX\_M@{\_\_CORTEX\_M}!CM3 Core Definitions@{CM3 Core Definitions}}
+\doxysubsubsection{\texorpdfstring{\_\_CORTEX\_M}{\_\_CORTEX\_M}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+CORTEX\+\_\+M~(0x03)}
+
+Cortex core ~\newline
+ \Hypertarget{group___c_m_s_i_s___c_m3__core__definitions_gaf63697ed9952cc71e1225efe205f6cd3}\label{group___c_m_s_i_s___c_m3__core__definitions_gaf63697ed9952cc71e1225efe205f6cd3} 
+\index{CM3 Core Definitions@{CM3 Core Definitions}!\_\_I@{\_\_I}}
+\index{\_\_I@{\_\_I}!CM3 Core Definitions@{CM3 Core Definitions}}
+\doxysubsubsection{\texorpdfstring{\_\_I}{\_\_I}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+I~volatile const}
+
+
+
+IO definitions. 
+
+define access restrictions to peripheral registers defines \textquotesingle{}read only\textquotesingle{} permissions ~\newline
+ \Hypertarget{group___c_m_s_i_s___c_m3__core__definitions_gaec43007d9998a0a0e01faede4133d6be}\label{group___c_m_s_i_s___c_m3__core__definitions_gaec43007d9998a0a0e01faede4133d6be} 
+\index{CM3 Core Definitions@{CM3 Core Definitions}!\_\_IO@{\_\_IO}}
+\index{\_\_IO@{\_\_IO}!CM3 Core Definitions@{CM3 Core Definitions}}
+\doxysubsubsection{\texorpdfstring{\_\_IO}{\_\_IO}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IO~volatile}
+
+defines \textquotesingle{}read / write\textquotesingle{} permissions ~\newline
+ \Hypertarget{group___c_m_s_i_s___c_m3__core__definitions_gae3fe3587d5100c787e02102ce3944460}\label{group___c_m_s_i_s___c_m3__core__definitions_gae3fe3587d5100c787e02102ce3944460} 
+\index{CM3 Core Definitions@{CM3 Core Definitions}!\_\_NVIC\_PRIO\_BITS@{\_\_NVIC\_PRIO\_BITS}}
+\index{\_\_NVIC\_PRIO\_BITS@{\_\_NVIC\_PRIO\_BITS}!CM3 Core Definitions@{CM3 Core Definitions}}
+\doxysubsubsection{\texorpdfstring{\_\_NVIC\_PRIO\_BITS}{\_\_NVIC\_PRIO\_BITS}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+NVIC\+\_\+\+PRIO\+\_\+\+BITS~4}
+
+standard definition for NVIC Priority Bits \Hypertarget{group___c_m_s_i_s___c_m3__core__definitions_ga7e25d9380f9ef903923964322e71f2f6}\label{group___c_m_s_i_s___c_m3__core__definitions_ga7e25d9380f9ef903923964322e71f2f6} 
+\index{CM3 Core Definitions@{CM3 Core Definitions}!\_\_O@{\_\_O}}
+\index{\_\_O@{\_\_O}!CM3 Core Definitions@{CM3 Core Definitions}}
+\doxysubsubsection{\texorpdfstring{\_\_O}{\_\_O}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+O~volatile}
+
+defines \textquotesingle{}write only\textquotesingle{} permissions ~\newline
+ \input{group___c_m_s_i_s___c_m3__core__register}

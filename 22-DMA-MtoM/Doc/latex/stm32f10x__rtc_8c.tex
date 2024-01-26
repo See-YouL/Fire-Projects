@@ -1,0 +1,66 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/src/stm32f10x\+\_\+rtc.c File Reference}
+\hypertarget{stm32f10x__rtc_8c}{}\label{stm32f10x__rtc_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_rtc.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_rtc.c}}
+
+
+This file provides all the RTC firmware functions.  
+
+
+{\ttfamily \#include "{}stm32f10x\+\_\+rtc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___private___defines_gae19d75bb0ecb5e93d97e026a04d4854f}{RTC\+\_\+\+LSB\+\_\+\+MASK}}~((uint32\+\_\+t)0x0000\+FFFF)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___private___defines_ga47b3eed8e018a9139bc7bb374c7ca125}{PRLH\+\_\+\+MSB\+\_\+\+MASK}}~((uint32\+\_\+t)0x000\+F0000)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___r_t_c___private___functions_ga175dfe88866234730c1ec40d2221c4f4}{RTC\+\_\+\+ITConfig}} (uint16\+\_\+t RTC\+\_\+\+IT, \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified RTC interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_t_c___private___functions_ga23612d9da2fe057a0cd72c684e5b438a}{RTC\+\_\+\+Enter\+Config\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Enters the RTC configuration mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_t_c___private___functions_ga7585aa6e2dbb497173b2fd03bac0d304}{RTC\+\_\+\+Exit\+Config\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Exits from the RTC configuration mode. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___r_t_c___private___functions_ga6edb19a0ad8414a40610341121c5ea6c}{RTC\+\_\+\+Get\+Counter}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the RTC counter value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_t_c___private___functions_gafa81ec17158de1d1a7740eca81b9fb65}{RTC\+\_\+\+Set\+Counter}} (uint32\+\_\+t Counter\+Value)
+\begin{DoxyCompactList}\small\item\em Sets the RTC counter value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_t_c___private___functions_gaf76be6071d1ba65b009e0791069e602c}{RTC\+\_\+\+Set\+Prescaler}} (uint32\+\_\+t Prescaler\+Value)
+\begin{DoxyCompactList}\small\item\em Sets the RTC prescaler value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_t_c___private___functions_gaec644c636a30ab5e287ba60ffc77132c}{RTC\+\_\+\+Set\+Alarm}} (uint32\+\_\+t Alarm\+Value)
+\begin{DoxyCompactList}\small\item\em Sets the RTC alarm value. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___r_t_c___private___functions_gaa4f00e0469fedcf6cbf23760e6d801ed}{RTC\+\_\+\+Get\+Divider}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the RTC divider value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_t_c___private___functions_gaa0a406ef860d5231748c5f0d82673036}{RTC\+\_\+\+Wait\+For\+Last\+Task}} (void)
+\begin{DoxyCompactList}\small\item\em Waits until last write operation on RTC registers has finished. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_t_c___private___functions_gaca4346e0dc15dccc15179786b28450db}{RTC\+\_\+\+Wait\+For\+Synchro}} (void)
+\begin{DoxyCompactList}\small\item\em Waits until the RTC registers (RTC\+\_\+\+CNT, RTC\+\_\+\+ALR and RTC\+\_\+\+PRL) are synchronized with RTC APB clock. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{Flag\+Status}} \mbox{\hyperlink{group___r_t_c___private___functions_ga21a85e5f846cb4552d5e76420779f3f6}{RTC\+\_\+\+Get\+Flag\+Status}} (uint16\+\_\+t RTC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified RTC flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_t_c___private___functions_gacefb05730a77ffaa273c1ac3ade1a22f}{RTC\+\_\+\+Clear\+Flag}} (uint16\+\_\+t RTC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the RTC\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___exported__types_ga39d4411201fb731279ad5a409b2b80d7}{ITStatus}} \mbox{\hyperlink{group___r_t_c___private___functions_ga23274ad8aa28e86d5b0d58eee295db21}{RTC\+\_\+\+Get\+ITStatus}} (uint16\+\_\+t RTC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified RTC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_t_c___private___functions_ga62b9a04d89a11f28db7dcfd50d9ee768}{RTC\+\_\+\+Clear\+ITPending\+Bit}} (uint16\+\_\+t RTC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the RTC\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides all the RTC firmware functions. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

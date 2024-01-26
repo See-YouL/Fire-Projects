@@ -1,0 +1,90 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/22-\/\+DMA-\/\+Mto\+M/\+User/dma/bsp\+\_\+dma\+\_\+m2m.c File Reference}
+\hypertarget{bsp__dma__m2m_8c}{}\label{bsp__dma__m2m_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/User/dma/bsp\_dma\_m2m.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/22-\/DMA-\/MtoM/User/dma/bsp\_dma\_m2m.c}}
+
+
+DMA存储器到存储器模式配置  
+
+
+{\ttfamily \#include "{}bsp\+\_\+dma\+\_\+m2m.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2m_8c_accc59f4d1a4d8ca362bdab2e59a59f37}{DMA\+\_\+\+FLAG\+\_\+\+TC}}~\mbox{\hyperlink{group___d_m_a__flags__definition_ga85276600ddf436d4f268199e0df9c54a}{DMA1\+\_\+\+FLAG\+\_\+\+TC6}}
+\item 
+\#define \mbox{\hyperlink{bsp__dma__m2m_8c_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}~32
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___d_m_a___functions_gab02e55d9ea8e5048e5610c0dc045a3e6}{M2\+M\+\_\+\+DMA\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em 配置存储器到存储器的\+DMA传输 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint32\+\_\+t \mbox{\hyperlink{bsp__dma__m2m_8c_a96c7fa8d5ff9537b15a74dab7eddaadd}{a\+SRC\+\_\+\+Const\+\_\+\+Buffer}} \mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8c_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{bsp__dma__m2m_8c_a6eeef06891d613407dde2e65235b6c0f}{a\+DST\+\_\+\+Buffer}} \mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8c_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em 定义\+DMA传输目标存储器 存储在内部的\+SRAM中 ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+DMA存储器到存储器模式配置 
+
+\begin{DoxyAuthor}{Author}
+eric 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+None 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024年1月26日14\+:43\+:41  
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{bsp__dma__m2m_8c_a6b20d41d6252e9871430c242cb1a56e7}\label{bsp__dma__m2m_8c_a6b20d41d6252e9871430c242cb1a56e7} 
+\index{bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}!BUFFER\_SIZE@{BUFFER\_SIZE}}
+\index{BUFFER\_SIZE@{BUFFER\_SIZE}!bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_SIZE}{BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+SIZE~32}
+
+\Hypertarget{bsp__dma__m2m_8c_accc59f4d1a4d8ca362bdab2e59a59f37}\label{bsp__dma__m2m_8c_accc59f4d1a4d8ca362bdab2e59a59f37} 
+\index{bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}!DMA\_FLAG\_TC@{DMA\_FLAG\_TC}}
+\index{DMA\_FLAG\_TC@{DMA\_FLAG\_TC}!bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}}
+\doxysubsubsection{\texorpdfstring{DMA\_FLAG\_TC}{DMA\_FLAG\_TC}}
+{\footnotesize\ttfamily \#define DMA\+\_\+\+FLAG\+\_\+\+TC~\mbox{\hyperlink{group___d_m_a__flags__definition_ga85276600ddf436d4f268199e0df9c54a}{DMA1\+\_\+\+FLAG\+\_\+\+TC6}}}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{bsp__dma__m2m_8c_a6eeef06891d613407dde2e65235b6c0f}\label{bsp__dma__m2m_8c_a6eeef06891d613407dde2e65235b6c0f} 
+\index{bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}!aDST\_Buffer@{aDST\_Buffer}}
+\index{aDST\_Buffer@{aDST\_Buffer}!bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}}
+\doxysubsubsection{\texorpdfstring{aDST\_Buffer}{aDST\_Buffer}}
+{\footnotesize\ttfamily uint32\+\_\+t a\+DST\+\_\+\+Buffer\mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8c_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}}
+
+
+
+定义\+DMA传输目标存储器 存储在内部的\+SRAM中 ~\newline
+ 
+
+\Hypertarget{bsp__dma__m2m_8c_a96c7fa8d5ff9537b15a74dab7eddaadd}\label{bsp__dma__m2m_8c_a96c7fa8d5ff9537b15a74dab7eddaadd} 
+\index{bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}!aSRC\_Const\_Buffer@{aSRC\_Const\_Buffer}}
+\index{aSRC\_Const\_Buffer@{aSRC\_Const\_Buffer}!bsp\_dma\_m2m.c@{bsp\_dma\_m2m.c}}
+\doxysubsubsection{\texorpdfstring{aSRC\_Const\_Buffer}{aSRC\_Const\_Buffer}}
+{\footnotesize\ttfamily const uint32\+\_\+t a\+SRC\+\_\+\+Const\+\_\+\+Buffer\mbox{[}\mbox{\hyperlink{bsp__dma__m2m_8c_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01020304,0x05060708,0x090A0B0C,0x0D0E0F10,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x11121314,0x15161718,0x191A1B1C,0x1D1E1F20,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x21222324,0x25262728,0x292A2B2C,0x2D2E2F30,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x31323334,0x35363738,0x393A3B3C,0x3D3E3F40,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x41424344,0x45464748,0x494A4B4C,0x4D4E4F50,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x51525354,0x55565758,0x595A5B5C,0x5D5E5F60,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x61626364,0x65666768,0x696A6B6C,0x6D6E6F70,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x71727374,0x75767778,0x797A7B7C,0x7D7E7F80\}}
+
+\end{DoxyCode}
