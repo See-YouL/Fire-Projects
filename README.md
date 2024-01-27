@@ -4973,6 +4973,8 @@ I2C_Send7bitAddress函数, 用于发送7位地址
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271616560.png)
 
+*参数Address为八位读/写地址, 通过I2C_Direction实际配置读写方向, 最终方向以I2C_Direction配置为准, 参数Address的读写位失效*
+
 I2C_SendDate函数, 通过I2Cx外设发送数据字节
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271618557.png)
@@ -4989,4 +4991,140 @@ I2C_Cmd函数, 使能或禁用I2Cx外设
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271625131.png)
 
+### EEPROM硬件结构
+
+![EEPROM](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271630443.png)
+
+
+引脚说明
+
+- VCC: 电源引脚, 接3V3
+- GND: 地引脚, 接地
+- SCL: 时钟线, 经2.2K上拉电阻接3V3, 接PB6引脚(默认映射I2C1_SCL)
+- SDA: 数据线, 经2,2K上拉电阻接3V3, 接PB7引脚(默认映射I2C1_SDA)
+- HOLD: WP引脚, 接地, 不启用写保护(即可向AT24C02写数据)
+- A0-A2: 地址引脚, 接地, A0:A2为000, 如需拓展EEPROM则可通过配置A0-A2的地址引脚来进行区分(如: 配置A0:A2为001, 则可对两EEPROM进行区分)
+
+### AT24C02介绍
+
+![AT24C02](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271642465.png)
+
+AT24C02可存储256字节数据
+
+引脚说明
+
+![AT24C02](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271648925.png)
+
+- A0-A2: AT24C02用来区分不同AT24C0x芯片的设备地址
+- SDA: 数据线
+- SCL: 时钟线
+- WP: 写保护, 置1启用写保护
+- NC: 不连接
+
+
+设备地址
+
+![设备地址](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271702961.png)
+
+![设备地址](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271702718.png)
+
+**AT24C02有256字节, 即属于2K(256*8)**
+
+![设备地址](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271701248.png)
+
+根据原理图, 将A2-A0均接地, 则A2 = A1 = A0 = 0
+
+**AT24C02的地址为0b1010000R/W, Bit0为R/!W位**
+
+- AT24C02在A2:A1[000]情况下读地址: 0b10100001(0xA1)
+- AT24C02在A2:A1[000]情况下写地址: 0b10100000(0xA0)
+
+AT24C02的Byte Write(以字节方式写数据)操作
+
+![Byte Write](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271719435.png)
+
+*第一个传输的数据段(DATA)为WORD ADDRESS(需要写入的字节所在的地址), 第二次传输数据段(DATA)才为真正需要写入的内容*
+
+![Byte Write](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271723653.png)
+
+```tex
+翻译: Byte Write的工作流程
+
+1. 在发送完SLAVE ADDRESS和W/!R后, 需要发送一个字节的数据地址(WORD ADDRESS)(即需要写入的字节所在的地址)
+2. 收到地址(WORD ADDRESS)后, EEPROM会响应ACK, 然后接收一个字节的数据(DATA)(真正要写入的内容)
+3. 接收到数据(DATA)后, EEPROM响应ACK, 单片机必须发送STOP信号, 不能继续传输第二段数据(给EEPROM预留写入时间)
+4. 接收到停止信号后, EEPROM在tWR的周期时间内进行向内部写入数据
+5. 在此写入周期中, 所有输入被禁用, EEPROM不进行响应
+```
+
+AT24C02的Page Write(以页方式写数据)操作, 又称突发写入(即仅发送一个地址可写入多个数据)
+
+*Page Write解决了Byte Write不能连续写入的缺陷*
+
+![Page Write](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271734727.png)
+
+- WORD ADDRESS(n): 数据的起始地址
+- DATA(n): 写入到WORD ADDRESS(n)中
+- DATA(n+1): 写入到WORD ADDRESS(n+1)中
+- DATA(n+x): 写入到WORD ADDRESS(n+x)中
+
+![Page Write](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271741445.png)
+
+```tex
+翻译: Page Write工作流程
+
+1. AT24C02能以8字节进行Page Write
+2. 与Byte Write类似, 第一个字节是数据地址(WORD ADDRESS)(即需要写入的字节所在的地址), 在接受到第二个字节(DATA)后不会要求单片机发送STOP信号
+3. 相反, EEPROM在接收到第一个DATA(真正要写入的数据)后, 对于AT24C02来说, 能再最多传输7个DATA
+4. EEPROM每接收到一个数据位都会响应ACK, 单片机必须发送停止信号来结束Page Writting
+5. 收到每个DATA后, 对于AT24C02来说, 数据地址(WORD ADDRESS)的低三位会递增(低三位的取值情况为2^3 = 8, 即8字节)
+6. 高位地址不会递增, 从而保证原来的初始数据地址不发生改变(确保低三位正确递增)
+7. 当递增的地址到达Page的界限后, 剩下的8位数据会覆盖Page的开头
+8. 如果向EEPROM传输的DATA超过8个字节(对于AT24C02), 则数据会从头覆盖
+```
+
+AT24C02的Current Address Read(从当前地址读数据)操作
+
+![Current Address Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271810617.png)
+
+*一般不用, 因为在开发中不好确定当前地址的位置*
+
+AT24C02的Random Read(随机读数据)操作
+
+![Random Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271813901.png)
+
+1. 产生起始信号, 向EEPROM发送要读取数据的数据地址(写方向)
+2. 再次产生起始信号, 从EEPROM中读取数据(读方向)
+3. EEPROM在被写入要读取数据的数据地址后会进行确认并输出该数据内容
+
+![Random Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271821179.png)
+
+```tex
+翻译: Random Read流程
+
+1. Random Read需要"dummy"来写入要读取数据(DATA)的数据地址(WORD ADDRESS)
+2. 一旦DEVICE ADDRESS和WORD ADDRESS被EEPROM响应, 单片机必须生成另一个START信号
+3. 单片机发送读信号来读取当前地址(DEVICE ADDRESS)
+4. EEPROM响应DEVICE ADDRESS并串行输出数据(DATA)
+5. 单片机响应NO ACK并紧跟生成STOP信号
+```
+
+AT24C02的Sequential Read(顺序读数据)操作
+
+![Sequential Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271838678.png)
+
+**与Page Write类似**
+
+![Sequential Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271841941.png)
+
+```tex
+翻译: Sequential Read流程
+
+1. Sequntial Read从当前地址读取或随机地址开始读取
+2. 单片机收到DATA后，会响应ACK
+3. 只要EEPROM收到ACK响应，它就会继续递增数据地址，并顺序串行输出DATA
+4. 当达到内存地址限制时，数据地址将"roll over"，顺序读取将继续从头开始重新读取数据
+5. 当单片机NO ACK响应并生成STOP，则终止Sequential Read
+```
 ### I2C-读写EEPROM实验
+
