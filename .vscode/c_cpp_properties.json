@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/24-I2C-EEPROM/Libraries/CMSIS",
+                "${workspaceFolder}/24-I2C-EEPROM/Libraries/STM32F10x_StdPeriph_Driver/inc",
+                "${workspaceFolder}/24-I2C-EEPROM/User",
+                "${workspaceFolder}/24-I2C-EEPROM/User/i2c",
+                "${workspaceFolder}/24-I2C-EEPROM/User/led",
+                "${workspaceFolder}/24-I2C-EEPROM/User/usart"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "D:\\Embedded\\Toolchains\\mingw64\\bin\\gcc.exe",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "windows-gcc-x64",
+            "configurationProvider": "cmsis-csolution"
+        }
+    ],
+    "version": 4
+}

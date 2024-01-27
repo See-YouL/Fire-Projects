@@ -4991,6 +4991,20 @@ I2C_Cmd函数, 使能或禁用I2Cx外设
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271625131.png)
 
+I2C_CheckEvent函数, I2C状态监测函数
+
+**监测的事件发生则返回SUCCESS**
+
+![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280036252.png)
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037103.png)
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037758.png)
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038783.png)
+
+![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038105.png)
+
 ### EEPROM硬件结构
 
 ![EEPROM](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271630443.png)
@@ -5126,5 +5140,22 @@ AT24C02的Sequential Read(顺序读数据)操作
 4. 当达到内存地址限制时，数据地址将"roll over"，顺序读取将继续从头开始重新读取数据
 5. 当单片机NO ACK响应并生成STOP，则终止Sequential Read
 ```
+
 ### I2C-读写EEPROM实验
 
+**项目地址** 24-I2C-EEPROM
+
+ **操作流程**
+ 
+ 1. 初始化I2C相关的GPIO
+ 2. 配置I2C外设的工作模式
+ 3. 编写I2C写入EEPROM的Byte Write函数 
+ 4. 编写I2C读取EEPROM的Random Read函数
+ 5. 使用read函数和write函数进行读写校验
+ 6. 编写Page Write和Sequential Read函数进行校验
+
+在bsp_i2c.h中定义相关宏
+
+```c
+
+```
