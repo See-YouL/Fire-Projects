@@ -4881,4 +4881,112 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 
 ### I2C初始化结构体
 
+在stm32f10x_i2c.h中定义I2C初始化结构体
+
+```c
+/** 
+  * @brief  I2C Init structure definition  
+  */
+
+typedef struct
+{
+  /*---------------------------------------------------------------------------------
+   * 设置时钟频率
+   * 设置I2C的传输速率, 函数根据该值经过运算后写入I2C_CCR寄存器
+   * 不得高于400kHz, 即400 000
+   * 由于I2C_CCR寄存器不能写入浮点数, 可能会导致实际速率小于设定的传输速率参数
+   * 使得通讯稍慢, 但是并不会对I2C的通讯造成其他影响
+   *-------------------------------------------------------------------------------*/
+  uint32_t I2C_ClockSpeed;          /*!< Specifies the clock frequency.
+                                         This parameter must be set to a value lower than 400kHz */
+
+  /*---------------------------------------------------------------------------------
+   * 设置I2C的模式
+   * I2C_Mode_I2C: 标准I2C模式
+   * I2C_Mode_SMBusDevice: SMBus设备模式
+   * I2C_Mode_SMBusHost: SMBus主机模式
+   *-------------------------------------------------------------------------------*/
+  uint16_t I2C_Mode;                /*!< Specifies the I2C mode.
+                                         This parameter can be a value of @ref I2C_mode */
+
+  /*---------------------------------------------------------------------------------
+   * 设置I2C的SCL时钟的占空比
+   * I2C_DutyCycle_16_9: Tlow/Thigh = 16:9
+   * I2C_DutyCycle_2: Tlow/Thigh = 2:1
+   * 这两个选项差别不大, 开发中一般不会进行严格区分
+   *-------------------------------------------------------------------------------*/
+  uint16_t I2C_DutyCycle;           /*!< Specifies the I2C fast mode duty cycle.
+                                         This parameter can be a value of @ref I2C_duty_cycle_in_fast_mode */
+
+  /*---------------------------------------------------------------------------------
+   * 配置STM32的I2C设备自己的地址
+   * 此参数可以是 7 位或 10 位地址
+   * 第二个地址可以通过函数I2C_OwnAddress2Config进行配置, 只能是7位地址
+   *-------------------------------------------------------------------------------*/
+  uint16_t I2C_OwnAddress1;         /*!< Specifies the first device own address.
+                                         This parameter can be a 7-bit or 10-bit address. */
+
+  /*---------------------------------------------------------------------------------
+   * 配置I2C应答是否使能
+   * I2C_Ack_Enable: 允许应答使能
+   * I2C_Ack_Disable: 禁止应答使能
+   * 一般配置为允许应答使能, 改为禁止应答使能往往会导致通讯错误
+   *-------------------------------------------------------------------------------*/
+  uint16_t I2C_Ack;                 /*!< Enables or disables the acknowledgement.
+                                         This parameter can be a value of @ref I2C_acknowledgement */
+
+  /*---------------------------------------------------------------------------------
+   * 配置I2C的寻址长度
+   * I2C_AcknowledgedAddress_7bit: 7位地址
+   * I2C_AcknowledgedAddress_10bit: 10位地址
+   * 需要根据连接到I2C总线上的设备进行选择, 确保地址长度一致, 才能进行通信
+   * 只有I2C_OwnAddress1才能配置10位地址, I2C_OwnAddress2只支持7位地址 *-------------------------------------------------------------------------------*/
+  uint16_t I2C_AcknowledgedAddress; /*!< Specifies if 7-bit or 10-bit address is acknowledged.
+                                         This parameter can be a value of @ref I2C_acknowledged_address */
+}I2C_InitTypeDef;
+```
+
+### I2C库函数
+
+I2C_GenerateSTART函数, 用于产生起始条件
+
+![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271607885.png)
+
+I2C_GetFlagStatus函数, 用于获取状态位
+
+![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271610721.png)
+
+**I2C_FLAG参数列表对应I2C_SRx状态寄存器的各个位, 可通过查询手册查看其含义**
+
+返回值说明
+
+![返回值说明](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271612900.png)
+
+```c
+typedef enum {RESET = 0, SET = !RESET} FlagStatus, ITStatus;
+```
+
+- RESET: 0, 返回RESET表示该状态位为0
+- SET: 1, 返回SET表示该状态位为1
+
+I2C_Send7bitAddress函数, 用于发送7位地址
+
+![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271616560.png)
+
+I2C_SendDate函数, 通过I2Cx外设发送数据字节
+
+![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271618557.png)
+
+I2C_ReceiveData函数, 返回 I2Cx 外设最近接收的数据
+
+![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271622473.png)
+
+AcknowledgeConfig函数, 使能或禁用I2C的应答
+
+![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271623317.png)
+
+I2C_Cmd函数, 使能或禁用I2Cx外设
+
+![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271625131.png)
+
 ### I2C-读写EEPROM实验
