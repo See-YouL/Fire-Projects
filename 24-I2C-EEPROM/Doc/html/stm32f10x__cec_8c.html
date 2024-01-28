@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>24-I2C-EEPROM读写实验: E:/Personal/IT/Embedded/Stm32/Fire/Fire-Projects/24-I2C-EEPROM/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_cec.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">24-I2C-EEPROM读写实验<span id="projectnumber">&#160;None</span>
+   </div>
+   <div id="projectbrief">I2C-EEPROM读写实验</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c70ae96152db76c2a98dc36c9d938161.html">24-I2C-EEPROM</a></li><li class="navelem"><a class="el" href="dir_44588f5ef50cc24f69568f0877d8b791.html">Libraries</a></li><li class="navelem"><a class="el" href="dir_62b8510e927d44c4507688017f6363e0.html">STM32F10x_StdPeriph_Driver</a></li><li class="navelem"><a class="el" href="dir_743dd6896234999ca08fe70a3f3445a5.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">stm32f10x_cec.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This file provides all the CEC firmware functions.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="stm32f10x__cec_8h_source.html">stm32f10x_cec.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f10x__rcc_8h_source.html">stm32f10x_rcc.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga675324bd8967b75f32554f50210821af" id="r_ga675324bd8967b75f32554f50210821af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#ga675324bd8967b75f32554f50210821af">CEC_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaacb77bc44b3f8c87ab98f241e760e440">CEC_BASE</a> - <a class="el" href="group___peripheral__memory__map.html#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a>)</td></tr>
+<tr class="separator:ga675324bd8967b75f32554f50210821af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8682298330c3b9bae1992e4f1a0af985" id="r_ga8682298330c3b9bae1992e4f1a0af985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#ga8682298330c3b9bae1992e4f1a0af985">CFGR_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="group___c_e_c___private___defines.html#ga675324bd8967b75f32554f50210821af">CEC_OFFSET</a> + 0x00)</td></tr>
+<tr class="separator:ga8682298330c3b9bae1992e4f1a0af985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga321e547b9574b065127c882e09a4f7e7" id="r_ga321e547b9574b065127c882e09a4f7e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#ga321e547b9574b065127c882e09a4f7e7">PE_BitNumber</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:ga321e547b9574b065127c882e09a4f7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d1f044508cda5ad8213bd7bc5c4363d" id="r_ga9d1f044508cda5ad8213bd7bc5c4363d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#ga9d1f044508cda5ad8213bd7bc5c4363d">CFGR_PE_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___c_e_c___private___defines.html#ga8682298330c3b9bae1992e4f1a0af985">CFGR_OFFSET</a> * 32) + (<a class="el" href="group___c_e_c___private___defines.html#ga321e547b9574b065127c882e09a4f7e7">PE_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga9d1f044508cda5ad8213bd7bc5c4363d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57731312db52f3498312a56e98166fad" id="r_ga57731312db52f3498312a56e98166fad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#ga57731312db52f3498312a56e98166fad">IE_BitNumber</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="separator:ga57731312db52f3498312a56e98166fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac7fe35cf912353ca51a56c5f1f25b2fb" id="r_gac7fe35cf912353ca51a56c5f1f25b2fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#gac7fe35cf912353ca51a56c5f1f25b2fb">CFGR_IE_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___c_e_c___private___defines.html#ga8682298330c3b9bae1992e4f1a0af985">CFGR_OFFSET</a> * 32) + (<a class="el" href="group___c_e_c___private___defines.html#ga57731312db52f3498312a56e98166fad">IE_BitNumber</a> * 4))</td></tr>
+<tr class="separator:gac7fe35cf912353ca51a56c5f1f25b2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga984cbe73312b6d3d355c5053763d499a" id="r_ga984cbe73312b6d3d355c5053763d499a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#ga984cbe73312b6d3d355c5053763d499a">CSR_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="group___c_e_c___private___defines.html#ga675324bd8967b75f32554f50210821af">CEC_OFFSET</a> + 0x10)</td></tr>
+<tr class="separator:ga984cbe73312b6d3d355c5053763d499a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a470abab836eba7b451950938708946" id="r_ga1a470abab836eba7b451950938708946"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#ga1a470abab836eba7b451950938708946">TSOM_BitNumber</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:ga1a470abab836eba7b451950938708946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4971cc50b0ead4a493e2a9c03966c826" id="r_ga4971cc50b0ead4a493e2a9c03966c826"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#ga4971cc50b0ead4a493e2a9c03966c826">CSR_TSOM_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___b_k_p___private___defines.html#ga984cbe73312b6d3d355c5053763d499a">CSR_OFFSET</a> * 32) + (<a class="el" href="group___c_e_c___private___defines.html#ga1a470abab836eba7b451950938708946">TSOM_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga4971cc50b0ead4a493e2a9c03966c826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac86378eff7728e5cfca5480ab2dbef0b" id="r_gac86378eff7728e5cfca5480ab2dbef0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#gac86378eff7728e5cfca5480ab2dbef0b">TEOM_BitNumber</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="separator:gac86378eff7728e5cfca5480ab2dbef0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9ac493d98ce1f6d82b778ace0f2bc7bb" id="r_ga9ac493d98ce1f6d82b778ace0f2bc7bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#ga9ac493d98ce1f6d82b778ace0f2bc7bb">CSR_TEOM_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___b_k_p___private___defines.html#ga984cbe73312b6d3d355c5053763d499a">CSR_OFFSET</a> * 32) + (<a class="el" href="group___c_e_c___private___defines.html#gac86378eff7728e5cfca5480ab2dbef0b">TEOM_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga9ac493d98ce1f6d82b778ace0f2bc7bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaedf9b8df17534f5eaf75ec1ca3fbd7a" id="r_gaaedf9b8df17534f5eaf75ec1ca3fbd7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#gaaedf9b8df17534f5eaf75ec1ca3fbd7a">CFGR_CLEAR_Mask</a>&#160;&#160;&#160;(uint8_t)(0xF3)        /* CFGR register Mask */</td></tr>
+<tr class="separator:gaaedf9b8df17534f5eaf75ec1ca3fbd7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2be62bf481cd44de9ab604efe5595ff6" id="r_ga2be62bf481cd44de9ab604efe5595ff6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___defines.html#ga2be62bf481cd44de9ab604efe5595ff6">FLAG_Mask</a>&#160;&#160;&#160;((uint32_t)0x00FFFFFF) /* <a class="el" href="group___peripheral__declaration.html#ga7d03f4d873d59ff8bc76b6c9b576f3e3">CEC</a> FLAG mask */</td></tr>
+<tr class="separator:ga2be62bf481cd44de9ab604efe5595ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga604c3b15b51a46303c201fa3deac2212" id="r_ga604c3b15b51a46303c201fa3deac2212"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#ga604c3b15b51a46303c201fa3deac2212">CEC_DeInit</a> (void)</td></tr>
+<tr class="memdesc:ga604c3b15b51a46303c201fa3deac2212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitializes the CEC peripheral registers to their default reset values.  <br /></td></tr>
+<tr class="separator:ga604c3b15b51a46303c201fa3deac2212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf48aee745a16370372b3eaa7cf3ed22b" id="r_gaf48aee745a16370372b3eaa7cf3ed22b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#gaf48aee745a16370372b3eaa7cf3ed22b">CEC_Init</a> (<a class="el" href="struct_c_e_c___init_type_def.html">CEC_InitTypeDef</a> *CEC_InitStruct)</td></tr>
+<tr class="memdesc:gaf48aee745a16370372b3eaa7cf3ed22b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the CEC peripheral according to the specified parameters in the CEC_InitStruct.  <br /></td></tr>
+<tr class="separator:gaf48aee745a16370372b3eaa7cf3ed22b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c8efa79e5768930e567b3b3ed6e09e9" id="r_ga0c8efa79e5768930e567b3b3ed6e09e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#ga0c8efa79e5768930e567b3b3ed6e09e9">CEC_Cmd</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga0c8efa79e5768930e567b3b3ed6e09e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the specified CEC peripheral.  <br /></td></tr>
+<tr class="separator:ga0c8efa79e5768930e567b3b3ed6e09e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8be87c514505cf82eb29334f054fc0bc" id="r_ga8be87c514505cf82eb29334f054fc0bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#ga8be87c514505cf82eb29334f054fc0bc">CEC_ITConfig</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga8be87c514505cf82eb29334f054fc0bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the CEC interrupt.  <br /></td></tr>
+<tr class="separator:ga8be87c514505cf82eb29334f054fc0bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacad422ef1f50246b2021b41835b8a95c" id="r_gacad422ef1f50246b2021b41835b8a95c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#gacad422ef1f50246b2021b41835b8a95c">CEC_OwnAddressConfig</a> (uint8_t CEC_OwnAddress)</td></tr>
+<tr class="memdesc:gacad422ef1f50246b2021b41835b8a95c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the Own Address of the CEC device.  <br /></td></tr>
+<tr class="separator:gacad422ef1f50246b2021b41835b8a95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2fc626e28a82008a29f062975a9af11" id="r_gad2fc626e28a82008a29f062975a9af11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#gad2fc626e28a82008a29f062975a9af11">CEC_SetPrescaler</a> (uint16_t CEC_Prescaler)</td></tr>
+<tr class="memdesc:gad2fc626e28a82008a29f062975a9af11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the CEC prescaler value.  <br /></td></tr>
+<tr class="separator:gad2fc626e28a82008a29f062975a9af11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6897ab26d8f909f9160e9fac54b97441" id="r_ga6897ab26d8f909f9160e9fac54b97441"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#ga6897ab26d8f909f9160e9fac54b97441">CEC_SendDataByte</a> (uint8_t Data)</td></tr>
+<tr class="memdesc:ga6897ab26d8f909f9160e9fac54b97441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits single data through the CEC peripheral.  <br /></td></tr>
+<tr class="separator:ga6897ab26d8f909f9160e9fac54b97441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga165837bff6292e7674eff6f8b230da97" id="r_ga165837bff6292e7674eff6f8b230da97"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#ga165837bff6292e7674eff6f8b230da97">CEC_ReceiveDataByte</a> (void)</td></tr>
+<tr class="memdesc:ga165837bff6292e7674eff6f8b230da97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the most recent received data by the CEC peripheral.  <br /></td></tr>
+<tr class="separator:ga165837bff6292e7674eff6f8b230da97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga71e700461ffe7820d9e1c75da65fd0fb" id="r_ga71e700461ffe7820d9e1c75da65fd0fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#ga71e700461ffe7820d9e1c75da65fd0fb">CEC_StartOfMessage</a> (void)</td></tr>
+<tr class="memdesc:ga71e700461ffe7820d9e1c75da65fd0fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a new message.  <br /></td></tr>
+<tr class="separator:ga71e700461ffe7820d9e1c75da65fd0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e2cf6e3a1ac891f2814f9d3f4043574" id="r_ga1e2cf6e3a1ac891f2814f9d3f4043574"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#ga1e2cf6e3a1ac891f2814f9d3f4043574">CEC_EndOfMessageCmd</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga1e2cf6e3a1ac891f2814f9d3f4043574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits message with or without an EOM bit.  <br /></td></tr>
+<tr class="separator:ga1e2cf6e3a1ac891f2814f9d3f4043574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf920706cb350182bf0728c66868053ca" id="r_gaf920706cb350182bf0728c66868053ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#gaf920706cb350182bf0728c66868053ca">CEC_GetFlagStatus</a> (uint32_t CEC_FLAG)</td></tr>
+<tr class="memdesc:gaf920706cb350182bf0728c66868053ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the CEC flag status  <br /></td></tr>
+<tr class="separator:gaf920706cb350182bf0728c66868053ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga928b373fb5972204c56f9c64113f8c67" id="r_ga928b373fb5972204c56f9c64113f8c67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#ga928b373fb5972204c56f9c64113f8c67">CEC_ClearFlag</a> (uint32_t CEC_FLAG)</td></tr>
+<tr class="memdesc:ga928b373fb5972204c56f9c64113f8c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the CEC's pending flags.  <br /></td></tr>
+<tr class="separator:ga928b373fb5972204c56f9c64113f8c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa1940a388d0bfcefe7483fb74cc2ba1d" id="r_gaa1940a388d0bfcefe7483fb74cc2ba1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#ga39d4411201fb731279ad5a409b2b80d7">ITStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#gaa1940a388d0bfcefe7483fb74cc2ba1d">CEC_GetITStatus</a> (uint8_t CEC_IT)</td></tr>
+<tr class="memdesc:gaa1940a388d0bfcefe7483fb74cc2ba1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified CEC interrupt has occurred or not.  <br /></td></tr>
+<tr class="separator:gaa1940a388d0bfcefe7483fb74cc2ba1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade646921262a077172c708953822f248" id="r_gade646921262a077172c708953822f248"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_e_c___private___functions.html#gade646921262a077172c708953822f248">CEC_ClearITPendingBit</a> (uint16_t CEC_IT)</td></tr>
+<tr class="memdesc:gade646921262a077172c708953822f248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the CEC's interrupt pending bits.  <br /></td></tr>
+<tr class="separator:gade646921262a077172c708953822f248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>This file provides all the CEC firmware functions. </p>
+<dl class="section author"><dt>作者</dt><dd>MCD Application Team </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>V3.5.0 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>11-March-2011 </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd></dd></dl>
+<p>THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.</p>
+<h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

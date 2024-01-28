@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>24-I2C-EEPROM读写实验: SDIO_Private_TypesDefinitions</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">24-I2C-EEPROM读写实验<span id="projectnumber">&#160;None</span>
+   </div>
+   <div id="projectbrief">I2C-EEPROM读写实验</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">SDIO_Private_TypesDefinitions<div class="ingroups"><a class="el" href="group___s_t_m32_f10x___std_periph___driver.html">STM32F10x_StdPeriph_Driver</a> &raquo; <a class="el" href="group___s_d_i_o.html">SDIO</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:gabf07aced03df5f46d57cea1d4f56d1e3" id="r_gabf07aced03df5f46d57cea1d4f56d1e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabf07aced03df5f46d57cea1d4f56d1e3">SDIO_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#ga95dd0abbc6767893b4b02935fa846f52">SDIO_BASE</a> - <a class="el" href="group___peripheral__memory__map.html#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a>)</td></tr>
+<tr class="separator:gabf07aced03df5f46d57cea1d4f56d1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5d642be874338519fdec175204ca8ed" id="r_gac5d642be874338519fdec175204ca8ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac5d642be874338519fdec175204ca8ed">CLKCR_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="#gabf07aced03df5f46d57cea1d4f56d1e3">SDIO_OFFSET</a> + 0x04)</td></tr>
+<tr class="separator:gac5d642be874338519fdec175204ca8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ad1da47f9d84c54eb620b9231ebec86" id="r_ga6ad1da47f9d84c54eb620b9231ebec86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6ad1da47f9d84c54eb620b9231ebec86">CLKEN_BitNumber</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="separator:ga6ad1da47f9d84c54eb620b9231ebec86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfb5772b9b734972b576309f7ca8bf92" id="r_gabfb5772b9b734972b576309f7ca8bf92"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabfb5772b9b734972b576309f7ca8bf92">CLKCR_CLKEN_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#gac5d642be874338519fdec175204ca8ed">CLKCR_OFFSET</a> * 32) + (<a class="el" href="#ga6ad1da47f9d84c54eb620b9231ebec86">CLKEN_BitNumber</a> * 4))</td></tr>
+<tr class="separator:gabfb5772b9b734972b576309f7ca8bf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf12d26702ce7a88d2a3dae87f000b75e" id="r_gaf12d26702ce7a88d2a3dae87f000b75e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="#gabf07aced03df5f46d57cea1d4f56d1e3">SDIO_OFFSET</a> + 0x0C)</td></tr>
+<tr class="separator:gaf12d26702ce7a88d2a3dae87f000b75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf88f03a42d76974b55dfb8bda65ade97" id="r_gaf88f03a42d76974b55dfb8bda65ade97"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf88f03a42d76974b55dfb8bda65ade97">SDIOSUSPEND_BitNumber</a>&#160;&#160;&#160;0x0B</td></tr>
+<tr class="separator:gaf88f03a42d76974b55dfb8bda65ade97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga931e48aa282e2a937308f57f807e0781" id="r_ga931e48aa282e2a937308f57f807e0781"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga931e48aa282e2a937308f57f807e0781">CMD_SDIOSUSPEND_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a> * 32) + (<a class="el" href="#gaf88f03a42d76974b55dfb8bda65ade97">SDIOSUSPEND_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga931e48aa282e2a937308f57f807e0781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d1112c7b804791a0fffd8b317085aeb" id="r_ga1d1112c7b804791a0fffd8b317085aeb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1d1112c7b804791a0fffd8b317085aeb">ENCMDCOMPL_BitNumber</a>&#160;&#160;&#160;0x0C</td></tr>
+<tr class="separator:ga1d1112c7b804791a0fffd8b317085aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade06098d1616639ce5f1b70675280b7c" id="r_gade06098d1616639ce5f1b70675280b7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gade06098d1616639ce5f1b70675280b7c">CMD_ENCMDCOMPL_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a> * 32) + (<a class="el" href="#ga1d1112c7b804791a0fffd8b317085aeb">ENCMDCOMPL_BitNumber</a> * 4))</td></tr>
+<tr class="separator:gade06098d1616639ce5f1b70675280b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab6d83a7ccd4a0d9ea9a09fec263fb25f" id="r_gab6d83a7ccd4a0d9ea9a09fec263fb25f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab6d83a7ccd4a0d9ea9a09fec263fb25f">NIEN_BitNumber</a>&#160;&#160;&#160;0x0D</td></tr>
+<tr class="separator:gab6d83a7ccd4a0d9ea9a09fec263fb25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08623f1d053677de8b20a6f5f5090edd" id="r_ga08623f1d053677de8b20a6f5f5090edd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga08623f1d053677de8b20a6f5f5090edd">CMD_NIEN_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a> * 32) + (<a class="el" href="#gab6d83a7ccd4a0d9ea9a09fec263fb25f">NIEN_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga08623f1d053677de8b20a6f5f5090edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd4fd3bb700b879f843ccc867db1832e" id="r_gabd4fd3bb700b879f843ccc867db1832e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabd4fd3bb700b879f843ccc867db1832e">ATACMD_BitNumber</a>&#160;&#160;&#160;0x0E</td></tr>
+<tr class="separator:gabd4fd3bb700b879f843ccc867db1832e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabb7e537f931b6fdd3b49e826f2e19d7c" id="r_gabb7e537f931b6fdd3b49e826f2e19d7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabb7e537f931b6fdd3b49e826f2e19d7c">CMD_ATACMD_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a> * 32) + (<a class="el" href="#gabd4fd3bb700b879f843ccc867db1832e">ATACMD_BitNumber</a> * 4))</td></tr>
+<tr class="separator:gabb7e537f931b6fdd3b49e826f2e19d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga948c1382c4cfd3af3e406c4d0cdd4240" id="r_ga948c1382c4cfd3af3e406c4d0cdd4240"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="#gabf07aced03df5f46d57cea1d4f56d1e3">SDIO_OFFSET</a> + 0x2C)</td></tr>
+<tr class="separator:ga948c1382c4cfd3af3e406c4d0cdd4240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2af311e327213503f0dbf3d013b7944" id="r_gab2af311e327213503f0dbf3d013b7944"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab2af311e327213503f0dbf3d013b7944">DMAEN_BitNumber</a>&#160;&#160;&#160;0x03</td></tr>
+<tr class="separator:gab2af311e327213503f0dbf3d013b7944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43f7336d4f955c6cf1f676ccbc043fe9" id="r_ga43f7336d4f955c6cf1f676ccbc043fe9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga43f7336d4f955c6cf1f676ccbc043fe9">DCTRL_DMAEN_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="#gab2af311e327213503f0dbf3d013b7944">DMAEN_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga43f7336d4f955c6cf1f676ccbc043fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga773045c51d3e8daee0c181517c44a2df" id="r_ga773045c51d3e8daee0c181517c44a2df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga773045c51d3e8daee0c181517c44a2df">RWSTART_BitNumber</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="separator:ga773045c51d3e8daee0c181517c44a2df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac776c39dfac0e1ed007217133e1145c3" id="r_gac776c39dfac0e1ed007217133e1145c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac776c39dfac0e1ed007217133e1145c3">DCTRL_RWSTART_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="#ga773045c51d3e8daee0c181517c44a2df">RWSTART_BitNumber</a> * 4))</td></tr>
+<tr class="separator:gac776c39dfac0e1ed007217133e1145c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8c0654ad5cba23281bcfa77ef19b9cf" id="r_gae8c0654ad5cba23281bcfa77ef19b9cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae8c0654ad5cba23281bcfa77ef19b9cf">RWSTOP_BitNumber</a>&#160;&#160;&#160;0x09</td></tr>
+<tr class="separator:gae8c0654ad5cba23281bcfa77ef19b9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga678da1db835676b0fb1976cf3408e2d1" id="r_ga678da1db835676b0fb1976cf3408e2d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga678da1db835676b0fb1976cf3408e2d1">DCTRL_RWSTOP_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="#gae8c0654ad5cba23281bcfa77ef19b9cf">RWSTOP_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga678da1db835676b0fb1976cf3408e2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7b722671f65e79d1be2899b643278ad" id="r_gad7b722671f65e79d1be2899b643278ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad7b722671f65e79d1be2899b643278ad">RWMOD_BitNumber</a>&#160;&#160;&#160;0x0A</td></tr>
+<tr class="separator:gad7b722671f65e79d1be2899b643278ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad34bfe8650534ce24320ae83886c91e3" id="r_gad34bfe8650534ce24320ae83886c91e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad34bfe8650534ce24320ae83886c91e3">DCTRL_RWMOD_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="#gad7b722671f65e79d1be2899b643278ad">RWMOD_BitNumber</a> * 4))</td></tr>
+<tr class="separator:gad34bfe8650534ce24320ae83886c91e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37f3e1612e0dae8160be978ebfa54301" id="r_ga37f3e1612e0dae8160be978ebfa54301"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga37f3e1612e0dae8160be978ebfa54301">SDIOEN_BitNumber</a>&#160;&#160;&#160;0x0B</td></tr>
+<tr class="separator:ga37f3e1612e0dae8160be978ebfa54301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga894f7da62b89ddd9f4b79d066056a3c7" id="r_ga894f7da62b89ddd9f4b79d066056a3c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga894f7da62b89ddd9f4b79d066056a3c7">DCTRL_SDIOEN_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="#ga37f3e1612e0dae8160be978ebfa54301">SDIOEN_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga894f7da62b89ddd9f4b79d066056a3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8d10dd1e49ca9e8a6954146654e9a01" id="r_gac8d10dd1e49ca9e8a6954146654e9a01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac8d10dd1e49ca9e8a6954146654e9a01">CLKCR_CLEAR_MASK</a>&#160;&#160;&#160;((uint32_t)0xFFFF8100)</td></tr>
+<tr class="separator:gac8d10dd1e49ca9e8a6954146654e9a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7e6ec7be68d0fbb8fb4e3725cca9a05c" id="r_ga7e6ec7be68d0fbb8fb4e3725cca9a05c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7e6ec7be68d0fbb8fb4e3725cca9a05c">PWR_PWRCTRL_MASK</a>&#160;&#160;&#160;((uint32_t)0xFFFFFFFC)</td></tr>
+<tr class="separator:ga7e6ec7be68d0fbb8fb4e3725cca9a05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e9fc7810b95805aeeb760bbdd87fa9b" id="r_ga9e9fc7810b95805aeeb760bbdd87fa9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9e9fc7810b95805aeeb760bbdd87fa9b">DCTRL_CLEAR_MASK</a>&#160;&#160;&#160;((uint32_t)0xFFFFFF08)</td></tr>
+<tr class="separator:ga9e9fc7810b95805aeeb760bbdd87fa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2325d77090e44221b07f8fba5bc9217e" id="r_ga2325d77090e44221b07f8fba5bc9217e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2325d77090e44221b07f8fba5bc9217e">CMD_CLEAR_MASK</a>&#160;&#160;&#160;((uint32_t)0xFFFFF800)</td></tr>
+<tr class="separator:ga2325d77090e44221b07f8fba5bc9217e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4285ce49b005e3d03ddf9fdc491c4d70" id="r_ga4285ce49b005e3d03ddf9fdc491c4d70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4285ce49b005e3d03ddf9fdc491c4d70">SDIO_RESP_ADDR</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral__memory__map.html#ga95dd0abbc6767893b4b02935fa846f52">SDIO_BASE</a> + 0x14))</td></tr>
+<tr class="separator:ga4285ce49b005e3d03ddf9fdc491c4d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="gabd4fd3bb700b879f843ccc867db1832e" name="gabd4fd3bb700b879f843ccc867db1832e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabd4fd3bb700b879f843ccc867db1832e">&#9670;&#160;</a></span>ATACMD_BitNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ATACMD_BitNumber&#160;&#160;&#160;0x0E</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac8d10dd1e49ca9e8a6954146654e9a01" name="gac8d10dd1e49ca9e8a6954146654e9a01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8d10dd1e49ca9e8a6954146654e9a01">&#9670;&#160;</a></span>CLKCR_CLEAR_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLKCR_CLEAR_MASK&#160;&#160;&#160;((uint32_t)0xFFFF8100)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gabfb5772b9b734972b576309f7ca8bf92" name="gabfb5772b9b734972b576309f7ca8bf92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabfb5772b9b734972b576309f7ca8bf92">&#9670;&#160;</a></span>CLKCR_CLKEN_BB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLKCR_CLKEN_BB&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#gac5d642be874338519fdec175204ca8ed">CLKCR_OFFSET</a> * 32) + (<a class="el" href="#ga6ad1da47f9d84c54eb620b9231ebec86">CLKEN_BitNumber</a> * 4))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac5d642be874338519fdec175204ca8ed" name="gac5d642be874338519fdec175204ca8ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac5d642be874338519fdec175204ca8ed">&#9670;&#160;</a></span>CLKCR_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLKCR_OFFSET&#160;&#160;&#160;(<a class="el" href="#gabf07aced03df5f46d57cea1d4f56d1e3">SDIO_OFFSET</a> + 0x04)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga6ad1da47f9d84c54eb620b9231ebec86" name="ga6ad1da47f9d84c54eb620b9231ebec86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6ad1da47f9d84c54eb620b9231ebec86">&#9670;&#160;</a></span>CLKEN_BitNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLKEN_BitNumber&#160;&#160;&#160;0x08</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gabb7e537f931b6fdd3b49e826f2e19d7c" name="gabb7e537f931b6fdd3b49e826f2e19d7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabb7e537f931b6fdd3b49e826f2e19d7c">&#9670;&#160;</a></span>CMD_ATACMD_BB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_ATACMD_BB&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a> * 32) + (<a class="el" href="#gabd4fd3bb700b879f843ccc867db1832e">ATACMD_BitNumber</a> * 4))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga2325d77090e44221b07f8fba5bc9217e" name="ga2325d77090e44221b07f8fba5bc9217e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2325d77090e44221b07f8fba5bc9217e">&#9670;&#160;</a></span>CMD_CLEAR_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_CLEAR_MASK&#160;&#160;&#160;((uint32_t)0xFFFFF800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gade06098d1616639ce5f1b70675280b7c" name="gade06098d1616639ce5f1b70675280b7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade06098d1616639ce5f1b70675280b7c">&#9670;&#160;</a></span>CMD_ENCMDCOMPL_BB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_ENCMDCOMPL_BB&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a> * 32) + (<a class="el" href="#ga1d1112c7b804791a0fffd8b317085aeb">ENCMDCOMPL_BitNumber</a> * 4))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga08623f1d053677de8b20a6f5f5090edd" name="ga08623f1d053677de8b20a6f5f5090edd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga08623f1d053677de8b20a6f5f5090edd">&#9670;&#160;</a></span>CMD_NIEN_BB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_NIEN_BB&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a> * 32) + (<a class="el" href="#gab6d83a7ccd4a0d9ea9a09fec263fb25f">NIEN_BitNumber</a> * 4))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaf12d26702ce7a88d2a3dae87f000b75e" name="gaf12d26702ce7a88d2a3dae87f000b75e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf12d26702ce7a88d2a3dae87f000b75e">&#9670;&#160;</a></span>CMD_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_OFFSET&#160;&#160;&#160;(<a class="el" href="#gabf07aced03df5f46d57cea1d4f56d1e3">SDIO_OFFSET</a> + 0x0C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga931e48aa282e2a937308f57f807e0781" name="ga931e48aa282e2a937308f57f807e0781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga931e48aa282e2a937308f57f807e0781">&#9670;&#160;</a></span>CMD_SDIOSUSPEND_BB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CMD_SDIOSUSPEND_BB&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a> * 32) + (<a class="el" href="#gaf88f03a42d76974b55dfb8bda65ade97">SDIOSUSPEND_BitNumber</a> * 4))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga9e9fc7810b95805aeeb760bbdd87fa9b" name="ga9e9fc7810b95805aeeb760bbdd87fa9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e9fc7810b95805aeeb760bbdd87fa9b">&#9670;&#160;</a></span>DCTRL_CLEAR_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DCTRL_CLEAR_MASK&#160;&#160;&#160;((uint32_t)0xFFFFFF08)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga43f7336d4f955c6cf1f676ccbc043fe9" name="ga43f7336d4f955c6cf1f676ccbc043fe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga43f7336d4f955c6cf1f676ccbc043fe9">&#9670;&#160;</a></span>DCTRL_DMAEN_BB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DCTRL_DMAEN_BB&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="#gab2af311e327213503f0dbf3d013b7944">DMAEN_BitNumber</a> * 4))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga948c1382c4cfd3af3e406c4d0cdd4240" name="ga948c1382c4cfd3af3e406c4d0cdd4240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga948c1382c4cfd3af3e406c4d0cdd4240">&#9670;&#160;</a></span>DCTRL_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DCTRL_OFFSET&#160;&#160;&#160;(<a class="el" href="#gabf07aced03df5f46d57cea1d4f56d1e3">SDIO_OFFSET</a> + 0x2C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad34bfe8650534ce24320ae83886c91e3" name="gad34bfe8650534ce24320ae83886c91e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad34bfe8650534ce24320ae83886c91e3">&#9670;&#160;</a></span>DCTRL_RWMOD_BB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DCTRL_RWMOD_BB&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="#gad7b722671f65e79d1be2899b643278ad">RWMOD_BitNumber</a> * 4))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac776c39dfac0e1ed007217133e1145c3" name="gac776c39dfac0e1ed007217133e1145c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac776c39dfac0e1ed007217133e1145c3">&#9670;&#160;</a></span>DCTRL_RWSTART_BB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DCTRL_RWSTART_BB&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="#ga773045c51d3e8daee0c181517c44a2df">RWSTART_BitNumber</a> * 4))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga678da1db835676b0fb1976cf3408e2d1" name="ga678da1db835676b0fb1976cf3408e2d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga678da1db835676b0fb1976cf3408e2d1">&#9670;&#160;</a></span>DCTRL_RWSTOP_BB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DCTRL_RWSTOP_BB&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="#gae8c0654ad5cba23281bcfa77ef19b9cf">RWSTOP_BitNumber</a> * 4))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga894f7da62b89ddd9f4b79d066056a3c7" name="ga894f7da62b89ddd9f4b79d066056a3c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga894f7da62b89ddd9f4b79d066056a3c7">&#9670;&#160;</a></span>DCTRL_SDIOEN_BB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DCTRL_SDIOEN_BB&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="#ga37f3e1612e0dae8160be978ebfa54301">SDIOEN_BitNumber</a> * 4))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab2af311e327213503f0dbf3d013b7944" name="gab2af311e327213503f0dbf3d013b7944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2af311e327213503f0dbf3d013b7944">&#9670;&#160;</a></span>DMAEN_BitNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMAEN_BitNumber&#160;&#160;&#160;0x03</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga1d1112c7b804791a0fffd8b317085aeb" name="ga1d1112c7b804791a0fffd8b317085aeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1d1112c7b804791a0fffd8b317085aeb">&#9670;&#160;</a></span>ENCMDCOMPL_BitNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENCMDCOMPL_BitNumber&#160;&#160;&#160;0x0C</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab6d83a7ccd4a0d9ea9a09fec263fb25f" name="gab6d83a7ccd4a0d9ea9a09fec263fb25f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab6d83a7ccd4a0d9ea9a09fec263fb25f">&#9670;&#160;</a></span>NIEN_BitNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NIEN_BitNumber&#160;&#160;&#160;0x0D</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga7e6ec7be68d0fbb8fb4e3725cca9a05c" name="ga7e6ec7be68d0fbb8fb4e3725cca9a05c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7e6ec7be68d0fbb8fb4e3725cca9a05c">&#9670;&#160;</a></span>PWR_PWRCTRL_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PWR_PWRCTRL_MASK&#160;&#160;&#160;((uint32_t)0xFFFFFFFC)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad7b722671f65e79d1be2899b643278ad" name="gad7b722671f65e79d1be2899b643278ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad7b722671f65e79d1be2899b643278ad">&#9670;&#160;</a></span>RWMOD_BitNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RWMOD_BitNumber&#160;&#160;&#160;0x0A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga773045c51d3e8daee0c181517c44a2df" name="ga773045c51d3e8daee0c181517c44a2df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga773045c51d3e8daee0c181517c44a2df">&#9670;&#160;</a></span>RWSTART_BitNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RWSTART_BitNumber&#160;&#160;&#160;0x08</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae8c0654ad5cba23281bcfa77ef19b9cf" name="gae8c0654ad5cba23281bcfa77ef19b9cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae8c0654ad5cba23281bcfa77ef19b9cf">&#9670;&#160;</a></span>RWSTOP_BitNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RWSTOP_BitNumber&#160;&#160;&#160;0x09</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gabf07aced03df5f46d57cea1d4f56d1e3" name="gabf07aced03df5f46d57cea1d4f56d1e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf07aced03df5f46d57cea1d4f56d1e3">&#9670;&#160;</a></span>SDIO_OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDIO_OFFSET&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#ga95dd0abbc6767893b4b02935fa846f52">SDIO_BASE</a> - <a class="el" href="group___peripheral__memory__map.html#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga4285ce49b005e3d03ddf9fdc491c4d70" name="ga4285ce49b005e3d03ddf9fdc491c4d70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4285ce49b005e3d03ddf9fdc491c4d70">&#9670;&#160;</a></span>SDIO_RESP_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDIO_RESP_ADDR&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral__memory__map.html#ga95dd0abbc6767893b4b02935fa846f52">SDIO_BASE</a> + 0x14))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga37f3e1612e0dae8160be978ebfa54301" name="ga37f3e1612e0dae8160be978ebfa54301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga37f3e1612e0dae8160be978ebfa54301">&#9670;&#160;</a></span>SDIOEN_BitNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDIOEN_BitNumber&#160;&#160;&#160;0x0B</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaf88f03a42d76974b55dfb8bda65ade97" name="gaf88f03a42d76974b55dfb8bda65ade97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf88f03a42d76974b55dfb8bda65ade97">&#9670;&#160;</a></span>SDIOSUSPEND_BitNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDIOSUSPEND_BitNumber&#160;&#160;&#160;0x0B</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

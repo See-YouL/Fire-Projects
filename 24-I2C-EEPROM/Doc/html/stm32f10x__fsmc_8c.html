@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>24-I2C-EEPROM读写实验: E:/Personal/IT/Embedded/Stm32/Fire/Fire-Projects/24-I2C-EEPROM/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_fsmc.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">24-I2C-EEPROM读写实验<span id="projectnumber">&#160;None</span>
+   </div>
+   <div id="projectbrief">I2C-EEPROM读写实验</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c70ae96152db76c2a98dc36c9d938161.html">24-I2C-EEPROM</a></li><li class="navelem"><a class="el" href="dir_44588f5ef50cc24f69568f0877d8b791.html">Libraries</a></li><li class="navelem"><a class="el" href="dir_62b8510e927d44c4507688017f6363e0.html">STM32F10x_StdPeriph_Driver</a></li><li class="navelem"><a class="el" href="dir_743dd6896234999ca08fe70a3f3445a5.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">stm32f10x_fsmc.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This file provides all the FSMC firmware functions.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="stm32f10x__fsmc_8h_source.html">stm32f10x_fsmc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f10x__rcc_8h_source.html">stm32f10x_rcc.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga3c427afcf32b17fb72be67fd4638e6d5" id="r_ga3c427afcf32b17fb72be67fd4638e6d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___defines.html#ga3c427afcf32b17fb72be67fd4638e6d5">BCR_MBKEN_Set</a>&#160;&#160;&#160;((uint32_t)0x00000001)</td></tr>
+<tr class="separator:ga3c427afcf32b17fb72be67fd4638e6d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa63b72d32a32c53a057ee0a45bed0d3b" id="r_gaa63b72d32a32c53a057ee0a45bed0d3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___defines.html#gaa63b72d32a32c53a057ee0a45bed0d3b">BCR_MBKEN_Reset</a>&#160;&#160;&#160;((uint32_t)0x000FFFFE)</td></tr>
+<tr class="separator:gaa63b72d32a32c53a057ee0a45bed0d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38da33a73789b2c932962d75dfc1341f" id="r_ga38da33a73789b2c932962d75dfc1341f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___defines.html#ga38da33a73789b2c932962d75dfc1341f">BCR_FACCEN_Set</a>&#160;&#160;&#160;((uint32_t)0x00000040)</td></tr>
+<tr class="separator:ga38da33a73789b2c932962d75dfc1341f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade871050f882b7f48582084b0e95f67c" id="r_gade871050f882b7f48582084b0e95f67c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___defines.html#gade871050f882b7f48582084b0e95f67c">PCR_PBKEN_Set</a>&#160;&#160;&#160;((uint32_t)0x00000004)</td></tr>
+<tr class="separator:gade871050f882b7f48582084b0e95f67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac6d0ddc3888a0554b032f0f484cfe332" id="r_gac6d0ddc3888a0554b032f0f484cfe332"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___defines.html#gac6d0ddc3888a0554b032f0f484cfe332">PCR_PBKEN_Reset</a>&#160;&#160;&#160;((uint32_t)0x000FFFFB)</td></tr>
+<tr class="separator:gac6d0ddc3888a0554b032f0f484cfe332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a0d7950936e3869b449d421e03a19ac" id="r_ga8a0d7950936e3869b449d421e03a19ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___defines.html#ga8a0d7950936e3869b449d421e03a19ac">PCR_ECCEN_Set</a>&#160;&#160;&#160;((uint32_t)0x00000040)</td></tr>
+<tr class="separator:ga8a0d7950936e3869b449d421e03a19ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca1a5c5cd46c8a32dab58c3eb3b865fa" id="r_gaca1a5c5cd46c8a32dab58c3eb3b865fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___defines.html#gaca1a5c5cd46c8a32dab58c3eb3b865fa">PCR_ECCEN_Reset</a>&#160;&#160;&#160;((uint32_t)0x000FFFBF)</td></tr>
+<tr class="separator:gaca1a5c5cd46c8a32dab58c3eb3b865fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf3992efb285ab994c41463af5107c501" id="r_gaf3992efb285ab994c41463af5107c501"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___defines.html#gaf3992efb285ab994c41463af5107c501">PCR_MemoryType_NAND</a>&#160;&#160;&#160;((uint32_t)0x00000008)</td></tr>
+<tr class="separator:gaf3992efb285ab994c41463af5107c501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gaab3e6648e8a584e73785361ac960eded" id="r_gaab3e6648e8a584e73785361ac960eded"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#gaab3e6648e8a584e73785361ac960eded">FSMC_NORSRAMDeInit</a> (uint32_t FSMC_Bank)</td></tr>
+<tr class="memdesc:gaab3e6648e8a584e73785361ac960eded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitializes the FSMC NOR/SRAM Banks registers to their default reset values.  <br /></td></tr>
+<tr class="separator:gaab3e6648e8a584e73785361ac960eded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafb749503293474a68555961bd8f120e1" id="r_gafb749503293474a68555961bd8f120e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#gafb749503293474a68555961bd8f120e1">FSMC_NANDDeInit</a> (uint32_t FSMC_Bank)</td></tr>
+<tr class="memdesc:gafb749503293474a68555961bd8f120e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitializes the FSMC NAND Banks registers to their default reset values.  <br /></td></tr>
+<tr class="separator:gafb749503293474a68555961bd8f120e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f53ccf3a4f3c80a5a56fb47ccd47ccd" id="r_ga2f53ccf3a4f3c80a5a56fb47ccd47ccd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#ga2f53ccf3a4f3c80a5a56fb47ccd47ccd">FSMC_PCCARDDeInit</a> (void)</td></tr>
+<tr class="memdesc:ga2f53ccf3a4f3c80a5a56fb47ccd47ccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitializes the FSMC PCCARD Bank registers to their default reset values.  <br /></td></tr>
+<tr class="separator:ga2f53ccf3a4f3c80a5a56fb47ccd47ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c27816e8b17394c9ee1ce9298917b4a" id="r_ga9c27816e8b17394c9ee1ce9298917b4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#ga9c27816e8b17394c9ee1ce9298917b4a">FSMC_NORSRAMInit</a> (<a class="el" href="struct_f_s_m_c___n_o_r_s_r_a_m_init_type_def.html">FSMC_NORSRAMInitTypeDef</a> *FSMC_NORSRAMInitStruct)</td></tr>
+<tr class="memdesc:ga9c27816e8b17394c9ee1ce9298917b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the FSMC NOR/SRAM Banks according to the specified parameters in the FSMC_NORSRAMInitStruct.  <br /></td></tr>
+<tr class="separator:ga9c27816e8b17394c9ee1ce9298917b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f81ccc4e126c11f1eb33077b1a68e6f" id="r_ga9f81ccc4e126c11f1eb33077b1a68e6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#ga9f81ccc4e126c11f1eb33077b1a68e6f">FSMC_NANDInit</a> (<a class="el" href="struct_f_s_m_c___n_a_n_d_init_type_def.html">FSMC_NANDInitTypeDef</a> *FSMC_NANDInitStruct)</td></tr>
+<tr class="memdesc:ga9f81ccc4e126c11f1eb33077b1a68e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the FSMC NAND Banks according to the specified parameters in the FSMC_NANDInitStruct.  <br /></td></tr>
+<tr class="separator:ga9f81ccc4e126c11f1eb33077b1a68e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacee1351363e7700a296faa1734a910aa" id="r_gacee1351363e7700a296faa1734a910aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#gacee1351363e7700a296faa1734a910aa">FSMC_PCCARDInit</a> (<a class="el" href="struct_f_s_m_c___p_c_c_a_r_d_init_type_def.html">FSMC_PCCARDInitTypeDef</a> *FSMC_PCCARDInitStruct)</td></tr>
+<tr class="memdesc:gacee1351363e7700a296faa1734a910aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the FSMC PCCARD Bank according to the specified parameters in the FSMC_PCCARDInitStruct.  <br /></td></tr>
+<tr class="separator:gacee1351363e7700a296faa1734a910aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf33e6dfc34f62d16a0cb416de9e83d28" id="r_gaf33e6dfc34f62d16a0cb416de9e83d28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#gaf33e6dfc34f62d16a0cb416de9e83d28">FSMC_NORSRAMStructInit</a> (<a class="el" href="struct_f_s_m_c___n_o_r_s_r_a_m_init_type_def.html">FSMC_NORSRAMInitTypeDef</a> *FSMC_NORSRAMInitStruct)</td></tr>
+<tr class="memdesc:gaf33e6dfc34f62d16a0cb416de9e83d28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills each FSMC_NORSRAMInitStruct member with its default value.  <br /></td></tr>
+<tr class="separator:gaf33e6dfc34f62d16a0cb416de9e83d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8283ad94ad8e83d49d5b77d1c7e17862" id="r_ga8283ad94ad8e83d49d5b77d1c7e17862"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#ga8283ad94ad8e83d49d5b77d1c7e17862">FSMC_NANDStructInit</a> (<a class="el" href="struct_f_s_m_c___n_a_n_d_init_type_def.html">FSMC_NANDInitTypeDef</a> *FSMC_NANDInitStruct)</td></tr>
+<tr class="memdesc:ga8283ad94ad8e83d49d5b77d1c7e17862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills each FSMC_NANDInitStruct member with its default value.  <br /></td></tr>
+<tr class="separator:ga8283ad94ad8e83d49d5b77d1c7e17862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a64ba0e0545b3f1913c9d1d28c05e62" id="r_ga7a64ba0e0545b3f1913c9d1d28c05e62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#ga7a64ba0e0545b3f1913c9d1d28c05e62">FSMC_PCCARDStructInit</a> (<a class="el" href="struct_f_s_m_c___p_c_c_a_r_d_init_type_def.html">FSMC_PCCARDInitTypeDef</a> *FSMC_PCCARDInitStruct)</td></tr>
+<tr class="memdesc:ga7a64ba0e0545b3f1913c9d1d28c05e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills each FSMC_PCCARDInitStruct member with its default value.  <br /></td></tr>
+<tr class="separator:ga7a64ba0e0545b3f1913c9d1d28c05e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf943f0f2680168d3a95a3c2c9f3eca2a" id="r_gaf943f0f2680168d3a95a3c2c9f3eca2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#gaf943f0f2680168d3a95a3c2c9f3eca2a">FSMC_NORSRAMCmd</a> (uint32_t FSMC_Bank, <a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:gaf943f0f2680168d3a95a3c2c9f3eca2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the specified NOR/SRAM Memory Bank.  <br /></td></tr>
+<tr class="separator:gaf943f0f2680168d3a95a3c2c9f3eca2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga33ec7c39ea4d42e92c72c6e517d8235c" id="r_ga33ec7c39ea4d42e92c72c6e517d8235c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#ga33ec7c39ea4d42e92c72c6e517d8235c">FSMC_NANDCmd</a> (uint32_t FSMC_Bank, <a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga33ec7c39ea4d42e92c72c6e517d8235c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the specified NAND Memory Bank.  <br /></td></tr>
+<tr class="separator:ga33ec7c39ea4d42e92c72c6e517d8235c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d410151ceb3428c6a1bf374a0472cde" id="r_ga2d410151ceb3428c6a1bf374a0472cde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#ga2d410151ceb3428c6a1bf374a0472cde">FSMC_PCCARDCmd</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga2d410151ceb3428c6a1bf374a0472cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the PCCARD Memory Bank.  <br /></td></tr>
+<tr class="separator:ga2d410151ceb3428c6a1bf374a0472cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5800301fc39bbe998a18ebd9ff191cdc" id="r_ga5800301fc39bbe998a18ebd9ff191cdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#ga5800301fc39bbe998a18ebd9ff191cdc">FSMC_NANDECCCmd</a> (uint32_t FSMC_Bank, <a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga5800301fc39bbe998a18ebd9ff191cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the FSMC NAND ECC feature.  <br /></td></tr>
+<tr class="separator:ga5800301fc39bbe998a18ebd9ff191cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad6d4f5b5a41684ce053fea55bdb98d8" id="r_gaad6d4f5b5a41684ce053fea55bdb98d8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#gaad6d4f5b5a41684ce053fea55bdb98d8">FSMC_GetECC</a> (uint32_t FSMC_Bank)</td></tr>
+<tr class="memdesc:gaad6d4f5b5a41684ce053fea55bdb98d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the error correction code register value.  <br /></td></tr>
+<tr class="separator:gaad6d4f5b5a41684ce053fea55bdb98d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga217027ae3cd213b9076b6a1be197064c" id="r_ga217027ae3cd213b9076b6a1be197064c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#ga217027ae3cd213b9076b6a1be197064c">FSMC_ITConfig</a> (uint32_t FSMC_Bank, uint32_t FSMC_IT, <a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga217027ae3cd213b9076b6a1be197064c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the specified FSMC interrupts.  <br /></td></tr>
+<tr class="separator:ga217027ae3cd213b9076b6a1be197064c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae00355115b078f483f0771057bb849c4" id="r_gae00355115b078f483f0771057bb849c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#gae00355115b078f483f0771057bb849c4">FSMC_GetFlagStatus</a> (uint32_t FSMC_Bank, uint32_t FSMC_FLAG)</td></tr>
+<tr class="memdesc:gae00355115b078f483f0771057bb849c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified FSMC flag is set or not.  <br /></td></tr>
+<tr class="separator:gae00355115b078f483f0771057bb849c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga697618f2de0ad9a8a82461ddbebd5264" id="r_ga697618f2de0ad9a8a82461ddbebd5264"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#ga697618f2de0ad9a8a82461ddbebd5264">FSMC_ClearFlag</a> (uint32_t FSMC_Bank, uint32_t FSMC_FLAG)</td></tr>
+<tr class="memdesc:ga697618f2de0ad9a8a82461ddbebd5264"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the FSMC's pending flags.  <br /></td></tr>
+<tr class="separator:ga697618f2de0ad9a8a82461ddbebd5264"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7fce9ca889d33cd8b8b7413875dd4d73" id="r_ga7fce9ca889d33cd8b8b7413875dd4d73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#ga39d4411201fb731279ad5a409b2b80d7">ITStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#ga7fce9ca889d33cd8b8b7413875dd4d73">FSMC_GetITStatus</a> (uint32_t FSMC_Bank, uint32_t FSMC_IT)</td></tr>
+<tr class="memdesc:ga7fce9ca889d33cd8b8b7413875dd4d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified FSMC interrupt has occurred or not.  <br /></td></tr>
+<tr class="separator:ga7fce9ca889d33cd8b8b7413875dd4d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad9387e7674b8a376256a3378649e004e" id="r_gad9387e7674b8a376256a3378649e004e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___f_s_m_c___private___functions.html#gad9387e7674b8a376256a3378649e004e">FSMC_ClearITPendingBit</a> (uint32_t FSMC_Bank, uint32_t FSMC_IT)</td></tr>
+<tr class="memdesc:gad9387e7674b8a376256a3378649e004e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the FSMC's interrupt pending bits.  <br /></td></tr>
+<tr class="separator:gad9387e7674b8a376256a3378649e004e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>This file provides all the FSMC firmware functions. </p>
+<dl class="section author"><dt>作者</dt><dd>MCD Application Team </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>V3.5.0 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>11-March-2011 </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd></dd></dl>
+<p>THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.</p>
+<h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

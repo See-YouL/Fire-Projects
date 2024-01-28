@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>24-I2C-EEPROM读写实验: E:/Personal/IT/Embedded/Stm32/Fire/Fire-Projects/24-I2C-EEPROM/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_iwdg.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">24-I2C-EEPROM读写实验<span id="projectnumber">&#160;None</span>
+   </div>
+   <div id="projectbrief">I2C-EEPROM读写实验</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c70ae96152db76c2a98dc36c9d938161.html">24-I2C-EEPROM</a></li><li class="navelem"><a class="el" href="dir_44588f5ef50cc24f69568f0877d8b791.html">Libraries</a></li><li class="navelem"><a class="el" href="dir_62b8510e927d44c4507688017f6363e0.html">STM32F10x_StdPeriph_Driver</a></li><li class="navelem"><a class="el" href="dir_760a58e9aecd4f34088d5d49ff0e77f6.html">inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">stm32f10x_iwdg.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="stm32f10x__iwdg_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/* Define to prevent recursive inclusion -------------------------------------*/</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#ifndef __STM32F10x_IWDG_H</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define __STM32F10x_IWDG_H</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/* Includes ------------------------------------------------------------------*/</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="stm32f10x_8h.html">stm32f10x.h</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="group___i_w_d_g___write_access.html#ga86f4b926f4351e19ea069f98c2e65f91">   58</a></span><span class="preprocessor">#define IWDG_WriteAccess_Enable     ((uint16_t)0x5555)</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="group___i_w_d_g___write_access.html#ga4b395cf5b2d7ab18fc71a5f779f758cc">   59</a></span><span class="preprocessor">#define IWDG_WriteAccess_Disable    ((uint16_t)0x0000)</span></div>
+<div class="foldopen" id="foldopen00060" data-start="" data-end="">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="group___i_w_d_g___write_access.html#gaa89c93332f5977175f8d416b7492de18">   60</a></span><span class="preprocessor">#define IS_IWDG_WRITE_ACCESS(ACCESS) (((ACCESS) == IWDG_WriteAccess_Enable) || \</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">                                      ((ACCESS) == IWDG_WriteAccess_Disable))</span></div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="group___i_w_d_g__prescaler.html#ga82a058c196d5a9cd7ea2f2202b394ba0">   70</a></span><span class="preprocessor">#define IWDG_Prescaler_4            ((uint8_t)0x00)</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="group___i_w_d_g__prescaler.html#ga59763b9a127c67adf5d11474188996a1">   71</a></span><span class="preprocessor">#define IWDG_Prescaler_8            ((uint8_t)0x01)</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="group___i_w_d_g__prescaler.html#gafa81d30511ff5ec74bb38ed71f5bb66e">   72</a></span><span class="preprocessor">#define IWDG_Prescaler_16           ((uint8_t)0x02)</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="group___i_w_d_g__prescaler.html#gaa8b091b6e4102513b1e3a1c4eb6756ba">   73</a></span><span class="preprocessor">#define IWDG_Prescaler_32           ((uint8_t)0x03)</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="group___i_w_d_g__prescaler.html#ga7ea813c73ae0acb40acb60e7d3956910">   74</a></span><span class="preprocessor">#define IWDG_Prescaler_64           ((uint8_t)0x04)</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="group___i_w_d_g__prescaler.html#gaea6bf96c2fd5a6f3b9574e7898096641">   75</a></span><span class="preprocessor">#define IWDG_Prescaler_128          ((uint8_t)0x05)</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="group___i_w_d_g__prescaler.html#ga7d6e918748185639049644c970db2b43">   76</a></span><span class="preprocessor">#define IWDG_Prescaler_256          ((uint8_t)0x06)</span></div>
+<div class="foldopen" id="foldopen00077" data-start="" data-end="">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="group___i_w_d_g__prescaler.html#gab1e0695c1a22840d5be7c7fad283f4ba">   77</a></span><span class="preprocessor">#define IS_IWDG_PRESCALER(PRESCALER) (((PRESCALER) == IWDG_Prescaler_4)  || \</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">                                      ((PRESCALER) == IWDG_Prescaler_8)  || \</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">                                      ((PRESCALER) == IWDG_Prescaler_16) || \</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">                                      ((PRESCALER) == IWDG_Prescaler_32) || \</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">                                      ((PRESCALER) == IWDG_Prescaler_64) || \</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">                                      ((PRESCALER) == IWDG_Prescaler_128)|| \</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">                                      ((PRESCALER) == IWDG_Prescaler_256))</span></div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="group___i_w_d_g___flag.html#gae20afcf399fad1534e79a8d30ea86c9c">   92</a></span><span class="preprocessor">#define IWDG_FLAG_PVU               ((uint16_t)0x0001)</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="group___i_w_d_g___flag.html#ga3731bf2711c234ffe5b405fb6634ebca">   93</a></span><span class="preprocessor">#define IWDG_FLAG_RVU               ((uint16_t)0x0002)</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="group___i_w_d_g___flag.html#ga5be9ae9ba267cf09a00523ef3e219293">   94</a></span><span class="preprocessor">#define IS_IWDG_FLAG(FLAG) (((FLAG) == IWDG_FLAG_PVU) || ((FLAG) == IWDG_FLAG_RVU))</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="group___i_w_d_g___flag.html#ga7c319e96bded8e3c38c6a42a1b335c68">   95</a></span><span class="preprocessor">#define IS_IWDG_RELOAD(RELOAD) ((RELOAD) &lt;= 0xFFF)</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_w_d_g___exported___functions.html#gae466681e5bdc11b353c508b89d75ca05">IWDG_WriteAccessCmd</a>(uint16_t IWDG_WriteAccess);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_w_d_g___exported___functions.html#ga4fa7f1cd690533a35ad9e4729c0450a3">IWDG_SetPrescaler</a>(uint8_t IWDG_Prescaler);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_w_d_g___exported___functions.html#gae2a14752a0431f23cb80cebf202ac365">IWDG_SetReload</a>(uint16_t Reload);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_w_d_g___exported___functions.html#ga7147ebabdc3fef97f532b171a4e70d49">IWDG_ReloadCounter</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___i_w_d_g___exported___functions.html#ga479b2921c86f8c67b819f5c4bea6bdb6">IWDG_Enable</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><a class="code hl_enumeration" href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a> <a class="code hl_function" href="group___i_w_d_g___exported___functions.html#ga37f050cfbedc0c15f9e0816c0b22011e">IWDG_GetFlagStatus</a>(uint16_t IWDG_FLAG);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#endif </span><span class="comment">/* __STM32F10x_IWDG_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">/******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/</span></div>
+<div class="ttc" id="agroup___exported__types_html_ga89136caac2e14c55151f527ac02daaff"><div class="ttname"><a href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a></div><div class="ttdeci">FlagStatus</div><div class="ttdef"><b>Definition</b> stm32f10x.h:519</div></div>
+<div class="ttc" id="agroup___i_w_d_g___exported___functions_html_ga37f050cfbedc0c15f9e0816c0b22011e"><div class="ttname"><a href="group___i_w_d_g___exported___functions.html#ga37f050cfbedc0c15f9e0816c0b22011e">IWDG_GetFlagStatus</a></div><div class="ttdeci">FlagStatus IWDG_GetFlagStatus(uint16_t IWDG_FLAG)</div><div class="ttdoc">Checks whether the specified IWDG flag is set or not.</div><div class="ttdef"><b>Definition</b> stm32f10x_iwdg.c:161</div></div>
+<div class="ttc" id="agroup___i_w_d_g___exported___functions_html_ga479b2921c86f8c67b819f5c4bea6bdb6"><div class="ttname"><a href="group___i_w_d_g___exported___functions.html#ga479b2921c86f8c67b819f5c4bea6bdb6">IWDG_Enable</a></div><div class="ttdeci">void IWDG_Enable(void)</div><div class="ttdoc">Enables IWDG (write access to IWDG_PR and IWDG_RLR registers disabled).</div><div class="ttdef"><b>Definition</b> stm32f10x_iwdg.c:148</div></div>
+<div class="ttc" id="agroup___i_w_d_g___exported___functions_html_ga4fa7f1cd690533a35ad9e4729c0450a3"><div class="ttname"><a href="group___i_w_d_g___exported___functions.html#ga4fa7f1cd690533a35ad9e4729c0450a3">IWDG_SetPrescaler</a></div><div class="ttdeci">void IWDG_SetPrescaler(uint8_t IWDG_Prescaler)</div><div class="ttdoc">Sets IWDG Prescaler value.</div><div class="ttdef"><b>Definition</b> stm32f10x_iwdg.c:112</div></div>
+<div class="ttc" id="agroup___i_w_d_g___exported___functions_html_ga7147ebabdc3fef97f532b171a4e70d49"><div class="ttname"><a href="group___i_w_d_g___exported___functions.html#ga7147ebabdc3fef97f532b171a4e70d49">IWDG_ReloadCounter</a></div><div class="ttdeci">void IWDG_ReloadCounter(void)</div><div class="ttdoc">Reloads IWDG counter with value defined in the reload register (write access to IWDG_PR and IWDG_RLR ...</div><div class="ttdef"><b>Definition</b> stm32f10x_iwdg.c:138</div></div>
+<div class="ttc" id="agroup___i_w_d_g___exported___functions_html_gae2a14752a0431f23cb80cebf202ac365"><div class="ttname"><a href="group___i_w_d_g___exported___functions.html#gae2a14752a0431f23cb80cebf202ac365">IWDG_SetReload</a></div><div class="ttdeci">void IWDG_SetReload(uint16_t Reload)</div><div class="ttdoc">Sets IWDG Reload value.</div><div class="ttdef"><b>Definition</b> stm32f10x_iwdg.c:125</div></div>
+<div class="ttc" id="agroup___i_w_d_g___exported___functions_html_gae466681e5bdc11b353c508b89d75ca05"><div class="ttname"><a href="group___i_w_d_g___exported___functions.html#gae466681e5bdc11b353c508b89d75ca05">IWDG_WriteAccessCmd</a></div><div class="ttdeci">void IWDG_WriteAccessCmd(uint16_t IWDG_WriteAccess)</div><div class="ttdoc">Enables or disables write access to IWDG_PR and IWDG_RLR registers.</div><div class="ttdef"><b>Definition</b> stm32f10x_iwdg.c:92</div></div>
+<div class="ttc" id="astm32f10x_8h_html"><div class="ttname"><a href="stm32f10x_8h.html">stm32f10x.h</a></div><div class="ttdoc">CMSIS Cortex-M3 Device Peripheral Access Layer Header File. This file contains all the peripheral reg...</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

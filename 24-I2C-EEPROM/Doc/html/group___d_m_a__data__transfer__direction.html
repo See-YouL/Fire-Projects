@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>24-I2C-EEPROM读写实验: DMA_data_transfer_direction</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">24-I2C-EEPROM读写实验<span id="projectnumber">&#160;None</span>
+   </div>
+   <div id="projectbrief">I2C-EEPROM读写实验</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">DMA_data_transfer_direction<div class="ingroups"><a class="el" href="group___s_t_m32_f10x___std_periph___driver.html">STM32F10x_StdPeriph_Driver</a> &raquo; <a class="el" href="group___d_m_a.html">DMA</a> &raquo; <a class="el" href="group___d_m_a___exported___constants.html">DMA_Exported_Constants</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga51567b748ddac277743c65c20275971a" id="r_ga51567b748ddac277743c65c20275971a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga51567b748ddac277743c65c20275971a">DMA_DIR_PeripheralDST</a>&#160;&#160;&#160;((uint32_t)0x00000010)</td></tr>
+<tr class="separator:ga51567b748ddac277743c65c20275971a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ce120a044359410136695a2c05df68e" id="r_ga5ce120a044359410136695a2c05df68e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5ce120a044359410136695a2c05df68e">DMA_DIR_PeripheralSRC</a>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
+<tr class="separator:ga5ce120a044359410136695a2c05df68e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaad13d2b5808e32a35a2d21bcdbb2296" id="r_gaaad13d2b5808e32a35a2d21bcdbb2296"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaad13d2b5808e32a35a2d21bcdbb2296">IS_DMA_DIR</a>(DIR)</td></tr>
+<tr class="separator:gaaad13d2b5808e32a35a2d21bcdbb2296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ga51567b748ddac277743c65c20275971a" name="ga51567b748ddac277743c65c20275971a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga51567b748ddac277743c65c20275971a">&#9670;&#160;</a></span>DMA_DIR_PeripheralDST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA_DIR_PeripheralDST&#160;&#160;&#160;((uint32_t)0x00000010)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga5ce120a044359410136695a2c05df68e" name="ga5ce120a044359410136695a2c05df68e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5ce120a044359410136695a2c05df68e">&#9670;&#160;</a></span>DMA_DIR_PeripheralSRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA_DIR_PeripheralSRC&#160;&#160;&#160;((uint32_t)0x00000000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaaad13d2b5808e32a35a2d21bcdbb2296" name="gaaad13d2b5808e32a35a2d21bcdbb2296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaad13d2b5808e32a35a2d21bcdbb2296">&#9670;&#160;</a></span>IS_DMA_DIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IS_DMA_DIR</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">DIR</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">                         (((DIR) == <a class="code hl_define" href="#ga51567b748ddac277743c65c20275971a">DMA_DIR_PeripheralDST</a>) || \</div>
+<div class="line">                         ((DIR) == <a class="code hl_define" href="#ga5ce120a044359410136695a2c05df68e">DMA_DIR_PeripheralSRC</a>))</div>
+<div class="ttc" id="agroup___d_m_a__data__transfer__direction_html_ga51567b748ddac277743c65c20275971a"><div class="ttname"><a href="#ga51567b748ddac277743c65c20275971a">DMA_DIR_PeripheralDST</a></div><div class="ttdeci">#define DMA_DIR_PeripheralDST</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:112</div></div>
+<div class="ttc" id="agroup___d_m_a__data__transfer__direction_html_ga5ce120a044359410136695a2c05df68e"><div class="ttname"><a href="#ga5ce120a044359410136695a2c05df68e">DMA_DIR_PeripheralSRC</a></div><div class="ttdeci">#define DMA_DIR_PeripheralSRC</div><div class="ttdef"><b>Definition</b> stm32f10x_dma.h:113</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

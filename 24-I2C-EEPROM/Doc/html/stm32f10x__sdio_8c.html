@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>24-I2C-EEPROM读写实验: E:/Personal/IT/Embedded/Stm32/Fire/Fire-Projects/24-I2C-EEPROM/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_sdio.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">24-I2C-EEPROM读写实验<span id="projectnumber">&#160;None</span>
+   </div>
+   <div id="projectbrief">I2C-EEPROM读写实验</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c70ae96152db76c2a98dc36c9d938161.html">24-I2C-EEPROM</a></li><li class="navelem"><a class="el" href="dir_44588f5ef50cc24f69568f0877d8b791.html">Libraries</a></li><li class="navelem"><a class="el" href="dir_62b8510e927d44c4507688017f6363e0.html">STM32F10x_StdPeriph_Driver</a></li><li class="navelem"><a class="el" href="dir_743dd6896234999ca08fe70a3f3445a5.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">stm32f10x_sdio.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This file provides all the SDIO firmware functions.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="stm32f10x__sdio_8h_source.html">stm32f10x_sdio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f10x__rcc_8h_source.html">stm32f10x_rcc.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:gabf07aced03df5f46d57cea1d4f56d1e3" id="r_gabf07aced03df5f46d57cea1d4f56d1e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gabf07aced03df5f46d57cea1d4f56d1e3">SDIO_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#ga95dd0abbc6767893b4b02935fa846f52">SDIO_BASE</a> - <a class="el" href="group___peripheral__memory__map.html#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a>)</td></tr>
+<tr class="separator:gabf07aced03df5f46d57cea1d4f56d1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5d642be874338519fdec175204ca8ed" id="r_gac5d642be874338519fdec175204ca8ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gac5d642be874338519fdec175204ca8ed">CLKCR_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="group___s_d_i_o___private___types_definitions.html#gabf07aced03df5f46d57cea1d4f56d1e3">SDIO_OFFSET</a> + 0x04)</td></tr>
+<tr class="separator:gac5d642be874338519fdec175204ca8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ad1da47f9d84c54eb620b9231ebec86" id="r_ga6ad1da47f9d84c54eb620b9231ebec86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga6ad1da47f9d84c54eb620b9231ebec86">CLKEN_BitNumber</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="separator:ga6ad1da47f9d84c54eb620b9231ebec86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfb5772b9b734972b576309f7ca8bf92" id="r_gabfb5772b9b734972b576309f7ca8bf92"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gabfb5772b9b734972b576309f7ca8bf92">CLKCR_CLKEN_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#gac5d642be874338519fdec175204ca8ed">CLKCR_OFFSET</a> * 32) + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#ga6ad1da47f9d84c54eb620b9231ebec86">CLKEN_BitNumber</a> * 4))</td></tr>
+<tr class="separator:gabfb5772b9b734972b576309f7ca8bf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf12d26702ce7a88d2a3dae87f000b75e" id="r_gaf12d26702ce7a88d2a3dae87f000b75e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="group___s_d_i_o___private___types_definitions.html#gabf07aced03df5f46d57cea1d4f56d1e3">SDIO_OFFSET</a> + 0x0C)</td></tr>
+<tr class="separator:gaf12d26702ce7a88d2a3dae87f000b75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf88f03a42d76974b55dfb8bda65ade97" id="r_gaf88f03a42d76974b55dfb8bda65ade97"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gaf88f03a42d76974b55dfb8bda65ade97">SDIOSUSPEND_BitNumber</a>&#160;&#160;&#160;0x0B</td></tr>
+<tr class="separator:gaf88f03a42d76974b55dfb8bda65ade97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga931e48aa282e2a937308f57f807e0781" id="r_ga931e48aa282e2a937308f57f807e0781"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga931e48aa282e2a937308f57f807e0781">CMD_SDIOSUSPEND_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a> * 32) + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#gaf88f03a42d76974b55dfb8bda65ade97">SDIOSUSPEND_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga931e48aa282e2a937308f57f807e0781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d1112c7b804791a0fffd8b317085aeb" id="r_ga1d1112c7b804791a0fffd8b317085aeb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga1d1112c7b804791a0fffd8b317085aeb">ENCMDCOMPL_BitNumber</a>&#160;&#160;&#160;0x0C</td></tr>
+<tr class="separator:ga1d1112c7b804791a0fffd8b317085aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade06098d1616639ce5f1b70675280b7c" id="r_gade06098d1616639ce5f1b70675280b7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gade06098d1616639ce5f1b70675280b7c">CMD_ENCMDCOMPL_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a> * 32) + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#ga1d1112c7b804791a0fffd8b317085aeb">ENCMDCOMPL_BitNumber</a> * 4))</td></tr>
+<tr class="separator:gade06098d1616639ce5f1b70675280b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab6d83a7ccd4a0d9ea9a09fec263fb25f" id="r_gab6d83a7ccd4a0d9ea9a09fec263fb25f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gab6d83a7ccd4a0d9ea9a09fec263fb25f">NIEN_BitNumber</a>&#160;&#160;&#160;0x0D</td></tr>
+<tr class="separator:gab6d83a7ccd4a0d9ea9a09fec263fb25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08623f1d053677de8b20a6f5f5090edd" id="r_ga08623f1d053677de8b20a6f5f5090edd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga08623f1d053677de8b20a6f5f5090edd">CMD_NIEN_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a> * 32) + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#gab6d83a7ccd4a0d9ea9a09fec263fb25f">NIEN_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga08623f1d053677de8b20a6f5f5090edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd4fd3bb700b879f843ccc867db1832e" id="r_gabd4fd3bb700b879f843ccc867db1832e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gabd4fd3bb700b879f843ccc867db1832e">ATACMD_BitNumber</a>&#160;&#160;&#160;0x0E</td></tr>
+<tr class="separator:gabd4fd3bb700b879f843ccc867db1832e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabb7e537f931b6fdd3b49e826f2e19d7c" id="r_gabb7e537f931b6fdd3b49e826f2e19d7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gabb7e537f931b6fdd3b49e826f2e19d7c">CMD_ATACMD_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#gaf12d26702ce7a88d2a3dae87f000b75e">CMD_OFFSET</a> * 32) + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#gabd4fd3bb700b879f843ccc867db1832e">ATACMD_BitNumber</a> * 4))</td></tr>
+<tr class="separator:gabb7e537f931b6fdd3b49e826f2e19d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga948c1382c4cfd3af3e406c4d0cdd4240" id="r_ga948c1382c4cfd3af3e406c4d0cdd4240"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a>&#160;&#160;&#160;(<a class="el" href="group___s_d_i_o___private___types_definitions.html#gabf07aced03df5f46d57cea1d4f56d1e3">SDIO_OFFSET</a> + 0x2C)</td></tr>
+<tr class="separator:ga948c1382c4cfd3af3e406c4d0cdd4240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2af311e327213503f0dbf3d013b7944" id="r_gab2af311e327213503f0dbf3d013b7944"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gab2af311e327213503f0dbf3d013b7944">DMAEN_BitNumber</a>&#160;&#160;&#160;0x03</td></tr>
+<tr class="separator:gab2af311e327213503f0dbf3d013b7944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43f7336d4f955c6cf1f676ccbc043fe9" id="r_ga43f7336d4f955c6cf1f676ccbc043fe9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga43f7336d4f955c6cf1f676ccbc043fe9">DCTRL_DMAEN_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#gab2af311e327213503f0dbf3d013b7944">DMAEN_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga43f7336d4f955c6cf1f676ccbc043fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga773045c51d3e8daee0c181517c44a2df" id="r_ga773045c51d3e8daee0c181517c44a2df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga773045c51d3e8daee0c181517c44a2df">RWSTART_BitNumber</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="separator:ga773045c51d3e8daee0c181517c44a2df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac776c39dfac0e1ed007217133e1145c3" id="r_gac776c39dfac0e1ed007217133e1145c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gac776c39dfac0e1ed007217133e1145c3">DCTRL_RWSTART_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#ga773045c51d3e8daee0c181517c44a2df">RWSTART_BitNumber</a> * 4))</td></tr>
+<tr class="separator:gac776c39dfac0e1ed007217133e1145c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8c0654ad5cba23281bcfa77ef19b9cf" id="r_gae8c0654ad5cba23281bcfa77ef19b9cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gae8c0654ad5cba23281bcfa77ef19b9cf">RWSTOP_BitNumber</a>&#160;&#160;&#160;0x09</td></tr>
+<tr class="separator:gae8c0654ad5cba23281bcfa77ef19b9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga678da1db835676b0fb1976cf3408e2d1" id="r_ga678da1db835676b0fb1976cf3408e2d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga678da1db835676b0fb1976cf3408e2d1">DCTRL_RWSTOP_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#gae8c0654ad5cba23281bcfa77ef19b9cf">RWSTOP_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga678da1db835676b0fb1976cf3408e2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7b722671f65e79d1be2899b643278ad" id="r_gad7b722671f65e79d1be2899b643278ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gad7b722671f65e79d1be2899b643278ad">RWMOD_BitNumber</a>&#160;&#160;&#160;0x0A</td></tr>
+<tr class="separator:gad7b722671f65e79d1be2899b643278ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad34bfe8650534ce24320ae83886c91e3" id="r_gad34bfe8650534ce24320ae83886c91e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gad34bfe8650534ce24320ae83886c91e3">DCTRL_RWMOD_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#gad7b722671f65e79d1be2899b643278ad">RWMOD_BitNumber</a> * 4))</td></tr>
+<tr class="separator:gad34bfe8650534ce24320ae83886c91e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37f3e1612e0dae8160be978ebfa54301" id="r_ga37f3e1612e0dae8160be978ebfa54301"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga37f3e1612e0dae8160be978ebfa54301">SDIOEN_BitNumber</a>&#160;&#160;&#160;0x0B</td></tr>
+<tr class="separator:ga37f3e1612e0dae8160be978ebfa54301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga894f7da62b89ddd9f4b79d066056a3c7" id="r_ga894f7da62b89ddd9f4b79d066056a3c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga894f7da62b89ddd9f4b79d066056a3c7">DCTRL_SDIOEN_BB</a>&#160;&#160;&#160;(<a class="el" href="group___peripheral__memory__map.html#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a> + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#ga948c1382c4cfd3af3e406c4d0cdd4240">DCTRL_OFFSET</a> * 32) + (<a class="el" href="group___s_d_i_o___private___types_definitions.html#ga37f3e1612e0dae8160be978ebfa54301">SDIOEN_BitNumber</a> * 4))</td></tr>
+<tr class="separator:ga894f7da62b89ddd9f4b79d066056a3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8d10dd1e49ca9e8a6954146654e9a01" id="r_gac8d10dd1e49ca9e8a6954146654e9a01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#gac8d10dd1e49ca9e8a6954146654e9a01">CLKCR_CLEAR_MASK</a>&#160;&#160;&#160;((uint32_t)0xFFFF8100)</td></tr>
+<tr class="separator:gac8d10dd1e49ca9e8a6954146654e9a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7e6ec7be68d0fbb8fb4e3725cca9a05c" id="r_ga7e6ec7be68d0fbb8fb4e3725cca9a05c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga7e6ec7be68d0fbb8fb4e3725cca9a05c">PWR_PWRCTRL_MASK</a>&#160;&#160;&#160;((uint32_t)0xFFFFFFFC)</td></tr>
+<tr class="separator:ga7e6ec7be68d0fbb8fb4e3725cca9a05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e9fc7810b95805aeeb760bbdd87fa9b" id="r_ga9e9fc7810b95805aeeb760bbdd87fa9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga9e9fc7810b95805aeeb760bbdd87fa9b">DCTRL_CLEAR_MASK</a>&#160;&#160;&#160;((uint32_t)0xFFFFFF08)</td></tr>
+<tr class="separator:ga9e9fc7810b95805aeeb760bbdd87fa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2325d77090e44221b07f8fba5bc9217e" id="r_ga2325d77090e44221b07f8fba5bc9217e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga2325d77090e44221b07f8fba5bc9217e">CMD_CLEAR_MASK</a>&#160;&#160;&#160;((uint32_t)0xFFFFF800)</td></tr>
+<tr class="separator:ga2325d77090e44221b07f8fba5bc9217e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4285ce49b005e3d03ddf9fdc491c4d70" id="r_ga4285ce49b005e3d03ddf9fdc491c4d70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___types_definitions.html#ga4285ce49b005e3d03ddf9fdc491c4d70">SDIO_RESP_ADDR</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral__memory__map.html#ga95dd0abbc6767893b4b02935fa846f52">SDIO_BASE</a> + 0x14))</td></tr>
+<tr class="separator:ga4285ce49b005e3d03ddf9fdc491c4d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:gac359d2c6c67a2590f8f9b720c0e4ff1b" id="r_gac359d2c6c67a2590f8f9b720c0e4ff1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#gac359d2c6c67a2590f8f9b720c0e4ff1b">SDIO_DeInit</a> (void)</td></tr>
+<tr class="memdesc:gac359d2c6c67a2590f8f9b720c0e4ff1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitializes the SDIO peripheral registers to their default reset values.  <br /></td></tr>
+<tr class="separator:gac359d2c6c67a2590f8f9b720c0e4ff1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad40764a8e37c0ed5c9141ae338ff0203" id="r_gad40764a8e37c0ed5c9141ae338ff0203"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#gad40764a8e37c0ed5c9141ae338ff0203">SDIO_Init</a> (<a class="el" href="struct_s_d_i_o___init_type_def.html">SDIO_InitTypeDef</a> *SDIO_InitStruct)</td></tr>
+<tr class="memdesc:gad40764a8e37c0ed5c9141ae338ff0203"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the SDIO peripheral according to the specified parameters in the SDIO_InitStruct.  <br /></td></tr>
+<tr class="separator:gad40764a8e37c0ed5c9141ae338ff0203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga778d338c29df4fae9ef69432e6df32ad" id="r_ga778d338c29df4fae9ef69432e6df32ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga778d338c29df4fae9ef69432e6df32ad">SDIO_StructInit</a> (<a class="el" href="struct_s_d_i_o___init_type_def.html">SDIO_InitTypeDef</a> *SDIO_InitStruct)</td></tr>
+<tr class="memdesc:ga778d338c29df4fae9ef69432e6df32ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills each SDIO_InitStruct member with its default value.  <br /></td></tr>
+<tr class="separator:ga778d338c29df4fae9ef69432e6df32ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7243b857d6b323748ff3a493b265bedc" id="r_ga7243b857d6b323748ff3a493b265bedc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga7243b857d6b323748ff3a493b265bedc">SDIO_ClockCmd</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga7243b857d6b323748ff3a493b265bedc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the SDIO Clock.  <br /></td></tr>
+<tr class="separator:ga7243b857d6b323748ff3a493b265bedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga36ecca32b904de74218fbe65cd5f5270" id="r_ga36ecca32b904de74218fbe65cd5f5270"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga36ecca32b904de74218fbe65cd5f5270">SDIO_SetPowerState</a> (uint32_t SDIO_PowerState)</td></tr>
+<tr class="memdesc:ga36ecca32b904de74218fbe65cd5f5270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the power status of the controller.  <br /></td></tr>
+<tr class="separator:ga36ecca32b904de74218fbe65cd5f5270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3a19de2c7cd51645702213f64a1758ed" id="r_ga3a19de2c7cd51645702213f64a1758ed"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga3a19de2c7cd51645702213f64a1758ed">SDIO_GetPowerState</a> (void)</td></tr>
+<tr class="memdesc:ga3a19de2c7cd51645702213f64a1758ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the power status of the controller.  <br /></td></tr>
+<tr class="separator:ga3a19de2c7cd51645702213f64a1758ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga208f51237ef43288735829dbaed37f00" id="r_ga208f51237ef43288735829dbaed37f00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga208f51237ef43288735829dbaed37f00">SDIO_ITConfig</a> (uint32_t SDIO_IT, <a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga208f51237ef43288735829dbaed37f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the SDIO interrupts.  <br /></td></tr>
+<tr class="separator:ga208f51237ef43288735829dbaed37f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad36fde5ec0ce0c2089b9d971c2271e6e" id="r_gad36fde5ec0ce0c2089b9d971c2271e6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#gad36fde5ec0ce0c2089b9d971c2271e6e">SDIO_DMACmd</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:gad36fde5ec0ce0c2089b9d971c2271e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the SDIO DMA request.  <br /></td></tr>
+<tr class="separator:gad36fde5ec0ce0c2089b9d971c2271e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7117d2f702703f6c0a66bc07707cab23" id="r_ga7117d2f702703f6c0a66bc07707cab23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga7117d2f702703f6c0a66bc07707cab23">SDIO_SendCommand</a> (<a class="el" href="struct_s_d_i_o___cmd_init_type_def.html">SDIO_CmdInitTypeDef</a> *SDIO_CmdInitStruct)</td></tr>
+<tr class="memdesc:ga7117d2f702703f6c0a66bc07707cab23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the SDIO Command according to the specified parameters in the SDIO_CmdInitStruct and send the command.  <br /></td></tr>
+<tr class="separator:ga7117d2f702703f6c0a66bc07707cab23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga09d9e89f49c87c82aec79c97b7068e24" id="r_ga09d9e89f49c87c82aec79c97b7068e24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga09d9e89f49c87c82aec79c97b7068e24">SDIO_CmdStructInit</a> (<a class="el" href="struct_s_d_i_o___cmd_init_type_def.html">SDIO_CmdInitTypeDef</a> *SDIO_CmdInitStruct)</td></tr>
+<tr class="memdesc:ga09d9e89f49c87c82aec79c97b7068e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills each SDIO_CmdInitStruct member with its default value.  <br /></td></tr>
+<tr class="separator:ga09d9e89f49c87c82aec79c97b7068e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9badf271c818e09da301d715c4ad0e5b" id="r_ga9badf271c818e09da301d715c4ad0e5b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga9badf271c818e09da301d715c4ad0e5b">SDIO_GetCommandResponse</a> (void)</td></tr>
+<tr class="memdesc:ga9badf271c818e09da301d715c4ad0e5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns command index of last command for which response received.  <br /></td></tr>
+<tr class="separator:ga9badf271c818e09da301d715c4ad0e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c1e859511840e8cca6a9a768bce220b" id="r_ga5c1e859511840e8cca6a9a768bce220b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga5c1e859511840e8cca6a9a768bce220b">SDIO_GetResponse</a> (uint32_t SDIO_RESP)</td></tr>
+<tr class="memdesc:ga5c1e859511840e8cca6a9a768bce220b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns response received from the card for the last command.  <br /></td></tr>
+<tr class="separator:ga5c1e859511840e8cca6a9a768bce220b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad65d896ae919683585bda44a1e2afae4" id="r_gad65d896ae919683585bda44a1e2afae4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#gad65d896ae919683585bda44a1e2afae4">SDIO_DataConfig</a> (<a class="el" href="struct_s_d_i_o___data_init_type_def.html">SDIO_DataInitTypeDef</a> *SDIO_DataInitStruct)</td></tr>
+<tr class="memdesc:gad65d896ae919683585bda44a1e2afae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the SDIO data path according to the specified parameters in the SDIO_DataInitStruct.  <br /></td></tr>
+<tr class="separator:gad65d896ae919683585bda44a1e2afae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa83209c09e921521aca2587fb5b22ea2" id="r_gaa83209c09e921521aca2587fb5b22ea2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#gaa83209c09e921521aca2587fb5b22ea2">SDIO_DataStructInit</a> (<a class="el" href="struct_s_d_i_o___data_init_type_def.html">SDIO_DataInitTypeDef</a> *SDIO_DataInitStruct)</td></tr>
+<tr class="memdesc:gaa83209c09e921521aca2587fb5b22ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills each SDIO_DataInitStruct member with its default value.  <br /></td></tr>
+<tr class="separator:gaa83209c09e921521aca2587fb5b22ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a28aaa2c25a9a5a8db1f49b0e8c9d0a" id="r_ga7a28aaa2c25a9a5a8db1f49b0e8c9d0a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga7a28aaa2c25a9a5a8db1f49b0e8c9d0a">SDIO_GetDataCounter</a> (void)</td></tr>
+<tr class="memdesc:ga7a28aaa2c25a9a5a8db1f49b0e8c9d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns number of remaining data bytes to be transferred.  <br /></td></tr>
+<tr class="separator:ga7a28aaa2c25a9a5a8db1f49b0e8c9d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e8ac755ef3c31ecd4ed2708df19187e" id="r_ga4e8ac755ef3c31ecd4ed2708df19187e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga4e8ac755ef3c31ecd4ed2708df19187e">SDIO_ReadData</a> (void)</td></tr>
+<tr class="memdesc:ga4e8ac755ef3c31ecd4ed2708df19187e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read one data word from Rx FIFO.  <br /></td></tr>
+<tr class="separator:ga4e8ac755ef3c31ecd4ed2708df19187e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga361008b5252aa33b5f2b5823ee3d7240" id="r_ga361008b5252aa33b5f2b5823ee3d7240"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga361008b5252aa33b5f2b5823ee3d7240">SDIO_WriteData</a> (uint32_t Data)</td></tr>
+<tr class="memdesc:ga361008b5252aa33b5f2b5823ee3d7240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write one data word to Tx FIFO.  <br /></td></tr>
+<tr class="separator:ga361008b5252aa33b5f2b5823ee3d7240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a3343983a2d68b5164a1c89797d2dd6" id="r_ga9a3343983a2d68b5164a1c89797d2dd6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga9a3343983a2d68b5164a1c89797d2dd6">SDIO_GetFIFOCount</a> (void)</td></tr>
+<tr class="memdesc:ga9a3343983a2d68b5164a1c89797d2dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of words left to be written to or read from FIFO.  <br /></td></tr>
+<tr class="separator:ga9a3343983a2d68b5164a1c89797d2dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac88f914d9a68a83abc2265ec8a7b79fc" id="r_gac88f914d9a68a83abc2265ec8a7b79fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#gac88f914d9a68a83abc2265ec8a7b79fc">SDIO_StartSDIOReadWait</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:gac88f914d9a68a83abc2265ec8a7b79fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the SD I/O Read Wait operation.  <br /></td></tr>
+<tr class="separator:gac88f914d9a68a83abc2265ec8a7b79fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca6b25eb2debb73ac827c66f0ebcf837" id="r_gaca6b25eb2debb73ac827c66f0ebcf837"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#gaca6b25eb2debb73ac827c66f0ebcf837">SDIO_StopSDIOReadWait</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:gaca6b25eb2debb73ac827c66f0ebcf837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the SD I/O Read Wait operation.  <br /></td></tr>
+<tr class="separator:gaca6b25eb2debb73ac827c66f0ebcf837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2baac4ea1bb6c2d94345d2712604338a" id="r_ga2baac4ea1bb6c2d94345d2712604338a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga2baac4ea1bb6c2d94345d2712604338a">SDIO_SetSDIOReadWaitMode</a> (uint32_t SDIO_ReadWaitMode)</td></tr>
+<tr class="memdesc:ga2baac4ea1bb6c2d94345d2712604338a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets one of the two options of inserting read wait interval.  <br /></td></tr>
+<tr class="separator:ga2baac4ea1bb6c2d94345d2712604338a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24e210c185d5a7855cbaff4472a8f8d1" id="r_ga24e210c185d5a7855cbaff4472a8f8d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga24e210c185d5a7855cbaff4472a8f8d1">SDIO_SetSDIOOperation</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga24e210c185d5a7855cbaff4472a8f8d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the SD I/O Mode Operation.  <br /></td></tr>
+<tr class="separator:ga24e210c185d5a7855cbaff4472a8f8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9264137a01a1ab81d03bc80a3b3120fc" id="r_ga9264137a01a1ab81d03bc80a3b3120fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga9264137a01a1ab81d03bc80a3b3120fc">SDIO_SendSDIOSuspendCmd</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga9264137a01a1ab81d03bc80a3b3120fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the SD I/O Mode suspend command sending.  <br /></td></tr>
+<tr class="separator:ga9264137a01a1ab81d03bc80a3b3120fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bbe98c629812bc62121d9c8b2c5e21b" id="r_ga1bbe98c629812bc62121d9c8b2c5e21b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga1bbe98c629812bc62121d9c8b2c5e21b">SDIO_CommandCompletionCmd</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga1bbe98c629812bc62121d9c8b2c5e21b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the command completion signal.  <br /></td></tr>
+<tr class="separator:ga1bbe98c629812bc62121d9c8b2c5e21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab44b8cbc21be000a291563076159503b" id="r_gab44b8cbc21be000a291563076159503b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#gab44b8cbc21be000a291563076159503b">SDIO_CEATAITCmd</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:gab44b8cbc21be000a291563076159503b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the CE-ATA interrupt.  <br /></td></tr>
+<tr class="separator:gab44b8cbc21be000a291563076159503b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8dc7f17804bdb745b42f6647c8487b4c" id="r_ga8dc7f17804bdb745b42f6647c8487b4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga8dc7f17804bdb745b42f6647c8487b4c">SDIO_SendCEATACmd</a> (<a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga8dc7f17804bdb745b42f6647c8487b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends CE-ATA command (CMD61).  <br /></td></tr>
+<tr class="separator:ga8dc7f17804bdb745b42f6647c8487b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga644514b4b3c95c5c4326d99cd166f6f9" id="r_ga644514b4b3c95c5c4326d99cd166f6f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga644514b4b3c95c5c4326d99cd166f6f9">SDIO_GetFlagStatus</a> (uint32_t SDIO_FLAG)</td></tr>
+<tr class="memdesc:ga644514b4b3c95c5c4326d99cd166f6f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified SDIO flag is set or not.  <br /></td></tr>
+<tr class="separator:ga644514b4b3c95c5c4326d99cd166f6f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7aff4efdeb528229135f9f285e53518a" id="r_ga7aff4efdeb528229135f9f285e53518a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga7aff4efdeb528229135f9f285e53518a">SDIO_ClearFlag</a> (uint32_t SDIO_FLAG)</td></tr>
+<tr class="memdesc:ga7aff4efdeb528229135f9f285e53518a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the SDIO's pending flags.  <br /></td></tr>
+<tr class="separator:ga7aff4efdeb528229135f9f285e53518a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d64af1f3df0f99cb518f9a89bbd02ac" id="r_ga2d64af1f3df0f99cb518f9a89bbd02ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#ga39d4411201fb731279ad5a409b2b80d7">ITStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga2d64af1f3df0f99cb518f9a89bbd02ac">SDIO_GetITStatus</a> (uint32_t SDIO_IT)</td></tr>
+<tr class="memdesc:ga2d64af1f3df0f99cb518f9a89bbd02ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified SDIO interrupt has occurred or not.  <br /></td></tr>
+<tr class="separator:ga2d64af1f3df0f99cb518f9a89bbd02ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga048e07fd86321cd01b2a22c071c3149b" id="r_ga048e07fd86321cd01b2a22c071c3149b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_d_i_o___private___functions.html#ga048e07fd86321cd01b2a22c071c3149b">SDIO_ClearITPendingBit</a> (uint32_t SDIO_IT)</td></tr>
+<tr class="memdesc:ga048e07fd86321cd01b2a22c071c3149b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the SDIO's interrupt pending bits.  <br /></td></tr>
+<tr class="separator:ga048e07fd86321cd01b2a22c071c3149b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>This file provides all the SDIO firmware functions. </p>
+<dl class="section author"><dt>作者</dt><dd>MCD Application Team </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>V3.5.0 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>11-March-2011 </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd></dd></dl>
+<p>THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.</p>
+<h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>
