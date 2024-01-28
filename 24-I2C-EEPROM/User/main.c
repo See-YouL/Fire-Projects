@@ -35,7 +35,8 @@
  * @{  
  */
 
-uint8_t ReadData[10] = {0};
+uint8_t ReadData[20] = {0};
+uint8_t WriteData[3] = {3, 4, 5};
 
 /**
  * @} 
@@ -55,20 +56,32 @@ int main(void)
     printf("I2C-EEPROM\n");
     /* 初始化I2C */
     I2C_EEPROM_Config();
-    /* STM32向EEPROM写入1字节数据 */
-    EEPROM_Byte_Writting(11, 0x55);
-    /*-----------------------------------------------------------------------
-     * 注意: 
-     * STM32向EEPROM写入数据后
-     * EEPROM需要时间向内部存储期间进行写入
-     * 此时EEPROM不应答
-     * 所以在发送下一次I2C请求之前
-     * 应等待EEPROM写入完成
-     *-----------------------------------------------------------------------*/
-    /* STM32从EEPROM读取1字节数据 */ 
-    EEPROM_Sequential_Read(11, ReadData, 1);
-    /* 将读出的数据打印出来 */
-    printf("ReadData = 0x%x\n", ReadData[0]);
+    /* STM32向EEPROM 地址1写入数据0x01 */
+    EEPROM_Byte_Writting(1, 0x01);
+    /* ACKNOWLEDGE POLLING 确认询问 */
+    EEPROM_ACK_Polling();
+    /* STM32向EEPROM 地址2写入数据0x02 */
+    EEPROM_Byte_Writting(2, 0x02);
+    /* ACKNOWLEDGE POLLING 确认询问 */
+    EEPROM_ACK_Polling();
+    /*----------------------------------------
+     * Page Writting的地址对齐
+     * 为保证数据无误需addr%8 == 0
+     *----------------------------------------*/ 
+    /* STM32向EEPROM 地址3-5写入数据0x03-0x05 */
+    EEPROM_Page_Writting(0x03, WriteData, 3);
+    /* ACKNOWLEDGE POLLING 确认询问 */
+    EEPROM_ACK_Polling();
+    /* STM32从EEPROM以SequentialRead方式读取地址1-4的数据 */ 
+    EEPROM_Sequential_Read((uint8_t)1, ReadData, 4);
+    /* STM32从EEPROM以RandomRead方式读取地址5的数据 */ 
+    EEPROM_Random_Read((uint8_t)5, &ReadData[4]);
+    /* 将读出的数据循环打印 */
+    for (uint8_t i = 0; i < 5; i++)
+    {
+        printf("ReadData[%d] = 0x%x\n", i, ReadData[i]);
+    }
+    
     /* 空循环 */
     while(1)
     {

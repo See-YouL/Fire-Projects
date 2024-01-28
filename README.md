@@ -5035,7 +5035,6 @@ AT24C02可存储256字节数据
 - WP: 写保护, 置1启用写保护
 - NC: 不连接
 
-
 设备地址
 
 ![设备地址](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271702961.png)
@@ -5095,6 +5094,23 @@ AT24C02的Page Write(以页方式写数据)操作, 又称突发写入(即仅发�
 6. 高位地址不会递增, 从而保证原来的初始数据地址不发生改变(确保低三位正确递增)
 7. 当递增的地址到达Page的界限后, 剩下的8位数据会覆盖Page的开头
 8. 如果向EEPROM传输的DATA超过8个字节(对于AT24C02), 则数据会从头覆盖
+```
+
+AT24C02的ACKNOWLEDGE POLLING(确认询问)
+
+![ACKNOWLEDGE POLLING](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280423663.png)
+
+```tex
+一旦内部定时写周期开始并且EEPROM输入被禁用，可以启动确认轮询。
+这涉及发送一个启动条件，后跟设备地址。读/写位是代表所需的操作。
+仅当内部写周期完成时EEPROM 会响应“0”，允许继续读取或写入序列
+```
+
+*需要在向AT24C02写入数据操作后, 进行确认询问, 主机需要发送启动条件, 设备地址, 读写位, 如果AT24C02准备完毕会响应0才能继续进行才做*
+
+软件编程实现如下
+```c
+
 ```
 
 AT24C02的Current Address Read(从当前地址读数据)操作

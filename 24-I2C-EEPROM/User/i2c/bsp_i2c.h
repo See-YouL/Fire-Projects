@@ -18,8 +18,6 @@
 #include "stm32f10x.h"
 #include "stm32f10x_conf.h"
 
-// I2C的引脚宏定义 @ref
-
 /**
  * @defgroup I2C_EEPROM_Define 
  * @{
@@ -60,8 +58,10 @@
 
 void I2C_EEPROM_Config(void);
 void EEPROM_Byte_Writting(uint8_t WordAddress, uint8_t Data);
+void EEPROM_Page_Writting(uint8_t WordAddress, uint8_t* Data, uint8_t NumByteToWrite);
 void EEPROM_Random_Read(uint8_t WordAddress, uint8_t* Data);
 void EEPROM_Sequential_Read(uint8_t WordAddress, uint8_t* Data, uint8_t NumByteToRead);
+void EEPROM_ACK_Polling(void);
 
 /**
  * @} 

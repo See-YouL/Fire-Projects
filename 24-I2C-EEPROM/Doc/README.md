@@ -1,5 +1,3 @@
-# README
-
 ## I2C-读写EEPROM
 
 ### 补充: I2C简介
@@ -396,7 +394,6 @@ AT24C02可存储256字节数据
 - WP: 写保护, 置1启用写保护
 - NC: 不连接
 
-
 设备地址
 
 ![设备地址](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271702961.png)
@@ -458,6 +455,50 @@ AT24C02的Page Write(以页方式写数据)操作, 又称突发写入(即仅发�
 8. 如果向EEPROM传输的DATA超过8个字节(对于AT24C02), 则数据会从头覆盖
 ```
 
+AT24C02的ACKNOWLEDGE POLLING(确认轮询)
+
+![ACKNOWLEDGE POLLING](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280423663.png)
+
+```tex
+一旦内部定时写周期开始并且EEPROM输入被禁用，可以启动确认轮询。
+这涉及发送一个启动条件，后跟设备地址。读/写位是代表所需的操作。
+仅当内部写周期完成时EEPROM 会响应“0”，允许继续读取或写入序列
+```
+
+*需要在向AT24C02写入数据操作后, 进行确认询问, 主机需要发送启动条件, 设备地址, 读写位, 如果AT24C02准备完毕会响应0才能继续进行才做*
+
+以I2C1为例, 软件编程实现如下
+
+```c
+/**
+ * @brief ACKNOWLEDGE POLLING 对EEPROM进行确认询问 
+ *   STM32向EEPROM写入数据后, EEPROM需要时间向内部存储期间进行写入
+ *   此时EEPROM不应答, 所以在发送下一次I2C请求之前,应等待EEPROM写入完成
+ *   以上步骤称为ACKNOWLEDGE POLLING
+ * @param None
+ * @retval None
+ */
+void EEPROM_ACK_Polling(void)
+{
+    do
+    {
+    /* STM32产生START信号 */
+    I2C_GenerateSTART(EEPROM_I2C, ENABLE);
+    /* 等待EV5事件完成, SB=1(未设置检测时间超时, 不严谨) */
+    while(I2C_GetFlagStatus(EEPROM_I2C, I2C_FLAG_SB) == RESET)
+    {
+       ;
+    }
+    /* STM32发送EEPROM的写地址 */
+    I2C_Send7bitAddress(EEPROM_I2C, EEPROM_I2C_WRITE_ADDRESS, I2C_Direction_Transmitter);
+    } while (I2C_GetFlagStatus(EEPROM_I2C, I2C_FLAG_ADDR) == RESET); 
+    /* 循环监测EV6事件(ADDR=1)(接收)完成(未设置检测时间超时, 不严谨) */
+    /* 结束询问 */
+    I2C_GenerateSTOP(EEPROM_I2C, ENABLE);
+}
+
+```
+
 AT24C02的Current Address Read(从当前地址读数据)操作
 
 ![Current Address Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271810617.png)
@@ -516,3 +557,512 @@ AT24C02的Sequential Read(顺序读数据)操作
   6. 编写Page Write和Sequential Read函数进行校验
 
 在bsp_i2c.h中定义相关宏
+
+```c
+/**
+ * @defgroup I2C_EEPROM_Define 
+ * @{
+ */
+
+/**
+ * @brief I2C的宏定义
+ */
+
+#define EEPROM_I2C I2C1 /*!< EEPROM所使用的I2Cx */
+#define EEPROM_I2C_CLK RCC_APB1Periph_I2C1 /*!< I2C的时钟 */
+#define EEPROM_I2C_APBxClkCmd RCC_APB1PeriphClockCmd /*!< I2C时钟的使能函数 */
+#define EEPROM_I2C_BAUDRATE 400000 /*!< I2C的通信速率 */
+#define STM32_I2C_OWN_ADDR 0x5F /*!< STM32在I2C总线上的自身地址, 可任意配置(只要在I2C总线上唯一即可) */
+#define EEPROM_I2C_WRITE_ADDRESS 0xA0 /*!< EEPROM在I2C总线上的8位写地址 */
+#define EEPROM_I2C_READ_ADDRESS 0xA1 /*!< EEPROM在I2C总线上的8位读地址 */
+
+/**
+ * @brief I2C的GPIO引脚宏定义
+ */
+
+#define EEPROM_I2C_SCL_GPIO_CLK (RCC_APB2Periph_GPIOB) /*!< I2C的SCL引脚的GPIO时钟 */
+#define EEPROM_I2C_SDA_GPIO_CLK (RCC_APB2Periph_GPIOB) /*!< I2C的SDA引脚的GPIO时钟 */
+#define EEPROM_I2C_GPIO_APBxClkCmd RCC_APB2PeriphClockCmd /*!< I2C的GPIO时钟的使能函数 */
+#define EEPROM_I2C_SCL_GPIO_PORT GPIOB /*!< I2C的SCL引脚的GPIO端口 */
+#define EEPROM_I2C_SCL_GPIO_Pin GPIO_Pin_6 /*!< I2C的SCL引脚的GPIO引脚 */
+#define EEPROM_I2C_SDA_GPIO_PORT GPIOB /*!< I2C的SDA引脚的GPIO端口 */
+#define EEPROM_I2C_SDA_GPIO_Pin GPIO_Pin_7 /*!< I2C的SDA引脚的GPIO引脚 */
+
+/**
+ * @} 
+ */
+```
+
+在bsp_i2c.h中进行函数声明
+
+```c
+/**
+ * @defgroup EEPROM_I2C_Functions 
+ * @{
+ */
+
+void I2C_EEPROM_Config(void);
+void EEPROM_Byte_Writting(uint8_t WordAddress, uint8_t Data);
+void EEPROM_Page_Writting(uint8_t WordAddress, uint8_t* Data, uint8_t NumByteToWrite);
+void EEPROM_Random_Read(uint8_t WordAddress, uint8_t* Data);
+void EEPROM_Sequential_Read(uint8_t WordAddress, uint8_t* Data, uint8_t NumByteToRead);
+void EEPROM_ACK_Polling(void);
+
+/**
+ * @} 
+ * 
+ */
+```
+
+在bsp_i2c.c中编写I2C_EEPROM配置函数
+
+```c
+/**
+ * @brief I2C EEPROM配置函数 
+ * @param None
+ * @retval None 
+ */
+void I2C_EEPROM_Config(void)
+{
+    GPIO_InitTypeDef GPIO_InitStructure;
+    I2C_InitTypeDef I2C_InitStructure;
+
+    /*-------------------------- 时钟配置 ------------------------------*/
+    /* 使能I2C GPIO的时钟 */
+    EEPROM_I2C_GPIO_APBxClkCmd(EEPROM_I2C_SCL_GPIO_CLK | EEPROM_I2C_SDA_GPIO_CLK, ENABLE);
+    /* 使能I2C的时钟 */
+    EEPROM_I2C_APBxClkCmd(EEPROM_I2C_CLK, ENABLE);
+
+    /*-------------------------- I2C_SCL的GPIO配置 ------------------------------*/
+    /* 配置引脚为I2C的SCL */
+    GPIO_InitStructure.GPIO_Pin = EEPROM_I2C_SCL_GPIO_Pin;
+    /* 配置输出速率为50MHz */
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    /* 配置模式开漏复用输出 */
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;
+    /* 初始化I2C_SCL的GPIO配置 */ 
+    GPIO_Init(EEPROM_I2C_SCL_GPIO_PORT, &GPIO_InitStructure);
+
+    /*-------------------------- I2C_SDA的GPIO配置 ------------------------------*/
+    /* 配置引脚为I2C的SDA */
+    GPIO_InitStructure.GPIO_Pin = EEPROM_I2C_SDA_GPIO_Pin;
+    /* 配置输出速率为50MHz */
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    /* 配置模式开漏复用输出 */
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;
+    /* 初始化I2C_SDA的GPIO配置 */ 
+    GPIO_Init(EEPROM_I2C_SDA_GPIO_PORT, &GPIO_InitStructure);
+
+    /*-------------------------- I2C的工作模式配置 ------------------------------*/
+    /* 使能响应 */
+    I2C_InitStructure.I2C_Ack = I2C_Ack_Enable;
+    /* 使用7位地址 */
+    I2C_InitStructure.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
+    /* 时钟频率 400kHz*/
+    I2C_InitStructure.I2C_ClockSpeed = EEPROM_I2C_BAUDRATE;
+    /* 占空比 Tlow/Thigh = 2 */
+    I2C_InitStructure.I2C_DutyCycle = I2C_DutyCycle_2;
+    /* 模式 I2C */
+    I2C_InitStructure.I2C_Mode = I2C_Mode_I2C;
+    /* STM32主机地址 */
+    I2C_InitStructure.I2C_OwnAddress1 = STM32_I2C_OWN_ADDR;
+    /* 初始化I2C */
+    I2C_Init(EEPROM_I2C, &I2C_InitStructure); 
+    /* 使能I2C */
+    I2C_Cmd(EEPROM_I2C, ENABLE);
+}
+```
+
+在bsp_i2c.c中编写Byte Writting方式的函数
+
+```c
+/**
+ * @brief 函数实现了STM32作为主发送器向EEPROM以Byte Writting的方式写数据 
+ * @param WordAddress: 需要写入的字节所在的地址
+ * @param Data: 真正要写入的内容
+ * @retval None
+ */
+void EEPROM_Byte_Writting(uint8_t WordAddress, uint8_t Data)
+{
+/*---------------- STM32发送WordAddress ----------------*/
+    /* STM32产生START信号 */
+    I2C_GenerateSTART(EEPROM_I2C, ENABLE);
+    /* 等待EV5事件完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_MODE_SELECT) == ERROR)
+    {
+        ;
+    }
+    /* STM32发送EEPROM的写地址 */
+    I2C_Send7bitAddress(EEPROM_I2C, EEPROM_I2C_WRITE_ADDRESS, I2C_Direction_Transmitter);
+    /* 等待EV6事件(发送)完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED) == ERROR)
+    {
+       ;
+    }
+    /* 不检测EV8事件(I2C_SRx:TxE[7] = 1, 数据寄存器空很正常, 不进行检测) */
+    /* STM32向EEPROM发送WordAddress */
+    I2C_SendData(EEPROM_I2C, WordAddress);
+    /* 等待EV8事件完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_BYTE_TRANSMITTING) == ERROR)
+    {
+        ;
+    }
+/*---------------- STM32发送Data ----------------*/
+    /* STM32向EEPROM发送Data */
+    I2C_SendData(EEPROM_I2C, Data);
+    /* 等待EV8_2事件完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_BYTE_TRANSMITTED) == ERROR)
+    {
+       ;
+    }
+    /* STM32产生STOP信号 */
+    I2C_GenerateSTOP(EEPROM_I2C, ENABLE);
+    /* STM32使能ACK信号, 恢复到默认状态 */
+    I2C_AcknowledgeConfig(EEPROM_I2C, ENABLE);
+}
+```
+
+在bsp_i2c.c中编写Page Writting方式的函数
+
+```c
+/**
+ * @brief 函数实现了STM32作为主发送器向EEPROM以Page Writting的方式写数据(每次不超过8字节) 
+ * @param WordAddress: 需要写入的字节所在的地址
+ * @param Data: 真正要写入的数据的指针
+ * @param NumByteToWrite: 要写入数据的个数小于8
+ * @retval None
+ */
+void EEPROM_Page_Writting(uint8_t WordAddress, uint8_t* Data, uint8_t NumByteToWrite)
+{
+/*---------------- STM32发送WordAddress ----------------*/
+    /* STM32产生START信号 */
+    I2C_GenerateSTART(EEPROM_I2C, ENABLE);
+    /* 等待EV5事件完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_MODE_SELECT) == ERROR)
+    {
+        ;
+    }
+    /* STM32发送EEPROM的写地址 */
+    I2C_Send7bitAddress(EEPROM_I2C, EEPROM_I2C_WRITE_ADDRESS, I2C_Direction_Transmitter);
+    /* 等待EV6事件(发送)完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED) == ERROR)
+    {
+       ;
+    }
+    /* 不检测EV8事件(I2C_SRx:TxE[7] = 1, 数据寄存器空很正常, 不进行检测) */
+    /* STM32向EEPROM发送WordAddress */
+    I2C_SendData(EEPROM_I2C, WordAddress);
+    /* 等待EV8事件完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_BYTE_TRANSMITTING) == ERROR)
+    {
+        ;
+    }
+/*---------------- STM32发送Data ----------------*/
+    /* 循环写入数据 */
+    while(NumByteToWrite)
+    {
+        /* STM32向EEPROM发送Data */
+        I2C_SendData(EEPROM_I2C, *Data);
+        /* 数据指针自增 */
+        Data++;
+        /* 等待EV8_2事件完成(未设置检测时间超时, 不严谨) */
+        while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_BYTE_TRANSMITTED) == ERROR)
+        {
+        ;
+        }
+        NumByteToWrite--;
+    }
+    /* STM32产生STOP信号 */
+    I2C_GenerateSTOP(EEPROM_I2C, ENABLE);
+    /* STM32使能ACK信号, 恢复到默认状态 */
+    I2C_AcknowledgeConfig(EEPROM_I2C, ENABLE);
+}
+```
+
+在bsp_i2c.c中编写Random Read方式的函数
+
+```c
+/**
+ * @brief 函数实现STM32从EEPROM以Random Read方式读取数据
+ * @param WordAddress: 要读取数据的地址
+ * @param Data: 读取数据要写入到的变量
+ * @retval None
+ */
+void EEPROM_Random_Read(uint8_t WordAddress, uint8_t* Data)
+{
+/*---------------- STM32发送WordAddress ----------------*/
+    /* STM32产生START信号 */
+    I2C_GenerateSTART(EEPROM_I2C, ENABLE);
+    /* 等待EV5事件完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_MODE_SELECT) == ERROR)
+    {
+       ;
+    }
+    /* STM32发送EEPROM的写地址 */
+    I2C_Send7bitAddress(EEPROM_I2C, EEPROM_I2C_WRITE_ADDRESS, I2C_Direction_Transmitter);
+    /* 等待EV6事件(发送)完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED) == ERROR)
+    {
+       ;
+    }
+    /* 不检测EV8事件(I2C_SRx:TxE[7] = 1, 数据寄存器空很正常, 不进行检测) */
+    /* STM32向EEPROM发送WordAddress */
+    I2C_SendData(EEPROM_I2C, WordAddress);
+    /* 等待EV8事件完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_BYTE_TRANSMITTING) == ERROR)
+    {
+       ;
+    }
+/*---------------- STM32接收Data ----------------*/
+    /* STM32另外产生一个START信号 */
+    I2C_GenerateSTART(EEPROM_I2C, ENABLE);
+    /* 等待EV5事件完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_MODE_SELECT) == ERROR)
+    {
+       ;
+    }
+    /* STM32发送EEPROM的读地址 */
+    I2C_Send7bitAddress(EEPROM_I2C, EEPROM_I2C_READ_ADDRESS, I2C_Direction_Receiver);
+    /* 等待EV6事件(接收)完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED) == ERROR)
+    {
+       ;
+    }
+
+    /*------------------------------------------------------------------------
+    * 注意: 
+    * 该部分为STM32接收来自EEPROM的数据
+    * 接收数据部分, 硬件会自动进行接收, 软件编程时无需操作
+    * I2C_ReceiveData函数只是返回I2Cx上最近接收到的数据
+    * 而不是进行数据接收
+    *------------------------------------------------------------------------*/
+
+    /* 监测到EV7事件发生, 说明接收到了新数据 */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_BYTE_RECEIVED ) == ERROR)
+    {
+       ;
+    }
+    /* 将接收到的数据赋值给Data变量 */
+    *Data = I2C_ReceiveData(EEPROM_I2C);
+    /* STM32产生NO ACK响应 */
+    I2C_AcknowledgeConfig(EEPROM_I2C, DISABLE);
+    /* STM32产生STOP信号 */
+    I2C_GenerateSTOP(EEPROM_I2C, ENABLE);
+}
+```
+
+在bsp_i2c.c中编写Sequential Read方式的函数
+
+```c
+/**
+ * @brief 函数实现STM32从EEPROM以Sequential Read方式读取数据
+ * @param WordAddress: 要读取数据的地址
+ * @param Data: 读取数据要写入到的变量
+ * @param NumByteToRead: 要读取数据的个数
+ * @retval None
+ */
+void EEPROM_Sequential_Read(uint8_t WordAddress, uint8_t* Data, uint8_t NumByteToRead)
+{
+/*---------------- STM32发送WordAddress ----------------*/
+    /* STM32产生START信号 */
+    I2C_GenerateSTART(EEPROM_I2C, ENABLE);
+    /* 等待EV5事件完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_MODE_SELECT) == ERROR)
+    {
+       ;
+    }
+    /* STM32发送EEPROM的写地址 */
+    I2C_Send7bitAddress(EEPROM_I2C, EEPROM_I2C_WRITE_ADDRESS, I2C_Direction_Transmitter);
+    /* 等待EV6事件(发送)完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED) == ERROR)
+    {
+      ;
+    }
+    /* 不检测EV8事件(I2C_SRx:TxE[7] = 1, 数据寄存器空很正常, 不进行检测) */
+    /* STM32向EEPROM发送WordAddress */
+    I2C_SendData(EEPROM_I2C, WordAddress);
+    /* 等待EV8事件完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_BYTE_TRANSMITTING) == ERROR)
+    {
+        ;
+    }
+  /*---------------- STM32接收Data ----------------*/
+    /* STM32另外产生一个START信号 */
+    I2C_GenerateSTART(EEPROM_I2C, ENABLE);
+    /* 等待EV5事件完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_MODE_SELECT) == ERROR)
+    {
+       ;
+    }
+    /* STM32发送EEPROM的读地址 */
+    I2C_Send7bitAddress(EEPROM_I2C, EEPROM_I2C_READ_ADDRESS, I2C_Direction_Receiver);
+    /* 等待EV6事件(接收)完成(未设置检测时间超时, 不严谨) */
+    while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED) == ERROR)
+    {
+       ;
+    }
+    /*------------------------------------------------------------------------
+    * 注意: 
+    * 该部分为STM32接收来自EEPROM的数据
+    * 接收数据部分, 硬件会自动进行接收, 软件编程时无需操作
+    * I2C_ReceiveData函数只是返回I2Cx上最近接收到的数据
+    * 而不是进行数据接收
+    *------------------------------------------------------------------------*/
+    while(NumByteToRead)
+    {
+        if (NumByteToRead == 1) /* 如果为最后一个字节, 产生NO ACK响应 */
+        {
+            /* STM32产生NO ACK响应 */
+            I2C_AcknowledgeConfig(EEPROM_I2C, DISABLE);
+        }
+        /* 监测到EV7事件发生, 说明接收到了新数据 */
+        while(I2C_CheckEvent(EEPROM_I2C, I2C_EVENT_MASTER_BYTE_RECEIVED ) == ERROR)
+        {
+            
+        }
+        /* 将接收到的数据赋值给Data变量 */
+        *Data = I2C_ReceiveData(EEPROM_I2C);
+        /* Data 指针自增 */
+        Data++;
+        /* NumByteToRead递减 */
+        NumByteToRead--;
+    }
+    /* STM32产生STOP信号 */
+    I2C_GenerateSTOP(EEPROM_I2C, ENABLE);
+    /* STM32使能ACK信号, 恢复到默认状态 */
+    I2C_AcknowledgeConfig(EEPROM_I2C, ENABLE);
+}
+```
+
+在bsp_i2c.c中编写确认询问函数
+
+```c
+/**
+ * @brief ACKNOWLEDGE POLLING 对EEPROM进行确认轮询
+ *   一旦内部定时写周期开始并且EEPROM输入被禁用，可以启动确认轮询。
+ *   这涉及发送一个启动条件，后跟设备地址。
+ *   读/写位是代表所需的操作。
+ *   仅当内部写周期完成时EEPROM 会响应“0”，允许继续读取或写入序列
+ *   以上步骤称为ACKNOWLEDGE POLLING
+ * @param None
+ * @retval None
+ */
+void EEPROM_ACK_Polling(void)
+{
+    do
+    {
+    /* STM32产生START信号 */
+    I2C_GenerateSTART(EEPROM_I2C, ENABLE);
+    /* 等待EV5事件完成, SB=1(未设置检测时间超时, 不严谨) */
+    while(I2C_GetFlagStatus(EEPROM_I2C, I2C_FLAG_SB) == RESET)
+    {
+       ;
+    }
+    /* STM32发送EEPROM的写地址 */
+    I2C_Send7bitAddress(EEPROM_I2C, EEPROM_I2C_WRITE_ADDRESS, I2C_Direction_Transmitter);
+    } while (I2C_GetFlagStatus(EEPROM_I2C, I2C_FLAG_ADDR) == RESET); 
+    /* 循环监测EV6事件(ADDR=1)(接收)完成(未设置检测时间超时, 不严谨) */
+    /* 结束轮询 */
+    I2C_GenerateSTOP(EEPROM_I2C, ENABLE);
+}
+```
+
+在main.c中进行读写测试
+
+```c
+/**
+  ******************************************************************************
+  * @file    main.c
+  * @author  eric
+  * @version V0.0.1
+  * @date    27-January-2024
+  * @brief   STM32与EEPROM通过I2C协议进行读写测试
+  ******************************************************************************
+  * @attention
+  *
+  * THE PRESENT FUNTIONS WHICH IS FOR GUIDANCE ONLY
+  ******************************************************************************
+  */
+
+/* Includes ------------------------------------------------------------------*/
+#include "stm32f10x.h"
+#include "stm32f10x_conf.h"
+#include "bsp_led.h"
+#include "bsp_usart.h"
+#include "bsp_i2c.h"
+
+/*----------------------------------------------------------------------------
+ * 操作流程:
+ * 
+ * 1. 初始化I2C相关的GPIO
+ * 2. 配置I2C外设的工作模式
+ * 3. 编写I2C写入EEPROM的Byte Write函数 
+ * 4. 编写I2C读取EEPROM的Random Read函数
+ * 5. 使用read函数和write函数进行读写校验
+ * 6. 编写Page Write和Sequential Read函数进行校验
+ *----------------------------------------------------------------------------*/
+
+/**
+ * @defgroup: Global_Values
+ * @{  
+ */
+
+uint8_t ReadData[20] = {0};
+uint8_t WriteData[3] = {3, 4, 5};
+
+/**
+ * @} 
+ * 
+ */
+
+/**
+ * @brief STM32与EEPROM通过I2C协议进行读写测试 
+ * @param None
+ * @retval None 
+ */
+int main(void)
+{
+    /* 初始化USART */
+    USART_Config(); 
+    /* 串口打印 */
+    printf("I2C-EEPROM\n");
+    /* 初始化I2C */
+    I2C_EEPROM_Config();
+    /* STM32向EEPROM 地址1写入数据0x01 */
+    EEPROM_Byte_Writting(1, 0x01);
+    /* ACKNOWLEDGE POLLING 确认询问 */
+    EEPROM_ACK_Polling();
+    /* STM32向EEPROM 地址2写入数据0x02 */
+    EEPROM_Byte_Writting(2, 0x02);
+    /* ACKNOWLEDGE POLLING 确认询问 */
+    EEPROM_ACK_Polling();
+    /*----------------------------------------
+     * Page Writting的地址对齐
+     * 为保证数据无误需addr%8 == 0
+     *----------------------------------------*/ 
+    /* STM32向EEPROM 地址3-5写入数据0x03-0x05 */
+    EEPROM_Page_Writting(0x03, WriteData, 3);
+    /* ACKNOWLEDGE POLLING 确认询问 */
+    EEPROM_ACK_Polling();
+    /* STM32从EEPROM以SequentialRead方式读取地址1-4的数据 */ 
+    EEPROM_Sequential_Read((uint8_t)1, ReadData, 4);
+    /* STM32从EEPROM以RandomRead方式读取地址5的数据 */ 
+    EEPROM_Random_Read((uint8_t)5, &ReadData[4]);
+    /* 将读出的数据循环打印 */
+    for (uint8_t i = 0; i < 5; i++)
+    {
+        printf("ReadData[%d] = 0x%x\n", i, ReadData[i]);
+    }
+    
+    /* 空循环 */
+    while(1)
+    {
+        ;
+    }
+}
+
+```
+
+串口实验现象
+
+![实验现象](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280831099.png)
