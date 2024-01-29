@@ -2,7 +2,7 @@
 
 ## 说明
 
-**本库仅供学习交流使用**
+本库仅供学习交流使用
 
 - 开发板: 野火霸道V2开发板
 - 编译器： ARM v5.06
@@ -11,8 +11,8 @@
 - MDK version: 538A
 - 芯片包: Keil.STM32F1xx_DFP.2.4.1
 - 芯片型号: STM32F103ZET6
-- 参考视频: 【【单片机】野火STM32F103教学视频 (配套霸道/指南者/MINI)【全】(刘火良老师出品) (无字幕)】 https://www.bilibili.com/video/BV1yW411Y7Gw/?p=9&share_source=copy_web&vd_source=0db47c15b9f51dbaa4548ec2dc55dea4
-- 仓库地址: https://github.com/See-YouL/Fire-Projects.git
+- 参考视频: 【【单片机】野火STM32F103教学视频 (配套霸道/指南者/MINI)【全】(刘火良老师出品) (无字幕)】 <https://www.bilibili.com/video/BV1yW411Y7Gw/?p=9&share_source=copy_web&vd_source=0db47c15b9f51dbaa4548ec2dc55dea4>
+- 仓库地址: <https://github.com/See-YouL/Fire-Projects.git>
 
 ## 基础配置
 
@@ -21,7 +21,6 @@
 看视频配置KeilMDK,P2
 
 [看视频配置Keil MDK](https://www.bilibili.com/video/BV1yW411Y7Gw)
-
 
 ### 配置串口下载程序
 
@@ -63,8 +62,8 @@
 - F或L: F表示基础型(Foundation)或高性能型(High-Performance), L表示低功耗型(Ultra-low-power)
 - xxx: 芯片特性, 如性能级别、内存大小、特殊功能等
 - 系列:
-    - F0, F1, F2, F3, F4, F7：这些数字代表不同的性能级别，数字越大，性能通常越高。
-    - L0, L1, L4, L5：这些是低功耗系列，数字越大，性能和功能通常越丰富。
+  - F0, F1, F2, F3, F4, F7：这些数字代表不同的性能级别，数字越大，性能通常越高。
+  - L0, L1, L4, L5：这些是低功耗系列，数字越大，性能和功能通常越丰富。
 - 性能级别: 通常由一到两位数字表示，如STM32F103或STM32L152。这些数字表示不同的性能级别、内存大小和外设
 - 包装类型: 通常由一个字母表示，如STM32F103C8T6中的C表示LQFP48封装
 - 额外特性: 如STM32F103C8T6中的8表示该芯片有64KB闪存，T表示温度范围（-40°C 到 85°C），6表示批次号或版本
@@ -83,7 +82,7 @@
 
 ## 置位与清零
 
-- &= ~(1 << n); **将bitn清零,其他位保持不变**
+- &= ~(1 << n); **将bit n清零,其他位保持不变**
 - |= (1 << n); **将bit n置1,其他位保持不变**
 
 ## GPIO
@@ -147,7 +146,7 @@ GPIO（General-Purpose Input/Output）
 
 对于NMOS, Us=0V < Ug=3.3V, NMOS管导通, OUT=GND=0V
 
-**推挽输出的含义**
+##### 推挽输出的含义
 
 ![推挽输出含义图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2015.23.18.png)
 
@@ -156,7 +155,7 @@ GPIO（General-Purpose Input/Output）
 
 推挽输出（Push-Pull Output）是一种常见的电子电路输出类型，特别是在数字电路和微控制器的GPIO（通用输入/输出）引脚中。这种输出类型的**主要特点是它使用两个晶体管（一个N型和一个P型）来控制输出引脚的电压状态。**
 
-**原理**
+##### 推挽输出的原理
 
 在推挽配置中，通常有两个晶体管：
 
@@ -165,23 +164,23 @@ GPIO（General-Purpose Input/Output）
 
 这两个晶体管不会同时导通，以避免短路。在任何给定的时刻，要么N型晶体管导通将输出拉低，要么P型晶体管导通将输出拉高。
 
-**特点**
+##### 推挽输出的特点
 
 - 强驱动能力：**推挽输出可以提供较强的电流驱动能力**，无论是向输出引脚提供电流（高电平）还是从引脚吸收电流（低电平）。
 - 确定的逻辑状态：输出要么明确地是高电平，要么是低电平，**不会处于悬空（高阻态）状态**。
 - 无需外部上拉或下拉电阻：由于**推挽输出自身就可以明确地驱动高电平或低电平**，因此不需要外部的上拉或下拉电阻来确保稳定的输出状态。
 
-**应用**
+##### 推挽输出的应用
 
 推挽输出广泛应用于各种数字电路，特别是**在需要驱动LED、继电器或其他需要较高电流的负载时**。由于其**强大的驱动能力和清晰的逻辑电平**，推挽输出是实现**数字信号传输**的理想选择。
 
-**对比开漏（Open-Drain）/开集（Open-Collector）**
+##### 推挽输出对比开漏/开集输出
 
 与推挽输出相对的是开漏（在MOSFET技术中）或开集（在双极晶体管技术中）输出，**这种类型的输出只有一个晶体管，要么将输出拉低，要么让它悬空（高阻态）**。开漏/开集输出**需要外部上拉电阻来确保高电平状态**，常用于需要多个设备共享同一输出线的应用，如I2C通信协议。
 
 #### 开漏输出
 
-**内部只能输出低电平,不能输出高电平**
+内部只能输出低电平,不能输出高电平
 
 ![当ODR为1时开漏输出原理图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2015.23.18.png)
 
@@ -195,24 +194,24 @@ ODR=0, 经反相器为1, Vg=1 > Vs=0, NMOS管导通, 此时OUT=0V
 
 开漏输出（Open-Drain Output，在使用MOSFET技术的情况下称为开漏，而在使用双极性晶体管的情况下称为开集（Open-Collector）输出）是一种常见的电子电路设计，特别是在数字电路和微控制器的GPIO（通用输入/输出）引脚中。这种输出类型的**主要特点是它使用单个晶体管来控制输出引脚的电压状态，而不是像推挽输出那样使用两个晶体管。**
 
-**开漏输出的原理**
+##### 开漏输出的原理
 
 在开漏配置中，只有一个N型晶体管：
 
 - N型晶体管：当晶体管导通（激活）时，它将输出引脚连接到地（GND），产生低电平（0）输出。当晶体管关闭（非激活）时，输出引脚不连接到任何东西，处于悬空状态。
 - 由于输出在晶体管关闭时处于悬空状态，因此通常需要一个外部的上拉电阻连接到正电源（VCC），以确保当晶体管关闭时输出能够达到高电平（1）。
 
-**特点**
+##### 开漏输出的特点
 
 - 单向驱动能力：开漏输出**只能将输出拉低，不能主动驱动高电平**。
 - 需要外部上拉电阻：**为了确保输出能够达到高电平，需要外部上拉电阻**。
 - 适合于总线和共享线路：开漏输出非常**适合于多个设备共享同一输出线的应用**，因为任何一个设备都可以将线路拉低，而不会对其他设备造成干扰。
 
-**应用**
+##### 开漏输出的应用
 
 开漏输出**常用于需要多个设备共享同一通信线路的场合**，如I2C和1-Wire通信协议。在这些应用中，**多个设备可以连接到同一条线路上，每个设备都可以通过将线路拉低来发送信号，而不会影响其他设备。**
 
-**对比推挽输出**
+##### 开漏输出对比推挽输出
 
 与开漏输出相对的是推挽输出，后者使用两个晶体管（一个N型和一个P型）来分别驱动高电平和低电平。推挽输出可以主动驱动高电平和低电平，而**开漏输出只能驱动低电平，需要外部上拉电阻来实现高电平状态。**
 
@@ -220,41 +219,41 @@ ODR=0, 经反相器为1, Vg=1 > Vs=0, NMOS管导通, 此时OUT=0V
 
 **高阻态（High-Impedance State），通常简称为Hi-Z**，是电子电路中的一个术语，用来描述一个电路节点在特定条件下呈现出非常高电阻的状态。在这种状态下，**电路节点既不明显地连接到电源（高电平），也不明显地连接到地（低电平）**。换句话说，这个节点处于一种“断开”或“浮空”的状态，对电路中的其他部分几乎没有任何电气影响。
 
-**高阻态的应用**
+##### 高阻态的应用
 
 - **三态逻辑（Tri-state Logic）**：在数字电路中，高阻态常用于三态逻辑，**允许多个输出连接到同一个线路或总线上，而不会相互干扰**只有被选中的设备会将其输出置于低电阻状态（高电平或低电平），其他设备的输出则处于高阻态。
 - **总线系统**：在微处理器、微控制器和其他数字系统的总线（如数据总线、地址总线）上，高阻态用于控制哪个设备可以在特定时刻向总线发送数据。
 - **输入/输出端口**：在可编程的微控制器的GPIO（通用输入/输出）端口中，**高阻态可以用来防止未使用的或被配置为输入的端口对电路造成影响**。
 
-**高阻态的重要性**
+##### 高阻态的重要性
 
 - **避免冲突**：在多个设备共享同一通信线路时，高阻态可以防止输出冲突。
 - **节能**：当端口处于高阻态时，它几乎不消耗电流，有助于降低功耗。
 - **灵活性**：高阻态提供了电路设计的灵活性，特别是在需要多个设备共享同一资源的情况下。
 
-**注意事项**
+##### 高阻态的注意事项
 
 - **浮动电压**：当一个端口或线路处于高阻态时，它可能会因为电磁干扰或静电感应而捕获不确定的电压，**有时可能需要通过上拉或下拉电阻来确保稳定的逻辑状态**。
 - **设计考虑**：在设计电路和编写程序时，需要考虑到高阻态的影响，确保在适当的时候启用或禁用高阻态。
 
 在电子电路中，**“悬空”（Floating）是指一个电路节点没有被明确连接到电源（高电平）或地（低电平），也没有通过任何电阻或其他电子元件连接到其他电路节点的状态**这种状态下的节点电压是不确定的，因为它既不是被固定在逻辑高也不是逻辑低，而是可以随外部电磁场或附近电路的状态变化而变化。
 
-**悬空状态的特点**
+##### 悬空状态的特点
 
 - 不确定的电压：悬空的节点可能会随机地捕获周围环境的电磁干扰，导致其电压处于不确定的状态。
 - 易受干扰：由于没有明确的电气连接，悬空的节点容易受到外部电磁干扰的影响。
 - 可能导致问题：在数字电路中，悬空的输入引脚可能导致不稳定的逻辑状态，从而引发电路的不可预测行为。
 
-**高阻态与悬空的关系**
+##### 高阻态与悬空的关系
 
 高阻态是一种特定的电路配置，**其中一个节点（如微控制器的GPIO引脚）被设置为非常高的电阻状态。这意味着该节点对电路的其他部分几乎没有电气影响，类似于断开连接**因此，**当一个引脚被设置为高阻态时，它实际上是在悬空状态**，因为它既不是明确地连接到高电平也不是低电平。
 
-**区别和联系**
+##### 高阻态与悬空区别和联系
 
 - 联系：**高阻态通常会导致节点悬空**当一个节点处于高阻态时，由于其极高的电阻值，它实际上与电路的其他部分隔离，从而处于悬空状态。
 - 区别：**高阻态是一种有意设置的电路状态**，用于特定的目的（如防止总线冲突）。而**悬空可能是无意的**，可能是由于设计不当或电路未完成造成的。
 
-**注意事项**
+##### 悬空的注意事项
 
 - 设计考虑：在设计电子电路和系统时，**应避免输入引脚悬空，因为这可能导致不稳定的行为**。通常**使用上拉或下拉电阻来确保这些引脚有一个确定的逻辑状态。**
 - 高阻态应用：在某些情况下，如**多个设备共享一个通信总线，高阻态是必要的，以确保只有一个设备在任何时刻控制总线。**
@@ -267,19 +266,19 @@ ODR=0, 经反相器为1, Vg=1 > Vs=0, NMOS管导通, 此时OUT=0V
 
 #### 输入模式
 
-**ISR读出**
+ISR读出
 
 ![普通模式的输入](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2018.24.03.png)
 
 I/O引脚至上拉/下拉输入(通过BSRR寄存器软件配置), 经TTL肖特基触发器(>2V <1.2V), 至IDR寄存器读出
 
-**复用功能输入**
+复用功能输入
 
 ![复用功能输入](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2018.29.40.png)
 
 以EXTI为例,RX数据经由TTL肖特基触发器到DR寄存器
 
-**模拟输入**
+模拟输入**
 
 ![模拟输入框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2018.33.21.png)
 
@@ -299,7 +298,7 @@ I/O引脚至上拉/下拉输入(通过BSRR寄存器软件配置), 经TTL肖特�
 1. 时钟使能
 2. 选择具体的GPIO
 3. 配置GPIO的工作模式(CRL CRH)
-3. 控制GPIO输出高低电平(ODR,BRR和BSRR)
+4. 控制GPIO输出高低电平(ODR,BRR和BSRR)
 
 ## 手写库
 
@@ -307,7 +306,7 @@ I/O引脚至上拉/下拉输入(通过BSRR寄存器软件配置), 经TTL肖特�
 
 项目地址: **REG-LED**
 
-main.c中的主要代码
+#### main.c中的主要代码
 
 ```c
 *(unsigned int *)(0x40021018) |= ((1) << 3); // RCC_APB2ENR的bit3置1
@@ -341,7 +340,7 @@ GPIOx_ODR 偏移量 0Ch
 
 确定总线基地址, 其中AHB的基地址是从DMA1开始的,即从0x40020000开始
 
-定义在stm32f10x.h中
+#### 在stm32f10x.h中增加宏定义
 
  ```c
 // 存放stm32寄存器映射的代码
@@ -366,7 +365,7 @@ GPIOx_ODR 偏移量 0Ch
 #define GPIOB_ODR (*(volatile unsigned int *)(GPIOB_BASE + 0x0C)) // GPIOB_CRH
  ```
 
-在main.c中的主函数代码改为
+#### 在main.c中的主函数代码改为
 
 ```c
 RCC_APB2ENR |= ((1) << 3); // 开启GPIOB的时钟
@@ -375,18 +374,18 @@ GPIOB_CRL |= ((1) << (4*0)); // 将GPIOB设置为推挽输出
 GPIOB_ODR &= ~(1<<0); // PB0置0
 ```
 
- #### 补充: 关键字volatile的作用
+#### 补充: 关键字volatile的作用
 
 在C语言中，尤其是在嵌入式领域，volatile 关键字用于告诉编译器，**定义为 volatile 的变量可能会以编译器不可预知的方式被改变**。这意味着编译器在处理这些变量时，**应避免进行某些优化，确保每次访问都直接从内存中读取变量的值**。
 
-**含义**
+#### 关键字volatile含义
 
 当一个变量被声明为 volatile 时，编译器会对该变量的处理方式做出以下调整：
 
 - **防止优化**：编译器不会对这些变量进行优化，这可能包括消除看似多余的读取或写入操作。
 - **直接访问**：每次访问 volatile 变量时，都会直接从其内存地址读取数据，而不是使用可能存储在寄存器中的副本。
 
-**应用场景**
+#### 关键字volatile的应用场景
 
 在嵌入式编程中，volatile 关键字的使用场景主要包括：
 
@@ -394,7 +393,7 @@ GPIOB_ODR &= ~(1<<0); // PB0置0
 - **中断服务例程**：在中断服务例程（ISR）中使用的变量，这些变量可能在ISR中被改变，并在程序的其他部分被访问。使用 volatile 可以确保主程序中的代码能够看到在ISR中对这些变量所做的更改。
 - **多线程和并发**：在多线程或并发环境中，一个线程可能修改另一个线程正在访问的变量。volatile 确保每个线程都能访问到最新的值。
 
-**注意事项**
+#### 关键字volative的注意事项
 
 - **不是并发解决方案**：volatile 关键字不能替代互斥锁或其他并发控制机制。它不保证操作的原子性或内存可见性。
 - **性能影响**：由于 volatile 防止了某些优化，过度使用它可能会降低程序的性能。
@@ -404,7 +403,7 @@ GPIOB_ODR &= ~(1<<0); // PB0置0
 
 项目地址: **FWlib-LED**
 
-在stm32f10x.h中添加结构体定义(主要代码)
+#### 在stm32f10x.h中添加结构体定义
 
 ```c
 // 定义结构体
@@ -437,7 +436,7 @@ GPIOB->CRL |= ((1) << (4*1)); // 将GPIOB设置为推挽输出
 GPIOB->ODR &= ~(1<<0); // PB0置0
 ```
 
-在stm32f10x.h中增加RCC的结构体定义,如下
+#### 在stm32f10x.h中增加RCC的结构体定义,如下
 
 ```c
 typedef struct 
@@ -463,7 +462,7 @@ typedef struct
 ----------------------------------------------------------------*/
 ```
 
-在main.c中通过结构体访问RCC寄存器,代码如下
+#### 在main.c中通过结构体访问RCC寄存器,代码如下
 
 ```c
 RCC->APB2ENR |= ((1) << 3); // 开启GPIOB的时钟
@@ -479,7 +478,7 @@ RCC->APB2ENR |= ((1) << 3); // 开启GPIOB的时钟
 
 增加stm32f10x_gpio.c和stm32f10x_gpio.h文件
 
-在stm32f10x_gpio.c中，增加置位/复位函数，如下
+#### 在stm32f10x_gpio.c中增加置位/复位函数
 
 ```c
 #include "stm32f10x_gpio.h"
@@ -507,7 +506,7 @@ void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t Pin)
 }
 ```
 
-在stm32f10x_gpio.h中, 添加**16位PIN置1的宏定义,端口置位/复位函数的声明**
+#### 在stm32f10x_gpio.h中添加16位PIN置1的宏定义与函数声明
 
 ```c
 #ifndef __STM32F10X_GPIO_H
@@ -545,7 +544,7 @@ void GPIO_ResetBits(GPIO_TypeDef* GPIOx, uint16_t Pin);
 #endif // !__STM32F10X_GPIO
 ```
 
-在main.c函数中使用置位/复位函数
+#### 在main.c函数中使用置位/复位函数
 
 ```c
  // 增加复位/置位函数
@@ -556,15 +555,26 @@ GPIO_SetBits(GPIOB,GPIO_Pin_1);
 GPIO_ResetBits( GPIOB,GPIO_Pin_1 );
 ```
 
+#### 在stm32f10x.h中增加#ifndef
+
+```c
+#ifndef __STM32F10X_H
+#define __STM32F10X_H
+
+// 中间代码省略
+
+#endif // !__STM32F10X_H
+```
+
 #### 补充: 在C语言中#ifndef的作用
 
 在C语言中，#ifndef 是一种预处理指令，用于条件编译。它的全称是 "if not defined"，意思是“如果没有定义”。#ifndef 通常与 #define 和 #endif 一起使用，**用于防止头文件的内容被多次包含（重复包含）**。
 
-**作用**
+##### ifndef的作用
 
-#ifndef 的主要作用是**确保一个头文件中的内容只被包含一次，防止因重复包含同一头文件而导致的编译错误**这种技术被称为“包含卫士”（Include Guards）或“头文件卫士”（Header Guards）。
+"#ifndef"的主要作用是**确保一个头文件中的内容只被包含一次，防止因重复包含同一头文件而导致的编译错误**这种技术被称为“包含卫士”（Include Guards）或“头文件卫士”（Header Guards）。
 
-**使用方式**
+##### ifndef的使用方式
 
 一个典型的使用 #ifndef 的例子如下：
 
@@ -586,39 +596,26 @@ void someFunction();
 1. 当编译器首次遇到 example.h 时，EXAMPLE_H 还没有被定义，所以编译器会处理 #define EXAMPLE_H 和随后的头文件内容。
 2. 如果同一源文件或其他包含了 example.h 的文件再次尝试包含 example.h，EXAMPLE_H 已经被定义了，因此 #ifndef EXAMPLE_H 条件失败，编译器将跳过文件的其余部分，防止重复包含。
 
-**重要性**
+##### ifndef的重要性
 
 在C语言项目中，特别是在大型项目中，头文件经常被多个源文件包含，或者一个头文件包含其他头文件。如果没有包含卫士，头文件中的定义（如函数声明、宏定义、类型定义等）可能会被重复包含，导致编译错误（如重复定义错误）。使用 #ifndef 可以有效地避免这种情况。
 
-#### 解决stm32f10x.h重复定义
-
-在stm32f10x.h中增加#ifndef, 如下
-
-```c
-#ifndef __STM32F10X_H
-#define __STM32F10X_H
-
-// 中间代码省略
-
-#endif // !__STM32F10X_H
-```
-
-#### 补充: #ifndef格式问题
+#### 补充: 使用#ifndef命名使用双下划线说明
 
 在C语言中，当使用 #ifndef（和 #define、#endif）作为头文件的包含卫士时，通常会在文件名前加上双下划线 __ 或其他类似的前缀/后缀，**这是一种非正式的约定，用于减少命名冲突的风险**然而，需要注意的是，**使用双下划线作为前缀或后缀在某些情况下可能并不是最佳实践**。
 
-**原因**
+##### 使用双下划线的原因
 
 - **唯一性**：在大型项目中，可能会有许多不同的头文件。使用文件名作为宏的一部分可以帮助确保每个包含卫士的宏是唯一的。
 - **减少冲突**：添加额外的字符（如双下划线）可以进一步减少不同头文件之间宏名称冲突的可能性。
 
-**注意事项**
+##### 使用双下划线的注意事项
 
 **保留标识符**：根据C和C++标准，**以双下划线开头或以单下划线后跟大写字母开头的标识符是保留给实现（编译器和标准库）使用的**。因此，使用这样的标识符作为宏名称**可能会导致与标准库或编译器的内部标识符冲突**。
 
 建议的做法：更安全的做法是**使用文件名的大写形式加上一个后缀（如 _H），而不是使用双下划线**。例如，对于 example.h 头文件，可以使用 EXAMPLE_H 作为包含卫士的宏。
 
-**示例**
+##### 示例
 
 ```c
 #ifndef EXAMPLE_H    // 更安全的做法
@@ -628,6 +625,7 @@ void someFunction();
 
 #endif // EXAMPLE_H
 ```
+
 总之，**虽然在文件名前加上双下划线是一种常见做法，但为了避免与编译器或标准库的内部标识符冲突，建议使用其他方法来确保宏名称的唯一性和安全性**。
 
 ### 增加GPIO初始化结构体
@@ -638,17 +636,17 @@ void someFunction();
 
 ![GPIO工作模式图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202312301523539.png)
 
-**实际写入寄存器的是bit3-0,bit7-4并不写入寄存器**
+实际写入寄存器的是bit3-0,bit7-4并不写入寄存器
 
-*勘误：上拉输入和下拉输入两行的bit3-2应该为10*
+勘误：上拉输入和下拉输入两行的bit3-2应该为10
 
-- bit1-0: 置0, 配置输出速度，通过GPIOSpeed_TypeDef进行覆盖配置 
+- bit1-0: 置0, 配置输出速度，通过GPIOSpeed_TypeDef进行覆盖配置
 - bit3-2: 配置输入/输出模式
 - bi4: **不写入寄存器**, 用来标志是输入还是输出
 - bit6-5: **不写入寄存器**， 用来判断是上拉输入还是下拉输入
 - bit7: **不写入寄存器**
 
-在stm32f10x_gpio.h中增加宏定义
+#### 在stm32f10x_gpio.h中增加宏定义
 
 ```c
 // 通过枚举 限定GPIO_Speed的选择
@@ -683,7 +681,9 @@ typedef struct
 void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct);
 ```
 
-在stm32f10x_gpio.c中写入GPIO初始化函数(**从库函数中复制**)
+#### 在stm32f10x_gpio.c中写入GPIO初始化函数
+
+该函数是从库函数中复制得到
 
 ```c
 // GPIO初始化函数
@@ -695,22 +695,22 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
 /*---------------------- GPIO 模式配置 --------------------------*/
   // 把输入参数GPIO_Mode的低四位暂存在currentmode
   currentmode = ((uint32_t)GPIO_InitStruct->GPIO_Mode) & ((uint32_t)0x0F);
-	
+ 
   // bit4是1表示输出，bit4是0则是输入 
   // 判断bit4是1还是0，即首选判断是输入还是输出模式
   if ((((uint32_t)GPIO_InitStruct->GPIO_Mode) & ((uint32_t)0x10)) != 0x00)
   { 
-	// 输出模式则要设置输出速度
+    // 输出模式则要设置输出速度
     currentmode |= (uint32_t)GPIO_InitStruct->GPIO_Speed;
   }
 /*-------------GPIO CRL 寄存器配置 CRL寄存器控制着低8位IO- -------*/
   // 配置端口低8位，即Pin0~Pin7
   if (((uint32_t)GPIO_InitStruct->GPIO_Pin & ((uint32_t)0x00FF)) != 0x00)
   {
-	// 先备份CRL寄存器的值
+    // 先备份CRL寄存器的值
     tmpreg = GPIOx->CRL;
-		
-	// 循环，从Pin0开始配对，找出具体的Pin
+  
+    // 循环，从Pin0开始配对，找出具体的Pin
     for (pinpos = 0x00; pinpos < 0x08; pinpos++)
     {
 	 // pos的值为1左移pinpos位
@@ -799,7 +799,7 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
 }
 ```
 
-在main.c中使用GPIO初始化函数
+#### 在main.c中使用GPIO初始化函数
 
 ```c
 GPIO_InitTypeDef GPIO_InitStructure;
@@ -813,7 +813,7 @@ GPIO_Init(GPIOB, &GPIO_InitStructure);
 
 项目地址： **FWlib-LED**
 
-在main.c中增加宏定义
+#### 在main.c中增加宏定义
 
 ```c
 #define LED_B_GPIO_PORT	GPIOB
@@ -833,7 +833,7 @@ void Delay(uint32_t count)
 }
 ```
 
-在main.c中使用宏定义后的代码实现LED闪烁
+#### 在main.c中使用宏定义后的代码实现LED闪烁
 
 ```c
 // 增加宏定义以增强代码可移植性
@@ -852,31 +852,32 @@ while(1)
   Delay(0xFFFF);
 }
 ```
+
 ## 固件库编程
 
 ### STM32固件库文件分析
 
 1. 汇编编写的启动文件 startup_stm32f10x_h.s: 设置堆栈指针,设置PC指针，初始化中断向量表，配置系统时钟，调用C库函数_main最终去C的世界
 2. 时钟配置文件 system_stm32f10x.c: 把外部时钟HSE=8M，经过PLL倍频成72M
-3. 外设相关 
-  - stm32f10x.h: 实现了内核之外的外设的寄存器映射
-  - xx: GPIO, USART, I2C, 
-  - stm32f10x_xx.c: 外设的驱动函数库文件
-  - stm32f10x_xx.h: 存放外设的初始化结构体，外设初始化结构体成员的参数列表，外设固件库的头文件声明
-4. 内核相关 
-  - CMSIS: Cortex微控制器软件接口标准
-  - core_cm3.h: 实现了内核里面外设的寄存器映射
-  - core_cm3.c: 内核外设的驱动固件库
-  - NVIC(嵌套向量中断控制器), SysTick(系统滴答定时器), misc.h, misc.c
+3. 外设相关
+   - stm32f10x.h: 实现了内核之外的外设的寄存器映射
+   - xx: GPIO, USART, I2C
+   - stm32f10x_xx.c: 外设的驱动函数库文件
+   - stm32f10x_xx.h: 存放外设的初始化结构体，外设初始化结构体成员的参数列表，外设固件库的头文件声明
+4. 内核相关
+    - CMSIS: Cortex微控制器软件接口标准
+    - core_cm3.h: 实现了内核里面外设的寄存器映射
+    - core_cm3.c: 内核外设的驱动固件库
+    - NVIC(嵌套向量中断控制器), SysTick(系统滴答定时器), misc.h, misc.c
 5. 头文件的配置文件 stm32f10x_conf.h里面包含
-  - stm32f10x_usart.h
-  - stm32f10x_i2c.h
-  - stm32f10x_spi.h
-  - stm32f10x_adc.h
-  - stm32f10x_fsmc.h
-7. 专门存放终端服务函数的C文件(可以放在其他地方，不一定要放在stm32f10x_it.c中)
-  - stm32f10x_it.c
-  - stm32f10x_it.h
+    - stm32f10x_usar.c
+    - stm32f10x_i2c.h
+    - stm32f10x_spi.h
+    - stm32f10x_adc.h
+    - stm32f10x_fsmc.h
+6. 专门存放终端服务函数的C文件(可以放在其他地方，不一定要放在stm32f10x_it.c中)
+    - stm32f10x_it.c
+    - stm32f10x_it.h
 
 ### 新建固件库版本工程
 
@@ -889,14 +890,13 @@ while(1)
 
 其余按照视频配置，P18, 视频链接: [按照P18进行库移植](https://www.bilibili.com/video/BV1yW411Y7Gw/?p=18&share_source=copy_web&vd_source=0db47c15b9f51dbaa4548ec2dc55dea4)
 
-
 ### GPIO输出-使用固件库点亮LED
 
 项目地址: **12-GPIO输出-使用固件库点亮LED**
 
 在User目录下新建led文件夹，添加bsp_led.c和bsp_led.h
 
-在bsp_led.h中添加所使用的宏定义和函数声明
+#### 在bsp_led.h中添加所使用的宏定义和函数声明
 
 ```c
 #ifndef __BSP_LED_H
@@ -915,7 +915,7 @@ void LED_GPIO_Config(void);
 #endif // !__BSP_LED_H
 ```
 
-在bsp_led.c中添加初始化函数
+#### 在bsp_led.c中添加初始化函数
 
 ```c
 // bsp: board support package 板级支持包
@@ -932,7 +932,7 @@ void LED_GPIO_Config(void)
 }
 ```
 
-在main.c中调用初始化函数，并进行软件延时，实现LED闪烁
+#### 在main.c中调用初始化函数，并进行软件延时，实现LED闪烁
 
 ```c
 #include "stm32f10x.h"
@@ -965,9 +965,7 @@ int main(void)
 }
 ```
 
-**增加函数宏定义**
-
-在bsp_led.h中增加如下代码:
+#### 在bsp_led.h中增加函数宏定义
 
 ```c
 #define ON 1 
@@ -979,7 +977,7 @@ int main(void)
 // 使用\可以进行换行，其后不能跟空格，\后应该直接回车
 ```
 
-在main.c中使用宏定义的函数
+#### 在main.c中使用宏定义的函数
 
 ```c
 LED_B(OFF);
@@ -988,18 +986,18 @@ LED_B(ON);
 Delay(0xFFF); // 延时
 ```
 
-#### 使用\的注意事项
-
+#### 补充: C语言反斜杠\换行
 
 在C语言中使用反斜杠 \ 进行换行时，确实有一些需要注意的事项。这种用法通常出现在宏定义或是将长代码行分割为多行以提高代码的可读性。正确使用时，\ 应该放在行尾，紧接着是换行符。
 
-**注意事项**
+##### C语言反斜杠\换行的注意事项
+
 - **无空格**：在行尾使用 \ 时，它之后直到行末不能有任何字符，包括空格或制表符。任何在 \ 之后的空格都会使得换行转义失效，导致编译错误。
 - **紧跟换行符**：\ 应该直接紧跟换行符。这告诉编译器忽略换行符，将下一行视为当前行的延续。
 - **可读性**：虽然使用 \ 可以将长代码行分割为多行，但过度使用可能会降低代码的可读性。适当使用，以保持代码整洁和可维护。
 - **宏定义中的使用**：在宏定义中使用 \ 进行换行是常见的做法，**因为宏定义必须是单行的**。在这种情况下，确保每一行（除了最后一行）都以 \ 结尾。
 
-**示例**
+##### C语言反斜杠\换行的示例
 
 正确的使用：
 
@@ -1016,6 +1014,7 @@ int main() {
     return 0;
 }
 ```
+
 在这个例子中，宏 MY_MACRO 被分成了多行，每行的末尾都使用了 \ 来实现。
 
 错误的使用（如果 \ 后有空格）：
@@ -1042,7 +1041,7 @@ int main() {
 
 实现**按下KEY1后蓝灯状态翻转**
 
-在bsp_led.h中宏定义电平翻转函数
+#### 在bsp_led.h中宏定义电平翻转函数
 
 ```c
 #define LED_B_TOGGLE {LED_B_GPIO_PORT->ODR ^= LED_B_GPIO_PIN;}
@@ -1054,7 +1053,7 @@ ODR低16位和GPIO_Pin_1作异或并重新赋值给ODR可实现ODR的Bit0翻转
 ----------------------------------------------------------------*/
 ```
 
-在bsp_key.h中进行宏定义和函数声明
+#### 在bsp_key.h中进行宏定义和函数声明
 
 ```c
 #ifndef __BSP_KEY_H
@@ -1077,7 +1076,7 @@ uint8_t Key_Scan(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
 #endif // !__BSP_KEY_H
 ```
 
-在bsp_key.c中写初始化函数和端口扫描函数
+#### 在bsp_key.c中写初始化函数和端口扫描函数
 
 ```c
 #include "bsp_key.h"
@@ -1112,7 +1111,7 @@ uint8_t Key_Scan(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
 
 ```
 
-在main.c中进行调用
+#### 在main.c中进行调用
 
 ```c
 int main(void)
@@ -1137,14 +1136,14 @@ int main(void)
 - 第一个操作数的位是0，第二个操作数的位是1。
 - 第一个操作数的位是1，第二个操作数的位是0。
 
-**异或运算的特性**
+##### C语言异或运算的特性
 
 - 交换律：a ^ b 等于 b ^ a。
 - 结合律：(a ^ b) ^ c 等于 a ^ (b ^ c)。
 - 自反性：任何数与自身异或的结果都是0，即 a ^ a 等于 0。
 - 与0的异或：任何数与0异或都等于它本身，即 a ^ 0 等于 a。
 
-**应用**
+##### C语言异或操作的应用
 
 异或运算在C语言编程中有多种应用：
 
@@ -1155,6 +1154,7 @@ a = a ^ b;
 b = a ^ b;
 a = a ^ b;
 ```
+
 这种方法虽然巧妙，但**在实际编程中不常用**，因为如果 a 和 b 指向同一内存位置，这会导致结果为0。
 
 **反转特定位**：可以使用异或运算来反转数值中的特定位。
@@ -1167,7 +1167,7 @@ x = x ^ (1 << n);  // 反转x的第n位
 
 **加密和解密**：由于异或运算的自反性，它可以用于简单的加密和解密操作。
 
-**示例**
+##### C语言异或操作的示例
 
 ```c
 #include <stdio.h>
@@ -1201,7 +1201,6 @@ Cortex-M3微控制器，作为ARM的Cortex-M系列的一部分，提供了位带
 
 ![内存区范围](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401021941642.png)
 
-
 ### 位带操作的原理
 
 位带操作在Cortex-M3中是**通过将一个较大的地址空间（位带区域）映射到一个较小的地址空间（位带别名区域）来实现的**。在Cortex-M3中，有两个主要的位带区域：
@@ -1211,15 +1210,15 @@ Cortex-M3微控制器，作为ARM的Cortex-M系列的一部分，提供了位带
 
 每个位带区域的一个字（32位）对应主存储区的一个位。这意味着，通过写入位带区域的地址，你可以设置或清除主存储区相应位的值。
 
-### 地址映射
+### 位带操作的地址映射
 
 位带操作的地址映射通常遵循以下规则：
 
-**位带别名地址 = 位带基地址 + (字节偏移量 x 32) + (位编号 x 4)**
+位带别名地址 = 位带基地址 + (字节偏移量 x 32) + (位编号 x 4)
 
 其中，**字节偏移量是目标地址相对于位带区域基地址的偏移量**，**位编号是要操作的位**。
 
-### 示例
+### 位带操作的示例
 
 假设有一个外设寄存器的地址为 0x40000000，我们要设置这个寄存器的第2位。首先，我们需要计算这个位在位带别名区域中的地址。
 
@@ -1238,7 +1237,7 @@ unsigned int *alias_address = (unsigned int *)BITBAND_PERIPH(0x40000000, 2);
 *alias_address = 1;  // 设置第2位, 将第二位值设置为1
 ```
 
-### 注意事项
+### 位带操作的注意事项
 
 - 硬件支持：确保你的Cortex-M3微控制器支持位带操作。
 - 地址计算：正确的地址计算对于位带操作至关重要。
@@ -1248,16 +1247,16 @@ unsigned int *alias_address = (unsigned int *)BITBAND_PERIPH(0x40000000, 2);
 
 项目地址: **14-位带操作-GPIO的输出和输入**
 
-**使用位带操作实现GPIO输出: LED_B的闪烁**
+使用位带操作实现GPIO输出: LED_B的闪烁
 
-在main.c中添加位带操作的宏定义
+#### 在main.c中添加位带操作的宏定义
 
 ```c
 #define GPIOB_ODR_Addr (GPIOB_BASE+0x0C)
 #define PBout(n) *(unsigned int*)((GPIOB_ODR_Addr&0xF0000000) + 0x02000000 + ((GPIOB_ODR_Addr&0x00FFFFFF)<<5)+(n<<2))
 ```
 
-在main.c中使用位带操作
+#### 在main.c中使用位带操作点灯
 
 ```c
 while(1)
@@ -1269,16 +1268,17 @@ while(1)
 }
 ```
 
-**使用位带操作实现GPIO输入: KEY1和KEY2控制LED_B状态翻转**
+使用位带操作实现GPIO输入: KEY1和KEY2控制LED_B状态翻转
 
-在bsp_key.h中添加KEY2的宏定义
+#### 在bsp_key.h中添加KEY2的宏定义
 
 ```c
 #define KEY2_GPIO_PIN GPIO_Pin_13 // stm32f10x_gpio.h中定义
 #define KEY2_GPIO_PORT GPIOC // stm32f10x.h中定义 
 #define KEY2_GPIO_CLK RCC_APB2Periph_GPIOC
 ```
-在bsp.c中增加KEY2的GPIO初始化
+
+#### 在bsp.c中增加KEY2的GPIO初始化
 
 ```c
 void KEY_GPIO_Config(void)
@@ -1299,7 +1299,7 @@ void KEY_GPIO_Config(void)
 }
 ```
 
-在main.c中添加GPIO输入位带操作的宏定义
+#### 在main.c中添加GPIO输入位带操作的宏定义
 
 ```c
 #define GPIOA_IDR_Addr (GPIOA_BASE+0x08)
@@ -1308,7 +1308,7 @@ void KEY_GPIO_Config(void)
 #define PCin(n) *(unsigned int*)((GPIOC_IDR_Addr&0xF0000000) + 0x02000000 + ((GPIOC_IDR_Addr&0x00FFFFFF)<<5)+(n<<2))
 ```
 
-在main.c中使用位带操作
+#### 在main.c中测试LED闪烁
 
 ```c
 while(1)
@@ -1781,6 +1781,7 @@ Stack_Size      EQU     0x00000400
 ; 宏定义的伪指令，相当于等于，类似与 C 中的 define。
 ; 将0x00000400命名为Stack_Size, 0x00000400表示1Kb大小
 ```
+
 #### EQU手册说明
 
 ![EQU指令](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031428875.png)
@@ -1798,7 +1799,7 @@ AREA    STACK, NOINIT, READWRITE, ALIGN=3
 ; ALIGN=3，表示按照 2^3 对齐，即 8 字节对齐
 ```
 
-#### AREA手册说明 
+#### AREA手册说明
 
 ![AREA](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401031529274.png)
 
@@ -1810,7 +1811,7 @@ AREA    STACK, NOINIT, READWRITE, ALIGN=3
 
 ### SPACE指令
 
-**SPACE：用于分配一定大小的内存空间，单位为字节。这里指定大小等于 Stack_Size, 标号 __initial_sp 紧挨着 SPACE 语句放置，表示栈的结束地址，即栈顶地址，栈是由高向低生长**
+SPACE：用于分配一定大小的内存空间，单位为字节。这里指定大小等于 Stack_Size, 标号 __initial_sp 紧挨着 SPACE 语句放置，表示栈的结束地址，即栈顶地址，栈是由高向低生长
 
 ```assembly
 Stack_Mem       SPACE   Stack_Size
@@ -1825,7 +1826,7 @@ __initial_sp
 
 ### PRESERVE8指令
 
-**PRESERVE8：指定当前文件的堆栈按照 8 字节对齐**
+PRESERVE8：指定当前文件的堆栈按照 8 字节对齐
 
 #### PRESERVE8手册说明
 
@@ -1843,7 +1844,7 @@ __initial_sp
 
 ### EXPORT指令
 
-**EXPORT：声明一个标号可被外部的文件使用，使标号具有全局属性。如果是 IAR 编译器，则使用的是 GLOBAL 这个指令**
+EXPORT：声明一个标号可被外部的文件使用，使标号具有全局属性。如果是 IAR 编译器，则使用的是 GLOBAL 这个指令
 
 ```assembly
 EXPORT  __Vectors
@@ -1862,7 +1863,7 @@ EXPORT  __Vectors_Size
 
 ### DCD指令
 
-**DCD：分配一个或者多个以字为单位的内存，以四字节对齐，并要求初始化这些内存**
+DCD：分配一个或者多个以字为单位的内存，以四字节对齐，并要求初始化这些内存
 
 #### DCD手册说明
 
@@ -1870,7 +1871,7 @@ EXPORT  __Vectors_Size
 
 ### PROC指令
 
-**PROC: 定义子程序, 与ENDP成对使用, 表示子程序结束**
+PROC: 定义子程序, 与ENDP成对使用, 表示子程序结束
 
 #### PROC手册说明
 
@@ -1880,7 +1881,7 @@ EXPORT  __Vectors_Size
 
 ### IMPORT指令
 
-**IMPORT：表示该标号来自外部文件，跟 C 语言中的 EXTERN 关键字类似。**
+IMPORT：表示该标号来自外部文件，跟 C 语言中的 EXTERN 关键字类似
 
 ```assembly
 IMPORT  __main
@@ -1898,7 +1899,7 @@ IMPORT  SystemInit
 
 ### LDR指令
 
-**LDR: 从存储器中加载字到一个寄存器中**
+LDR: 从存储器中加载字到一个寄存器中
 
 ```assembly
 LDR     R0, =SystemInit
@@ -1921,7 +1922,7 @@ BX      R0
 
 ### BLX指令
 
-**BLX: 跳转到由寄存器给出的地址, 并根据寄存器的LSE确定处理器的状态, 还要把跳转前的下条指令地址保存到LR**
+BLX: 跳转到由寄存器给出的地址, 并根据寄存器的LSE确定处理器的状态, 还要把跳转前的下条指令地址保存到LR
 
 ```assembly
 BLX     R0               
@@ -1930,7 +1931,7 @@ BLX     R0
 
 ### BX指令
 
-**BX: 跳转到由寄存器/标号给出的地址, 不用返回**
+BX: 跳转到由寄存器/标号给出的地址, 不用返回
 
 ```assembly
 BX      R0
@@ -1939,7 +1940,7 @@ BX      R0
 
 ### ALIGN指令
 
-**ALIGN：对指令或者数据存放的地址进行对齐，后面会跟一个立即数。缺省表示 4 字节对齐**
+ALIGN：对指令或者数据存放的地址进行对齐，后面会跟一个立即数。缺省表示 4 字节对齐
 
 #### ALIGN手册说明
 
@@ -1949,56 +1950,62 @@ BX      R0
 
 ![ALIGN](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401032103256.png)
 
-## 时钟 
+## 时钟
 
 ### 时钟系统框图
 
 ![时钟系统框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-04%2009.47.02.png)
 
-**时钟源选择**
+#### SYSCLK系统时钟源选择
 
 - HSI_RC: 高速内部时钟, RC 震荡产生(频率约为 8MHz)
 - HSE: 高速外部时钟,通过外接晶振产生(频率范围: 4-16MHz)
 - PLL: 锁相环,倍频到72MHz
- 
-**SYSCLK 系统时钟的选择**
+
+##### SYSCLK 系统时钟的选择
 
 1. HSI_RC 约 8MHz
 2. PLLCLK 倍频至72MHz
 3. HSE_Osc直接使用
 
-**PLL锁相环的选择**
+##### PLL锁相环的选择
 
-1. HSI_RC 两分频后 
+1. HSI_RC 两分频后
 2. HSE_Osc or HSE_Osc二分频后
 
-**CSS: 时钟监视系统, 监视 HSE_Osc 是否正常工作,若 外部时钟源异常则将 SYSCLK 切换为 HSI_RC**
+CSS: 时钟监视系统, 监视 HSE_Osc 是否正常工作,若 外部时钟源异常则将 SYSCLK 切换为 HSI_RC
 
 ![时钟系统框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-04%2010.03.07.png)
 
-**时钟源选择**
+#### RTCCLK时钟源选择
 
 - LSE_Osc: 低速外部时钟源, 频率为36.768KHz
 - LSI_RC: 低速内部时钟源, 频率约为40KHz, 由 RC 震荡产生
 
-**RTC_CLK(RTC 时钟)的选择**
+##### RTC_CLK(RTC 时钟)的选择
 
-1. HSE_Osc 128 分频后 
+1. HSE_Osc 128 分频后
 2. LSE_Osc
 3. LSI_RC
 
-**IWDGCLK独立看门狗时钟由LSI_RC 提供**
+#### IWDGCLK独立看门狗时钟源
 
-![系统时钟框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-04%2010.13.53.png)
+IWDGCLK独立看门狗时钟源由LSI_RC 提供
+
+![IWDGCLK独立看门狗时钟源](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401291156077.png)
+
+#### MCO 的选择
 
 MCO是一个引脚来输出内部时钟
 
-**MCO 的选择**
+![系统时钟框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-04%2010.13.53.png)
 
 1. SYSCLK
 2. HSI
 3. HSE
 4. PLLCLK 二分频
+
+#### 各类总线时钟
 
 ![时钟系统框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-04%2010.26.21.png)
 
@@ -2007,12 +2014,14 @@ MCO是一个引脚来输出内部时钟
 3. PCLK1: SYSCLK->AHB_Prescaler->APB1_Prescaler 最高36MHz
 4. TIMxCLK(通用定时器时钟): SYSCLK->AHB_Prescaler->APB1_Prescaler->TIM2,3,4_Multiplier
 5. PCKL2: SYSCLK->AHB_Prescaler->APB2_Prescaler 最高72MHz
-5. TIM1CLK(TIM1 时钟): SYSCLK->AHB_Prescal->APB2_Prescaler->TIM1_Multiplier
-6. ADCCLK(ADC 时钟): SYSCLK->AHB_Prescaler->APB2_Prescaler->ADC_Prescaler
+6. TIM1CLK(TIM1 时钟): SYSCLK->AHB_Prescal->APB2_Prescaler->TIM1_Multiplier
+7. ADCCLK(ADC 时钟): SYSCLK->AHB_Prescaler->APB2_Prescaler->ADC_Prescaler
+
+#### 总结
 
 ![知识总结](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-04%2011.09.39.png)
 
-### 系统时钟配置函数 SetSysClockTo72()
+### 系统时钟配置函数 SetSysClockTo72()分析
 
 在启动文件startup_stm32f10x_hd.s中执行SystemInit函数, 如下
 
@@ -2259,7 +2268,7 @@ static void SetSysClockTo72(void)
 
 项目地址: **16-使用HSE配置系统时钟并使用MCO输出监控系统时钟**
 
-在bsp_rccclkconfig.c中写入HSE的配置函数, 参数为倍频因子 
+#### 在bsp_rccclkconfig.c中写入HSE的配置函数
 
 ```c
 /**
@@ -2304,7 +2313,7 @@ void HSE_SetSysClk(uint32_t RCC_PLLMul_x)
 }
 ```
 
-在bsp_rccclkconfig.c中编写MCO的GPIO初始化函数
+#### 在bsp_rccclkconfig.c中编写MCO的GPIO初始化函数
 
 ```c
 /**
@@ -2328,7 +2337,7 @@ void MCO_GPIO_Config()
 }
 ```
 
-在bsp_rccclkconfig.h中添加函数声明
+#### 在bsp_rccclkconfig.h中添加函数声明
 
 ```c
 #ifndef __BSP_RCCCLKCONFIG_H
@@ -2342,7 +2351,7 @@ void MCO_GPIO_Config();
 #endif // !__BSP_RCCCLKCONFIG_H
 ```
 
-在main.c中调用HSE配置系统时钟函数和MCO的GPIO初始化函数
+#### 在main.c中调用HSE配置系统时钟函数和MCO的GPIO初始化函数
 
 ```c
 #include "stm32f10x.h"
@@ -2383,9 +2392,9 @@ int main(void)
 
 ### 使用HSI配置系统时钟并用MCO监控系统时钟
 
-项目地址: **16-使用HSI配置系统时钟并用MCO监控系统时钟** 
+项目地址: **16-使用HSI配置系统时钟并用MCO监控系统时钟**
 
-在bsp_rccclkconfig.c中编写HSI配置系统时钟函数
+#### 在bsp_rccclkconfig.c中编写HSI配置系统时钟函数
 
 ```c
 /**
@@ -2432,13 +2441,13 @@ void HSI_SetSysClk(uint32_t RCC_PLLMul_x)
 }
 ```
 
-在bsp_rccclkconfig.h中加入函数声明
+#### 在bsp_rccclkconfig.h中加入函数声明
 
 ```c
 void HSI_SetSysClk(uint32_t RCC_PLLMul_x);
 ```
 
-在main.c中调用HSI配置系统时钟函数
+#### 在main.c中调用HSI配置系统时钟函数
 
 ```c
 HSI_SetSysClk(RCC_PLLMul_12); // 4*12=48MHz
@@ -2451,12 +2460,12 @@ LED_GPIO_Config();
 
 ### STM32中断应用概览
 
-**中断类型**
+#### 中断类型
 
 - 系统异常: 体现在内核水平
 - 外部中断: 体现在外设水平
 
-**NVIC**
+#### NVIC
 
 NVIC负责管理中断
 
@@ -2499,7 +2508,7 @@ typedef struct
 /*@}*/ /* end of group CMSIS_CM3_NVIC */
 ```
 
-**NVIC的优先级分组**
+##### NVIC的优先级分组
 
 通过**SCB->AIRCR寄存器的PRIGROUP部分(即bit[10:8])进行分组**
 
@@ -2524,7 +2533,7 @@ typedef struct
 
 ![EXTI 框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2024-01-15%2015.18.42.png)
 
-**外部中断流程**
+#### 外部中断流程
 
 1. 通过 EXTI_RTSR 和 EXTI_FTSR 来配置上升沿/下降沿触发, 触发后边沿检测电路为 1
 2. 通过 EXTI_SWIER 来配置软件中断, 配置后为 1
@@ -2533,7 +2542,7 @@ typedef struct
 5. 通过 EXTI_IMR 配置中断屏蔽
 6. 请求挂起寄存器的逻辑值与中断屏蔽寄存器的逻辑值做逻辑与至 NVIC 中断控制器
 
- **外部事件流程**
+#### 外部事件流程
 
 1. 通过 EXTI_RTSR 和 EXTI_FTSR 来配置上升沿/下降沿触发, 触发后边沿检测电路为 1
 2. 通过 EXTI_SWIER 来配置软件中断, 配置后为 1
@@ -2550,7 +2559,7 @@ EXTI_InitTypeDef
 - EXTI_Trigger : 触发(上/下/上下)
 - EXTI_LineCmd :  使能或者失能(IMR/EMR)
 
-**EXTI 的结构体定义**
+#### EXTI 的结构体定义
 
 ```c
 /** 
@@ -2577,7 +2586,7 @@ typedef struct
   */
 ```
 
-**EXTI_Line 的定义**
+##### EXTI_Line 的定义
 
 ```c
 /** @defgroup EXTI_Lines 
@@ -2607,7 +2616,7 @@ typedef struct
 #define EXTI_Line19      ((uint32_t)0x80000)  /*!< External interrupt line 19 Connected to the Ethernet Wakeup event */
 ```
 
-**EXTI_Mode 的定义**
+##### EXTI_Mode 的定义
 
 ```c
 /** 
@@ -2623,7 +2632,7 @@ typedef enum
 #define IS_EXTI_MODE(MODE) (((MODE) == EXTI_Mode_Interrupt) || ((MODE) == EXTI_Mode_Event))
 ```
 
-**EXTI_Trigger 的定义**
+##### EXTI_Trigger 的定义
 
 ```c
 /** 
@@ -2677,7 +2686,7 @@ void GPIO_EXTILineConfig(uint8_t GPIO_PortSource, uint8_t GPIO_PinSource)
 1. PA0 连接到 EXTI 用于产生中断, PA0 的电平变化通过按键来控制
 2. 产生一次中断, LED 反转一次
 
-**初始化要连接到EXTI的GPIO**, 在bsp_exti.c中
+#### 在bsp_exti.c中初始化要连接到EXTI的GPIO
 
 ```c
 // 初始化 Key1(PA0)
@@ -2687,7 +2696,7 @@ GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;
 GPIO_Init(KEY1_INT_GPIO_PORT, &GPIO_InitStruct);
 ```
 
-**初始化EXTI用于产生中断/事件**, 在bsp_exti.c中
+#### 在bsp_exti.c中初始化EXTI用于产生中断/事件
 
 ```c
 RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
@@ -2699,7 +2708,7 @@ EXTI_InitStruct.EXTI_LineCmd = ENABLE;                          // 使能EXTI线
 EXTI_Init(&EXTI_InitStruct);
 ```
 
-**初始化NVIC, 用于处理中断**, 在bsp_exti.c中
+#### 在bsp_exti.c中初始化NVIC, 用于处理中断
 
 ```c
 NVIC_InitTypeDef NVIC_InitStruct;
@@ -2713,7 +2722,7 @@ NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE; // 使能中断
 NVIC_Init(&NVIC_InitStruct);
 ```
 
-**编写中断服务函数**, 在stm32f10x_it.c中
+#### 在stm32f10x_it.c中编写中断服务函数
 
 ```c
 /**
@@ -2732,7 +2741,7 @@ void EXTI0_IRQHandler(void)
 }
 ```
 
-编写电平反转函数, 在bsp_led.h中
+#### 在bsp_led.h中编写电平反转函数
 
 ```c
 #define LED_B_TOGGLE {LED_B_GPIO_PORT->ODR ^= LED_B_GPIO_PIN;}
@@ -2740,25 +2749,25 @@ void EXTI0_IRQHandler(void)
 
 ### 补充: 使能AFIO时钟
 
-
 在STM32微控制器系列中，使用外部中断（EXTI）时需要开启AFIO（Alternate Function IO）时钟的原因与STM32的硬件设计和引脚复用功能有关。
 
-AFIO的作用
+#### AFIO的作用
 
 1. **引脚复用**：STM32的GPIO（通用输入输出）引脚具有多功能性。一个物理引脚可以用作普通的I/O，也可以被配置为特殊功能，如USART、SPI、I2C通信或外部中断（EXTI）等。AFIO（Alternate Function IO）模块负责管理这些引脚的复用功能。
 2. **EXTI配置**：在STM32中，外部中断线（EXTI）可以映射到不同的GPIO引脚上。AFIO模块提供了这种映射功能。例如，如果你想将EXTI0配置为由PA0、PB0、PC0等其中一个引脚触发，就需要通过AFIO模块来设置这种映射。
 
-开启AFIO时钟的原因
+#### 开启AFIO时钟的原因
 
 **由于AFIO模块负责处理引脚的复用功能，包括EXTI的引脚映射，因此在使用EXTI功能之前，必须确保AFIO模块的时钟是使能的**如果没有使能AFIO时钟，对AFIO寄存器的任何配置操作都不会生效，这意味着EXTI线路无法正确地映射到相应的GPIO引脚上，从而导致外部中断功能无法正常工作。
 
-实际操作
+#### AFIO的实际操作
 
 在STM32的标准固件库或HAL（硬件抽象层）库中，通常会看到类似以下的代码片段，用于使能AFIO时钟：
 
 ```c
 RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO, ENABLE);
 ```
+
 或在使用HAL库时：
 
 ```c
@@ -2767,7 +2776,7 @@ __HAL_RCC_AFIO_CLK_ENABLE();
 
 这些函数调用确保了AFIO模块的时钟被使能，从而使得外部中断的相关配置（如引脚映射）能够正确执行。
 
-总结
+#### AFIO的总结
 
 开启AFIO时钟是使用STM32的EXTI功能的必要步骤，因为AFIO模块控制着GPIO引脚的复用功能，包括将外部中断线路映射到特定的GPIO引脚。未使能AFIO时钟可能导致外部中断配置无效，进而影响整个中断处理机制的正常工作。
 
@@ -2777,17 +2786,17 @@ __HAL_RCC_AFIO_CLK_ENABLE();
 
 SysTick: 系统定时器, **24位, 只能递减, 存在于内核中**, 嵌套在NVIC中, 所有的Cotex-M内核的单片机都具有这个定时器.
 
-**SysTick 功能框图**
+### SysTick 功能框图
 
 ![框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401170017620.png)
 
-*重装载寄存器把值写入递减计数器, 可通过STK_VAL实时查询其中的值, 递减计数器从reload值开始递减, 减为0后可产生中断并且置位COUNTFLAG标志位, 置位后从reload获取值重复以上操作*
+重装载寄存器把值写入递减计数器, 可通过STK_VAL实时查询其中的值, 递减计数器从reload值开始递减, 减为0后可产生中断并且置位COUNTFLAG标志位, 置位后从reload获取值重复以上操作
 
-**SysTick 寄存器描述**
+### SysTick 寄存器描述
 
 ![SysTick 寄存器描述](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401170023320.png)
 
-**SysTick 定时时间计算**
+### SysTick 定时时间计算
 
 需要计算的参数
 
@@ -2803,10 +2812,9 @@ SysTick: 系统定时器, **24位, 只能递减, 存在于内核中**, 嵌套在
 
 ### 补充: SysTick 介绍
 
-
 SysTick（System Tick Timer）是ARM Cortex-M微控制器内核的一个内置组件，用于提供一个简单但高效的系统定时器。这个定时器通常用于实现操作系统的节拍（tick），也可以用于简单的延时功能。
 
-**SysTick的主要特点**
+#### SysTick的主要特点
 
 1. 24位递减计数器：SysTick包含一个24位的递减计数器，当计数器值递减到零时，定时器溢出并触发一个中断。
 2. 可编程重载值：可以设置计数器的重载值，这决定了定时器的溢出时间间隔。
@@ -2814,13 +2822,13 @@ SysTick（System Tick Timer）是ARM Cortex-M微控制器内核的一个内置�
 4. 自动重载：在计数到零时，计数器会自动重新加载预设的重载值，从而实现周期性定时。
 5. 中断功能：当计数器达到零时，SysTick定时器可以产生一个中断。这个中断可以用于各种定时任务，如操作系统的任务调度。
 
-**应用场景**
+#### SysTick的应用场景
 
 1. 操作系统节拍：在实时操作系统（RTOS）中，SysTick常用于生成操作系统的节拍，这对于任务调度和时间管理非常重要。
 2. 延时功能：在不需要RTOS的简单应用中，SysTick可用于生成精确的延时，例如在两个事件之间等待固定的时间。
 3. 时间基准：SysTick还可以作为程序中的时间基准，用于测量时间间隔或产生定时事件。
 
-**配置和使用**
+#### SysTick的配置和使用
 
 在使用SysTick时，一般需要进行以下配置：
 
@@ -2830,7 +2838,7 @@ SysTick（System Tick Timer）是ARM Cortex-M微控制器内核的一个内置�
 用SysTick中断。
 4. 启动定时器：启用SysTick定时器开始计数
 
-**编程示例**
+#### SysTick的编程示例
 
 在STM32等ARM Cortex-M微控制器上，SysTick的配置和使用通常涉及直接操作其控制和状态寄存器。以下是一个简单的示例：
 
@@ -2917,7 +2925,7 @@ static __INLINE uint32_t SysTick_Config(uint32_t ticks)
 1. 编写一个微妙延时函数
 2. 编写一个毫秒延时函数
 
-在bsp_systick.c中编写微妙延时函数
+#### 在bsp_systick.c中编写微妙延时函数
 
 ```c
 /**
@@ -2941,7 +2949,7 @@ void SysTick_Delay_us(uint32_t us)
 }
 ```
 
-在bsp_systick.c中编写毫秒延时函数
+#### 在bsp_systick.c中编写毫秒延时函数
 
 ```c
 /**
@@ -2965,7 +2973,7 @@ void SysTick_Delay_ms(uint32_t ms)
 }
 ```
 
-在bsp_systick.h中引用库文件和进行函数声明
+#### 在bsp_systick.h中引用库文件和进行函数声明
 
 ```c
 #ifndef __BSP_SYSTICK_H
@@ -2981,7 +2989,7 @@ void SysTick_Delay_us(uint32_t us);
 
 ```
 
-在main.c中调用延时函数,实现LED闪烁
+#### 在main.c中调用延时函数,实现LED闪烁
 
 ```c
 /**
@@ -3025,121 +3033,120 @@ int main(void)
 
 ### 同步与异步
 
-*通过时钟信号进行同步, 保证数据传输的准确性*
+同步传输通过时钟信号进行同步, 保证数据传输的准确性
 
 ![同步](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171550768.png)
 
-*通过加入辅助的标识符, 保证数据传输的准确性*
+异步传输通过加入辅助的标识符, 保证数据传输的准确性
 
 ![异步](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171552733.png)
 
-**同步与异步的区别**
+#### 同步与异步的区别
 
 ![区别](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171554763.png)
-
 
 ### 通信的速率
 
 ![通信的速率](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171555519.png)
 
-*当用一个二进制位表示一个码元时, 比特率和波特率相等*
+当用一个二进制位表示一个码元时, 比特率和波特率相等
 
 ## USART-串口通信
 
 ### 串口通信协议简介
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171610065.png)
+![USART](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171610065.png)
 
-**物理层的常用标准**
+#### 物理层的常用标准
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171610887.png)
+![USART](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171610887.png)
 
-**232和TTL电平区别**
+##### 232和TTL电平区别
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171611637.png)
+![USART](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171611637.png)
 
 - TTL: 从芯片出来的基本是TTL电平
 - 232: 负逻辑, 压差大
 
-**232通信通讯结构图**
+###### 232通信通讯结构图
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171631235.png)
+![232](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171631235.png)
 
-**DB9接口图**
+DB9接口图
 
 ![DB9接口](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171634288.png)
 
-**USB转串口通讯结构图**
+###### USB转串口通讯结构图
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171644660.png)
+![USB转串口](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171644660.png)
 
-**串口到串口通讯结构图**
+##### 串口到串口通讯结构图
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171655718.png)
+![串口到串口](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171655718.png)
 
-**串口数据包的组成**
+#### 串口数据包的组成
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171658813.png)
+![串口数据包](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171658813.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171659831.png)
+![串口数据包](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171659831.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171702232.png)
+![串口数据包](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171702232.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171703446.png)
+![串口数据包](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171703446.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171703050.png)
+![串口数据包](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171703050.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171704956.png)
+![串口数据包](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171704956.png)
 
 ### STM32串口功能框图讲解
 
 #### 引脚部分讲解
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171708669.png)
+![STM32串口功能框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171708669.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171708578.png)
+![STM32串口功能框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171708578.png)
 
-**引脚对应**
+##### 引脚对应
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171710068.png)
+![引脚对应](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171710068.png)
 
 #### 数据寄存器部分
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171723621.png)
+![数据寄存器部分](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171723621.png)
 
-**数据格式**
+##### 数据格式
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171725627.png)
+![数据格式](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171725627.png)
 
-**USART_CR1的bit12 M控制字长**
+###### USART_CR1的bit12 M控制字长
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171727509.png)
+![寄存器](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171727509.png)
 
-**USART_CR2的bit[13:12] STOP控制停止位的位数**
+###### USART_CR2的bit[13:12] STOP控制停止位的位数
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171727238.png)
+![寄存器](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171727238.png)
 
-**USART_CR1的bit10(PSE), bit9(PS)来使能校验和选择校验模式**
+###### USART_CR1的bit10(PSE), bit9(PS)来使能校验和选择校验模式
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171730822.png)
+![寄存器](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171730822.png)
 
-**USART_CR1的bit8(PEIE)来使能中断**
+###### USART_CR1的bit8(PEIE)来使能中断
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171731175.png)
+![寄存器](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171731175.png)
 
-**USART_SR的bit0(PE)来检测校验错误**
+###### USART_SR的bit0(PE)来检测校验错误
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171732400.png)
+![寄存器](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171732400.png)
 
-**发送数据部分**
+#### 发送数据部分
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171739676.png)
+![发送数据](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171739676.png)
 
 1. 先将USART_CR1的UE位置1(*使能USART模块*), 再将USART_CR1的TE位置1(*使能发送*)
 2. 数据从CPU或DMA中写入发送数据寄存器(TDR), TDR发送完毕后, USART_SR的TXE位置1(*数据已经被转移到移位寄存器中*)
 3. 发送移位寄存器发送完毕后, USART_SR的TC位置1(*表示发送完成*)
 
-**接收数据部分**
+#### 接收数据部分
 
 ![接收数据部分](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171900970.png)
 
@@ -3148,20 +3155,22 @@ int main(void)
 
 #### 波特率设置
 
-**使用USART_BRR进行配置**
+##### 使用USART_BRR进行配置
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171906798.png)
+![USART_BRR](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171906798.png)
 
-**波特率的计算公式**
+##### 波特率的计算公式
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171909589.png)
+![波特率的计算公式](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171909589.png)
 
 - APB2时钟: 72MHz, 挂载USART1
 - APB1时钟: 36MHz, 挂载USART2, 3, 4, 5
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171910703.png)
+![波特率](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401171910703.png)
 
-###  串口初始化结构体和固件库讲解
+### 串口初始化结构体和固件库讲解
+
+#### 串口初始化结构体
 
 在stm32f10x_usart.h中定义串口初始化结构体(异步)
 
@@ -3284,7 +3293,9 @@ typedef struct
 } USART_ClockInitTypeDef;
 ```
 
-- **串口初始化函数**: void USART_Init(USART_TypeDef* USARTx, USART_InitTypeDef* USART_InitStruct);
+#### 串口库函数
+
+- **串口初始化函数**: void USART_Init(USART_TypeDef*USARTx, USART_InitTypeDef* USART_InitStruct);
 - **中断配置函数**: void USART_ITConfig(USART_TypeDef* USARTx, uint16_t USART_IT, FunctionalState NewState);
 - **串口使能函数**: void USART_Cmd(USART_TypeDef* USARTx, FunctionalState NewState);
 - **数据发送函数**: void USART_SendData(USART_TypeDef* USARTx, uint16_t Data);
@@ -3301,13 +3312,13 @@ typedef struct
 
 ### 补充: 外设的GPIO配置
 
-**在STM32F10x参考手册中的8.1.11节可找到外设的GPIO配置, 其中关于USART部分的GPIO配置如下图**
+在STM32F10x参考手册中的8.1.11节可找到外设的GPIO配置, 其中关于USART部分的GPIO配置如下图
 
 ![USART的GPIO配置](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401220904826.png)
 
 ### 配置串口助手
 
-**本项目使用的串口助手: 野火多功能调试助手V1.0.2.9**
+本项目使用的串口助手: 野火多功能调试助手V1.0.2.9
 
 串口配置如下图(*串口配置参数与串口的初始化配置有关, 该配置符合下文代码的初始化*)
 
@@ -3315,11 +3326,11 @@ typedef struct
 
 ### USART接收和发送实验
 
-**项目地址 : 21-USART-接收和发送**
+项目地址: **21-USART-接收和发送**
 
 **实验需求**: 单片机给电脑发送数据, 电脑上位机把数据打印出来; 电脑上位机给单片机发数据, 单片机接收到数据之后立马发回给电脑, 并打印出来.
 
-在bsp_usart.h中进行串口的宏定义, 并使用条件编译来选择串口
+#### 在bsp_usart.h中进行串口的宏定义, 并使用条件编译来选择串口
 
 ```c
 /** 
@@ -3433,7 +3444,7 @@ typedef struct
 #endif
 ```
 
-在bsp_usart.c中编写usart的初始化函数
+#### 在bsp_usart.c中编写usart的初始化函数
 
 ```c
  /**
@@ -3491,7 +3502,7 @@ void USART_Config(void)
 }
 ```
 
-在bsp_usart.c中编写串口中断优先级配置函数
+#### 在bsp_usart.c中编写串口中断优先级配置函数
 
 ```c
  /**
@@ -3519,7 +3530,7 @@ static void NVIC_Configuration(void)
 }
 ```
 
-在bsp_usart.c中编写发送一个字节到串口的函数
+#### 在bsp_usart.c中编写发送一个字节到串口的函数
 
 ```c
 /**
@@ -3541,7 +3552,7 @@ void Usart_SendByte(USART_TypeDef* pUSARTx, uint8_t ch)
 }
 ```
 
-在bsp_usart.c中编写发送两个字节到串口的函数
+#### 在bsp_usart.c中编写发送两个字节到串口的函数
 
 ```c
 /**
@@ -3571,7 +3582,7 @@ void Usart_SendHalfWord(USART_TypeDef* pUSARTx, uint16_t ch)
 }
 ```
 
-在bsp_usart.c中编写发送数组的函数
+#### 在bsp_usart.c中编写发送数组的函数
 
 ```c
 /**
@@ -3596,7 +3607,7 @@ void Usart_SendArray(USART_TypeDef* pUSARTx, uint8_t* array, uint16_t num)
 }
 ```
 
-在bsp_usart.c中编写发送字符串的函数
+#### 在bsp_usart.c中编写发送字符串的函数
 
 ```c
 /**
@@ -3623,7 +3634,7 @@ void Usart_SendString(USART_TypeDef* pUSARTx, uint8_t* str)
 }
 ```
 
-在bsp_usart.c中编写重定向标准输出输入函数, 使得串口可使用scanf printf等函数
+#### 在bsp_usart.c中编写重定向标准输出输入函数, 使得串口可使用scanf printf等函数
 
 ```c
 // 重定向c库函数printf, putchar到串口，重定向后可使用printf, putchar函数
@@ -3661,7 +3672,7 @@ int fgetc(FILE *f)
 
 ```
 
-在main.c函数中进行测试
+#### 在main.c函数中进行测试
 
 ```c
 #include "stm32f10x.h"
@@ -3708,7 +3719,7 @@ int main(void)
 
 ```
 
-在stm32f10x_it.c中编写中断服务函数实现串口数据的接收并发送
+#### 在stm32f10x_it.c中编写中断服务函数实现串口数据的接收并发送
 
 ```c
 /**
@@ -3728,7 +3739,6 @@ void DEBUG_USART_IRQHandler(void)
   }
 }
 ```
-
 
 ### 补充: 通过重写fputc函数重定向C库函数printf到串口
 
@@ -3773,11 +3783,11 @@ int main() {
 
 ### USART控制RGB灯实验
 
-**项目地址 : 21-USART-控制RGB灯**
+项目地址: **21-USART-控制RGB灯**
 
 **实验需求**: 电脑给单片机发命令, 用于控制开发板上的RGB灯.
 
-在bsp_led.h中定义RGB灯的宏
+#### 在bsp_led.h中定义RGB灯的宏
 
 ```c
 #ifndef __LED_H
@@ -3902,7 +3912,7 @@ void LED_GPIO_Config(void);
 #endif /* __LED_H */
 ```
 
-在bsp_led.c中编写led初始化函数
+#### 在bsp_led.c中编写led初始化函数
 
 ```c
 /**
@@ -3978,7 +3988,7 @@ void assert_failed(uint8_t* file, uint32_t line)
 /*********************************************END OF FILE**********************/
 ```
 
-在bsp_usart.c中关闭串口中断
+#### 在bsp_usart.c中关闭串口中断
 
 ```c
  /**
@@ -4033,7 +4043,7 @@ void USART_Config(void)
 }
 ```
 
-在main.c中编写测试程序
+#### 在main.c中编写测试程序
 
 ```c
 int main(void)
@@ -4091,7 +4101,7 @@ DMA（Direct Memory Access，直接内存访问）是计算机系统中的一种
 
 以下是关于DMA的一些重要概念和特性：
 
-**工作原理**：
+#### DMA的工作原理
 
 DMA通过在系统总线上控制数据传输而不涉及CPU来工作。它可以在CPU不介入的情况下，直接将数据从一个位置传输到另一个位置。
 
@@ -4100,13 +4110,13 @@ DMA通过在系统总线上控制数据传输而不涉及CPU来工作。它可�
 3. 传输： DMA控制器在总线上控制数据传输，无需CPU的干预。数据在源和目标之间直接传输。
 4. 中断通知： DMA传输完成后，通常会发出一个中断信号，以通知CPU或其他系统组件。
 
-**优点**：
+#### DMA的优点
 
 1. 提高性能： 通过绕过CPU，减轻了CPU的负担，使其能够执行其他任务，提高了整体系统性能。
 2. 实时数据传输： 特别适用于实时数据传输，如音频、视频流等。
 3. 高效处理大量数据： 对于大量数据的块传输，DMA比CPU执行这样的传输更为高效。
 
-**应用领域**：
+#### DMA的应用领域
 
 DMA在多种应用场景中都得到了广泛应用，包括但不限于：
 
@@ -4115,7 +4125,7 @@ DMA在多种应用场景中都得到了广泛应用，包括但不限于：
 3. 存储系统： 用于在磁盘、固态硬盘等存储设备和系统内存之间进行数据传输。
 4. 图形处理： 在图形卡和系统内存之间进行大规模图形数据的传输。
 
-**DMA控制器**：
+#### DMA控制器
 
 DMA通常由专门的硬件单元，称为DMA控制器，来管理。DMA控制器的设计和功能因芯片架构而异，但通常包括寄存器用于配置、启动和监视传输。
 
@@ -4125,7 +4135,7 @@ DMA通常由专门的硬件单元，称为DMA控制器，来管理。DMA控制�
 
 ![DMA功能框图讲解](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401261122722.png)
 
-### DMA请求映射
+#### DMA请求映射
 
 DMA1请求映射
 
@@ -4135,11 +4145,11 @@ DMA2请求映射
 
 ![DMA2请求映射](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401261127579.png)
 
-### DMA仲裁器
+#### DMA仲裁器
 
 ![DMA仲裁器](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401261128690.png)
 
-*软件配置在寄存器DMA_CCRx:PL[1:0]进行通道优先级配置*
+软件配置在寄存器DMA_CCRx:PL[1:0]进行通道优先级配置
 
 ### DMA固件库-初始化结构体
 
@@ -4246,11 +4256,11 @@ FlagStatus DMA_GetFlagStatus(uint32_t DMAy_FLAG); // 判断标志位
 
 ### DMA实验1: M to M
 
-**项目地址**: 
+项目地址: **22-DMA-MtoM**
 
 **实验需求**: FLASH to SRAM, 把内部FLASH的数据传输到内部的SRAM
 
-在bsp_dma_m2m.h增加宏定义
+#### 在bsp_dma_m2m.h增加宏定义
 
 ```c
 // 当使用存储器到存储器模式时候，通道可以随便选，没有硬性的规定
@@ -4262,7 +4272,7 @@ FlagStatus DMA_GetFlagStatus(uint32_t DMAy_FLAG); // 判断标志位
 #define BUFFER_SIZE     32
 ```
 
-在bsp_dma_m2m.c中定义源和目标变量
+#### 在bsp_dma_m2m.c中定义源和目标变量
 
 ```c
 /* 定义aSRC_Const_Buffer数组作为DMA传输数据源
@@ -4286,7 +4296,8 @@ const uint32_t aSRC_Const_Buffer[BUFFER_SIZE]= {
 uint32_t aDST_Buffer[BUFFER_SIZE];
 
 ```
-在bsp_dma_m2m.c中增加DMA初始化函数
+
+#### 在bsp_dma_m2m.c中增加DMA初始化函数
 
 ```c
 /**
@@ -4319,7 +4330,7 @@ void M2M_DMA_Config(void)
 }
 ```
 
-在bsp_dma_m2m.c中增加判断数据相等的函数
+#### 在bsp_dma_m2m.c中增加判断数据相等的函数
 
 ```c
 /**
@@ -4350,7 +4361,7 @@ uint8_t Buffercmp(const uint32_t* pBuffer, uint32_t* pBuffer1, uint16_t BufferLe
 }
 ```
 
-在main.c函数中进行测试
+#### 在main.c函数中进行DMA测试
 
 ```c
 // 声明以下变量来自外部文件
@@ -4410,9 +4421,11 @@ int main(void)
 
 ### DMA实验2: M to P
 
+项目地址: **22-DMA-MtoP**
+
 **实验需求**: SRAM to 串口, 同时LED灯闪烁, 演示DMA数据不需占用CPU
 
-在bsp_dma_m2p.h中加入宏定义
+### 在bsp_dma_m2p.h中加入宏定义
 
 ```c
 // 串口工作参数宏定义
@@ -4436,7 +4449,7 @@ int main(void)
 #define  USART_TX_DMA_FLAG_TC DMA1_FLAG_TC4 // 标志位
 ```
 
-在bsp_dma_m2p.c中加入USART的初始化函数
+#### 在bsp_dma_m2p.c中加入USART的初始化函数
 
 ```c
 /**
@@ -4487,7 +4500,9 @@ void USART_Config(void)
 }
 ```
 
-在bsp_dma_m2p.c中加入USARTx_TX DMA配置, 实现内存到外设(USART1->DR)
+#### 在bsp_dma_m2p.c中加入USARTx_TX DMA配置
+
+实现内存到外设(USART1->DR)
 
 ```c
 /**
@@ -4533,19 +4548,21 @@ void USARTx_DMA_Config(void)
 }
 ```
 
-在bsp_dma_m2p.c中声明在内存的变量
+#### 在bsp_dma_m2p.c中声明在内存的变量
 
 ```c
 uint8_t SendBuff[SENDBUFF_SIZE];
 ```
 
-在main.c中声明外部变量
+#### 在main.c中声明外部变量
 
 ```c
 extern uint8_t SendBuff[SENDBUFF_SIZE];
 ```
 
-在main.c中测试DMA, 实现DMA将储存器中的数据发送到USART->DR, 并实现LED1闪烁
+#### 在main.c中测试DMA
+
+实现DMA将储存器中的数据发送到USART->DR, 并实现LED1闪烁
 
 ```c
 /**
@@ -4582,45 +4599,45 @@ int main(void)
 易失性和非易失性区别在于**掉电数据是否会丢失**, 易失性存储器**读写速度相对较快**
 
 - 易失性存储器(RAM)
- - DRAM(动态RAM, 常用于PC机)
-  - SDRAM(STM32F429)
-  - DDR SDRAM
-  - DDRII SDRAM
-  - DDRIII SDRAM(常用于PC机)
- - SRAM(静态RAM, STM32F103)
+  - DRAM(动态RAM, 常用于PC机)
+    - SDRAM(STM32F429)
+    - DDR SDRAM
+    - DDRII SDRAM
+    - DDRIII SDRAM(常用于PC机)
+  - SRAM(静态RAM, STM32F103)
 - 非易失性存储器
- - ROM(半导体类)
-  - MASK ROM(对于STM32可读不可写)
-  - PROM(可编程ROM)
-   - OTPROM(可写一次的ROM)
-   - EPROM(可用高电压擦除的ROM)
-   - EEPROM(STM32F103, 可用较低电压3.3V擦除的ROM)
- - FLASH(半导体类)
-  - NOR FLASH(一般用来存储程序)
-  - NAND FLASH(一般用来存储数据)
- - 光盘
- - 软盘
- - 机械硬盘 
+  - ROM(半导体类)
+    - MASK ROM(对于STM32可读不可写)
+    - PROM(可编程ROM)
+      - OTPROM(可写一次的ROM)
+      - EPROM(可用高电压擦除的ROM)
+      - EEPROM(STM32F103, 可用较低电压3.3V擦除的ROM)
+    - FLASH(半导体类)
+    - NOR FLASH(一般用来存储程序)
+    - NAND FLASH(一般用来存储数据)
+    - 光盘
+    - 软盘
+    - 机械硬盘
 
 ### RAM存储器(易失性存储器)
 
-RAM介绍
+#### RAM介绍
 
 ![RAM介绍](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401262322421.png)
 
-DRAM的存储单元结构
+#### DRAM的存储单元结构
 
 ![DRAM的存储单元结构](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401262327533.png)
 
-**DRAM通过电容充放电与MOS管配合产生高低电平**, 需要配合电平检测阈值来减少电容漏电带来的影响 
+**DRAM通过电容充放电与MOS管配合产生高低电平**, 需要配合电平检测阈值来减少电容漏电带来的影响
 
-SRAM的存储单元结构
+#### SRAM的存储单元结构
 
 ![SRAM的存储单元结构](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401262328328.png)
 
 **SRAM以锁存器结构来存储数据**, 锁存器结构在没有输入的情况下会一直保持原来的状态
 
-SRAM和DRAM的比较
+#### SRAM和DRAM的比较
 
 ![SRAM和DRAM的比较](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401262336065.png)
 
@@ -4634,17 +4651,17 @@ SRAM使用异步方式通信
 
 ### 非易失性存储器
 
-ROM简介
+#### ROM简介
 
 ![ROM简介](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270001764.png)
 
-FLASH简介
+#### FLASH简介
 
 ![FLASH简介](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270007166.png)
 
-**在嵌入式开发中选择 NOR FLASH 主要因为坏区较少, 基于字节读写可以支持XIP**
+在嵌入式开发中选择 NOR FLASH 主要因为坏区较少, 基于字节读写可以支持XIP
 
-*XIP(Execute In Place，就地执行)功能，它是一种特性，允许直接从 Flash 存储器中执行代码，而无需将代码首先复制到RAM中。XIP功能在嵌入式系统中很常见，它带来了一些优势，包括更少的RAM使用和更快的启动速度*
+XIP(Execute In Place，就地执行)功能，它是一种特性，允许直接从 Flash 存储器中执行代码，而无需将代码首先复制到RAM中。XIP功能在嵌入式系统中很常见，它带来了一些优势，包括更少的RAM使用和更快的启动速度
 
 与ROM不同, FLASH必须先按块擦除数据后才能写入数据
 
@@ -4657,30 +4674,21 @@ I2C（Inter-Integrated Circuit）是一种串行通信协议，**用于在集成
 以下是 I2C 协议的一些关键特点和基本概念：
 
 1. 总线结构
-
- - 主从结构： I2C 使用主从结构，其中一个设备充当主设备（通常是微控制器或处理器），而其他设备则充当从设备。主设备负责发起通信和生成时钟信号。
- - 双线制： I2C 使用两根线，一根是数据线（SDA），另一根是时钟线（SCL）。这两根线上都有上拉电阻，以便在设备不主动拉低时保持高电平。
-
+    - 主从结构： I2C 使用主从结构，其中一个设备充当主设备（通常是微控制器或处理器），而其他设备则充当从设备。主设备负责发起通信和生成时钟信号。
+    - 双线制： I2C 使用两根线，一根是数据线（SDA），另一根是时钟线（SCL）。这两根线上都有上拉电阻，以便在设备不主动拉低时保持高电平。
 2. 数据传输：
-
- - 起始和停止条件： 数据传输始于主设备发送起始条件（Start Condition），并以主设备发送停止条件（Stop Condition）结束。这两个条件都是由主设备在总线上生成的。
- - 地址帧： 每个数据传输都以地址帧开始，其中包含目标设备的地址和读写位。地址帧由主设备发送。
- - 数据帧： 在地址帧之后是一个或多个数据帧，其中包含实际的数据。数据帧的传输由主设备和从设备之间交替进行。
- - 应答（Acknowledge）： 在每个数据帧之后，接收方发送一个应答信号，通常是一个低电平，以确认数据的接收。
-
+    - 起始和停止条件： 数据传输始于主设备发送起始条件（Start Condition），并以主设备发送停止条件（Stop Condition）结束。这两个条件都是由主设备在总线上生成的。
+    - 地址帧： 每个数据传输都以地址帧开始，其中包含目标设备的地址和读写位。地址帧由主设备发送。
+    - 数据帧： 在地址帧之后是一个或多个数据帧，其中包含实际的数据。数据帧的传输由主设备和从设备之间交替进行。
+    - 应答（Acknowledge）： 在每个数据帧之后，接收方发送一个应答信号，通常是一个低电平，以确认数据的接收。
 3. 速率和模式：
-
- - 速率： I2C 支持不同的传输速率，常见的有 100 kHz、400 kHz 和 1 MHz 等。
- - 模式： I2C 支持标准模式（100 kHz），快速模式（400 kHz），高速模式（1 MHz）等不同的工作模式。
-
+    - 速率： I2C 支持不同的传输速率，常见的有 100 kHz、400 kHz 和 1 MHz 等。
+    - 模式： I2C 支持标准模式（100 kHz），快速模式（400 kHz），高速模式（1 MHz）等不同的工作模式。
 4. 多主设备和重复启动：
-
- - 多主设备： I2C 支持多主设备共享同一总线。主设备之间通过仲裁（Arbitration）来确定哪个主设备能够继续发送。
- - 重复启动： 主设备可以在一个传输结束后发送重复启动条件，而无需先发送停止条件，从而在同一次通信中与另一个从设备建立连接。
-
+    - 多主设备： I2C 支持多主设备共享同一总线。主设备之间通过仲裁（Arbitration）来确定哪个主设备能够继续发送。
+    - 重复启动： 主设备可以在一个传输结束后发送重复启动条件，而无需先发送停止条件，从而在同一次通信中与另一个从设备建立连接。
 5. I2C设备地址：
-
- - 7位或10位地址： I2C 设备使用 7 位或 10 位地址来识别自己。大多数设备使用 7 位地址。
+   - 7位或10位地址： I2C 设备使用 7 位或 10 位地址来识别自己。大多数设备使用 7 位地址。
 
 I2C 协议的简洁性和灵活性使得它在连接各种设备和传感器时非常有用，尤其是在嵌入式系统中。
 
@@ -4702,15 +4710,15 @@ I2C 协议的简洁性和灵活性使得它在连接各种设备和传感器时�
 
 ![I2C物理层](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270140896.png)
 
-**I2C物理层主要特点**
+#### I2C物理层主要特点
 
 - I2C是支持多设备的总线, 可支持多个通讯主机和从机
 - I2C使用两条线路, 一条SDA(双向串行数据线)来表示数据, 一条SCL(串行时钟线)来同步数据, 属于同步通信
 - 连接到总线的设备分配独立地址(7位或10位)
 - 总线接上拉电阻到电源(一般4.7KΩ, 具体看手册)
-  1. 当设备空闲时输出高阻态*防止短路总线上的其他接地设备*
-  2. 当所有设备都空闲时全部输出高阻态, 可通过上拉电阻把总线拉到高电平
-  3. 输出高阻态的特性需要GPIO的开漏输出
+    1. 当设备空闲时输出高阻态*防止短路总线上的其他接地设备*
+    2. 当所有设备都空闲时全部输出高阻态, 可通过上拉电阻把总线拉到高电平
+    3. 输出高阻态的特性需要GPIO的开漏输出
 - 多设备占用总线会仲裁
 - 具有三种传输速度模式, **实际开发中可使用低于最高速的速度, 协调总线设备速度一致即可**
 - I2C可接入的设备数量受到最大电容负载的限制, 一般为400pF, *也就是说总线上的设备数量越多, 传输速度越慢*
@@ -4719,9 +4727,9 @@ I2C 协议的简洁性和灵活性使得它在连接各种设备和传感器时�
 
 I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲裁, 时钟同步和地址广播等环节**
 
-**I2C基本读写过程**
+#### I2C基本读写过程
 
-**主机写数据到从机**
+##### 主机写数据到从机
 
 ![I2C基本读写过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270157626.png)
 
@@ -4732,10 +4740,10 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 5. DATA: 主机传输数据段
 6. A: 从机响应
 7. DATA: 主机继续发送数据段
-8. A/!A: 从机响应是否继续接收 
+8. A/!A: 从机响应是否继续接收
 9. P: 若从机响应不继续接收, 则主机传输停止位
 
-**主机由从机读数据**
+##### 主机由从机读数据
 
 ![I2C基本读写过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270207508.png)
 
@@ -4746,7 +4754,7 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 5. DATA: 从机传输数据段
 6. A: 主机响应
 7. DATA: 从机继续发送数据段
-8. A/!A: 主机响应是否继续接收 
+8. A/!A: 主机响应是否继续接收
 9. P: 若主机响应不继续接收, 则主机传输停止位
 
 注意:
@@ -4757,7 +4765,7 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 - P: 停止信号只能由主机产生
 - DATA 和 A: 数据段和响应段由主机和从机交替产生, 具体由主机和从机的读写决定
 
-**通信复合格式**
+##### 通信复合格式
 
 ![通信复合格式](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270209992.png)
 
@@ -4773,36 +4781,36 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 - R/W!: 一般为读操作
 - DATA: 读取外设的寄存器的具体地址
 - A/A!: 逐个字节进行读取外设每个寄存器的地址并做出响应
-- P: 全部读取完毕后主机传输停止信号 
+- P: 全部读取完毕后主机传输停止信号
 
-**通讯的起始和停止信号**
+#### 通讯的起始和停止信号
 
 ![通讯的起始和停止信号](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270225648.png)
 
 - 起始信号: **SCL高电平, SDA由高电平向低电平转换**
 - 停止信号: **SCL高电平, SDA由低电平向高电平转换**
 
-**数据的有效性**
+#### 数据的有效性
 
 ![数据有效性](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270237788.png)
 
 - SDA: 负责传输数据
 - SCL: 高电平时采集SDA上1bit数据, 低电平时SDA进行电平转换
 
-**地址及数据方向**
+#### 地址及数据方向
 
 ![地址及数据方向](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270243764.png)
 
-**I2C采用高位先行, 由高位到低位进行传输**
+I2C采用高位先行, 由高位到低位进行传输
 
-**一般使用7位表示I2C上的设备地址, 设备地址加上其后的读写位可以凑成8位即1字节方便传输**
+一般使用7位表示I2C上的设备地址, 设备地址加上其后的读写位可以凑成8位即1字节方便传输
 
 例如, 某设备在I2C上的设备地址为7位的0x78(0b01111000), 可加入读写位凑到八位
 
 - 8位设备的读地址位为0xF1(0b11110001)
 - 8位设备的写地址位为0xF0(0b11110000)
 
-**响应**
+#### 响应
 
 ![响应](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270254565.png)
 
@@ -4816,36 +4824,36 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 - 软件模拟协议: 较为繁琐
 - 硬件模拟协议: 较为方便, 减轻CPU负担
 
-*STM32硬件的I2C逻辑可能会有问题*
+注: *STM32硬件的I2C逻辑可能会有问题*
 
-**STM32的I2C架构分析**
+#### STM32的I2C架构分析
 
 ![STM32的I2C架构分析](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270315440.png)
 
-**I2C的通讯引脚**
+##### I2C的通讯引脚
 
 ![I2C的通讯引脚](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270346561.png)
 
 ![I2C的通讯引脚](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270316720.png)
 
-*勘误: I2C1_SCL默认映射到PB5, I2C1_SDA默认映射到PB7, 图片中有误*
+勘误: *I2C1_SCL默认映射到PB5, I2C1_SDA默认映射到PB7, 图片中有误*
 
-**STM32兼容smbus协议**
+STM32兼容smbus协议
 
-**时钟控制逻辑**
+##### 时钟控制逻辑
 
 ![时钟控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270347794.png)
 ![时钟控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270325594.png)
 
-*Tpck1: 指的是APB1时钟周期(1/36MHz)*
+注: *Tpck1: 指的是APB1时钟周期(1/36MHz)*
 
-**计算时钟频率的方法**
+###### 计算时钟频率的方法
 
 ![计算时钟频率的方法](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270333989.png)
 
-**实际就是解未知数CCR的一元一次方程**
+实际就是解未知数CCR的一元一次方程
 
-**数据控制逻辑**
+##### 数据控制逻辑
 
 ![数据控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270347332.png)
 
@@ -4854,7 +4862,7 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 1. 将8位数据写入数据寄存器(DR)
 2. 数据寄存器里面的数据会被发送到数据移位寄存器
 
-**整体控制逻辑**
+##### 整体控制逻辑
 
 ![整体控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270348369.png)
 
@@ -4862,29 +4870,27 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 
 ### STM32硬件I2C的通讯过程
 
-**STM32作为主发送器的通讯过程**
+#### STM32作为主发送器的通讯过程
 
 ![STM32作为主发送器的通讯过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270357886.png)
 
-*勘误: EV8_2: TxE=1, BTF=1, 请求设置停止位. TxE和BTF位由硬件在产生停止条件时清除*
+勘误: *EV8_2: TxE=1, BTF=1, 请求设置停止位. TxE和BTF位由硬件在产生停止条件时清除*
 
 - EV5: 在正常产生S起始信号后会产生EV5事件(I2C_SRx:SB[0]置1表示起始条件已发送)
 - EV6: 在正常发送SLAVE ADDRESS和R/!W位后会产生EV6事件(I2C_SRx:ADDR[1]置1表示地址发送结束)
 - EV8: 在正常数据发送完毕后会产生EV8事件(I2C_SRx:TxE[7]置1表示数据寄存器空)
 - EV8_2: 在从机发送结束应答后会产生EV8_2事件(I2C_SRx:TxE[7]置1表示数据寄存器空, I2C_SRx:BTF[2]置1表示字节发送结束, I2C_CRx:STOP[9]置1表示在当前字节传输或在当前起始条件发出后产生停止条件, 产生停止条件后由硬件清除TxE和BTF位)
 
-**STM32作为主接收器的通讯过程**
+#### STM32作为主接收器的通讯过程
 
 ![STM32作为主接收器的通讯过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270423471.png)
 
-*勘误: EV7_1: RxNE=1, 读DR寄存器清除该事件. 设置ACK=0和STOP请求*
+勘误: *EV7_1: RxNE=1, 读DR寄存器清除该事件. 设置ACK=0和STOP请求*
 
 - EV5: 在正常产生S起始信号后会产生EV5事件(I2C_SRx:SB[0]置1表示起始条件已发送)
 - EV6: 在正常发送SLAVE ADDRESS和R/!W位后会产生EV6事件(I2C_SRx:ADDR[1]置1表示地址发送结束)
 - EV7: 在正常数据发送完毕后会产生EV7事件(I2C_SRx:RxNE[6]置1表示数据寄存器(接收时)非空)
 - EV7_1: 在主机发送结束应答后会产生EV7_1事件(I2C_SRx:RxNE[6]置1表示数据寄存器(接收时)非空, I2C_CRx:ACK[10]置0表示设置为无应答返回, I2C_CRx:STOP[9]置1表示在当前字节传输或释放SCL和SDA线)
-
-**标志位的清除方法**
 
 每个状态标志位的清除方法各不相同, 使用库函数的方法可以较方便的清除寄存器的标志位
 
@@ -4957,15 +4963,15 @@ typedef struct
 
 ### I2C库函数
 
-I2C_GenerateSTART函数, 用于产生起始条件
+#### I2C_GenerateSTART函数, 用于产生起始条件
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271607885.png)
 
-I2C_GetFlagStatus函数, 用于获取状态位
+#### I2C_GetFlagStatus函数, 用于获取状态位
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271610721.png)
 
-**I2C_FLAG参数列表对应I2C_SRx状态寄存器的各个位, 可通过查询手册查看其含义**
+I2C_FLAG参数列表对应I2C_SRx状态寄存器的各个位, 可通过查询手册查看其含义
 
 返回值说明
 
@@ -4978,48 +4984,47 @@ typedef enum {RESET = 0, SET = !RESET} FlagStatus, ITStatus;
 - RESET: 0, 返回RESET表示该状态位为0
 - SET: 1, 返回SET表示该状态位为1
 
-I2C_Send7bitAddress函数, 用于发送7位地址
+#### I2C_Send7bitAddress函数, 用于发送7位地址
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271616560.png)
 
-*参数Address为八位读/写地址, 通过I2C_Direction实际配置读写方向, 最终方向以I2C_Direction配置为准, 参数Address的读写位失效*
+参数Address为八位读/写地址, 通过I2C_Direction实际配置读写方向, 最终方向以I2C_Direction配置为准, 参数Address的读写位失效
 
-I2C_SendDate函数, 通过I2Cx外设发送数据字节
+#### I2C_SendDate函数, 通过I2Cx外设发送数据字节
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271618557.png)
 
-I2C_ReceiveData函数, 返回 I2Cx 外设最近接收的数据
+#### I2C_ReceiveData函数, 返回 I2Cx 外设最近接收的数据
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271622473.png)
 
-AcknowledgeConfig函数, 使能或禁用I2C的应答
+#### AcknowledgeConfig函数, 使能或禁用I2C的应答
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271623317.png)
 
-I2C_Cmd函数, 使能或禁用I2Cx外设
+#### I2C_Cmd函数, 使能或禁用I2Cx外设
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271625131.png)
 
-I2C_CheckEvent函数, I2C状态监测函数
+#### I2C_CheckEvent函数, I2C状态监测函数
 
-**监测的事件发生则返回SUCCESS**
+监测的事件发生则返回SUCCESS
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280036252.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037103.png)
+![I2C_CheckEvent函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037103.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037758.png)
+![I2C_CheckEvent函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037758.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038783.png)
+![I2C_CheckEvent函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038783.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038105.png)
+![I2C_CheckEvent函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038105.png)
 
 ### EEPROM硬件结构
 
 ![EEPROM](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271630443.png)
 
-
-引脚说明
+#### 引脚说明
 
 - VCC: 电源引脚, 接3V3
 - GND: 地引脚, 接地
@@ -5034,7 +5039,7 @@ I2C_CheckEvent函数, I2C状态监测函数
 
 AT24C02可存储256字节数据
 
-引脚说明
+#### AT24C02引脚说明
 
 ![AT24C02](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271648925.png)
 
@@ -5044,28 +5049,28 @@ AT24C02可存储256字节数据
 - WP: 写保护, 置1启用写保护
 - NC: 不连接
 
-设备地址
+#### AT24C02设备地址
 
 ![设备地址](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271702961.png)
 
 ![设备地址](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271702718.png)
 
-**AT24C02有256字节, 即属于2K(256*8)**
+AT24C02有256字节, 即属于2K(256*8)
 
 ![设备地址](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271701248.png)
 
 根据原理图, 将A2-A0均接地, 则A2 = A1 = A0 = 0
 
-**AT24C02的地址为0b1010000R/W, Bit0为R/!W位**
+AT24C02的地址为0b1010000R/W, Bit0为R/!W位
 
 - AT24C02在A2:A1[000]情况下读地址: 0b10100001(0xA1)
 - AT24C02在A2:A1[000]情况下写地址: 0b10100000(0xA0)
 
-AT24C02的Byte Write(以字节方式写数据)操作
+#### AT24C02的Byte Write(以字节方式写数据)操作
 
 ![Byte Write](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271719435.png)
 
-*第一个传输的数据段(DATA)为WORD ADDRESS(需要写入的字节所在的地址), 第二次传输数据段(DATA)才为真正需要写入的内容*
+第一个传输的数据段(DATA)为WORD ADDRESS(需要写入的字节所在的地址), 第二次传输数据段(DATA)才为真正需要写入的内容
 
 ![Byte Write](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271723653.png)
 
@@ -5079,9 +5084,11 @@ AT24C02的Byte Write(以字节方式写数据)操作
 5. 在此写入周期中, 所有输入被禁用, EEPROM不进行响应
 ```
 
-AT24C02的Page Write(以页方式写数据)操作, 又称突发写入(即仅发送一个地址可写入多个数据)
+#### AT24C02的Page Write(以页方式写数据)操作
 
-*Page Write解决了Byte Write不能连续写入的缺陷*
+又称突发写入(即仅发送一个地址可写入多个数据)
+
+Page Write解决了Byte Write不能连续写入的缺陷
 
 ![Page Write](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271734727.png)
 
@@ -5105,7 +5112,7 @@ AT24C02的Page Write(以页方式写数据)操作, 又称突发写入(即仅发�
 8. 如果向EEPROM传输的DATA超过8个字节(对于AT24C02), 则数据会从头覆盖
 ```
 
-AT24C02的ACKNOWLEDGE POLLING(确认轮询)
+#### AT24C02的ACKNOWLEDGE POLLING(确认轮询)
 
 ![ACKNOWLEDGE POLLING](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280423663.png)
 
@@ -5115,7 +5122,7 @@ AT24C02的ACKNOWLEDGE POLLING(确认轮询)
 仅当内部写周期完成时EEPROM 会响应“0”，允许继续读取或写入序列
 ```
 
-*需要在向AT24C02写入数据操作后, 进行确认询问, 主机需要发送启动条件, 设备地址, 读写位, 如果AT24C02准备完毕会响应0才能继续进行才做*
+需要在向AT24C02写入数据操作后, 进行确认询问, 主机需要发送启动条件, 设备地址, 读写位, 如果AT24C02准备完毕会响应0才能继续进行操作
 
 以I2C1为例, 软件编程实现如下
 
@@ -5149,13 +5156,13 @@ void EEPROM_ACK_Polling(void)
 
 ```
 
-AT24C02的Current Address Read(从当前地址读数据)操作
+#### AT24C02的Current Address Read(从当前地址读数据)操作
 
 ![Current Address Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271810617.png)
 
-*一般不用, 因为在开发中不好确定当前地址的位置*
+一般不用, 因为在开发中不好确定当前地址的位置
 
-AT24C02的Random Read(随机读数据)操作
+#### AT24C02的Random Read(随机读数据)操作
 
 ![Random Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271813901.png)
 
@@ -5175,11 +5182,11 @@ AT24C02的Random Read(随机读数据)操作
 5. 单片机响应NO ACK并紧跟生成STOP信号
 ```
 
-AT24C02的Sequential Read(顺序读数据)操作
+#### AT24C02的Sequential Read(顺序读数据)操作
 
 ![Sequential Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271838678.png)
 
-**与Page Write类似**
+与Page Write类似
 
 ![Sequential Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271841941.png)
 
@@ -5195,18 +5202,18 @@ AT24C02的Sequential Read(顺序读数据)操作
 
 ### I2C-读写EEPROM实验
 
-**项目地址** 24-I2C-EEPROM
+项目地址: **24-I2C-EEPROM**
 
- **操作流程**
+#### 操作流程
 
-  1. 初始化I2C相关的GPIO
-  2. 配置I2C外设的工作模式
-  3. 编写I2C写入EEPROM的Byte Write函数 
-  4. 编写I2C读取EEPROM的Random Read函数
-  5. 使用read函数和write函数进行读写校验
-  6. 编写Page Write和Sequential Read函数进行校验
+1. 初始化I2C相关的GPIO
+2. 配置I2C外设的工作模式
+3. 编写I2C写入EEPROM的Byte Write函数
+4. 编写I2C读取EEPROM的Random Read函数
+5. 使用read函数和write函数进行读写校验
+6. 编写Page Write和Sequential Read函数进行校验
 
-在bsp_i2c.h中定义相关宏
+#### 在bsp_i2c.h中定义相关宏
 
 ```c
 /**
@@ -5243,7 +5250,7 @@ AT24C02的Sequential Read(顺序读数据)操作
  */
 ```
 
-在bsp_i2c.h中进行函数声明
+#### 在bsp_i2c.h中进行函数声明
 
 ```c
 /**
@@ -5264,7 +5271,7 @@ void EEPROM_ACK_Polling(void);
  */
 ```
 
-在bsp_i2c.c中编写I2C_EEPROM配置函数
+#### 在bsp_i2c.c中编写I2C_EEPROM配置函数
 
 ```c
 /**
@@ -5323,7 +5330,7 @@ void I2C_EEPROM_Config(void)
 }
 ```
 
-在bsp_i2c.c中编写Byte Writting方式的函数
+#### 在bsp_i2c.c中编写Byte Writting方式的函数
 
 ```c
 /**
@@ -5372,7 +5379,7 @@ void EEPROM_Byte_Writting(uint8_t WordAddress, uint8_t Data)
 }
 ```
 
-在bsp_i2c.c中编写Page Writting方式的函数
+#### 在bsp_i2c.c中编写Page Writting方式的函数
 
 ```c
 /**
@@ -5429,7 +5436,7 @@ void EEPROM_Page_Writting(uint8_t WordAddress, uint8_t* Data, uint8_t NumByteToW
 }
 ```
 
-在bsp_i2c.c中编写Random Read方式的函数
+#### 在bsp_i2c.c中编写Random Read方式的函数
 
 ```c
 /**
@@ -5501,7 +5508,7 @@ void EEPROM_Random_Read(uint8_t WordAddress, uint8_t* Data)
 }
 ```
 
-在bsp_i2c.c中编写Sequential Read方式的函数
+#### 在bsp_i2c.c中编写Sequential Read方式的函数
 
 ```c
 /**
@@ -5584,7 +5591,7 @@ void EEPROM_Sequential_Read(uint8_t WordAddress, uint8_t* Data, uint8_t NumByteT
 }
 ```
 
-在bsp_i2c.c中编写确认询问函数
+#### 在bsp_i2c.c中编写确认询问函数
 
 ```c
 /**
@@ -5617,7 +5624,7 @@ void EEPROM_ACK_Polling(void)
 }
 ```
 
-在main.c中进行读写测试
+#### 在main.c中进行读写测试
 
 ```c
 /**
@@ -5713,6 +5720,450 @@ int main(void)
 
 ```
 
-串口实验现象
+#### 串口实验现象
 
 ![实验现象](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280831099.png)
+
+#### 完善功能
+
+以下函数是对实验中出现函数的进一步完善, 源文件不在工程中
+
+##### 增加的宏定义
+
+```c
+/* STM32 I2C 快速模式 */
+#define I2C_Speed              400000  //*
+
+/* 这个地址只要与STM32外挂的I2C器件地址不一样即可 */
+#define I2Cx_OWN_ADDRESS7      0X0A   
+
+/* AT24C01/02每页有8个字节 */
+#define I2C_PageSize           8
+
+/* AT24C04/08A/16A每页有16个字节 */
+//#define I2C_PageSize           16
+
+/*等待超时时间*/
+#define I2CT_FLAG_TIMEOUT         ((uint32_t)0x1000)
+#define I2CT_LONG_TIMEOUT         ((uint32_t)(10 * I2CT_FLAG_TIMEOUT)
+```
+
+##### 调试功能
+
+```c
+#define EEPROM_DEBUG_ON         0
+
+#define EEPROM_INFO(fmt,arg...)           printf("<<-EEPROM-INFO->> "fmt"\n",##arg)
+#define EEPROM_ERROR(fmt,arg...)          printf("<<-EEPROM-ERROR->> "fmt"\n",##arg)
+#define EEPROM_DEBUG(fmt,arg...)          do{\
+                                          if(EEPROM_DEBUG_ON)\
+                                          printf("<<-EEPROM-DEBUG->> [%s][%d]"fmt"\n", __FILE__, __LINE__, ##arg);\
+                                          }while(0)
+```
+
+##### 超时处理函数
+
+完善了对于超时的处理
+
+###### 超时处理相关宏定义
+
+```c
+/*等待超时时间*/
+#define I2CT_FLAG_TIMEOUT         ((uint32_t)0x1000)
+#define I2CT_LONG_TIMEOUT         ((uint32_t)(10 * I2CT_FLAG_TIMEOUT))
+```
+
+###### 超时处理相关变量声明
+
+```c
+static __IO uint32_t  I2CTimeout = I2CT_LONG_TIMEOUT;
+
+static uint32_t I2C_TIMEOUT_UserCallback(uint8_t errorCode);
+```
+
+###### 超时状态函数
+
+```c
+/**
+  * @brief  Basic management of the timeout situation.
+  * @param  errorCode：错误代码，可以用来定位是哪个环节出错.
+  * @retval 返回0，表示IIC读取失败.
+  */
+static  uint32_t I2C_TIMEOUT_UserCallback(uint8_t errorCode)
+{
+  /* Block communication and all processes */
+  EEPROM_ERROR("I2C 等待超时!errorCode = %d",errorCode);
+  
+  return 0;
+}
+```
+
+##### 多字节写入函数
+
+完善了在Page Write中字节对齐的情况
+
+```c
+/**
+  * @brief   将缓冲区中的数据写到I2C EEPROM中
+  * @param   
+  *  @arg pBuffer:缓冲区指针
+  *  @arg WriteAddr:写地址
+  *     @arg NumByteToWrite:写的字节数
+  * @retval  无
+  */
+void I2C_EE_BufferWrite(u8* pBuffer, u8 WriteAddr, u16 NumByteToWrite)
+{
+  u8 NumOfPage = 0, NumOfSingle = 0, Addr = 0, count = 0;
+
+  Addr = WriteAddr % I2C_PageSize;
+  count = I2C_PageSize - Addr;
+  NumOfPage =  NumByteToWrite / I2C_PageSize;
+  NumOfSingle = NumByteToWrite % I2C_PageSize;
+ 
+  /* If WriteAddr is I2C_PageSize aligned  */
+  if(Addr == 0) 
+  {
+    /* If NumByteToWrite < I2C_PageSize */
+    if(NumOfPage == 0) 
+    {
+      I2C_EE_PageWrite(pBuffer, WriteAddr, NumOfSingle);
+      I2C_EE_WaitEepromStandbyState();
+    }
+    /* If NumByteToWrite > I2C_PageSize */
+    else  
+    {
+      while(NumOfPage--)
+      {
+        I2C_EE_PageWrite(pBuffer, WriteAddr, I2C_PageSize); 
+     I2C_EE_WaitEepromStandbyState();
+        WriteAddr +=  I2C_PageSize;
+        pBuffer += I2C_PageSize;
+      }
+
+      if(NumOfSingle!=0)
+      {
+        I2C_EE_PageWrite(pBuffer, WriteAddr, NumOfSingle);
+        I2C_EE_WaitEepromStandbyState();
+      }
+    }
+  }
+  /* If WriteAddr is not I2C_PageSize aligned  */
+  else 
+  {
+    /* If NumByteToWrite < I2C_PageSize */
+    if(NumOfPage== 0) 
+    {
+      I2C_EE_PageWrite(pBuffer, WriteAddr, NumOfSingle);
+      I2C_EE_WaitEepromStandbyState();
+    }
+    /* If NumByteToWrite > I2C_PageSize */
+    else
+    {
+      NumByteToWrite -= count;
+      NumOfPage =  NumByteToWrite / I2C_PageSize;
+      NumOfSingle = NumByteToWrite % I2C_PageSize; 
+      
+      if(count != 0)
+      {  
+        I2C_EE_PageWrite(pBuffer, WriteAddr, count);
+        I2C_EE_WaitEepromStandbyState();
+        WriteAddr += count;
+        pBuffer += count;
+      } 
+      
+      while(NumOfPage--)
+      {
+        I2C_EE_PageWrite(pBuffer, WriteAddr, I2C_PageSize);
+        I2C_EE_WaitEepromStandbyState();
+        WriteAddr +=  I2C_PageSize;
+        pBuffer += I2C_PageSize;  
+      }
+      if(NumOfSingle != 0)
+      {
+        I2C_EE_PageWrite(pBuffer, WriteAddr, NumOfSingle); 
+        I2C_EE_WaitEepromStandbyState();
+      }
+    }
+  }  
+}
+```
+
+##### 单字节写入函数
+
+增加超时处理
+
+```c
+/**
+  * @brief   写一个字节到I2C EEPROM中
+  * @param   
+  * @arg pBuffer:缓冲区指针
+  * @arg WriteAddr:写地址 
+  * @retval  无
+  */
+uint32_t I2C_EE_ByteWrite(u8* pBuffer, u8 WriteAddr) 
+{
+  /* Send START condition */
+  I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+
+  I2CTimeout = I2CT_FLAG_TIMEOUT;  
+  /* Test on EV5 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_MODE_SELECT))  
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(0);
+  } 
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Send EEPROM address for write */
+  I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Transmitter);
+  
+  /* Test on EV6 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(1);
+  }  
+  /* Send the EEPROM's internal address to write to */
+  I2C_SendData(EEPROM_I2Cx, WriteAddr);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV8 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(2);
+  } 
+  
+  /* Send the byte to be written */
+  I2C_SendData(EEPROM_I2Cx, *pBuffer); 
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;  
+  /* Test on EV8 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(3);
+  } 
+  
+  /* Send STOP condition */
+  I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE);
+  
+  return 1;
+}
+```
+
+##### 单页写入函数
+
+```c
+/**
+  * @brief   在EEPROM的一个写循环中可以写多个字节，但一次写入的字节数
+  *          不能超过EEPROM页的大小，AT24C02每页有8个字节
+  * @param   
+  *     @arg pBuffer:缓冲区指针
+  *     @arg WriteAddr:写地址
+  *     @arg NumByteToWrite:写的字节数
+  * @retval  无
+  */
+uint32_t I2C_EE_PageWrite(u8* pBuffer, u8 WriteAddr, u8 NumByteToWrite)
+{
+  I2CTimeout = I2CT_LONG_TIMEOUT;
+
+  while(I2C_GetFlagStatus(EEPROM_I2Cx, I2C_FLAG_BUSY))   
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(4);
+  } 
+  
+  /* Send START condition */
+  I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV5 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_MODE_SELECT))  
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(5);
+  } 
+  
+  /* Send EEPROM address for write */
+  I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Transmitter);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV6 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))  
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(6);
+  } 
+  
+  /* Send the EEPROM's internal address to write to */    
+  I2C_SendData(EEPROM_I2Cx, WriteAddr);  
+
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV8 and clear it */
+  while(! I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(7);
+  } 
+
+  /* While there is data to be written */
+  while(NumByteToWrite--)  
+  {
+    /* Send the current byte */
+    I2C_SendData(EEPROM_I2Cx, *pBuffer); 
+
+    /* Point to the next byte to be written */
+    pBuffer++; 
+  
+    I2CTimeout = I2CT_FLAG_TIMEOUT;
+
+    /* Test on EV8 and clear it */
+    while (!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+    {
+      if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(8);
+    } 
+  }
+
+  /* Send STOP condition */
+  I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE);
+  
+  return 1;
+}
+```
+
+##### 读取数据函数
+
+```c
+/**
+  * @brief   从EEPROM里面读取一块数据 
+  * @param   
+  *     @arg pBuffer:存放从EEPROM读取的数据的缓冲区指针
+  *     @arg WriteAddr:接收数据的EEPROM的地址
+  *     @arg NumByteToWrite:要从EEPROM读取的字节数
+  * @retval  无
+  */
+uint32_t I2C_EE_BufferRead(u8* pBuffer, u8 ReadAddr, u16 NumByteToRead)
+{  
+  
+  I2CTimeout = I2CT_LONG_TIMEOUT;
+  
+  //*((u8 *)0x4001080c) |=0x80; 
+  while(I2C_GetFlagStatus(EEPROM_I2Cx, I2C_FLAG_BUSY))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(9);
+   }
+  
+  /* Send START condition */
+  I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+  //*((u8 *)0x4001080c) &=~0x80;
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV5 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_MODE_SELECT))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(10);
+   }
+  
+  /* Send EEPROM address for write */
+  I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Transmitter);
+
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV6 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(11);
+   }
+    
+  /* Clear EV6 by setting again the PE bit */
+  I2C_Cmd(EEPROM_I2Cx, ENABLE);
+
+  /* Send the EEPROM's internal address to write to */
+  I2C_SendData(EEPROM_I2Cx, ReadAddr);  
+
+   
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV8 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(12);
+   }
+    
+  /* Send START condition a second time */  
+  I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV5 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_MODE_SELECT))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(13);
+   }
+    
+  /* Send EEPROM address for read */
+  I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Receiver);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV6 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(14);
+   }
+  
+  /* While there is data to be read */
+  while(NumByteToRead)  
+  {
+    if(NumByteToRead == 1)
+    {
+      /* Disable Acknowledgement */
+      I2C_AcknowledgeConfig(EEPROM_I2Cx, DISABLE);
+      
+      /* Send STOP Condition */
+      I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE);
+    }
+
+    /* Test on EV7 and clear it */    
+    I2CTimeout = I2CT_LONG_TIMEOUT;
+    
+    while(I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_RECEIVED)==0)  
+    {
+        if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(3);
+    } 
+    {      
+      /* Read a byte from the EEPROM */
+      *pBuffer = I2C_ReceiveData(EEPROM_I2Cx);
+
+      /* Point to the next location where the byte read will be saved */
+      pBuffer++; 
+      
+      /* Decrement the read bytes counter */
+      NumByteToRead--;        
+    }   
+  }
+
+  /* Enable Acknowledgement to be ready for another reception */
+  I2C_AcknowledgeConfig(EEPROM_I2Cx, ENABLE);
+  
+    return 1;
+}
+```
+
+##### 等待EEPROM函数
+
+```c
+/**
+  * @brief  Wait for EEPROM Standby state 
+  * @param  无
+  * @retval 无
+  */
+void I2C_EE_WaitEepromStandbyState(void)      
+{
+  vu16 SR1_Tmp = 0;
+
+  do
+  {
+    /* Send START condition */
+    I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+    /* Read I2C1 SR1 register */
+    SR1_Tmp = I2C_ReadRegister(EEPROM_I2Cx, I2C_Register_SR1);
+    /* Send EEPROM address for write */
+    I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Transmitter);
+  }while(!(I2C_ReadRegister(EEPROM_I2Cx, I2C_Register_SR1) & 0x0002));
+  
+  /* Clear AF flag */
+  I2C_ClearFlag(EEPROM_I2Cx, I2C_FLAG_AF);
+    /* STOP condition */    
+    I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE); 
+}
+```

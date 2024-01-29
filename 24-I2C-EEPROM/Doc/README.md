@@ -9,30 +9,21 @@ I2C（Inter-Integrated Circuit）是一种串行通信协议，**用于在集成
 以下是 I2C 协议的一些关键特点和基本概念：
 
 1. 总线结构
-
     - 主从结构： I2C 使用主从结构，其中一个设备充当主设备（通常是微控制器或处理器），而其他设备则充当从设备。主设备负责发起通信和生成时钟信号。
     - 双线制： I2C 使用两根线，一根是数据线（SDA），另一根是时钟线（SCL）。这两根线上都有上拉电阻，以便在设备不主动拉低时保持高电平。
-
 2. 数据传输：
-
-   - 起始和停止条件： 数据传输始于主设备发送起始条件（Start Condition），并以主设备发送停止条件（Stop Condition）结束。这两个条件都是由主设备在总线上生成的。
-   - 地址帧： 每个数据传输都以地址帧开始，其中包含目标设备的地址和读写位。地址帧由主设备发送。
-   - 数据帧： 在地址帧之后是一个或多个数据帧，其中包含实际的数据。数据帧的传输由主设备和从设备之间交替进行。
-   - 应答（Acknowledge）： 在每个数据帧之后，接收方发送一个应答信号，通常是一个低电平，以确认数据的接收。
-
+    - 起始和停止条件： 数据传输始于主设备发送起始条件（Start Condition），并以主设备发送停止条件（Stop Condition）结束。这两个条件都是由主设备在总线上生成的。
+    - 地址帧： 每个数据传输都以地址帧开始，其中包含目标设备的地址和读写位。地址帧由主设备发送。
+    - 数据帧： 在地址帧之后是一个或多个数据帧，其中包含实际的数据。数据帧的传输由主设备和从设备之间交替进行。
+    - 应答（Acknowledge）： 在每个数据帧之后，接收方发送一个应答信号，通常是一个低电平，以确认数据的接收。
 3. 速率和模式：
-
     - 速率： I2C 支持不同的传输速率，常见的有 100 kHz、400 kHz 和 1 MHz 等。
     - 模式： I2C 支持标准模式（100 kHz），快速模式（400 kHz），高速模式（1 MHz）等不同的工作模式。
-
 4. 多主设备和重复启动：
-
     - 多主设备： I2C 支持多主设备共享同一总线。主设备之间通过仲裁（Arbitration）来确定哪个主设备能够继续发送。
     - 重复启动： 主设备可以在一个传输结束后发送重复启动条件，而无需先发送停止条件，从而在同一次通信中与另一个从设备建立连接。
-
 5. I2C设备地址：
-
-    - 7位或10位地址： I2C 设备使用 7 位或 10 位地址来识别自己。大多数设备使用 7 位地址。
+   - 7位或10位地址： I2C 设备使用 7 位或 10 位地址来识别自己。大多数设备使用 7 位地址。
 
 I2C 协议的简洁性和灵活性使得它在连接各种设备和传感器时非常有用，尤其是在嵌入式系统中。
 
@@ -54,7 +45,7 @@ I2C 协议的简洁性和灵活性使得它在连接各种设备和传感器时�
 
 ![I2C物理层](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270140896.png)
 
-**I2C物理层主要特点:**
+#### I2C物理层主要特点
 
 - I2C是支持多设备的总线, 可支持多个通讯主机和从机
 - I2C使用两条线路, 一条SDA(双向串行数据线)来表示数据, 一条SCL(串行时钟线)来同步数据, 属于同步通信
@@ -101,7 +92,7 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 8. A/!A: 主机响应是否继续接收
 9. P: 若主机响应不继续接收, 则主机传输停止位
 
-**注意:**
+注意:
 
 - S: 开始信号只能由主机产生
 - SLAVE ADDRESS: 进行通信的从机地址只能由主机产生
@@ -109,7 +100,7 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 - P: 停止信号只能由主机产生
 - DATA 和 A: 数据段和响应段由主机和从机交替产生, 具体由主机和从机的读写决定
 
-#### 通信复合格式
+##### 通信复合格式
 
 ![通信复合格式](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270209992.png)
 
@@ -127,21 +118,21 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 - A/A!: 逐个字节进行读取外设每个寄存器的地址并做出响应
 - P: 全部读取完毕后主机传输停止信号
 
-##### 通讯的起始和停止信号
+#### 通讯的起始和停止信号
 
 ![通讯的起始和停止信号](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270225648.png)
 
 - 起始信号: **SCL高电平, SDA由高电平向低电平转换**
 - 停止信号: **SCL高电平, SDA由低电平向高电平转换**
 
-##### 数据的有效性
+#### 数据的有效性
 
 ![数据有效性](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270237788.png)
 
 - SDA: 负责传输数据
 - SCL: 高电平时采集SDA上1bit数据, 低电平时SDA进行电平转换
 
-##### 地址及数据方向
+#### 地址及数据方向
 
 ![地址及数据方向](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270243764.png)
 
@@ -154,7 +145,7 @@ I2C采用高位先行, 由高位到低位进行传输
 - 8位设备的读地址位为0xF1(0b11110001)
 - 8位设备的写地址位为0xF0(0b11110000)
 
-##### 响应
+#### 响应
 
 ![响应](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270254565.png)
 
@@ -168,7 +159,7 @@ I2C采用高位先行, 由高位到低位进行传输
 - 软件模拟协议: 较为繁琐
 - 硬件模拟协议: 较为方便, 减轻CPU负担
 
-STM32硬件的I2C逻辑可能会有问题
+注: *STM32硬件的I2C逻辑可能会有问题*
 
 #### STM32的I2C架构分析
 
@@ -180,7 +171,7 @@ STM32硬件的I2C逻辑可能会有问题
 
 ![I2C的通讯引脚](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270316720.png)
 
-勘误: I2C1_SCL默认映射到PB5, I2C1_SDA默认映射到PB7, 图片中有误
+勘误: *I2C1_SCL默认映射到PB5, I2C1_SDA默认映射到PB7, 图片中有误*
 
 STM32兼容smbus协议
 
@@ -189,7 +180,7 @@ STM32兼容smbus协议
 ![时钟控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270347794.png)
 ![时钟控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270325594.png)
 
-Tpck1: 指的是APB1时钟周期(1/36MHz)
+注: *Tpck1: 指的是APB1时钟周期(1/36MHz)*
 
 ###### 计算时钟频率的方法
 
@@ -218,7 +209,7 @@ Tpck1: 指的是APB1时钟周期(1/36MHz)
 
 ![STM32作为主发送器的通讯过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270357886.png)
 
-勘误: EV8_2: TxE=1, BTF=1, 请求设置停止位. TxE和BTF位由硬件在产生停止条件时清除
+勘误: *EV8_2: TxE=1, BTF=1, 请求设置停止位. TxE和BTF位由硬件在产生停止条件时清除*
 
 - EV5: 在正常产生S起始信号后会产生EV5事件(I2C_SRx:SB[0]置1表示起始条件已发送)
 - EV6: 在正常发送SLAVE ADDRESS和R/!W位后会产生EV6事件(I2C_SRx:ADDR[1]置1表示地址发送结束)
@@ -229,7 +220,7 @@ Tpck1: 指的是APB1时钟周期(1/36MHz)
 
 ![STM32作为主接收器的通讯过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270423471.png)
 
-勘误: EV7_1: RxNE=1, 读DR寄存器清除该事件. 设置ACK=0和STOP请求
+勘误: *EV7_1: RxNE=1, 读DR寄存器清除该事件. 设置ACK=0和STOP请求*
 
 - EV5: 在正常产生S起始信号后会产生EV5事件(I2C_SRx:SB[0]置1表示起始条件已发送)
 - EV6: 在正常发送SLAVE ADDRESS和R/!W位后会产生EV6事件(I2C_SRx:ADDR[1]置1表示地址发送结束)
@@ -240,7 +231,7 @@ Tpck1: 指的是APB1时钟周期(1/36MHz)
 
 ### I2C初始化结构体
 
-#### 在stm32f10x_i2c.h中定义I2C初始化结构体
+在stm32f10x_i2c.h中定义I2C初始化结构体
 
 ```c
 /** 
@@ -307,11 +298,11 @@ typedef struct
 
 ### I2C库函数
 
-I2C_GenerateSTART函数, 用于产生起始条件
+#### I2C_GenerateSTART函数, 用于产生起始条件
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271607885.png)
 
-I2C_GetFlagStatus函数, 用于获取状态位
+#### I2C_GetFlagStatus函数, 用于获取状态位
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271610721.png)
 
@@ -328,47 +319,47 @@ typedef enum {RESET = 0, SET = !RESET} FlagStatus, ITStatus;
 - RESET: 0, 返回RESET表示该状态位为0
 - SET: 1, 返回SET表示该状态位为1
 
-I2C_Send7bitAddress函数, 用于发送7位地址
+#### I2C_Send7bitAddress函数, 用于发送7位地址
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271616560.png)
 
 参数Address为八位读/写地址, 通过I2C_Direction实际配置读写方向, 最终方向以I2C_Direction配置为准, 参数Address的读写位失效
 
-I2C_SendDate函数, 通过I2Cx外设发送数据字节
+#### I2C_SendDate函数, 通过I2Cx外设发送数据字节
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271618557.png)
 
-I2C_ReceiveData函数, 返回 I2Cx 外设最近接收的数据
+#### I2C_ReceiveData函数, 返回 I2Cx 外设最近接收的数据
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271622473.png)
 
-AcknowledgeConfig函数, 使能或禁用I2C的应答
+#### AcknowledgeConfig函数, 使能或禁用I2C的应答
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271623317.png)
 
-I2C_Cmd函数, 使能或禁用I2Cx外设
+#### I2C_Cmd函数, 使能或禁用I2Cx外设
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271625131.png)
 
-I2C_CheckEvent函数, I2C状态监测函数
+#### I2C_CheckEvent函数, I2C状态监测函数
 
 监测的事件发生则返回SUCCESS
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280036252.png)
 
-![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037103.png)
+![I2C_CheckEvent函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037103.png)
 
-![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037758.png)
+![I2C_CheckEvent函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037758.png)
 
-![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038783.png)
+![I2C_CheckEvent函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038783.png)
 
-![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038105.png)
+![I2C_CheckEvent函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038105.png)
 
 ### EEPROM硬件结构
 
 ![EEPROM](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271630443.png)
 
-#### 原理图引脚说明
+#### 引脚说明
 
 - VCC: 电源引脚, 接3V3
 - GND: 地引脚, 接地
@@ -383,7 +374,7 @@ I2C_CheckEvent函数, I2C状态监测函数
 
 AT24C02可存储256字节数据
 
-#### 引脚说明
+#### AT24C02引脚说明
 
 ![AT24C02](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271648925.png)
 
@@ -393,7 +384,7 @@ AT24C02可存储256字节数据
 - WP: 写保护, 置1启用写保护
 - NC: 不连接
 
-#### 设备地址
+#### AT24C02设备地址
 
 ![设备地址](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271702961.png)
 
@@ -410,7 +401,7 @@ AT24C02的地址为0b1010000R/W, Bit0为R/!W位
 - AT24C02在A2:A1[000]情况下读地址: 0b10100001(0xA1)
 - AT24C02在A2:A1[000]情况下写地址: 0b10100000(0xA0)
 
-#### Byte Write(以字节方式写数据)操作
+#### AT24C02的Byte Write(以字节方式写数据)操作
 
 ![Byte Write](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271719435.png)
 
@@ -428,7 +419,7 @@ AT24C02的地址为0b1010000R/W, Bit0为R/!W位
 5. 在此写入周期中, 所有输入被禁用, EEPROM不进行响应
 ```
 
-#### Page Write(以页方式写数据)操作
+#### AT24C02的Page Write(以页方式写数据)操作
 
 又称突发写入(即仅发送一个地址可写入多个数据)
 
@@ -456,7 +447,7 @@ Page Write解决了Byte Write不能连续写入的缺陷
 8. 如果向EEPROM传输的DATA超过8个字节(对于AT24C02), 则数据会从头覆盖
 ```
 
-#### ACKNOWLEDGE POLLING(确认轮询)
+#### AT24C02的ACKNOWLEDGE POLLING(确认轮询)
 
 ![ACKNOWLEDGE POLLING](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280423663.png)
 
@@ -466,7 +457,7 @@ Page Write解决了Byte Write不能连续写入的缺陷
 仅当内部写周期完成时EEPROM 会响应“0”，允许继续读取或写入序列
 ```
 
-需要在向AT24C02写入数据操作后, 进行确认询问, 主机需要发送启动条件, 设备地址, 读写位, 如果AT24C02准备完毕会响应0才能继续进行才做
+需要在向AT24C02写入数据操作后, 进行确认询问, 主机需要发送启动条件, 设备地址, 读写位, 如果AT24C02准备完毕会响应0才能继续进行操作
 
 以I2C1为例, 软件编程实现如下
 
@@ -500,13 +491,13 @@ void EEPROM_ACK_Polling(void)
 
 ```
 
-#### Current Address Read(从当前地址读数据)操作
+#### AT24C02的Current Address Read(从当前地址读数据)操作
 
 ![Current Address Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271810617.png)
 
 一般不用, 因为在开发中不好确定当前地址的位置
 
-#### Random Read(随机读数据)操作
+#### AT24C02的Random Read(随机读数据)操作
 
 ![Random Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271813901.png)
 
@@ -526,7 +517,7 @@ void EEPROM_ACK_Polling(void)
 5. 单片机响应NO ACK并紧跟生成STOP信号
 ```
 
-#### Sequential Read(顺序读数据)操作
+#### AT24C02的Sequential Read(顺序读数据)操作
 
 ![Sequential Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271838678.png)
 
@@ -537,7 +528,7 @@ void EEPROM_ACK_Polling(void)
 ```tex
 翻译: Sequential Read流程
 
-1. Sequential Read从当前地址读取或随机地址开始读取
+1. Sequntial Read从当前地址读取或随机地址开始读取
 2. 单片机收到DATA后，会响应ACK
 3. 只要EEPROM收到ACK响应，它就会继续递增数据地址，并顺序串行输出DATA
 4. 当达到内存地址限制时，数据地址将"roll over"，顺序读取将继续从头开始重新读取数据
@@ -546,16 +537,16 @@ void EEPROM_ACK_Polling(void)
 
 ### I2C-读写EEPROM实验
 
-**项目地址** 24-I2C-EEPROM
+项目地址: **24-I2C-EEPROM**
 
 #### 操作流程
 
-  1. 初始化I2C相关的GPIO
-  2. 配置I2C外设的工作模式
-  3. 编写I2C写入EEPROM的Byte Write函数
-  4. 编写I2C读取EEPROM的Random Read函数
-  5. 使用read函数和write函数进行读写校验
-  6. 编写Page Write和Sequential Read函数进行校验
+1. 初始化I2C相关的GPIO
+2. 配置I2C外设的工作模式
+3. 编写I2C写入EEPROM的Byte Write函数
+4. 编写I2C读取EEPROM的Random Read函数
+5. 使用read函数和write函数进行读写校验
+6. 编写Page Write和Sequential Read函数进行校验
 
 #### 在bsp_i2c.h中定义相关宏
 
@@ -981,7 +972,7 @@ void EEPROM_ACK_Polling(void)
   ******************************************************************************
   * @attention
   *
-  * THE PRESENT FUNTCIONS WHICH IS FOR GUIDANCE ONLY
+  * THE PRESENT FUNTIONS WHICH IS FOR GUIDANCE ONLY
   ******************************************************************************
   */
 

@@ -4,5 +4,11 @@
         "stm32f10x_rcc.h": "c"
     },
     "C_Cpp.default.configurationProvider": "cmsis-csolution",
-    "commentTranslate.hover.enabled": true
+    "commentTranslate.hover.enabled": true,
+    "cSpell.words": [
+        "LQFP",
+        "MOSFET",
+        "NMOS",
+        "PMOS"
+    ]
 }
