@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * THE PRESENT FUNTIONS WHICH IS FOR GUIDANCE ONLY
+  * THE PRESENT FUNCTIONS WHICH IS FOR GUIDANCE ONLY
   ******************************************************************************
   */
 

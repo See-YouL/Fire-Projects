@@ -25,7 +25,10 @@
             "editor.tabSize": 4,
             "editor.autoIndent": "advanced"
         },
-        "cortex-debug.variableUseNaturalFormat": true
+        "cortex-debug.variableUseNaturalFormat": true,
+        "cSpell.words": [
+            "smbus"
+        ]
     },
     "extensions": {
         "recommendations": [
@@ -35,7 +38,6 @@
             "hars.cppsnippets",
             "zixuanwang.linkerscript",
             "redhat.vscode-yaml",
-            "IBM.output-colorizer",
             "cschlosser.doxdocgen",
             "ms-vscode.vscode-serial-monitor",
             "dan-c-underwood.arm",

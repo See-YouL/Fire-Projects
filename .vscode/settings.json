@@ -3,5 +3,6 @@
     "files.associations": {
         "stm32f10x_rcc.h": "c"
     },
-    "C_Cpp.default.configurationProvider": "cmsis-csolution"
+    "C_Cpp.default.configurationProvider": "cmsis-csolution",
+    "commentTranslate.hover.enabled": true
 }

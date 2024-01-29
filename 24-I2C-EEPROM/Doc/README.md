@@ -10,29 +10,29 @@ I2C（Inter-Integrated Circuit）是一种串行通信协议，**用于在集成
 
 1. 总线结构
 
- - 主从结构： I2C 使用主从结构，其中一个设备充当主设备（通常是微控制器或处理器），而其他设备则充当从设备。主设备负责发起通信和生成时钟信号。
- - 双线制： I2C 使用两根线，一根是数据线（SDA），另一根是时钟线（SCL）。这两根线上都有上拉电阻，以便在设备不主动拉低时保持高电平。
+    - 主从结构： I2C 使用主从结构，其中一个设备充当主设备（通常是微控制器或处理器），而其他设备则充当从设备。主设备负责发起通信和生成时钟信号。
+    - 双线制： I2C 使用两根线，一根是数据线（SDA），另一根是时钟线（SCL）。这两根线上都有上拉电阻，以便在设备不主动拉低时保持高电平。
 
 2. 数据传输：
 
- - 起始和停止条件： 数据传输始于主设备发送起始条件（Start Condition），并以主设备发送停止条件（Stop Condition）结束。这两个条件都是由主设备在总线上生成的。
- - 地址帧： 每个数据传输都以地址帧开始，其中包含目标设备的地址和读写位。地址帧由主设备发送。
- - 数据帧： 在地址帧之后是一个或多个数据帧，其中包含实际的数据。数据帧的传输由主设备和从设备之间交替进行。
- - 应答（Acknowledge）： 在每个数据帧之后，接收方发送一个应答信号，通常是一个低电平，以确认数据的接收。
+   - 起始和停止条件： 数据传输始于主设备发送起始条件（Start Condition），并以主设备发送停止条件（Stop Condition）结束。这两个条件都是由主设备在总线上生成的。
+   - 地址帧： 每个数据传输都以地址帧开始，其中包含目标设备的地址和读写位。地址帧由主设备发送。
+   - 数据帧： 在地址帧之后是一个或多个数据帧，其中包含实际的数据。数据帧的传输由主设备和从设备之间交替进行。
+   - 应答（Acknowledge）： 在每个数据帧之后，接收方发送一个应答信号，通常是一个低电平，以确认数据的接收。
 
 3. 速率和模式：
 
- - 速率： I2C 支持不同的传输速率，常见的有 100 kHz、400 kHz 和 1 MHz 等。
- - 模式： I2C 支持标准模式（100 kHz），快速模式（400 kHz），高速模式（1 MHz）等不同的工作模式。
+    - 速率： I2C 支持不同的传输速率，常见的有 100 kHz、400 kHz 和 1 MHz 等。
+    - 模式： I2C 支持标准模式（100 kHz），快速模式（400 kHz），高速模式（1 MHz）等不同的工作模式。
 
 4. 多主设备和重复启动：
 
- - 多主设备： I2C 支持多主设备共享同一总线。主设备之间通过仲裁（Arbitration）来确定哪个主设备能够继续发送。
- - 重复启动： 主设备可以在一个传输结束后发送重复启动条件，而无需先发送停止条件，从而在同一次通信中与另一个从设备建立连接。
+    - 多主设备： I2C 支持多主设备共享同一总线。主设备之间通过仲裁（Arbitration）来确定哪个主设备能够继续发送。
+    - 重复启动： 主设备可以在一个传输结束后发送重复启动条件，而无需先发送停止条件，从而在同一次通信中与另一个从设备建立连接。
 
 5. I2C设备地址：
 
- - 7位或10位地址： I2C 设备使用 7 位或 10 位地址来识别自己。大多数设备使用 7 位地址。
+    - 7位或10位地址： I2C 设备使用 7 位或 10 位地址来识别自己。大多数设备使用 7 位地址。
 
 I2C 协议的简洁性和灵活性使得它在连接各种设备和传感器时非常有用，尤其是在嵌入式系统中。
 
@@ -54,15 +54,15 @@ I2C 协议的简洁性和灵活性使得它在连接各种设备和传感器时�
 
 ![I2C物理层](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270140896.png)
 
-**I2C物理层主要特点**
+**I2C物理层主要特点:**
 
 - I2C是支持多设备的总线, 可支持多个通讯主机和从机
 - I2C使用两条线路, 一条SDA(双向串行数据线)来表示数据, 一条SCL(串行时钟线)来同步数据, 属于同步通信
 - 连接到总线的设备分配独立地址(7位或10位)
 - 总线接上拉电阻到电源(一般4.7KΩ, 具体看手册)
-  1. 当设备空闲时输出高阻态*防止短路总线上的其他接地设备*
-  2. 当所有设备都空闲时全部输出高阻态, 可通过上拉电阻把总线拉到高电平
-  3. 输出高阻态的特性需要GPIO的开漏输出
+    1. 当设备空闲时输出高阻态*防止短路总线上的其他接地设备*
+    2. 当所有设备都空闲时全部输出高阻态, 可通过上拉电阻把总线拉到高电平
+    3. 输出高阻态的特性需要GPIO的开漏输出
 - 多设备占用总线会仲裁
 - 具有三种传输速度模式, **实际开发中可使用低于最高速的速度, 协调总线设备速度一致即可**
 - I2C可接入的设备数量受到最大电容负载的限制, 一般为400pF, *也就是说总线上的设备数量越多, 传输速度越慢*
@@ -71,9 +71,9 @@ I2C 协议的简洁性和灵活性使得它在连接各种设备和传感器时�
 
 I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲裁, 时钟同步和地址广播等环节**
 
-**I2C基本读写过程**
+#### I2C基本读写过程
 
-**主机写数据到从机**
+##### 主机写数据到从机
 
 ![I2C基本读写过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270157626.png)
 
@@ -84,10 +84,10 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 5. DATA: 主机传输数据段
 6. A: 从机响应
 7. DATA: 主机继续发送数据段
-8. A/!A: 从机响应是否继续接收 
+8. A/!A: 从机响应是否继续接收
 9. P: 若从机响应不继续接收, 则主机传输停止位
 
-**主机由从机读数据**
+##### 主机由从机读数据
 
 ![I2C基本读写过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270207508.png)
 
@@ -98,10 +98,10 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 5. DATA: 从机传输数据段
 6. A: 主机响应
 7. DATA: 从机继续发送数据段
-8. A/!A: 主机响应是否继续接收 
+8. A/!A: 主机响应是否继续接收
 9. P: 若主机响应不继续接收, 则主机传输停止位
 
-注意:
+**注意:**
 
 - S: 开始信号只能由主机产生
 - SLAVE ADDRESS: 进行通信的从机地址只能由主机产生
@@ -109,7 +109,7 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 - P: 停止信号只能由主机产生
 - DATA 和 A: 数据段和响应段由主机和从机交替产生, 具体由主机和从机的读写决定
 
-**通信复合格式**
+#### 通信复合格式
 
 ![通信复合格式](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270209992.png)
 
@@ -125,36 +125,36 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 - R/W!: 一般为读操作
 - DATA: 读取外设的寄存器的具体地址
 - A/A!: 逐个字节进行读取外设每个寄存器的地址并做出响应
-- P: 全部读取完毕后主机传输停止信号 
+- P: 全部读取完毕后主机传输停止信号
 
-**通讯的起始和停止信号**
+##### 通讯的起始和停止信号
 
 ![通讯的起始和停止信号](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270225648.png)
 
 - 起始信号: **SCL高电平, SDA由高电平向低电平转换**
 - 停止信号: **SCL高电平, SDA由低电平向高电平转换**
 
-**数据的有效性**
+##### 数据的有效性
 
 ![数据有效性](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270237788.png)
 
 - SDA: 负责传输数据
 - SCL: 高电平时采集SDA上1bit数据, 低电平时SDA进行电平转换
 
-**地址及数据方向**
+##### 地址及数据方向
 
 ![地址及数据方向](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270243764.png)
 
-**I2C采用高位先行, 由高位到低位进行传输**
+I2C采用高位先行, 由高位到低位进行传输
 
-**一般使用7位表示I2C上的设备地址, 设备地址加上其后的读写位可以凑成8位即1字节方便传输**
+一般使用7位表示I2C上的设备地址, 设备地址加上其后的读写位可以凑成8位即1字节方便传输
 
 例如, 某设备在I2C上的设备地址为7位的0x78(0b01111000), 可加入读写位凑到八位
 
 - 8位设备的读地址位为0xF1(0b11110001)
 - 8位设备的写地址位为0xF0(0b11110000)
 
-**响应**
+##### 响应
 
 ![响应](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270254565.png)
 
@@ -168,36 +168,36 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 - 软件模拟协议: 较为繁琐
 - 硬件模拟协议: 较为方便, 减轻CPU负担
 
-*STM32硬件的I2C逻辑可能会有问题*
+STM32硬件的I2C逻辑可能会有问题
 
-**STM32的I2C架构分析**
+#### STM32的I2C架构分析
 
 ![STM32的I2C架构分析](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270315440.png)
 
-**I2C的通讯引脚**
+##### I2C的通讯引脚
 
 ![I2C的通讯引脚](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270346561.png)
 
 ![I2C的通讯引脚](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270316720.png)
 
-*勘误: I2C1_SCL默认映射到PB5, I2C1_SDA默认映射到PB7, 图片中有误*
+勘误: I2C1_SCL默认映射到PB5, I2C1_SDA默认映射到PB7, 图片中有误
 
-**STM32兼容smbus协议**
+STM32兼容smbus协议
 
-**时钟控制逻辑**
+##### 时钟控制逻辑
 
 ![时钟控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270347794.png)
 ![时钟控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270325594.png)
 
-*Tpck1: 指的是APB1时钟周期(1/36MHz)*
+Tpck1: 指的是APB1时钟周期(1/36MHz)
 
-**计算时钟频率的方法**
+###### 计算时钟频率的方法
 
 ![计算时钟频率的方法](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270333989.png)
 
-**实际就是解未知数CCR的一元一次方程**
+实际就是解未知数CCR的一元一次方程
 
-**数据控制逻辑**
+##### 数据控制逻辑
 
 ![数据控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270347332.png)
 
@@ -206,7 +206,7 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 1. 将8位数据写入数据寄存器(DR)
 2. 数据寄存器里面的数据会被发送到数据移位寄存器
 
-**整体控制逻辑**
+##### 整体控制逻辑
 
 ![整体控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270348369.png)
 
@@ -214,35 +214,33 @@ I2C协议定义了**通讯的起始和停止信号, 数据有效性, 响应, 仲
 
 ### STM32硬件I2C的通讯过程
 
-**STM32作为主发送器的通讯过程**
+#### STM32作为主发送器的通讯过程
 
 ![STM32作为主发送器的通讯过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270357886.png)
 
-*勘误: EV8_2: TxE=1, BTF=1, 请求设置停止位. TxE和BTF位由硬件在产生停止条件时清除*
+勘误: EV8_2: TxE=1, BTF=1, 请求设置停止位. TxE和BTF位由硬件在产生停止条件时清除
 
 - EV5: 在正常产生S起始信号后会产生EV5事件(I2C_SRx:SB[0]置1表示起始条件已发送)
 - EV6: 在正常发送SLAVE ADDRESS和R/!W位后会产生EV6事件(I2C_SRx:ADDR[1]置1表示地址发送结束)
 - EV8: 在正常数据发送完毕后会产生EV8事件(I2C_SRx:TxE[7]置1表示数据寄存器空)
 - EV8_2: 在从机发送结束应答后会产生EV8_2事件(I2C_SRx:TxE[7]置1表示数据寄存器空, I2C_SRx:BTF[2]置1表示字节发送结束, I2C_CRx:STOP[9]置1表示在当前字节传输或在当前起始条件发出后产生停止条件, 产生停止条件后由硬件清除TxE和BTF位)
 
-**STM32作为主接收器的通讯过程**
+#### STM32作为主接收器的通讯过程
 
 ![STM32作为主接收器的通讯过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270423471.png)
 
-*勘误: EV7_1: RxNE=1, 读DR寄存器清除该事件. 设置ACK=0和STOP请求*
+勘误: EV7_1: RxNE=1, 读DR寄存器清除该事件. 设置ACK=0和STOP请求
 
 - EV5: 在正常产生S起始信号后会产生EV5事件(I2C_SRx:SB[0]置1表示起始条件已发送)
 - EV6: 在正常发送SLAVE ADDRESS和R/!W位后会产生EV6事件(I2C_SRx:ADDR[1]置1表示地址发送结束)
 - EV7: 在正常数据发送完毕后会产生EV7事件(I2C_SRx:RxNE[6]置1表示数据寄存器(接收时)非空)
 - EV7_1: 在主机发送结束应答后会产生EV7_1事件(I2C_SRx:RxNE[6]置1表示数据寄存器(接收时)非空, I2C_CRx:ACK[10]置0表示设置为无应答返回, I2C_CRx:STOP[9]置1表示在当前字节传输或释放SCL和SDA线)
 
-**标志位的清除方法**
-
 每个状态标志位的清除方法各不相同, 使用库函数的方法可以较方便的清除寄存器的标志位
 
 ### I2C初始化结构体
 
-在stm32f10x_i2c.h中定义I2C初始化结构体
+#### 在stm32f10x_i2c.h中定义I2C初始化结构体
 
 ```c
 /** 
@@ -317,7 +315,7 @@ I2C_GetFlagStatus函数, 用于获取状态位
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271610721.png)
 
-**I2C_FLAG参数列表对应I2C_SRx状态寄存器的各个位, 可通过查询手册查看其含义**
+I2C_FLAG参数列表对应I2C_SRx状态寄存器的各个位, 可通过查询手册查看其含义
 
 返回值说明
 
@@ -334,7 +332,7 @@ I2C_Send7bitAddress函数, 用于发送7位地址
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271616560.png)
 
-*参数Address为八位读/写地址, 通过I2C_Direction实际配置读写方向, 最终方向以I2C_Direction配置为准, 参数Address的读写位失效*
+参数Address为八位读/写地址, 通过I2C_Direction实际配置读写方向, 最终方向以I2C_Direction配置为准, 参数Address的读写位失效
 
 I2C_SendDate函数, 通过I2Cx外设发送数据字节
 
@@ -354,24 +352,23 @@ I2C_Cmd函数, 使能或禁用I2Cx外设
 
 I2C_CheckEvent函数, I2C状态监测函数
 
-**监测的事件发生则返回SUCCESS**
+监测的事件发生则返回SUCCESS
 
 ![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280036252.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037103.png)
+![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037103.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037758.png)
+![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280037758.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038783.png)
+![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038783.png)
 
-![](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038105.png)
+![I2C库函数](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280038105.png)
 
 ### EEPROM硬件结构
 
 ![EEPROM](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271630443.png)
 
-
-引脚说明
+#### 原理图引脚说明
 
 - VCC: 电源引脚, 接3V3
 - GND: 地引脚, 接地
@@ -386,7 +383,7 @@ I2C_CheckEvent函数, I2C状态监测函数
 
 AT24C02可存储256字节数据
 
-引脚说明
+#### 引脚说明
 
 ![AT24C02](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271648925.png)
 
@@ -396,28 +393,28 @@ AT24C02可存储256字节数据
 - WP: 写保护, 置1启用写保护
 - NC: 不连接
 
-设备地址
+#### 设备地址
 
 ![设备地址](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271702961.png)
 
 ![设备地址](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271702718.png)
 
-**AT24C02有256字节, 即属于2K(256*8)**
+AT24C02有256字节, 即属于2K(256*8)
 
 ![设备地址](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271701248.png)
 
 根据原理图, 将A2-A0均接地, 则A2 = A1 = A0 = 0
 
-**AT24C02的地址为0b1010000R/W, Bit0为R/!W位**
+AT24C02的地址为0b1010000R/W, Bit0为R/!W位
 
 - AT24C02在A2:A1[000]情况下读地址: 0b10100001(0xA1)
 - AT24C02在A2:A1[000]情况下写地址: 0b10100000(0xA0)
 
-AT24C02的Byte Write(以字节方式写数据)操作
+#### Byte Write(以字节方式写数据)操作
 
 ![Byte Write](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271719435.png)
 
-*第一个传输的数据段(DATA)为WORD ADDRESS(需要写入的字节所在的地址), 第二次传输数据段(DATA)才为真正需要写入的内容*
+第一个传输的数据段(DATA)为WORD ADDRESS(需要写入的字节所在的地址), 第二次传输数据段(DATA)才为真正需要写入的内容
 
 ![Byte Write](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271723653.png)
 
@@ -431,9 +428,11 @@ AT24C02的Byte Write(以字节方式写数据)操作
 5. 在此写入周期中, 所有输入被禁用, EEPROM不进行响应
 ```
 
-AT24C02的Page Write(以页方式写数据)操作, 又称突发写入(即仅发送一个地址可写入多个数据)
+#### Page Write(以页方式写数据)操作
 
-*Page Write解决了Byte Write不能连续写入的缺陷*
+又称突发写入(即仅发送一个地址可写入多个数据)
+
+Page Write解决了Byte Write不能连续写入的缺陷
 
 ![Page Write](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271734727.png)
 
@@ -457,7 +456,7 @@ AT24C02的Page Write(以页方式写数据)操作, 又称突发写入(即仅发�
 8. 如果向EEPROM传输的DATA超过8个字节(对于AT24C02), 则数据会从头覆盖
 ```
 
-AT24C02的ACKNOWLEDGE POLLING(确认轮询)
+#### ACKNOWLEDGE POLLING(确认轮询)
 
 ![ACKNOWLEDGE POLLING](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280423663.png)
 
@@ -467,7 +466,7 @@ AT24C02的ACKNOWLEDGE POLLING(确认轮询)
 仅当内部写周期完成时EEPROM 会响应“0”，允许继续读取或写入序列
 ```
 
-*需要在向AT24C02写入数据操作后, 进行确认询问, 主机需要发送启动条件, 设备地址, 读写位, 如果AT24C02准备完毕会响应0才能继续进行才做*
+需要在向AT24C02写入数据操作后, 进行确认询问, 主机需要发送启动条件, 设备地址, 读写位, 如果AT24C02准备完毕会响应0才能继续进行才做
 
 以I2C1为例, 软件编程实现如下
 
@@ -501,13 +500,13 @@ void EEPROM_ACK_Polling(void)
 
 ```
 
-AT24C02的Current Address Read(从当前地址读数据)操作
+#### Current Address Read(从当前地址读数据)操作
 
 ![Current Address Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271810617.png)
 
-*一般不用, 因为在开发中不好确定当前地址的位置*
+一般不用, 因为在开发中不好确定当前地址的位置
 
-AT24C02的Random Read(随机读数据)操作
+#### Random Read(随机读数据)操作
 
 ![Random Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271813901.png)
 
@@ -527,18 +526,18 @@ AT24C02的Random Read(随机读数据)操作
 5. 单片机响应NO ACK并紧跟生成STOP信号
 ```
 
-AT24C02的Sequential Read(顺序读数据)操作
+#### Sequential Read(顺序读数据)操作
 
 ![Sequential Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271838678.png)
 
-**与Page Write类似**
+与Page Write类似
 
 ![Sequential Read](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401271841941.png)
 
 ```tex
 翻译: Sequential Read流程
 
-1. Sequntial Read从当前地址读取或随机地址开始读取
+1. Sequential Read从当前地址读取或随机地址开始读取
 2. 单片机收到DATA后，会响应ACK
 3. 只要EEPROM收到ACK响应，它就会继续递增数据地址，并顺序串行输出DATA
 4. 当达到内存地址限制时，数据地址将"roll over"，顺序读取将继续从头开始重新读取数据
@@ -549,16 +548,16 @@ AT24C02的Sequential Read(顺序读数据)操作
 
 **项目地址** 24-I2C-EEPROM
 
- **操作流程**
+#### 操作流程
 
   1. 初始化I2C相关的GPIO
   2. 配置I2C外设的工作模式
-  3. 编写I2C写入EEPROM的Byte Write函数 
+  3. 编写I2C写入EEPROM的Byte Write函数
   4. 编写I2C读取EEPROM的Random Read函数
   5. 使用read函数和write函数进行读写校验
   6. 编写Page Write和Sequential Read函数进行校验
 
-在bsp_i2c.h中定义相关宏
+#### 在bsp_i2c.h中定义相关宏
 
 ```c
 /**
@@ -595,7 +594,7 @@ AT24C02的Sequential Read(顺序读数据)操作
  */
 ```
 
-在bsp_i2c.h中进行函数声明
+#### 在bsp_i2c.h中进行函数声明
 
 ```c
 /**
@@ -616,7 +615,7 @@ void EEPROM_ACK_Polling(void);
  */
 ```
 
-在bsp_i2c.c中编写I2C_EEPROM配置函数
+#### 在bsp_i2c.c中编写I2C_EEPROM配置函数
 
 ```c
 /**
@@ -675,7 +674,7 @@ void I2C_EEPROM_Config(void)
 }
 ```
 
-在bsp_i2c.c中编写Byte Writting方式的函数
+#### 在bsp_i2c.c中编写Byte Writting方式的函数
 
 ```c
 /**
@@ -724,7 +723,7 @@ void EEPROM_Byte_Writting(uint8_t WordAddress, uint8_t Data)
 }
 ```
 
-在bsp_i2c.c中编写Page Writting方式的函数
+#### 在bsp_i2c.c中编写Page Writting方式的函数
 
 ```c
 /**
@@ -781,7 +780,7 @@ void EEPROM_Page_Writting(uint8_t WordAddress, uint8_t* Data, uint8_t NumByteToW
 }
 ```
 
-在bsp_i2c.c中编写Random Read方式的函数
+#### 在bsp_i2c.c中编写Random Read方式的函数
 
 ```c
 /**
@@ -853,7 +852,7 @@ void EEPROM_Random_Read(uint8_t WordAddress, uint8_t* Data)
 }
 ```
 
-在bsp_i2c.c中编写Sequential Read方式的函数
+#### 在bsp_i2c.c中编写Sequential Read方式的函数
 
 ```c
 /**
@@ -936,7 +935,7 @@ void EEPROM_Sequential_Read(uint8_t WordAddress, uint8_t* Data, uint8_t NumByteT
 }
 ```
 
-在bsp_i2c.c中编写确认询问函数
+#### 在bsp_i2c.c中编写确认询问函数
 
 ```c
 /**
@@ -969,7 +968,7 @@ void EEPROM_ACK_Polling(void)
 }
 ```
 
-在main.c中进行读写测试
+#### 在main.c中进行读写测试
 
 ```c
 /**
@@ -982,7 +981,7 @@ void EEPROM_ACK_Polling(void)
   ******************************************************************************
   * @attention
   *
-  * THE PRESENT FUNTIONS WHICH IS FOR GUIDANCE ONLY
+  * THE PRESENT FUNTCIONS WHICH IS FOR GUIDANCE ONLY
   ******************************************************************************
   */
 
@@ -1065,6 +1064,450 @@ int main(void)
 
 ```
 
-串口实验现象
+#### 串口实验现象
 
 ![实验现象](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401280831099.png)
+
+#### 完善功能
+
+以下函数是对实验中出现函数的进一步完善, 源文件不在工程中
+
+##### 增加的宏定义
+
+```c
+/* STM32 I2C 快速模式 */
+#define I2C_Speed              400000  //*
+
+/* 这个地址只要与STM32外挂的I2C器件地址不一样即可 */
+#define I2Cx_OWN_ADDRESS7      0X0A   
+
+/* AT24C01/02每页有8个字节 */
+#define I2C_PageSize           8
+
+/* AT24C04/08A/16A每页有16个字节 */
+//#define I2C_PageSize           16
+
+/*等待超时时间*/
+#define I2CT_FLAG_TIMEOUT         ((uint32_t)0x1000)
+#define I2CT_LONG_TIMEOUT         ((uint32_t)(10 * I2CT_FLAG_TIMEOUT)
+```
+
+##### 调试功能
+
+```c
+#define EEPROM_DEBUG_ON         0
+
+#define EEPROM_INFO(fmt,arg...)           printf("<<-EEPROM-INFO->> "fmt"\n",##arg)
+#define EEPROM_ERROR(fmt,arg...)          printf("<<-EEPROM-ERROR->> "fmt"\n",##arg)
+#define EEPROM_DEBUG(fmt,arg...)          do{\
+                                          if(EEPROM_DEBUG_ON)\
+                                          printf("<<-EEPROM-DEBUG->> [%s][%d]"fmt"\n", __FILE__, __LINE__, ##arg);\
+                                          }while(0)
+```
+
+##### 超时处理函数
+
+完善了对于超时的处理
+
+###### 超时处理相关宏定义
+
+```c
+/*等待超时时间*/
+#define I2CT_FLAG_TIMEOUT         ((uint32_t)0x1000)
+#define I2CT_LONG_TIMEOUT         ((uint32_t)(10 * I2CT_FLAG_TIMEOUT))
+```
+
+###### 超时处理相关变量声明
+
+```c
+static __IO uint32_t  I2CTimeout = I2CT_LONG_TIMEOUT;
+
+static uint32_t I2C_TIMEOUT_UserCallback(uint8_t errorCode);
+```
+
+###### 超时状态函数
+
+```c
+/**
+  * @brief  Basic management of the timeout situation.
+  * @param  errorCode：错误代码，可以用来定位是哪个环节出错.
+  * @retval 返回0，表示IIC读取失败.
+  */
+static  uint32_t I2C_TIMEOUT_UserCallback(uint8_t errorCode)
+{
+  /* Block communication and all processes */
+  EEPROM_ERROR("I2C 等待超时!errorCode = %d",errorCode);
+  
+  return 0;
+}
+```
+
+##### 多字节写入函数
+
+完善了在Page Write中字节对齐的情况
+
+```c
+/**
+  * @brief   将缓冲区中的数据写到I2C EEPROM中
+  * @param   
+  *  @arg pBuffer:缓冲区指针
+  *  @arg WriteAddr:写地址
+  *     @arg NumByteToWrite:写的字节数
+  * @retval  无
+  */
+void I2C_EE_BufferWrite(u8* pBuffer, u8 WriteAddr, u16 NumByteToWrite)
+{
+  u8 NumOfPage = 0, NumOfSingle = 0, Addr = 0, count = 0;
+
+  Addr = WriteAddr % I2C_PageSize;
+  count = I2C_PageSize - Addr;
+  NumOfPage =  NumByteToWrite / I2C_PageSize;
+  NumOfSingle = NumByteToWrite % I2C_PageSize;
+ 
+  /* If WriteAddr is I2C_PageSize aligned  */
+  if(Addr == 0) 
+  {
+    /* If NumByteToWrite < I2C_PageSize */
+    if(NumOfPage == 0) 
+    {
+      I2C_EE_PageWrite(pBuffer, WriteAddr, NumOfSingle);
+      I2C_EE_WaitEepromStandbyState();
+    }
+    /* If NumByteToWrite > I2C_PageSize */
+    else  
+    {
+      while(NumOfPage--)
+      {
+        I2C_EE_PageWrite(pBuffer, WriteAddr, I2C_PageSize); 
+     I2C_EE_WaitEepromStandbyState();
+        WriteAddr +=  I2C_PageSize;
+        pBuffer += I2C_PageSize;
+      }
+
+      if(NumOfSingle!=0)
+      {
+        I2C_EE_PageWrite(pBuffer, WriteAddr, NumOfSingle);
+        I2C_EE_WaitEepromStandbyState();
+      }
+    }
+  }
+  /* If WriteAddr is not I2C_PageSize aligned  */
+  else 
+  {
+    /* If NumByteToWrite < I2C_PageSize */
+    if(NumOfPage== 0) 
+    {
+      I2C_EE_PageWrite(pBuffer, WriteAddr, NumOfSingle);
+      I2C_EE_WaitEepromStandbyState();
+    }
+    /* If NumByteToWrite > I2C_PageSize */
+    else
+    {
+      NumByteToWrite -= count;
+      NumOfPage =  NumByteToWrite / I2C_PageSize;
+      NumOfSingle = NumByteToWrite % I2C_PageSize; 
+      
+      if(count != 0)
+      {  
+        I2C_EE_PageWrite(pBuffer, WriteAddr, count);
+        I2C_EE_WaitEepromStandbyState();
+        WriteAddr += count;
+        pBuffer += count;
+      } 
+      
+      while(NumOfPage--)
+      {
+        I2C_EE_PageWrite(pBuffer, WriteAddr, I2C_PageSize);
+        I2C_EE_WaitEepromStandbyState();
+        WriteAddr +=  I2C_PageSize;
+        pBuffer += I2C_PageSize;  
+      }
+      if(NumOfSingle != 0)
+      {
+        I2C_EE_PageWrite(pBuffer, WriteAddr, NumOfSingle); 
+        I2C_EE_WaitEepromStandbyState();
+      }
+    }
+  }  
+}
+```
+
+##### 单字节写入函数
+
+增加超时处理
+
+```c
+/**
+  * @brief   写一个字节到I2C EEPROM中
+  * @param   
+  * @arg pBuffer:缓冲区指针
+  * @arg WriteAddr:写地址 
+  * @retval  无
+  */
+uint32_t I2C_EE_ByteWrite(u8* pBuffer, u8 WriteAddr) 
+{
+  /* Send START condition */
+  I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+
+  I2CTimeout = I2CT_FLAG_TIMEOUT;  
+  /* Test on EV5 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_MODE_SELECT))  
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(0);
+  } 
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Send EEPROM address for write */
+  I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Transmitter);
+  
+  /* Test on EV6 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(1);
+  }  
+  /* Send the EEPROM's internal address to write to */
+  I2C_SendData(EEPROM_I2Cx, WriteAddr);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV8 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(2);
+  } 
+  
+  /* Send the byte to be written */
+  I2C_SendData(EEPROM_I2Cx, *pBuffer); 
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;  
+  /* Test on EV8 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(3);
+  } 
+  
+  /* Send STOP condition */
+  I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE);
+  
+  return 1;
+}
+```
+
+##### 单页写入函数
+
+```c
+/**
+  * @brief   在EEPROM的一个写循环中可以写多个字节，但一次写入的字节数
+  *          不能超过EEPROM页的大小，AT24C02每页有8个字节
+  * @param   
+  *     @arg pBuffer:缓冲区指针
+  *     @arg WriteAddr:写地址
+  *     @arg NumByteToWrite:写的字节数
+  * @retval  无
+  */
+uint32_t I2C_EE_PageWrite(u8* pBuffer, u8 WriteAddr, u8 NumByteToWrite)
+{
+  I2CTimeout = I2CT_LONG_TIMEOUT;
+
+  while(I2C_GetFlagStatus(EEPROM_I2Cx, I2C_FLAG_BUSY))   
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(4);
+  } 
+  
+  /* Send START condition */
+  I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV5 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_MODE_SELECT))  
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(5);
+  } 
+  
+  /* Send EEPROM address for write */
+  I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Transmitter);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV6 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))  
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(6);
+  } 
+  
+  /* Send the EEPROM's internal address to write to */    
+  I2C_SendData(EEPROM_I2Cx, WriteAddr);  
+
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV8 and clear it */
+  while(! I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(7);
+  } 
+
+  /* While there is data to be written */
+  while(NumByteToWrite--)  
+  {
+    /* Send the current byte */
+    I2C_SendData(EEPROM_I2Cx, *pBuffer); 
+
+    /* Point to the next byte to be written */
+    pBuffer++; 
+  
+    I2CTimeout = I2CT_FLAG_TIMEOUT;
+
+    /* Test on EV8 and clear it */
+    while (!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+    {
+      if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(8);
+    } 
+  }
+
+  /* Send STOP condition */
+  I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE);
+  
+  return 1;
+}
+```
+
+##### 读取数据函数
+
+```c
+/**
+  * @brief   从EEPROM里面读取一块数据 
+  * @param   
+  *     @arg pBuffer:存放从EEPROM读取的数据的缓冲区指针
+  *     @arg WriteAddr:接收数据的EEPROM的地址
+  *     @arg NumByteToWrite:要从EEPROM读取的字节数
+  * @retval  无
+  */
+uint32_t I2C_EE_BufferRead(u8* pBuffer, u8 ReadAddr, u16 NumByteToRead)
+{  
+  
+  I2CTimeout = I2CT_LONG_TIMEOUT;
+  
+  //*((u8 *)0x4001080c) |=0x80; 
+  while(I2C_GetFlagStatus(EEPROM_I2Cx, I2C_FLAG_BUSY))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(9);
+   }
+  
+  /* Send START condition */
+  I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+  //*((u8 *)0x4001080c) &=~0x80;
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV5 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_MODE_SELECT))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(10);
+   }
+  
+  /* Send EEPROM address for write */
+  I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Transmitter);
+
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV6 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(11);
+   }
+    
+  /* Clear EV6 by setting again the PE bit */
+  I2C_Cmd(EEPROM_I2Cx, ENABLE);
+
+  /* Send the EEPROM's internal address to write to */
+  I2C_SendData(EEPROM_I2Cx, ReadAddr);  
+
+   
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV8 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(12);
+   }
+    
+  /* Send START condition a second time */  
+  I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV5 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_MODE_SELECT))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(13);
+   }
+    
+  /* Send EEPROM address for read */
+  I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Receiver);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV6 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(14);
+   }
+  
+  /* While there is data to be read */
+  while(NumByteToRead)  
+  {
+    if(NumByteToRead == 1)
+    {
+      /* Disable Acknowledgement */
+      I2C_AcknowledgeConfig(EEPROM_I2Cx, DISABLE);
+      
+      /* Send STOP Condition */
+      I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE);
+    }
+
+    /* Test on EV7 and clear it */    
+    I2CTimeout = I2CT_LONG_TIMEOUT;
+    
+    while(I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_RECEIVED)==0)  
+    {
+        if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(3);
+    } 
+    {      
+      /* Read a byte from the EEPROM */
+      *pBuffer = I2C_ReceiveData(EEPROM_I2Cx);
+
+      /* Point to the next location where the byte read will be saved */
+      pBuffer++; 
+      
+      /* Decrement the read bytes counter */
+      NumByteToRead--;        
+    }   
+  }
+
+  /* Enable Acknowledgement to be ready for another reception */
+  I2C_AcknowledgeConfig(EEPROM_I2Cx, ENABLE);
+  
+    return 1;
+}
+```
+
+##### 等待EEPROM函数
+
+```c
+/**
+  * @brief  Wait for EEPROM Standby state 
+  * @param  无
+  * @retval 无
+  */
+void I2C_EE_WaitEepromStandbyState(void)      
+{
+  vu16 SR1_Tmp = 0;
+
+  do
+  {
+    /* Send START condition */
+    I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+    /* Read I2C1 SR1 register */
+    SR1_Tmp = I2C_ReadRegister(EEPROM_I2Cx, I2C_Register_SR1);
+    /* Send EEPROM address for write */
+    I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Transmitter);
+  }while(!(I2C_ReadRegister(EEPROM_I2Cx, I2C_Register_SR1) & 0x0002));
+  
+  /* Clear AF flag */
+  I2C_ClearFlag(EEPROM_I2Cx, I2C_FLAG_AF);
+    /* STOP condition */    
+    I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE); 
+}
+```
