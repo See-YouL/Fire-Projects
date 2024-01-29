@@ -280,7 +280,7 @@ I/O引脚至上拉/下拉输入(通过BSRR寄存器软件配置), 经TTL肖特�
 
 以EXTI为例,RX数据经由TTL肖特基触发器到DR寄存器
 
-模拟输入**
+模拟输入
 
 ![模拟输入框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2018.33.21.png)
 
