@@ -182,7 +182,9 @@ GPIO（General-Purpose Input/Output）
 
 内部只能输出低电平,不能输出高电平
 
-![当ODR为1时开漏输出原理图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2015.23.18.png)
+![当ODR为1时开漏输出原理图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/%E6%88%AA%E5%B1%8F2023-12-28%2016.06.58.png)
+
+ 该图片标注有误, 实际用的是ODR=0时的图, 但是结构相同, 不影响分析
 
 ODR=1, 经反相器为0, Vg=0V=Vs=0V, NMOS管截止, 此时OUT为高阻态悬空, 加入外部上拉电阻后, OUT=1
 
