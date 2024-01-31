@@ -5202,9 +5202,9 @@ void EEPROM_ACK_Polling(void)
 5. 当单片机NO ACK响应并生成STOP，则终止Sequential Read
 ```
 
-### I2C-读写EEPROM实验
+### 硬件I2C实验
 
-项目地址: **24-I2C-EEPROM**
+项目地址: **24-I2C-Hard**
 
 #### 操作流程
 
@@ -6168,4 +6168,566 @@ void I2C_EE_WaitEepromStandbyState(void)
     /* STOP condition */    
     I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE); 
 }
+```
+
+### 软件I2C
+
+STM32硬件I2C有时会出现错误, 使用软件I2C实际上就是**通过GPIO模拟SCL和SDA的电平变换实现I2C协议**
+
+#### 在bsp_i2c_ee.h中增加宏定义
+
+```c
+/**
+  ******************************************************************************
+  * @file    bsp_i2c_ee.h
+  * @author  eric
+  * @version V0.0.1
+  * @date    31-January-2024
+  * @brief   I2C EEPROM(AT24C02) 应用函数的宏定义
+  ******************************************************************************
+  * @attention
+  *
+  * THE PRESENT FUCTIONS WHICH IS FOR GUIDANCE ONLY
+  ******************************************************************************
+  */
+
+#ifndef __BSP_I2C_EE_H
+#define __BSP_I2C_EE_H
+
+#include "stm32f10x.h"
+#include "stm32f10x_conf.h"
+
+/**
+ * @defgroup EEPROM_Define 
+ * @{
+ */
+
+#define EEPROM_DEV_ADDRESS 0xA0 /*!< AT24C02设备写地址, 读地址为0xA1 */
+#define EEPROM_PAGE_SIZE 8 /*!< AT24C02的页大小 */
+#define EEPROM_DEV_SIZE 256 /*! AT24C02的总容量大小 */
+/**
+ * @} 
+ */
+
+
+/**
+ * @defgroup EEPROM_Soft_Functions 
+ * @{
+ */
+
+uint8_t ee_CheckOk(void);
+uint8_t ee_ReadBytes(uint8_t *_pReadBuf, uint16_t _usAddress, uint16_t _usSize);
+uint8_t ee_WriteBytes(uint8_t *_pWriteBuf, uint16_t _usAddress, uint16_t _usSize);
+void ee_Erase(void);
+uint8_t ee_Test(void);
+
+/**
+ * @brief 
+ * @}
+ */
+
+#endif // !__BSP_I2C_EE_H
+
+```
+
+#### 在bsp_i2c_ee.c中写EEPROM的应用函数
+
+```c
+/**
+  ******************************************************************************
+  * @file    bsp_i2c_ee.h
+  * @author  eric
+  * @version V0.0.1
+  * @date    31-January-2024
+  * @brief   I2C EEPROM(AT24C02) 应用函数的宏定义
+  ******************************************************************************
+  * @attention
+  *
+  * THE PRESENT FUCTIONS WHICH IS FOR GUIDANCE ONLY
+  ******************************************************************************
+  */
+
+#ifndef __BSP_I2C_EE_H
+#define __BSP_I2C_EE_H
+
+#include "stm32f10x.h"
+#include "stm32f10x_conf.h"
+
+/**
+ * @defgroup EEPROM_Define 
+ * @{
+ */
+
+#define EEPROM_DEV_ADDRESS 0xA0 /*!< AT24C02设备写地址, 读地址为0xA1 */
+#define EEPROM_PAGE_SIZE 8 /*!< AT24C02的页大小 */
+#define EEPROM_DEV_SIZE 256 /*! AT24C02的总容量大小 */
+/**
+ * @} 
+ */
+
+
+/**
+ * @defgroup EEPROM_Soft_Functions 
+ * @{
+ */
+
+uint8_t ee_CheckOk(void);
+uint8_t ee_ReadBytes(uint8_t *_pReadBuf, uint16_t _usAddress, uint16_t _usSize);
+uint8_t ee_WriteBytes(uint8_t *_pWriteBuf, uint16_t _usAddress, uint16_t _usSize);
+void ee_Erase(void);
+uint8_t ee_Test(void);
+
+/**
+ * @brief 
+ * @}
+ */
+
+#endif // !__BSP_I2C_EE_H
+
+```
+
+#### 在bsp_i2c_gpio.h中增加宏定义
+
+```c
+/**
+  ******************************************************************************
+  * @file    bsp_i2c_gpio.h
+  * @author  eric
+  * @version V0.0.1
+  * @date    31-January-2024
+  * @brief   GPIO模拟I2C的宏定义
+  ******************************************************************************
+  * @attention
+  *
+  * THE PRESENT FUCTIONS WHICH IS FOR GUIDANCE ONLY
+  ******************************************************************************
+  */
+#ifndef __BSP_I2C_GPIO_H
+#define __BSP_I2C_GPIO_H
+
+#include <inttypes.h>
+#include "stm32f10x_conf.h"
+
+/**
+ * @defgroup EEPROM_GPIO_Define 
+ * @{
+ */
+
+/**
+ * @brief R/W Bit
+ */
+#define EEPROM_I2C_WR 0 /*!< 写控制bit */
+#define EEPROM_I2C_RD 1 /*!< 读控制bit */
+
+/**
+ * @brief GPIO端口和引脚
+ */
+#define EEPROM_GPIO_PORT_I2C GPIOB /*!< GPIOB端口 */
+#define EEPROM_RCC_I2C_PORT RCC_APB2Periph_GPIOB /*!< GPIOB端口时钟 */
+#define EEPROM_I2C_SCL_PIN GPIO_Pin_6 /*!< 连接到SCL时钟线的GPIO */
+#define EEPROM_I2C_SDA_PIN GPIO_Pin_7 /*!< 连接到SDA数据线的GPIO */
+
+/**
+ * @brief 定义读写SCL和SDA的宏 
+ */
+#define GPIO_REG_EEPROM 1 /*!< 1为使用GPIO的库函数实现IO读写, 0为寄存器方式(在IAR最高级别优化时会被编译器错误优化)*/
+#if GPIO_REG_EEPROM
+    #define EEPROM_I2C_SCL_1() GPIO_SetBits(EEPROM_GPIO_PORT_I2C, EEPROM_I2C_SCL_PIN) /*!< SCL=1 */
+    #define EEPROM_I2C_SCL_0() GPIO_ResetBits(EEPROM_GPIO_PORT_I2C, EEPROM_I2C_SCL_PIN) /*!< SCL=0 */
+    #define EEPROM_I2C_SDA_1() GPIO_SetBits(EEPROM_GPIO_PORT_I2C, EEPROM_I2C_SDA_PIN) /*!< SDA=1 */
+    #define EEPROM_I2C_SDA_0() GPIO_ResetBits(EEPROM_GPIO_PORT_I2C, EEPROM_I2C_SDA_PIN) /*!< SDA=0 */
+    #define EEPROM_I2C_SDA_READ() GPIO_ReadInputDataBit(EEPROM_GPIO_PORT_I2C, EEPROM_I2C_SDA_PIN) /*!< 读SDA口的状态 */
+#else
+    #define EEPROM_I2C_SCL_1() EEPROM_GPIO_PORT_I2C->BSRR = EEPROM_I2C_SCL_PIN /*!< SCL = 1 */
+    #define EEPROM_I2C_SCL_0() EEPROM_GPIO_PORT_I2C->BRR = EEPROM_I2C_SCL_PIN /*!< SCL = 0 */
+    #define EEPROM_I2C_SDA_1() EEPROM_GPIO_PORT_I2C->BSRR = EEPROM_I2C_SDA_PIN /*!< SDA = 1 */
+    #define EEPROM_I2C_SDA_0() EEPROM_GPIO_PORT_I2C->BRR = EEPROM_I2C_SDA_PIN /*!< SDA = 0 */
+    #define EEPROM_I2C_SDA_READ() ((EEPROM_GPIO_PORT_I2C->IDR & EEPROM_I2C_SDA_PIN) != 0) /*!< 读SDA口的状态 */
+#endif
+
+/**
+ * @} 
+ */
+
+/**
+ * @defgroup I2C_GPIO_Fuctions
+ * @{
+ */
+
+void I2C_Start(void);
+void I2C_Stop(void);
+void I2C_SendByte(uint8_t _ucByte);
+uint8_t I2C_ReadByte(void);
+uint8_t I2C_WaitAck(void);
+void I2C_Ack(void);
+void I2C_NAck(void);
+uint8_t I2C_CheckDevice(uint8_t _Address);
+
+/**
+ * @} 
+ */
+
+#endif // !__BSP_I2C_GPIO_H
+
+```
+
+#### 在bsp_i2c_gpio.c中编写函数
+
+```c
+/**
+  ******************************************************************************
+  * @file    bsp_i2c_ee.c
+  * @author  eric
+  * @version V0.0.1
+  * @date    31-January-2024
+  * @brief   I2C EEPROM(AT24C02) 应用函数
+  ******************************************************************************
+  * @attention
+  *
+  * THE PRESENT FUCTIONS WHICH IS FOR GUIDANCE ONLY
+  ******************************************************************************
+  */
+
+#include "stm32f10x_conf.h"
+#include "bsp_i2c_ee.h"
+#include "bsp_usart.h"
+#include "bsp_i2c_gpio.h"
+
+/**
+ * @brief 判断EEPROM是否正常 
+ * @param None
+ * @return 1表示正常, 0表示不正常
+ */
+uint8_t ee_CheckOk(void)
+{
+    if (I2C_CheckDevice(EEPROM_DEV_ADDRESS) == 0) /* 检测设备是否存在 */
+    {
+        /* 发送状态值 */
+        return 1;
+    }
+    else
+    {
+        /* 发送停止信号 */
+        I2C_Stop();
+        /* 发送状态值 */
+        return 0;
+    }
+}
+
+/**
+ * @brief 从指定地址采用Random Read方式读取若干数据 
+ * @param _pReadBuf: 存放读到的数据的缓冲区指针
+ * @param _usAddress: 起始地址
+ * @param _usSize: 数据长度, 单位为字节
+ * @retval 0: 失败, 1: 成功 
+ */
+uint8_t ee_ReadBytes(uint8_t *_pReadBuf, uint16_t _usAddress, uint16_t _usSize)
+{
+    /* 计数变量 */
+    uint16_t i = 0;
+    /* 发送启动信号 */
+    I2C_Start();
+    /* 发送设备写地址 */
+    I2C_SendByte(EEPROM_DEV_ADDRESS | EEPROM_I2C_WR); 
+    /* 等待ACK */
+    if (I2C_WaitAck() != 0) /* 器件无应答 */
+    {
+        goto cmd_fail;
+    }
+    /* 发送字节地址 */
+    I2C_SendByte((uint8_t)_usAddress);
+    /* 等待ACK */
+    if (I2C_WaitAck()!= 0) /* 器件无应答 */
+    {
+        goto cmd_fail;
+    }
+    /* 重新启动I2C总线 */
+    I2C_Start();
+    /* 发送设备读地址 */
+    I2C_SendByte(EEPROM_DEV_ADDRESS | EEPROM_I2C_RD); 
+    if (I2C_WaitAck()!= 0) /* 器件无应答 */
+    {
+        goto cmd_fail;
+    }
+    /* 循环读取数据 */
+    for (i = 0; i < _usSize; i++)
+    {
+        /* 读取一个位 */
+        _pReadBuf[i] = I2C_ReadByte();
+        if (i != _usSize - 1)
+        {
+            /* 中间字节读完后, CPU产生ACK信号 */
+            I2C_Ack();
+        }
+        else
+        {
+            /* 最后一个字节读完后, CPU产生NAck信号 */
+            I2C_NAck();
+        }
+    }
+    /* 发送I2C总线停止信号 */
+    I2C_Stop();
+    /* 执行成功 */
+    return 1;
+
+cmd_fail: /* 命令执行失败 */
+    /* 发送停止命令 */
+    I2C_Stop();
+    /* 返回函数失败值 */
+    return 0;
+}
+
+/**
+ * @brief 向指定地址采用Page Write方式写入若干数据 
+ * @param _pWriteBuf: 存放要写入数据的缓冲区指针
+ * @param _usAddress: 起始地址
+ * @param _usSize: 数据长度, 单位为字节
+ * @retval 0: 失败, 1: 成功 
+ */
+uint8_t ee_WriteBytes(uint8_t *_pWriteBuf, uint16_t _usAddress, uint16_t _usSize)
+{
+    /* 计数变量 */
+    uint16_t m = 0;
+    uint16_t i = 0;
+    /* usAddress存放设备的起始地址 */
+    uint16_t usAddress = _usAddress;
+    for (i = 0; i < _usSize; i++)
+    {
+        /* 发送第一个字节或是页面首地址时需要重新发起启动信号和地址 */
+        if ((i == 1) || (usAddress & (EEPROM_PAGE_SIZE-1)) == 0)
+        {
+            /* 发送停止信号 */
+            I2C_Stop();
+            /*----------------------------------------
+             * 通过检查器件应答的方式
+             * 判断内部写操作是否完成
+             * 一般小于10ms
+             * CLK频率为200kHz时, 查询次数为30次左右
+             *----------------------------------------*/
+            for (m = 0; m < 1000; m++) /* 不断发送等待设备响应 */
+            {
+                /* 发起I2C启动信号 */
+                I2C_Start();
+                /* 发送设备8位写地址 */
+                I2C_SendByte(EEPROM_DEV_ADDRESS | EEPROM_I2C_WR); 
+                if (I2C_WaitAck() == 0) /* 器件有应答 */
+                {
+                    break;
+                }
+            }
+            if (m == 1000) /* 设备超时 */
+            {
+                goto cmd_fail;
+            }
+            /* 发送字节所在地址 */
+            I2C_SendByte((uint8_t)usAddress);
+            /* 等待ACK响应 */
+            if (I2C_WaitAck() != 0) /* 器件无应答 */
+            {
+                goto cmd_fail;
+            }
+            /* 开始写入数据 */
+            I2C_SendByte(_pWriteBuf[i]);
+            if (I2C_WaitAck() != 0) /* 器件无应答 */
+            {
+                goto cmd_fail;
+            }
+            /* 地址自增 */
+            usAddress++;
+        }
+        /* 写入完成后, 发送总线停止信号 */
+        I2C_Stop();
+        /* 返回发送成功标志值 */
+        return 1;
+    }
+
+cmd_fail:
+    /* 发送I2C总线停止信号 */
+    I2C_Stop();
+    /* 返回发送失败标志值 */
+    return 0;
+}
+
+/**
+ * @brief 用0填充EEPROM
+ * @param None
+ * @return None
+ */
+void ee_Erase(void)
+{
+    /* 循环变量 */
+    uint16_t i = 0;
+    uint8_t buf[EEPROM_DEV_SIZE];
+    /* 用1填充EEPROM */
+    for (i = 0; i < EEPROM_DEV_SIZE; i++)
+    {
+        buf[i] = 0xFF;
+    }
+    /* 用0填充EEPROM */
+    if (ee_WriteBytes(buf, 0, EEPROM_DEV_SIZE) == 0)
+    {
+        printf("Delete EEPROM ERROR\n");
+        return;
+    }
+    else
+    {
+        printf("Delete EEPROM OK\n");
+        return;
+    }
+}
+
+/**
+ * @brief 简单延时函数 
+ * @param nCount: 延时次数
+ * @return None
+ */
+static void ee_Delay(__IO uint32_t nCount)
+{
+    for ( ; nCount!= 0; nCount--)
+    {
+        ;
+    }
+}
+
+/**
+ * @brief 对EEPROM进行读写测设
+ * @param None
+ * @retval 0: 失败, 1: 成功
+ */
+uint8_t ee_Test(void)
+{
+    uint16_t i = 0;
+    /* 定义写入缓冲区和读取缓冲区 */
+    uint8_t write_buf[EEPROM_DEV_SIZE];
+    uint8_t read_buf[EEPROM_DEV_SIZE];
+    /* 检测EEPROM是否正常 */
+    if (ee_CheckOk() == 0)
+    {
+        /* 打印EEPROM设备检测错误信息 */
+        printf("No EEPROM\n");
+    }
+    /* 填充测试缓冲区 */
+    for (i = 0; i < EEPROM_DEV_SIZE; i++)
+    {
+        /* 用0 ~ EEPROM_DEV_SIZE 填充 */
+        write_buf[i] = i;
+    }
+    /* 写入EEPROM */
+    if (ee_WriteBytes(&write_buf[0], 0, EEPROM_DEV_SIZE) == 0) /* 写入错误 */
+    {
+        /* 打印写入错误信息 */
+        printf("Write EEPROM ERROR\n");
+    }
+    else
+    {
+        /* 打印写入正确信息 */
+        printf("Write EEPROM OK\n");
+    }
+    /* 等待EEPROM写内部写入结束 */
+    ee_Delay(0x0FFFFF);
+    /* 读取EEPROM数据 */
+    if (ee_ReadBytes(&read_buf[0], 0, EEPROM_DEV_SIZE) == 0) /* 读取错误 */
+    {
+        /* 打印读取错误信息 */
+        printf("Read EEPROM ERROR\n");
+        /* 程序结束返回0 */
+        return 0;
+    }
+    else /* 读取正确 */
+    {
+        /* 打印正确读取信息 */
+        printf("Read EEPROM OK\n");
+    }
+    /* 打印输出比较结果信息 */
+    printf("Here are the results\n");
+    /* 判断数据是否相同 */
+    for (i = 0; i < EEPROM_DEV_ADDRESS; i++)
+    {
+        if (read_buf[i] != write_buf[i]) /* 数据不同 */
+        {
+            /* 打印错误数据的内容 */
+            printf("0x%02X", read_buf[i]);
+            /* 打印错误显示 */
+            printf("ERROR: The Data is not correct\n");
+            /* 程序结束返回0 */
+            return 0;
+        }
+        else /* 数据相同 */
+        {
+            /* 打印正确数据的内容 */
+            printf(" %02X", read_buf[i]);
+        }
+        /* 每16位换行 */
+        if ((i & 15) == 15)
+        {
+            printf("\r\n");
+        }
+    }
+    /* 输出通过测试信息 */
+    printf("Test Past\n");
+    /* 程序结束返回1 */
+    return 1;
+}
+
+```
+
+#### 在main.c函数中进行软件模拟I2C测试
+
+```c
+/**
+  ******************************************************************************
+  * @file    main.c
+  * @author  eric
+  * @version V0.0.1
+  * @date    31-January-2024
+  * @brief   STM32与EEPROM通过软件I2C进行读写测试
+  ******************************************************************************
+  * @attention
+  *
+  * THE PRESENT FUCTIONS WHICH IS FOR GUIDANCE ONLY
+  ******************************************************************************
+  */
+
+/* Includes ------------------------------------------------------------------*/
+#include "stm32f10x.h"
+#include "stm32f10x_conf.h"
+#include "bsp_led.h"
+#include "bsp_usart.h"
+#include "bsp_i2c_ee.h"
+#include "bsp_i2c_gpio.h"
+
+
+/**
+ * @brief 进行软件模拟I2C与EEPROM通信的读写测试 
+ * @param None
+ * @retval None 
+ */
+int main(void)
+{
+    /* LED_GPIO配置*/
+    LED_GPIO_Config();
+    /* 亮蓝灯 */
+    LED_BLUE;
+    /* USART初始化 */
+    USART_Config();
+    /* 打印测试开始信息 */
+    printf("EEPROM Software Test Begin \r\n");
+    if (ee_Test() == 1) /* 测试成功 */
+    {
+        /* 亮绿灯 */
+        LED_GREEN;
+    }
+    else /* 测试不通过 */
+    {
+        /* 亮红灯 */
+        LED_RED;
+    }
+    
+    /* 空循环 */
+    while(1)
+    {
+        ;
+    }
+}
+
 ```

@@ -4,12 +4,18 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/24-I2C-EEPROM/Libraries/CMSIS",
-                "${workspaceFolder}/24-I2C-EEPROM/Libraries/STM32F10x_StdPeriph_Driver/inc",
-                "${workspaceFolder}/24-I2C-EEPROM/User",
-                "${workspaceFolder}/24-I2C-EEPROM/User/i2c",
-                "${workspaceFolder}/24-I2C-EEPROM/User/led",
-                "${workspaceFolder}/24-I2C-EEPROM/User/usart"
+                "${workspaceFolder}/24-I2C-Hard/Libraries/CMSIS",
+                "${workspaceFolder}/24-I2C-Hard/Libraries/STM32F10x_StdPeriph_Driver/inc",
+                "${workspaceFolder}/24-I2C-Hard/User",
+                "${workspaceFolder}/24-I2C-Hard/User/i2c",
+                "${workspaceFolder}/24-I2C-Hard/User/led",
+                "${workspaceFolder}/24-I2C-Hard/User/usart",
+                "${workspaceFolder}/24-I2C-Soft/Libraries/CMSIS",
+                "${workspaceFolder}/24-I2C-Soft/Libraries/STM32F10x_StdPeriph_Driver/inc",
+                "${workspaceFolder}/24-I2C-Soft/User",
+                "${workspaceFolder}/24-I2C-Soft/User/i2c",
+                "${workspaceFolder}/24-I2C-Soft/User/led",
+                "${workspaceFolder}/24-I2C-Soft/User/usart"
             ],
             "defines": [
                 "_DEBUG",
