@@ -700,8 +700,8 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x559784E0)
 I (..\User\led\bsp_led.h)(0x65BA6534)
 I (..\User\usart\bsp_usart.h)(0x65B52B9A)
 I (D:\Embedded\MDK\Core\ARM\ARMCC\include\stdio.h)(0x60252374)
-I (..\User\i2c\bsp_i2c_ee.h)(0x65BA614F)
-I (..\User\i2c\bsp_i2c_gpio.h)(0x65BA69A5)
+I (..\User\i2c\bsp_i2c_ee.h)(0x65BA73DA)
+I (..\User\i2c\bsp_i2c_gpio.h)(0x65BA73ED)
 I (D:\Embedded\MDK\Core\ARM\ARMCC\include\inttypes.h)(0x6025237E)
 F (..\User\stm32f10x_it.c)(0x65B52E6B)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\i2c -I ..\User\led -I ..\User\usart-ID:\Embedded\MDK\Pack\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\stm32f10x_it.o --omf_browse .\objects\stm32f10x_it.crf --depend .\objects\stm32f10x_it.d)
 I (..\User\stm32f10x_it.h)(0x559784D6)
@@ -795,7 +795,7 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x559784E0)
 I (..\User\usart\bsp_usart.h)(0x65B52B9A)
 I (D:\Embedded\MDK\Core\ARM\ARMCC\include\stdio.h)(0x60252374)
 F (..\User\usart\bsp_usart.h)(0x65B52B9A)()
-F (..\User\i2c\bsp_i2c_ee.c)(0x65BA6B4A)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\i2c -I ..\User\led -I ..\User\usart-ID:\Embedded\MDK\Pack\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\bsp_i2c_ee.o --omf_browse .\objects\bsp_i2c_ee.crf --depend .\objects\bsp_i2c_ee.d)
+F (..\User\i2c\bsp_i2c_ee.c)(0x65BA73D5)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\i2c -I ..\User\led -I ..\User\usart-ID:\Embedded\MDK\Pack\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\bsp_i2c_ee.o --omf_browse .\objects\bsp_i2c_ee.crf --depend .\objects\bsp_i2c_ee.d)
 I (..\User\stm32f10x_conf.h)(0x559784D5)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h)(0x559784E0)
 I (..\Libraries\CMSIS\stm32f10x.h)(0x559784E0)
@@ -824,13 +824,13 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x559784E0)
-I (..\User\i2c\bsp_i2c_ee.h)(0x65BA614F)
+I (..\User\i2c\bsp_i2c_ee.h)(0x65BA73DA)
 I (..\User\usart\bsp_usart.h)(0x65B52B9A)
 I (D:\Embedded\MDK\Core\ARM\ARMCC\include\stdio.h)(0x60252374)
-I (..\User\i2c\bsp_i2c_gpio.h)(0x65BA69A5)
+I (..\User\i2c\bsp_i2c_gpio.h)(0x65BA73ED)
 I (D:\Embedded\MDK\Core\ARM\ARMCC\include\inttypes.h)(0x6025237E)
-F (..\User\i2c\bsp_i2c_ee.h)(0x65BA614F)()
-F (..\User\i2c\bsp_i2c_gpio.c)(0x65BA6C8B)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\i2c -I ..\User\led -I ..\User\usart-ID:\Embedded\MDK\Pack\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\bsp_i2c_gpio.o --omf_browse .\objects\bsp_i2c_gpio.crf --depend .\objects\bsp_i2c_gpio.d)
+F (..\User\i2c\bsp_i2c_ee.h)(0x65BA73DA)()
+F (..\User\i2c\bsp_i2c_gpio.c)(0x65BA73E1)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\i2c -I ..\User\led -I ..\User\usart-ID:\Embedded\MDK\Pack\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\bsp_i2c_gpio.o --omf_browse .\objects\bsp_i2c_gpio.crf --depend .\objects\bsp_i2c_gpio.d)
 I (..\Libraries\CMSIS\stm32f10x.h)(0x559784E0)
 I (..\Libraries\CMSIS\core_cm3.h)(0x559784E0)
 I (D:\Embedded\MDK\Core\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -859,9 +859,9 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x559784E0)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x559784E0)
-I (..\User\i2c\bsp_i2c_gpio.h)(0x65BA69A5)
+I (..\User\i2c\bsp_i2c_gpio.h)(0x65BA73ED)
 I (D:\Embedded\MDK\Core\ARM\ARMCC\include\inttypes.h)(0x6025237E)
-F (..\User\i2c\bsp_i2c_gpio.h)(0x65BA69A5)()
+F (..\User\i2c\bsp_i2c_gpio.h)(0x65BA73ED)()
 F (..\Libraries\CMSIS\core_cm3.c)(0x559784E0)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\i2c -I ..\User\led -I ..\User\usart-ID:\Embedded\MDK\Pack\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\core_cm3.o --omf_browse .\objects\core_cm3.crf --depend .\objects\core_cm3.d)
 I (D:\Embedded\MDK\Core\ARM\ARMCC\include\stdint.h)(0x6025237E)
 F (..\Libraries\CMSIS\system_stm32f10x.c)(0x559784E0)(--c99 --gnu -c --cpu Cortex-M3 -D__MICROLIB -g -O1 --apcs=interwork --split_sections -I ..\Libraries\CMSIS -I ..\Libraries\STM32F10x_StdPeriph_Driver\inc -I ..\User -I ..\User\i2c -I ..\User\led -I ..\User\usart-ID:\Embedded\MDK\Pack\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\objects\system_stm32f10x.o --omf_browse .\objects\system_stm32f10x.crf --depend .\objects\system_stm32f10x.d)
