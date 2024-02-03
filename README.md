@@ -4715,7 +4715,7 @@ I2C 协议的简洁性和灵活性使得它在连接各种设备和传感器时�
 #### I2C物理层主要特点
 
 - I2C是支持多设备的总线, 可支持多个通讯主机和从机
-- I2C使用两条线路, 一条SDA(双向串行数据线)来表示数据, 一条SCL(串行时钟线)来同步数据, 属于同步通信
+- I2C使用两条线路, 一条SDA(双向串行数据线)来表示数据, 一条SCL(串行时钟线)来同步数据, 属于半双工同步通信
 - 连接到总线的设备分配独立地址(7位或10位)
 - 总线接上拉电阻到电源(一般4.7KΩ, 具体看手册)
     1. 当设备空闲时输出高阻态*防止短路总线上的其他接地设备*
@@ -6731,3 +6731,780 @@ int main(void)
 }
 
 ```
+
+### I2C读写小数
+
+I2C读写小数在例程中有, 下面为例程中的代码(未进行分析)
+
+#### 在bsp_i2c.h中
+
+```c
+#ifndef __I2C_EE_H
+#define	__I2C_EE_H
+
+
+#include "stm32f10x.h"
+
+
+/**************************I2C参数定义，I2C1或I2C2********************************/
+#define             EEPROM_I2Cx                                I2C1
+#define             EEPROM_I2C_APBxClock_FUN                   RCC_APB1PeriphClockCmd
+#define             EEPROM_I2C_CLK                             RCC_APB1Periph_I2C1
+#define             EEPROM_I2C_GPIO_APBxClock_FUN              RCC_APB2PeriphClockCmd
+#define             EEPROM_I2C_GPIO_CLK                        RCC_APB2Periph_GPIOB     
+#define             EEPROM_I2C_SCL_PORT                        GPIOB   
+#define             EEPROM_I2C_SCL_PIN                         GPIO_Pin_6
+#define             EEPROM_I2C_SDA_PORT                        GPIOB 
+#define             EEPROM_I2C_SDA_PIN                         GPIO_Pin_7
+
+
+/*等待超时时间*/
+#define I2CT_FLAG_TIMEOUT         ((uint32_t)0x1000)
+#define I2CT_LONG_TIMEOUT         ((uint32_t)(10 * I2CT_FLAG_TIMEOUT))
+
+
+/*信息输出*/
+#define EEPROM_DEBUG_ON         0
+
+#define EEPROM_INFO(fmt,arg...)           printf("<<-EEPROM-INFO->> "fmt"\n",##arg)
+#define EEPROM_ERROR(fmt,arg...)          printf("<<-EEPROM-ERROR->> "fmt"\n",##arg)
+#define EEPROM_DEBUG(fmt,arg...)          do{\
+                                          if(EEPROM_DEBUG_ON)\
+                                          printf("<<-EEPROM-DEBUG->> [%d]"fmt"\n",__LINE__, ##arg);\
+                                          }while(0)
+
+
+/* 
+ * AT24C02 2kb = 2048bit = 2048/8 B = 256 B
+ * 32 pages of 8 bytes each
+ *
+ * Device Address
+ * 1 0 1 0 A2 A1 A0 R/W
+ * 1 0 1 0 0  0  0  0 = 0XA0
+ * 1 0 1 0 0  0  0  1 = 0XA1 
+ */
+
+/* EEPROM Addresses defines */
+#define EEPROM_Block0_ADDRESS 0xA0   /* E2 = 0 */
+//#define EEPROM_Block1_ADDRESS 0xA2 /* E2 = 0 */
+//#define EEPROM_Block2_ADDRESS 0xA4 /* E2 = 0 */
+//#define EEPROM_Block3_ADDRESS 0xA6 /* E2 = 0 */
+
+
+void I2C_EE_Init(void);
+void I2C_EE_BufferWrite(u8* pBuffer, u8 WriteAddr, u16 NumByteToWrite);
+uint32_t I2C_EE_ByteWrite(u8* pBuffer, u8 WriteAddr);
+uint32_t I2C_EE_PageWrite(u8* pBuffer, u8 WriteAddr, u8 NumByteToWrite);
+uint32_t I2C_EE_BufferRead(u8* pBuffer, u8 ReadAddr, u16 NumByteToRead);
+void I2C_EE_WaitEepromStandbyState(void);
+
+
+#endif /* __I2C_EE_H */
+
+```
+
+#### 在bsp_i2c_ee.c中
+
+```c
+/**
+  ******************************************************************************
+  * @file    bsp_i2c_ee.c
+  * @author  STMicroelectronics
+  * @version V1.0
+  * @date    2013-xx-xx
+  * @brief   i2c EEPROM(AT24C02)应用函数bsp
+  ******************************************************************************
+  * @attention
+  *
+  * 实验平台:野火 F103-霸道 STM32 开发板 
+  * 论坛    :http://www.firebbs.cn
+  * 淘宝    :https://fire-stm32.taobao.com
+  *
+  ******************************************************************************
+  */ 
+
+#include "./i2c/bsp_i2c_ee.h"
+#include "./usart/bsp_usart.h"		
+
+/* STM32 I2C 快速模式 */
+#define I2C_Speed              400000  //*
+
+/* 这个地址只要与STM32外挂的I2C器件地址不一样即可 */
+#define I2Cx_OWN_ADDRESS7      0X0A   
+
+/* AT24C01/02每页有8个字节 */
+#define I2C_PageSize           8
+
+/* AT24C04/08A/16A每页有16个字节 */
+//#define I2C_PageSize           16	
+
+
+uint16_t EEPROM_ADDRESS;
+
+static __IO uint32_t  I2CTimeout = I2CT_LONG_TIMEOUT;   
+
+
+static uint32_t I2C_TIMEOUT_UserCallback(uint8_t errorCode);
+
+
+/**
+  * @brief  I2C I/O配置
+  * @param  无
+  * @retval 无
+  */
+static void I2C_GPIO_Config(void)
+{
+  GPIO_InitTypeDef  GPIO_InitStructure; 
+
+	/* 使能与 I2C 有关的时钟 */
+	EEPROM_I2C_APBxClock_FUN ( EEPROM_I2C_CLK, ENABLE );
+	EEPROM_I2C_GPIO_APBxClock_FUN ( EEPROM_I2C_GPIO_CLK, ENABLE );
+	
+    
+  /* I2C_SCL、I2C_SDA*/
+  GPIO_InitStructure.GPIO_Pin = EEPROM_I2C_SCL_PIN;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;	       // 开漏输出
+  GPIO_Init(EEPROM_I2C_SCL_PORT, &GPIO_InitStructure);
+	
+  GPIO_InitStructure.GPIO_Pin = EEPROM_I2C_SDA_PIN;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;	       // 开漏输出
+  GPIO_Init(EEPROM_I2C_SDA_PORT, &GPIO_InitStructure);	
+	
+	
+}
+
+
+/**
+  * @brief  I2C 工作模式配置
+  * @param  无
+  * @retval 无
+  */
+static void I2C_Mode_Configu(void)
+{
+  I2C_InitTypeDef  I2C_InitStructure; 
+
+  /* I2C 配置 */
+  I2C_InitStructure.I2C_Mode = I2C_Mode_I2C;
+	
+	/* 高电平数据稳定，低电平数据变化 SCL 时钟线的占空比 */
+  I2C_InitStructure.I2C_DutyCycle = I2C_DutyCycle_2;
+	
+  I2C_InitStructure.I2C_OwnAddress1 =I2Cx_OWN_ADDRESS7; 
+  I2C_InitStructure.I2C_Ack = I2C_Ack_Enable ;
+	
+	/* I2C的寻址模式 */
+  I2C_InitStructure.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
+	
+	/* 通信速率 */
+  I2C_InitStructure.I2C_ClockSpeed = I2C_Speed;
+  
+	/* I2C 初始化 */
+  I2C_Init(EEPROM_I2Cx, &I2C_InitStructure);
+  
+	/* 使能 I2C */
+  I2C_Cmd(EEPROM_I2Cx, ENABLE);   
+}
+
+
+/**
+  * @brief  I2C 外设(EEPROM)初始化
+  * @param  无
+  * @retval 无
+  */
+void I2C_EE_Init(void)
+{
+
+  I2C_GPIO_Config(); 
+ 
+  I2C_Mode_Configu();
+
+/* 根据头文件i2c_ee.h中的定义来选择EEPROM要写入的地址 */
+#ifdef EEPROM_Block0_ADDRESS
+  /* 选择 EEPROM Block0 来写入 */
+  EEPROM_ADDRESS = EEPROM_Block0_ADDRESS;
+#endif
+
+#ifdef EEPROM_Block1_ADDRESS  
+	/* 选择 EEPROM Block1 来写入 */
+  EEPROM_ADDRESS = EEPROM_Block1_ADDRESS;
+#endif
+
+#ifdef EEPROM_Block2_ADDRESS  
+	/* 选择 EEPROM Block2 来写入 */
+  EEPROM_ADDRESS = EEPROM_Block2_ADDRESS;
+#endif
+
+#ifdef EEPROM_Block3_ADDRESS  
+	/* 选择 EEPROM Block3 来写入 */
+  EEPROM_ADDRESS = EEPROM_Block3_ADDRESS;
+#endif
+}
+
+
+/**
+  * @brief   将缓冲区中的数据写到I2C EEPROM中
+  * @param   
+  *		@arg pBuffer:缓冲区指针
+  *		@arg WriteAddr:写地址
+  *     @arg NumByteToWrite:写的字节数
+  * @retval  无
+  */
+void I2C_EE_BufferWrite(u8* pBuffer, u8 WriteAddr, u16 NumByteToWrite)
+{
+  u8 NumOfPage = 0, NumOfSingle = 0, Addr = 0, count = 0;
+
+  Addr = WriteAddr % I2C_PageSize;
+  count = I2C_PageSize - Addr;
+  NumOfPage =  NumByteToWrite / I2C_PageSize;
+  NumOfSingle = NumByteToWrite % I2C_PageSize;
+ 
+  /* If WriteAddr is I2C_PageSize aligned  */
+  if(Addr == 0) 
+  {
+    /* If NumByteToWrite < I2C_PageSize */
+    if(NumOfPage == 0) 
+    {
+      I2C_EE_PageWrite(pBuffer, WriteAddr, NumOfSingle);
+      I2C_EE_WaitEepromStandbyState();
+    }
+    /* If NumByteToWrite > I2C_PageSize */
+    else  
+    {
+      while(NumOfPage--)
+      {
+        I2C_EE_PageWrite(pBuffer, WriteAddr, I2C_PageSize); 
+    	I2C_EE_WaitEepromStandbyState();
+        WriteAddr +=  I2C_PageSize;
+        pBuffer += I2C_PageSize;
+      }
+
+      if(NumOfSingle!=0)
+      {
+        I2C_EE_PageWrite(pBuffer, WriteAddr, NumOfSingle);
+        I2C_EE_WaitEepromStandbyState();
+      }
+    }
+  }
+  /* If WriteAddr is not I2C_PageSize aligned  */
+  else 
+  {
+    /* If NumByteToWrite < I2C_PageSize */
+    if(NumOfPage== 0) 
+    {
+      I2C_EE_PageWrite(pBuffer, WriteAddr, NumOfSingle);
+      I2C_EE_WaitEepromStandbyState();
+    }
+    /* If NumByteToWrite > I2C_PageSize */
+    else
+    {
+      NumByteToWrite -= count;
+      NumOfPage =  NumByteToWrite / I2C_PageSize;
+      NumOfSingle = NumByteToWrite % I2C_PageSize;	
+      
+      if(count != 0)
+      {  
+        I2C_EE_PageWrite(pBuffer, WriteAddr, count);
+        I2C_EE_WaitEepromStandbyState();
+        WriteAddr += count;
+        pBuffer += count;
+      } 
+      
+      while(NumOfPage--)
+      {
+        I2C_EE_PageWrite(pBuffer, WriteAddr, I2C_PageSize);
+        I2C_EE_WaitEepromStandbyState();
+        WriteAddr +=  I2C_PageSize;
+        pBuffer += I2C_PageSize;  
+      }
+      if(NumOfSingle != 0)
+      {
+        I2C_EE_PageWrite(pBuffer, WriteAddr, NumOfSingle); 
+        I2C_EE_WaitEepromStandbyState();
+      }
+    }
+  }  
+}
+
+
+/**
+  * @brief   写一个字节到I2C EEPROM中
+  * @param   
+  *		@arg pBuffer:缓冲区指针
+  *		@arg WriteAddr:写地址 
+  * @retval  无
+  */
+uint32_t I2C_EE_ByteWrite(u8* pBuffer, u8 WriteAddr) 
+{
+  /* Send STRAT condition */
+  I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+
+  I2CTimeout = I2CT_FLAG_TIMEOUT;  
+  /* Test on EV5 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_MODE_SELECT))  
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(0);
+  } 
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Send EEPROM address for write */
+  I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Transmitter);
+  
+  /* Test on EV6 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(1);
+  }  
+  /* Send the EEPROM's internal address to write to */
+  I2C_SendData(EEPROM_I2Cx, WriteAddr);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV8 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(2);
+  } 
+  
+  /* Send the byte to be written */
+  I2C_SendData(EEPROM_I2Cx, *pBuffer); 
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;  
+  /* Test on EV8 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(3);
+  } 
+  
+  /* Send STOP condition */
+  I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE);
+  
+  return 1;
+}
+
+
+/**
+  * @brief   在EEPROM的一个写循环中可以写多个字节，但一次写入的字节数
+  *          不能超过EEPROM页的大小，AT24C02每页有8个字节
+  * @param   
+  *		@arg pBuffer:缓冲区指针
+  *		@arg WriteAddr:写地址
+  *     @arg NumByteToWrite:写的字节数
+  * @retval  无
+  */
+uint32_t I2C_EE_PageWrite(u8* pBuffer, u8 WriteAddr, u8 NumByteToWrite)
+{
+  I2CTimeout = I2CT_LONG_TIMEOUT;
+
+  while(I2C_GetFlagStatus(EEPROM_I2Cx, I2C_FLAG_BUSY))   
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(4);
+  } 
+  
+  /* Send START condition */
+  I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV5 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_MODE_SELECT))  
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(5);
+  } 
+  
+  /* Send EEPROM address for write */
+  I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Transmitter);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV6 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))  
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(6);
+  } 
+  
+  /* Send the EEPROM's internal address to write to */    
+  I2C_SendData(EEPROM_I2Cx, WriteAddr);  
+
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV8 and clear it */
+  while(! I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(7);
+  } 
+
+  /* While there is data to be written */
+  while(NumByteToWrite--)  
+  {
+    /* Send the current byte */
+    I2C_SendData(EEPROM_I2Cx, *pBuffer); 
+
+    /* Point to the next byte to be written */
+    pBuffer++; 
+  
+    I2CTimeout = I2CT_FLAG_TIMEOUT;
+
+    /* Test on EV8 and clear it */
+    while (!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+    {
+      if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(8);
+    } 
+  }
+
+  /* Send STOP condition */
+  I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE);
+  
+  return 1;
+}
+
+
+/**
+  * @brief   从EEPROM里面读取一块数据 
+  * @param   
+  *		@arg pBuffer:存放从EEPROM读取的数据的缓冲区指针
+  *		@arg WriteAddr:接收数据的EEPROM的地址
+  *     @arg NumByteToWrite:要从EEPROM读取的字节数
+  * @retval  无
+  */
+uint32_t I2C_EE_BufferRead(u8* pBuffer, u8 ReadAddr, u16 NumByteToRead)
+{  
+  
+  I2CTimeout = I2CT_LONG_TIMEOUT;
+  
+  //*((u8 *)0x4001080c) |=0x80; 
+  while(I2C_GetFlagStatus(EEPROM_I2Cx, I2C_FLAG_BUSY))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(9);
+   }
+  
+  /* Send START condition */
+  I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+  //*((u8 *)0x4001080c) &=~0x80;
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV5 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_MODE_SELECT))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(10);
+   }
+  
+  /* Send EEPROM address for write */
+  I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Transmitter);
+
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV6 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(11);
+   }
+    
+  /* Clear EV6 by setting again the PE bit */
+  I2C_Cmd(EEPROM_I2Cx, ENABLE);
+
+  /* Send the EEPROM's internal address to write to */
+  I2C_SendData(EEPROM_I2Cx, ReadAddr);  
+
+   
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV8 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(12);
+   }
+    
+  /* Send STRAT condition a second time */  
+  I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV5 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_MODE_SELECT))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(13);
+   }
+    
+  /* Send EEPROM address for read */
+  I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Receiver);
+  
+  I2CTimeout = I2CT_FLAG_TIMEOUT;
+  /* Test on EV6 and clear it */
+  while(!I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED))
+  {
+    if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(14);
+   }
+  
+  /* While there is data to be read */
+  while(NumByteToRead)  
+  {
+    if(NumByteToRead == 1)
+    {
+      /* Disable Acknowledgement */
+      I2C_AcknowledgeConfig(EEPROM_I2Cx, DISABLE);
+      
+      /* Send STOP Condition */
+      I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE);
+    }
+
+    /* Test on EV7 and clear it */    
+    I2CTimeout = I2CT_LONG_TIMEOUT;
+    
+		while(I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_RECEIVED)==0)  
+		{
+			if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(3);
+		} 
+    {      
+      /* Read a byte from the EEPROM */
+      *pBuffer = I2C_ReceiveData(EEPROM_I2Cx);
+
+      /* Point to the next location where the byte read will be saved */
+      pBuffer++; 
+      
+      /* Decrement the read bytes counter */
+      NumByteToRead--;        
+    }   
+  }
+
+  /* Enable Acknowledgement to be ready for another reception */
+  I2C_AcknowledgeConfig(EEPROM_I2Cx, ENABLE);
+  
+    return 1;
+}
+
+
+/**
+  * @brief  Wait for EEPROM Standby state 
+  * @param  无
+  * @retval 无
+  */
+void I2C_EE_WaitEepromStandbyState(void)      
+{
+  vu16 SR1_Tmp = 0;
+
+  do
+  {
+    /* Send START condition */
+    I2C_GenerateSTART(EEPROM_I2Cx, ENABLE);
+    /* Read I2C1 SR1 register */
+    SR1_Tmp = I2C_ReadRegister(EEPROM_I2Cx, I2C_Register_SR1);
+    /* Send EEPROM address for write */
+    I2C_Send7bitAddress(EEPROM_I2Cx, EEPROM_ADDRESS, I2C_Direction_Transmitter);
+  }while(!(I2C_ReadRegister(EEPROM_I2Cx, I2C_Register_SR1) & 0x0002));
+  
+  /* Clear AF flag */
+  I2C_ClearFlag(EEPROM_I2Cx, I2C_FLAG_AF);
+    /* STOP condition */    
+    I2C_GenerateSTOP(EEPROM_I2Cx, ENABLE); 
+}
+
+
+
+
+/**
+  * @brief  Basic management of the timeout situation.
+  * @param  errorCode：错误代码，可以用来定位是哪个环节出错.
+  * @retval 返回0，表示IIC读取失败.
+  */
+static  uint32_t I2C_TIMEOUT_UserCallback(uint8_t errorCode)
+{
+  /* Block communication and all processes */
+  EEPROM_ERROR("I2C 等待超时!errorCode = %d",errorCode);
+  
+  return 0;
+}
+/*********************************************END OF FILE**********************/
+
+
+```
+
+#### 在main.c中
+
+```c
+/**
+  ******************************************************************************
+  * @file    main.c
+  * @author  fire
+  * @version V1.0
+  * @date    2013-xx-xx
+  * @brief   I2C EEPROM(AT24C02)测试，存储小数
+  ******************************************************************************
+  * @attention
+  *
+  * 实验平台:野火 F103-霸道 STM32 开发板 
+  * 论坛    :http://www.firebbs.cn
+  * 淘宝    :https://fire-stm32.taobao.com
+  *
+  ******************************************************************************
+  */
+  
+#include "stm32f10x.h"
+#include "./usart/bsp_usart.h"
+#include "./i2c/bsp_i2c_ee.h"
+#include "./led/bsp_led.h"
+#include <string.h>
+
+
+uint8_t cal_flag = 0;
+uint8_t k;
+
+/*存储小数和整数的数组，各7个*/
+long double double_buffer[7] = {0};
+int int_bufffer[7] = {0};
+
+#define DOUBLE_ADDR       10
+#define LONGINT_ADDR      70
+
+/**
+  * @brief  主函数
+  * @param  无
+  * @retval 无
+  */
+int main(void)
+{ 
+  LED_GPIO_Config();
+
+  /* 串口初始化 */
+	USART_Config();
+	
+	printf("\r\n 这是一个EEPROM 读写小数和长整数实验 \r\n");
+
+	/* I2C 外设初(AT24C02)始化 */
+	I2C_EE_Init();	 	 
+   
+
+  		/*读取数据标志位*/
+    I2C_EE_BufferRead(&cal_flag, 0, 1);
+  
+    if( cal_flag != 0xCD )	/*若标志等于0xcd，表示之前已有写入数据*/
+    {      
+        printf("\r\n没有检测到数据标志，FLASH没有存储数据，即将进行小数写入实验\r\n");
+        cal_flag =0xCD;
+        
+        /*写入标志到0地址*/
+        I2C_EE_BufferWrite(&cal_flag, 0, 1); 
+        
+        /*生成要写入的数据*/
+        for( k=0; k<7; k++ )
+        {
+           double_buffer[k] = k +0.1;
+           int_bufffer[k]=k*500+1 ;
+        }
+
+        /*写入小数数据到地址10*/
+        I2C_EE_BufferWrite((void*)double_buffer,DOUBLE_ADDR, sizeof(double_buffer));
+        /*写入整数数据到地址60*/
+        I2C_EE_BufferWrite((void*)int_bufffer, LONGINT_ADDR, sizeof(int_bufffer));
+              
+        printf("向芯片写入数据：");
+        /*打印到串口*/
+        for( k=0; k<7; k++ )
+        {
+          printf("小数tx = %LF\r\n",double_buffer[k]);
+          printf("整数tx = %d\r\n",int_bufffer[k]);
+        }
+        
+        printf("\r\n请复位开发板，以读取数据进行检验\r\n");      
+		
+    }    
+    else
+    {      
+      	 printf("\r\n检测到数据标志\r\n");
+
+				/*读取小数数据*/
+        I2C_EE_BufferRead((void*)double_buffer, DOUBLE_ADDR, sizeof(double_buffer));
+				
+				/*读取整数数据*/
+        I2C_EE_BufferRead((void*)int_bufffer, LONGINT_ADDR, sizeof(int_bufffer));
+	
+			
+				printf("\r\n从芯片读到数据：\r\n");			
+        for( k=0; k<7; k++ )
+				{
+					printf("小数 rx = %LF \r\n",double_buffer[k]);
+					printf("整数 rx = %d \r\n",int_bufffer[k]);				
+				}
+      
+    }   
+
+  
+  while (1)
+  {      
+  }
+}
+
+/*********************************************END OF FILE**********************/
+
+```
+
+## SPI-FLASH
+
+### SPI协议
+
+SPI（Serial Peripheral Interface）是一种**同步的串行通信协议**，用于在多个设备之间进行数据传输。SPI通常用于连接微控制器（MCU）与外设，例如传感器、存储器、显示器、无线模块等。
+
+#### SPI协议的基本特征
+
+- 主从结构： SPI通信通常包括一个主设备（Master）和一个或多个从设备（Slave）。主设备负责控制通信的时序和信号，而从设备则被动地响应主设备的指令。
+- 全双工通信： SPI支持全双工通信，即主设备和从设备可以同时发送和接收数据。这通过使用两条数据线（MISO - Master In Slave Out 和 MOSI - Master Out Slave In）实现。
+- 多设备选择： SPI总线通常有一个片选信号（Chip Select，CS）线，用于选择与主设备通信的特定从设备。每个从设备都有一个独立的片选线。
+- 时钟信号： SPI通信使用一个时钟信号（SCLK）来同步主设备和从设备的数据传输。时钟的极性和相位可以配置，以适应不同设备的时钟要求。
+- 数据格式： SPI支持多种数据格式，包括不同的数据位数和传输顺序。常见的有CPOL（时钟极性）和 CPHA（时钟相位）两个参数，它们决定了时钟信号的起始边沿和数据采样时机。
+
+#### SPI的通信过程
+
+1. 主设备拉低片选线，选择一个从设备。
+2. 主设备通过时钟信号（SCLK）同步数据传输。
+3. 主设备通过 MOSI 发送数据到从设备。
+4. 从设备通过 MISO 返回数据到主设备。
+5. 数据传输完成后，主设备拉高片选线，表示结束与从设备的通信。
+
+**SPI通信速度通常较快，适用于需要高速数据传输的应用**, SPI协议是一种灵活、简单且广泛使用的串行通信协议，但它通常**局限于短距离通信，且没有内建的错误检测和纠正机制**
+
+### STM32的SPI特性及框架
+
+#### SPI物理层
+
+![SPI物理层](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402032017786.png)
+
+##### SS线
+
+![SS线](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402032019762.png)
+
+SS线一般用软件编程GPIO进行模拟
+
+##### SCK线
+
+![SCK线](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402032024467.png)
+
+在STM32F103中SPI1挂载在APB2总线, 最大频率为fpclk2/2=35MHz
+
+在STM32F103中SPI2,3挂载在APB1总线, 最大频率为fpclk1/2=18MHz
+
+##### MOSI和MISO线
+
+![MOSI和MISO线](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402032149125.png)
+
+#### SPI协议层
+
+##### SPI基本通讯过程
+
+![SPI基本通讯过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402032151968.png)
+
+1. NSS信号由高电平变为低电平时通讯开始
+2. SCK的采样边沿需要根据CPOL/CPHA的配置进行确定
+3. 在SCK触发阶段, MOSI和MISO电平进行变化
+4. 在SCK采样阶段, MOSI和MISO电平进行采样
+
+##### CPOL/CPHA配置
+
+![CPOL/CPHA配置](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402032223490.png)
+
+![CPOL](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402032224540.png)
+
+CPOL为1时, SCK在空闲时为高电平, 为0时, SCK在空闲时为低电平
+
+![CPHA](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402032226805.png)
+
+CPHA为1时,MOSI/MISO信号在SCK的奇数边缘采样, 为0时, MOSI/MISO信号在SCK的偶数边缘采样
+
+![CPOL/CPHA配置](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402032254718.png)
+
+### SPI初始化结构体详解
+
+### SPI-FLASH实验
