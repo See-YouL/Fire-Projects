@@ -4842,7 +4842,7 @@ I2C采用高位先行, 由高位到低位进行传输
 
 STM32兼容smbus协议
 
-##### 时钟控制逻辑
+##### I2C时钟控制逻辑
 
 ![时钟控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270347794.png)
 ![时钟控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270325594.png)
@@ -4855,7 +4855,7 @@ STM32兼容smbus协议
 
 实际就是解未知数CCR的一元一次方程
 
-##### 数据控制逻辑
+##### I2C数据控制逻辑
 
 ![数据控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202401270347332.png)
 
@@ -6740,7 +6740,7 @@ I2C读写小数在例程中有, 下面为例程中的代码(未进行分析)
 
 ```c
 #ifndef __I2C_EE_H
-#define	__I2C_EE_H
+#define __I2C_EE_H
 
 
 #include "stm32f10x.h"
@@ -6824,7 +6824,7 @@ void I2C_EE_WaitEepromStandbyState(void);
   */ 
 
 #include "./i2c/bsp_i2c_ee.h"
-#include "./usart/bsp_usart.h"		
+#include "./usart/bsp_usart.h"  
 
 /* STM32 I2C 快速模式 */
 #define I2C_Speed              400000  //*
@@ -6836,7 +6836,7 @@ void I2C_EE_WaitEepromStandbyState(void);
 #define I2C_PageSize           8
 
 /* AT24C04/08A/16A每页有16个字节 */
-//#define I2C_PageSize           16	
+//#define I2C_PageSize           16 
 
 
 uint16_t EEPROM_ADDRESS;
@@ -6854,25 +6854,23 @@ static uint32_t I2C_TIMEOUT_UserCallback(uint8_t errorCode);
   */
 static void I2C_GPIO_Config(void)
 {
-  GPIO_InitTypeDef  GPIO_InitStructure; 
+    GPIO_InitTypeDef  GPIO_InitStructure; 
 
-	/* 使能与 I2C 有关的时钟 */
-	EEPROM_I2C_APBxClock_FUN ( EEPROM_I2C_CLK, ENABLE );
-	EEPROM_I2C_GPIO_APBxClock_FUN ( EEPROM_I2C_GPIO_CLK, ENABLE );
-	
+    /* 使能与 I2C 有关的时钟 */
+    EEPROM_I2C_APBxClock_FUN ( EEPROM_I2C_CLK, ENABLE );
+    EEPROM_I2C_GPIO_APBxClock_FUN ( EEPROM_I2C_GPIO_CLK, ENABLE );
+
     
-  /* I2C_SCL、I2C_SDA*/
-  GPIO_InitStructure.GPIO_Pin = EEPROM_I2C_SCL_PIN;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;	       // 开漏输出
-  GPIO_Init(EEPROM_I2C_SCL_PORT, &GPIO_InitStructure);
-	
-  GPIO_InitStructure.GPIO_Pin = EEPROM_I2C_SDA_PIN;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;	       // 开漏输出
-  GPIO_Init(EEPROM_I2C_SDA_PORT, &GPIO_InitStructure);	
-	
-	
+    /* I2C_SCL、I2C_SDA*/
+    GPIO_InitStructure.GPIO_Pin = EEPROM_I2C_SCL_PIN;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;       // 开漏输出
+    GPIO_Init(EEPROM_I2C_SCL_PORT, &GPIO_InitStructure);
+
+    GPIO_InitStructure.GPIO_Pin = EEPROM_I2C_SDA_PIN;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;       // 开漏输出
+    GPIO_Init(EEPROM_I2C_SDA_PORT, &GPIO_InitStructure);
 }
 
 
@@ -6883,28 +6881,28 @@ static void I2C_GPIO_Config(void)
   */
 static void I2C_Mode_Configu(void)
 {
-  I2C_InitTypeDef  I2C_InitStructure; 
+    I2C_InitTypeDef  I2C_InitStructure; 
 
-  /* I2C 配置 */
-  I2C_InitStructure.I2C_Mode = I2C_Mode_I2C;
-	
-	/* 高电平数据稳定，低电平数据变化 SCL 时钟线的占空比 */
-  I2C_InitStructure.I2C_DutyCycle = I2C_DutyCycle_2;
-	
-  I2C_InitStructure.I2C_OwnAddress1 =I2Cx_OWN_ADDRESS7; 
-  I2C_InitStructure.I2C_Ack = I2C_Ack_Enable ;
-	
-	/* I2C的寻址模式 */
-  I2C_InitStructure.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
-	
-	/* 通信速率 */
-  I2C_InitStructure.I2C_ClockSpeed = I2C_Speed;
+    /* I2C 配置 */
+    I2C_InitStructure.I2C_Mode = I2C_Mode_I2C;
+
+    /* 高电平数据稳定，低电平数据变化 SCL 时钟线的占空比 */
+    I2C_InitStructure.I2C_DutyCycle = I2C_DutyCycle_2;
+
+    I2C_InitStructure.I2C_OwnAddress1 =I2Cx_OWN_ADDRESS7; 
+    I2C_InitStructure.I2C_Ack = I2C_Ack_Enable ;
+
+    /* I2C的寻址模式 */
+    I2C_InitStructure.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
+
+    /* 通信速率 */
+    I2C_InitStructure.I2C_ClockSpeed = I2C_Speed;
+
+    /* I2C 初始化 */
+    I2C_Init(EEPROM_I2Cx, &I2C_InitStructure);
   
-	/* I2C 初始化 */
-  I2C_Init(EEPROM_I2Cx, &I2C_InitStructure);
-  
-	/* 使能 I2C */
-  I2C_Cmd(EEPROM_I2Cx, ENABLE);   
+    /* 使能 I2C */
+    I2C_Cmd(EEPROM_I2Cx, ENABLE);   
 }
 
 
@@ -6927,17 +6925,17 @@ void I2C_EE_Init(void)
 #endif
 
 #ifdef EEPROM_Block1_ADDRESS  
-	/* 选择 EEPROM Block1 来写入 */
+    /* 选择 EEPROM Block1 来写入 */
   EEPROM_ADDRESS = EEPROM_Block1_ADDRESS;
 #endif
 
 #ifdef EEPROM_Block2_ADDRESS  
-	/* 选择 EEPROM Block2 来写入 */
+    /* 选择 EEPROM Block2 来写入 */
   EEPROM_ADDRESS = EEPROM_Block2_ADDRESS;
 #endif
 
 #ifdef EEPROM_Block3_ADDRESS  
-	/* 选择 EEPROM Block3 来写入 */
+    /* 选择 EEPROM Block3 来写入 */
   EEPROM_ADDRESS = EEPROM_Block3_ADDRESS;
 #endif
 }
@@ -6946,9 +6944,9 @@ void I2C_EE_Init(void)
 /**
   * @brief   将缓冲区中的数据写到I2C EEPROM中
   * @param   
-  *		@arg pBuffer:缓冲区指针
-  *		@arg WriteAddr:写地址
-  *     @arg NumByteToWrite:写的字节数
+  *   @arg pBuffer:缓冲区指针
+  *   @arg WriteAddr:写地址
+  *   @arg NumByteToWrite:写的字节数
   * @retval  无
   */
 void I2C_EE_BufferWrite(u8* pBuffer, u8 WriteAddr, u16 NumByteToWrite)
@@ -6975,7 +6973,7 @@ void I2C_EE_BufferWrite(u8* pBuffer, u8 WriteAddr, u16 NumByteToWrite)
       while(NumOfPage--)
       {
         I2C_EE_PageWrite(pBuffer, WriteAddr, I2C_PageSize); 
-    	I2C_EE_WaitEepromStandbyState();
+        I2C_EE_WaitEepromStandbyState();
         WriteAddr +=  I2C_PageSize;
         pBuffer += I2C_PageSize;
       }
@@ -7001,7 +6999,7 @@ void I2C_EE_BufferWrite(u8* pBuffer, u8 WriteAddr, u16 NumByteToWrite)
     {
       NumByteToWrite -= count;
       NumOfPage =  NumByteToWrite / I2C_PageSize;
-      NumOfSingle = NumByteToWrite % I2C_PageSize;	
+      NumOfSingle = NumByteToWrite % I2C_PageSize;
       
       if(count != 0)
       {  
@@ -7031,8 +7029,8 @@ void I2C_EE_BufferWrite(u8* pBuffer, u8 WriteAddr, u16 NumByteToWrite)
 /**
   * @brief   写一个字节到I2C EEPROM中
   * @param   
-  *		@arg pBuffer:缓冲区指针
-  *		@arg WriteAddr:写地址 
+  *   @arg pBuffer:缓冲区指针
+  *   @arg WriteAddr:写地址 
   * @retval  无
   */
 uint32_t I2C_EE_ByteWrite(u8* pBuffer, u8 WriteAddr) 
@@ -7087,9 +7085,9 @@ uint32_t I2C_EE_ByteWrite(u8* pBuffer, u8 WriteAddr)
   * @brief   在EEPROM的一个写循环中可以写多个字节，但一次写入的字节数
   *          不能超过EEPROM页的大小，AT24C02每页有8个字节
   * @param   
-  *		@arg pBuffer:缓冲区指针
-  *		@arg WriteAddr:写地址
-  *     @arg NumByteToWrite:写的字节数
+  *   @arg pBuffer:缓冲区指针
+  *   @arg WriteAddr:写地址
+  *   @arg NumByteToWrite:写的字节数
   * @retval  无
   */
 uint32_t I2C_EE_PageWrite(u8* pBuffer, u8 WriteAddr, u8 NumByteToWrite)
@@ -7159,9 +7157,9 @@ uint32_t I2C_EE_PageWrite(u8* pBuffer, u8 WriteAddr, u8 NumByteToWrite)
 /**
   * @brief   从EEPROM里面读取一块数据 
   * @param   
-  *		@arg pBuffer:存放从EEPROM读取的数据的缓冲区指针
-  *		@arg WriteAddr:接收数据的EEPROM的地址
-  *     @arg NumByteToWrite:要从EEPROM读取的字节数
+  *   @arg pBuffer:存放从EEPROM读取的数据的缓冲区指针
+  *   @arg WriteAddr:接收数据的EEPROM的地址
+  *   @arg NumByteToWrite:要从EEPROM读取的字节数
   * @retval  无
   */
 uint32_t I2C_EE_BufferRead(u8* pBuffer, u8 ReadAddr, u16 NumByteToRead)
@@ -7245,10 +7243,10 @@ uint32_t I2C_EE_BufferRead(u8* pBuffer, u8 ReadAddr, u16 NumByteToRead)
     /* Test on EV7 and clear it */    
     I2CTimeout = I2CT_LONG_TIMEOUT;
     
-		while(I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_RECEIVED)==0)  
-		{
-			if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(3);
-		} 
+    while(I2C_CheckEvent(EEPROM_I2Cx, I2C_EVENT_MASTER_BYTE_RECEIVED)==0)  
+    {
+        if((I2CTimeout--) == 0) return I2C_TIMEOUT_UserCallback(3);
+    } 
     {      
       /* Read a byte from the EEPROM */
       *pBuffer = I2C_ReceiveData(EEPROM_I2Cx);
@@ -7360,18 +7358,17 @@ int main(void)
   LED_GPIO_Config();
 
   /* 串口初始化 */
-	USART_Config();
-	
-	printf("\r\n 这是一个EEPROM 读写小数和长整数实验 \r\n");
+    USART_Config();
 
-	/* I2C 外设初(AT24C02)始化 */
-	I2C_EE_Init();	 	 
-   
+    printf("\r\n 这是一个EEPROM 读写小数和长整数实验 \r\n");
 
-  		/*读取数据标志位*/
+    /* I2C 外设初(AT24C02)始化 */
+    I2C_EE_Init();
+
+    /*读取数据标志位*/
     I2C_EE_BufferRead(&cal_flag, 0, 1);
   
-    if( cal_flag != 0xCD )	/*若标志等于0xcd，表示之前已有写入数据*/
+    if( cal_flag != 0xCD ) /*若标志等于0xcd，表示之前已有写入数据*/
     {      
         printf("\r\n没有检测到数据标志，FLASH没有存储数据，即将进行小数写入实验\r\n");
         cal_flag =0xCD;
@@ -7400,25 +7397,22 @@ int main(void)
         }
         
         printf("\r\n请复位开发板，以读取数据进行检验\r\n");      
-		
     }    
     else
-    {      
-      	 printf("\r\n检测到数据标志\r\n");
+    {
+        printf("\r\n检测到数据标志\r\n");
 
-				/*读取小数数据*/
+        /*读取小数数据*/
         I2C_EE_BufferRead((void*)double_buffer, DOUBLE_ADDR, sizeof(double_buffer));
-				
-				/*读取整数数据*/
+
+        /*读取整数数据*/
         I2C_EE_BufferRead((void*)int_bufffer, LONGINT_ADDR, sizeof(int_bufffer));
-	
-			
-				printf("\r\n从芯片读到数据：\r\n");			
+        printf("\r\n从芯片读到数据：\r\n");
         for( k=0; k<7; k++ )
-				{
-					printf("小数 rx = %LF \r\n",double_buffer[k]);
-					printf("整数 rx = %d \r\n",int_bufffer[k]);				
-				}
+        {
+            printf("小数 rx = %LF \r\n",double_buffer[k]);
+            printf("整数 rx = %d \r\n",int_bufffer[k]);
+        }
       
     }   
 
@@ -7505,6 +7499,221 @@ CPHA为1时,MOSI/MISO信号在SCK的奇数边缘采样, 为0时, MOSI/MISO信号
 
 ![CPOL/CPHA配置](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402032254718.png)
 
-### SPI初始化结构体详解
+![SPI架构](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071826806.png)
 
-### SPI-FLASH实验
+#### SPI通讯引脚
+
+![SPI通讯引脚框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071915673.png)
+
+![通讯引脚](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071828184.png)
+
+NSS一般使用软件控制引脚
+
+#### SPI时钟控制逻辑
+
+![SPI时钟控制逻辑框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071915991.png)
+
+![时钟控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071906446.png)
+
+在SPI_CR1[5:3]BR控制波特率
+
+![SPI_CR1](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071908631.png)
+
+#### SPI数据控制逻辑
+
+![SPI数据控制逻辑框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071914015.png)
+
+![数据控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071912928.png)
+
+#### SPI整体控制逻辑
+
+![SPI整体控制逻辑](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071941301.png)
+
+##### SPI_CR1寄存器
+
+![SPI_CR1](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071943925.png)
+
+- BIDIMODE: 一般选择双线双向
+- BIDIOE: 一般不使用
+- CRCEN: 一般不使用
+
+![SPI_CR1](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071947289.png)
+
+- DFF: 一般使用8位数据帧格式
+- RXONLY: 一般使用全双工
+- SSM: 一般使用软件从设备管理
+
+![SPI_CR1](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071950557.png)
+
+- LSBFIRST: 需要与外设配合
+- SPE: 使能SPI
+- BR[2:0]: 控制波特率
+- MSTR: 配置主从设备
+
+![SPI_CR1](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071953199.png)
+
+- CPOL: 配置时钟极性
+- CPHA: 配置时钟相位
+
+##### SPI_SR寄存器
+
+![SPI_SR](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071955579.png)
+
+![SPI_SR](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071955069.png)
+
+- TXE: 判断发送缓冲区是否为空
+- RXNE: 判断接收缓冲是否为空
+
+#### SPI通讯过程
+
+![SPI通讯过程](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402071957471.png)
+
+SPI发送数据流程
+
+1. 软件向SPI_DR写入数据
+2. 等待TXE标志位置1
+3. 置1后再向SPI_DR中写入下一个字节的数据
+
+SPI接收数据流程
+
+1. 从外部接收数据
+2. 等待RXNE标志位置1
+3. 读取SPI_DR可获取接收到的数据
+4. RXNE为1后继续从SPI_DR读取下一个接收到的数据
+
+SPI发送和接收是同时进行的, 就算只接收数据也要往发送缓冲区写入数据, 才能触发SCL产生时钟, 才能正常接收数据
+
+### SPI初始化结构体
+
+#### SPI结构体成员
+
+![SPI结构体](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072019171.png)
+
+##### SPI_BaudRatePrescaler
+
+![SPI_BandRatePrescaler](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072045060.png)
+
+配置分频因子为2,4,8....分频
+
+##### SPI_CPHA
+
+![SPI_CPHA](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072040368.png)
+
+- SPI_CPHA_1Edge: 奇数边缘采样
+- SPI_CPHA_2Edge: 偶数边缘采样
+
+##### SPI_CPOL
+
+![SPI_CPOL](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072031998.png)
+
+- SPI_CPOL_High: SPI空闲为高电平
+- SPI_CPOL_Low: SPI空闲为低电平
+
+##### SPI_CRCPolynomial
+
+一般不使用CRC校验
+
+##### SPI_DataSize
+
+![SPI_DataSize](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072029684.png)
+
+- SPI_DataSize_16b: 配置数据帧长度为16位
+- SPI_DataSize_8b: 配置数据帧长度为8位
+
+##### SPI_Direction
+
+![SPI_Direction](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072020594.png)
+
+- SPI_Direction_1Line_Rx: 单线只接收
+- SPI_Direction_1Line_Tx: 单线只发送
+- SPI_Direction_2Lines_FullDuplex: 双线全双工
+- SPI_Direction_2Lines_RxOnly: 双线只接收
+
+##### SPI_FirstBit
+
+![SPI_FirstBit](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072047473.png)
+
+- SPI_FirstBit_LSB: 低位先行
+- SPI_FirstBit_MSB: 高位先行
+
+一般配置为高位先行
+
+##### SPI_Mode
+
+![SPI_Mode](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072025148.png)
+
+- SPI_Mode_Master: STM32作为主机
+- SPI_Mode_Slave: STM32作为从机
+
+二者区别在于, SPI的SCK时序是从主机中产生还是接收外来的SCK信号
+
+##### SPI_NSS
+
+![SPI_NSS](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072043580.png)
+
+- SPI_NSS_Hard: 硬件配置NSS
+- SPI_NSS_Soft: 软件配置NSS
+
+#### SPI初始化函数
+
+##### SPI_Init
+
+![SPI_Init](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072050625.png)
+
+使用SPI_Init函数进行初始化
+
+##### SPI_Cmd
+
+![SPI_Cmd](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072051840.png)
+
+使用SPI_Cmd函数进行使能
+
+### W25Q64介绍
+
+#### W25Q64引脚封装
+
+![W25Q64引脚封装](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072057650.png)
+
+![W25Q64引脚封装](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072100352.png)
+
+- /CS: 相当于NSS
+- DO(IO1): 相当于MISO
+- /WP(I02): 输入写保护, 低电平有效
+- DI(IO0): 相当于MOSI
+- GND: 地
+- VCC: 电源
+- /HOLD(IO3): 暂停通讯, 低电平有效
+- CLK: 相当于SCK
+
+#### W25Q64框图
+
+![W25Q64框图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072114893.png)
+
+1. 将8M字节分为128个64KB的块(Block)
+2. 将64KB分为16个4KB的扇区(Sector)
+
+Flash的存储特性:
+
+1. 在写入数据前必须先擦除
+2. 擦除时会把数据位全部重置为1
+3. 在写入数据时只能把为1的数据位改为0
+4. 擦除时必须按照最小单位(一般为扇区Sector)进行擦除
+
+#### W25Q64指令表
+
+![W25Q64指令表](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072201185.png)
+
+![W25Q64指令表](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402072202647.png)
+
+#### 开发板W25Q64原理图
+
+![W25Q64](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202402101724960.png)
+
+- /CE: 片选, 后续会使用软件方法
+- SCK: 信号线, 接PA5
+- SI_IO0: MOSI线, 接PA7
+- SI_IO1: MISO中
+- /WP_IO2: 写保护接高电平, 不使用
+- /HOLD_IO3: 暂停通讯, 接高电平, 不使用
+
+### SPI-FLASH读写测试
