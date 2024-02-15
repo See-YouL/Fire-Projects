@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>24-I2C-EEPROM读写实验: E:/Personal/IT/Embedded/Stm32/Fire/Fire-Projects/24-I2C-EEPROM/Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_dma.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">24-I2C-EEPROM读写实验<span id="projectnumber">&#160;None</span>
+   </div>
+   <div id="projectbrief">I2C-EEPROM读写实验</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c70ae96152db76c2a98dc36c9d938161.html">24-I2C-EEPROM</a></li><li class="navelem"><a class="el" href="dir_44588f5ef50cc24f69568f0877d8b791.html">Libraries</a></li><li class="navelem"><a class="el" href="dir_62b8510e927d44c4507688017f6363e0.html">STM32F10x_StdPeriph_Driver</a></li><li class="navelem"><a class="el" href="dir_743dd6896234999ca08fe70a3f3445a5.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle"><div class="title">stm32f10x_dma.c 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>This file provides all the DMA firmware functions.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="stm32f10x__dma_8h_source.html">stm32f10x_dma.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stm32f10x__rcc_8h_source.html">stm32f10x_rcc.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga76177263f2b9878765606f3bb8b9cc64" id="r_ga76177263f2b9878765606f3bb8b9cc64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#ga76177263f2b9878765606f3bb8b9cc64">DMA1_Channel1_IT_Mask</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral___registers___bits___definition.html#ga3475228c998897d0f408a4c5da066186">DMA_ISR_GIF1</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga1a1522414af27c7fff2cc27edac1d680">DMA_ISR_TCIF1</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga5f83359698adf05854b55705f78d8a5c">DMA_ISR_HTIF1</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga26bfd55e965445ae253a5c5fa8f1769a">DMA_ISR_TEIF1</a>))</td></tr>
+<tr class="separator:ga76177263f2b9878765606f3bb8b9cc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga255d8869e69919c3b5c434088239ae8c" id="r_ga255d8869e69919c3b5c434088239ae8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#ga255d8869e69919c3b5c434088239ae8c">DMA1_Channel2_IT_Mask</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral___registers___bits___definition.html#ga44fa823dbb15b829621961efc60d6a95">DMA_ISR_GIF2</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga631741eb4843eda3578808a3d8b527b2">DMA_ISR_TCIF2</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga8ee1947aef188f437f37d3ff444f8646">DMA_ISR_HTIF2</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga5bcd07efcadd5fef598edec1cca70e38">DMA_ISR_TEIF2</a>))</td></tr>
+<tr class="separator:ga255d8869e69919c3b5c434088239ae8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabbe4f28c48dc0c3b678cbf4a4fd79e54" id="r_gabbe4f28c48dc0c3b678cbf4a4fd79e54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#gabbe4f28c48dc0c3b678cbf4a4fd79e54">DMA1_Channel3_IT_Mask</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral___registers___bits___definition.html#gacb0bd8fb0e580688c5cf617b618bbc17">DMA_ISR_GIF3</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga28664595df654d9d8052fb6f9cc48495">DMA_ISR_TCIF3</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga53bb9a00737c52faffaaa91ff08b34a1">DMA_ISR_HTIF3</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#gaa624379143a2535d7a60d87d59834d10">DMA_ISR_TEIF3</a>))</td></tr>
+<tr class="separator:gabbe4f28c48dc0c3b678cbf4a4fd79e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b67cd69dbebc4d39a13b3d863a4122b" id="r_ga6b67cd69dbebc4d39a13b3d863a4122b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#ga6b67cd69dbebc4d39a13b3d863a4122b">DMA1_Channel4_IT_Mask</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral___registers___bits___definition.html#gaf4f69823d44810c353af1f0a89eaf180">DMA_ISR_GIF4</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#gad7d4e46949a35cf037a303bd65a0c87a">DMA_ISR_TCIF4</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga684cf326c770f1ab21c604a5f62907ad">DMA_ISR_HTIF4</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga12fcc1471918f3e7b293b2d825177253">DMA_ISR_TEIF4</a>))</td></tr>
+<tr class="separator:ga6b67cd69dbebc4d39a13b3d863a4122b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44192309991b50231e3af515bf27bef7" id="r_ga44192309991b50231e3af515bf27bef7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#ga44192309991b50231e3af515bf27bef7">DMA1_Channel5_IT_Mask</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral___registers___bits___definition.html#ga83d4d9cba635d1e33e3477b773379cfd">DMA_ISR_GIF5</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga5ea57d09f13edbd6ad8afe9465e0fa70">DMA_ISR_TCIF5</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga3d1f2b8c82b1e20b4311af8ca9576736">DMA_ISR_HTIF5</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga42f9b12c4c80cbb7cd0f94f139c73de3">DMA_ISR_TEIF5</a>))</td></tr>
+<tr class="separator:ga44192309991b50231e3af515bf27bef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d6e7845da3456440a947a86e1827244" id="r_ga4d6e7845da3456440a947a86e1827244"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#ga4d6e7845da3456440a947a86e1827244">DMA1_Channel6_IT_Mask</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral___registers___bits___definition.html#gac55f4836aa8e6cfc9bdcadfabf65b5d8">DMA_ISR_GIF6</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga2d76395cf6c6ef50e05c96d7ae723058">DMA_ISR_TCIF6</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga41b6d9787aeff76a51581d9488b4604f">DMA_ISR_HTIF6</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#gae47d914969922381708ae06c1c71123a">DMA_ISR_TEIF6</a>))</td></tr>
+<tr class="separator:ga4d6e7845da3456440a947a86e1827244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga510bb442153092ff35e73dcaa845d8d1" id="r_ga510bb442153092ff35e73dcaa845d8d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#ga510bb442153092ff35e73dcaa845d8d1">DMA1_Channel7_IT_Mask</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral___registers___bits___definition.html#ga86f178e879b2d8ceeea351e4750272dd">DMA_ISR_GIF7</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga4528af54928542c09502c01827418732">DMA_ISR_TCIF7</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga769016c2b0bf22ff3ad6967b3dc0e2bb">DMA_ISR_HTIF7</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#gaf8333b3c78b7d0a07bd4b1e91e902b31">DMA_ISR_TEIF7</a>))</td></tr>
+<tr class="separator:ga510bb442153092ff35e73dcaa845d8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a8a861830805d87d8f487920525125d" id="r_ga1a8a861830805d87d8f487920525125d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#ga1a8a861830805d87d8f487920525125d">DMA2_Channel1_IT_Mask</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral___registers___bits___definition.html#ga3475228c998897d0f408a4c5da066186">DMA_ISR_GIF1</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga1a1522414af27c7fff2cc27edac1d680">DMA_ISR_TCIF1</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga5f83359698adf05854b55705f78d8a5c">DMA_ISR_HTIF1</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga26bfd55e965445ae253a5c5fa8f1769a">DMA_ISR_TEIF1</a>))</td></tr>
+<tr class="separator:ga1a8a861830805d87d8f487920525125d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93ffc8595a8b0f1410b9e8a348fcd480" id="r_ga93ffc8595a8b0f1410b9e8a348fcd480"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#ga93ffc8595a8b0f1410b9e8a348fcd480">DMA2_Channel2_IT_Mask</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral___registers___bits___definition.html#ga44fa823dbb15b829621961efc60d6a95">DMA_ISR_GIF2</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga631741eb4843eda3578808a3d8b527b2">DMA_ISR_TCIF2</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga8ee1947aef188f437f37d3ff444f8646">DMA_ISR_HTIF2</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga5bcd07efcadd5fef598edec1cca70e38">DMA_ISR_TEIF2</a>))</td></tr>
+<tr class="separator:ga93ffc8595a8b0f1410b9e8a348fcd480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96bd8d986420e19b3ce94bd67a48b24a" id="r_ga96bd8d986420e19b3ce94bd67a48b24a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#ga96bd8d986420e19b3ce94bd67a48b24a">DMA2_Channel3_IT_Mask</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral___registers___bits___definition.html#gacb0bd8fb0e580688c5cf617b618bbc17">DMA_ISR_GIF3</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga28664595df654d9d8052fb6f9cc48495">DMA_ISR_TCIF3</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga53bb9a00737c52faffaaa91ff08b34a1">DMA_ISR_HTIF3</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#gaa624379143a2535d7a60d87d59834d10">DMA_ISR_TEIF3</a>))</td></tr>
+<tr class="separator:ga96bd8d986420e19b3ce94bd67a48b24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae844f9b933a07a6f75472c3f849cbb5c" id="r_gae844f9b933a07a6f75472c3f849cbb5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#gae844f9b933a07a6f75472c3f849cbb5c">DMA2_Channel4_IT_Mask</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral___registers___bits___definition.html#gaf4f69823d44810c353af1f0a89eaf180">DMA_ISR_GIF4</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#gad7d4e46949a35cf037a303bd65a0c87a">DMA_ISR_TCIF4</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga684cf326c770f1ab21c604a5f62907ad">DMA_ISR_HTIF4</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga12fcc1471918f3e7b293b2d825177253">DMA_ISR_TEIF4</a>))</td></tr>
+<tr class="separator:gae844f9b933a07a6f75472c3f849cbb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaedaf3e94d362754266807d6ccbab2e3e" id="r_gaedaf3e94d362754266807d6ccbab2e3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#gaedaf3e94d362754266807d6ccbab2e3e">DMA2_Channel5_IT_Mask</a>&#160;&#160;&#160;((uint32_t)(<a class="el" href="group___peripheral___registers___bits___definition.html#ga83d4d9cba635d1e33e3477b773379cfd">DMA_ISR_GIF5</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga5ea57d09f13edbd6ad8afe9465e0fa70">DMA_ISR_TCIF5</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga3d1f2b8c82b1e20b4311af8ca9576736">DMA_ISR_HTIF5</a> | <a class="el" href="group___peripheral___registers___bits___definition.html#ga42f9b12c4c80cbb7cd0f94f139c73de3">DMA_ISR_TEIF5</a>))</td></tr>
+<tr class="separator:gaedaf3e94d362754266807d6ccbab2e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2be62bf481cd44de9ab604efe5595ff6" id="r_ga2be62bf481cd44de9ab604efe5595ff6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#ga2be62bf481cd44de9ab604efe5595ff6">FLAG_Mask</a>&#160;&#160;&#160;((uint32_t)0x10000000)</td></tr>
+<tr class="separator:ga2be62bf481cd44de9ab604efe5595ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac2c71cc75907c7c3467907e766dc4188" id="r_gac2c71cc75907c7c3467907e766dc4188"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___defines.html#gac2c71cc75907c7c3467907e766dc4188">CCR_CLEAR_Mask</a>&#160;&#160;&#160;((uint32_t)0xFFFF800F)</td></tr>
+<tr class="separator:gac2c71cc75907c7c3467907e766dc4188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ga21ca0d50b13e502db5ab5feb484f9ece" id="r_ga21ca0d50b13e502db5ab5feb484f9ece"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___functions.html#ga21ca0d50b13e502db5ab5feb484f9ece">DMA_DeInit</a> (<a class="el" href="struct_d_m_a___channel___type_def.html">DMA_Channel_TypeDef</a> *DMAy_Channelx)</td></tr>
+<tr class="memdesc:ga21ca0d50b13e502db5ab5feb484f9ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitializes the DMAy Channelx registers to their default reset values.  <br /></td></tr>
+<tr class="separator:ga21ca0d50b13e502db5ab5feb484f9ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c3d1b9dc041f8e5f2cfc8d5dd858278" id="r_ga7c3d1b9dc041f8e5f2cfc8d5dd858278"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___functions.html#ga7c3d1b9dc041f8e5f2cfc8d5dd858278">DMA_Init</a> (<a class="el" href="struct_d_m_a___channel___type_def.html">DMA_Channel_TypeDef</a> *DMAy_Channelx, <a class="el" href="struct_d_m_a___init_type_def.html">DMA_InitTypeDef</a> *DMA_InitStruct)</td></tr>
+<tr class="memdesc:ga7c3d1b9dc041f8e5f2cfc8d5dd858278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the DMAy Channelx according to the specified parameters in the DMA_InitStruct.  <br /></td></tr>
+<tr class="separator:ga7c3d1b9dc041f8e5f2cfc8d5dd858278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f7f95f750a90a6824f4e9b6f58adc7e" id="r_ga0f7f95f750a90a6824f4e9b6f58adc7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___functions.html#ga0f7f95f750a90a6824f4e9b6f58adc7e">DMA_StructInit</a> (<a class="el" href="struct_d_m_a___init_type_def.html">DMA_InitTypeDef</a> *DMA_InitStruct)</td></tr>
+<tr class="memdesc:ga0f7f95f750a90a6824f4e9b6f58adc7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills each DMA_InitStruct member with its default value.  <br /></td></tr>
+<tr class="separator:ga0f7f95f750a90a6824f4e9b6f58adc7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e7cb6b9ae5f142e2961df879cdaba65" id="r_ga8e7cb6b9ae5f142e2961df879cdaba65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___functions.html#ga8e7cb6b9ae5f142e2961df879cdaba65">DMA_Cmd</a> (<a class="el" href="struct_d_m_a___channel___type_def.html">DMA_Channel_TypeDef</a> *DMAy_Channelx, <a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga8e7cb6b9ae5f142e2961df879cdaba65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the specified DMAy Channelx.  <br /></td></tr>
+<tr class="separator:ga8e7cb6b9ae5f142e2961df879cdaba65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0bb60360be9cd57f96399be2f3b5eb2b" id="r_ga0bb60360be9cd57f96399be2f3b5eb2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___functions.html#ga0bb60360be9cd57f96399be2f3b5eb2b">DMA_ITConfig</a> (<a class="el" href="struct_d_m_a___channel___type_def.html">DMA_Channel_TypeDef</a> *DMAy_Channelx, uint32_t DMA_IT, <a class="el" href="group___exported__types.html#gac9a7e9a35d2513ec15c3b537aaa4fba1">FunctionalState</a> NewState)</td></tr>
+<tr class="memdesc:ga0bb60360be9cd57f96399be2f3b5eb2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the specified DMAy Channelx interrupts.  <br /></td></tr>
+<tr class="separator:ga0bb60360be9cd57f96399be2f3b5eb2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade5d9e532814eaa46514cb385fdff709" id="r_gade5d9e532814eaa46514cb385fdff709"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___functions.html#gade5d9e532814eaa46514cb385fdff709">DMA_SetCurrDataCounter</a> (<a class="el" href="struct_d_m_a___channel___type_def.html">DMA_Channel_TypeDef</a> *DMAy_Channelx, uint16_t DataNumber)</td></tr>
+<tr class="memdesc:gade5d9e532814eaa46514cb385fdff709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of data units in the current DMAy Channelx transfer.  <br /></td></tr>
+<tr class="separator:gade5d9e532814eaa46514cb385fdff709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga511b4c402d1ff32d53f28736956cac5d" id="r_ga511b4c402d1ff32d53f28736956cac5d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___functions.html#ga511b4c402d1ff32d53f28736956cac5d">DMA_GetCurrDataCounter</a> (<a class="el" href="struct_d_m_a___channel___type_def.html">DMA_Channel_TypeDef</a> *DMAy_Channelx)</td></tr>
+<tr class="memdesc:ga511b4c402d1ff32d53f28736956cac5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of remaining data units in the current DMAy Channelx transfer.  <br /></td></tr>
+<tr class="separator:ga511b4c402d1ff32d53f28736956cac5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafb30b7a891834c267eefd5d30b688a9f" id="r_gafb30b7a891834c267eefd5d30b688a9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#ga89136caac2e14c55151f527ac02daaff">FlagStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___functions.html#gafb30b7a891834c267eefd5d30b688a9f">DMA_GetFlagStatus</a> (uint32_t DMAy_FLAG)</td></tr>
+<tr class="memdesc:gafb30b7a891834c267eefd5d30b688a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified DMAy Channelx flag is set or not.  <br /></td></tr>
+<tr class="separator:gafb30b7a891834c267eefd5d30b688a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25cdca360f309c8ceb7c206cd9ad9119" id="r_ga25cdca360f309c8ceb7c206cd9ad9119"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___functions.html#ga25cdca360f309c8ceb7c206cd9ad9119">DMA_ClearFlag</a> (uint32_t DMAy_FLAG)</td></tr>
+<tr class="memdesc:ga25cdca360f309c8ceb7c206cd9ad9119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the DMAy Channelx's pending flags.  <br /></td></tr>
+<tr class="separator:ga25cdca360f309c8ceb7c206cd9ad9119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9287331247150fe84d03ecd7ad8adb52" id="r_ga9287331247150fe84d03ecd7ad8adb52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___exported__types.html#ga39d4411201fb731279ad5a409b2b80d7">ITStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___functions.html#ga9287331247150fe84d03ecd7ad8adb52">DMA_GetITStatus</a> (uint32_t DMAy_IT)</td></tr>
+<tr class="memdesc:ga9287331247150fe84d03ecd7ad8adb52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified DMAy Channelx interrupt has occurred or not.  <br /></td></tr>
+<tr class="separator:ga9287331247150fe84d03ecd7ad8adb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91a7340e5b334a942f3eb1e05ed5f67a" id="r_ga91a7340e5b334a942f3eb1e05ed5f67a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_m_a___private___functions.html#ga91a7340e5b334a942f3eb1e05ed5f67a">DMA_ClearITPendingBit</a> (uint32_t DMAy_IT)</td></tr>
+<tr class="memdesc:ga91a7340e5b334a942f3eb1e05ed5f67a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the DMAy Channelx's interrupt pending bits.  <br /></td></tr>
+<tr class="separator:ga91a7340e5b334a942f3eb1e05ed5f67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>This file provides all the DMA firmware functions. </p>
+<dl class="section author"><dt>作者</dt><dd>MCD Application Team </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>V3.5.0 </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>11-March-2011 </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd></dd></dl>
+<p>THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.</p>
+<h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

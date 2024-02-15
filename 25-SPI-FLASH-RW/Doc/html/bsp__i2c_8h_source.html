@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>24-I2C-EEPROM读写实验: E:/Personal/IT/Embedded/Stm32/Fire/Fire-Projects/24-I2C-EEPROM/User/i2c/bsp_i2c.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">24-I2C-EEPROM读写实验<span id="projectnumber">&#160;None</span>
+   </div>
+   <div id="projectbrief">I2C-EEPROM读写实验</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_c70ae96152db76c2a98dc36c9d938161.html">24-I2C-EEPROM</a></li><li class="navelem"><a class="el" href="dir_8b91a3b8382b184041fcef41b7bb7e9e.html">User</a></li><li class="navelem"><a class="el" href="dir_3b06806cfe000ed63551f0ff173ec616.html">i2c</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">bsp_i2c.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="bsp__i2c_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifndef __BSP_I2C_H</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define __BSP_I2C_H</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="stm32f10x_8h.html">stm32f10x.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="stm32f10x__conf_8h.html">stm32f10x_conf.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#ga0cd00a4152e739294a3ba0384ad1d110">   30</a></span><span class="preprocessor">#define EEPROM_I2C I2C1 </span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#ga81017ec62760419adb816f3318a3f3e1">   31</a></span><span class="preprocessor">#define EEPROM_I2C_CLK RCC_APB1Periph_I2C1 </span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#ga27dbd5ac5607a159483d52551c4c96ef">   32</a></span><span class="preprocessor">#define EEPROM_I2C_APBxClkCmd RCC_APB1PeriphClockCmd </span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#ga72d5bef2f993a2af3581c0a3aebea127">   33</a></span><span class="preprocessor">#define EEPROM_I2C_BAUDRATE 400000 </span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#ga152a87e250c874489f66136802d9710e">   34</a></span><span class="preprocessor">#define STM32_I2C_OWN_ADDR 0x5F </span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#gaf1f21d11fb28ed3ee6d6fb2a281d3b48">   35</a></span><span class="preprocessor">#define EEPROM_I2C_WRITE_ADDRESS 0xA0 </span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#ga61da15dd7fd993a66da6d35f16182280">   36</a></span><span class="preprocessor">#define EEPROM_I2C_READ_ADDRESS 0xA1 </span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#ga2ee9d0de8181fd5327a7cbcaac829ffe">   42</a></span><span class="preprocessor">#define EEPROM_I2C_SCL_GPIO_CLK (RCC_APB2Periph_GPIOB) </span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#ga70429457d36147806b3848c40b3aefb1">   43</a></span><span class="preprocessor">#define EEPROM_I2C_SDA_GPIO_CLK (RCC_APB2Periph_GPIOB) </span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#ga6a1d841b2bbea68128756744cfbcf6f1">   44</a></span><span class="preprocessor">#define EEPROM_I2C_GPIO_APBxClkCmd RCC_APB2PeriphClockCmd </span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#gad35a7ac5e1d857504947f0701d5fd629">   45</a></span><span class="preprocessor">#define EEPROM_I2C_SCL_GPIO_PORT GPIOB </span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#gaa6e929585f6b2cbb6610fc569e30db3f">   46</a></span><span class="preprocessor">#define EEPROM_I2C_SCL_GPIO_Pin GPIO_Pin_6 </span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#gae8982a11097f17f9e05a262ecf82ee77">   47</a></span><span class="preprocessor">#define EEPROM_I2C_SDA_GPIO_PORT GPIOB </span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="group___i2_c___e_e_p_r_o_m___define.html#ga4217dd29d620b47c7b653d5140771ae4">   48</a></span><span class="preprocessor">#define EEPROM_I2C_SDA_GPIO_Pin GPIO_Pin_7 </span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___e_e_p_r_o_m___i2_c___functions.html#gab5bae292a1facbc179f516fe0e0e4ac1">I2C_EEPROM_Config</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___e_e_p_r_o_m___i2_c___functions.html#ga33740ba02658e771d858f42c6b7b3d67">EEPROM_Byte_Writting</a>(uint8_t WordAddress, uint8_t Data);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___e_e_p_r_o_m___i2_c___functions.html#ga70eb0aa7e550f51254258a3310f6f77e">EEPROM_Page_Writting</a>(uint8_t WordAddress, uint8_t* Data, uint8_t NumByteToWrite);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___e_e_p_r_o_m___i2_c___functions.html#ga2a5fa1080d0629291afb76666167c6fd">EEPROM_Random_Read</a>(uint8_t WordAddress, uint8_t* Data);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___e_e_p_r_o_m___i2_c___functions.html#ga27a269cc6003df0b32491a8e1a02dcba">EEPROM_Sequential_Read</a>(uint8_t WordAddress, uint8_t* Data, uint8_t NumByteToRead);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> <a class="code hl_function" href="group___e_e_p_r_o_m___i2_c___functions.html#gaf5d3ddab1426e9d24aa6d7228014a9c3">EEPROM_ACK_Polling</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#endif </span><span class="comment">// !__BSP_I2C_H</span></div>
+<div class="ttc" id="agroup___e_e_p_r_o_m___i2_c___functions_html_ga27a269cc6003df0b32491a8e1a02dcba"><div class="ttname"><a href="group___e_e_p_r_o_m___i2_c___functions.html#ga27a269cc6003df0b32491a8e1a02dcba">EEPROM_Sequential_Read</a></div><div class="ttdeci">void EEPROM_Sequential_Read(uint8_t WordAddress, uint8_t *Data, uint8_t NumByteToRead)</div><div class="ttdoc">函数实现STM32从EEPROM以Sequential Read方式读取数据</div><div class="ttdef"><b>Definition</b> bsp_i2c.c:246</div></div>
+<div class="ttc" id="agroup___e_e_p_r_o_m___i2_c___functions_html_ga2a5fa1080d0629291afb76666167c6fd"><div class="ttname"><a href="group___e_e_p_r_o_m___i2_c___functions.html#ga2a5fa1080d0629291afb76666167c6fd">EEPROM_Random_Read</a></div><div class="ttdeci">void EEPROM_Random_Read(uint8_t WordAddress, uint8_t *Data)</div><div class="ttdoc">函数实现STM32从EEPROM以Random Read方式读取数据</div><div class="ttdef"><b>Definition</b> bsp_i2c.c:177</div></div>
+<div class="ttc" id="agroup___e_e_p_r_o_m___i2_c___functions_html_ga33740ba02658e771d858f42c6b7b3d67"><div class="ttname"><a href="group___e_e_p_r_o_m___i2_c___functions.html#ga33740ba02658e771d858f42c6b7b3d67">EEPROM_Byte_Writting</a></div><div class="ttdeci">void EEPROM_Byte_Writting(uint8_t WordAddress, uint8_t Data)</div><div class="ttdoc">函数实现了STM32作为主发送器向EEPROM以Byte Writting的方式写数据</div><div class="ttdef"><b>Definition</b> bsp_i2c.c:79</div></div>
+<div class="ttc" id="agroup___e_e_p_r_o_m___i2_c___functions_html_ga70eb0aa7e550f51254258a3310f6f77e"><div class="ttname"><a href="group___e_e_p_r_o_m___i2_c___functions.html#ga70eb0aa7e550f51254258a3310f6f77e">EEPROM_Page_Writting</a></div><div class="ttdeci">void EEPROM_Page_Writting(uint8_t WordAddress, uint8_t *Data, uint8_t NumByteToWrite)</div><div class="ttdoc">函数实现了STM32作为主发送器向EEPROM以Page Writting的方式写数据(每次不超过8字节)</div><div class="ttdef"><b>Definition</b> bsp_i2c.c:125</div></div>
+<div class="ttc" id="agroup___e_e_p_r_o_m___i2_c___functions_html_gab5bae292a1facbc179f516fe0e0e4ac1"><div class="ttname"><a href="group___e_e_p_r_o_m___i2_c___functions.html#gab5bae292a1facbc179f516fe0e0e4ac1">I2C_EEPROM_Config</a></div><div class="ttdeci">void I2C_EEPROM_Config(void)</div><div class="ttdoc">I2C EEPROM配置函数</div><div class="ttdef"><b>Definition</b> bsp_i2c.c:23</div></div>
+<div class="ttc" id="agroup___e_e_p_r_o_m___i2_c___functions_html_gaf5d3ddab1426e9d24aa6d7228014a9c3"><div class="ttname"><a href="group___e_e_p_r_o_m___i2_c___functions.html#gaf5d3ddab1426e9d24aa6d7228014a9c3">EEPROM_ACK_Polling</a></div><div class="ttdeci">void EEPROM_ACK_Polling(void)</div><div class="ttdoc">ACKNOWLEDGE POLLING 对EEPROM进行确认轮询 一旦内部定时写周期开始并且EEPROM输入被禁用，可以启动确认轮询。 这涉及发送一个启动条件，后跟设备地址。 读/写位是代表所需的操作...</div><div class="ttdef"><b>Definition</b> bsp_i2c.c:328</div></div>
+<div class="ttc" id="astm32f10x_8h_html"><div class="ttname"><a href="stm32f10x_8h.html">stm32f10x.h</a></div><div class="ttdoc">CMSIS Cortex-M3 Device Peripheral Access Layer Header File. This file contains all the peripheral reg...</div></div>
+<div class="ttc" id="astm32f10x__conf_8h_html"><div class="ttname"><a href="stm32f10x__conf_8h.html">stm32f10x_conf.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

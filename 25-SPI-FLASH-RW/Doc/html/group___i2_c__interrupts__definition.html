@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>24-I2C-EEPROM读写实验: I2C_interrupts_definition</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">24-I2C-EEPROM读写实验<span id="projectnumber">&#160;None</span>
+   </div>
+   <div id="projectbrief">I2C-EEPROM读写实验</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">I2C_interrupts_definition<div class="ingroups"><a class="el" href="group___s_t_m32_f10x___std_periph___driver.html">STM32F10x_StdPeriph_Driver</a> &raquo; <a class="el" href="group___i2_c.html">I2C</a> &raquo; <a class="el" href="group___i2_c___exported___constants.html">I2C_Exported_Constants</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:gad3ff3f405b882aa4d2f91310aa1cc0df" id="r_gad3ff3f405b882aa4d2f91310aa1cc0df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad3ff3f405b882aa4d2f91310aa1cc0df">I2C_IT_BUF</a>&#160;&#160;&#160;((uint16_t)0x0400)</td></tr>
+<tr class="separator:gad3ff3f405b882aa4d2f91310aa1cc0df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd59efa313e1598a084a1e5ec3905b02" id="r_gadd59efa313e1598a084a1e5ec3905b02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadd59efa313e1598a084a1e5ec3905b02">I2C_IT_EVT</a>&#160;&#160;&#160;((uint16_t)0x0200)</td></tr>
+<tr class="separator:gadd59efa313e1598a084a1e5ec3905b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadba3667b439cbf4ba1e6e9aec961ab03" id="r_gadba3667b439cbf4ba1e6e9aec961ab03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadba3667b439cbf4ba1e6e9aec961ab03">I2C_IT_ERR</a>&#160;&#160;&#160;((uint16_t)0x0100)</td></tr>
+<tr class="separator:gadba3667b439cbf4ba1e6e9aec961ab03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2695a081871336881f9105d6c847c4f" id="r_gae2695a081871336881f9105d6c847c4f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae2695a081871336881f9105d6c847c4f">IS_I2C_CONFIG_IT</a>(IT)&#160;&#160;&#160;((((IT) &amp; (uint16_t)0xF8FF) == 0x00) &amp;&amp; ((IT) != 0x00))</td></tr>
+<tr class="separator:gae2695a081871336881f9105d6c847c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab6049d4dd856a085127752e01ebb8120" id="r_gab6049d4dd856a085127752e01ebb8120"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab6049d4dd856a085127752e01ebb8120">I2C_IT_SMBALERT</a>&#160;&#160;&#160;((uint32_t)0x01008000)</td></tr>
+<tr class="separator:gab6049d4dd856a085127752e01ebb8120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga45ce34b163b456a5fb3833f1264d93b4" id="r_ga45ce34b163b456a5fb3833f1264d93b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga45ce34b163b456a5fb3833f1264d93b4">I2C_IT_TIMEOUT</a>&#160;&#160;&#160;((uint32_t)0x01004000)</td></tr>
+<tr class="separator:ga45ce34b163b456a5fb3833f1264d93b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga23069e7787c4f052f34887c02bc44100" id="r_ga23069e7787c4f052f34887c02bc44100"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga23069e7787c4f052f34887c02bc44100">I2C_IT_PECERR</a>&#160;&#160;&#160;((uint32_t)0x01001000)</td></tr>
+<tr class="separator:ga23069e7787c4f052f34887c02bc44100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e1e9e73d9057ccfce3493b5cf672833" id="r_ga8e1e9e73d9057ccfce3493b5cf672833"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8e1e9e73d9057ccfce3493b5cf672833">I2C_IT_OVR</a>&#160;&#160;&#160;((uint32_t)0x01000800)</td></tr>
+<tr class="separator:ga8e1e9e73d9057ccfce3493b5cf672833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfb721ac5783336e6d2334f635e2e91b" id="r_gabfb721ac5783336e6d2334f635e2e91b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabfb721ac5783336e6d2334f635e2e91b">I2C_IT_AF</a>&#160;&#160;&#160;((uint32_t)0x01000400)</td></tr>
+<tr class="separator:gabfb721ac5783336e6d2334f635e2e91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2439154bee2a45a4147921cec18177d1" id="r_ga2439154bee2a45a4147921cec18177d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2439154bee2a45a4147921cec18177d1">I2C_IT_ARLO</a>&#160;&#160;&#160;((uint32_t)0x01000200)</td></tr>
+<tr class="separator:ga2439154bee2a45a4147921cec18177d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad9aec016c98df6dbb95a5c10b180c202" id="r_gad9aec016c98df6dbb95a5c10b180c202"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad9aec016c98df6dbb95a5c10b180c202">I2C_IT_BERR</a>&#160;&#160;&#160;((uint32_t)0x01000100)</td></tr>
+<tr class="separator:gad9aec016c98df6dbb95a5c10b180c202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb41229da2cd9460c3272cfb13aa29d3" id="r_gacb41229da2cd9460c3272cfb13aa29d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacb41229da2cd9460c3272cfb13aa29d3">I2C_IT_TXE</a>&#160;&#160;&#160;((uint32_t)0x06000080)</td></tr>
+<tr class="separator:gacb41229da2cd9460c3272cfb13aa29d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac95135720c0de2fd01c44c3f7b6c81d4" id="r_gac95135720c0de2fd01c44c3f7b6c81d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac95135720c0de2fd01c44c3f7b6c81d4">I2C_IT_RXNE</a>&#160;&#160;&#160;((uint32_t)0x06000040)</td></tr>
+<tr class="separator:gac95135720c0de2fd01c44c3f7b6c81d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga741e098abb485b327c7668518117e415" id="r_ga741e098abb485b327c7668518117e415"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga741e098abb485b327c7668518117e415">I2C_IT_STOPF</a>&#160;&#160;&#160;((uint32_t)0x02000010)</td></tr>
+<tr class="separator:ga741e098abb485b327c7668518117e415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a9bc5a1dee3bbd41347b19cf117c0f3" id="r_ga8a9bc5a1dee3bbd41347b19cf117c0f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8a9bc5a1dee3bbd41347b19cf117c0f3">I2C_IT_ADD10</a>&#160;&#160;&#160;((uint32_t)0x02000008)</td></tr>
+<tr class="separator:ga8a9bc5a1dee3bbd41347b19cf117c0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef469fef934f655614b7cffd00b87ceb" id="r_gaef469fef934f655614b7cffd00b87ceb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaef469fef934f655614b7cffd00b87ceb">I2C_IT_BTF</a>&#160;&#160;&#160;((uint32_t)0x02000004)</td></tr>
+<tr class="separator:gaef469fef934f655614b7cffd00b87ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf68f1eda33dcb13626597f477d044025" id="r_gaf68f1eda33dcb13626597f477d044025"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf68f1eda33dcb13626597f477d044025">I2C_IT_ADDR</a>&#160;&#160;&#160;((uint32_t)0x02000002)</td></tr>
+<tr class="separator:gaf68f1eda33dcb13626597f477d044025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec2fb9bbd0e1b128b4450b2a7b312896" id="r_gaec2fb9bbd0e1b128b4450b2a7b312896"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaec2fb9bbd0e1b128b4450b2a7b312896">I2C_IT_SB</a>&#160;&#160;&#160;((uint32_t)0x02000001)</td></tr>
+<tr class="separator:gaec2fb9bbd0e1b128b4450b2a7b312896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga368c05fc9aadd7bb4d23280791b5a751" id="r_ga368c05fc9aadd7bb4d23280791b5a751"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga368c05fc9aadd7bb4d23280791b5a751">IS_I2C_CLEAR_IT</a>(IT)&#160;&#160;&#160;((((IT) &amp; (uint16_t)0x20FF) == 0x00) &amp;&amp; ((IT) != (uint16_t)0x00))</td></tr>
+<tr class="separator:ga368c05fc9aadd7bb4d23280791b5a751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab3d113f3d6b6e6f7896c5d7a8d8c2d01" id="r_gab3d113f3d6b6e6f7896c5d7a8d8c2d01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab3d113f3d6b6e6f7896c5d7a8d8c2d01">IS_I2C_GET_IT</a>(IT)</td></tr>
+<tr class="separator:gab3d113f3d6b6e6f7896c5d7a8d8c2d01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ga8a9bc5a1dee3bbd41347b19cf117c0f3" name="ga8a9bc5a1dee3bbd41347b19cf117c0f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8a9bc5a1dee3bbd41347b19cf117c0f3">&#9670;&#160;</a></span>I2C_IT_ADD10</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_ADD10&#160;&#160;&#160;((uint32_t)0x02000008)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaf68f1eda33dcb13626597f477d044025" name="gaf68f1eda33dcb13626597f477d044025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf68f1eda33dcb13626597f477d044025">&#9670;&#160;</a></span>I2C_IT_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_ADDR&#160;&#160;&#160;((uint32_t)0x02000002)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gabfb721ac5783336e6d2334f635e2e91b" name="gabfb721ac5783336e6d2334f635e2e91b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabfb721ac5783336e6d2334f635e2e91b">&#9670;&#160;</a></span>I2C_IT_AF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_AF&#160;&#160;&#160;((uint32_t)0x01000400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga2439154bee2a45a4147921cec18177d1" name="ga2439154bee2a45a4147921cec18177d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2439154bee2a45a4147921cec18177d1">&#9670;&#160;</a></span>I2C_IT_ARLO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_ARLO&#160;&#160;&#160;((uint32_t)0x01000200)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad9aec016c98df6dbb95a5c10b180c202" name="gad9aec016c98df6dbb95a5c10b180c202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad9aec016c98df6dbb95a5c10b180c202">&#9670;&#160;</a></span>I2C_IT_BERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_BERR&#160;&#160;&#160;((uint32_t)0x01000100)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaef469fef934f655614b7cffd00b87ceb" name="gaef469fef934f655614b7cffd00b87ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaef469fef934f655614b7cffd00b87ceb">&#9670;&#160;</a></span>I2C_IT_BTF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_BTF&#160;&#160;&#160;((uint32_t)0x02000004)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad3ff3f405b882aa4d2f91310aa1cc0df" name="gad3ff3f405b882aa4d2f91310aa1cc0df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad3ff3f405b882aa4d2f91310aa1cc0df">&#9670;&#160;</a></span>I2C_IT_BUF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_BUF&#160;&#160;&#160;((uint16_t)0x0400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gadba3667b439cbf4ba1e6e9aec961ab03" name="gadba3667b439cbf4ba1e6e9aec961ab03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadba3667b439cbf4ba1e6e9aec961ab03">&#9670;&#160;</a></span>I2C_IT_ERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_ERR&#160;&#160;&#160;((uint16_t)0x0100)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gadd59efa313e1598a084a1e5ec3905b02" name="gadd59efa313e1598a084a1e5ec3905b02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd59efa313e1598a084a1e5ec3905b02">&#9670;&#160;</a></span>I2C_IT_EVT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_EVT&#160;&#160;&#160;((uint16_t)0x0200)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga8e1e9e73d9057ccfce3493b5cf672833" name="ga8e1e9e73d9057ccfce3493b5cf672833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8e1e9e73d9057ccfce3493b5cf672833">&#9670;&#160;</a></span>I2C_IT_OVR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_OVR&#160;&#160;&#160;((uint32_t)0x01000800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga23069e7787c4f052f34887c02bc44100" name="ga23069e7787c4f052f34887c02bc44100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga23069e7787c4f052f34887c02bc44100">&#9670;&#160;</a></span>I2C_IT_PECERR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_PECERR&#160;&#160;&#160;((uint32_t)0x01001000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac95135720c0de2fd01c44c3f7b6c81d4" name="gac95135720c0de2fd01c44c3f7b6c81d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac95135720c0de2fd01c44c3f7b6c81d4">&#9670;&#160;</a></span>I2C_IT_RXNE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_RXNE&#160;&#160;&#160;((uint32_t)0x06000040)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaec2fb9bbd0e1b128b4450b2a7b312896" name="gaec2fb9bbd0e1b128b4450b2a7b312896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaec2fb9bbd0e1b128b4450b2a7b312896">&#9670;&#160;</a></span>I2C_IT_SB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_SB&#160;&#160;&#160;((uint32_t)0x02000001)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab6049d4dd856a085127752e01ebb8120" name="gab6049d4dd856a085127752e01ebb8120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab6049d4dd856a085127752e01ebb8120">&#9670;&#160;</a></span>I2C_IT_SMBALERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_SMBALERT&#160;&#160;&#160;((uint32_t)0x01008000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga741e098abb485b327c7668518117e415" name="ga741e098abb485b327c7668518117e415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga741e098abb485b327c7668518117e415">&#9670;&#160;</a></span>I2C_IT_STOPF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_STOPF&#160;&#160;&#160;((uint32_t)0x02000010)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga45ce34b163b456a5fb3833f1264d93b4" name="ga45ce34b163b456a5fb3833f1264d93b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga45ce34b163b456a5fb3833f1264d93b4">&#9670;&#160;</a></span>I2C_IT_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_TIMEOUT&#160;&#160;&#160;((uint32_t)0x01004000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gacb41229da2cd9460c3272cfb13aa29d3" name="gacb41229da2cd9460c3272cfb13aa29d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb41229da2cd9460c3272cfb13aa29d3">&#9670;&#160;</a></span>I2C_IT_TXE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_IT_TXE&#160;&#160;&#160;((uint32_t)0x06000080)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga368c05fc9aadd7bb4d23280791b5a751" name="ga368c05fc9aadd7bb4d23280791b5a751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga368c05fc9aadd7bb4d23280791b5a751">&#9670;&#160;</a></span>IS_I2C_CLEAR_IT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IS_I2C_CLEAR_IT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">IT</span></td><td>)</td>
+          <td>&#160;&#160;&#160;((((IT) &amp; (uint16_t)0x20FF) == 0x00) &amp;&amp; ((IT) != (uint16_t)0x00))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae2695a081871336881f9105d6c847c4f" name="gae2695a081871336881f9105d6c847c4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae2695a081871336881f9105d6c847c4f">&#9670;&#160;</a></span>IS_I2C_CONFIG_IT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IS_I2C_CONFIG_IT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">IT</span></td><td>)</td>
+          <td>&#160;&#160;&#160;((((IT) &amp; (uint16_t)0xF8FF) == 0x00) &amp;&amp; ((IT) != 0x00))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab3d113f3d6b6e6f7896c5d7a8d8c2d01" name="gab3d113f3d6b6e6f7896c5d7a8d8c2d01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab3d113f3d6b6e6f7896c5d7a8d8c2d01">&#9670;&#160;</a></span>IS_I2C_GET_IT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IS_I2C_GET_IT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">IT</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line">                           (((IT) == <a class="code hl_define" href="#gab6049d4dd856a085127752e01ebb8120">I2C_IT_SMBALERT</a>) || ((IT) == <a class="code hl_define" href="#ga45ce34b163b456a5fb3833f1264d93b4">I2C_IT_TIMEOUT</a>) || \</div>
+<div class="line">                           ((IT) == <a class="code hl_define" href="#ga23069e7787c4f052f34887c02bc44100">I2C_IT_PECERR</a>) || ((IT) == <a class="code hl_define" href="#ga8e1e9e73d9057ccfce3493b5cf672833">I2C_IT_OVR</a>) || \</div>
+<div class="line">                           ((IT) == <a class="code hl_define" href="#gabfb721ac5783336e6d2334f635e2e91b">I2C_IT_AF</a>) || ((IT) == <a class="code hl_define" href="#ga2439154bee2a45a4147921cec18177d1">I2C_IT_ARLO</a>) || \</div>
+<div class="line">                           ((IT) == <a class="code hl_define" href="#gad9aec016c98df6dbb95a5c10b180c202">I2C_IT_BERR</a>) || ((IT) == <a class="code hl_define" href="#gacb41229da2cd9460c3272cfb13aa29d3">I2C_IT_TXE</a>) || \</div>
+<div class="line">                           ((IT) == <a class="code hl_define" href="#gac95135720c0de2fd01c44c3f7b6c81d4">I2C_IT_RXNE</a>) || ((IT) == <a class="code hl_define" href="#ga741e098abb485b327c7668518117e415">I2C_IT_STOPF</a>) || \</div>
+<div class="line">                           ((IT) == <a class="code hl_define" href="#ga8a9bc5a1dee3bbd41347b19cf117c0f3">I2C_IT_ADD10</a>) || ((IT) == <a class="code hl_define" href="#gaef469fef934f655614b7cffd00b87ceb">I2C_IT_BTF</a>) || \</div>
+<div class="line">                           ((IT) == <a class="code hl_define" href="#gaf68f1eda33dcb13626597f477d044025">I2C_IT_ADDR</a>) || ((IT) == <a class="code hl_define" href="#gaec2fb9bbd0e1b128b4450b2a7b312896">I2C_IT_SB</a>))</div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_ga23069e7787c4f052f34887c02bc44100"><div class="ttname"><a href="#ga23069e7787c4f052f34887c02bc44100">I2C_IT_PECERR</a></div><div class="ttdeci">#define I2C_IT_PECERR</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:224</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_ga2439154bee2a45a4147921cec18177d1"><div class="ttname"><a href="#ga2439154bee2a45a4147921cec18177d1">I2C_IT_ARLO</a></div><div class="ttdeci">#define I2C_IT_ARLO</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:227</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_ga45ce34b163b456a5fb3833f1264d93b4"><div class="ttname"><a href="#ga45ce34b163b456a5fb3833f1264d93b4">I2C_IT_TIMEOUT</a></div><div class="ttdeci">#define I2C_IT_TIMEOUT</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:223</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_ga741e098abb485b327c7668518117e415"><div class="ttname"><a href="#ga741e098abb485b327c7668518117e415">I2C_IT_STOPF</a></div><div class="ttdeci">#define I2C_IT_STOPF</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:231</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_ga8a9bc5a1dee3bbd41347b19cf117c0f3"><div class="ttname"><a href="#ga8a9bc5a1dee3bbd41347b19cf117c0f3">I2C_IT_ADD10</a></div><div class="ttdeci">#define I2C_IT_ADD10</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:232</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_ga8e1e9e73d9057ccfce3493b5cf672833"><div class="ttname"><a href="#ga8e1e9e73d9057ccfce3493b5cf672833">I2C_IT_OVR</a></div><div class="ttdeci">#define I2C_IT_OVR</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:225</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_gab6049d4dd856a085127752e01ebb8120"><div class="ttname"><a href="#gab6049d4dd856a085127752e01ebb8120">I2C_IT_SMBALERT</a></div><div class="ttdeci">#define I2C_IT_SMBALERT</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:222</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_gabfb721ac5783336e6d2334f635e2e91b"><div class="ttname"><a href="#gabfb721ac5783336e6d2334f635e2e91b">I2C_IT_AF</a></div><div class="ttdeci">#define I2C_IT_AF</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:226</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_gac95135720c0de2fd01c44c3f7b6c81d4"><div class="ttname"><a href="#gac95135720c0de2fd01c44c3f7b6c81d4">I2C_IT_RXNE</a></div><div class="ttdeci">#define I2C_IT_RXNE</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:230</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_gacb41229da2cd9460c3272cfb13aa29d3"><div class="ttname"><a href="#gacb41229da2cd9460c3272cfb13aa29d3">I2C_IT_TXE</a></div><div class="ttdeci">#define I2C_IT_TXE</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:229</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_gad9aec016c98df6dbb95a5c10b180c202"><div class="ttname"><a href="#gad9aec016c98df6dbb95a5c10b180c202">I2C_IT_BERR</a></div><div class="ttdeci">#define I2C_IT_BERR</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:228</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_gaec2fb9bbd0e1b128b4450b2a7b312896"><div class="ttname"><a href="#gaec2fb9bbd0e1b128b4450b2a7b312896">I2C_IT_SB</a></div><div class="ttdeci">#define I2C_IT_SB</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:235</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_gaef469fef934f655614b7cffd00b87ceb"><div class="ttname"><a href="#gaef469fef934f655614b7cffd00b87ceb">I2C_IT_BTF</a></div><div class="ttdeci">#define I2C_IT_BTF</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:233</div></div>
+<div class="ttc" id="agroup___i2_c__interrupts__definition_html_gaf68f1eda33dcb13626597f477d044025"><div class="ttname"><a href="#gaf68f1eda33dcb13626597f477d044025">I2C_IT_ADDR</a></div><div class="ttdeci">#define I2C_IT_ADDR</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:234</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

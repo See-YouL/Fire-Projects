@@ -1,0 +1,1498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>24-I2C-EEPROM读写实验: Peripheral_memory_map</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">24-I2C-EEPROM读写实验<span id="projectnumber">&#160;None</span>
+   </div>
+   <div id="projectbrief">I2C-EEPROM读写实验</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle"><div class="title">Peripheral_memory_map<div class="ingroups"><a class="el" href="group___c_m_s_i_s.html">CMSIS</a> &raquo; <a class="el" href="group__stm32f10x.html">Stm32f10x</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ga23a9099a5f8fc9c6e253c0eecb2be8db" id="r_ga23a9099a5f8fc9c6e253c0eecb2be8db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga23a9099a5f8fc9c6e253c0eecb2be8db">FLASH_BASE</a>&#160;&#160;&#160;((uint32_t)0x08000000)</td></tr>
+<tr class="separator:ga23a9099a5f8fc9c6e253c0eecb2be8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05e8f3d2e5868754a7cd88614955aecc" id="r_ga05e8f3d2e5868754a7cd88614955aecc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga05e8f3d2e5868754a7cd88614955aecc">SRAM_BASE</a>&#160;&#160;&#160;((uint32_t)0x20000000)</td></tr>
+<tr class="separator:ga05e8f3d2e5868754a7cd88614955aecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9171f49478fa86d932f89e78e73b88b0" id="r_ga9171f49478fa86d932f89e78e73b88b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a>&#160;&#160;&#160;((uint32_t)0x40000000)</td></tr>
+<tr class="separator:ga9171f49478fa86d932f89e78e73b88b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3548b6e2f017f39d399358f3ac98454" id="r_gad3548b6e2f017f39d399358f3ac98454"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad3548b6e2f017f39d399358f3ac98454">SRAM_BB_BASE</a>&#160;&#160;&#160;((uint32_t)0x22000000)</td></tr>
+<tr class="separator:gad3548b6e2f017f39d399358f3ac98454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed7efc100877000845c236ccdc9e144a" id="r_gaed7efc100877000845c236ccdc9e144a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaed7efc100877000845c236ccdc9e144a">PERIPH_BB_BASE</a>&#160;&#160;&#160;((uint32_t)0x42000000)</td></tr>
+<tr class="separator:gaed7efc100877000845c236ccdc9e144a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaddf0e199dccba83272b20c9fb4d3aaed" id="r_gaddf0e199dccba83272b20c9fb4d3aaed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaddf0e199dccba83272b20c9fb4d3aaed">FSMC_R_BASE</a>&#160;&#160;&#160;((uint32_t)0xA0000000)</td></tr>
+<tr class="separator:gaddf0e199dccba83272b20c9fb4d3aaed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga45666d911f39addd4c8c0a0ac3388cfb" id="r_ga45666d911f39addd4c8c0a0ac3388cfb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a>&#160;&#160;&#160;<a class="el" href="#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a></td></tr>
+<tr class="separator:ga45666d911f39addd4c8c0a0ac3388cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25b99d6065f1c8f751e78f43ade652cb" id="r_ga25b99d6065f1c8f751e78f43ade652cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a> + 0x10000)</td></tr>
+<tr class="separator:ga25b99d6065f1c8f751e78f43ade652cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga92eb5d49730765d2abd0f5b09548f9f5" id="r_ga92eb5d49730765d2abd0f5b09548f9f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a> + 0x20000)</td></tr>
+<tr class="separator:ga92eb5d49730765d2abd0f5b09548f9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga00d0fe6ad532ab32f0f81cafca8d3aa5" id="r_ga00d0fe6ad532ab32f0f81cafca8d3aa5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga00d0fe6ad532ab32f0f81cafca8d3aa5">TIM2_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x0000)</td></tr>
+<tr class="separator:ga00d0fe6ad532ab32f0f81cafca8d3aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0c34a518f87e1e505cd2332e989564a" id="r_gaf0c34a518f87e1e505cd2332e989564a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf0c34a518f87e1e505cd2332e989564a">TIM3_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x0400)</td></tr>
+<tr class="separator:gaf0c34a518f87e1e505cd2332e989564a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56e2d44b0002f316527b8913866a370d" id="r_ga56e2d44b0002f316527b8913866a370d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga56e2d44b0002f316527b8913866a370d">TIM4_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x0800)</td></tr>
+<tr class="separator:ga56e2d44b0002f316527b8913866a370d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e1671477190d065ba7c944558336d7e" id="r_ga3e1671477190d065ba7c944558336d7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3e1671477190d065ba7c944558336d7e">TIM5_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x0C00)</td></tr>
+<tr class="separator:ga3e1671477190d065ba7c944558336d7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8268ec947929f192559f28c6bf7d1eac" id="r_ga8268ec947929f192559f28c6bf7d1eac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8268ec947929f192559f28c6bf7d1eac">TIM6_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x1000)</td></tr>
+<tr class="separator:ga8268ec947929f192559f28c6bf7d1eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ebf54364c6a2be6eb19ded6b18b6387" id="r_ga0ebf54364c6a2be6eb19ded6b18b6387"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0ebf54364c6a2be6eb19ded6b18b6387">TIM7_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x1400)</td></tr>
+<tr class="separator:ga0ebf54364c6a2be6eb19ded6b18b6387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga33dea32fadbaecea161c2ef7927992fd" id="r_ga33dea32fadbaecea161c2ef7927992fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga33dea32fadbaecea161c2ef7927992fd">TIM12_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x1800)</td></tr>
+<tr class="separator:ga33dea32fadbaecea161c2ef7927992fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad20f79948e9359125a40bbf6ed063590" id="r_gad20f79948e9359125a40bbf6ed063590"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad20f79948e9359125a40bbf6ed063590">TIM13_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x1C00)</td></tr>
+<tr class="separator:gad20f79948e9359125a40bbf6ed063590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga862855347d6e1d92730dfe17ee8e90b8" id="r_ga862855347d6e1d92730dfe17ee8e90b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga862855347d6e1d92730dfe17ee8e90b8">TIM14_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x2000)</td></tr>
+<tr class="separator:ga862855347d6e1d92730dfe17ee8e90b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4265e665d56225412e57a61d87417022" id="r_ga4265e665d56225412e57a61d87417022"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4265e665d56225412e57a61d87417022">RTC_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x2800)</td></tr>
+<tr class="separator:ga4265e665d56225412e57a61d87417022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a5bf4728ab93dea5b569f5b972cbe62" id="r_ga9a5bf4728ab93dea5b569f5b972cbe62"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9a5bf4728ab93dea5b569f5b972cbe62">WWDG_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x2C00)</td></tr>
+<tr class="separator:ga9a5bf4728ab93dea5b569f5b972cbe62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8543ee4997296af5536b007cd4748f55" id="r_ga8543ee4997296af5536b007cd4748f55"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8543ee4997296af5536b007cd4748f55">IWDG_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x3000)</td></tr>
+<tr class="separator:ga8543ee4997296af5536b007cd4748f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac3e357b4c25106ed375fb1affab6bb86" id="r_gac3e357b4c25106ed375fb1affab6bb86"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac3e357b4c25106ed375fb1affab6bb86">SPI2_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x3800)</td></tr>
+<tr class="separator:gac3e357b4c25106ed375fb1affab6bb86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae634fe8faa6922690e90fbec2fc86162" id="r_gae634fe8faa6922690e90fbec2fc86162"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae634fe8faa6922690e90fbec2fc86162">SPI3_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x3C00)</td></tr>
+<tr class="separator:gae634fe8faa6922690e90fbec2fc86162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade83162a04bca0b15b39018a8e8ec090" id="r_gade83162a04bca0b15b39018a8e8ec090"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gade83162a04bca0b15b39018a8e8ec090">USART2_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x4400)</td></tr>
+<tr class="separator:gade83162a04bca0b15b39018a8e8ec090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe0d6539ac0026d598274ee7f45b0251" id="r_gabe0d6539ac0026d598274ee7f45b0251"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabe0d6539ac0026d598274ee7f45b0251">USART3_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x4800)</td></tr>
+<tr class="separator:gabe0d6539ac0026d598274ee7f45b0251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga94d92270bf587ccdc3a37a5bb5d20467" id="r_ga94d92270bf587ccdc3a37a5bb5d20467"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga94d92270bf587ccdc3a37a5bb5d20467">UART4_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x4C00)</td></tr>
+<tr class="separator:ga94d92270bf587ccdc3a37a5bb5d20467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa155689c0e206e6994951dc3cf31052a" id="r_gaa155689c0e206e6994951dc3cf31052a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa155689c0e206e6994951dc3cf31052a">UART5_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x5000)</td></tr>
+<tr class="separator:gaa155689c0e206e6994951dc3cf31052a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd72dbffb1738ca87c838545c4eb85a3" id="r_gacd72dbffb1738ca87c838545c4eb85a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacd72dbffb1738ca87c838545c4eb85a3">I2C1_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x5400)</td></tr>
+<tr class="separator:gacd72dbffb1738ca87c838545c4eb85a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04bda70f25c795fb79f163b633ad4a5d" id="r_ga04bda70f25c795fb79f163b633ad4a5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga04bda70f25c795fb79f163b633ad4a5d">I2C2_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x5800)</td></tr>
+<tr class="separator:ga04bda70f25c795fb79f163b633ad4a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8e45ea6c032d9fce1b0516fff9d8eaa" id="r_gad8e45ea6c032d9fce1b0516fff9d8eaa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad8e45ea6c032d9fce1b0516fff9d8eaa">CAN1_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x6400)</td></tr>
+<tr class="separator:gad8e45ea6c032d9fce1b0516fff9d8eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7b8267b0d439f8f3e82f86be4b9fba1" id="r_gaf7b8267b0d439f8f3e82f86be4b9fba1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf7b8267b0d439f8f3e82f86be4b9fba1">CAN2_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x6800)</td></tr>
+<tr class="separator:gaf7b8267b0d439f8f3e82f86be4b9fba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa15d5a9f40794105397ba5ea567c4ae1" id="r_gaa15d5a9f40794105397ba5ea567c4ae1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa15d5a9f40794105397ba5ea567c4ae1">BKP_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x6C00)</td></tr>
+<tr class="separator:gaa15d5a9f40794105397ba5ea567c4ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac691ec23dace8b7a649a25acb110217a" id="r_gac691ec23dace8b7a649a25acb110217a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac691ec23dace8b7a649a25acb110217a">PWR_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x7000)</td></tr>
+<tr class="separator:gac691ec23dace8b7a649a25acb110217a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad18d0b914c7f68cecbee1a2d23a67d38" id="r_gad18d0b914c7f68cecbee1a2d23a67d38"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad18d0b914c7f68cecbee1a2d23a67d38">DAC_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x7400)</td></tr>
+<tr class="separator:gad18d0b914c7f68cecbee1a2d23a67d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaacb77bc44b3f8c87ab98f241e760e440" id="r_gaacb77bc44b3f8c87ab98f241e760e440"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaacb77bc44b3f8c87ab98f241e760e440">CEC_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x7800)</td></tr>
+<tr class="separator:gaacb77bc44b3f8c87ab98f241e760e440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f7e3eacfcf4c313c25012795148a680" id="r_ga5f7e3eacfcf4c313c25012795148a680"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5f7e3eacfcf4c313c25012795148a680">AFIO_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x0000)</td></tr>
+<tr class="separator:ga5f7e3eacfcf4c313c25012795148a680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87371508b3bcdcd98cd1ec629be29061" id="r_ga87371508b3bcdcd98cd1ec629be29061"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga87371508b3bcdcd98cd1ec629be29061">EXTI_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x0400)</td></tr>
+<tr class="separator:ga87371508b3bcdcd98cd1ec629be29061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7723846cc5db8e43a44d78cf21f6efa" id="r_gad7723846cc5db8e43a44d78cf21f6efa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad7723846cc5db8e43a44d78cf21f6efa">GPIOA_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x0800)</td></tr>
+<tr class="separator:gad7723846cc5db8e43a44d78cf21f6efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac944a89eb789000ece920c0f89cb6a68" id="r_gac944a89eb789000ece920c0f89cb6a68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac944a89eb789000ece920c0f89cb6a68">GPIOB_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x0C00)</td></tr>
+<tr class="separator:gac944a89eb789000ece920c0f89cb6a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26f267dc35338eef219544c51f1e6b3f" id="r_ga26f267dc35338eef219544c51f1e6b3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga26f267dc35338eef219544c51f1e6b3f">GPIOC_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x1000)</td></tr>
+<tr class="separator:ga26f267dc35338eef219544c51f1e6b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a93ab27129f04064089616910c296ec" id="r_ga1a93ab27129f04064089616910c296ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1a93ab27129f04064089616910c296ec">GPIOD_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x1400)</td></tr>
+<tr class="separator:ga1a93ab27129f04064089616910c296ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab487b1983d936c4fee3e9e88b95aad9d" id="r_gab487b1983d936c4fee3e9e88b95aad9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab487b1983d936c4fee3e9e88b95aad9d">GPIOE_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x1800)</td></tr>
+<tr class="separator:gab487b1983d936c4fee3e9e88b95aad9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f9a3f4223a1a784af464a114978d26e" id="r_ga7f9a3f4223a1a784af464a114978d26e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7f9a3f4223a1a784af464a114978d26e">GPIOF_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x1C00)</td></tr>
+<tr class="separator:ga7f9a3f4223a1a784af464a114978d26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d8ca4020f2e8c00bde974e8e7c13cfe" id="r_ga5d8ca4020f2e8c00bde974e8e7c13cfe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5d8ca4020f2e8c00bde974e8e7c13cfe">GPIOG_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x2000)</td></tr>
+<tr class="separator:ga5d8ca4020f2e8c00bde974e8e7c13cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga695c9a2f892363a1c942405c8d351b91" id="r_ga695c9a2f892363a1c942405c8d351b91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga695c9a2f892363a1c942405c8d351b91">ADC1_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x2400)</td></tr>
+<tr class="separator:ga695c9a2f892363a1c942405c8d351b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6544abc57f9759f610eee09a02442ae6" id="r_ga6544abc57f9759f610eee09a02442ae6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6544abc57f9759f610eee09a02442ae6">ADC2_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x2800)</td></tr>
+<tr class="separator:ga6544abc57f9759f610eee09a02442ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8aa324ca5011b8173ab16585ed7324a" id="r_gaf8aa324ca5011b8173ab16585ed7324a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf8aa324ca5011b8173ab16585ed7324a">TIM1_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x2C00)</td></tr>
+<tr class="separator:gaf8aa324ca5011b8173ab16585ed7324a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50cd8b47929f18b05efbd0f41253bf8d" id="r_ga50cd8b47929f18b05efbd0f41253bf8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga50cd8b47929f18b05efbd0f41253bf8d">SPI1_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x3000)</td></tr>
+<tr class="separator:ga50cd8b47929f18b05efbd0f41253bf8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b72f698b7a048a6f9fcfe2efe5bc1db" id="r_ga5b72f698b7a048a6f9fcfe2efe5bc1db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5b72f698b7a048a6f9fcfe2efe5bc1db">TIM8_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x3400)</td></tr>
+<tr class="separator:ga5b72f698b7a048a6f9fcfe2efe5bc1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86162ab3f740db9026c1320d46938b4d" id="r_ga86162ab3f740db9026c1320d46938b4d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga86162ab3f740db9026c1320d46938b4d">USART1_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x3800)</td></tr>
+<tr class="separator:ga86162ab3f740db9026c1320d46938b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca766f86c8e0b00a8e2b0224dcbb4c82" id="r_gaca766f86c8e0b00a8e2b0224dcbb4c82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaca766f86c8e0b00a8e2b0224dcbb4c82">ADC3_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x3C00)</td></tr>
+<tr class="separator:gaca766f86c8e0b00a8e2b0224dcbb4c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7ab42ce1846930569d742d339b554078" id="r_ga7ab42ce1846930569d742d339b554078"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7ab42ce1846930569d742d339b554078">TIM15_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x4000)</td></tr>
+<tr class="separator:ga7ab42ce1846930569d742d339b554078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga16c97093a531d763b0794c3e6d09e1bf" id="r_ga16c97093a531d763b0794c3e6d09e1bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga16c97093a531d763b0794c3e6d09e1bf">TIM16_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x4400)</td></tr>
+<tr class="separator:ga16c97093a531d763b0794c3e6d09e1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaffbedbe30e8c4cffdea326d6c1800574" id="r_gaffbedbe30e8c4cffdea326d6c1800574"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaffbedbe30e8c4cffdea326d6c1800574">TIM17_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x4800)</td></tr>
+<tr class="separator:gaffbedbe30e8c4cffdea326d6c1800574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga92ae902be7902560939223dd765ece08" id="r_ga92ae902be7902560939223dd765ece08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga92ae902be7902560939223dd765ece08">TIM9_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x4C00)</td></tr>
+<tr class="separator:ga92ae902be7902560939223dd765ece08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3eff32f3801db31fb4b61d5618cad54a" id="r_ga3eff32f3801db31fb4b61d5618cad54a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3eff32f3801db31fb4b61d5618cad54a">TIM10_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x5000)</td></tr>
+<tr class="separator:ga3eff32f3801db31fb4b61d5618cad54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3a4a06bb84c703084f0509e105ffaf1d" id="r_ga3a4a06bb84c703084f0509e105ffaf1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3a4a06bb84c703084f0509e105ffaf1d">TIM11_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x5400)</td></tr>
+<tr class="separator:ga3a4a06bb84c703084f0509e105ffaf1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga95dd0abbc6767893b4b02935fa846f52" id="r_ga95dd0abbc6767893b4b02935fa846f52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga95dd0abbc6767893b4b02935fa846f52">SDIO_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a> + 0x18000)</td></tr>
+<tr class="separator:ga95dd0abbc6767893b4b02935fa846f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2d8a917a0e4ea99a22ac6ebf279bc72" id="r_gab2d8a917a0e4ea99a22ac6ebf279bc72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab2d8a917a0e4ea99a22ac6ebf279bc72">DMA1_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0000)</td></tr>
+<tr class="separator:gab2d8a917a0e4ea99a22ac6ebf279bc72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga888dbc1608243badeb3554ffedc7364c" id="r_ga888dbc1608243badeb3554ffedc7364c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga888dbc1608243badeb3554ffedc7364c">DMA1_Channel1_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0008)</td></tr>
+<tr class="separator:ga888dbc1608243badeb3554ffedc7364c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38a70090eef3687e83fa6ac0c6d22267" id="r_ga38a70090eef3687e83fa6ac0c6d22267"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga38a70090eef3687e83fa6ac0c6d22267">DMA1_Channel2_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x001C)</td></tr>
+<tr class="separator:ga38a70090eef3687e83fa6ac0c6d22267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70b3d9f36ca9ce95b4e421c11154fe5d" id="r_ga70b3d9f36ca9ce95b4e421c11154fe5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga70b3d9f36ca9ce95b4e421c11154fe5d">DMA1_Channel3_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0030)</td></tr>
+<tr class="separator:ga70b3d9f36ca9ce95b4e421c11154fe5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1adc93cd0baf0897202c71110e045692" id="r_ga1adc93cd0baf0897202c71110e045692"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1adc93cd0baf0897202c71110e045692">DMA1_Channel4_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0044)</td></tr>
+<tr class="separator:ga1adc93cd0baf0897202c71110e045692"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac041a71cd6c1973964f847a68aa14478" id="r_gac041a71cd6c1973964f847a68aa14478"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac041a71cd6c1973964f847a68aa14478">DMA1_Channel5_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0058)</td></tr>
+<tr class="separator:gac041a71cd6c1973964f847a68aa14478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga896c2c7585dd8bc3969cf8561f689d2d" id="r_ga896c2c7585dd8bc3969cf8561f689d2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga896c2c7585dd8bc3969cf8561f689d2d">DMA1_Channel6_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x006C)</td></tr>
+<tr class="separator:ga896c2c7585dd8bc3969cf8561f689d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeee0d1f77d0db1db533016a09351166c" id="r_gaeee0d1f77d0db1db533016a09351166c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeee0d1f77d0db1db533016a09351166c">DMA1_Channel7_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0080)</td></tr>
+<tr class="separator:gaeee0d1f77d0db1db533016a09351166c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab72a9ae145053ee13d1d491fb5c1df64" id="r_gab72a9ae145053ee13d1d491fb5c1df64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab72a9ae145053ee13d1d491fb5c1df64">DMA2_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0400)</td></tr>
+<tr class="separator:gab72a9ae145053ee13d1d491fb5c1df64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3bd6c4201d12f5d474518c1b02f8e3b" id="r_gad3bd6c4201d12f5d474518c1b02f8e3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad3bd6c4201d12f5d474518c1b02f8e3b">DMA2_Channel1_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0408)</td></tr>
+<tr class="separator:gad3bd6c4201d12f5d474518c1b02f8e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga22f39f23c879c699b88e04a629f69d1c" id="r_ga22f39f23c879c699b88e04a629f69d1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga22f39f23c879c699b88e04a629f69d1c">DMA2_Channel2_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x041C)</td></tr>
+<tr class="separator:ga22f39f23c879c699b88e04a629f69d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6f2369b8bc155fb55a28891987605c2c" id="r_ga6f2369b8bc155fb55a28891987605c2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6f2369b8bc155fb55a28891987605c2c">DMA2_Channel3_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0430)</td></tr>
+<tr class="separator:ga6f2369b8bc155fb55a28891987605c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01b063266473f290a55047654fbbfbee" id="r_ga01b063266473f290a55047654fbbfbee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga01b063266473f290a55047654fbbfbee">DMA2_Channel4_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0444)</td></tr>
+<tr class="separator:ga01b063266473f290a55047654fbbfbee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1eea983a5d68bf36f4d19fbb07955ca1" id="r_ga1eea983a5d68bf36f4d19fbb07955ca1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1eea983a5d68bf36f4d19fbb07955ca1">DMA2_Channel5_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0458)</td></tr>
+<tr class="separator:ga1eea983a5d68bf36f4d19fbb07955ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e681b03f364532055d88f63fec0d99d" id="r_ga0e681b03f364532055d88f63fec0d99d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0e681b03f364532055d88f63fec0d99d">RCC_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x1000)</td></tr>
+<tr class="separator:ga0e681b03f364532055d88f63fec0d99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga656a447589e785594cbf2f45c835ad7e" id="r_ga656a447589e785594cbf2f45c835ad7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga656a447589e785594cbf2f45c835ad7e">CRC_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x3000)</td></tr>
+<tr class="separator:ga656a447589e785594cbf2f45c835ad7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e21f4845015730c5731763169ec0e9b" id="r_ga8e21f4845015730c5731763169ec0e9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8e21f4845015730c5731763169ec0e9b">FLASH_R_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x2000)</td></tr>
+<tr class="separator:ga8e21f4845015730c5731763169ec0e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5b5fb155f9ee15dfb6d757da1adc926" id="r_gab5b5fb155f9ee15dfb6d757da1adc926"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab5b5fb155f9ee15dfb6d757da1adc926">OB_BASE</a>&#160;&#160;&#160;((uint32_t)0x1FFFF800)</td></tr>
+<tr class="separator:gab5b5fb155f9ee15dfb6d757da1adc926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad965a7b1106ece575ed3da10c45c65cc" id="r_gad965a7b1106ece575ed3da10c45c65cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad965a7b1106ece575ed3da10c45c65cc">ETH_BASE</a>&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x8000)</td></tr>
+<tr class="separator:gad965a7b1106ece575ed3da10c45c65cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3cf7005808feb61bff1fee01e50a711a" id="r_ga3cf7005808feb61bff1fee01e50a711a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3cf7005808feb61bff1fee01e50a711a">ETH_MAC_BASE</a>&#160;&#160;&#160;(<a class="el" href="#gad965a7b1106ece575ed3da10c45c65cc">ETH_BASE</a>)</td></tr>
+<tr class="separator:ga3cf7005808feb61bff1fee01e50a711a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4946f2b3b03f7998343ac1778fbcf725" id="r_ga4946f2b3b03f7998343ac1778fbcf725"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4946f2b3b03f7998343ac1778fbcf725">ETH_MMC_BASE</a>&#160;&#160;&#160;(<a class="el" href="#gad965a7b1106ece575ed3da10c45c65cc">ETH_BASE</a> + 0x0100)</td></tr>
+<tr class="separator:ga4946f2b3b03f7998343ac1778fbcf725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0f60b922aeb7275c785cbaa8f94ecf0" id="r_gaa0f60b922aeb7275c785cbaa8f94ecf0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa0f60b922aeb7275c785cbaa8f94ecf0">ETH_PTP_BASE</a>&#160;&#160;&#160;(<a class="el" href="#gad965a7b1106ece575ed3da10c45c65cc">ETH_BASE</a> + 0x0700)</td></tr>
+<tr class="separator:gaa0f60b922aeb7275c785cbaa8f94ecf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace2114e1b37c1ba88d60f3e831b67e93" id="r_gace2114e1b37c1ba88d60f3e831b67e93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gace2114e1b37c1ba88d60f3e831b67e93">ETH_DMA_BASE</a>&#160;&#160;&#160;(<a class="el" href="#gad965a7b1106ece575ed3da10c45c65cc">ETH_BASE</a> + 0x1000)</td></tr>
+<tr class="separator:gace2114e1b37c1ba88d60f3e831b67e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad196fe6f5e4041b201d14f43508c06d2" id="r_gad196fe6f5e4041b201d14f43508c06d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad196fe6f5e4041b201d14f43508c06d2">FSMC_Bank1_R_BASE</a>&#160;&#160;&#160;(<a class="el" href="#gaddf0e199dccba83272b20c9fb4d3aaed">FSMC_R_BASE</a> + 0x0000)</td></tr>
+<tr class="separator:gad196fe6f5e4041b201d14f43508c06d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea182589c84aee30b7f735474d8774e2" id="r_gaea182589c84aee30b7f735474d8774e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaea182589c84aee30b7f735474d8774e2">FSMC_Bank1E_R_BASE</a>&#160;&#160;&#160;(<a class="el" href="#gaddf0e199dccba83272b20c9fb4d3aaed">FSMC_R_BASE</a> + 0x0104)</td></tr>
+<tr class="separator:gaea182589c84aee30b7f735474d8774e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3cb46d62f4f6458e186a5a4c753e4918" id="r_ga3cb46d62f4f6458e186a5a4c753e4918"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3cb46d62f4f6458e186a5a4c753e4918">FSMC_Bank2_R_BASE</a>&#160;&#160;&#160;(<a class="el" href="#gaddf0e199dccba83272b20c9fb4d3aaed">FSMC_R_BASE</a> + 0x0060)</td></tr>
+<tr class="separator:ga3cb46d62f4f6458e186a5a4c753e4918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf056152c9e5aefcc67db78d1302c0d7" id="r_gacf056152c9e5aefcc67db78d1302c0d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacf056152c9e5aefcc67db78d1302c0d7">FSMC_Bank3_R_BASE</a>&#160;&#160;&#160;(<a class="el" href="#gaddf0e199dccba83272b20c9fb4d3aaed">FSMC_R_BASE</a> + 0x0080)</td></tr>
+<tr class="separator:gacf056152c9e5aefcc67db78d1302c0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf9e5417133160b0bdd0498d982acec19" id="r_gaf9e5417133160b0bdd0498d982acec19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf9e5417133160b0bdd0498d982acec19">FSMC_Bank4_R_BASE</a>&#160;&#160;&#160;(<a class="el" href="#gaddf0e199dccba83272b20c9fb4d3aaed">FSMC_R_BASE</a> + 0x00A0)</td></tr>
+<tr class="separator:gaf9e5417133160b0bdd0498d982acec19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4adaf4fd82ccc3a538f1f27a70cdbbef" id="r_ga4adaf4fd82ccc3a538f1f27a70cdbbef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4adaf4fd82ccc3a538f1f27a70cdbbef">DBGMCU_BASE</a>&#160;&#160;&#160;((uint32_t)0xE0042000)</td></tr>
+<tr class="separator:ga4adaf4fd82ccc3a538f1f27a70cdbbef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ga695c9a2f892363a1c942405c8d351b91" name="ga695c9a2f892363a1c942405c8d351b91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga695c9a2f892363a1c942405c8d351b91">&#9670;&#160;</a></span>ADC1_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADC1_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x2400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga6544abc57f9759f610eee09a02442ae6" name="ga6544abc57f9759f610eee09a02442ae6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6544abc57f9759f610eee09a02442ae6">&#9670;&#160;</a></span>ADC2_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADC2_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x2800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaca766f86c8e0b00a8e2b0224dcbb4c82" name="gaca766f86c8e0b00a8e2b0224dcbb4c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca766f86c8e0b00a8e2b0224dcbb4c82">&#9670;&#160;</a></span>ADC3_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADC3_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x3C00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga5f7e3eacfcf4c313c25012795148a680" name="ga5f7e3eacfcf4c313c25012795148a680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f7e3eacfcf4c313c25012795148a680">&#9670;&#160;</a></span>AFIO_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AFIO_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x0000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga92eb5d49730765d2abd0f5b09548f9f5" name="ga92eb5d49730765d2abd0f5b09548f9f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga92eb5d49730765d2abd0f5b09548f9f5">&#9670;&#160;</a></span>AHBPERIPH_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AHBPERIPH_BASE&#160;&#160;&#160;(<a class="el" href="#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a> + 0x20000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga45666d911f39addd4c8c0a0ac3388cfb" name="ga45666d911f39addd4c8c0a0ac3388cfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga45666d911f39addd4c8c0a0ac3388cfb">&#9670;&#160;</a></span>APB1PERIPH_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define APB1PERIPH_BASE&#160;&#160;&#160;<a class="el" href="#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga25b99d6065f1c8f751e78f43ade652cb" name="ga25b99d6065f1c8f751e78f43ade652cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25b99d6065f1c8f751e78f43ade652cb">&#9670;&#160;</a></span>APB2PERIPH_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define APB2PERIPH_BASE&#160;&#160;&#160;(<a class="el" href="#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a> + 0x10000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa15d5a9f40794105397ba5ea567c4ae1" name="gaa15d5a9f40794105397ba5ea567c4ae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa15d5a9f40794105397ba5ea567c4ae1">&#9670;&#160;</a></span>BKP_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BKP_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x6C00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad8e45ea6c032d9fce1b0516fff9d8eaa" name="gad8e45ea6c032d9fce1b0516fff9d8eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad8e45ea6c032d9fce1b0516fff9d8eaa">&#9670;&#160;</a></span>CAN1_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAN1_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x6400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaf7b8267b0d439f8f3e82f86be4b9fba1" name="gaf7b8267b0d439f8f3e82f86be4b9fba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf7b8267b0d439f8f3e82f86be4b9fba1">&#9670;&#160;</a></span>CAN2_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAN2_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x6800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaacb77bc44b3f8c87ab98f241e760e440" name="gaacb77bc44b3f8c87ab98f241e760e440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaacb77bc44b3f8c87ab98f241e760e440">&#9670;&#160;</a></span>CEC_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CEC_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x7800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga656a447589e785594cbf2f45c835ad7e" name="ga656a447589e785594cbf2f45c835ad7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga656a447589e785594cbf2f45c835ad7e">&#9670;&#160;</a></span>CRC_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CRC_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x3000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad18d0b914c7f68cecbee1a2d23a67d38" name="gad18d0b914c7f68cecbee1a2d23a67d38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad18d0b914c7f68cecbee1a2d23a67d38">&#9670;&#160;</a></span>DAC_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DAC_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x7400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga4adaf4fd82ccc3a538f1f27a70cdbbef" name="ga4adaf4fd82ccc3a538f1f27a70cdbbef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4adaf4fd82ccc3a538f1f27a70cdbbef">&#9670;&#160;</a></span>DBGMCU_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBGMCU_BASE&#160;&#160;&#160;((uint32_t)0xE0042000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Debug MCU registers base address </p>
+
+</div>
+</div>
+<a id="gab2d8a917a0e4ea99a22ac6ebf279bc72" name="gab2d8a917a0e4ea99a22ac6ebf279bc72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2d8a917a0e4ea99a22ac6ebf279bc72">&#9670;&#160;</a></span>DMA1_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA1_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga888dbc1608243badeb3554ffedc7364c" name="ga888dbc1608243badeb3554ffedc7364c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga888dbc1608243badeb3554ffedc7364c">&#9670;&#160;</a></span>DMA1_Channel1_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA1_Channel1_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0008)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga38a70090eef3687e83fa6ac0c6d22267" name="ga38a70090eef3687e83fa6ac0c6d22267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga38a70090eef3687e83fa6ac0c6d22267">&#9670;&#160;</a></span>DMA1_Channel2_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA1_Channel2_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x001C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga70b3d9f36ca9ce95b4e421c11154fe5d" name="ga70b3d9f36ca9ce95b4e421c11154fe5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga70b3d9f36ca9ce95b4e421c11154fe5d">&#9670;&#160;</a></span>DMA1_Channel3_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA1_Channel3_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0030)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga1adc93cd0baf0897202c71110e045692" name="ga1adc93cd0baf0897202c71110e045692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1adc93cd0baf0897202c71110e045692">&#9670;&#160;</a></span>DMA1_Channel4_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA1_Channel4_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0044)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac041a71cd6c1973964f847a68aa14478" name="gac041a71cd6c1973964f847a68aa14478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac041a71cd6c1973964f847a68aa14478">&#9670;&#160;</a></span>DMA1_Channel5_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA1_Channel5_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0058)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga896c2c7585dd8bc3969cf8561f689d2d" name="ga896c2c7585dd8bc3969cf8561f689d2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga896c2c7585dd8bc3969cf8561f689d2d">&#9670;&#160;</a></span>DMA1_Channel6_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA1_Channel6_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x006C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaeee0d1f77d0db1db533016a09351166c" name="gaeee0d1f77d0db1db533016a09351166c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeee0d1f77d0db1db533016a09351166c">&#9670;&#160;</a></span>DMA1_Channel7_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA1_Channel7_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0080)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab72a9ae145053ee13d1d491fb5c1df64" name="gab72a9ae145053ee13d1d491fb5c1df64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab72a9ae145053ee13d1d491fb5c1df64">&#9670;&#160;</a></span>DMA2_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA2_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad3bd6c4201d12f5d474518c1b02f8e3b" name="gad3bd6c4201d12f5d474518c1b02f8e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad3bd6c4201d12f5d474518c1b02f8e3b">&#9670;&#160;</a></span>DMA2_Channel1_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA2_Channel1_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0408)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga22f39f23c879c699b88e04a629f69d1c" name="ga22f39f23c879c699b88e04a629f69d1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga22f39f23c879c699b88e04a629f69d1c">&#9670;&#160;</a></span>DMA2_Channel2_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA2_Channel2_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x041C)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga6f2369b8bc155fb55a28891987605c2c" name="ga6f2369b8bc155fb55a28891987605c2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f2369b8bc155fb55a28891987605c2c">&#9670;&#160;</a></span>DMA2_Channel3_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA2_Channel3_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0430)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga01b063266473f290a55047654fbbfbee" name="ga01b063266473f290a55047654fbbfbee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga01b063266473f290a55047654fbbfbee">&#9670;&#160;</a></span>DMA2_Channel4_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA2_Channel4_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0444)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga1eea983a5d68bf36f4d19fbb07955ca1" name="ga1eea983a5d68bf36f4d19fbb07955ca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1eea983a5d68bf36f4d19fbb07955ca1">&#9670;&#160;</a></span>DMA2_Channel5_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DMA2_Channel5_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x0458)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad965a7b1106ece575ed3da10c45c65cc" name="gad965a7b1106ece575ed3da10c45c65cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad965a7b1106ece575ed3da10c45c65cc">&#9670;&#160;</a></span>ETH_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETH_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x8000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gace2114e1b37c1ba88d60f3e831b67e93" name="gace2114e1b37c1ba88d60f3e831b67e93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace2114e1b37c1ba88d60f3e831b67e93">&#9670;&#160;</a></span>ETH_DMA_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETH_DMA_BASE&#160;&#160;&#160;(<a class="el" href="#gad965a7b1106ece575ed3da10c45c65cc">ETH_BASE</a> + 0x1000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga3cf7005808feb61bff1fee01e50a711a" name="ga3cf7005808feb61bff1fee01e50a711a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3cf7005808feb61bff1fee01e50a711a">&#9670;&#160;</a></span>ETH_MAC_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETH_MAC_BASE&#160;&#160;&#160;(<a class="el" href="#gad965a7b1106ece575ed3da10c45c65cc">ETH_BASE</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga4946f2b3b03f7998343ac1778fbcf725" name="ga4946f2b3b03f7998343ac1778fbcf725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4946f2b3b03f7998343ac1778fbcf725">&#9670;&#160;</a></span>ETH_MMC_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETH_MMC_BASE&#160;&#160;&#160;(<a class="el" href="#gad965a7b1106ece575ed3da10c45c65cc">ETH_BASE</a> + 0x0100)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa0f60b922aeb7275c785cbaa8f94ecf0" name="gaa0f60b922aeb7275c785cbaa8f94ecf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0f60b922aeb7275c785cbaa8f94ecf0">&#9670;&#160;</a></span>ETH_PTP_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETH_PTP_BASE&#160;&#160;&#160;(<a class="el" href="#gad965a7b1106ece575ed3da10c45c65cc">ETH_BASE</a> + 0x0700)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga87371508b3bcdcd98cd1ec629be29061" name="ga87371508b3bcdcd98cd1ec629be29061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87371508b3bcdcd98cd1ec629be29061">&#9670;&#160;</a></span>EXTI_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXTI_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x0400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga23a9099a5f8fc9c6e253c0eecb2be8db" name="ga23a9099a5f8fc9c6e253c0eecb2be8db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga23a9099a5f8fc9c6e253c0eecb2be8db">&#9670;&#160;</a></span>FLASH_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_BASE&#160;&#160;&#160;((uint32_t)0x08000000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>FLASH base address in the alias region </p>
+
+</div>
+</div>
+<a id="ga8e21f4845015730c5731763169ec0e9b" name="ga8e21f4845015730c5731763169ec0e9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8e21f4845015730c5731763169ec0e9b">&#9670;&#160;</a></span>FLASH_R_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FLASH_R_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x2000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Flash registers base address </p>
+
+</div>
+</div>
+<a id="gad196fe6f5e4041b201d14f43508c06d2" name="gad196fe6f5e4041b201d14f43508c06d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad196fe6f5e4041b201d14f43508c06d2">&#9670;&#160;</a></span>FSMC_Bank1_R_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FSMC_Bank1_R_BASE&#160;&#160;&#160;(<a class="el" href="#gaddf0e199dccba83272b20c9fb4d3aaed">FSMC_R_BASE</a> + 0x0000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>FSMC Bank1 registers base address </p>
+
+</div>
+</div>
+<a id="gaea182589c84aee30b7f735474d8774e2" name="gaea182589c84aee30b7f735474d8774e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaea182589c84aee30b7f735474d8774e2">&#9670;&#160;</a></span>FSMC_Bank1E_R_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FSMC_Bank1E_R_BASE&#160;&#160;&#160;(<a class="el" href="#gaddf0e199dccba83272b20c9fb4d3aaed">FSMC_R_BASE</a> + 0x0104)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>FSMC Bank1E registers base address </p>
+
+</div>
+</div>
+<a id="ga3cb46d62f4f6458e186a5a4c753e4918" name="ga3cb46d62f4f6458e186a5a4c753e4918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3cb46d62f4f6458e186a5a4c753e4918">&#9670;&#160;</a></span>FSMC_Bank2_R_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FSMC_Bank2_R_BASE&#160;&#160;&#160;(<a class="el" href="#gaddf0e199dccba83272b20c9fb4d3aaed">FSMC_R_BASE</a> + 0x0060)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>FSMC Bank2 registers base address </p>
+
+</div>
+</div>
+<a id="gacf056152c9e5aefcc67db78d1302c0d7" name="gacf056152c9e5aefcc67db78d1302c0d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf056152c9e5aefcc67db78d1302c0d7">&#9670;&#160;</a></span>FSMC_Bank3_R_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FSMC_Bank3_R_BASE&#160;&#160;&#160;(<a class="el" href="#gaddf0e199dccba83272b20c9fb4d3aaed">FSMC_R_BASE</a> + 0x0080)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>FSMC Bank3 registers base address </p>
+
+</div>
+</div>
+<a id="gaf9e5417133160b0bdd0498d982acec19" name="gaf9e5417133160b0bdd0498d982acec19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf9e5417133160b0bdd0498d982acec19">&#9670;&#160;</a></span>FSMC_Bank4_R_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FSMC_Bank4_R_BASE&#160;&#160;&#160;(<a class="el" href="#gaddf0e199dccba83272b20c9fb4d3aaed">FSMC_R_BASE</a> + 0x00A0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>FSMC Bank4 registers base address </p>
+
+</div>
+</div>
+<a id="gaddf0e199dccba83272b20c9fb4d3aaed" name="gaddf0e199dccba83272b20c9fb4d3aaed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaddf0e199dccba83272b20c9fb4d3aaed">&#9670;&#160;</a></span>FSMC_R_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FSMC_R_BASE&#160;&#160;&#160;((uint32_t)0xA0000000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>FSMC registers base address Peripheral memory map </p>
+
+</div>
+</div>
+<a id="gad7723846cc5db8e43a44d78cf21f6efa" name="gad7723846cc5db8e43a44d78cf21f6efa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad7723846cc5db8e43a44d78cf21f6efa">&#9670;&#160;</a></span>GPIOA_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIOA_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x0800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac944a89eb789000ece920c0f89cb6a68" name="gac944a89eb789000ece920c0f89cb6a68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac944a89eb789000ece920c0f89cb6a68">&#9670;&#160;</a></span>GPIOB_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIOB_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x0C00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga26f267dc35338eef219544c51f1e6b3f" name="ga26f267dc35338eef219544c51f1e6b3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26f267dc35338eef219544c51f1e6b3f">&#9670;&#160;</a></span>GPIOC_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIOC_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x1000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga1a93ab27129f04064089616910c296ec" name="ga1a93ab27129f04064089616910c296ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1a93ab27129f04064089616910c296ec">&#9670;&#160;</a></span>GPIOD_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIOD_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x1400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab487b1983d936c4fee3e9e88b95aad9d" name="gab487b1983d936c4fee3e9e88b95aad9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab487b1983d936c4fee3e9e88b95aad9d">&#9670;&#160;</a></span>GPIOE_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIOE_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x1800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga7f9a3f4223a1a784af464a114978d26e" name="ga7f9a3f4223a1a784af464a114978d26e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f9a3f4223a1a784af464a114978d26e">&#9670;&#160;</a></span>GPIOF_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIOF_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x1C00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga5d8ca4020f2e8c00bde974e8e7c13cfe" name="ga5d8ca4020f2e8c00bde974e8e7c13cfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5d8ca4020f2e8c00bde974e8e7c13cfe">&#9670;&#160;</a></span>GPIOG_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GPIOG_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x2000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gacd72dbffb1738ca87c838545c4eb85a3" name="gacd72dbffb1738ca87c838545c4eb85a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacd72dbffb1738ca87c838545c4eb85a3">&#9670;&#160;</a></span>I2C1_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C1_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x5400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga04bda70f25c795fb79f163b633ad4a5d" name="ga04bda70f25c795fb79f163b633ad4a5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04bda70f25c795fb79f163b633ad4a5d">&#9670;&#160;</a></span>I2C2_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C2_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x5800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga8543ee4997296af5536b007cd4748f55" name="ga8543ee4997296af5536b007cd4748f55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8543ee4997296af5536b007cd4748f55">&#9670;&#160;</a></span>IWDG_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IWDG_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x3000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab5b5fb155f9ee15dfb6d757da1adc926" name="gab5b5fb155f9ee15dfb6d757da1adc926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab5b5fb155f9ee15dfb6d757da1adc926">&#9670;&#160;</a></span>OB_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OB_BASE&#160;&#160;&#160;((uint32_t)0x1FFFF800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Flash Option Bytes base address </p>
+
+</div>
+</div>
+<a id="ga9171f49478fa86d932f89e78e73b88b0" name="ga9171f49478fa86d932f89e78e73b88b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9171f49478fa86d932f89e78e73b88b0">&#9670;&#160;</a></span>PERIPH_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PERIPH_BASE&#160;&#160;&#160;((uint32_t)0x40000000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Peripheral base address in the alias region </p>
+
+</div>
+</div>
+<a id="gaed7efc100877000845c236ccdc9e144a" name="gaed7efc100877000845c236ccdc9e144a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed7efc100877000845c236ccdc9e144a">&#9670;&#160;</a></span>PERIPH_BB_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PERIPH_BB_BASE&#160;&#160;&#160;((uint32_t)0x42000000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Peripheral base address in the bit-band region </p>
+
+</div>
+</div>
+<a id="gac691ec23dace8b7a649a25acb110217a" name="gac691ec23dace8b7a649a25acb110217a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac691ec23dace8b7a649a25acb110217a">&#9670;&#160;</a></span>PWR_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PWR_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x7000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0e681b03f364532055d88f63fec0d99d" name="ga0e681b03f364532055d88f63fec0d99d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e681b03f364532055d88f63fec0d99d">&#9670;&#160;</a></span>RCC_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RCC_BASE&#160;&#160;&#160;(<a class="el" href="#ga92eb5d49730765d2abd0f5b09548f9f5">AHBPERIPH_BASE</a> + 0x1000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga4265e665d56225412e57a61d87417022" name="ga4265e665d56225412e57a61d87417022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4265e665d56225412e57a61d87417022">&#9670;&#160;</a></span>RTC_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RTC_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x2800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga95dd0abbc6767893b4b02935fa846f52" name="ga95dd0abbc6767893b4b02935fa846f52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga95dd0abbc6767893b4b02935fa846f52">&#9670;&#160;</a></span>SDIO_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SDIO_BASE&#160;&#160;&#160;(<a class="el" href="#ga9171f49478fa86d932f89e78e73b88b0">PERIPH_BASE</a> + 0x18000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga50cd8b47929f18b05efbd0f41253bf8d" name="ga50cd8b47929f18b05efbd0f41253bf8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50cd8b47929f18b05efbd0f41253bf8d">&#9670;&#160;</a></span>SPI1_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI1_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x3000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac3e357b4c25106ed375fb1affab6bb86" name="gac3e357b4c25106ed375fb1affab6bb86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac3e357b4c25106ed375fb1affab6bb86">&#9670;&#160;</a></span>SPI2_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI2_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x3800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae634fe8faa6922690e90fbec2fc86162" name="gae634fe8faa6922690e90fbec2fc86162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae634fe8faa6922690e90fbec2fc86162">&#9670;&#160;</a></span>SPI3_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI3_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x3C00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga05e8f3d2e5868754a7cd88614955aecc" name="ga05e8f3d2e5868754a7cd88614955aecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05e8f3d2e5868754a7cd88614955aecc">&#9670;&#160;</a></span>SRAM_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SRAM_BASE&#160;&#160;&#160;((uint32_t)0x20000000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>SRAM base address in the alias region </p>
+
+</div>
+</div>
+<a id="gad3548b6e2f017f39d399358f3ac98454" name="gad3548b6e2f017f39d399358f3ac98454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad3548b6e2f017f39d399358f3ac98454">&#9670;&#160;</a></span>SRAM_BB_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SRAM_BB_BASE&#160;&#160;&#160;((uint32_t)0x22000000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>SRAM base address in the bit-band region </p>
+
+</div>
+</div>
+<a id="ga3eff32f3801db31fb4b61d5618cad54a" name="ga3eff32f3801db31fb4b61d5618cad54a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3eff32f3801db31fb4b61d5618cad54a">&#9670;&#160;</a></span>TIM10_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM10_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x5000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga3a4a06bb84c703084f0509e105ffaf1d" name="ga3a4a06bb84c703084f0509e105ffaf1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3a4a06bb84c703084f0509e105ffaf1d">&#9670;&#160;</a></span>TIM11_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM11_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x5400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga33dea32fadbaecea161c2ef7927992fd" name="ga33dea32fadbaecea161c2ef7927992fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga33dea32fadbaecea161c2ef7927992fd">&#9670;&#160;</a></span>TIM12_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM12_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x1800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad20f79948e9359125a40bbf6ed063590" name="gad20f79948e9359125a40bbf6ed063590"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad20f79948e9359125a40bbf6ed063590">&#9670;&#160;</a></span>TIM13_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM13_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x1C00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga862855347d6e1d92730dfe17ee8e90b8" name="ga862855347d6e1d92730dfe17ee8e90b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga862855347d6e1d92730dfe17ee8e90b8">&#9670;&#160;</a></span>TIM14_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM14_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x2000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga7ab42ce1846930569d742d339b554078" name="ga7ab42ce1846930569d742d339b554078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7ab42ce1846930569d742d339b554078">&#9670;&#160;</a></span>TIM15_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM15_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x4000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga16c97093a531d763b0794c3e6d09e1bf" name="ga16c97093a531d763b0794c3e6d09e1bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga16c97093a531d763b0794c3e6d09e1bf">&#9670;&#160;</a></span>TIM16_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM16_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x4400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaffbedbe30e8c4cffdea326d6c1800574" name="gaffbedbe30e8c4cffdea326d6c1800574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaffbedbe30e8c4cffdea326d6c1800574">&#9670;&#160;</a></span>TIM17_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM17_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x4800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaf8aa324ca5011b8173ab16585ed7324a" name="gaf8aa324ca5011b8173ab16585ed7324a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8aa324ca5011b8173ab16585ed7324a">&#9670;&#160;</a></span>TIM1_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM1_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x2C00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga00d0fe6ad532ab32f0f81cafca8d3aa5" name="ga00d0fe6ad532ab32f0f81cafca8d3aa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga00d0fe6ad532ab32f0f81cafca8d3aa5">&#9670;&#160;</a></span>TIM2_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM2_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x0000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaf0c34a518f87e1e505cd2332e989564a" name="gaf0c34a518f87e1e505cd2332e989564a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf0c34a518f87e1e505cd2332e989564a">&#9670;&#160;</a></span>TIM3_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM3_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x0400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga56e2d44b0002f316527b8913866a370d" name="ga56e2d44b0002f316527b8913866a370d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga56e2d44b0002f316527b8913866a370d">&#9670;&#160;</a></span>TIM4_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM4_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x0800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga3e1671477190d065ba7c944558336d7e" name="ga3e1671477190d065ba7c944558336d7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3e1671477190d065ba7c944558336d7e">&#9670;&#160;</a></span>TIM5_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM5_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x0C00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga8268ec947929f192559f28c6bf7d1eac" name="ga8268ec947929f192559f28c6bf7d1eac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8268ec947929f192559f28c6bf7d1eac">&#9670;&#160;</a></span>TIM6_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM6_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x1000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0ebf54364c6a2be6eb19ded6b18b6387" name="ga0ebf54364c6a2be6eb19ded6b18b6387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0ebf54364c6a2be6eb19ded6b18b6387">&#9670;&#160;</a></span>TIM7_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM7_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x1400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga5b72f698b7a048a6f9fcfe2efe5bc1db" name="ga5b72f698b7a048a6f9fcfe2efe5bc1db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b72f698b7a048a6f9fcfe2efe5bc1db">&#9670;&#160;</a></span>TIM8_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM8_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x3400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga92ae902be7902560939223dd765ece08" name="ga92ae902be7902560939223dd765ece08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga92ae902be7902560939223dd765ece08">&#9670;&#160;</a></span>TIM9_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIM9_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x4C00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga94d92270bf587ccdc3a37a5bb5d20467" name="ga94d92270bf587ccdc3a37a5bb5d20467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga94d92270bf587ccdc3a37a5bb5d20467">&#9670;&#160;</a></span>UART4_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UART4_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x4C00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa155689c0e206e6994951dc3cf31052a" name="gaa155689c0e206e6994951dc3cf31052a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa155689c0e206e6994951dc3cf31052a">&#9670;&#160;</a></span>UART5_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UART5_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x5000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga86162ab3f740db9026c1320d46938b4d" name="ga86162ab3f740db9026c1320d46938b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga86162ab3f740db9026c1320d46938b4d">&#9670;&#160;</a></span>USART1_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USART1_BASE&#160;&#160;&#160;(<a class="el" href="#ga25b99d6065f1c8f751e78f43ade652cb">APB2PERIPH_BASE</a> + 0x3800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gade83162a04bca0b15b39018a8e8ec090" name="gade83162a04bca0b15b39018a8e8ec090"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade83162a04bca0b15b39018a8e8ec090">&#9670;&#160;</a></span>USART2_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USART2_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x4400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gabe0d6539ac0026d598274ee7f45b0251" name="gabe0d6539ac0026d598274ee7f45b0251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe0d6539ac0026d598274ee7f45b0251">&#9670;&#160;</a></span>USART3_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USART3_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x4800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga9a5bf4728ab93dea5b569f5b972cbe62" name="ga9a5bf4728ab93dea5b569f5b972cbe62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9a5bf4728ab93dea5b569f5b972cbe62">&#9670;&#160;</a></span>WWDG_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WWDG_BASE&#160;&#160;&#160;(<a class="el" href="#ga45666d911f39addd4c8c0a0ac3388cfb">APB1PERIPH_BASE</a> + 0x2C00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>
