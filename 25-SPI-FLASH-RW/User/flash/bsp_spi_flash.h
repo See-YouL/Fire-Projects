@@ -27,15 +27,46 @@
  */
 
 /**
+ * @brief FLASH型号宏定义
+ */
+
+// #define sFLASH_ID 0xEF3015 /*!< W25X16的ID */
+// #define sFLASH_ID 0xEF4015 /*!< W25Q16的ID */
+// #define sFLASH_ID 0xEF4018 /*!< W25Q128的ID */
+#define sFLASH_ID 0xEF4017 /*!< W25Q64的ID */
+
+/**
+ * @brief FLASH存储空间宏定义
+ */
+#define SPI_FLASH_PageSize 256
+#define SPI_FLASH_PerWritePageSize 256
+
+/**
  * @brief W25Q64命令定义
  */
 
-#define W25X_JedecDevice_ID 0x9F
+#define W25X_WriteEnable		      0x06 
+#define W25X_WriteDisable		      0x04 
+#define W25X_ReadStatusReg		    0x05 
+#define W25X_WriteStatusReg		    0x01 
+#define W25X_ReadData			        0x03 
+#define W25X_FastReadData		      0x0B 
+#define W25X_FastReadDual		      0x3B 
+#define W25X_PageProgram		      0x02 
+#define W25X_BlockErase			      0xD8 
+#define W25X_SectorErase		      0x20 
+#define W25X_ChipErase			      0xC7 
+#define W25X_PowerDown			      0xB9 
+#define W25X_ReleasePowerDown	    0xAB 
+#define W25X_DeviceID			        0xAB 
+#define W25X_ManufactDeviceID   	0x90 
+#define W25X_JedecDeviceID		    0x9F
 
 /**
  * @brief W25Q64标志
  */
 
+#define WIP_Flag 0x01
 #define Dummy_Byte 0xFF
 
 /**
@@ -110,10 +141,11 @@
 #define FLASH_SPI_CS_LOW() GPIO_ResetBits(FLASH_SPI_CS_PORT, FLASH_SPI_CS_PIN);
 
 /**
- * @brief 等待超时时间
+ * @brief 超时等待时间
  */
-#define SPI_FLAG_TIMEOUT ((uint32_t)0x1000)
-#define SPI_LONG_TIMEOUT ((uint32_t)(10 * SPI_FLAG_TIMEOUT))
+
+#define SPIT_FLAG_TIMEOUT         ((uint32_t)0x1000)
+#define SPIT_LONG_TIMEOUT         ((uint32_t)(10 * SPIT_FLAG_TIMEOUT))
 
 /**
  * @brief DEBUG信息输出
@@ -125,6 +157,7 @@
                                     if(FLASH_DEBUG_ON)\
                                     printf("<<-FLASH-DEBUG->> [%d]"fmt"\n", __LINE__, ##arg);\
                                    }while(0)
+
 
 /**
  * @} 

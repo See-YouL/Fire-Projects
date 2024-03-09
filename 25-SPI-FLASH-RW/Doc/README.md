@@ -286,7 +286,7 @@ Flash的存储特性:
 - /CE: 片选, 后续会使用软件方法
 - SCK: 信号线, 接PA5
 - SI_IO0: MOSI线, 接PA7
-- SI_IO1: MISO中
+- SI_IO1: MISO  中
 - /WP_IO2: 写保护接高电平, 不使用
 - /HOLD_IO3: 暂停通讯, 接高电平, 不使用
 
@@ -359,8 +359,7 @@ Flash的存储特性:
 #define FLASH_INFO(fmt, arg...) printf("<<-FLASH-INFO->> "fmt"\n", ##arg)
 #define FLASH_ERROR(fmt, arg...) printf("<<-FLASH-ERROR->> "fmt"\n", ##arg)
 #define FLASH_DEBUG(fmt, arg...) do{\
-                                    if(FLASH_DEBUG_ON)\
-                                    printf("<<-FLASH-DEBUG->> [%d]"fmt"\n", __LINE__, ##arg);\
+ printf("<<-FLASH-DEBUG->> [%d]"fmt"\n", __LINE__, ##arg);\
                                    }while(0)
 
 /**

@@ -85,6 +85,94 @@ void SPI_FLASH_Init(void)
 }
 
 /**
+ * @brief 擦除FLASH扇区 
+ * @param SectorAddr: 要擦除的扇区地址
+ * @return None
+ */
+void SPI_FLASH_SectorErase(u32 SectorAddr)
+{
+    /* 发送FLASH写使能命令 */
+    SPI_FLASH_WriteEnable();
+    SPI_FLASH_WaitForWriteEnd();
+    /* 选择FLASH: CS低 */
+    SPI_FLASH_CS_LOW();
+    /* 发送扇区擦除命令 */
+    SPI_FLASH_SendByte(W25X_SectorErase);
+    /* 发送扇区地址的高位 */
+    SPI_FLASH_SendByte((SectorAddr & 0xFF0000) >> 16);
+    /* 发送扇区地址的中位 */
+    SPI_FLASH_SendByte((SectorAddr & 0xFF00) >> 8);
+    /* 发送扇区地址的低位 */
+    SPI_FLASH_SendByte(SectorAddr & 0xFF);
+    /* 通讯结束, CS高 */
+    SPI_FLASH_CS_HIGH();
+    /* 等待擦除完毕 */
+    SPI_FLASH_WaitForWriteEnd();
+}
+
+/**
+ * @brief 擦除FLASH扇区, 整片擦除
+ * @param None
+ * @return None
+ */
+void SPI_FLASH_BulkErase(void)
+{
+    /* 发送FLASH写使能命令 */
+    SPI_FLASH_WriteEnable();
+    /* 选择FLASH: CS低 */
+    SPI_FLASH_CS_LOW();
+    /* 发送整块擦除指令 */
+    SPI_FLASH_SendByte(W25X_ChipErase);
+    /* 停止信号FLASH: CS高 */
+    SPI_FLASH_CS_HIGH();
+    /* 等待擦除完毕 */
+    SPI_FLASH_WaitForWriteEnd();
+}
+
+/**
+ * @brief 向FLASH发送写使能命令
+ * @param None
+ * @return None
+ */
+void SPI_FLASH_WriteEnable(void)
+{
+    /* 通讯开始, CS低 */
+    SPI_FLASH_CS_LOW();
+    /* 发送写使能命令 */
+    SPI_FLASH_SendByte(W25X_WriteEnable);
+    /* 通讯结束, CS高 */
+    SPI_FLASH_CS_HIGH();
+}
+
+/**
+ * @brief 等待WIP(BUSY)标志被置0, 即等待到FLASH内部数据写入完毕
+ * @param None
+ * @return None
+ */
+void SPI_FLASH_WaitForWriteEnd(void)
+{
+    u8 FLASH_Status = 0;
+
+    /* 选择FLASH: CS低 */
+    SPI_FLASH_CS_LOW();
+    /* 发送读状态寄存器命令 */
+    SPI_FLASH_SendByte(W25X_ReadStatusReg);
+}
+
+/**
+ * @brief 擦除FLASH扇区
+ * @param SectorAddr: 要擦除的扇区地址
+ * @return None
+ */
+void SPI_FLASH_SectorErase(u32 SectorAddr)
+{
+    /* 发送FLASH写使能命令 */
+    SPI_FLASH_WriteEnable();
+
+
+}
+
+/**
  * @brief 发送一个字节
  * @param byte: 要发送的数据
  * @retval 返回接收的数据 
