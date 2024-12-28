@@ -1,0 +1,278 @@
+\doxysubsubsection{DMA\+\_\+\+Private\+\_\+\+Functions}
+\hypertarget{group___d_m_a___private___functions}{}\label{group___d_m_a___private___functions}\index{DMA\_Private\_Functions@{DMA\_Private\_Functions}}
+\doxysubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga21ca0d50b13e502db5ab5feb484f9ece}{DMA\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the DMAy Channelx registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga7c3d1b9dc041f8e5f2cfc8d5dd858278}{DMA\+\_\+\+Init}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx, \mbox{\hyperlink{struct_d_m_a___init_type_def}{DMA\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMA\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the DMAy Channelx according to the specified parameters in the DMA\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga0f7f95f750a90a6824f4e9b6f58adc7e}{DMA\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_d_m_a___init_type_def}{DMA\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMA\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each DMA\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga8e7cb6b9ae5f142e2961df879cdaba65}{DMA\+\_\+\+Cmd}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified DMAy Channelx. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga0bb60360be9cd57f96399be2f3b5eb2b}{DMA\+\_\+\+ITConfig}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx, uint32\+\_\+t DMA\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified DMAy Channelx interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_gade5d9e532814eaa46514cb385fdff709}{DMA\+\_\+\+Set\+Curr\+Data\+Counter}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx, uint16\+\_\+t Data\+Number)
+\begin{DoxyCompactList}\small\item\em Sets the number of data units in the current DMAy Channelx transfer. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___d_m_a___private___functions_ga511b4c402d1ff32d53f28736956cac5d}{DMA\+\_\+\+Get\+Curr\+Data\+Counter}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx)
+\begin{DoxyCompactList}\small\item\em Returns the number of remaining data units in the current DMAy Channelx transfer. \end{DoxyCompactList}\item 
+Flag\+Status \mbox{\hyperlink{group___d_m_a___private___functions_gafb30b7a891834c267eefd5d30b688a9f}{DMA\+\_\+\+Get\+Flag\+Status}} (uint32\+\_\+t DMAy\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified DMAy Channelx flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga25cdca360f309c8ceb7c206cd9ad9119}{DMA\+\_\+\+Clear\+Flag}} (uint32\+\_\+t DMAy\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the DMAy Channelx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \mbox{\hyperlink{group___d_m_a___private___functions_ga9287331247150fe84d03ecd7ad8adb52}{DMA\+\_\+\+Get\+ITStatus}} (uint32\+\_\+t DMAy\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified DMAy Channelx interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___private___functions_ga91a7340e5b334a942f3eb1e05ed5f67a}{DMA\+\_\+\+Clear\+ITPending\+Bit}} (uint32\+\_\+t DMAy\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the DMAy Channelx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsection{Function Documentation}
+\Hypertarget{group___d_m_a___private___functions_ga25cdca360f309c8ceb7c206cd9ad9119}\label{group___d_m_a___private___functions_ga25cdca360f309c8ceb7c206cd9ad9119} 
+\index{DMA\_Private\_Functions@{DMA\_Private\_Functions}!DMA\_ClearFlag@{DMA\_ClearFlag}}
+\index{DMA\_ClearFlag@{DMA\_ClearFlag}!DMA\_Private\_Functions@{DMA\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{DMA\_ClearFlag()}{DMA\_ClearFlag()}}
+{\footnotesize\ttfamily void DMA\+\_\+\+Clear\+Flag (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{DMAy\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Clears the DMAy Channelx\textquotesingle{}s pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DMAy\+\_\+\+FLAG} & specifies the flag to clear. This parameter can be any combination (for the same DMA) of the following values\+: \begin{DoxyItemize}
+\item DMA1\+\_\+\+FLAG\+\_\+\+GL1\+: DMA1 Channel1 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC1\+: DMA1 Channel1 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT1\+: DMA1 Channel1 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE1\+: DMA1 Channel1 transfer error flag. \item DMA1\+\_\+\+FLAG\+\_\+\+GL2\+: DMA1 Channel2 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC2\+: DMA1 Channel2 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT2\+: DMA1 Channel2 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE2\+: DMA1 Channel2 transfer error flag. \item DMA1\+\_\+\+FLAG\+\_\+\+GL3\+: DMA1 Channel3 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC3\+: DMA1 Channel3 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT3\+: DMA1 Channel3 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE3\+: DMA1 Channel3 transfer error flag. \item DMA1\+\_\+\+FLAG\+\_\+\+GL4\+: DMA1 Channel4 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC4\+: DMA1 Channel4 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT4\+: DMA1 Channel4 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE4\+: DMA1 Channel4 transfer error flag. \item DMA1\+\_\+\+FLAG\+\_\+\+GL5\+: DMA1 Channel5 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC5\+: DMA1 Channel5 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT5\+: DMA1 Channel5 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE5\+: DMA1 Channel5 transfer error flag. \item DMA1\+\_\+\+FLAG\+\_\+\+GL6\+: DMA1 Channel6 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC6\+: DMA1 Channel6 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT6\+: DMA1 Channel6 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE6\+: DMA1 Channel6 transfer error flag. \item DMA1\+\_\+\+FLAG\+\_\+\+GL7\+: DMA1 Channel7 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC7\+: DMA1 Channel7 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT7\+: DMA1 Channel7 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE7\+: DMA1 Channel7 transfer error flag. \item DMA2\+\_\+\+FLAG\+\_\+\+GL1\+: DMA2 Channel1 global flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TC1\+: DMA2 Channel1 transfer complete flag. \item DMA2\+\_\+\+FLAG\+\_\+\+HT1\+: DMA2 Channel1 half transfer flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TE1\+: DMA2 Channel1 transfer error flag. \item DMA2\+\_\+\+FLAG\+\_\+\+GL2\+: DMA2 Channel2 global flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TC2\+: DMA2 Channel2 transfer complete flag. \item DMA2\+\_\+\+FLAG\+\_\+\+HT2\+: DMA2 Channel2 half transfer flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TE2\+: DMA2 Channel2 transfer error flag. \item DMA2\+\_\+\+FLAG\+\_\+\+GL3\+: DMA2 Channel3 global flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TC3\+: DMA2 Channel3 transfer complete flag. \item DMA2\+\_\+\+FLAG\+\_\+\+HT3\+: DMA2 Channel3 half transfer flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TE3\+: DMA2 Channel3 transfer error flag. \item DMA2\+\_\+\+FLAG\+\_\+\+GL4\+: DMA2 Channel4 global flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TC4\+: DMA2 Channel4 transfer complete flag. \item DMA2\+\_\+\+FLAG\+\_\+\+HT4\+: DMA2 Channel4 half transfer flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TE4\+: DMA2 Channel4 transfer error flag. \item DMA2\+\_\+\+FLAG\+\_\+\+GL5\+: DMA2 Channel5 global flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TC5\+: DMA2 Channel5 transfer complete flag. \item DMA2\+\_\+\+FLAG\+\_\+\+HT5\+: DMA2 Channel5 half transfer flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TE5\+: DMA2 Channel5 transfer error flag. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___d_m_a___private___functions_ga91a7340e5b334a942f3eb1e05ed5f67a}\label{group___d_m_a___private___functions_ga91a7340e5b334a942f3eb1e05ed5f67a} 
+\index{DMA\_Private\_Functions@{DMA\_Private\_Functions}!DMA\_ClearITPendingBit@{DMA\_ClearITPendingBit}}
+\index{DMA\_ClearITPendingBit@{DMA\_ClearITPendingBit}!DMA\_Private\_Functions@{DMA\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{DMA\_ClearITPendingBit()}{DMA\_ClearITPendingBit()}}
+{\footnotesize\ttfamily void DMA\+\_\+\+Clear\+ITPending\+Bit (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{DMAy\+\_\+\+IT }\end{DoxyParamCaption})}
+
+
+
+Clears the DMAy Channelx\textquotesingle{}s interrupt pending bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DMAy\+\_\+\+IT} & specifies the DMAy interrupt pending bit to clear. This parameter can be any combination (for the same DMA) of the following values\+: \begin{DoxyItemize}
+\item DMA1\+\_\+\+IT\+\_\+\+GL1\+: DMA1 Channel1 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC1\+: DMA1 Channel1 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT1\+: DMA1 Channel1 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE1\+: DMA1 Channel1 transfer error interrupt. \item DMA1\+\_\+\+IT\+\_\+\+GL2\+: DMA1 Channel2 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC2\+: DMA1 Channel2 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT2\+: DMA1 Channel2 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE2\+: DMA1 Channel2 transfer error interrupt. \item DMA1\+\_\+\+IT\+\_\+\+GL3\+: DMA1 Channel3 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC3\+: DMA1 Channel3 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT3\+: DMA1 Channel3 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE3\+: DMA1 Channel3 transfer error interrupt. \item DMA1\+\_\+\+IT\+\_\+\+GL4\+: DMA1 Channel4 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC4\+: DMA1 Channel4 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT4\+: DMA1 Channel4 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE4\+: DMA1 Channel4 transfer error interrupt. \item DMA1\+\_\+\+IT\+\_\+\+GL5\+: DMA1 Channel5 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC5\+: DMA1 Channel5 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT5\+: DMA1 Channel5 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE5\+: DMA1 Channel5 transfer error interrupt. \item DMA1\+\_\+\+IT\+\_\+\+GL6\+: DMA1 Channel6 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC6\+: DMA1 Channel6 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT6\+: DMA1 Channel6 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE6\+: DMA1 Channel6 transfer error interrupt. \item DMA1\+\_\+\+IT\+\_\+\+GL7\+: DMA1 Channel7 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC7\+: DMA1 Channel7 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT7\+: DMA1 Channel7 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE7\+: DMA1 Channel7 transfer error interrupt. \item DMA2\+\_\+\+IT\+\_\+\+GL1\+: DMA2 Channel1 global interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TC1\+: DMA2 Channel1 transfer complete interrupt. \item DMA2\+\_\+\+IT\+\_\+\+HT1\+: DMA2 Channel1 half transfer interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TE1\+: DMA2 Channel1 transfer error interrupt. \item DMA2\+\_\+\+IT\+\_\+\+GL2\+: DMA2 Channel2 global interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TC2\+: DMA2 Channel2 transfer complete interrupt. \item DMA2\+\_\+\+IT\+\_\+\+HT2\+: DMA2 Channel2 half transfer interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TE2\+: DMA2 Channel2 transfer error interrupt. \item DMA2\+\_\+\+IT\+\_\+\+GL3\+: DMA2 Channel3 global interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TC3\+: DMA2 Channel3 transfer complete interrupt. \item DMA2\+\_\+\+IT\+\_\+\+HT3\+: DMA2 Channel3 half transfer interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TE3\+: DMA2 Channel3 transfer error interrupt. \item DMA2\+\_\+\+IT\+\_\+\+GL4\+: DMA2 Channel4 global interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TC4\+: DMA2 Channel4 transfer complete interrupt. \item DMA2\+\_\+\+IT\+\_\+\+HT4\+: DMA2 Channel4 half transfer interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TE4\+: DMA2 Channel4 transfer error interrupt. \item DMA2\+\_\+\+IT\+\_\+\+GL5\+: DMA2 Channel5 global interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TC5\+: DMA2 Channel5 transfer complete interrupt. \item DMA2\+\_\+\+IT\+\_\+\+HT5\+: DMA2 Channel5 half transfer interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TE5\+: DMA2 Channel5 transfer error interrupt. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___d_m_a___private___functions_ga8e7cb6b9ae5f142e2961df879cdaba65}\label{group___d_m_a___private___functions_ga8e7cb6b9ae5f142e2961df879cdaba65} 
+\index{DMA\_Private\_Functions@{DMA\_Private\_Functions}!DMA\_Cmd@{DMA\_Cmd}}
+\index{DMA\_Cmd@{DMA\_Cmd}!DMA\_Private\_Functions@{DMA\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{DMA\_Cmd()}{DMA\_Cmd()}}
+{\footnotesize\ttfamily void DMA\+\_\+\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{DMAy\+\_\+\+Channelx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified DMAy Channelx. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DMAy\+\_\+\+Channelx} & where y can be 1 or 2 to select the DMA and x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel. \\
+\hline
+{\em New\+State} & new state of the DMAy Channelx. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___d_m_a___private___functions_ga21ca0d50b13e502db5ab5feb484f9ece}\label{group___d_m_a___private___functions_ga21ca0d50b13e502db5ab5feb484f9ece} 
+\index{DMA\_Private\_Functions@{DMA\_Private\_Functions}!DMA\_DeInit@{DMA\_DeInit}}
+\index{DMA\_DeInit@{DMA\_DeInit}!DMA\_Private\_Functions@{DMA\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{DMA\_DeInit()}{DMA\_DeInit()}}
+{\footnotesize\ttfamily void DMA\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{DMAy\+\_\+\+Channelx }\end{DoxyParamCaption})}
+
+
+
+Deinitializes the DMAy Channelx registers to their default reset values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DMAy\+\_\+\+Channelx} & where y can be 1 or 2 to select the DMA and x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___d_m_a___private___functions_ga511b4c402d1ff32d53f28736956cac5d}\label{group___d_m_a___private___functions_ga511b4c402d1ff32d53f28736956cac5d} 
+\index{DMA\_Private\_Functions@{DMA\_Private\_Functions}!DMA\_GetCurrDataCounter@{DMA\_GetCurrDataCounter}}
+\index{DMA\_GetCurrDataCounter@{DMA\_GetCurrDataCounter}!DMA\_Private\_Functions@{DMA\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{DMA\_GetCurrDataCounter()}{DMA\_GetCurrDataCounter()}}
+{\footnotesize\ttfamily uint16\+\_\+t DMA\+\_\+\+Get\+Curr\+Data\+Counter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{DMAy\+\_\+\+Channelx }\end{DoxyParamCaption})}
+
+
+
+Returns the number of remaining data units in the current DMAy Channelx transfer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DMAy\+\_\+\+Channelx} & where y can be 1 or 2 to select the DMA and x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & number of remaining data units in the current DMAy Channelx transfer. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___d_m_a___private___functions_gafb30b7a891834c267eefd5d30b688a9f}\label{group___d_m_a___private___functions_gafb30b7a891834c267eefd5d30b688a9f} 
+\index{DMA\_Private\_Functions@{DMA\_Private\_Functions}!DMA\_GetFlagStatus@{DMA\_GetFlagStatus}}
+\index{DMA\_GetFlagStatus@{DMA\_GetFlagStatus}!DMA\_Private\_Functions@{DMA\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{DMA\_GetFlagStatus()}{DMA\_GetFlagStatus()}}
+{\footnotesize\ttfamily Flag\+Status DMA\+\_\+\+Get\+Flag\+Status (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{DMAy\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Checks whether the specified DMAy Channelx flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DMAy\+\_\+\+FLAG} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item DMA1\+\_\+\+FLAG\+\_\+\+GL1\+: DMA1 Channel1 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC1\+: DMA1 Channel1 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT1\+: DMA1 Channel1 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE1\+: DMA1 Channel1 transfer error flag. \item DMA1\+\_\+\+FLAG\+\_\+\+GL2\+: DMA1 Channel2 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC2\+: DMA1 Channel2 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT2\+: DMA1 Channel2 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE2\+: DMA1 Channel2 transfer error flag. \item DMA1\+\_\+\+FLAG\+\_\+\+GL3\+: DMA1 Channel3 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC3\+: DMA1 Channel3 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT3\+: DMA1 Channel3 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE3\+: DMA1 Channel3 transfer error flag. \item DMA1\+\_\+\+FLAG\+\_\+\+GL4\+: DMA1 Channel4 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC4\+: DMA1 Channel4 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT4\+: DMA1 Channel4 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE4\+: DMA1 Channel4 transfer error flag. \item DMA1\+\_\+\+FLAG\+\_\+\+GL5\+: DMA1 Channel5 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC5\+: DMA1 Channel5 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT5\+: DMA1 Channel5 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE5\+: DMA1 Channel5 transfer error flag. \item DMA1\+\_\+\+FLAG\+\_\+\+GL6\+: DMA1 Channel6 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC6\+: DMA1 Channel6 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT6\+: DMA1 Channel6 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE6\+: DMA1 Channel6 transfer error flag. \item DMA1\+\_\+\+FLAG\+\_\+\+GL7\+: DMA1 Channel7 global flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TC7\+: DMA1 Channel7 transfer complete flag. \item DMA1\+\_\+\+FLAG\+\_\+\+HT7\+: DMA1 Channel7 half transfer flag. \item DMA1\+\_\+\+FLAG\+\_\+\+TE7\+: DMA1 Channel7 transfer error flag. \item DMA2\+\_\+\+FLAG\+\_\+\+GL1\+: DMA2 Channel1 global flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TC1\+: DMA2 Channel1 transfer complete flag. \item DMA2\+\_\+\+FLAG\+\_\+\+HT1\+: DMA2 Channel1 half transfer flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TE1\+: DMA2 Channel1 transfer error flag. \item DMA2\+\_\+\+FLAG\+\_\+\+GL2\+: DMA2 Channel2 global flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TC2\+: DMA2 Channel2 transfer complete flag. \item DMA2\+\_\+\+FLAG\+\_\+\+HT2\+: DMA2 Channel2 half transfer flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TE2\+: DMA2 Channel2 transfer error flag. \item DMA2\+\_\+\+FLAG\+\_\+\+GL3\+: DMA2 Channel3 global flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TC3\+: DMA2 Channel3 transfer complete flag. \item DMA2\+\_\+\+FLAG\+\_\+\+HT3\+: DMA2 Channel3 half transfer flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TE3\+: DMA2 Channel3 transfer error flag. \item DMA2\+\_\+\+FLAG\+\_\+\+GL4\+: DMA2 Channel4 global flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TC4\+: DMA2 Channel4 transfer complete flag. \item DMA2\+\_\+\+FLAG\+\_\+\+HT4\+: DMA2 Channel4 half transfer flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TE4\+: DMA2 Channel4 transfer error flag. \item DMA2\+\_\+\+FLAG\+\_\+\+GL5\+: DMA2 Channel5 global flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TC5\+: DMA2 Channel5 transfer complete flag. \item DMA2\+\_\+\+FLAG\+\_\+\+HT5\+: DMA2 Channel5 half transfer flag. \item DMA2\+\_\+\+FLAG\+\_\+\+TE5\+: DMA2 Channel5 transfer error flag. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of DMAy\+\_\+\+FLAG (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___d_m_a___private___functions_ga9287331247150fe84d03ecd7ad8adb52}\label{group___d_m_a___private___functions_ga9287331247150fe84d03ecd7ad8adb52} 
+\index{DMA\_Private\_Functions@{DMA\_Private\_Functions}!DMA\_GetITStatus@{DMA\_GetITStatus}}
+\index{DMA\_GetITStatus@{DMA\_GetITStatus}!DMA\_Private\_Functions@{DMA\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{DMA\_GetITStatus()}{DMA\_GetITStatus()}}
+{\footnotesize\ttfamily ITStatus DMA\+\_\+\+Get\+ITStatus (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{DMAy\+\_\+\+IT }\end{DoxyParamCaption})}
+
+
+
+Checks whether the specified DMAy Channelx interrupt has occurred or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DMAy\+\_\+\+IT} & specifies the DMAy interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item DMA1\+\_\+\+IT\+\_\+\+GL1\+: DMA1 Channel1 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC1\+: DMA1 Channel1 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT1\+: DMA1 Channel1 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE1\+: DMA1 Channel1 transfer error interrupt. \item DMA1\+\_\+\+IT\+\_\+\+GL2\+: DMA1 Channel2 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC2\+: DMA1 Channel2 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT2\+: DMA1 Channel2 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE2\+: DMA1 Channel2 transfer error interrupt. \item DMA1\+\_\+\+IT\+\_\+\+GL3\+: DMA1 Channel3 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC3\+: DMA1 Channel3 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT3\+: DMA1 Channel3 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE3\+: DMA1 Channel3 transfer error interrupt. \item DMA1\+\_\+\+IT\+\_\+\+GL4\+: DMA1 Channel4 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC4\+: DMA1 Channel4 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT4\+: DMA1 Channel4 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE4\+: DMA1 Channel4 transfer error interrupt. \item DMA1\+\_\+\+IT\+\_\+\+GL5\+: DMA1 Channel5 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC5\+: DMA1 Channel5 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT5\+: DMA1 Channel5 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE5\+: DMA1 Channel5 transfer error interrupt. \item DMA1\+\_\+\+IT\+\_\+\+GL6\+: DMA1 Channel6 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC6\+: DMA1 Channel6 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT6\+: DMA1 Channel6 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE6\+: DMA1 Channel6 transfer error interrupt. \item DMA1\+\_\+\+IT\+\_\+\+GL7\+: DMA1 Channel7 global interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TC7\+: DMA1 Channel7 transfer complete interrupt. \item DMA1\+\_\+\+IT\+\_\+\+HT7\+: DMA1 Channel7 half transfer interrupt. \item DMA1\+\_\+\+IT\+\_\+\+TE7\+: DMA1 Channel7 transfer error interrupt. \item DMA2\+\_\+\+IT\+\_\+\+GL1\+: DMA2 Channel1 global interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TC1\+: DMA2 Channel1 transfer complete interrupt. \item DMA2\+\_\+\+IT\+\_\+\+HT1\+: DMA2 Channel1 half transfer interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TE1\+: DMA2 Channel1 transfer error interrupt. \item DMA2\+\_\+\+IT\+\_\+\+GL2\+: DMA2 Channel2 global interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TC2\+: DMA2 Channel2 transfer complete interrupt. \item DMA2\+\_\+\+IT\+\_\+\+HT2\+: DMA2 Channel2 half transfer interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TE2\+: DMA2 Channel2 transfer error interrupt. \item DMA2\+\_\+\+IT\+\_\+\+GL3\+: DMA2 Channel3 global interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TC3\+: DMA2 Channel3 transfer complete interrupt. \item DMA2\+\_\+\+IT\+\_\+\+HT3\+: DMA2 Channel3 half transfer interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TE3\+: DMA2 Channel3 transfer error interrupt. \item DMA2\+\_\+\+IT\+\_\+\+GL4\+: DMA2 Channel4 global interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TC4\+: DMA2 Channel4 transfer complete interrupt. \item DMA2\+\_\+\+IT\+\_\+\+HT4\+: DMA2 Channel4 half transfer interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TE4\+: DMA2 Channel4 transfer error interrupt. \item DMA2\+\_\+\+IT\+\_\+\+GL5\+: DMA2 Channel5 global interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TC5\+: DMA2 Channel5 transfer complete interrupt. \item DMA2\+\_\+\+IT\+\_\+\+HT5\+: DMA2 Channel5 half transfer interrupt. \item DMA2\+\_\+\+IT\+\_\+\+TE5\+: DMA2 Channel5 transfer error interrupt. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of DMAy\+\_\+\+IT (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___d_m_a___private___functions_ga7c3d1b9dc041f8e5f2cfc8d5dd858278}\label{group___d_m_a___private___functions_ga7c3d1b9dc041f8e5f2cfc8d5dd858278} 
+\index{DMA\_Private\_Functions@{DMA\_Private\_Functions}!DMA\_Init@{DMA\_Init}}
+\index{DMA\_Init@{DMA\_Init}!DMA\_Private\_Functions@{DMA\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{DMA\_Init()}{DMA\_Init()}}
+{\footnotesize\ttfamily void DMA\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{DMAy\+\_\+\+Channelx,  }\item[{\mbox{\hyperlink{struct_d_m_a___init_type_def}{DMA\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{DMA\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Initializes the DMAy Channelx according to the specified parameters in the DMA\+\_\+\+Init\+Struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DMAy\+\_\+\+Channelx} & where y can be 1 or 2 to select the DMA and x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel. \\
+\hline
+{\em DMA\+\_\+\+Init\+Struct} & pointer to a \doxylink{struct_d_m_a___init_type_def}{DMA\+\_\+\+Init\+Type\+Def} structure that contains the configuration information for the specified DMA Channel. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___d_m_a___private___functions_ga0bb60360be9cd57f96399be2f3b5eb2b}\label{group___d_m_a___private___functions_ga0bb60360be9cd57f96399be2f3b5eb2b} 
+\index{DMA\_Private\_Functions@{DMA\_Private\_Functions}!DMA\_ITConfig@{DMA\_ITConfig}}
+\index{DMA\_ITConfig@{DMA\_ITConfig}!DMA\_Private\_Functions@{DMA\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{DMA\_ITConfig()}{DMA\_ITConfig()}}
+{\footnotesize\ttfamily void DMA\+\_\+\+ITConfig (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{DMAy\+\_\+\+Channelx,  }\item[{uint32\+\_\+t}]{DMA\+\_\+\+IT,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified DMAy Channelx interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DMAy\+\_\+\+Channelx} & where y can be 1 or 2 to select the DMA and x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel. \\
+\hline
+{\em DMA\+\_\+\+IT} & specifies the DMA interrupts sources to be enabled or disabled. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item DMA\+\_\+\+IT\+\_\+\+TC\+: Transfer complete interrupt mask \item DMA\+\_\+\+IT\+\_\+\+HT\+: Half transfer interrupt mask \item DMA\+\_\+\+IT\+\_\+\+TE\+: Transfer error interrupt mask \end{DoxyItemize}
+\\
+\hline
+{\em New\+State} & new state of the specified DMA interrupts. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___d_m_a___private___functions_gade5d9e532814eaa46514cb385fdff709}\label{group___d_m_a___private___functions_gade5d9e532814eaa46514cb385fdff709} 
+\index{DMA\_Private\_Functions@{DMA\_Private\_Functions}!DMA\_SetCurrDataCounter@{DMA\_SetCurrDataCounter}}
+\index{DMA\_SetCurrDataCounter@{DMA\_SetCurrDataCounter}!DMA\_Private\_Functions@{DMA\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{DMA\_SetCurrDataCounter()}{DMA\_SetCurrDataCounter()}}
+{\footnotesize\ttfamily void DMA\+\_\+\+Set\+Curr\+Data\+Counter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{DMAy\+\_\+\+Channelx,  }\item[{uint16\+\_\+t}]{Data\+Number }\end{DoxyParamCaption})}
+
+
+
+Sets the number of data units in the current DMAy Channelx transfer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DMAy\+\_\+\+Channelx} & where y can be 1 or 2 to select the DMA and x can be 1 to 7 for DMA1 and 1 to 5 for DMA2 to select the DMA Channel. \\
+\hline
+{\em Data\+Number} & The number of data units in the current DMAy Channelx transfer. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function can only be used when the DMAy\+\_\+\+Channelx is disabled. ~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___d_m_a___private___functions_ga0f7f95f750a90a6824f4e9b6f58adc7e}\label{group___d_m_a___private___functions_ga0f7f95f750a90a6824f4e9b6f58adc7e} 
+\index{DMA\_Private\_Functions@{DMA\_Private\_Functions}!DMA\_StructInit@{DMA\_StructInit}}
+\index{DMA\_StructInit@{DMA\_StructInit}!DMA\_Private\_Functions@{DMA\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{DMA\_StructInit()}{DMA\_StructInit()}}
+{\footnotesize\ttfamily void DMA\+\_\+\+Struct\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_m_a___init_type_def}{DMA\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{DMA\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Fills each DMA\+\_\+\+Init\+Struct member with its default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em DMA\+\_\+\+Init\+Struct} & \+: pointer to a \doxylink{struct_d_m_a___init_type_def}{DMA\+\_\+\+Init\+Type\+Def} structure which will be initialized. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

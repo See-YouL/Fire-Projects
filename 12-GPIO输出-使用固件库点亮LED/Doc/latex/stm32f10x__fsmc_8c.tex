@@ -1,0 +1,89 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/12-\/\+GPIO输出-\/使用固件库点亮\+LED/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/src/stm32f10x\+\_\+fsmc.c File Reference}
+\hypertarget{stm32f10x__fsmc_8c}{}\label{stm32f10x__fsmc_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_fsmc.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_fsmc.c}}
+
+
+This file provides all the FSMC firmware functions.  
+
+
+{\ttfamily \#include "{}stm32f10x\+\_\+fsmc.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f10x\+\_\+rcc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries BCR\+\_\+\+MBKEN\+\_\+\+Set}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define {\bfseries BCR\+\_\+\+MBKEN\+\_\+\+Reset}~((uint32\+\_\+t)0x000\+FFFFE)
+\item 
+\#define {\bfseries BCR\+\_\+\+FACCEN\+\_\+\+Set}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define {\bfseries PCR\+\_\+\+PBKEN\+\_\+\+Set}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define {\bfseries PCR\+\_\+\+PBKEN\+\_\+\+Reset}~((uint32\+\_\+t)0x000\+FFFFB)
+\item 
+\#define {\bfseries PCR\+\_\+\+ECCEN\+\_\+\+Set}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define {\bfseries PCR\+\_\+\+ECCEN\+\_\+\+Reset}~((uint32\+\_\+t)0x000\+FFFBF)
+\item 
+\#define {\bfseries PCR\+\_\+\+Memory\+Type\+\_\+\+NAND}~((uint32\+\_\+t)0x00000008)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_gaab3e6648e8a584e73785361ac960eded}{FSMC\+\_\+\+NORSRAMDe\+Init}} (uint32\+\_\+t FSMC\+\_\+\+Bank)
+\begin{DoxyCompactList}\small\item\em Deinitializes the FSMC NOR/\+SRAM Banks registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_gafb749503293474a68555961bd8f120e1}{FSMC\+\_\+\+NANDDe\+Init}} (uint32\+\_\+t FSMC\+\_\+\+Bank)
+\begin{DoxyCompactList}\small\item\em Deinitializes the FSMC NAND Banks registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_ga2f53ccf3a4f3c80a5a56fb47ccd47ccd}{FSMC\+\_\+\+PCCARDDe\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the FSMC PCCARD Bank registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_ga9c27816e8b17394c9ee1ce9298917b4a}{FSMC\+\_\+\+NORSRAMInit}} (\mbox{\hyperlink{struct_f_s_m_c___n_o_r_s_r_a_m_init_type_def}{FSMC\+\_\+\+NORSRAMInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}FSMC\+\_\+\+NORSRAMInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the FSMC NOR/\+SRAM Banks according to the specified parameters in the FSMC\+\_\+\+NORSRAMInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_ga9f81ccc4e126c11f1eb33077b1a68e6f}{FSMC\+\_\+\+NANDInit}} (\mbox{\hyperlink{struct_f_s_m_c___n_a_n_d_init_type_def}{FSMC\+\_\+\+NANDInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}FSMC\+\_\+\+NANDInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the FSMC NAND Banks according to the specified parameters in the FSMC\+\_\+\+NANDInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_gacee1351363e7700a296faa1734a910aa}{FSMC\+\_\+\+PCCARDInit}} (\mbox{\hyperlink{struct_f_s_m_c___p_c_c_a_r_d_init_type_def}{FSMC\+\_\+\+PCCARDInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}FSMC\+\_\+\+PCCARDInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the FSMC PCCARD Bank according to the specified parameters in the FSMC\+\_\+\+PCCARDInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_gaf33e6dfc34f62d16a0cb416de9e83d28}{FSMC\+\_\+\+NORSRAMStruct\+Init}} (\mbox{\hyperlink{struct_f_s_m_c___n_o_r_s_r_a_m_init_type_def}{FSMC\+\_\+\+NORSRAMInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}FSMC\+\_\+\+NORSRAMInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each FSMC\+\_\+\+NORSRAMInit\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_ga8283ad94ad8e83d49d5b77d1c7e17862}{FSMC\+\_\+\+NANDStruct\+Init}} (\mbox{\hyperlink{struct_f_s_m_c___n_a_n_d_init_type_def}{FSMC\+\_\+\+NANDInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}FSMC\+\_\+\+NANDInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each FSMC\+\_\+\+NANDInit\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_ga7a64ba0e0545b3f1913c9d1d28c05e62}{FSMC\+\_\+\+PCCARDStruct\+Init}} (\mbox{\hyperlink{struct_f_s_m_c___p_c_c_a_r_d_init_type_def}{FSMC\+\_\+\+PCCARDInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}FSMC\+\_\+\+PCCARDInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each FSMC\+\_\+\+PCCARDInit\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_gaf943f0f2680168d3a95a3c2c9f3eca2a}{FSMC\+\_\+\+NORSRAMCmd}} (uint32\+\_\+t FSMC\+\_\+\+Bank, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified NOR/\+SRAM Memory Bank. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_ga33ec7c39ea4d42e92c72c6e517d8235c}{FSMC\+\_\+\+NANDCmd}} (uint32\+\_\+t FSMC\+\_\+\+Bank, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified NAND Memory Bank. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_ga2d410151ceb3428c6a1bf374a0472cde}{FSMC\+\_\+\+PCCARDCmd}} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the PCCARD Memory Bank. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_ga5800301fc39bbe998a18ebd9ff191cdc}{FSMC\+\_\+\+NANDECCCmd}} (uint32\+\_\+t FSMC\+\_\+\+Bank, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the FSMC NAND ECC feature. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___f_s_m_c___private___functions_gaad6d4f5b5a41684ce053fea55bdb98d8}{FSMC\+\_\+\+Get\+ECC}} (uint32\+\_\+t FSMC\+\_\+\+Bank)
+\begin{DoxyCompactList}\small\item\em Returns the error correction code register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_ga217027ae3cd213b9076b6a1be197064c}{FSMC\+\_\+\+ITConfig}} (uint32\+\_\+t FSMC\+\_\+\+Bank, uint32\+\_\+t FSMC\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified FSMC interrupts. \end{DoxyCompactList}\item 
+Flag\+Status \mbox{\hyperlink{group___f_s_m_c___private___functions_gae00355115b078f483f0771057bb849c4}{FSMC\+\_\+\+Get\+Flag\+Status}} (uint32\+\_\+t FSMC\+\_\+\+Bank, uint32\+\_\+t FSMC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified FSMC flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_ga697618f2de0ad9a8a82461ddbebd5264}{FSMC\+\_\+\+Clear\+Flag}} (uint32\+\_\+t FSMC\+\_\+\+Bank, uint32\+\_\+t FSMC\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the FSMC\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \mbox{\hyperlink{group___f_s_m_c___private___functions_ga7fce9ca889d33cd8b8b7413875dd4d73}{FSMC\+\_\+\+Get\+ITStatus}} (uint32\+\_\+t FSMC\+\_\+\+Bank, uint32\+\_\+t FSMC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified FSMC interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___f_s_m_c___private___functions_gad9387e7674b8a376256a3378649e004e}{FSMC\+\_\+\+Clear\+ITPending\+Bit}} (uint32\+\_\+t FSMC\+\_\+\+Bank, uint32\+\_\+t FSMC\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the FSMC\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides all the FSMC firmware functions. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

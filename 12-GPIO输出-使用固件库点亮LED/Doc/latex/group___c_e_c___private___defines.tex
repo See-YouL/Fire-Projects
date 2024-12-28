@@ -1,0 +1,47 @@
+\doxysubsubsection{CEC\+\_\+\+Private\+\_\+\+Defines}
+\hypertarget{group___c_e_c___private___defines}{}\label{group___c_e_c___private___defines}\index{CEC\_Private\_Defines@{CEC\_Private\_Defines}}
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___c_e_c___private___defines_ga675324bd8967b75f32554f50210821af}\label{group___c_e_c___private___defines_ga675324bd8967b75f32554f50210821af} 
+\#define {\bfseries CEC\+\_\+\+OFFSET}~(CEC\+\_\+\+BASE -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})
+\item 
+\Hypertarget{group___c_e_c___private___defines_ga8682298330c3b9bae1992e4f1a0af985}\label{group___c_e_c___private___defines_ga8682298330c3b9bae1992e4f1a0af985} 
+\#define {\bfseries CFGR\+\_\+\+OFFSET}~(CEC\+\_\+\+OFFSET + 0x00)
+\item 
+\Hypertarget{group___c_e_c___private___defines_ga321e547b9574b065127c882e09a4f7e7}\label{group___c_e_c___private___defines_ga321e547b9574b065127c882e09a4f7e7} 
+\#define {\bfseries PE\+\_\+\+Bit\+Number}~0x00
+\item 
+\Hypertarget{group___c_e_c___private___defines_ga9d1f044508cda5ad8213bd7bc5c4363d}\label{group___c_e_c___private___defines_ga9d1f044508cda5ad8213bd7bc5c4363d} 
+\#define {\bfseries CFGR\+\_\+\+PE\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (CFGR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (PE\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___c_e_c___private___defines_ga57731312db52f3498312a56e98166fad}\label{group___c_e_c___private___defines_ga57731312db52f3498312a56e98166fad} 
+\#define {\bfseries IE\+\_\+\+Bit\+Number}~0x01
+\item 
+\Hypertarget{group___c_e_c___private___defines_gac7fe35cf912353ca51a56c5f1f25b2fb}\label{group___c_e_c___private___defines_gac7fe35cf912353ca51a56c5f1f25b2fb} 
+\#define {\bfseries CFGR\+\_\+\+IE\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (CFGR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (IE\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___c_e_c___private___defines_ga984cbe73312b6d3d355c5053763d499a}\label{group___c_e_c___private___defines_ga984cbe73312b6d3d355c5053763d499a} 
+\#define {\bfseries CSR\+\_\+\+OFFSET}~(CEC\+\_\+\+OFFSET + 0x10)
+\item 
+\Hypertarget{group___c_e_c___private___defines_ga1a470abab836eba7b451950938708946}\label{group___c_e_c___private___defines_ga1a470abab836eba7b451950938708946} 
+\#define {\bfseries TSOM\+\_\+\+Bit\+Number}~0x00
+\item 
+\Hypertarget{group___c_e_c___private___defines_ga4971cc50b0ead4a493e2a9c03966c826}\label{group___c_e_c___private___defines_ga4971cc50b0ead4a493e2a9c03966c826} 
+\#define {\bfseries CSR\+\_\+\+TSOM\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (CSR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (TSOM\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___c_e_c___private___defines_gac86378eff7728e5cfca5480ab2dbef0b}\label{group___c_e_c___private___defines_gac86378eff7728e5cfca5480ab2dbef0b} 
+\#define {\bfseries TEOM\+\_\+\+Bit\+Number}~0x01
+\item 
+\Hypertarget{group___c_e_c___private___defines_ga9ac493d98ce1f6d82b778ace0f2bc7bb}\label{group___c_e_c___private___defines_ga9ac493d98ce1f6d82b778ace0f2bc7bb} 
+\#define {\bfseries CSR\+\_\+\+TEOM\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (CSR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (TEOM\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___c_e_c___private___defines_gaaedf9b8df17534f5eaf75ec1ca3fbd7a}\label{group___c_e_c___private___defines_gaaedf9b8df17534f5eaf75ec1ca3fbd7a} 
+\#define {\bfseries CFGR\+\_\+\+CLEAR\+\_\+\+Mask}~(uint8\+\_\+t)(0x\+F3)        /\texorpdfstring{$\ast$}{*} CFGR register Mask \texorpdfstring{$\ast$}{*}/
+\item 
+\Hypertarget{group___c_e_c___private___defines_ga2be62bf481cd44de9ab604efe5595ff6}\label{group___c_e_c___private___defines_ga2be62bf481cd44de9ab604efe5595ff6} 
+\#define {\bfseries FLAG\+\_\+\+Mask}~((uint32\+\_\+t)0x00\+FFFFFF) /\texorpdfstring{$\ast$}{*} CEC FLAG mask \texorpdfstring{$\ast$}{*}/
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}

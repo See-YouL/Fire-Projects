@@ -1,0 +1,99 @@
+\doxysubsubsection{GPIO\+\_\+\+Exported\+\_\+\+Types}
+\hypertarget{group___g_p_i_o___exported___types}{}\label{group___g_p_i_o___exported___types}\index{GPIO\_Exported\_Types@{GPIO\_Exported\_Types}}
+\doxysubsubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em GPIO Init structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___exported___types_ga68b2a1f0b05c13978217db5439c7f790}{IS\+\_\+\+GPIO\+\_\+\+ALL\+\_\+\+PERIPH}}(PERIPH)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___exported___types_ga888e1f951df2fe9dbf827528051a3a56}{IS\+\_\+\+GPIO\+\_\+\+SPEED}}(SPEED)
+\item 
+\#define \mbox{\hyperlink{group___g_p_i_o___exported___types_gacc5fde3eef57ec3c558c11d0011d900c}{IS\+\_\+\+GPIO\+\_\+\+MODE}}(MODE)
+\item 
+\Hypertarget{group___g_p_i_o___exported___types_ga6b882caa8ed9857c5c7267959a7818c5}\label{group___g_p_i_o___exported___types_ga6b882caa8ed9857c5c7267959a7818c5} 
+\#define {\bfseries IS\+\_\+\+GPIO\+\_\+\+BIT\+\_\+\+ACTION}(ACTION)~(((ACTION) == Bit\+\_\+\+RESET) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((ACTION) == Bit\+\_\+\+SET))
+\end{DoxyCompactItemize}
+\doxysubsubsubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___g_p_i_o___exported___types_ga062ad92b67b4a1f301c161022cf3ba8e}\label{group___g_p_i_o___exported___types_ga062ad92b67b4a1f301c161022cf3ba8e} 
+enum \mbox{\hyperlink{group___g_p_i_o___exported___types_ga062ad92b67b4a1f301c161022cf3ba8e}{GPIOSpeed\+\_\+\+Type\+Def}} \{ {\bfseries GPIO\+\_\+\+Speed\+\_\+10\+MHz} = 1
+, {\bfseries GPIO\+\_\+\+Speed\+\_\+2\+MHz}
+, {\bfseries GPIO\+\_\+\+Speed\+\_\+50\+MHz}
+ \}
+\begin{DoxyCompactList}\small\item\em Output Maximum frequency selection ~\newline
+ \end{DoxyCompactList}\item 
+\Hypertarget{group___g_p_i_o___exported___types_ga1347339e1c84a196fabbb31205eec5d4}\label{group___g_p_i_o___exported___types_ga1347339e1c84a196fabbb31205eec5d4} 
+enum \mbox{\hyperlink{group___g_p_i_o___exported___types_ga1347339e1c84a196fabbb31205eec5d4}{GPIOMode\+\_\+\+Type\+Def}} \{ \newline
+{\bfseries GPIO\+\_\+\+Mode\+\_\+\+AIN} = 0x0
+, {\bfseries GPIO\+\_\+\+Mode\+\_\+\+IN\+\_\+\+FLOATING} = 0x04
+, {\bfseries GPIO\+\_\+\+Mode\+\_\+\+IPD} = 0x28
+, {\bfseries GPIO\+\_\+\+Mode\+\_\+\+IPU} = 0x48
+, \newline
+{\bfseries GPIO\+\_\+\+Mode\+\_\+\+Out\+\_\+\+OD} = 0x14
+, {\bfseries GPIO\+\_\+\+Mode\+\_\+\+Out\+\_\+\+PP} = 0x10
+, {\bfseries GPIO\+\_\+\+Mode\+\_\+\+AF\+\_\+\+OD} = 0x1C
+, {\bfseries GPIO\+\_\+\+Mode\+\_\+\+AF\+\_\+\+PP} = 0x18
+ \}
+\begin{DoxyCompactList}\small\item\em Configuration Mode enumeration ~\newline
+ \end{DoxyCompactList}\item 
+\Hypertarget{group___g_p_i_o___exported___types_ga176130b21c0e719121470a6042d4cf19}\label{group___g_p_i_o___exported___types_ga176130b21c0e719121470a6042d4cf19} 
+enum \mbox{\hyperlink{group___g_p_i_o___exported___types_ga176130b21c0e719121470a6042d4cf19}{Bit\+Action}} \{ {\bfseries Bit\+\_\+\+RESET} = 0
+, {\bfseries Bit\+\_\+\+SET}
+ \}
+\begin{DoxyCompactList}\small\item\em Bit\+\_\+\+SET and Bit\+\_\+\+RESET enumeration ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___g_p_i_o___exported___types_ga68b2a1f0b05c13978217db5439c7f790}\label{group___g_p_i_o___exported___types_ga68b2a1f0b05c13978217db5439c7f790} 
+\index{GPIO\_Exported\_Types@{GPIO\_Exported\_Types}!IS\_GPIO\_ALL\_PERIPH@{IS\_GPIO\_ALL\_PERIPH}}
+\index{IS\_GPIO\_ALL\_PERIPH@{IS\_GPIO\_ALL\_PERIPH}!GPIO\_Exported\_Types@{GPIO\_Exported\_Types}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_GPIO\_ALL\_PERIPH}{IS\_GPIO\_ALL\_PERIPH}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+GPIO\+\_\+\+ALL\+\_\+\+PERIPH(\begin{DoxyParamCaption}\item[{}]{PERIPH }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((PERIPH)\ ==\ GPIOA)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ GPIOB)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ GPIOC)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ GPIOD)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ GPIOE)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ GPIOF)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PERIPH)\ ==\ GPIOG))}
+
+\end{DoxyCode}
+\Hypertarget{group___g_p_i_o___exported___types_gacc5fde3eef57ec3c558c11d0011d900c}\label{group___g_p_i_o___exported___types_gacc5fde3eef57ec3c558c11d0011d900c} 
+\index{GPIO\_Exported\_Types@{GPIO\_Exported\_Types}!IS\_GPIO\_MODE@{IS\_GPIO\_MODE}}
+\index{IS\_GPIO\_MODE@{IS\_GPIO\_MODE}!GPIO\_Exported\_Types@{GPIO\_Exported\_Types}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_GPIO\_MODE}{IS\_GPIO\_MODE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+GPIO\+\_\+\+MODE(\begin{DoxyParamCaption}\item[{}]{MODE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((MODE)\ ==\ GPIO\_Mode\_AIN)\ ||\ ((MODE)\ ==\ GPIO\_Mode\_IN\_FLOATING)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ GPIO\_Mode\_IPD)\ ||\ ((MODE)\ ==\ GPIO\_Mode\_IPU)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ GPIO\_Mode\_Out\_OD)\ ||\ ((MODE)\ ==\ GPIO\_Mode\_Out\_PP)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ GPIO\_Mode\_AF\_OD)\ ||\ ((MODE)\ ==\ GPIO\_Mode\_AF\_PP))}
+
+\end{DoxyCode}
+\Hypertarget{group___g_p_i_o___exported___types_ga888e1f951df2fe9dbf827528051a3a56}\label{group___g_p_i_o___exported___types_ga888e1f951df2fe9dbf827528051a3a56} 
+\index{GPIO\_Exported\_Types@{GPIO\_Exported\_Types}!IS\_GPIO\_SPEED@{IS\_GPIO\_SPEED}}
+\index{IS\_GPIO\_SPEED@{IS\_GPIO\_SPEED}!GPIO\_Exported\_Types@{GPIO\_Exported\_Types}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_GPIO\_SPEED}{IS\_GPIO\_SPEED}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+GPIO\+\_\+\+SPEED(\begin{DoxyParamCaption}\item[{}]{SPEED }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((SPEED)\ ==\ GPIO\_Speed\_10MHz)\ ||\ ((SPEED)\ ==\ GPIO\_Speed\_2MHz)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SPEED)\ ==\ GPIO\_Speed\_50MHz))}
+
+\end{DoxyCode}

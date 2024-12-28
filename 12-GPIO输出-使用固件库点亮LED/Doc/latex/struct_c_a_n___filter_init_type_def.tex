@@ -1,0 +1,97 @@
+\doxysection{CAN\+\_\+\+Filter\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_c_a_n___filter_init_type_def}{}\label{struct_c_a_n___filter_init_type_def}\index{CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}}
+
+
+CAN filter init structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32f10x\+\_\+can.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_c_a_n___filter_init_type_def_afc109aa8eedced09d296605f2eb871f7}{CAN\+\_\+\+Filter\+Id\+High}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_c_a_n___filter_init_type_def_ab8c56b48ac323e8c7a1b535c79a51f87}{CAN\+\_\+\+Filter\+Id\+Low}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_c_a_n___filter_init_type_def_a6f34539615e6484f266b46aa8f362a91}{CAN\+\_\+\+Filter\+Mask\+Id\+High}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_c_a_n___filter_init_type_def_a0f052daf04b0a481ecfa5c2cc8058089}{CAN\+\_\+\+Filter\+Mask\+Id\+Low}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_c_a_n___filter_init_type_def_a01ba491f12097adcc9f0a3d627628d55}{CAN\+\_\+\+Filter\+FIFOAssignment}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_c_a_n___filter_init_type_def_af94466e1138c2b4fe6a67cf556981193}{CAN\+\_\+\+Filter\+Number}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_c_a_n___filter_init_type_def_a7cfb23c48aad13a058c2619dbc062d8a}{CAN\+\_\+\+Filter\+Mode}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_c_a_n___filter_init_type_def_a9d52661aca538dbfcafdda6f16dddc82}{CAN\+\_\+\+Filter\+Scale}}
+\item 
+Functional\+State \mbox{\hyperlink{struct_c_a_n___filter_init_type_def_a0225afda33b565f358ca75bdaa780074}{CAN\+\_\+\+Filter\+Activation}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+CAN filter init structure definition. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_c_a_n___filter_init_type_def_a0225afda33b565f358ca75bdaa780074}\label{struct_c_a_n___filter_init_type_def_a0225afda33b565f358ca75bdaa780074} 
+\index{CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}!CAN\_FilterActivation@{CAN\_FilterActivation}}
+\index{CAN\_FilterActivation@{CAN\_FilterActivation}!CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CAN\_FilterActivation}{CAN\_FilterActivation}}
+{\footnotesize\ttfamily Functional\+State CAN\+\_\+\+Filter\+Init\+Type\+Def\+::\+CAN\+\_\+\+Filter\+Activation}
+
+Enable or disable the filter. This parameter can be set either to ENABLE or DISABLE. \Hypertarget{struct_c_a_n___filter_init_type_def_a01ba491f12097adcc9f0a3d627628d55}\label{struct_c_a_n___filter_init_type_def_a01ba491f12097adcc9f0a3d627628d55} 
+\index{CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}!CAN\_FilterFIFOAssignment@{CAN\_FilterFIFOAssignment}}
+\index{CAN\_FilterFIFOAssignment@{CAN\_FilterFIFOAssignment}!CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CAN\_FilterFIFOAssignment}{CAN\_FilterFIFOAssignment}}
+{\footnotesize\ttfamily uint16\+\_\+t CAN\+\_\+\+Filter\+Init\+Type\+Def\+::\+CAN\+\_\+\+Filter\+FIFOAssignment}
+
+Specifies the FIFO (0 or 1) which will be assigned to the filter. This parameter can be a value of \doxylink{group___c_a_n__filter___f_i_f_o}{CAN\+\_\+filter\+\_\+\+FIFO} \Hypertarget{struct_c_a_n___filter_init_type_def_afc109aa8eedced09d296605f2eb871f7}\label{struct_c_a_n___filter_init_type_def_afc109aa8eedced09d296605f2eb871f7} 
+\index{CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}!CAN\_FilterIdHigh@{CAN\_FilterIdHigh}}
+\index{CAN\_FilterIdHigh@{CAN\_FilterIdHigh}!CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CAN\_FilterIdHigh}{CAN\_FilterIdHigh}}
+{\footnotesize\ttfamily uint16\+\_\+t CAN\+\_\+\+Filter\+Init\+Type\+Def\+::\+CAN\+\_\+\+Filter\+Id\+High}
+
+Specifies the filter identification number (MSBs for a 32-\/bit configuration, first one for a 16-\/bit configuration). This parameter can be a value between 0x0000 and 0x\+FFFF \Hypertarget{struct_c_a_n___filter_init_type_def_ab8c56b48ac323e8c7a1b535c79a51f87}\label{struct_c_a_n___filter_init_type_def_ab8c56b48ac323e8c7a1b535c79a51f87} 
+\index{CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}!CAN\_FilterIdLow@{CAN\_FilterIdLow}}
+\index{CAN\_FilterIdLow@{CAN\_FilterIdLow}!CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CAN\_FilterIdLow}{CAN\_FilterIdLow}}
+{\footnotesize\ttfamily uint16\+\_\+t CAN\+\_\+\+Filter\+Init\+Type\+Def\+::\+CAN\+\_\+\+Filter\+Id\+Low}
+
+Specifies the filter identification number (LSBs for a 32-\/bit configuration, second one for a 16-\/bit configuration). This parameter can be a value between 0x0000 and 0x\+FFFF \Hypertarget{struct_c_a_n___filter_init_type_def_a6f34539615e6484f266b46aa8f362a91}\label{struct_c_a_n___filter_init_type_def_a6f34539615e6484f266b46aa8f362a91} 
+\index{CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}!CAN\_FilterMaskIdHigh@{CAN\_FilterMaskIdHigh}}
+\index{CAN\_FilterMaskIdHigh@{CAN\_FilterMaskIdHigh}!CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CAN\_FilterMaskIdHigh}{CAN\_FilterMaskIdHigh}}
+{\footnotesize\ttfamily uint16\+\_\+t CAN\+\_\+\+Filter\+Init\+Type\+Def\+::\+CAN\+\_\+\+Filter\+Mask\+Id\+High}
+
+Specifies the filter mask number or identification number, according to the mode (MSBs for a 32-\/bit configuration, first one for a 16-\/bit configuration). This parameter can be a value between 0x0000 and 0x\+FFFF \Hypertarget{struct_c_a_n___filter_init_type_def_a0f052daf04b0a481ecfa5c2cc8058089}\label{struct_c_a_n___filter_init_type_def_a0f052daf04b0a481ecfa5c2cc8058089} 
+\index{CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}!CAN\_FilterMaskIdLow@{CAN\_FilterMaskIdLow}}
+\index{CAN\_FilterMaskIdLow@{CAN\_FilterMaskIdLow}!CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CAN\_FilterMaskIdLow}{CAN\_FilterMaskIdLow}}
+{\footnotesize\ttfamily uint16\+\_\+t CAN\+\_\+\+Filter\+Init\+Type\+Def\+::\+CAN\+\_\+\+Filter\+Mask\+Id\+Low}
+
+Specifies the filter mask number or identification number, according to the mode (LSBs for a 32-\/bit configuration, second one for a 16-\/bit configuration). This parameter can be a value between 0x0000 and 0x\+FFFF \Hypertarget{struct_c_a_n___filter_init_type_def_a7cfb23c48aad13a058c2619dbc062d8a}\label{struct_c_a_n___filter_init_type_def_a7cfb23c48aad13a058c2619dbc062d8a} 
+\index{CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}!CAN\_FilterMode@{CAN\_FilterMode}}
+\index{CAN\_FilterMode@{CAN\_FilterMode}!CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CAN\_FilterMode}{CAN\_FilterMode}}
+{\footnotesize\ttfamily uint8\+\_\+t CAN\+\_\+\+Filter\+Init\+Type\+Def\+::\+CAN\+\_\+\+Filter\+Mode}
+
+Specifies the filter mode to be initialized. This parameter can be a value of \doxylink{group___c_a_n__filter__mode}{CAN\+\_\+filter\+\_\+mode} \Hypertarget{struct_c_a_n___filter_init_type_def_af94466e1138c2b4fe6a67cf556981193}\label{struct_c_a_n___filter_init_type_def_af94466e1138c2b4fe6a67cf556981193} 
+\index{CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}!CAN\_FilterNumber@{CAN\_FilterNumber}}
+\index{CAN\_FilterNumber@{CAN\_FilterNumber}!CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CAN\_FilterNumber}{CAN\_FilterNumber}}
+{\footnotesize\ttfamily uint8\+\_\+t CAN\+\_\+\+Filter\+Init\+Type\+Def\+::\+CAN\+\_\+\+Filter\+Number}
+
+Specifies the filter which will be initialized. It ranges from 0 to 13. \Hypertarget{struct_c_a_n___filter_init_type_def_a9d52661aca538dbfcafdda6f16dddc82}\label{struct_c_a_n___filter_init_type_def_a9d52661aca538dbfcafdda6f16dddc82} 
+\index{CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}!CAN\_FilterScale@{CAN\_FilterScale}}
+\index{CAN\_FilterScale@{CAN\_FilterScale}!CAN\_FilterInitTypeDef@{CAN\_FilterInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CAN\_FilterScale}{CAN\_FilterScale}}
+{\footnotesize\ttfamily uint8\+\_\+t CAN\+\_\+\+Filter\+Init\+Type\+Def\+::\+CAN\+\_\+\+Filter\+Scale}
+
+Specifies the filter scale. This parameter can be a value of \doxylink{group___c_a_n__filter__scale}{CAN\+\_\+filter\+\_\+scale} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/12-\/\+GPIO输出-\/使用固件库点亮\+LED/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/\mbox{\hyperlink{stm32f10x__can_8h}{stm32f10x\+\_\+can.\+h}}\end{DoxyCompactItemize}

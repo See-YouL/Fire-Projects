@@ -1,0 +1,133 @@
+\doxysubsubsection{MISC\+\_\+\+Private\+\_\+\+Functions}
+\hypertarget{group___m_i_s_c___private___functions}{}\label{group___m_i_s_c___private___functions}\index{MISC\_Private\_Functions@{MISC\_Private\_Functions}}
+\doxysubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___m_i_s_c___private___functions_gadfb1f34f803ce54c976643db8c484442}{NVIC\+\_\+\+Priority\+Group\+Config}} (uint32\+\_\+t NVIC\+\_\+\+Priority\+Group)
+\begin{DoxyCompactList}\small\item\em Configures the priority grouping\+: pre-\/emption priority and subpriority. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_i_s_c___private___functions_ga4ab373ed0870c06fca5eb51d639adf41}{NVIC\+\_\+\+Init}} (\mbox{\hyperlink{struct_n_v_i_c___init_type_def}{NVIC\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}NVIC\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the NVIC peripheral according to the specified parameters in the NVIC\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_i_s_c___private___functions_ga1145208ad70edfc2fab19b8b8ef1b1a1}{NVIC\+\_\+\+Set\+Vector\+Table}} (uint32\+\_\+t NVIC\+\_\+\+Vect\+Tab, uint32\+\_\+t Offset)
+\begin{DoxyCompactList}\small\item\em Sets the vector table location and Offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_i_s_c___private___functions_gae21011c5232f5b8f366acbecd12a1d4a}{NVIC\+\_\+\+System\+LPConfig}} (uint8\+\_\+t Low\+Power\+Mode, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Selects the condition for the system to enter low power mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___m_i_s_c___private___functions_ga2777d255bb06ad62bb6372a9db1ff385}{Sys\+Tick\+\_\+\+CLKSource\+Config}} (uint32\+\_\+t Sys\+Tick\+\_\+\+CLKSource)
+\begin{DoxyCompactList}\small\item\em Configures the Sys\+Tick clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsection{Function Documentation}
+\Hypertarget{group___m_i_s_c___private___functions_ga4ab373ed0870c06fca5eb51d639adf41}\label{group___m_i_s_c___private___functions_ga4ab373ed0870c06fca5eb51d639adf41} 
+\index{MISC\_Private\_Functions@{MISC\_Private\_Functions}!NVIC\_Init@{NVIC\_Init}}
+\index{NVIC\_Init@{NVIC\_Init}!MISC\_Private\_Functions@{MISC\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{NVIC\_Init()}{NVIC\_Init()}}
+{\footnotesize\ttfamily void NVIC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_v_i_c___init_type_def}{NVIC\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{NVIC\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Initializes the NVIC peripheral according to the specified parameters in the NVIC\+\_\+\+Init\+Struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NVIC\+\_\+\+Init\+Struct} & pointer to a \doxylink{struct_n_v_i_c___init_type_def}{NVIC\+\_\+\+Init\+Type\+Def} structure that contains the configuration information for the specified NVIC peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___m_i_s_c___private___functions_gadfb1f34f803ce54c976643db8c484442}\label{group___m_i_s_c___private___functions_gadfb1f34f803ce54c976643db8c484442} 
+\index{MISC\_Private\_Functions@{MISC\_Private\_Functions}!NVIC\_PriorityGroupConfig@{NVIC\_PriorityGroupConfig}}
+\index{NVIC\_PriorityGroupConfig@{NVIC\_PriorityGroupConfig}!MISC\_Private\_Functions@{MISC\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{NVIC\_PriorityGroupConfig()}{NVIC\_PriorityGroupConfig()}}
+{\footnotesize\ttfamily void NVIC\+\_\+\+Priority\+Group\+Config (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{NVIC\+\_\+\+Priority\+Group }\end{DoxyParamCaption})}
+
+
+
+Configures the priority grouping\+: pre-\/emption priority and subpriority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NVIC\+\_\+\+Priority\+Group} & specifies the priority grouping bits length. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item NVIC\+\_\+\+Priority\+Group\+\_\+0\+: 0 bits for pre-\/emption priority 4 bits for subpriority \item NVIC\+\_\+\+Priority\+Group\+\_\+1\+: 1 bits for pre-\/emption priority 3 bits for subpriority \item NVIC\+\_\+\+Priority\+Group\+\_\+2\+: 2 bits for pre-\/emption priority 2 bits for subpriority \item NVIC\+\_\+\+Priority\+Group\+\_\+3\+: 3 bits for pre-\/emption priority 1 bits for subpriority \item NVIC\+\_\+\+Priority\+Group\+\_\+4\+: 4 bits for pre-\/emption priority 0 bits for subpriority \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___m_i_s_c___private___functions_ga1145208ad70edfc2fab19b8b8ef1b1a1}\label{group___m_i_s_c___private___functions_ga1145208ad70edfc2fab19b8b8ef1b1a1} 
+\index{MISC\_Private\_Functions@{MISC\_Private\_Functions}!NVIC\_SetVectorTable@{NVIC\_SetVectorTable}}
+\index{NVIC\_SetVectorTable@{NVIC\_SetVectorTable}!MISC\_Private\_Functions@{MISC\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{NVIC\_SetVectorTable()}{NVIC\_SetVectorTable()}}
+{\footnotesize\ttfamily void NVIC\+\_\+\+Set\+Vector\+Table (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{NVIC\+\_\+\+Vect\+Tab,  }\item[{uint32\+\_\+t}]{Offset }\end{DoxyParamCaption})}
+
+
+
+Sets the vector table location and Offset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em NVIC\+\_\+\+Vect\+Tab} & specifies if the vector table is in RAM or FLASH memory. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item NVIC\+\_\+\+Vect\+Tab\+\_\+\+RAM \item NVIC\+\_\+\+Vect\+Tab\+\_\+\+FLASH \end{DoxyItemize}
+\\
+\hline
+{\em Offset} & Vector Table base offset field. This value must be a multiple of 0x200. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___m_i_s_c___private___functions_gae21011c5232f5b8f366acbecd12a1d4a}\label{group___m_i_s_c___private___functions_gae21011c5232f5b8f366acbecd12a1d4a} 
+\index{MISC\_Private\_Functions@{MISC\_Private\_Functions}!NVIC\_SystemLPConfig@{NVIC\_SystemLPConfig}}
+\index{NVIC\_SystemLPConfig@{NVIC\_SystemLPConfig}!MISC\_Private\_Functions@{MISC\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{NVIC\_SystemLPConfig()}{NVIC\_SystemLPConfig()}}
+{\footnotesize\ttfamily void NVIC\+\_\+\+System\+LPConfig (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Low\+Power\+Mode,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Selects the condition for the system to enter low power mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Low\+Power\+Mode} & Specifies the new mode for the system to enter low power mode. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item NVIC\+\_\+\+LP\+\_\+\+SEVONPEND \item NVIC\+\_\+\+LP\+\_\+\+SLEEPDEEP \item NVIC\+\_\+\+LP\+\_\+\+SLEEPONEXIT \end{DoxyItemize}
+\\
+\hline
+{\em New\+State} & new state of LP condition. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___m_i_s_c___private___functions_ga2777d255bb06ad62bb6372a9db1ff385}\label{group___m_i_s_c___private___functions_ga2777d255bb06ad62bb6372a9db1ff385} 
+\index{MISC\_Private\_Functions@{MISC\_Private\_Functions}!SysTick\_CLKSourceConfig@{SysTick\_CLKSourceConfig}}
+\index{SysTick\_CLKSourceConfig@{SysTick\_CLKSourceConfig}!MISC\_Private\_Functions@{MISC\_Private\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{SysTick\_CLKSourceConfig()}{SysTick\_CLKSourceConfig()}}
+{\footnotesize\ttfamily void Sys\+Tick\+\_\+\+CLKSource\+Config (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Sys\+Tick\+\_\+\+CLKSource }\end{DoxyParamCaption})}
+
+
+
+Configures the Sys\+Tick clock source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Sys\+Tick\+\_\+\+CLKSource} & specifies the Sys\+Tick clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item Sys\+Tick\+\_\+\+CLKSource\+\_\+\+HCLK\+\_\+\+Div8\+: AHB clock divided by 8 selected as Sys\+Tick clock source. \item Sys\+Tick\+\_\+\+CLKSource\+\_\+\+HCLK\+: AHB clock selected as Sys\+Tick clock source. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

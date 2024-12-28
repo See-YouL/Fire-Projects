@@ -1,0 +1,37 @@
+\doxysubsubsubsection{CEC\+\_\+interrupts\+\_\+definition}
+\hypertarget{group___c_e_c__interrupts__definition}{}\label{group___c_e_c__interrupts__definition}\index{CEC\_interrupts\_definition@{CEC\_interrupts\_definition}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___c_e_c__interrupts__definition_ga25f97d245f29e04a2d2bbc840389e6b5}\label{group___c_e_c__interrupts__definition_ga25f97d245f29e04a2d2bbc840389e6b5} 
+\#define {\bfseries CEC\+\_\+\+IT\+\_\+\+TERR}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga273caacb035cb2ec64c721fa6c747c35}{CEC\+\_\+\+CSR\+\_\+\+TERR}}
+\item 
+\Hypertarget{group___c_e_c__interrupts__definition_ga12b00fb3989f9ce9f2f7fc0094c0747d}\label{group___c_e_c__interrupts__definition_ga12b00fb3989f9ce9f2f7fc0094c0747d} 
+\#define {\bfseries CEC\+\_\+\+IT\+\_\+\+TBTRF}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga650bba50140fa01d98abe80bf004a9b6}{CEC\+\_\+\+CSR\+\_\+\+TBTRF}}
+\item 
+\Hypertarget{group___c_e_c__interrupts__definition_gac015ebba728a69eeb84be1bc56a58ac0}\label{group___c_e_c__interrupts__definition_gac015ebba728a69eeb84be1bc56a58ac0} 
+\#define {\bfseries CEC\+\_\+\+IT\+\_\+\+RERR}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2e33f1d4724efa45fce87ae2fcba6cff}{CEC\+\_\+\+CSR\+\_\+\+RERR}}
+\item 
+\Hypertarget{group___c_e_c__interrupts__definition_ga42834131bf077a878e84470ae98f1bb4}\label{group___c_e_c__interrupts__definition_ga42834131bf077a878e84470ae98f1bb4} 
+\#define {\bfseries CEC\+\_\+\+IT\+\_\+\+RBTF}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa325807f8f3d4bdf8e989eeef208ca5a}{CEC\+\_\+\+CSR\+\_\+\+RBTF}}
+\item 
+\#define \mbox{\hyperlink{group___c_e_c__interrupts__definition_ga7f553a4a3346c676101d81a024a9cba8}{IS\+\_\+\+CEC\+\_\+\+GET\+\_\+\+IT}}(IT)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___c_e_c__interrupts__definition_ga7f553a4a3346c676101d81a024a9cba8}\label{group___c_e_c__interrupts__definition_ga7f553a4a3346c676101d81a024a9cba8} 
+\index{CEC\_interrupts\_definition@{CEC\_interrupts\_definition}!IS\_CEC\_GET\_IT@{IS\_CEC\_GET\_IT}}
+\index{IS\_CEC\_GET\_IT@{IS\_CEC\_GET\_IT}!CEC\_interrupts\_definition@{CEC\_interrupts\_definition}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_CEC\_GET\_IT}{IS\_CEC\_GET\_IT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+CEC\+\_\+\+GET\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{IT }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((IT)\ ==\ CEC\_IT\_TERR)\ ||\ ((IT)\ ==\ CEC\_IT\_TBTRF)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ CEC\_IT\_RERR)\ ||\ ((IT)\ ==\ CEC\_IT\_RBTF))}
+
+\end{DoxyCode}

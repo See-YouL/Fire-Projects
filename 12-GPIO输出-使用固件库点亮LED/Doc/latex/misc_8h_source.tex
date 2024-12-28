@@ -1,0 +1,70 @@
+\doxysection{misc.\+h}
+\hypertarget{misc_8h_source}{}\label{misc_8h_source}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/inc/misc.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/inc/misc.h}}
+\mbox{\hyperlink{misc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifndef\ \_\_MISC\_H}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \_\_MISC\_H}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00028\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f10x_8h}{stm32f10x.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ uint8\_t\ \mbox{\hyperlink{struct_n_v_i_c___init_type_def_afa04cf6e559bb690bdd9fcb7e3d93dcf}{NVIC\_IRQChannel}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ uint8\_t\ \mbox{\hyperlink{struct_n_v_i_c___init_type_def_aa3fe262c30188404a6e31f922c5ae513}{NVIC\_IRQChannelPreemptionPriority}};\ \ }
+\DoxyCodeLine{00061\ \ \ uint8\_t\ \mbox{\hyperlink{struct_n_v_i_c___init_type_def_aecc22a002244e3f1f9448dbe46c1db4b}{NVIC\_IRQChannelSubPriority}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ FunctionalState\ \mbox{\hyperlink{struct_n_v_i_c___init_type_def_acb23fabb995fa4980c768825f12f5815}{NVIC\_IRQChannelCmd}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \}\ \mbox{\hyperlink{struct_n_v_i_c___init_type_def}{NVIC\_InitTypeDef}};}
+\DoxyCodeLine{00069\ \ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ NVIC\_VectTab\_RAM\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x20000000)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ NVIC\_VectTab\_FLASH\ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)0x08000000)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ IS\_NVIC\_VECTTAB(VECTTAB)\ (((VECTTAB)\ ==\ NVIC\_VectTab\_RAM)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VECTTAB)\ ==\ NVIC\_VectTab\_FLASH))}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ NVIC\_LP\_SEVONPEND\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x10)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ NVIC\_LP\_SLEEPDEEP\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x04)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ NVIC\_LP\_SLEEPONEXIT\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ IS\_NVIC\_LP(LP)\ (((LP)\ ==\ NVIC\_LP\_SEVONPEND)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LP)\ ==\ NVIC\_LP\_SLEEPDEEP)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LP)\ ==\ NVIC\_LP\_SLEEPONEXIT))}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ NVIC\_PriorityGroup\_0\ \ \ \ \ \ \ \ \ ((uint32\_t)0x700)\ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ NVIC\_PriorityGroup\_1\ \ \ \ \ \ \ \ \ ((uint32\_t)0x600)\ }}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ NVIC\_PriorityGroup\_2\ \ \ \ \ \ \ \ \ ((uint32\_t)0x500)\ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ NVIC\_PriorityGroup\_3\ \ \ \ \ \ \ \ \ ((uint32\_t)0x400)\ }}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ NVIC\_PriorityGroup\_4\ \ \ \ \ \ \ \ \ ((uint32\_t)0x300)\ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ IS\_NVIC\_PRIORITY\_GROUP(GROUP)\ (((GROUP)\ ==\ NVIC\_PriorityGroup\_0)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((GROUP)\ ==\ NVIC\_PriorityGroup\_1)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((GROUP)\ ==\ NVIC\_PriorityGroup\_2)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((GROUP)\ ==\ NVIC\_PriorityGroup\_3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((GROUP)\ ==\ NVIC\_PriorityGroup\_4))}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ IS\_NVIC\_PREEMPTION\_PRIORITY(PRIORITY)\ \ ((PRIORITY)\ <\ 0x10)}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ IS\_NVIC\_SUB\_PRIORITY(PRIORITY)\ \ ((PRIORITY)\ <\ 0x10)}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ IS\_NVIC\_OFFSET(OFFSET)\ \ ((OFFSET)\ <\ 0x000FFFFF)}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ SysTick\_CLKSource\_HCLK\_Div8\ \ \ \ ((uint32\_t)0xFFFFFFFB)}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ SysTick\_CLKSource\_HCLK\ \ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ IS\_SYSTICK\_CLK\_SOURCE(SOURCE)\ (((SOURCE)\ ==\ SysTick\_CLKSource\_HCLK)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ SysTick\_CLKSource\_HCLK\_Div8))}}
+\DoxyCodeLine{00196\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___m_i_s_c___exported___functions_gadfb1f34f803ce54c976643db8c484442}{NVIC\_PriorityGroupConfig}}(uint32\_t\ NVIC\_PriorityGroup);}
+\DoxyCodeLine{00197\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___m_i_s_c___exported___functions_ga4ab373ed0870c06fca5eb51d639adf41}{NVIC\_Init}}(\mbox{\hyperlink{struct_n_v_i_c___init_type_def}{NVIC\_InitTypeDef}}*\ NVIC\_InitStruct);}
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___m_i_s_c___exported___functions_ga1145208ad70edfc2fab19b8b8ef1b1a1}{NVIC\_SetVectorTable}}(uint32\_t\ NVIC\_VectTab,\ uint32\_t\ Offset);}
+\DoxyCodeLine{00199\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___m_i_s_c___exported___functions_gae21011c5232f5b8f366acbecd12a1d4a}{NVIC\_SystemLPConfig}}(uint8\_t\ LowPowerMode,\ FunctionalState\ NewState);}
+\DoxyCodeLine{00200\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___m_i_s_c___exported___functions_ga2777d255bb06ad62bb6372a9db1ff385}{SysTick\_CLKSourceConfig}}(uint32\_t\ SysTick\_CLKSource);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00203\ \}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_MISC\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00220\ \textcolor{comment}{/*******************\ (C)\ COPYRIGHT\ 2011\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

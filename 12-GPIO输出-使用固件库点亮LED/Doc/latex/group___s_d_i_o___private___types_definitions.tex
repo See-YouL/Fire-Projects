@@ -1,0 +1,95 @@
+\doxysubsubsection{SDIO\+\_\+\+Private\+\_\+\+Types\+Definitions}
+\hypertarget{group___s_d_i_o___private___types_definitions}{}\label{group___s_d_i_o___private___types_definitions}\index{SDIO\_Private\_TypesDefinitions@{SDIO\_Private\_TypesDefinitions}}
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gabf07aced03df5f46d57cea1d4f56d1e3}\label{group___s_d_i_o___private___types_definitions_gabf07aced03df5f46d57cea1d4f56d1e3} 
+\#define {\bfseries SDIO\+\_\+\+OFFSET}~(SDIO\+\_\+\+BASE -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gac5d642be874338519fdec175204ca8ed}\label{group___s_d_i_o___private___types_definitions_gac5d642be874338519fdec175204ca8ed} 
+\#define {\bfseries CLKCR\+\_\+\+OFFSET}~(SDIO\+\_\+\+OFFSET + 0x04)
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga6ad1da47f9d84c54eb620b9231ebec86}\label{group___s_d_i_o___private___types_definitions_ga6ad1da47f9d84c54eb620b9231ebec86} 
+\#define {\bfseries CLKEN\+\_\+\+Bit\+Number}~0x08
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gabfb5772b9b734972b576309f7ca8bf92}\label{group___s_d_i_o___private___types_definitions_gabfb5772b9b734972b576309f7ca8bf92} 
+\#define {\bfseries CLKCR\+\_\+\+CLKEN\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (CLKCR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (CLKEN\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e}\label{group___s_d_i_o___private___types_definitions_gaf12d26702ce7a88d2a3dae87f000b75e} 
+\#define {\bfseries CMD\+\_\+\+OFFSET}~(SDIO\+\_\+\+OFFSET + 0x0C)
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gaf88f03a42d76974b55dfb8bda65ade97}\label{group___s_d_i_o___private___types_definitions_gaf88f03a42d76974b55dfb8bda65ade97} 
+\#define {\bfseries SDIOSUSPEND\+\_\+\+Bit\+Number}~0x0B
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga931e48aa282e2a937308f57f807e0781}\label{group___s_d_i_o___private___types_definitions_ga931e48aa282e2a937308f57f807e0781} 
+\#define {\bfseries CMD\+\_\+\+SDIOSUSPEND\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (CMD\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (SDIOSUSPEND\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga1d1112c7b804791a0fffd8b317085aeb}\label{group___s_d_i_o___private___types_definitions_ga1d1112c7b804791a0fffd8b317085aeb} 
+\#define {\bfseries ENCMDCOMPL\+\_\+\+Bit\+Number}~0x0C
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gade06098d1616639ce5f1b70675280b7c}\label{group___s_d_i_o___private___types_definitions_gade06098d1616639ce5f1b70675280b7c} 
+\#define {\bfseries CMD\+\_\+\+ENCMDCOMPL\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (CMD\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (ENCMDCOMPL\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gab6d83a7ccd4a0d9ea9a09fec263fb25f}\label{group___s_d_i_o___private___types_definitions_gab6d83a7ccd4a0d9ea9a09fec263fb25f} 
+\#define {\bfseries NIEN\+\_\+\+Bit\+Number}~0x0D
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga08623f1d053677de8b20a6f5f5090edd}\label{group___s_d_i_o___private___types_definitions_ga08623f1d053677de8b20a6f5f5090edd} 
+\#define {\bfseries CMD\+\_\+\+NIEN\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (CMD\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (NIEN\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gabd4fd3bb700b879f843ccc867db1832e}\label{group___s_d_i_o___private___types_definitions_gabd4fd3bb700b879f843ccc867db1832e} 
+\#define {\bfseries ATACMD\+\_\+\+Bit\+Number}~0x0E
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gabb7e537f931b6fdd3b49e826f2e19d7c}\label{group___s_d_i_o___private___types_definitions_gabb7e537f931b6fdd3b49e826f2e19d7c} 
+\#define {\bfseries CMD\+\_\+\+ATACMD\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (CMD\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (ATACMD\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240}\label{group___s_d_i_o___private___types_definitions_ga948c1382c4cfd3af3e406c4d0cdd4240} 
+\#define {\bfseries DCTRL\+\_\+\+OFFSET}~(SDIO\+\_\+\+OFFSET + 0x2C)
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gab2af311e327213503f0dbf3d013b7944}\label{group___s_d_i_o___private___types_definitions_gab2af311e327213503f0dbf3d013b7944} 
+\#define {\bfseries DMAEN\+\_\+\+Bit\+Number}~0x03
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga43f7336d4f955c6cf1f676ccbc043fe9}\label{group___s_d_i_o___private___types_definitions_ga43f7336d4f955c6cf1f676ccbc043fe9} 
+\#define {\bfseries DCTRL\+\_\+\+DMAEN\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (DCTRL\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (DMAEN\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga773045c51d3e8daee0c181517c44a2df}\label{group___s_d_i_o___private___types_definitions_ga773045c51d3e8daee0c181517c44a2df} 
+\#define {\bfseries RWSTART\+\_\+\+Bit\+Number}~0x08
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gac776c39dfac0e1ed007217133e1145c3}\label{group___s_d_i_o___private___types_definitions_gac776c39dfac0e1ed007217133e1145c3} 
+\#define {\bfseries DCTRL\+\_\+\+RWSTART\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (DCTRL\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (RWSTART\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gae8c0654ad5cba23281bcfa77ef19b9cf}\label{group___s_d_i_o___private___types_definitions_gae8c0654ad5cba23281bcfa77ef19b9cf} 
+\#define {\bfseries RWSTOP\+\_\+\+Bit\+Number}~0x09
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga678da1db835676b0fb1976cf3408e2d1}\label{group___s_d_i_o___private___types_definitions_ga678da1db835676b0fb1976cf3408e2d1} 
+\#define {\bfseries DCTRL\+\_\+\+RWSTOP\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (DCTRL\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (RWSTOP\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gad7b722671f65e79d1be2899b643278ad}\label{group___s_d_i_o___private___types_definitions_gad7b722671f65e79d1be2899b643278ad} 
+\#define {\bfseries RWMOD\+\_\+\+Bit\+Number}~0x0A
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gad34bfe8650534ce24320ae83886c91e3}\label{group___s_d_i_o___private___types_definitions_gad34bfe8650534ce24320ae83886c91e3} 
+\#define {\bfseries DCTRL\+\_\+\+RWMOD\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (DCTRL\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (RWMOD\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga37f3e1612e0dae8160be978ebfa54301}\label{group___s_d_i_o___private___types_definitions_ga37f3e1612e0dae8160be978ebfa54301} 
+\#define {\bfseries SDIOEN\+\_\+\+Bit\+Number}~0x0B
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga894f7da62b89ddd9f4b79d066056a3c7}\label{group___s_d_i_o___private___types_definitions_ga894f7da62b89ddd9f4b79d066056a3c7} 
+\#define {\bfseries DCTRL\+\_\+\+SDIOEN\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (DCTRL\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (SDIOEN\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_gac8d10dd1e49ca9e8a6954146654e9a01}\label{group___s_d_i_o___private___types_definitions_gac8d10dd1e49ca9e8a6954146654e9a01} 
+\#define {\bfseries CLKCR\+\_\+\+CLEAR\+\_\+\+MASK}~((uint32\+\_\+t)0x\+FFFF8100)
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga7e6ec7be68d0fbb8fb4e3725cca9a05c}\label{group___s_d_i_o___private___types_definitions_ga7e6ec7be68d0fbb8fb4e3725cca9a05c} 
+\#define {\bfseries PWR\+\_\+\+PWRCTRL\+\_\+\+MASK}~((uint32\+\_\+t)0x\+FFFFFFFC)
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga9e9fc7810b95805aeeb760bbdd87fa9b}\label{group___s_d_i_o___private___types_definitions_ga9e9fc7810b95805aeeb760bbdd87fa9b} 
+\#define {\bfseries DCTRL\+\_\+\+CLEAR\+\_\+\+MASK}~((uint32\+\_\+t)0x\+FFFFFF08)
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga2325d77090e44221b07f8fba5bc9217e}\label{group___s_d_i_o___private___types_definitions_ga2325d77090e44221b07f8fba5bc9217e} 
+\#define {\bfseries CMD\+\_\+\+CLEAR\+\_\+\+MASK}~((uint32\+\_\+t)0x\+FFFFF800)
+\item 
+\Hypertarget{group___s_d_i_o___private___types_definitions_ga4285ce49b005e3d03ddf9fdc491c4d70}\label{group___s_d_i_o___private___types_definitions_ga4285ce49b005e3d03ddf9fdc491c4d70} 
+\#define {\bfseries SDIO\+\_\+\+RESP\+\_\+\+ADDR}~((uint32\+\_\+t)(SDIO\+\_\+\+BASE + 0x14))
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}

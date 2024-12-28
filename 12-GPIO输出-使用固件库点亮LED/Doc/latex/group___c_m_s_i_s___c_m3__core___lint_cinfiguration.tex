@@ -1,0 +1,52 @@
+\doxysection{CMSIS CM3 Core Lint Configuration}
+\hypertarget{group___c_m_s_i_s___c_m3__core___lint_cinfiguration}{}\label{group___c_m_s_i_s___c_m3__core___lint_cinfiguration}\index{CMSIS CM3 Core Lint Configuration@{CMSIS CM3 Core Lint Configuration}}
+List of Lint messages which will be suppressed and not shown\+:
+\begin{DoxyItemize}
+\item Error 10\+: ~\newline
+ register uint32\+\_\+t \+\_\+\+\_\+reg\+Base\+Pri \+\_\+\+\_\+asm("{}basepri"{}); ~\newline
+ Error 10\+: Expecting \textquotesingle{};\textquotesingle{}
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Error 530\+: ~\newline
+ return(\+\_\+\+\_\+reg\+Base\+Pri); ~\newline
+ Warning 530\+: Symbol \textquotesingle{}\+\_\+\+\_\+reg\+Base\+Pri\textquotesingle{} (line 264) not initialized
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Error 550\+: ~\newline
+ \+\_\+\+\_\+reg\+Base\+Pri = (base\+Pri \& 0x1ff); ~\newline
+ Warning 550\+: Symbol \textquotesingle{}\+\_\+\+\_\+reg\+Base\+Pri\textquotesingle{} (line 271) not accessed
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Error 754\+: ~\newline
+ uint32\+\_\+t RESERVED0\mbox{[}24\mbox{]}; ~\newline
+ Info 754\+: local structure member \textquotesingle{}\texorpdfstring{$<$}{<}some, not used in the HAL\texorpdfstring{$>$}{>}\textquotesingle{} (line 109, file ./cm3\+\_\+core.h) not referenced
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Error 750\+: ~\newline
+ \#define {\bfseries{CM3\+\_\+\+CORE\+\_\+H}} ~\newline
+ Info 750\+: local macro \textquotesingle{}{\bfseries{CM3\+\_\+\+CORE\+\_\+H}}\textquotesingle{} (line 43, file./cm3\+\_\+core.h) not referenced
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Error 528\+: ~\newline
+ static \+\_\+\+\_\+\+INLINE void NVIC\+\_\+\+Disable\+IRQ(uint32\+\_\+t IRQn) ~\newline
+ Warning 528\+: Symbol \textquotesingle{}NVIC\+\_\+\+Disable\+IRQ(unsigned int)\textquotesingle{} (line 419, file ./cm3\+\_\+core.h) not referenced
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item Error 751\+: ~\newline
+ \} \doxylink{struct_interrupt_type___type}{Interrupt\+Type\+\_\+\+Type}; ~\newline
+ Info 751\+: local typedef \textquotesingle{}\doxylink{struct_interrupt_type___type}{Interrupt\+Type\+\_\+\+Type}\textquotesingle{} (line 170, file ./cm3\+\_\+core.h) not referenced
+\end{DoxyItemize}
+
+Note\+: To re-\/enable a Message, insert a space before \textquotesingle{}lint\textquotesingle{} \texorpdfstring{$\ast$}{*} 

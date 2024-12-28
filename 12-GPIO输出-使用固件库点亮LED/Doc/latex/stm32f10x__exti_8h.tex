@@ -1,0 +1,120 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/12-\/\+GPIO输出-\/使用固件库点亮\+LED/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/stm32f10x\+\_\+exti.h File Reference}
+\hypertarget{stm32f10x__exti_8h}{}\label{stm32f10x__exti_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_exti.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_exti.h}}
+
+
+This file contains all the functions prototypes for the EXTI firmware library.  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_e_x_t_i___init_type_def}{EXTI\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em EXTI Init Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries IS\+\_\+\+EXTI\+\_\+\+MODE}(MODE)~(((MODE) == EXTI\+\_\+\+Mode\+\_\+\+Interrupt) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((MODE) == EXTI\+\_\+\+Mode\+\_\+\+Event))
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___exported___types_gaee95ec6288944a6245696896604e509e}{IS\+\_\+\+EXTI\+\_\+\+TRIGGER}}(TRIGGER)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_gac2a65680200dd5f4f7eab29cd4091a75}{EXTI\+\_\+\+Line0}}~((uint32\+\_\+t)0x00001)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_gae7c6ab2a0880ce3810641ee0585104cd}{EXTI\+\_\+\+Line1}}~((uint32\+\_\+t)0x00002)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_gaec4189bb2709c8c15a0339d1b0b9865a}{EXTI\+\_\+\+Line2}}~((uint32\+\_\+t)0x00004)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_gadea3ef6ab7e8bacc686689de8711b98c}{EXTI\+\_\+\+Line3}}~((uint32\+\_\+t)0x00008)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_gab33b1fe19306e9e60f8f8d0928b800be}{EXTI\+\_\+\+Line4}}~((uint32\+\_\+t)0x00010)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_ga6b4c6292e3abd521cab2bf99d37a15c6}{EXTI\+\_\+\+Line5}}~((uint32\+\_\+t)0x00020)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_ga97a5145d1d2612dd53bdd9db3d366873}{EXTI\+\_\+\+Line6}}~((uint32\+\_\+t)0x00040)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_ga3b7155d54a4a98394b599718901ccbe5}{EXTI\+\_\+\+Line7}}~((uint32\+\_\+t)0x00080)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_gacd51e087a088c3315049394cddf79e88}{EXTI\+\_\+\+Line8}}~((uint32\+\_\+t)0x00100)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_ga340ca6bb77b7a2d7747c78e7d3370360}{EXTI\+\_\+\+Line9}}~((uint32\+\_\+t)0x00200)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_gaefb90b266f5fc1571ed4606bbff1f1d7}{EXTI\+\_\+\+Line10}}~((uint32\+\_\+t)0x00400)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_ga6157b34c53e9b5cb8ee0d7ac3f5ba292}{EXTI\+\_\+\+Line11}}~((uint32\+\_\+t)0x00800)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_gab73a0a31f1814118955099b9dd3bdfef}{EXTI\+\_\+\+Line12}}~((uint32\+\_\+t)0x01000)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_gae382388ac34b78917a7bd06562e35c42}{EXTI\+\_\+\+Line13}}~((uint32\+\_\+t)0x02000)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_ga7b3821ad1b7a00b49c27075688f48101}{EXTI\+\_\+\+Line14}}~((uint32\+\_\+t)0x04000)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_gafc5ea85d1fc095a855fde8977a338c4c}{EXTI\+\_\+\+Line15}}~((uint32\+\_\+t)0x08000)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_ga21326db7db8ca614c746b7f52dc45ead}{EXTI\+\_\+\+Line16}}~((uint32\+\_\+t)0x10000)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_ga3e0fc18bc0722adc09605e3093b24c6a}{EXTI\+\_\+\+Line17}}~((uint32\+\_\+t)0x20000)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_ga6cdf346a3e7a3c8dbb036aca6741207c}{EXTI\+\_\+\+Line18}}~((uint32\+\_\+t)0x40000)
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_ga49ac0744621f88d432d85838483ad1de}{EXTI\+\_\+\+Line19}}~((uint32\+\_\+t)0x80000)
+\item 
+\#define {\bfseries IS\+\_\+\+EXTI\+\_\+\+LINE}(LINE)~((((LINE) \& (uint32\+\_\+t)0x\+FFF00000) == 0x00) \&\& ((LINE) != (uint16\+\_\+t)0x00))
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___lines_ga77c85c7b8426c6cfe91b4f5a2c58ecda}{IS\+\_\+\+GET\+\_\+\+EXTI\+\_\+\+LINE}}(LINE)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___e_x_t_i___exported___types_gad5e69af98dc0dfdf64417adc1cf57929}\label{group___e_x_t_i___exported___types_gad5e69af98dc0dfdf64417adc1cf57929} 
+enum \mbox{\hyperlink{group___e_x_t_i___exported___types_gad5e69af98dc0dfdf64417adc1cf57929}{EXTIMode\+\_\+\+Type\+Def}} \{ {\bfseries EXTI\+\_\+\+Mode\+\_\+\+Interrupt} = 0x00
+, {\bfseries EXTI\+\_\+\+Mode\+\_\+\+Event} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em EXTI mode enumeration ~\newline
+ \end{DoxyCompactList}\item 
+\Hypertarget{group___e_x_t_i___exported___types_ga9da190f5425d1b421a06bced8cc48e9b}\label{group___e_x_t_i___exported___types_ga9da190f5425d1b421a06bced8cc48e9b} 
+enum \mbox{\hyperlink{group___e_x_t_i___exported___types_ga9da190f5425d1b421a06bced8cc48e9b}{EXTITrigger\+\_\+\+Type\+Def}} \{ {\bfseries EXTI\+\_\+\+Trigger\+\_\+\+Rising} = 0x08
+, {\bfseries EXTI\+\_\+\+Trigger\+\_\+\+Falling} = 0x0C
+, {\bfseries EXTI\+\_\+\+Trigger\+\_\+\+Rising\+\_\+\+Falling} = 0x10
+ \}
+\begin{DoxyCompactList}\small\item\em EXTI Trigger enumeration ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___e_x_t_i___exported___functions_ga07072e339cb9ecb9cd9d4b94afc9f317}{EXTI\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the EXTI peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___e_x_t_i___exported___functions_ga8c9ce6352a3a2dfc8fc9287cb24c6501}{EXTI\+\_\+\+Init}} (\mbox{\hyperlink{struct_e_x_t_i___init_type_def}{EXTI\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}EXTI\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the EXTI peripheral according to the specified parameters in the EXTI\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___e_x_t_i___exported___functions_ga86b9e662d18a2f829999cfb26aa7ca20}{EXTI\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_e_x_t_i___init_type_def}{EXTI\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}EXTI\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each EXTI\+\_\+\+Init\+Struct member with its reset value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___e_x_t_i___exported___functions_ga897e8ea59f40a19e047fb9994876fc9b}{EXTI\+\_\+\+Generate\+SWInterrupt}} (uint32\+\_\+t EXTI\+\_\+\+Line)
+\begin{DoxyCompactList}\small\item\em Generates a Software interrupt. \end{DoxyCompactList}\item 
+Flag\+Status \mbox{\hyperlink{group___e_x_t_i___exported___functions_ga0ce06e6b312592df149800d63218cffa}{EXTI\+\_\+\+Get\+Flag\+Status}} (uint32\+\_\+t EXTI\+\_\+\+Line)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified EXTI line flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___e_x_t_i___exported___functions_ga8e07aaaa286dea4803605d5968850a92}{EXTI\+\_\+\+Clear\+Flag}} (uint32\+\_\+t EXTI\+\_\+\+Line)
+\begin{DoxyCompactList}\small\item\em Clears the EXTI\textquotesingle{}s line pending flags. \end{DoxyCompactList}\item 
+ITStatus \mbox{\hyperlink{group___e_x_t_i___exported___functions_gaf7b51519062ae42fd27ee689cab364aa}{EXTI\+\_\+\+Get\+ITStatus}} (uint32\+\_\+t EXTI\+\_\+\+Line)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified EXTI line is asserted or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___e_x_t_i___exported___functions_ga3652a7e682728b310c124e7e974d1468}{EXTI\+\_\+\+Clear\+ITPending\+Bit}} (uint32\+\_\+t EXTI\+\_\+\+Line)
+\begin{DoxyCompactList}\small\item\em Clears the EXTI\textquotesingle{}s line pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the EXTI firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

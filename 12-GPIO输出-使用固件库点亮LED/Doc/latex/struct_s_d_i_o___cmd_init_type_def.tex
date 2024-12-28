@@ -1,0 +1,53 @@
+\doxysection{SDIO\+\_\+\+Cmd\+Init\+Type\+Def Struct Reference}
+\hypertarget{struct_s_d_i_o___cmd_init_type_def}{}\label{struct_s_d_i_o___cmd_init_type_def}\index{SDIO\_CmdInitTypeDef@{SDIO\_CmdInitTypeDef}}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def_a37dfc4d7191ec10cffdb05ecf58d4807}{SDIO\+\_\+\+Argument}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def_ab5e1df1f0e8d48a308edfb59a6f80fb4}{SDIO\+\_\+\+Cmd\+Index}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def_aecb203e21321126d5f05c34787cacfd2}{SDIO\+\_\+\+Response}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def_a582258554233ff8550bd04d2d790c67c}{SDIO\+\_\+\+Wait}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_i_o___cmd_init_type_def_ab0e869ae285cc132478dd743c28cd8e2}{SDIO\+\_\+\+CPSM}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_s_d_i_o___cmd_init_type_def_a37dfc4d7191ec10cffdb05ecf58d4807}\label{struct_s_d_i_o___cmd_init_type_def_a37dfc4d7191ec10cffdb05ecf58d4807} 
+\index{SDIO\_CmdInitTypeDef@{SDIO\_CmdInitTypeDef}!SDIO\_Argument@{SDIO\_Argument}}
+\index{SDIO\_Argument@{SDIO\_Argument}!SDIO\_CmdInitTypeDef@{SDIO\_CmdInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{SDIO\_Argument}{SDIO\_Argument}}
+{\footnotesize\ttfamily uint32\+\_\+t SDIO\+\_\+\+Cmd\+Init\+Type\+Def\+::\+SDIO\+\_\+\+Argument}
+
+Specifies the SDIO command argument which is sent to a card as part of a command message. If a command contains an argument, it must be loaded into this register before writing the command to the command register \Hypertarget{struct_s_d_i_o___cmd_init_type_def_ab5e1df1f0e8d48a308edfb59a6f80fb4}\label{struct_s_d_i_o___cmd_init_type_def_ab5e1df1f0e8d48a308edfb59a6f80fb4} 
+\index{SDIO\_CmdInitTypeDef@{SDIO\_CmdInitTypeDef}!SDIO\_CmdIndex@{SDIO\_CmdIndex}}
+\index{SDIO\_CmdIndex@{SDIO\_CmdIndex}!SDIO\_CmdInitTypeDef@{SDIO\_CmdInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{SDIO\_CmdIndex}{SDIO\_CmdIndex}}
+{\footnotesize\ttfamily uint32\+\_\+t SDIO\+\_\+\+Cmd\+Init\+Type\+Def\+::\+SDIO\+\_\+\+Cmd\+Index}
+
+Specifies the SDIO command index. It must be lower than 0x40. \Hypertarget{struct_s_d_i_o___cmd_init_type_def_ab0e869ae285cc132478dd743c28cd8e2}\label{struct_s_d_i_o___cmd_init_type_def_ab0e869ae285cc132478dd743c28cd8e2} 
+\index{SDIO\_CmdInitTypeDef@{SDIO\_CmdInitTypeDef}!SDIO\_CPSM@{SDIO\_CPSM}}
+\index{SDIO\_CPSM@{SDIO\_CPSM}!SDIO\_CmdInitTypeDef@{SDIO\_CmdInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{SDIO\_CPSM}{SDIO\_CPSM}}
+{\footnotesize\ttfamily uint32\+\_\+t SDIO\+\_\+\+Cmd\+Init\+Type\+Def\+::\+SDIO\+\_\+\+CPSM}
+
+Specifies whether SDIO Command path state machine (CPSM) is enabled or disabled. This parameter can be a value of \doxylink{group___s_d_i_o___c_p_s_m___state}{SDIO\+\_\+\+CPSM\+\_\+\+State} \Hypertarget{struct_s_d_i_o___cmd_init_type_def_aecb203e21321126d5f05c34787cacfd2}\label{struct_s_d_i_o___cmd_init_type_def_aecb203e21321126d5f05c34787cacfd2} 
+\index{SDIO\_CmdInitTypeDef@{SDIO\_CmdInitTypeDef}!SDIO\_Response@{SDIO\_Response}}
+\index{SDIO\_Response@{SDIO\_Response}!SDIO\_CmdInitTypeDef@{SDIO\_CmdInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{SDIO\_Response}{SDIO\_Response}}
+{\footnotesize\ttfamily uint32\+\_\+t SDIO\+\_\+\+Cmd\+Init\+Type\+Def\+::\+SDIO\+\_\+\+Response}
+
+Specifies the SDIO response type. This parameter can be a value of \doxylink{group___s_d_i_o___response___type}{SDIO\+\_\+\+Response\+\_\+\+Type} \Hypertarget{struct_s_d_i_o___cmd_init_type_def_a582258554233ff8550bd04d2d790c67c}\label{struct_s_d_i_o___cmd_init_type_def_a582258554233ff8550bd04d2d790c67c} 
+\index{SDIO\_CmdInitTypeDef@{SDIO\_CmdInitTypeDef}!SDIO\_Wait@{SDIO\_Wait}}
+\index{SDIO\_Wait@{SDIO\_Wait}!SDIO\_CmdInitTypeDef@{SDIO\_CmdInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{SDIO\_Wait}{SDIO\_Wait}}
+{\footnotesize\ttfamily uint32\+\_\+t SDIO\+\_\+\+Cmd\+Init\+Type\+Def\+::\+SDIO\+\_\+\+Wait}
+
+Specifies whether SDIO wait-\/for-\/interrupt request is enabled or disabled. This parameter can be a value of \doxylink{group___s_d_i_o___wait___interrupt___state}{SDIO\+\_\+\+Wait\+\_\+\+Interrupt\+\_\+\+State} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/12-\/\+GPIO输出-\/使用固件库点亮\+LED/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/\mbox{\hyperlink{stm32f10x__sdio_8h}{stm32f10x\+\_\+sdio.\+h}}\end{DoxyCompactItemize}

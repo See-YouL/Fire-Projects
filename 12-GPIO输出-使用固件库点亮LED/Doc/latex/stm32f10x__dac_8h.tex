@@ -1,0 +1,173 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/12-\/\+GPIO输出-\/使用固件库点亮\+LED/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/stm32f10x\+\_\+dac.h File Reference}
+\hypertarget{stm32f10x__dac_8h}{}\label{stm32f10x__dac_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_dac.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_dac.h}}
+
+
+This file contains all the functions prototypes for the DAC firmware library.  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_d_a_c___init_type_def}{DAC\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em DAC Init structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__trigger__selection_ga7849138e043267668d755390d923e4ba}{DAC\+\_\+\+Trigger\+\_\+\+None}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__trigger__selection_ga083307783678a2f1d3066db57dc84cfe}{DAC\+\_\+\+Trigger\+\_\+\+T6\+\_\+\+TRGO}}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__trigger__selection_ga756700c6621eadb807e21a16966580a0}{DAC\+\_\+\+Trigger\+\_\+\+T8\+\_\+\+TRGO}}~((uint32\+\_\+t)0x0000000C)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__trigger__selection_ga82cbaedc35164c8b9fe0be2faec9b909}{DAC\+\_\+\+Trigger\+\_\+\+T3\+\_\+\+TRGO}}~((uint32\+\_\+t)0x0000000C)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__trigger__selection_ga9b92d497746be54af46ae4e9c1fc4a6f}{DAC\+\_\+\+Trigger\+\_\+\+T7\+\_\+\+TRGO}}~((uint32\+\_\+t)0x00000014)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__trigger__selection_ga35352cebfd1ae8a3d63e374a5d86a85d}{DAC\+\_\+\+Trigger\+\_\+\+T5\+\_\+\+TRGO}}~((uint32\+\_\+t)0x0000001C)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__trigger__selection_ga9f738c0c1366a588ac4fa9e060278c70}{DAC\+\_\+\+Trigger\+\_\+\+T15\+\_\+\+TRGO}}~((uint32\+\_\+t)0x0000001C)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__trigger__selection_ga3bfbff1e03af1fd17a57a43e57420fe6}{DAC\+\_\+\+Trigger\+\_\+\+T2\+\_\+\+TRGO}}~((uint32\+\_\+t)0x00000024)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__trigger__selection_ga58ccb2de3d22d66ee975152f5edb330a}{DAC\+\_\+\+Trigger\+\_\+\+T4\+\_\+\+TRGO}}~((uint32\+\_\+t)0x0000002C)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__trigger__selection_ga67c15b2c26246a2304f9db28e25adcc4}{DAC\+\_\+\+Trigger\+\_\+\+Ext\+\_\+\+IT9}}~((uint32\+\_\+t)0x00000034)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__trigger__selection_gadef77bb8bbd109232900902402ef637f}{DAC\+\_\+\+Trigger\+\_\+\+Software}}~((uint32\+\_\+t)0x0000003C)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__trigger__selection_ga4409b79639e6ae3b1f0ed61a33c810a3}{IS\+\_\+\+DAC\+\_\+\+TRIGGER}}(TRIGGER)
+\item 
+\#define {\bfseries DAC\+\_\+\+Wave\+Generation\+\_\+\+None}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define {\bfseries DAC\+\_\+\+Wave\+Generation\+\_\+\+Noise}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define {\bfseries DAC\+\_\+\+Wave\+Generation\+\_\+\+Triangle}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__wave__generation_ga50fb2dd12305cd7bd0b738a1f6388d3c}{IS\+\_\+\+DAC\+\_\+\+GENERATE\+\_\+\+WAVE}}(WAVE)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga60794fd5092a332cfa82e1cee13945fc}{DAC\+\_\+\+LFSRUnmask\+\_\+\+Bit0}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga09f47cfa563252a1add4662284350c07}{DAC\+\_\+\+LFSRUnmask\+\_\+\+Bits1\+\_\+0}}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga60b800857b7e33d9c0be2846fc56849f}{DAC\+\_\+\+LFSRUnmask\+\_\+\+Bits2\+\_\+0}}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gafe219362b3a48d8678a65ef38cb45532}{DAC\+\_\+\+LFSRUnmask\+\_\+\+Bits3\+\_\+0}}~((uint32\+\_\+t)0x00000300)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga2543d802e19d592a26c8231be663cdac}{DAC\+\_\+\+LFSRUnmask\+\_\+\+Bits4\+\_\+0}}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga71a01660d410823bfe76a603080dc125}{DAC\+\_\+\+LFSRUnmask\+\_\+\+Bits5\+\_\+0}}~((uint32\+\_\+t)0x00000500)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga48fe2d3f4274d6bf28e446ca0001ed5d}{DAC\+\_\+\+LFSRUnmask\+\_\+\+Bits6\+\_\+0}}~((uint32\+\_\+t)0x00000600)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gaf0a93c1ee1e13776fae7558b36243431}{DAC\+\_\+\+LFSRUnmask\+\_\+\+Bits7\+\_\+0}}~((uint32\+\_\+t)0x00000700)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga4f56965841d9d91ca5b6de43ee589598}{DAC\+\_\+\+LFSRUnmask\+\_\+\+Bits8\+\_\+0}}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gaf7f4540d9ec6efe074e1e4485f9a347a}{DAC\+\_\+\+LFSRUnmask\+\_\+\+Bits9\+\_\+0}}~((uint32\+\_\+t)0x00000900)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga7670f0e10f062571d0e56027ef653228}{DAC\+\_\+\+LFSRUnmask\+\_\+\+Bits10\+\_\+0}}~((uint32\+\_\+t)0x00000\+A00)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gaeb9b5992b771f9a14587eeda58227831}{DAC\+\_\+\+LFSRUnmask\+\_\+\+Bits11\+\_\+0}}~((uint32\+\_\+t)0x00000\+B00)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga49b1eddf4e6371b4be8751162dc94ac4}{DAC\+\_\+\+Triangle\+Amplitude\+\_\+1}}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga9798d68c3bbf0a57306bf2f962697377}{DAC\+\_\+\+Triangle\+Amplitude\+\_\+3}}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gad3f31de1277836df1109576a53c47e87}{DAC\+\_\+\+Triangle\+Amplitude\+\_\+7}}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga42653712ce783d33ecb2f3e97e9c2ece}{DAC\+\_\+\+Triangle\+Amplitude\+\_\+15}}~((uint32\+\_\+t)0x00000300)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga10b15745b749c62a56bd3d7bd5a27e1b}{DAC\+\_\+\+Triangle\+Amplitude\+\_\+31}}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gaaae92dae9c4da55e29c645396825e36b}{DAC\+\_\+\+Triangle\+Amplitude\+\_\+63}}~((uint32\+\_\+t)0x00000500)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gaacec0af3f69db46f8984be3af9ecadfb}{DAC\+\_\+\+Triangle\+Amplitude\+\_\+127}}~((uint32\+\_\+t)0x00000600)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gadb404422c86a7b92d78e6d9617e8ce4d}{DAC\+\_\+\+Triangle\+Amplitude\+\_\+255}}~((uint32\+\_\+t)0x00000700)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga565b0c97bbdf152756617d491bf8ef85}{DAC\+\_\+\+Triangle\+Amplitude\+\_\+511}}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga7d573b0cebb1b939bd83367effb93d89}{DAC\+\_\+\+Triangle\+Amplitude\+\_\+1023}}~((uint32\+\_\+t)0x00000900)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_gad33d28d7fcc09d84500ea9b6e6c5feed}{DAC\+\_\+\+Triangle\+Amplitude\+\_\+2047}}~((uint32\+\_\+t)0x00000\+A00)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga3ce69f5a63a2464dc4b5f73cb6fe72f5}{DAC\+\_\+\+Triangle\+Amplitude\+\_\+4095}}~((uint32\+\_\+t)0x00000\+B00)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__lfsrunmask__triangleamplitude_ga20f7c3c43f917f14593f0c478c2412e1}{IS\+\_\+\+DAC\+\_\+\+LFSR\+\_\+\+UNMASK\+\_\+\+TRIANGLE\+\_\+\+AMPLITUDE}}(VALUE)
+\item 
+\#define {\bfseries DAC\+\_\+\+Output\+Buffer\+\_\+\+Enable}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define {\bfseries DAC\+\_\+\+Output\+Buffer\+\_\+\+Disable}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__output__buffer_gaa5a56816d641129fb62d11133c9dcccd}{IS\+\_\+\+DAC\+\_\+\+OUTPUT\+\_\+\+BUFFER\+\_\+\+STATE}}(STATE)
+\item 
+\#define {\bfseries DAC\+\_\+\+Channel\+\_\+1}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define {\bfseries DAC\+\_\+\+Channel\+\_\+2}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c___channel__selection_gafb2b9bdaccb3a5e3396925d7cba02cc3}{IS\+\_\+\+DAC\+\_\+\+CHANNEL}}(CHANNEL)
+\item 
+\#define {\bfseries DAC\+\_\+\+Align\+\_\+12b\+\_\+R}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define {\bfseries DAC\+\_\+\+Align\+\_\+12b\+\_\+L}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define {\bfseries DAC\+\_\+\+Align\+\_\+8b\+\_\+R}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__data__alignment_ga7779c36606827a6a2c4423414a441bde}{IS\+\_\+\+DAC\+\_\+\+ALIGN}}(ALIGN)
+\item 
+\#define {\bfseries DAC\+\_\+\+Wave\+\_\+\+Noise}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define {\bfseries DAC\+\_\+\+Wave\+\_\+\+Triangle}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__wave__generation_ga45c25065fb713820f6dbae0009376e1c}{IS\+\_\+\+DAC\+\_\+\+WAVE}}(WAVE)
+\item 
+\#define {\bfseries IS\+\_\+\+DAC\+\_\+\+DATA}(DATA)~((DATA) $<$= 0x\+FFF0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___d_a_c___exported___functions_ga1fae225204e1e049d6795319e99ba8bc}{DAC\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the DAC peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_a_c___exported___functions_ga7c59850468ed4bf0659663fe495441da}{DAC\+\_\+\+Init}} (uint32\+\_\+t DAC\+\_\+\+Channel, \mbox{\hyperlink{struct_d_a_c___init_type_def}{DAC\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}DAC\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the DAC peripheral according to the specified parameters in the DAC\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_a_c___exported___functions_gadfc270974d54cb5fa5f92556015c4046}{DAC\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_d_a_c___init_type_def}{DAC\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}DAC\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each DAC\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_a_c___exported___functions_ga323e61530d7fa9396c3bce9edb61f733}{DAC\+\_\+\+Cmd}} (uint32\+\_\+t DAC\+\_\+\+Channel, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified DAC channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_a_c___exported___functions_ga194cba38f60ace11658824f0250121f4}{DAC\+\_\+\+DMACmd}} (uint32\+\_\+t DAC\+\_\+\+Channel, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified DAC channel DMA request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_a_c___exported___functions_ga46f9f7f6b9520a86e300fe966afe5fb3}{DAC\+\_\+\+Software\+Trigger\+Cmd}} (uint32\+\_\+t DAC\+\_\+\+Channel, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the selected DAC channel software trigger. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_a_c___exported___functions_gab4d3b364a6b184dcd65f3b294ebf56dc}{DAC\+\_\+\+Dual\+Software\+Trigger\+Cmd}} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables simultaneously the two DAC channels software triggers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_a_c___exported___functions_gabd51ae6880821d4dcd923969ec19a19e}{DAC\+\_\+\+Wave\+Generation\+Cmd}} (uint32\+\_\+t DAC\+\_\+\+Channel, uint32\+\_\+t DAC\+\_\+\+Wave, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the selected DAC channel wave generation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_a_c___exported___functions_gad06b4230d2b17d1d13f41dce4c782461}{DAC\+\_\+\+Set\+Channel1\+Data}} (uint32\+\_\+t DAC\+\_\+\+Align, uint16\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Set the specified data holding register value for DAC channel1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_a_c___exported___functions_ga44e12006ec186791378d132da8541552}{DAC\+\_\+\+Set\+Channel2\+Data}} (uint32\+\_\+t DAC\+\_\+\+Align, uint16\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Set the specified data holding register value for DAC channel2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_a_c___exported___functions_ga4ca2cfdf56ab35a23f2517f23d7fbb24}{DAC\+\_\+\+Set\+Dual\+Channel\+Data}} (uint32\+\_\+t DAC\+\_\+\+Align, uint16\+\_\+t Data2, uint16\+\_\+t Data1)
+\begin{DoxyCompactList}\small\item\em Set the specified data holding register value for dual channel DAC. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___d_a_c___exported___functions_ga51274838de1e5dd012a82d7f44d7a50b}{DAC\+\_\+\+Get\+Data\+Output\+Value}} (uint32\+\_\+t DAC\+\_\+\+Channel)
+\begin{DoxyCompactList}\small\item\em Returns the last data output value of the selected DAC channel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the DAC firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

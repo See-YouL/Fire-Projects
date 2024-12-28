@@ -1,0 +1,38 @@
+\doxysubsubsubsubsection{FSMC\+\_\+\+Interrupt\+\_\+sources}
+\hypertarget{group___f_s_m_c___interrupt__sources}{}\label{group___f_s_m_c___interrupt__sources}\index{FSMC\_Interrupt\_sources@{FSMC\_Interrupt\_sources}}
+\doxysubsubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___f_s_m_c___interrupt__sources_gac483854bd6f90d8c7899a597a0c0ab1a}\label{group___f_s_m_c___interrupt__sources_gac483854bd6f90d8c7899a597a0c0ab1a} 
+\#define {\bfseries FSMC\+\_\+\+IT\+\_\+\+Rising\+Edge}~((uint32\+\_\+t)0x00000008)
+\item 
+\Hypertarget{group___f_s_m_c___interrupt__sources_ga59b5839854074008fb36fa86ec50a0c7}\label{group___f_s_m_c___interrupt__sources_ga59b5839854074008fb36fa86ec50a0c7} 
+\#define {\bfseries FSMC\+\_\+\+IT\+\_\+\+Level}~((uint32\+\_\+t)0x00000010)
+\item 
+\Hypertarget{group___f_s_m_c___interrupt__sources_ga8e4b9589c9981c900b5f2e84581a9693}\label{group___f_s_m_c___interrupt__sources_ga8e4b9589c9981c900b5f2e84581a9693} 
+\#define {\bfseries FSMC\+\_\+\+IT\+\_\+\+Falling\+Edge}~((uint32\+\_\+t)0x00000020)
+\item 
+\Hypertarget{group___f_s_m_c___interrupt__sources_ga40a38f097a75f27a700e626905fa9a38}\label{group___f_s_m_c___interrupt__sources_ga40a38f097a75f27a700e626905fa9a38} 
+\#define {\bfseries IS\+\_\+\+FSMC\+\_\+\+IT}(IT)~((((IT) \& (uint32\+\_\+t)0x\+FFFFFFC7) == 0x00000000) \&\& ((IT) != 0x00000000))
+\item 
+\#define \mbox{\hyperlink{group___f_s_m_c___interrupt__sources_gae2a57d0b15e025212489ec1421ff245d}{IS\+\_\+\+FSMC\+\_\+\+GET\+\_\+\+IT}}(IT)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___f_s_m_c___interrupt__sources_gae2a57d0b15e025212489ec1421ff245d}\label{group___f_s_m_c___interrupt__sources_gae2a57d0b15e025212489ec1421ff245d} 
+\index{FSMC\_Interrupt\_sources@{FSMC\_Interrupt\_sources}!IS\_FSMC\_GET\_IT@{IS\_FSMC\_GET\_IT}}
+\index{IS\_FSMC\_GET\_IT@{IS\_FSMC\_GET\_IT}!FSMC\_Interrupt\_sources@{FSMC\_Interrupt\_sources}}
+\doxysubsubsubsubsubsubsection{\texorpdfstring{IS\_FSMC\_GET\_IT}{IS\_FSMC\_GET\_IT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FSMC\+\_\+\+GET\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{IT }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((IT)\ ==\ FSMC\_IT\_RisingEdge)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ FSMC\_IT\_Level)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ FSMC\_IT\_FallingEdge))}
+
+\end{DoxyCode}

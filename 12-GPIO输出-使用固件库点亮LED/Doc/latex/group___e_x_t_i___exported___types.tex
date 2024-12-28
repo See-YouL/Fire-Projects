@@ -1,0 +1,51 @@
+\doxysubsubsection{EXTI\+\_\+\+Exported\+\_\+\+Types}
+\hypertarget{group___e_x_t_i___exported___types}{}\label{group___e_x_t_i___exported___types}\index{EXTI\_Exported\_Types@{EXTI\_Exported\_Types}}
+\doxysubsubsubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_e_x_t_i___init_type_def}{EXTI\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em EXTI Init Structure definition ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___e_x_t_i___exported___types_ga8429170f3320b90227f9f5b252c1c5eb}\label{group___e_x_t_i___exported___types_ga8429170f3320b90227f9f5b252c1c5eb} 
+\#define {\bfseries IS\+\_\+\+EXTI\+\_\+\+MODE}(MODE)~(((MODE) == EXTI\+\_\+\+Mode\+\_\+\+Interrupt) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((MODE) == EXTI\+\_\+\+Mode\+\_\+\+Event))
+\item 
+\#define \mbox{\hyperlink{group___e_x_t_i___exported___types_gaee95ec6288944a6245696896604e509e}{IS\+\_\+\+EXTI\+\_\+\+TRIGGER}}(TRIGGER)
+\end{DoxyCompactItemize}
+\doxysubsubsubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___e_x_t_i___exported___types_gad5e69af98dc0dfdf64417adc1cf57929}\label{group___e_x_t_i___exported___types_gad5e69af98dc0dfdf64417adc1cf57929} 
+enum \mbox{\hyperlink{group___e_x_t_i___exported___types_gad5e69af98dc0dfdf64417adc1cf57929}{EXTIMode\+\_\+\+Type\+Def}} \{ {\bfseries EXTI\+\_\+\+Mode\+\_\+\+Interrupt} = 0x00
+, {\bfseries EXTI\+\_\+\+Mode\+\_\+\+Event} = 0x04
+ \}
+\begin{DoxyCompactList}\small\item\em EXTI mode enumeration ~\newline
+ \end{DoxyCompactList}\item 
+\Hypertarget{group___e_x_t_i___exported___types_ga9da190f5425d1b421a06bced8cc48e9b}\label{group___e_x_t_i___exported___types_ga9da190f5425d1b421a06bced8cc48e9b} 
+enum \mbox{\hyperlink{group___e_x_t_i___exported___types_ga9da190f5425d1b421a06bced8cc48e9b}{EXTITrigger\+\_\+\+Type\+Def}} \{ {\bfseries EXTI\+\_\+\+Trigger\+\_\+\+Rising} = 0x08
+, {\bfseries EXTI\+\_\+\+Trigger\+\_\+\+Falling} = 0x0C
+, {\bfseries EXTI\+\_\+\+Trigger\+\_\+\+Rising\+\_\+\+Falling} = 0x10
+ \}
+\begin{DoxyCompactList}\small\item\em EXTI Trigger enumeration ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___e_x_t_i___exported___types_gaee95ec6288944a6245696896604e509e}\label{group___e_x_t_i___exported___types_gaee95ec6288944a6245696896604e509e} 
+\index{EXTI\_Exported\_Types@{EXTI\_Exported\_Types}!IS\_EXTI\_TRIGGER@{IS\_EXTI\_TRIGGER}}
+\index{IS\_EXTI\_TRIGGER@{IS\_EXTI\_TRIGGER}!EXTI\_Exported\_Types@{EXTI\_Exported\_Types}}
+\doxysubsubsubsubsection{\texorpdfstring{IS\_EXTI\_TRIGGER}{IS\_EXTI\_TRIGGER}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+EXTI\+\_\+\+TRIGGER(\begin{DoxyParamCaption}\item[{}]{TRIGGER }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((TRIGGER)\ ==\ EXTI\_Trigger\_Rising)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ EXTI\_Trigger\_Falling)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TRIGGER)\ ==\ EXTI\_Trigger\_Rising\_Falling))}
+
+\end{DoxyCode}

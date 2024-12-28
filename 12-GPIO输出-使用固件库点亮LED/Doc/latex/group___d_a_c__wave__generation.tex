@@ -1,0 +1,55 @@
+\doxysubsubsubsection{DAC\+\_\+wave\+\_\+generation}
+\hypertarget{group___d_a_c__wave__generation}{}\label{group___d_a_c__wave__generation}\index{DAC\_wave\_generation@{DAC\_wave\_generation}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___d_a_c__wave__generation_gaabbcd575d6106267f6b65ce988158f29}\label{group___d_a_c__wave__generation_gaabbcd575d6106267f6b65ce988158f29} 
+\#define {\bfseries DAC\+\_\+\+Wave\+Generation\+\_\+\+None}~((uint32\+\_\+t)0x00000000)
+\item 
+\Hypertarget{group___d_a_c__wave__generation_ga1692990325098cae6f32182c1fa0f61e}\label{group___d_a_c__wave__generation_ga1692990325098cae6f32182c1fa0f61e} 
+\#define {\bfseries DAC\+\_\+\+Wave\+Generation\+\_\+\+Noise}~((uint32\+\_\+t)0x00000040)
+\item 
+\Hypertarget{group___d_a_c__wave__generation_ga68f1a71011437a5ea6298ab039554714}\label{group___d_a_c__wave__generation_ga68f1a71011437a5ea6298ab039554714} 
+\#define {\bfseries DAC\+\_\+\+Wave\+Generation\+\_\+\+Triangle}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__wave__generation_ga50fb2dd12305cd7bd0b738a1f6388d3c}{IS\+\_\+\+DAC\+\_\+\+GENERATE\+\_\+\+WAVE}}(WAVE)
+\item 
+\Hypertarget{group___d_a_c__wave__generation_ga09c5ee68f8e726b1c039df1f6e195965}\label{group___d_a_c__wave__generation_ga09c5ee68f8e726b1c039df1f6e195965} 
+\#define {\bfseries DAC\+\_\+\+Wave\+\_\+\+Noise}~((uint32\+\_\+t)0x00000040)
+\item 
+\Hypertarget{group___d_a_c__wave__generation_ga95a1566e1728e1e345e8f3b50629a075}\label{group___d_a_c__wave__generation_ga95a1566e1728e1e345e8f3b50629a075} 
+\#define {\bfseries DAC\+\_\+\+Wave\+\_\+\+Triangle}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define \mbox{\hyperlink{group___d_a_c__wave__generation_ga45c25065fb713820f6dbae0009376e1c}{IS\+\_\+\+DAC\+\_\+\+WAVE}}(WAVE)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___d_a_c__wave__generation_ga50fb2dd12305cd7bd0b738a1f6388d3c}\label{group___d_a_c__wave__generation_ga50fb2dd12305cd7bd0b738a1f6388d3c} 
+\index{DAC\_wave\_generation@{DAC\_wave\_generation}!IS\_DAC\_GENERATE\_WAVE@{IS\_DAC\_GENERATE\_WAVE}}
+\index{IS\_DAC\_GENERATE\_WAVE@{IS\_DAC\_GENERATE\_WAVE}!DAC\_wave\_generation@{DAC\_wave\_generation}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_DAC\_GENERATE\_WAVE}{IS\_DAC\_GENERATE\_WAVE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+DAC\+\_\+\+GENERATE\+\_\+\+WAVE(\begin{DoxyParamCaption}\item[{}]{WAVE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((WAVE)\ ==\ DAC\_WaveGeneration\_None)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WAVE)\ ==\ DAC\_WaveGeneration\_Noise)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WAVE)\ ==\ DAC\_WaveGeneration\_Triangle))}
+
+\end{DoxyCode}
+\Hypertarget{group___d_a_c__wave__generation_ga45c25065fb713820f6dbae0009376e1c}\label{group___d_a_c__wave__generation_ga45c25065fb713820f6dbae0009376e1c} 
+\index{DAC\_wave\_generation@{DAC\_wave\_generation}!IS\_DAC\_WAVE@{IS\_DAC\_WAVE}}
+\index{IS\_DAC\_WAVE@{IS\_DAC\_WAVE}!DAC\_wave\_generation@{DAC\_wave\_generation}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_DAC\_WAVE}{IS\_DAC\_WAVE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+DAC\+\_\+\+WAVE(\begin{DoxyParamCaption}\item[{}]{WAVE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((WAVE)\ ==\ DAC\_Wave\_Noise)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WAVE)\ ==\ DAC\_Wave\_Triangle))}
+
+\end{DoxyCode}

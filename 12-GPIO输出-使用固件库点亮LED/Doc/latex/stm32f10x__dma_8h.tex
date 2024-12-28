@@ -1,0 +1,329 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/12-\/\+GPIO输出-\/使用固件库点亮\+LED/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/inc/stm32f10x\+\_\+dma.h File Reference}
+\hypertarget{stm32f10x__dma_8h}{}\label{stm32f10x__dma_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_dma.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/inc/stm32f10x\_dma.h}}
+
+
+This file contains all the functions prototypes for the DMA firmware library.  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_d_m_a___init_type_def}{DMA\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em DMA Init structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___d_m_a___exported___constants_gabcab9fa1c48b148703a8f41c1d99e0c8}{IS\+\_\+\+DMA\+\_\+\+ALL\+\_\+\+PERIPH}}(PERIPH)
+\item 
+\#define {\bfseries DMA\+\_\+\+DIR\+\_\+\+Peripheral\+DST}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define {\bfseries DMA\+\_\+\+DIR\+\_\+\+Peripheral\+SRC}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___d_m_a__data__transfer__direction_gaaad13d2b5808e32a35a2d21bcdbb2296}{IS\+\_\+\+DMA\+\_\+\+DIR}}(DIR)
+\item 
+\#define {\bfseries DMA\+\_\+\+Peripheral\+Inc\+\_\+\+Enable}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define {\bfseries DMA\+\_\+\+Peripheral\+Inc\+\_\+\+Disable}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___d_m_a__peripheral__incremented__mode_ga28762105b3f567c16ba79a47e68ff0fa}{IS\+\_\+\+DMA\+\_\+\+PERIPHERAL\+\_\+\+INC\+\_\+\+STATE}}(STATE)
+\item 
+\#define {\bfseries DMA\+\_\+\+Memory\+Inc\+\_\+\+Enable}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define {\bfseries DMA\+\_\+\+Memory\+Inc\+\_\+\+Disable}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___d_m_a__memory__incremented__mode_gaa880f39d499d1e80449cf80381e4eb67}{IS\+\_\+\+DMA\+\_\+\+MEMORY\+\_\+\+INC\+\_\+\+STATE}}(STATE)
+\item 
+\#define {\bfseries DMA\+\_\+\+Peripheral\+Data\+Size\+\_\+\+Byte}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define {\bfseries DMA\+\_\+\+Peripheral\+Data\+Size\+\_\+\+Half\+Word}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define {\bfseries DMA\+\_\+\+Peripheral\+Data\+Size\+\_\+\+Word}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define \mbox{\hyperlink{group___d_m_a__peripheral__data__size_gad7916e0ae55cdf5efdfa68a09a028037}{IS\+\_\+\+DMA\+\_\+\+PERIPHERAL\+\_\+\+DATA\+\_\+\+SIZE}}(SIZE)
+\item 
+\#define {\bfseries DMA\+\_\+\+Memory\+Data\+Size\+\_\+\+Byte}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define {\bfseries DMA\+\_\+\+Memory\+Data\+Size\+\_\+\+Half\+Word}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define {\bfseries DMA\+\_\+\+Memory\+Data\+Size\+\_\+\+Word}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define \mbox{\hyperlink{group___d_m_a__memory__data__size_gac9e3748cebcb16d4ae4206d562bc804c}{IS\+\_\+\+DMA\+\_\+\+MEMORY\+\_\+\+DATA\+\_\+\+SIZE}}(SIZE)
+\item 
+\#define {\bfseries DMA\+\_\+\+Mode\+\_\+\+Circular}~((uint32\+\_\+t)0x00000020)
+\item 
+\#define {\bfseries DMA\+\_\+\+Mode\+\_\+\+Normal}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define {\bfseries IS\+\_\+\+DMA\+\_\+\+MODE}(MODE)~(((MODE) == DMA\+\_\+\+Mode\+\_\+\+Circular) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((MODE) == DMA\+\_\+\+Mode\+\_\+\+Normal))
+\item 
+\#define {\bfseries DMA\+\_\+\+Priority\+\_\+\+Very\+High}~((uint32\+\_\+t)0x00003000)
+\item 
+\#define {\bfseries DMA\+\_\+\+Priority\+\_\+\+High}~((uint32\+\_\+t)0x00002000)
+\item 
+\#define {\bfseries DMA\+\_\+\+Priority\+\_\+\+Medium}~((uint32\+\_\+t)0x00001000)
+\item 
+\#define {\bfseries DMA\+\_\+\+Priority\+\_\+\+Low}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define \mbox{\hyperlink{group___d_m_a__priority__level_gaa1cae2ab458948511596467c87cd02b6}{IS\+\_\+\+DMA\+\_\+\+PRIORITY}}(PRIORITY)
+\item 
+\#define {\bfseries DMA\+\_\+\+M2\+M\+\_\+\+Enable}~((uint32\+\_\+t)0x00004000)
+\item 
+\#define {\bfseries DMA\+\_\+\+M2\+M\+\_\+\+Disable}~((uint32\+\_\+t)0x00000000)
+\item 
+\#define {\bfseries IS\+\_\+\+DMA\+\_\+\+M2\+M\+\_\+\+STATE}(STATE)~(((STATE) == DMA\+\_\+\+M2\+M\+\_\+\+Enable) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((STATE) == DMA\+\_\+\+M2\+M\+\_\+\+Disable))
+\item 
+\#define {\bfseries DMA\+\_\+\+IT\+\_\+\+TC}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define {\bfseries DMA\+\_\+\+IT\+\_\+\+HT}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define {\bfseries DMA\+\_\+\+IT\+\_\+\+TE}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define {\bfseries IS\+\_\+\+DMA\+\_\+\+CONFIG\+\_\+\+IT}(IT)~((((IT) \& 0x\+FFFFFFF1) == 0x00) \&\& ((IT) != 0x00))
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+GL1}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TC1}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+HT1}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TE1}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+GL2}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TC2}~((uint32\+\_\+t)0x00000020)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+HT2}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TE2}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+GL3}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TC3}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+HT3}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TE3}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+GL4}~((uint32\+\_\+t)0x00001000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TC4}~((uint32\+\_\+t)0x00002000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+HT4}~((uint32\+\_\+t)0x00004000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TE4}~((uint32\+\_\+t)0x00008000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+GL5}~((uint32\+\_\+t)0x00010000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TC5}~((uint32\+\_\+t)0x00020000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+HT5}~((uint32\+\_\+t)0x00040000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TE5}~((uint32\+\_\+t)0x00080000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+GL6}~((uint32\+\_\+t)0x00100000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TC6}~((uint32\+\_\+t)0x00200000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+HT6}~((uint32\+\_\+t)0x00400000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TE6}~((uint32\+\_\+t)0x00800000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+GL7}~((uint32\+\_\+t)0x01000000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TC7}~((uint32\+\_\+t)0x02000000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+HT7}~((uint32\+\_\+t)0x04000000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+IT\+\_\+\+TE7}~((uint32\+\_\+t)0x08000000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+GL1}~((uint32\+\_\+t)0x10000001)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+TC1}~((uint32\+\_\+t)0x10000002)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+HT1}~((uint32\+\_\+t)0x10000004)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+TE1}~((uint32\+\_\+t)0x10000008)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+GL2}~((uint32\+\_\+t)0x10000010)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+TC2}~((uint32\+\_\+t)0x10000020)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+HT2}~((uint32\+\_\+t)0x10000040)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+TE2}~((uint32\+\_\+t)0x10000080)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+GL3}~((uint32\+\_\+t)0x10000100)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+TC3}~((uint32\+\_\+t)0x10000200)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+HT3}~((uint32\+\_\+t)0x10000400)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+TE3}~((uint32\+\_\+t)0x10000800)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+GL4}~((uint32\+\_\+t)0x10001000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+TC4}~((uint32\+\_\+t)0x10002000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+HT4}~((uint32\+\_\+t)0x10004000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+TE4}~((uint32\+\_\+t)0x10008000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+GL5}~((uint32\+\_\+t)0x10010000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+TC5}~((uint32\+\_\+t)0x10020000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+HT5}~((uint32\+\_\+t)0x10040000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+IT\+\_\+\+TE5}~((uint32\+\_\+t)0x10080000)
+\item 
+\#define {\bfseries IS\+\_\+\+DMA\+\_\+\+CLEAR\+\_\+\+IT}(IT)~(((((IT) \& 0x\+F0000000) == 0x00) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (((IT) \& 0x\+EFF00000) == 0x00)) \&\& ((IT) != 0x00))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a__interrupts__definition_gaaafa1bd74bc5e78e276c731faa8eed22}{IS\+\_\+\+DMA\+\_\+\+GET\+\_\+\+IT}}(IT)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+GL1}~((uint32\+\_\+t)0x00000001)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TC1}~((uint32\+\_\+t)0x00000002)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+HT1}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TE1}~((uint32\+\_\+t)0x00000008)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+GL2}~((uint32\+\_\+t)0x00000010)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TC2}~((uint32\+\_\+t)0x00000020)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+HT2}~((uint32\+\_\+t)0x00000040)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TE2}~((uint32\+\_\+t)0x00000080)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+GL3}~((uint32\+\_\+t)0x00000100)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TC3}~((uint32\+\_\+t)0x00000200)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+HT3}~((uint32\+\_\+t)0x00000400)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TE3}~((uint32\+\_\+t)0x00000800)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+GL4}~((uint32\+\_\+t)0x00001000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TC4}~((uint32\+\_\+t)0x00002000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+HT4}~((uint32\+\_\+t)0x00004000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TE4}~((uint32\+\_\+t)0x00008000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+GL5}~((uint32\+\_\+t)0x00010000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TC5}~((uint32\+\_\+t)0x00020000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+HT5}~((uint32\+\_\+t)0x00040000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TE5}~((uint32\+\_\+t)0x00080000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+GL6}~((uint32\+\_\+t)0x00100000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TC6}~((uint32\+\_\+t)0x00200000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+HT6}~((uint32\+\_\+t)0x00400000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TE6}~((uint32\+\_\+t)0x00800000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+GL7}~((uint32\+\_\+t)0x01000000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TC7}~((uint32\+\_\+t)0x02000000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+HT7}~((uint32\+\_\+t)0x04000000)
+\item 
+\#define {\bfseries DMA1\+\_\+\+FLAG\+\_\+\+TE7}~((uint32\+\_\+t)0x08000000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+GL1}~((uint32\+\_\+t)0x10000001)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+TC1}~((uint32\+\_\+t)0x10000002)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+HT1}~((uint32\+\_\+t)0x10000004)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+TE1}~((uint32\+\_\+t)0x10000008)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+GL2}~((uint32\+\_\+t)0x10000010)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+TC2}~((uint32\+\_\+t)0x10000020)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+HT2}~((uint32\+\_\+t)0x10000040)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+TE2}~((uint32\+\_\+t)0x10000080)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+GL3}~((uint32\+\_\+t)0x10000100)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+TC3}~((uint32\+\_\+t)0x10000200)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+HT3}~((uint32\+\_\+t)0x10000400)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+TE3}~((uint32\+\_\+t)0x10000800)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+GL4}~((uint32\+\_\+t)0x10001000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+TC4}~((uint32\+\_\+t)0x10002000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+HT4}~((uint32\+\_\+t)0x10004000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+TE4}~((uint32\+\_\+t)0x10008000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+GL5}~((uint32\+\_\+t)0x10010000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+TC5}~((uint32\+\_\+t)0x10020000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+HT5}~((uint32\+\_\+t)0x10040000)
+\item 
+\#define {\bfseries DMA2\+\_\+\+FLAG\+\_\+\+TE5}~((uint32\+\_\+t)0x10080000)
+\item 
+\#define {\bfseries IS\+\_\+\+DMA\+\_\+\+CLEAR\+\_\+\+FLAG}(FLAG)~(((((FLAG) \& 0x\+F0000000) == 0x00) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (((FLAG) \& 0x\+EFF00000) == 0x00)) \&\& ((FLAG) != 0x00))
+\item 
+\#define \mbox{\hyperlink{group___d_m_a__flags__definition_ga98e421aa0a15fbeecb4cab3612985676}{IS\+\_\+\+DMA\+\_\+\+GET\+\_\+\+FLAG}}(FLAG)
+\item 
+\#define {\bfseries IS\+\_\+\+DMA\+\_\+\+BUFFER\+\_\+\+SIZE}(SIZE)~(((SIZE) $>$= 0x1) \&\& ((SIZE) $<$ 0x10000))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___d_m_a___exported___functions_ga21ca0d50b13e502db5ab5feb484f9ece}{DMA\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the DMAy Channelx registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___exported___functions_ga7c3d1b9dc041f8e5f2cfc8d5dd858278}{DMA\+\_\+\+Init}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx, \mbox{\hyperlink{struct_d_m_a___init_type_def}{DMA\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMA\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the DMAy Channelx according to the specified parameters in the DMA\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___exported___functions_ga0f7f95f750a90a6824f4e9b6f58adc7e}{DMA\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_d_m_a___init_type_def}{DMA\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMA\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each DMA\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___exported___functions_ga8e7cb6b9ae5f142e2961df879cdaba65}{DMA\+\_\+\+Cmd}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified DMAy Channelx. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___exported___functions_ga0bb60360be9cd57f96399be2f3b5eb2b}{DMA\+\_\+\+ITConfig}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx, uint32\+\_\+t DMA\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified DMAy Channelx interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___exported___functions_gade5d9e532814eaa46514cb385fdff709}{DMA\+\_\+\+Set\+Curr\+Data\+Counter}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx, uint16\+\_\+t Data\+Number)
+\begin{DoxyCompactList}\small\item\em Sets the number of data units in the current DMAy Channelx transfer. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___d_m_a___exported___functions_ga511b4c402d1ff32d53f28736956cac5d}{DMA\+\_\+\+Get\+Curr\+Data\+Counter}} (\mbox{\hyperlink{struct_d_m_a___channel___type_def}{DMA\+\_\+\+Channel\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}DMAy\+\_\+\+Channelx)
+\begin{DoxyCompactList}\small\item\em Returns the number of remaining data units in the current DMAy Channelx transfer. \end{DoxyCompactList}\item 
+Flag\+Status \mbox{\hyperlink{group___d_m_a___exported___functions_gafb30b7a891834c267eefd5d30b688a9f}{DMA\+\_\+\+Get\+Flag\+Status}} (uint32\+\_\+t DMAy\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified DMAy Channelx flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___exported___functions_ga25cdca360f309c8ceb7c206cd9ad9119}{DMA\+\_\+\+Clear\+Flag}} (uint32\+\_\+t DMAy\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the DMAy Channelx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \mbox{\hyperlink{group___d_m_a___exported___functions_ga9287331247150fe84d03ecd7ad8adb52}{DMA\+\_\+\+Get\+ITStatus}} (uint32\+\_\+t DMAy\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified DMAy Channelx interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___d_m_a___exported___functions_ga91a7340e5b334a942f3eb1e05ed5f67a}{DMA\+\_\+\+Clear\+ITPending\+Bit}} (uint32\+\_\+t DMAy\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the DMAy Channelx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the functions prototypes for the DMA firmware library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

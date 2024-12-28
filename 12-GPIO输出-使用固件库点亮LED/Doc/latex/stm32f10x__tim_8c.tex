@@ -1,0 +1,217 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/12-\/\+GPIO输出-\/使用固件库点亮\+LED/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/src/stm32f10x\+\_\+tim.c File Reference}
+\hypertarget{stm32f10x__tim_8c}{}\label{stm32f10x__tim_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_tim.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_tim.c}}
+
+
+This file provides all the TIM firmware functions.  
+
+
+{\ttfamily \#include "{}stm32f10x\+\_\+tim.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f10x\+\_\+rcc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries SMCR\+\_\+\+ETR\+\_\+\+Mask}~((uint16\+\_\+t)0x00\+FF)
+\item 
+\#define {\bfseries CCMR\+\_\+\+Offset}~((uint16\+\_\+t)0x0018)
+\item 
+\#define {\bfseries CCER\+\_\+\+CCE\+\_\+\+Set}~((uint16\+\_\+t)0x0001)
+\item 
+\#define {\bfseries CCER\+\_\+\+CCNE\+\_\+\+Set}~((uint16\+\_\+t)0x0004)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga1659cc0ce503ac151568e0c7c02b1ba5}{TIM\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the TIMx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga83fd58c9416802d9638bbe1715c98932}{TIM\+\_\+\+Time\+Base\+Init}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___time_base_init_type_def}{TIM\+\_\+\+Time\+Base\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+Time\+Base\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the TIMx Time Base Unit peripheral according to the specified parameters in the TIM\+\_\+\+Time\+Base\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gafcdb6ff00158862aef7fed5e7a554a3e}{TIM\+\_\+\+OC1\+Init}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___o_c_init_type_def}{TIM\+\_\+\+OCInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+OCInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the TIMx Channel1 according to the specified parameters in the TIM\+\_\+\+OCInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga2017455121d910d6ff63ac6f219842c5}{TIM\+\_\+\+OC2\+Init}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___o_c_init_type_def}{TIM\+\_\+\+OCInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+OCInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the TIMx Channel2 according to the specified parameters in the TIM\+\_\+\+OCInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga90d4a358d4e6d4c5ed17dc1d6beb5f30}{TIM\+\_\+\+OC3\+Init}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___o_c_init_type_def}{TIM\+\_\+\+OCInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+OCInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the TIMx Channel3 according to the specified parameters in the TIM\+\_\+\+OCInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga64571ebbb58cac39a9e760050175f11c}{TIM\+\_\+\+OC4\+Init}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___o_c_init_type_def}{TIM\+\_\+\+OCInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+OCInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the TIMx Channel4 according to the specified parameters in the TIM\+\_\+\+OCInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga9e6a153dd6552e4e1188eba227316f7f}{TIM\+\_\+\+ICInit}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___i_c_init_type_def}{TIM\+\_\+\+ICInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+ICInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the TIM peripheral according to the specified parameters in the TIM\+\_\+\+ICInit\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gaa71f9296556310f85628d6c748a06475}{TIM\+\_\+\+PWMIConfig}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___i_c_init_type_def}{TIM\+\_\+\+ICInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+ICInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Configures the TIM peripheral according to the specified parameters in the TIM\+\_\+\+ICInit\+Struct to measure an external PWM signal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga3df4ba3f0727f63ce621e2b2e6035d4f}{TIM\+\_\+\+BDTRConfig}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, \mbox{\hyperlink{struct_t_i_m___b_d_t_r_init_type_def}{TIM\+\_\+\+BDTRInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+BDTRInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Configures the\+: Break feature, dead time, Lock level, the OSSI, the OSSR State and the AOE(automatic output enable). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga1556a0b9a5d53506875fd7de0cbc6b1f}{TIM\+\_\+\+Time\+Base\+Struct\+Init}} (\mbox{\hyperlink{struct_t_i_m___time_base_init_type_def}{TIM\+\_\+\+Time\+Base\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+Time\+Base\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each TIM\+\_\+\+Time\+Base\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga394683c78ae02837882e36014e11643e}{TIM\+\_\+\+OCStruct\+Init}} (\mbox{\hyperlink{struct_t_i_m___o_c_init_type_def}{TIM\+\_\+\+OCInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+OCInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each TIM\+\_\+\+OCInit\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga5005dac8e4e8a4c7fc2a0ef05b77cc50}{TIM\+\_\+\+ICStruct\+Init}} (\mbox{\hyperlink{struct_t_i_m___i_c_init_type_def}{TIM\+\_\+\+ICInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+ICInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each TIM\+\_\+\+ICInit\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gaea0f49938cda8ae0738162194798afc6}{TIM\+\_\+\+BDTRStruct\+Init}} (\mbox{\hyperlink{struct_t_i_m___b_d_t_r_init_type_def}{TIM\+\_\+\+BDTRInit\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIM\+\_\+\+BDTRInit\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each TIM\+\_\+\+BDTRInit\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga2bdc275bcbd2ce9d1ba632e6c89896b7}{TIM\+\_\+\+Cmd}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified TIM peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga3e59ebced2ab8e0b817c460f1670e97d}{TIM\+\_\+\+Ctrl\+PWMOutputs}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIM peripheral Main Outputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga70e3d6c09d55ee69002e154c85cd40e4}{TIM\+\_\+\+ITConfig}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified TIM interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga38bd4ffda920dd4f7655a0a2c6100a6e}{TIM\+\_\+\+Generate\+Event}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Event\+Source)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx event to be generate by software. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gad7156f84c436c8ac92cd789611826d09}{TIM\+\_\+\+DMAConfig}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+DMABase, uint16\+\_\+t TIM\+\_\+\+DMABurst\+Length)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx\textquotesingle{}s DMA interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga24700389cfa3ea9b42234933b23f1399}{TIM\+\_\+\+DMACmd}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+DMASource, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIMx\textquotesingle{}s DMA Requests. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga2394f0221709c0659874f9a4184cf86e}{TIM\+\_\+\+Internal\+Clock\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx internal Clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gabef227d21d9e121e6a4ec5ab6223f5a9}{TIM\+\_\+\+ITRx\+External\+Clock\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Input\+Trigger\+Source)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Internal Trigger as External Clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gaf460e7d9c9969044e364130e209937fc}{TIM\+\_\+\+TIx\+External\+Clock\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+TIx\+External\+CLKSource, uint16\+\_\+t TIM\+\_\+\+ICPolarity, uint16\+\_\+t ICFilter)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Trigger as External Clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga47c05638b93aabcd641dbc8859e1b2df}{TIM\+\_\+\+ETRClock\+Mode1\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Ext\+TRGPrescaler, uint16\+\_\+t TIM\+\_\+\+Ext\+TRGPolarity, uint16\+\_\+t Ext\+TRGFilter)
+\begin{DoxyCompactList}\small\item\em Configures the External clock Mode1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga0a9cbcbab32326cbbdaf4c111f59ec20}{TIM\+\_\+\+ETRClock\+Mode2\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Ext\+TRGPrescaler, uint16\+\_\+t TIM\+\_\+\+Ext\+TRGPolarity, uint16\+\_\+t Ext\+TRGFilter)
+\begin{DoxyCompactList}\small\item\em Configures the External clock Mode2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga8bdde400b7a30f3e747fe8e4962c0abe}{TIM\+\_\+\+ETRConfig}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Ext\+TRGPrescaler, uint16\+\_\+t TIM\+\_\+\+Ext\+TRGPolarity, uint16\+\_\+t Ext\+TRGFilter)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx External Trigger (ETR). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga45c6fd9041baf7f64c121e0172f305c7}{TIM\+\_\+\+Prescaler\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Prescaler, uint16\+\_\+t TIM\+\_\+\+PSCReload\+Mode)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Prescaler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga93941c1db20bf3794f377307df90a67b}{TIM\+\_\+\+Counter\+Mode\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Counter\+Mode)
+\begin{DoxyCompactList}\small\item\em Specifies the TIMx Counter Mode to be used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga4252583c6ae8a73d6fc66f7e951dbc35}{TIM\+\_\+\+Select\+Input\+Trigger}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Input\+Trigger\+Source)
+\begin{DoxyCompactList}\small\item\em Selects the Input Trigger source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga0fc7e76c47a3bd1ba1ebc71427832b51}{TIM\+\_\+\+Encoder\+Interface\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Encoder\+Mode, uint16\+\_\+t TIM\+\_\+\+IC1\+Polarity, uint16\+\_\+t TIM\+\_\+\+IC2\+Polarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Encoder Interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga4f58c12e6493a0d8b9555c9097b831d6}{TIM\+\_\+\+Forced\+OC1\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Forced\+Action)
+\begin{DoxyCompactList}\small\item\em Forces the TIMx output 1 waveform to active or inactive level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga3d2902b6fbab8dd55cd531055ffcc63d}{TIM\+\_\+\+Forced\+OC2\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Forced\+Action)
+\begin{DoxyCompactList}\small\item\em Forces the TIMx output 2 waveform to active or inactive level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga920b0fb4ca44fceffd1c3e441feebd8f}{TIM\+\_\+\+Forced\+OC3\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Forced\+Action)
+\begin{DoxyCompactList}\small\item\em Forces the TIMx output 3 waveform to active or inactive level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gaf0a0bbe74251e56d4b835d20b0a3aa63}{TIM\+\_\+\+Forced\+OC4\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Forced\+Action)
+\begin{DoxyCompactList}\small\item\em Forces the TIMx output 4 waveform to active or inactive level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga42b44b9fc2b0798d733720dd6bac1ac0}{TIM\+\_\+\+ARRPreload\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables TIMx peripheral Preload register on ARR. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gaff2e7f9959b1b36e830df028c14accc8}{TIM\+\_\+\+Select\+COM}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Selects the TIM peripheral Commutation event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga5273cb65acb885fe7982827b1c6b7d75}{TIM\+\_\+\+Select\+CCDMA}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Selects the TIMx peripheral Capture Compare DMA source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga0a935254e44312b1d78e8684a58db3c1}{TIM\+\_\+\+CCPreload\+Control}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Sets or Resets the TIM peripheral Capture Compare Preload Control bit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga60e6c29ad8f919bef616cf8e3306dd64}{TIM\+\_\+\+OC1\+Preload\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPreload)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIMx peripheral Preload register on CCR1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga75b4614c6dd2cd52f2c5becdb6590c10}{TIM\+\_\+\+OC2\+Preload\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPreload)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIMx peripheral Preload register on CCR2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga8b2391685a519e60e596b7d596f86f09}{TIM\+\_\+\+OC3\+Preload\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPreload)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIMx peripheral Preload register on CCR3. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga8bf4dfb35ff0c7b494dd96579f50b1ec}{TIM\+\_\+\+OC4\+Preload\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPreload)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIMx peripheral Preload register on CCR4. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gaec82031ca62f31f5483195c09752a83a}{TIM\+\_\+\+OC1\+Fast\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCFast)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Output Compare 1 Fast feature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga413359c87f46c69f1ffe2dc8fb3a65e7}{TIM\+\_\+\+OC2\+Fast\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCFast)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Output Compare 2 Fast feature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gab2f3698e6e56bd9b0a4be7056ba789e1}{TIM\+\_\+\+OC3\+Fast\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCFast)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Output Compare 3 Fast feature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga58279a04e8ea5333f1079d3cce8dde12}{TIM\+\_\+\+OC4\+Fast\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCFast)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Output Compare 4 Fast feature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga34e926cd8a99cfcc7480b2d6de5118b6}{TIM\+\_\+\+Clear\+OC1\+Ref}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCClear)
+\begin{DoxyCompactList}\small\item\em Clears or safeguards the OCREF1 signal on an external event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gac474ebc815d24c8a589969e0c68b27b0}{TIM\+\_\+\+Clear\+OC2\+Ref}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCClear)
+\begin{DoxyCompactList}\small\item\em Clears or safeguards the OCREF2 signal on an external event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga0bd9476a14bd346c319945ec4fa2bc67}{TIM\+\_\+\+Clear\+OC3\+Ref}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCClear)
+\begin{DoxyCompactList}\small\item\em Clears or safeguards the OCREF3 signal on an external event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gaeee5fa66b26e7c6f71850272dc3028f3}{TIM\+\_\+\+Clear\+OC4\+Ref}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCClear)
+\begin{DoxyCompactList}\small\item\em Clears or safeguards the OCREF4 signal on an external event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga03878f78163485c8a3508cff2111c297}{TIM\+\_\+\+OC1\+Polarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx channel 1 polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga3cb91578e7dd34ea7d09862482960445}{TIM\+\_\+\+OC1\+NPolarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCNPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Channel 1N polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga6831cacaac1ef50291af94db94450797}{TIM\+\_\+\+OC2\+Polarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx channel 2 polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga2fa6ea3a89f446b52b4e699272b70cad}{TIM\+\_\+\+OC2\+NPolarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCNPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Channel 2N polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga1ef43b03fe666495e80aac9741ae7ab0}{TIM\+\_\+\+OC3\+Polarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx channel 3 polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gac710acc5b682e892584fc6f089f61dc2}{TIM\+\_\+\+OC3\+NPolarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCNPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Channel 3N polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gad678410f7c7244f83daad93ce9d1056e}{TIM\+\_\+\+OC4\+Polarity\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OCPolarity)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx channel 4 polarity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga3ecc4647d9ede261beb5e0535cf29ebb}{TIM\+\_\+\+CCx\+Cmd}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Channel, uint16\+\_\+t TIM\+\_\+\+CCx)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIM Capture Compare Channel x. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga304ff7c8a1615498da749bf2507e9f2b}{TIM\+\_\+\+CCx\+NCmd}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Channel, uint16\+\_\+t TIM\+\_\+\+CCxN)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIM Capture Compare Channel xN. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga83ea0af5a7c1af521236ce5e4d2c42b0}{TIM\+\_\+\+Select\+OCxM}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Channel, uint16\+\_\+t TIM\+\_\+\+OCMode)
+\begin{DoxyCompactList}\small\item\em Selects the TIM Output Compare Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gace2384dd33e849a054f61b8e1fc7e7c3}{TIM\+\_\+\+Update\+Disable\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or Disables the TIMx Update event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga1d7a8f952e209de142499e67a653fc1f}{TIM\+\_\+\+Update\+Request\+Config}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Update\+Source)
+\begin{DoxyCompactList}\small\item\em Configures the TIMx Update Request Interrupt source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga42c2d1025a3937c9d9f38631af86ffa4}{TIM\+\_\+\+Select\+Hall\+Sensor}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the TIMx\textquotesingle{}s Hall sensor interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gadd2cca5fac6c1291dc4339098d5c9562}{TIM\+\_\+\+Select\+One\+Pulse\+Mode}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+OPMode)
+\begin{DoxyCompactList}\small\item\em Selects the TIMx\textquotesingle{}s One Pulse Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga28745aaa549e2067e42c19569209e6c6}{TIM\+\_\+\+Select\+Output\+Trigger}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+TRGOSource)
+\begin{DoxyCompactList}\small\item\em Selects the TIMx Trigger Output Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga2f19ce1d90990691cf037e419ba08003}{TIM\+\_\+\+Select\+Slave\+Mode}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Slave\+Mode)
+\begin{DoxyCompactList}\small\item\em Selects the TIMx Slave Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga4dcc3d11b670c381d0ff9cb7e9fd01e2}{TIM\+\_\+\+Select\+Master\+Slave\+Mode}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+Master\+Slave\+Mode)
+\begin{DoxyCompactList}\small\item\em Sets or Resets the TIMx Master/\+Slave Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gaad2c31dc9c551b48f08b96ba49c4aa44}{TIM\+\_\+\+Set\+Counter}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Counter)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Counter Register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga7880e4c00002d6421f9059a2ed841d5c}{TIM\+\_\+\+Set\+Autoreload}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Autoreload)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Autoreload Register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gab3a6031f187cb8af62eb09a67b4fd2ad}{TIM\+\_\+\+Set\+Compare1}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Compare1)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Capture Compare1 Register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga0175ef4fabade443909002a63d4e9758}{TIM\+\_\+\+Set\+Compare2}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Compare2)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Capture Compare2 Register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga416df50f4223351e366ae40a4ec163ae}{TIM\+\_\+\+Set\+Compare3}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Compare3)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Capture Compare3 Register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gaf428edf474804691d6f587e78c97a082}{TIM\+\_\+\+Set\+Compare4}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t Compare4)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Capture Compare4 Register value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_gaf0f684dea88e222de9689d8ed0ca8805}{TIM\+\_\+\+Set\+IC1\+Prescaler}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+ICPSC)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Input Capture 1 prescaler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga3cc4869b5fe73271808512c89322a325}{TIM\+\_\+\+Set\+IC2\+Prescaler}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+ICPSC)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Input Capture 2 prescaler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga76f906383b8132ebe00dffadb70cf7f9}{TIM\+\_\+\+Set\+IC3\+Prescaler}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+ICPSC)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Input Capture 3 prescaler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga0f2c784271356d6b64b8c0da64dbdbc2}{TIM\+\_\+\+Set\+IC4\+Prescaler}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+ICPSC)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Input Capture 4 prescaler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga20ef804dc32c723662d11ee7da3baab2}{TIM\+\_\+\+Set\+Clock\+Division}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+CKD)
+\begin{DoxyCompactList}\small\item\em Sets the TIMx Clock Division value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___t_i_m___private___functions_ga29eb9f7151ceea94c3988539a5ee91cf}{TIM\+\_\+\+Get\+Capture1}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Gets the TIMx Input Capture 1 value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___t_i_m___private___functions_ga437fcf00ee9d0a9df9150cc120efc5ad}{TIM\+\_\+\+Get\+Capture2}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Gets the TIMx Input Capture 2 value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___t_i_m___private___functions_gab71d1d3d8a15f3be9e74dca51fcca5fa}{TIM\+\_\+\+Get\+Capture3}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Gets the TIMx Input Capture 3 value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___t_i_m___private___functions_ga09049af04c8345849c6f82ccfae242a6}{TIM\+\_\+\+Get\+Capture4}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Gets the TIMx Input Capture 4 value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___t_i_m___private___functions_gab6826b144ae70e206f51ae8af5318a93}{TIM\+\_\+\+Get\+Counter}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Gets the TIMx Counter value. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___t_i_m___private___functions_ga427eb6e533480e02a27cd0ca876183d6}{TIM\+\_\+\+Get\+Prescaler}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx)
+\begin{DoxyCompactList}\small\item\em Gets the TIMx Prescaler value. \end{DoxyCompactList}\item 
+Flag\+Status \mbox{\hyperlink{group___t_i_m___private___functions_ga0adcbbd5e838ec8642e7a9b80075f41f}{TIM\+\_\+\+Get\+Flag\+Status}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified TIM flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga46568c7b254941dc53e785342d60baf3}{TIM\+\_\+\+Clear\+Flag}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the TIMx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \mbox{\hyperlink{group___t_i_m___private___functions_ga0827a0b411707304f76d33050727c24d}{TIM\+\_\+\+Get\+ITStatus}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the TIM interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___t_i_m___private___functions_ga9eb1e95af71ed380f51a2c6d585cc5d6}{TIM\+\_\+\+Clear\+ITPending\+Bit}} (\mbox{\hyperlink{struct_t_i_m___type_def}{TIM\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}TIMx, uint16\+\_\+t TIM\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the TIMx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides all the TIM firmware functions. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

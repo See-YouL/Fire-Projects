@@ -1,0 +1,765 @@
+\doxysubsubsection{USART\+\_\+\+Exported\+\_\+\+Functions}
+\hypertarget{group___u_s_a_r_t___exported___functions}{}\label{group___u_s_a_r_t___exported___functions}\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga2f8e1ce72da21b6539d8e1f299ec3b0d}{USART\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the USARTx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga98da340ea0324002ba1b4263e91ab2ff}{USART\+\_\+\+Init}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{struct_u_s_a_r_t___init_type_def}{USART\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}USART\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the USARTx peripheral according to the specified parameters in the USART\+\_\+\+Init\+Struct . \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga34e1faa2f312496c16cfd05155f4c8b1}{USART\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_u_s_a_r_t___init_type_def}{USART\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}USART\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each USART\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_gadb50c7a2175c91acd3728f8eefd0c63d}{USART\+\_\+\+Clock\+Init}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, \mbox{\hyperlink{struct_u_s_a_r_t___clock_init_type_def}{USART\+\_\+\+Clock\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}USART\+\_\+\+Clock\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the USARTx peripheral Clock according to the specified parameters in the USART\+\_\+\+Clock\+Init\+Struct . \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga59df27d0adda18b16ee28d47672cc724}{USART\+\_\+\+Clock\+Struct\+Init}} (\mbox{\hyperlink{struct_u_s_a_r_t___clock_init_type_def}{USART\+\_\+\+Clock\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}USART\+\_\+\+Clock\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each USART\+\_\+\+Clock\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga45e51626739c5f22a6567c8a85d1d85e}{USART\+\_\+\+Cmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified USART peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga6d8f2dd1f34060ae7e386e3e5d56b6f6}{USART\+\_\+\+ITConfig}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+IT, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the specified USART interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga902857f199ebfba21c63d725354af66f}{USART\+\_\+\+DMACmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+DMAReq, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART’s DMA interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga65ec9928817f3f031dd9a4dfc95d6666}{USART\+\_\+\+Set\+Address}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint8\+\_\+t USART\+\_\+\+Address)
+\begin{DoxyCompactList}\small\item\em Sets the address of the USART node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga4965417c2412c36e462fcad50a8d5393}{USART\+\_\+\+Wake\+Up\+Config}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+Wake\+Up)
+\begin{DoxyCompactList}\small\item\em Selects the USART Wake\+Up method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_gac27b78ce445a16fe33851d2f87781c02}{USART\+\_\+\+Receiver\+Wake\+Up\+Cmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Determines if the USART is in mute mode or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga7bc2d291831cbc5e53e73337308029b5}{USART\+\_\+\+LINBreak\+Detect\+Length\+Config}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+LINBreak\+Detect\+Length)
+\begin{DoxyCompactList}\small\item\em Sets the USART LIN Break detection length. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga9fdd6296f4ca4acdfcbd58bf56bd4185}{USART\+\_\+\+LINCmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART’s LIN mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga0b43d42da9540f446d494bf69823c6fb}{USART\+\_\+\+Send\+Data}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t Data)
+\begin{DoxyCompactList}\small\item\em Transmits single data through the USARTx peripheral. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_gac67a91845b0b1d54d31bdfb1c5e9867c}{USART\+\_\+\+Receive\+Data}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx)
+\begin{DoxyCompactList}\small\item\em Returns the most recent received data by the USARTx peripheral. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga39a3d33e23ee28529fa8f7259ce6811e}{USART\+\_\+\+Send\+Break}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx)
+\begin{DoxyCompactList}\small\item\em Transmits break characters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_gac4a35c6acd71ae7e0d67c1f03f0a8777}{USART\+\_\+\+Set\+Guard\+Time}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint8\+\_\+t USART\+\_\+\+Guard\+Time)
+\begin{DoxyCompactList}\small\item\em Sets the specified USART guard time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_gaf5da8f2eee8245425584d85d4f62cc33}{USART\+\_\+\+Set\+Prescaler}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint8\+\_\+t USART\+\_\+\+Prescaler)
+\begin{DoxyCompactList}\small\item\em Sets the system clock prescaler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_gabd1347e244c623447151ba3a5e986c5f}{USART\+\_\+\+Smart\+Card\+Cmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART’s Smart Card mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga62e22f47e38aa53f2edce8771f7a5dfa}{USART\+\_\+\+Smart\+Card\+NACKCmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables NACK transmission. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_gaaa23b05fe0e1896bad90da7f82750831}{USART\+\_\+\+Half\+Duplex\+Cmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART’s Half Duplex communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga3897bab07491d9239f8a238a9a7cddea}{USART\+\_\+\+Over\+Sampling8\+Cmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s 8x oversampling mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga3ed89ea8765d851510cfe90f7d90cbbb}{USART\+\_\+\+One\+Bit\+Method\+Cmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s one bit sampling method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga81a0cd36199040bf6d266b57babd678e}{USART\+\_\+\+Ir\+DAConfig}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+Ir\+DAMode)
+\begin{DoxyCompactList}\small\item\em Configures the USART\textquotesingle{}s Ir\+DA interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_gabff56ebb494fdfadcc6ef4fe9ac8dd24}{USART\+\_\+\+Ir\+DACmd}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the USART\textquotesingle{}s Ir\+DA interface. \end{DoxyCompactList}\item 
+Flag\+Status \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga144630722defc9e312f0ad280b68e9da}{USART\+\_\+\+Get\+Flag\+Status}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified USART flag is set or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_gad962e148fc466ae1b45b288f6c91d966}{USART\+\_\+\+Clear\+Flag}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+FLAG)
+\begin{DoxyCompactList}\small\item\em Clears the USARTx\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+ITStatus \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga93d8f031241bcdbe938d091a85295445}{USART\+\_\+\+Get\+ITStatus}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified USART interrupt has occurred or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_s_a_r_t___exported___functions_ga1fc25d0338695063be5e50156955d9bc}{USART\+\_\+\+Clear\+ITPending\+Bit}} (\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}USARTx, uint16\+\_\+t USART\+\_\+\+IT)
+\begin{DoxyCompactList}\small\item\em Clears the USARTx\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsection{Function Documentation}
+\Hypertarget{group___u_s_a_r_t___exported___functions_gad962e148fc466ae1b45b288f6c91d966}\label{group___u_s_a_r_t___exported___functions_gad962e148fc466ae1b45b288f6c91d966} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_ClearFlag@{USART\_ClearFlag}}
+\index{USART\_ClearFlag@{USART\_ClearFlag}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_ClearFlag()}{USART\_ClearFlag()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Clear\+Flag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Clears the USARTx\textquotesingle{}s pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em USART\+\_\+\+FLAG} & specifies the flag to clear. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+FLAG\+\_\+\+CTS\+: CTS Change flag (not available for UART4 and UART5). \item USART\+\_\+\+FLAG\+\_\+\+LBD\+: LIN Break detection flag. \item USART\+\_\+\+FLAG\+\_\+\+TC\+: Transmission Complete flag. \item USART\+\_\+\+FLAG\+\_\+\+RXNE\+: Receive data register not empty flag.\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item PE (Parity error), FE (Framing error), NE (Noise error), ORE (Over\+Run error) and IDLE (Idle line detected) flags are cleared by software sequence\+: a read operation to USART\+\_\+\+SR register (\doxylink{group___u_s_a_r_t___private___functions_ga144630722defc9e312f0ad280b68e9da}{USART\+\_\+\+Get\+Flag\+Status()}) followed by a read operation to USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___private___functions_gac67a91845b0b1d54d31bdfb1c5e9867c}{USART\+\_\+\+Receive\+Data()}).
+\item RXNE flag can be also cleared by a read to the USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___private___functions_gac67a91845b0b1d54d31bdfb1c5e9867c}{USART\+\_\+\+Receive\+Data()}).
+\item TC flag can be also cleared by software sequence\+: a read operation to USART\+\_\+\+SR register (\doxylink{group___u_s_a_r_t___private___functions_ga144630722defc9e312f0ad280b68e9da}{USART\+\_\+\+Get\+Flag\+Status()}) followed by a write operation to USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___private___functions_ga0b43d42da9540f446d494bf69823c6fb}{USART\+\_\+\+Send\+Data()}).
+\item TXE flag is cleared only by a write to the USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___private___functions_ga0b43d42da9540f446d494bf69823c6fb}{USART\+\_\+\+Send\+Data()}). 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga1fc25d0338695063be5e50156955d9bc}\label{group___u_s_a_r_t___exported___functions_ga1fc25d0338695063be5e50156955d9bc} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_ClearITPendingBit@{USART\_ClearITPendingBit}}
+\index{USART\_ClearITPendingBit@{USART\_ClearITPendingBit}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_ClearITPendingBit()}{USART\_ClearITPendingBit()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Clear\+ITPending\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+IT }\end{DoxyParamCaption})}
+
+
+
+Clears the USARTx\textquotesingle{}s interrupt pending bits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em USART\+\_\+\+IT} & specifies the interrupt pending bit to clear. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+IT\+\_\+\+CTS\+: CTS change interrupt (not available for UART4 and UART5) \item USART\+\_\+\+IT\+\_\+\+LBD\+: LIN Break detection interrupt \item USART\+\_\+\+IT\+\_\+\+TC\+: Transmission complete interrupt. \item USART\+\_\+\+IT\+\_\+\+RXNE\+: Receive Data register not empty interrupt.\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item PE (Parity error), FE (Framing error), NE (Noise error), ORE (Over\+Run error) and IDLE (Idle line detected) pending bits are cleared by software sequence\+: a read operation to USART\+\_\+\+SR register (\doxylink{group___u_s_a_r_t___private___functions_ga93d8f031241bcdbe938d091a85295445}{USART\+\_\+\+Get\+ITStatus()}) followed by a read operation to USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___private___functions_gac67a91845b0b1d54d31bdfb1c5e9867c}{USART\+\_\+\+Receive\+Data()}).
+\item RXNE pending bit can be also cleared by a read to the USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___private___functions_gac67a91845b0b1d54d31bdfb1c5e9867c}{USART\+\_\+\+Receive\+Data()}).
+\item TC pending bit can be also cleared by software sequence\+: a read operation to USART\+\_\+\+SR register (\doxylink{group___u_s_a_r_t___private___functions_ga93d8f031241bcdbe938d091a85295445}{USART\+\_\+\+Get\+ITStatus()}) followed by a write operation to USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___private___functions_ga0b43d42da9540f446d494bf69823c6fb}{USART\+\_\+\+Send\+Data()}).
+\item TXE pending bit is cleared only by a write to the USART\+\_\+\+DR register (\doxylink{group___u_s_a_r_t___private___functions_ga0b43d42da9540f446d494bf69823c6fb}{USART\+\_\+\+Send\+Data()}). 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_gadb50c7a2175c91acd3728f8eefd0c63d}\label{group___u_s_a_r_t___exported___functions_gadb50c7a2175c91acd3728f8eefd0c63d} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_ClockInit@{USART\_ClockInit}}
+\index{USART\_ClockInit@{USART\_ClockInit}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_ClockInit()}{USART\_ClockInit()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Clock\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{\mbox{\hyperlink{struct_u_s_a_r_t___clock_init_type_def}{USART\+\_\+\+Clock\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USART\+\_\+\+Clock\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Initializes the USARTx peripheral Clock according to the specified parameters in the USART\+\_\+\+Clock\+Init\+Struct . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2, 3 to select the USART peripheral. \\
+\hline
+{\em USART\+\_\+\+Clock\+Init\+Struct} & pointer to a \doxylink{struct_u_s_a_r_t___clock_init_type_def}{USART\+\_\+\+Clock\+Init\+Type\+Def} structure that contains the configuration information for the specified USART peripheral. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The Smart Card and Synchronous modes are not available for UART4 and UART5. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga59df27d0adda18b16ee28d47672cc724}\label{group___u_s_a_r_t___exported___functions_ga59df27d0adda18b16ee28d47672cc724} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_ClockStructInit@{USART\_ClockStructInit}}
+\index{USART\_ClockStructInit@{USART\_ClockStructInit}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_ClockStructInit()}{USART\_ClockStructInit()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Clock\+Struct\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___clock_init_type_def}{USART\+\_\+\+Clock\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USART\+\_\+\+Clock\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Fills each USART\+\_\+\+Clock\+Init\+Struct member with its default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USART\+\_\+\+Clock\+Init\+Struct} & pointer to a \doxylink{struct_u_s_a_r_t___clock_init_type_def}{USART\+\_\+\+Clock\+Init\+Type\+Def} structure which will be initialized. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga45e51626739c5f22a6567c8a85d1d85e}\label{group___u_s_a_r_t___exported___functions_ga45e51626739c5f22a6567c8a85d1d85e} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_Cmd@{USART\_Cmd}}
+\index{USART\_Cmd@{USART\_Cmd}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_Cmd()}{USART\_Cmd()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified USART peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em New\+State} & new state of the USARTx peripheral. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga2f8e1ce72da21b6539d8e1f299ec3b0d}\label{group___u_s_a_r_t___exported___functions_ga2f8e1ce72da21b6539d8e1f299ec3b0d} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_DeInit@{USART\_DeInit}}
+\index{USART\_DeInit@{USART\_DeInit}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_DeInit()}{USART\_DeInit()}}
+{\footnotesize\ttfamily void USART\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx }\end{DoxyParamCaption})}
+
+
+
+Deinitializes the USARTx peripheral registers to their default reset values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga902857f199ebfba21c63d725354af66f}\label{group___u_s_a_r_t___exported___functions_ga902857f199ebfba21c63d725354af66f} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_DMACmd@{USART\_DMACmd}}
+\index{USART\_DMACmd@{USART\_DMACmd}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_DMACmd()}{USART\_DMACmd()}}
+{\footnotesize\ttfamily void USART\+\_\+\+DMACmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+DMAReq,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the USART’s DMA interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em USART\+\_\+\+DMAReq} & specifies the DMA request. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+DMAReq\+\_\+\+Tx\+: USART DMA transmit request \item USART\+\_\+\+DMAReq\+\_\+\+Rx\+: USART DMA receive request \end{DoxyItemize}
+\\
+\hline
+{\em New\+State} & new state of the DMA Request sources. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The DMA mode is not available for UART5 except in the STM32 High density value line devices(\+STM32\+F10\+X\+\_\+\+HD\+\_\+\+VL). ~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga144630722defc9e312f0ad280b68e9da}\label{group___u_s_a_r_t___exported___functions_ga144630722defc9e312f0ad280b68e9da} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_GetFlagStatus@{USART\_GetFlagStatus}}
+\index{USART\_GetFlagStatus@{USART\_GetFlagStatus}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_GetFlagStatus()}{USART\_GetFlagStatus()}}
+{\footnotesize\ttfamily Flag\+Status USART\+\_\+\+Get\+Flag\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+FLAG }\end{DoxyParamCaption})}
+
+
+
+Checks whether the specified USART flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em USART\+\_\+\+FLAG} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+FLAG\+\_\+\+CTS\+: CTS Change flag (not available for UART4 and UART5) \item USART\+\_\+\+FLAG\+\_\+\+LBD\+: LIN Break detection flag \item USART\+\_\+\+FLAG\+\_\+\+TXE\+: Transmit data register empty flag \item USART\+\_\+\+FLAG\+\_\+\+TC\+: Transmission Complete flag \item USART\+\_\+\+FLAG\+\_\+\+RXNE\+: Receive data register not empty flag \item USART\+\_\+\+FLAG\+\_\+\+IDLE\+: Idle Line detection flag \item USART\+\_\+\+FLAG\+\_\+\+ORE\+: Over\+Run Error flag \item USART\+\_\+\+FLAG\+\_\+\+NE\+: Noise Error flag \item USART\+\_\+\+FLAG\+\_\+\+FE\+: Framing Error flag \item USART\+\_\+\+FLAG\+\_\+\+PE\+: Parity Error flag \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of USART\+\_\+\+FLAG (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga93d8f031241bcdbe938d091a85295445}\label{group___u_s_a_r_t___exported___functions_ga93d8f031241bcdbe938d091a85295445} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_GetITStatus@{USART\_GetITStatus}}
+\index{USART\_GetITStatus@{USART\_GetITStatus}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_GetITStatus()}{USART\_GetITStatus()}}
+{\footnotesize\ttfamily ITStatus USART\+\_\+\+Get\+ITStatus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+IT }\end{DoxyParamCaption})}
+
+
+
+Checks whether the specified USART interrupt has occurred or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em USART\+\_\+\+IT} & specifies the USART interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+IT\+\_\+\+CTS\+: CTS change interrupt (not available for UART4 and UART5) \item USART\+\_\+\+IT\+\_\+\+LBD\+: LIN Break detection interrupt \item USART\+\_\+\+IT\+\_\+\+TXE\+: Tansmit Data Register empty interrupt \item USART\+\_\+\+IT\+\_\+\+TC\+: Transmission complete interrupt \item USART\+\_\+\+IT\+\_\+\+RXNE\+: Receive Data register not empty interrupt \item USART\+\_\+\+IT\+\_\+\+IDLE\+: Idle line detection interrupt \item USART\+\_\+\+IT\+\_\+\+ORE\+: Over\+Run Error interrupt \item USART\+\_\+\+IT\+\_\+\+NE\+: Noise Error interrupt \item USART\+\_\+\+IT\+\_\+\+FE\+: Framing Error interrupt \item USART\+\_\+\+IT\+\_\+\+PE\+: Parity Error interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of USART\+\_\+\+IT (SET or RESET). \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_gaaa23b05fe0e1896bad90da7f82750831}\label{group___u_s_a_r_t___exported___functions_gaaa23b05fe0e1896bad90da7f82750831} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_HalfDuplexCmd@{USART\_HalfDuplexCmd}}
+\index{USART\_HalfDuplexCmd@{USART\_HalfDuplexCmd}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_HalfDuplexCmd()}{USART\_HalfDuplexCmd()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Half\+Duplex\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the USART’s Half Duplex communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em New\+State} & new state of the USART Communication. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga98da340ea0324002ba1b4263e91ab2ff}\label{group___u_s_a_r_t___exported___functions_ga98da340ea0324002ba1b4263e91ab2ff} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_Init@{USART\_Init}}
+\index{USART\_Init@{USART\_Init}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_Init()}{USART\_Init()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{\mbox{\hyperlink{struct_u_s_a_r_t___init_type_def}{USART\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USART\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Initializes the USARTx peripheral according to the specified parameters in the USART\+\_\+\+Init\+Struct . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em USART\+\_\+\+Init\+Struct} & pointer to a \doxylink{struct_u_s_a_r_t___init_type_def}{USART\+\_\+\+Init\+Type\+Def} structure that contains the configuration information for the specified USART peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_gabff56ebb494fdfadcc6ef4fe9ac8dd24}\label{group___u_s_a_r_t___exported___functions_gabff56ebb494fdfadcc6ef4fe9ac8dd24} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_IrDACmd@{USART\_IrDACmd}}
+\index{USART\_IrDACmd@{USART\_IrDACmd}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_IrDACmd()}{USART\_IrDACmd()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Ir\+DACmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the USART\textquotesingle{}s Ir\+DA interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em New\+State} & new state of the Ir\+DA mode. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga81a0cd36199040bf6d266b57babd678e}\label{group___u_s_a_r_t___exported___functions_ga81a0cd36199040bf6d266b57babd678e} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_IrDAConfig@{USART\_IrDAConfig}}
+\index{USART\_IrDAConfig@{USART\_IrDAConfig}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_IrDAConfig()}{USART\_IrDAConfig()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Ir\+DAConfig (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+Ir\+DAMode }\end{DoxyParamCaption})}
+
+
+
+Configures the USART\textquotesingle{}s Ir\+DA interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em USART\+\_\+\+Ir\+DAMode} & specifies the Ir\+DA mode. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+Ir\+DAMode\+\_\+\+Low\+Power \item USART\+\_\+\+Ir\+DAMode\+\_\+\+Normal \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga6d8f2dd1f34060ae7e386e3e5d56b6f6}\label{group___u_s_a_r_t___exported___functions_ga6d8f2dd1f34060ae7e386e3e5d56b6f6} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_ITConfig@{USART\_ITConfig}}
+\index{USART\_ITConfig@{USART\_ITConfig}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_ITConfig()}{USART\_ITConfig()}}
+{\footnotesize\ttfamily void USART\+\_\+\+ITConfig (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+IT,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the specified USART interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em USART\+\_\+\+IT} & specifies the USART interrupt sources to be enabled or disabled. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+IT\+\_\+\+CTS\+: CTS change interrupt (not available for UART4 and UART5) \item USART\+\_\+\+IT\+\_\+\+LBD\+: LIN Break detection interrupt \item USART\+\_\+\+IT\+\_\+\+TXE\+: Transmit Data Register empty interrupt \item USART\+\_\+\+IT\+\_\+\+TC\+: Transmission complete interrupt \item USART\+\_\+\+IT\+\_\+\+RXNE\+: Receive Data register not empty interrupt \item USART\+\_\+\+IT\+\_\+\+IDLE\+: Idle line detection interrupt \item USART\+\_\+\+IT\+\_\+\+PE\+: Parity Error interrupt \item USART\+\_\+\+IT\+\_\+\+ERR\+: Error interrupt(\+Frame error, noise error, overrun error) \end{DoxyItemize}
+\\
+\hline
+{\em New\+State} & new state of the specified USARTx interrupts. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga7bc2d291831cbc5e53e73337308029b5}\label{group___u_s_a_r_t___exported___functions_ga7bc2d291831cbc5e53e73337308029b5} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_LINBreakDetectLengthConfig@{USART\_LINBreakDetectLengthConfig}}
+\index{USART\_LINBreakDetectLengthConfig@{USART\_LINBreakDetectLengthConfig}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_LINBreakDetectLengthConfig()}{USART\_LINBreakDetectLengthConfig()}}
+{\footnotesize\ttfamily void USART\+\_\+\+LINBreak\+Detect\+Length\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+LINBreak\+Detect\+Length }\end{DoxyParamCaption})}
+
+
+
+Sets the USART LIN Break detection length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em USART\+\_\+\+LINBreak\+Detect\+Length} & specifies the LIN break detection length. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+LINBreak\+Detect\+Length\+\_\+10b\+: 10-\/bit break detection \item USART\+\_\+\+LINBreak\+Detect\+Length\+\_\+11b\+: 11-\/bit break detection \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga9fdd6296f4ca4acdfcbd58bf56bd4185}\label{group___u_s_a_r_t___exported___functions_ga9fdd6296f4ca4acdfcbd58bf56bd4185} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_LINCmd@{USART\_LINCmd}}
+\index{USART\_LINCmd@{USART\_LINCmd}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_LINCmd()}{USART\_LINCmd()}}
+{\footnotesize\ttfamily void USART\+\_\+\+LINCmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the USART’s LIN mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em New\+State} & new state of the USART LIN mode. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga3ed89ea8765d851510cfe90f7d90cbbb}\label{group___u_s_a_r_t___exported___functions_ga3ed89ea8765d851510cfe90f7d90cbbb} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_OneBitMethodCmd@{USART\_OneBitMethodCmd}}
+\index{USART\_OneBitMethodCmd@{USART\_OneBitMethodCmd}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_OneBitMethodCmd()}{USART\_OneBitMethodCmd()}}
+{\footnotesize\ttfamily void USART\+\_\+\+One\+Bit\+Method\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the USART\textquotesingle{}s one bit sampling method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em New\+State} & new state of the USART one bit sampling method. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga3897bab07491d9239f8a238a9a7cddea}\label{group___u_s_a_r_t___exported___functions_ga3897bab07491d9239f8a238a9a7cddea} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_OverSampling8Cmd@{USART\_OverSampling8Cmd}}
+\index{USART\_OverSampling8Cmd@{USART\_OverSampling8Cmd}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_OverSampling8Cmd()}{USART\_OverSampling8Cmd()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Over\+Sampling8\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the USART\textquotesingle{}s 8x oversampling mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em New\+State} & new state of the USART one bit sampling method. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function has to be called before calling \doxylink{group___u_s_a_r_t___private___functions_ga98da340ea0324002ba1b4263e91ab2ff}{USART\+\_\+\+Init()} function in order to have correct baudrate Divider value. ~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_gac67a91845b0b1d54d31bdfb1c5e9867c}\label{group___u_s_a_r_t___exported___functions_gac67a91845b0b1d54d31bdfb1c5e9867c} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_ReceiveData@{USART\_ReceiveData}}
+\index{USART\_ReceiveData@{USART\_ReceiveData}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_ReceiveData()}{USART\_ReceiveData()}}
+{\footnotesize\ttfamily uint16\+\_\+t USART\+\_\+\+Receive\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx }\end{DoxyParamCaption})}
+
+
+
+Returns the most recent received data by the USARTx peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & received data. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_gac27b78ce445a16fe33851d2f87781c02}\label{group___u_s_a_r_t___exported___functions_gac27b78ce445a16fe33851d2f87781c02} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_ReceiverWakeUpCmd@{USART\_ReceiverWakeUpCmd}}
+\index{USART\_ReceiverWakeUpCmd@{USART\_ReceiverWakeUpCmd}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_ReceiverWakeUpCmd()}{USART\_ReceiverWakeUpCmd()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Receiver\+Wake\+Up\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Determines if the USART is in mute mode or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em New\+State} & new state of the USART mute mode. This parameter can be\+: ENABLE or DISABLE. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga39a3d33e23ee28529fa8f7259ce6811e}\label{group___u_s_a_r_t___exported___functions_ga39a3d33e23ee28529fa8f7259ce6811e} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_SendBreak@{USART\_SendBreak}}
+\index{USART\_SendBreak@{USART\_SendBreak}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_SendBreak()}{USART\_SendBreak()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Send\+Break (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx }\end{DoxyParamCaption})}
+
+
+
+Transmits break characters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga0b43d42da9540f446d494bf69823c6fb}\label{group___u_s_a_r_t___exported___functions_ga0b43d42da9540f446d494bf69823c6fb} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_SendData@{USART\_SendData}}
+\index{USART\_SendData@{USART\_SendData}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_SendData()}{USART\_SendData()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Send\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{Data }\end{DoxyParamCaption})}
+
+
+
+Transmits single data through the USARTx peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em Data} & the data to transmit. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga65ec9928817f3f031dd9a4dfc95d6666}\label{group___u_s_a_r_t___exported___functions_ga65ec9928817f3f031dd9a4dfc95d6666} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_SetAddress@{USART\_SetAddress}}
+\index{USART\_SetAddress@{USART\_SetAddress}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_SetAddress()}{USART\_SetAddress()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Set\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint8\+\_\+t}]{USART\+\_\+\+Address }\end{DoxyParamCaption})}
+
+
+
+Sets the address of the USART node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em USART\+\_\+\+Address} & Indicates the address of the USART node. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_gac4a35c6acd71ae7e0d67c1f03f0a8777}\label{group___u_s_a_r_t___exported___functions_gac4a35c6acd71ae7e0d67c1f03f0a8777} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_SetGuardTime@{USART\_SetGuardTime}}
+\index{USART\_SetGuardTime@{USART\_SetGuardTime}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_SetGuardTime()}{USART\_SetGuardTime()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Set\+Guard\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint8\+\_\+t}]{USART\+\_\+\+Guard\+Time }\end{DoxyParamCaption})}
+
+
+
+Sets the specified USART guard time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2 or 3 to select the USART peripheral. \\
+\hline
+{\em USART\+\_\+\+Guard\+Time} & specifies the guard time. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The guard time bits are not available for UART4 and UART5. ~\newline
+ 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_gaf5da8f2eee8245425584d85d4f62cc33}\label{group___u_s_a_r_t___exported___functions_gaf5da8f2eee8245425584d85d4f62cc33} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_SetPrescaler@{USART\_SetPrescaler}}
+\index{USART\_SetPrescaler@{USART\_SetPrescaler}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_SetPrescaler()}{USART\_SetPrescaler()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Set\+Prescaler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint8\+\_\+t}]{USART\+\_\+\+Prescaler }\end{DoxyParamCaption})}
+
+
+
+Sets the system clock prescaler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em USART\+\_\+\+Prescaler} & specifies the prescaler clock. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The function is used for Ir\+DA mode with UART4 and UART5. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_gabd1347e244c623447151ba3a5e986c5f}\label{group___u_s_a_r_t___exported___functions_gabd1347e244c623447151ba3a5e986c5f} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_SmartCardCmd@{USART\_SmartCardCmd}}
+\index{USART\_SmartCardCmd@{USART\_SmartCardCmd}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_SmartCardCmd()}{USART\_SmartCardCmd()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Smart\+Card\+Cmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the USART’s Smart Card mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2 or 3 to select the USART peripheral. \\
+\hline
+{\em New\+State} & new state of the Smart Card mode. This parameter can be\+: ENABLE or DISABLE. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The Smart Card mode is not available for UART4 and UART5. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga62e22f47e38aa53f2edce8771f7a5dfa}\label{group___u_s_a_r_t___exported___functions_ga62e22f47e38aa53f2edce8771f7a5dfa} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_SmartCardNACKCmd@{USART\_SmartCardNACKCmd}}
+\index{USART\_SmartCardNACKCmd@{USART\_SmartCardNACKCmd}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_SmartCardNACKCmd()}{USART\_SmartCardNACKCmd()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Smart\+Card\+NACKCmd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{Functional\+State}]{New\+State }\end{DoxyParamCaption})}
+
+
+
+Enables or disables NACK transmission. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & where x can be 1, 2 or 3 to select the USART peripheral. \\
+\hline
+{\em New\+State} & new state of the NACK transmission. This parameter can be\+: ENABLE or DISABLE. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The Smart Card mode is not available for UART4 and UART5. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga34e1faa2f312496c16cfd05155f4c8b1}\label{group___u_s_a_r_t___exported___functions_ga34e1faa2f312496c16cfd05155f4c8b1} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_StructInit@{USART\_StructInit}}
+\index{USART\_StructInit@{USART\_StructInit}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_StructInit()}{USART\_StructInit()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Struct\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___init_type_def}{USART\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USART\+\_\+\+Init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Fills each USART\+\_\+\+Init\+Struct member with its default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USART\+\_\+\+Init\+Struct} & pointer to a \doxylink{struct_u_s_a_r_t___init_type_def}{USART\+\_\+\+Init\+Type\+Def} structure which will be initialized. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_s_a_r_t___exported___functions_ga4965417c2412c36e462fcad50a8d5393}\label{group___u_s_a_r_t___exported___functions_ga4965417c2412c36e462fcad50a8d5393} 
+\index{USART\_Exported\_Functions@{USART\_Exported\_Functions}!USART\_WakeUpConfig@{USART\_WakeUpConfig}}
+\index{USART\_WakeUpConfig@{USART\_WakeUpConfig}!USART\_Exported\_Functions@{USART\_Exported\_Functions}}
+\doxysubsubsubsubsection{\texorpdfstring{USART\_WakeUpConfig()}{USART\_WakeUpConfig()}}
+{\footnotesize\ttfamily void USART\+\_\+\+Wake\+Up\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{USARTx,  }\item[{uint16\+\_\+t}]{USART\+\_\+\+Wake\+Up }\end{DoxyParamCaption})}
+
+
+
+Selects the USART Wake\+Up method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em USARTx} & Select the USART or the UART peripheral. This parameter can be one of the following values\+: USART1, USART2, USART3, UART4 or UART5. \\
+\hline
+{\em USART\+\_\+\+Wake\+Up} & specifies the USART wakeup method. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item USART\+\_\+\+Wake\+Up\+\_\+\+Idle\+Line\+: Wake\+Up by an idle line detection \item USART\+\_\+\+Wake\+Up\+\_\+\+Address\+Mark\+: Wake\+Up by an address mark \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

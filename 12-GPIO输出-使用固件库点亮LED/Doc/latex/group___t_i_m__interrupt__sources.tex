@@ -1,0 +1,58 @@
+\doxysubsubsubsection{TIM\+\_\+interrupt\+\_\+sources}
+\hypertarget{group___t_i_m__interrupt__sources}{}\label{group___t_i_m__interrupt__sources}\index{TIM\_interrupt\_sources@{TIM\_interrupt\_sources}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___t_i_m__interrupt__sources_ga8fb63577fec9a3e7c7f5f3eb775ee624}\label{group___t_i_m__interrupt__sources_ga8fb63577fec9a3e7c7f5f3eb775ee624} 
+\#define {\bfseries TIM\+\_\+\+IT\+\_\+\+Update}~((uint16\+\_\+t)0x0001)
+\item 
+\Hypertarget{group___t_i_m__interrupt__sources_ga02267a938ab4722c5013fffa447cf5a6}\label{group___t_i_m__interrupt__sources_ga02267a938ab4722c5013fffa447cf5a6} 
+\#define {\bfseries TIM\+\_\+\+IT\+\_\+\+CC1}~((uint16\+\_\+t)0x0002)
+\item 
+\Hypertarget{group___t_i_m__interrupt__sources_ga60f6b6c424b62ca58d3fafd8f5955e4f}\label{group___t_i_m__interrupt__sources_ga60f6b6c424b62ca58d3fafd8f5955e4f} 
+\#define {\bfseries TIM\+\_\+\+IT\+\_\+\+CC2}~((uint16\+\_\+t)0x0004)
+\item 
+\Hypertarget{group___t_i_m__interrupt__sources_ga6aef020aebafd9e585283fbbaf8b841f}\label{group___t_i_m__interrupt__sources_ga6aef020aebafd9e585283fbbaf8b841f} 
+\#define {\bfseries TIM\+\_\+\+IT\+\_\+\+CC3}~((uint16\+\_\+t)0x0008)
+\item 
+\Hypertarget{group___t_i_m__interrupt__sources_ga1dce7f1bc32a258f2964cb7c05f413a6}\label{group___t_i_m__interrupt__sources_ga1dce7f1bc32a258f2964cb7c05f413a6} 
+\#define {\bfseries TIM\+\_\+\+IT\+\_\+\+CC4}~((uint16\+\_\+t)0x0010)
+\item 
+\Hypertarget{group___t_i_m__interrupt__sources_gaeb7eff6c39922814e7ee47c0820c3d9f}\label{group___t_i_m__interrupt__sources_gaeb7eff6c39922814e7ee47c0820c3d9f} 
+\#define {\bfseries TIM\+\_\+\+IT\+\_\+\+COM}~((uint16\+\_\+t)0x0020)
+\item 
+\Hypertarget{group___t_i_m__interrupt__sources_ga339629d21f2490729b28905f5c04bad1}\label{group___t_i_m__interrupt__sources_ga339629d21f2490729b28905f5c04bad1} 
+\#define {\bfseries TIM\+\_\+\+IT\+\_\+\+Trigger}~((uint16\+\_\+t)0x0040)
+\item 
+\Hypertarget{group___t_i_m__interrupt__sources_gad16adab3ac1a4a552a86da069702f24b}\label{group___t_i_m__interrupt__sources_gad16adab3ac1a4a552a86da069702f24b} 
+\#define {\bfseries TIM\+\_\+\+IT\+\_\+\+Break}~((uint16\+\_\+t)0x0080)
+\item 
+\Hypertarget{group___t_i_m__interrupt__sources_ga14fce0f8dbe0925e45b415b34bd162c9}\label{group___t_i_m__interrupt__sources_ga14fce0f8dbe0925e45b415b34bd162c9} 
+\#define {\bfseries IS\+\_\+\+TIM\+\_\+\+IT}(IT)~((((IT) \& (uint16\+\_\+t)0x\+FF00) == 0x0000) \&\& ((IT) != 0x0000))
+\item 
+\#define \mbox{\hyperlink{group___t_i_m__interrupt__sources_ga38e9d740c8d4ed8fcaced73816c124e6}{IS\+\_\+\+TIM\+\_\+\+GET\+\_\+\+IT}}(IT)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___t_i_m__interrupt__sources_ga38e9d740c8d4ed8fcaced73816c124e6}\label{group___t_i_m__interrupt__sources_ga38e9d740c8d4ed8fcaced73816c124e6} 
+\index{TIM\_interrupt\_sources@{TIM\_interrupt\_sources}!IS\_TIM\_GET\_IT@{IS\_TIM\_GET\_IT}}
+\index{IS\_TIM\_GET\_IT@{IS\_TIM\_GET\_IT}!TIM\_interrupt\_sources@{TIM\_interrupt\_sources}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_TIM\_GET\_IT}{IS\_TIM\_GET\_IT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+TIM\+\_\+\+GET\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{IT }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((IT)\ ==\ TIM\_IT\_Update)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ TIM\_IT\_CC1)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ TIM\_IT\_CC2)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ TIM\_IT\_CC3)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ TIM\_IT\_CC4)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ TIM\_IT\_COM)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ TIM\_IT\_Trigger)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ TIM\_IT\_Break))}
+
+\end{DoxyCode}

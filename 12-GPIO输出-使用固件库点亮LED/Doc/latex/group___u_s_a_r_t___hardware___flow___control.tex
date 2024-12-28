@@ -1,0 +1,39 @@
+\doxysubsubsubsection{USART\+\_\+\+Hardware\+\_\+\+Flow\+\_\+\+Control}
+\hypertarget{group___u_s_a_r_t___hardware___flow___control}{}\label{group___u_s_a_r_t___hardware___flow___control}\index{USART\_Hardware\_Flow\_Control@{USART\_Hardware\_Flow\_Control}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___u_s_a_r_t___hardware___flow___control_gaf3deaf4429b88db7753ee203f4797bd3}\label{group___u_s_a_r_t___hardware___flow___control_gaf3deaf4429b88db7753ee203f4797bd3} 
+\#define {\bfseries USART\+\_\+\+Hardware\+Flow\+Control\+\_\+\+None}~((uint16\+\_\+t)0x0000)
+\item 
+\Hypertarget{group___u_s_a_r_t___hardware___flow___control_ga22d4339693e3356d992abca259b0418e}\label{group___u_s_a_r_t___hardware___flow___control_ga22d4339693e3356d992abca259b0418e} 
+\#define {\bfseries USART\+\_\+\+Hardware\+Flow\+Control\+\_\+\+RTS}~((uint16\+\_\+t)0x0100)
+\item 
+\Hypertarget{group___u_s_a_r_t___hardware___flow___control_ga4d989f112f94009c0849fe4dbe829d81}\label{group___u_s_a_r_t___hardware___flow___control_ga4d989f112f94009c0849fe4dbe829d81} 
+\#define {\bfseries USART\+\_\+\+Hardware\+Flow\+Control\+\_\+\+CTS}~((uint16\+\_\+t)0x0200)
+\item 
+\Hypertarget{group___u_s_a_r_t___hardware___flow___control_ga2986aed8c6cba414ac8afe0180ab553e}\label{group___u_s_a_r_t___hardware___flow___control_ga2986aed8c6cba414ac8afe0180ab553e} 
+\#define {\bfseries USART\+\_\+\+Hardware\+Flow\+Control\+\_\+\+RTS\+\_\+\+CTS}~((uint16\+\_\+t)0x0300)
+\item 
+\#define \mbox{\hyperlink{group___u_s_a_r_t___hardware___flow___control_ga9b905eb465780173a2e98bc8b602c030}{IS\+\_\+\+USART\+\_\+\+HARDWARE\+\_\+\+FLOW\+\_\+\+CONTROL}}(CONTROL)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___u_s_a_r_t___hardware___flow___control_ga9b905eb465780173a2e98bc8b602c030}\label{group___u_s_a_r_t___hardware___flow___control_ga9b905eb465780173a2e98bc8b602c030} 
+\index{USART\_Hardware\_Flow\_Control@{USART\_Hardware\_Flow\_Control}!IS\_USART\_HARDWARE\_FLOW\_CONTROL@{IS\_USART\_HARDWARE\_FLOW\_CONTROL}}
+\index{IS\_USART\_HARDWARE\_FLOW\_CONTROL@{IS\_USART\_HARDWARE\_FLOW\_CONTROL}!USART\_Hardware\_Flow\_Control@{USART\_Hardware\_Flow\_Control}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_USART\_HARDWARE\_FLOW\_CONTROL}{IS\_USART\_HARDWARE\_FLOW\_CONTROL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+USART\+\_\+\+HARDWARE\+\_\+\+FLOW\+\_\+\+CONTROL(\begin{DoxyParamCaption}\item[{}]{CONTROL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((CONTROL)\ ==\ USART\_HardwareFlowControl\_None)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CONTROL)\ ==\ USART\_HardwareFlowControl\_RTS)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CONTROL)\ ==\ USART\_HardwareFlowControl\_CTS)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CONTROL)\ ==\ USART\_HardwareFlowControl\_RTS\_CTS))}
+
+\end{DoxyCode}

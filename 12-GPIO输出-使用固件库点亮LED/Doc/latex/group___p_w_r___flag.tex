@@ -1,0 +1,37 @@
+\doxysubsubsubsection{PWR\+\_\+\+Flag}
+\hypertarget{group___p_w_r___flag}{}\label{group___p_w_r___flag}\index{PWR\_Flag@{PWR\_Flag}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___p_w_r___flag_ga2d06760a5769e729b06d41e37036d58e}\label{group___p_w_r___flag_ga2d06760a5769e729b06d41e37036d58e} 
+\#define {\bfseries PWR\+\_\+\+FLAG\+\_\+\+WU}~((uint32\+\_\+t)0x00000001)
+\item 
+\Hypertarget{group___p_w_r___flag_ga9e55f0b5dec2346d5c8dee3ab3c0c2df}\label{group___p_w_r___flag_ga9e55f0b5dec2346d5c8dee3ab3c0c2df} 
+\#define {\bfseries PWR\+\_\+\+FLAG\+\_\+\+SB}~((uint32\+\_\+t)0x00000002)
+\item 
+\Hypertarget{group___p_w_r___flag_gaefd05d58cc050eeef83a1b5c520b2c2a}\label{group___p_w_r___flag_gaefd05d58cc050eeef83a1b5c520b2c2a} 
+\#define {\bfseries PWR\+\_\+\+FLAG\+\_\+\+PVDO}~((uint32\+\_\+t)0x00000004)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r___flag_gadc822638d0dd52d2f920808dd96c00a1}{IS\+\_\+\+PWR\+\_\+\+GET\+\_\+\+FLAG}}(FLAG)
+\item 
+\Hypertarget{group___p_w_r___flag_ga36d35a770e683e4a0baf3aac350fcb5a}\label{group___p_w_r___flag_ga36d35a770e683e4a0baf3aac350fcb5a} 
+\#define {\bfseries IS\+\_\+\+PWR\+\_\+\+CLEAR\+\_\+\+FLAG}(FLAG)~(((FLAG) == PWR\+\_\+\+FLAG\+\_\+\+WU) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} ((FLAG) == PWR\+\_\+\+FLAG\+\_\+\+SB))
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___p_w_r___flag_gadc822638d0dd52d2f920808dd96c00a1}\label{group___p_w_r___flag_gadc822638d0dd52d2f920808dd96c00a1} 
+\index{PWR\_Flag@{PWR\_Flag}!IS\_PWR\_GET\_FLAG@{IS\_PWR\_GET\_FLAG}}
+\index{IS\_PWR\_GET\_FLAG@{IS\_PWR\_GET\_FLAG}!PWR\_Flag@{PWR\_Flag}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_PWR\_GET\_FLAG}{IS\_PWR\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+PWR\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{FLAG }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((FLAG)\ ==\ PWR\_FLAG\_WU)\ ||\ ((FLAG)\ ==\ PWR\_FLAG\_SB)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ PWR\_FLAG\_PVDO))}
+
+\end{DoxyCode}

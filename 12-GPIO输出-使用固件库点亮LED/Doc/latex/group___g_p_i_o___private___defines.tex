@@ -1,0 +1,47 @@
+\doxysubsubsection{GPIO\+\_\+\+Private\+\_\+\+Defines}
+\hypertarget{group___g_p_i_o___private___defines}{}\label{group___g_p_i_o___private___defines}\index{GPIO\_Private\_Defines@{GPIO\_Private\_Defines}}
+\doxysubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_ga0ecdd0dd5180e1ee385c22f66a2cd660}\label{group___g_p_i_o___private___defines_ga0ecdd0dd5180e1ee385c22f66a2cd660} 
+\#define {\bfseries AFIO\+\_\+\+OFFSET}~(AFIO\+\_\+\+BASE -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_gaf8c24f39392c89142f1b97a418669d5d}\label{group___g_p_i_o___private___defines_gaf8c24f39392c89142f1b97a418669d5d} 
+\#define {\bfseries EVCR\+\_\+\+OFFSET}~(AFIO\+\_\+\+OFFSET + 0x00)
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_ga8e4fdee57fe3447cdbc5d00ccab60c18}\label{group___g_p_i_o___private___defines_ga8e4fdee57fe3447cdbc5d00ccab60c18} 
+\#define {\bfseries EVOE\+\_\+\+Bit\+Number}~((uint8\+\_\+t)0x07)
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_ga6e4f8c4e3def38811ac6c03b4f64240b}\label{group___g_p_i_o___private___defines_ga6e4f8c4e3def38811ac6c03b4f64240b} 
+\#define {\bfseries EVCR\+\_\+\+EVOE\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (EVCR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (EVOE\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_ga472f80f63d09e365d283675f3466c8a1}\label{group___g_p_i_o___private___defines_ga472f80f63d09e365d283675f3466c8a1} 
+\#define {\bfseries MAPR\+\_\+\+OFFSET}~(AFIO\+\_\+\+OFFSET + 0x04)
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_gad4a9bbd669109039291f942d923ff8ae}\label{group___g_p_i_o___private___defines_gad4a9bbd669109039291f942d923ff8ae} 
+\#define {\bfseries MII\+\_\+\+RMII\+\_\+\+SEL\+\_\+\+Bit\+Number}~((u8)0x17)
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_ga00e75433e8a45d7a55c021397cb85aa9}\label{group___g_p_i_o___private___defines_ga00e75433e8a45d7a55c021397cb85aa9} 
+\#define {\bfseries MAPR\+\_\+\+MII\+\_\+\+RMII\+\_\+\+SEL\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (MAPR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (MII\+\_\+\+RMII\+\_\+\+SEL\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_ga97d20e77a588a767e1a775dd4299d1c5}\label{group___g_p_i_o___private___defines_ga97d20e77a588a767e1a775dd4299d1c5} 
+\#define {\bfseries EVCR\+\_\+\+PORTPINCONFIG\+\_\+\+MASK}~((uint16\+\_\+t)0x\+FF80)
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_ga338d54179ac0da2af2363e3a930bf374}\label{group___g_p_i_o___private___defines_ga338d54179ac0da2af2363e3a930bf374} 
+\#define {\bfseries LSB\+\_\+\+MASK}~((uint16\+\_\+t)0x\+FFFF)
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_gafa4eba58b1839413acb4591da00e7559}\label{group___g_p_i_o___private___defines_gafa4eba58b1839413acb4591da00e7559} 
+\#define {\bfseries DBGAFR\+\_\+\+POSITION\+\_\+\+MASK}~((uint32\+\_\+t)0x000\+F0000)
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_ga47a1cd3c0505a7be3e161671237d8460}\label{group___g_p_i_o___private___defines_ga47a1cd3c0505a7be3e161671237d8460} 
+\#define {\bfseries DBGAFR\+\_\+\+SWJCFG\+\_\+\+MASK}~((uint32\+\_\+t)0x\+F0\+FFFFFF)
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_gaab83406f875057e96458940ca9519b7d}\label{group___g_p_i_o___private___defines_gaab83406f875057e96458940ca9519b7d} 
+\#define {\bfseries DBGAFR\+\_\+\+LOCATION\+\_\+\+MASK}~((uint32\+\_\+t)0x00200000)
+\item 
+\Hypertarget{group___g_p_i_o___private___defines_gaea2fa480dea4d6e061eaa1417a9196dc}\label{group___g_p_i_o___private___defines_gaea2fa480dea4d6e061eaa1417a9196dc} 
+\#define {\bfseries DBGAFR\+\_\+\+NUMBITS\+\_\+\+MASK}~((uint32\+\_\+t)0x00100000)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Detailed Description}

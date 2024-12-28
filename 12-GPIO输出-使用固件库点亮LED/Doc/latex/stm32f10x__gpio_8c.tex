@@ -1,0 +1,97 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/12-\/\+GPIO输出-\/使用固件库点亮\+LED/\+Libraries/\+STM32\+F10x\+\_\+\+Std\+Periph\+\_\+\+Driver/src/stm32f10x\+\_\+gpio.c File Reference}
+\hypertarget{stm32f10x__gpio_8c}{}\label{stm32f10x__gpio_8c}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_gpio.c@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/Libraries/STM32F10x\_StdPeriph\_Driver/src/stm32f10x\_gpio.c}}
+
+
+This file provides all the GPIO firmware functions.  
+
+
+{\ttfamily \#include "{}stm32f10x\+\_\+gpio.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f10x\+\_\+rcc.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries AFIO\+\_\+\+OFFSET}~(AFIO\+\_\+\+BASE -\/ \mbox{\hyperlink{group___peripheral__memory__map_ga9171f49478fa86d932f89e78e73b88b0}{PERIPH\+\_\+\+BASE}})
+\item 
+\#define {\bfseries EVCR\+\_\+\+OFFSET}~(AFIO\+\_\+\+OFFSET + 0x00)
+\item 
+\#define {\bfseries EVOE\+\_\+\+Bit\+Number}~((uint8\+\_\+t)0x07)
+\item 
+\#define {\bfseries EVCR\+\_\+\+EVOE\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (EVCR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (EVOE\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define {\bfseries MAPR\+\_\+\+OFFSET}~(AFIO\+\_\+\+OFFSET + 0x04)
+\item 
+\#define {\bfseries MII\+\_\+\+RMII\+\_\+\+SEL\+\_\+\+Bit\+Number}~((u8)0x17)
+\item 
+\#define {\bfseries MAPR\+\_\+\+MII\+\_\+\+RMII\+\_\+\+SEL\+\_\+\+BB}~(\mbox{\hyperlink{group___peripheral__memory__map_gaed7efc100877000845c236ccdc9e144a}{PERIPH\+\_\+\+BB\+\_\+\+BASE}} + (MAPR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (MII\+\_\+\+RMII\+\_\+\+SEL\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\#define {\bfseries EVCR\+\_\+\+PORTPINCONFIG\+\_\+\+MASK}~((uint16\+\_\+t)0x\+FF80)
+\item 
+\#define {\bfseries LSB\+\_\+\+MASK}~((uint16\+\_\+t)0x\+FFFF)
+\item 
+\#define {\bfseries DBGAFR\+\_\+\+POSITION\+\_\+\+MASK}~((uint32\+\_\+t)0x000\+F0000)
+\item 
+\#define {\bfseries DBGAFR\+\_\+\+SWJCFG\+\_\+\+MASK}~((uint32\+\_\+t)0x\+F0\+FFFFFF)
+\item 
+\#define {\bfseries DBGAFR\+\_\+\+LOCATION\+\_\+\+MASK}~((uint32\+\_\+t)0x00200000)
+\item 
+\#define {\bfseries DBGAFR\+\_\+\+NUMBITS\+\_\+\+MASK}~((uint32\+\_\+t)0x00100000)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_gaa60bdf3182c44b5fa818f237042f52ee}{GPIO\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx)
+\begin{DoxyCompactList}\small\item\em Deinitializes the GPIOx peripheral registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_ga7f645e6b6146818c3d6c19021e70170c}{GPIO\+\_\+\+AFIODe\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the Alternate Functions (remap, event control and EXTI configuration) registers to their default reset values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_ga71abf9404261370d03cca449b88d3a65}{GPIO\+\_\+\+Init}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, \mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIO\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the GPIOx peripheral according to the specified parameters in the GPIO\+\_\+\+Init\+Struct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_gab28de41278e7f8c63d0851e2733b10df}{GPIO\+\_\+\+Struct\+Init}} (\mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\+\_\+\+Init\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIO\+\_\+\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Fills each GPIO\+\_\+\+Init\+Struct member with its default value. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___g_p_i_o___private___functions_ga98772ef6b639b3fa06c8ae5ba28d3aaa}{GPIO\+\_\+\+Read\+Input\+Data\+Bit}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified input port pin. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___g_p_i_o___private___functions_ga139a33adc8409288e9f193bbebb5a0f7}{GPIO\+\_\+\+Read\+Input\+Data}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx)
+\begin{DoxyCompactList}\small\item\em Reads the specified GPIO input data port. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___g_p_i_o___private___functions_ga138270f8695b105b7c6ed405792919c1}{GPIO\+\_\+\+Read\+Output\+Data\+Bit}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the specified output data port bit. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group___g_p_i_o___private___functions_gaf8938a34280b7dc3e39872a7c17bb323}{GPIO\+\_\+\+Read\+Output\+Data}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx)
+\begin{DoxyCompactList}\small\item\em Reads the specified GPIO output data port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_ga9e1352eed7c6620e18af2d86f6b6ff8e}{GPIO\+\_\+\+Set\+Bits}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets the selected data port bits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_ga6fcd35b207a66608dd2c9d7de9247dc8}{GPIO\+\_\+\+Reset\+Bits}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Clears the selected data port bits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_ga8f7b237fd744d9f7456fbe0da47a9b80}{GPIO\+\_\+\+Write\+Bit}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin, \mbox{\hyperlink{group___g_p_i_o___exported___types_ga176130b21c0e719121470a6042d4cf19}{Bit\+Action}} Bit\+Val)
+\begin{DoxyCompactList}\small\item\em Sets or clears the selected data port bit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_gaa925f19c8547a00c7a0c269a84873bf9}{GPIO\+\_\+\+Write}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t Port\+Val)
+\begin{DoxyCompactList}\small\item\em Writes data to the specified GPIO data port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_gad2f2e615928c69fd0d8c641a7cedaafc}{GPIO\+\_\+\+Pin\+Lock\+Config}} (\mbox{\hyperlink{struct_g_p_i_o___type_def}{GPIO\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Locks GPIO Pins configuration registers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_ga935f31ed7a86c6cb594cf34313b4b7af}{GPIO\+\_\+\+Event\+Output\+Config}} (uint8\+\_\+t GPIO\+\_\+\+Port\+Source, uint8\+\_\+t GPIO\+\_\+\+Pin\+Source)
+\begin{DoxyCompactList}\small\item\em Selects the GPIO pin used as Event output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_gaf13ab3d59e467df44b492f1cdfe2f588}{GPIO\+\_\+\+Event\+Output\+Cmd}} (Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Enables or disables the Event Output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_ga64eb76f6211b840daf9829289df4208b}{GPIO\+\_\+\+Pin\+Remap\+Config}} (uint32\+\_\+t GPIO\+\_\+\+Remap, Functional\+State New\+State)
+\begin{DoxyCompactList}\small\item\em Changes the mapping of the specified pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_ga8c1f13646d7418827378032a584da653}{GPIO\+\_\+\+EXTILine\+Config}} (uint8\+\_\+t GPIO\+\_\+\+Port\+Source, uint8\+\_\+t GPIO\+\_\+\+Pin\+Source)
+\begin{DoxyCompactList}\small\item\em Selects the GPIO pin used as EXTI Line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___g_p_i_o___private___functions_gacbfad958f684347be0f2c762dc85c3c2}{GPIO\+\_\+\+ETH\+\_\+\+Media\+Interface\+Config}} (uint32\+\_\+t GPIO\+\_\+\+ETH\+\_\+\+Media\+Interface)
+\begin{DoxyCompactList}\small\item\em Selects the Ethernet media interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides all the GPIO firmware functions. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V3.\+5.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11-\/March-\/2011 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE CONTENT OF SUCH FIRMWARE AND/\+OR THE USE MADE BY CUSTOMERS OF THE CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+
+\doxysubsubsection*{\begin{center}\copyright{} COPYRIGHT 2011 STMicroelectronics\end{center} }

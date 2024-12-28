@@ -1,0 +1,53 @@
+\doxysubsubsubsection{RTC\+\_\+interrupts\+\_\+define}
+\hypertarget{group___r_t_c__interrupts__define}{}\label{group___r_t_c__interrupts__define}\index{RTC\_interrupts\_define@{RTC\_interrupts\_define}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__interrupts__define_gabcfefb2f22cb8ca65113c2c13d0e0640}{RTC\+\_\+\+IT\+\_\+\+OW}}~((uint16\+\_\+t)0x0004)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__interrupts__define_ga92f0316a3c69aefc2b20c3392843d3da}{RTC\+\_\+\+IT\+\_\+\+ALR}}~((uint16\+\_\+t)0x0002)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__interrupts__define_ga960bccbc10da872549cf52c03dd342f1}{RTC\+\_\+\+IT\+\_\+\+SEC}}~((uint16\+\_\+t)0x0001)
+\item 
+\Hypertarget{group___r_t_c__interrupts__define_ga5c941995b804ce4c7ef62e28e0133a83}\label{group___r_t_c__interrupts__define_ga5c941995b804ce4c7ef62e28e0133a83} 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+IT}(IT)~((((IT) \& (uint16\+\_\+t)0x\+FFF8) == 0x00) \&\& ((IT) != 0x00))
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__interrupts__define_ga2e10d8ccb2aa398ac14bde526f98dbc9}{IS\+\_\+\+RTC\+\_\+\+GET\+\_\+\+IT}}(IT)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___r_t_c__interrupts__define_ga2e10d8ccb2aa398ac14bde526f98dbc9}\label{group___r_t_c__interrupts__define_ga2e10d8ccb2aa398ac14bde526f98dbc9} 
+\index{RTC\_interrupts\_define@{RTC\_interrupts\_define}!IS\_RTC\_GET\_IT@{IS\_RTC\_GET\_IT}}
+\index{IS\_RTC\_GET\_IT@{IS\_RTC\_GET\_IT}!RTC\_interrupts\_define@{RTC\_interrupts\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_RTC\_GET\_IT}{IS\_RTC\_GET\_IT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RTC\+\_\+\+GET\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{IT }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((IT)\ ==\ \mbox{\hyperlink{group___r_t_c__interrupts__define_gabcfefb2f22cb8ca65113c2c13d0e0640}{RTC\_IT\_OW}})\ ||\ ((IT)\ ==\ \mbox{\hyperlink{group___r_t_c__interrupts__define_ga92f0316a3c69aefc2b20c3392843d3da}{RTC\_IT\_ALR}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((IT)\ ==\ \mbox{\hyperlink{group___r_t_c__interrupts__define_ga960bccbc10da872549cf52c03dd342f1}{RTC\_IT\_SEC}}))}
+
+\end{DoxyCode}
+\Hypertarget{group___r_t_c__interrupts__define_ga92f0316a3c69aefc2b20c3392843d3da}\label{group___r_t_c__interrupts__define_ga92f0316a3c69aefc2b20c3392843d3da} 
+\index{RTC\_interrupts\_define@{RTC\_interrupts\_define}!RTC\_IT\_ALR@{RTC\_IT\_ALR}}
+\index{RTC\_IT\_ALR@{RTC\_IT\_ALR}!RTC\_interrupts\_define@{RTC\_interrupts\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{RTC\_IT\_ALR}{RTC\_IT\_ALR}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+IT\+\_\+\+ALR~((uint16\+\_\+t)0x0002)}
+
+Alarm interrupt \Hypertarget{group___r_t_c__interrupts__define_gabcfefb2f22cb8ca65113c2c13d0e0640}\label{group___r_t_c__interrupts__define_gabcfefb2f22cb8ca65113c2c13d0e0640} 
+\index{RTC\_interrupts\_define@{RTC\_interrupts\_define}!RTC\_IT\_OW@{RTC\_IT\_OW}}
+\index{RTC\_IT\_OW@{RTC\_IT\_OW}!RTC\_interrupts\_define@{RTC\_interrupts\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{RTC\_IT\_OW}{RTC\_IT\_OW}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+IT\+\_\+\+OW~((uint16\+\_\+t)0x0004)}
+
+Overflow interrupt \Hypertarget{group___r_t_c__interrupts__define_ga960bccbc10da872549cf52c03dd342f1}\label{group___r_t_c__interrupts__define_ga960bccbc10da872549cf52c03dd342f1} 
+\index{RTC\_interrupts\_define@{RTC\_interrupts\_define}!RTC\_IT\_SEC@{RTC\_IT\_SEC}}
+\index{RTC\_IT\_SEC@{RTC\_IT\_SEC}!RTC\_interrupts\_define@{RTC\_interrupts\_define}}
+\doxysubsubsubsubsubsection{\texorpdfstring{RTC\_IT\_SEC}{RTC\_IT\_SEC}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+IT\+\_\+\+SEC~((uint16\+\_\+t)0x0001)}
+
+Second interrupt 

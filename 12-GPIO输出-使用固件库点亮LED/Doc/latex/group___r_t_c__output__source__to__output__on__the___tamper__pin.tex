@@ -1,0 +1,39 @@
+\doxysubsubsubsection{RTC\+\_\+output\+\_\+source\+\_\+to\+\_\+output\+\_\+on\+\_\+the\+\_\+\+Tamper\+\_\+pin}
+\hypertarget{group___r_t_c__output__source__to__output__on__the___tamper__pin}{}\label{group___r_t_c__output__source__to__output__on__the___tamper__pin}\index{RTC\_output\_source\_to\_output\_on\_the\_Tamper\_pin@{RTC\_output\_source\_to\_output\_on\_the\_Tamper\_pin}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga8a18950396b2db70311480ab76464c6e}\label{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga8a18950396b2db70311480ab76464c6e} 
+\#define {\bfseries BKP\+\_\+\+RTCOutput\+Source\+\_\+\+None}~((uint16\+\_\+t)0x0000)
+\item 
+\Hypertarget{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga6fd7cb80bb52bca65641cbe6aa2c4590}\label{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga6fd7cb80bb52bca65641cbe6aa2c4590} 
+\#define {\bfseries BKP\+\_\+\+RTCOutput\+Source\+\_\+\+Calib\+Clock}~((uint16\+\_\+t)0x0080)
+\item 
+\Hypertarget{group___r_t_c__output__source__to__output__on__the___tamper__pin_gac016224386421d0cb1c0cd0ee201d65a}\label{group___r_t_c__output__source__to__output__on__the___tamper__pin_gac016224386421d0cb1c0cd0ee201d65a} 
+\#define {\bfseries BKP\+\_\+\+RTCOutput\+Source\+\_\+\+Alarm}~((uint16\+\_\+t)0x0100)
+\item 
+\Hypertarget{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga23cb72635820331317ee4ee5a7897a70}\label{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga23cb72635820331317ee4ee5a7897a70} 
+\#define {\bfseries BKP\+\_\+\+RTCOutput\+Source\+\_\+\+Second}~((uint16\+\_\+t)0x0300)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__output__source__to__output__on__the___tamper__pin_gac59454ee255feb55b5e14c34b70c99da}{IS\+\_\+\+BKP\+\_\+\+RTC\+\_\+\+OUTPUT\+\_\+\+SOURCE}}(SOURCE)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___r_t_c__output__source__to__output__on__the___tamper__pin_gac59454ee255feb55b5e14c34b70c99da}\label{group___r_t_c__output__source__to__output__on__the___tamper__pin_gac59454ee255feb55b5e14c34b70c99da} 
+\index{RTC\_output\_source\_to\_output\_on\_the\_Tamper\_pin@{RTC\_output\_source\_to\_output\_on\_the\_Tamper\_pin}!IS\_BKP\_RTC\_OUTPUT\_SOURCE@{IS\_BKP\_RTC\_OUTPUT\_SOURCE}}
+\index{IS\_BKP\_RTC\_OUTPUT\_SOURCE@{IS\_BKP\_RTC\_OUTPUT\_SOURCE}!RTC\_output\_source\_to\_output\_on\_the\_Tamper\_pin@{RTC\_output\_source\_to\_output\_on\_the\_Tamper\_pin}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_BKP\_RTC\_OUTPUT\_SOURCE}{IS\_BKP\_RTC\_OUTPUT\_SOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+BKP\+\_\+\+RTC\+\_\+\+OUTPUT\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{SOURCE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((SOURCE)\ ==\ BKP\_RTCOutputSource\_None)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ BKP\_RTCOutputSource\_CalibClock)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ BKP\_RTCOutputSource\_Alarm)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ BKP\_RTCOutputSource\_Second))}
+
+\end{DoxyCode}

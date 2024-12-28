@@ -1,0 +1,90 @@
+\doxysection{E\+:/\+Personal/\+IT/\+Embedded/\+Stm32/\+Fire/\+Fire-\/\+Projects/12-\/\+GPIO输出-\/使用固件库点亮\+LED/\+User/led/bsp\+\_\+led.h File Reference}
+\hypertarget{bsp__led_8h}{}\label{bsp__led_8h}\index{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/User/led/bsp\_led.h@{E:/Personal/IT/Embedded/Stm32/Fire/Fire-\/Projects/12-\/GPIO输出-\/使用固件库点亮LED/User/led/bsp\_led.h}}
+
+
+LED蓝灯\+GPIO端口定义  
+
+
+{\ttfamily \#include "{}stm32f10x.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{bsp__led_8h_a545d2d051430cb7a8b36ee0287f0a1a4}\label{bsp__led_8h_a545d2d051430cb7a8b36ee0287f0a1a4} 
+\#define {\bfseries LED\+\_\+\+B\+\_\+\+GPIO\+\_\+\+PIN}~\mbox{\hyperlink{group___g_p_i_o__pins__define_ga29db642c26f1fa0fffc3ecadcd30f82b}{GPIO\+\_\+\+Pin\+\_\+1}}
+\begin{DoxyCompactList}\small\item\em 引脚1 \end{DoxyCompactList}\item 
+\Hypertarget{bsp__led_8h_abca73237ab89db1d8c9d4481e17e6be1}\label{bsp__led_8h_abca73237ab89db1d8c9d4481e17e6be1} 
+\#define {\bfseries LED\+\_\+\+B\+\_\+\+GPIO\+\_\+\+PORT}~GPIOB
+\begin{DoxyCompactList}\small\item\em 端口B \end{DoxyCompactList}\item 
+\Hypertarget{bsp__led_8h_aacd5d3ad4cda06dd81696595f27d0ebe}\label{bsp__led_8h_aacd5d3ad4cda06dd81696595f27d0ebe} 
+\#define {\bfseries LED\+\_\+\+B\+\_\+\+GPIO\+\_\+\+CLK}~RCC\+\_\+\+APB2\+Periph\+\_\+\+GPIOB
+\begin{DoxyCompactList}\small\item\em 端口时钟\+GPIOB \end{DoxyCompactList}\item 
+\Hypertarget{bsp__led_8h_ad76d1750a6cdeebd506bfcd6752554d2}\label{bsp__led_8h_ad76d1750a6cdeebd506bfcd6752554d2} 
+\#define {\bfseries ON}~1
+\begin{DoxyCompactList}\small\item\em 亮为1 \end{DoxyCompactList}\item 
+\Hypertarget{bsp__led_8h_a29e413f6725b2ba32d165ffaa35b01e5}\label{bsp__led_8h_a29e413f6725b2ba32d165ffaa35b01e5} 
+\#define {\bfseries OFF}~0
+\begin{DoxyCompactList}\small\item\em 灭为0 \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__led_8h_a86c4680e80dcdd88e1c18200a6e11439}{LED\+\_\+B}}(a)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bsp__led_8h_a89d2c2ccc2981f0583aa6e4c8f043298}{LED\+\_\+\+GPIO\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em 配置\+PB1为推挽输出 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+LED蓝灯\+GPIO端口定义 
+
+\begin{DoxyAuthor}{Author}
+eric 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V0.\+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29-\/December-\/2024 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+THE PRESENT FUCTIONS WHICH IS FOR GUIDANCE ONLY 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{bsp__led_8h_a86c4680e80dcdd88e1c18200a6e11439}\label{bsp__led_8h_a86c4680e80dcdd88e1c18200a6e11439} 
+\index{bsp\_led.h@{bsp\_led.h}!LED\_B@{LED\_B}}
+\index{LED\_B@{LED\_B}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_B}{LED\_B}}
+{\footnotesize\ttfamily \#define LED\+\_\+B(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a)\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_ResetBits(\mbox{\hyperlink{bsp__led_8h_abca73237ab89db1d8c9d4481e17e6be1}{LED\_B\_GPIO\_PORT}},\ \mbox{\hyperlink{bsp__led_8h_a545d2d051430cb7a8b36ee0287f0a1a4}{LED\_B\_GPIO\_PIN}});\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GPIO\_SetBits(\mbox{\hyperlink{bsp__led_8h_abca73237ab89db1d8c9d4481e17e6be1}{LED\_B\_GPIO\_PORT}},\ \mbox{\hyperlink{bsp__led_8h_a545d2d051430cb7a8b36ee0287f0a1a4}{LED\_B\_GPIO\_PIN}});}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bsp__led_8h_a89d2c2ccc2981f0583aa6e4c8f043298}\label{bsp__led_8h_a89d2c2ccc2981f0583aa6e4c8f043298} 
+\index{bsp\_led.h@{bsp\_led.h}!LED\_GPIO\_Config@{LED\_GPIO\_Config}}
+\index{LED\_GPIO\_Config@{LED\_GPIO\_Config}!bsp\_led.h@{bsp\_led.h}}
+\doxysubsubsection{\texorpdfstring{LED\_GPIO\_Config()}{LED\_GPIO\_Config()}}
+{\footnotesize\ttfamily void LED\+\_\+\+GPIO\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+配置\+PB1为推挽输出 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

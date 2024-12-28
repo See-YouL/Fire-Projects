@@ -1,0 +1,67 @@
+\doxysubsubsubsection{TIM\+\_\+\+Output\+\_\+\+Compare\+\_\+and\+\_\+\+PWM\+\_\+modes}
+\hypertarget{group___t_i_m___output___compare__and___p_w_m__modes}{}\label{group___t_i_m___output___compare__and___p_w_m__modes}\index{TIM\_Output\_Compare\_and\_PWM\_modes@{TIM\_Output\_Compare\_and\_PWM\_modes}}
+\doxysubsubsubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___t_i_m___output___compare__and___p_w_m__modes_ga54d5745fade3b2f8ea1325e7447ca760}\label{group___t_i_m___output___compare__and___p_w_m__modes_ga54d5745fade3b2f8ea1325e7447ca760} 
+\#define {\bfseries TIM\+\_\+\+OCMode\+\_\+\+Timing}~((uint16\+\_\+t)0x0000)
+\item 
+\Hypertarget{group___t_i_m___output___compare__and___p_w_m__modes_ga76bac57d41dc67218772f9c745c77102}\label{group___t_i_m___output___compare__and___p_w_m__modes_ga76bac57d41dc67218772f9c745c77102} 
+\#define {\bfseries TIM\+\_\+\+OCMode\+\_\+\+Active}~((uint16\+\_\+t)0x0010)
+\item 
+\Hypertarget{group___t_i_m___output___compare__and___p_w_m__modes_gae0c350d7adaea14a37cabc2ab762695f}\label{group___t_i_m___output___compare__and___p_w_m__modes_gae0c350d7adaea14a37cabc2ab762695f} 
+\#define {\bfseries TIM\+\_\+\+OCMode\+\_\+\+Inactive}~((uint16\+\_\+t)0x0020)
+\item 
+\Hypertarget{group___t_i_m___output___compare__and___p_w_m__modes_ga8b8adb6e81fe88bd14d44430f7f97021}\label{group___t_i_m___output___compare__and___p_w_m__modes_ga8b8adb6e81fe88bd14d44430f7f97021} 
+\#define {\bfseries TIM\+\_\+\+OCMode\+\_\+\+Toggle}~((uint16\+\_\+t)0x0030)
+\item 
+\Hypertarget{group___t_i_m___output___compare__and___p_w_m__modes_gaefbe32dddc9630fbcc48b302b50d15fc}\label{group___t_i_m___output___compare__and___p_w_m__modes_gaefbe32dddc9630fbcc48b302b50d15fc} 
+\#define {\bfseries TIM\+\_\+\+OCMode\+\_\+\+PWM1}~((uint16\+\_\+t)0x0060)
+\item 
+\Hypertarget{group___t_i_m___output___compare__and___p_w_m__modes_ga722d8f33a795ef82ed7ae76dfbb7613d}\label{group___t_i_m___output___compare__and___p_w_m__modes_ga722d8f33a795ef82ed7ae76dfbb7613d} 
+\#define {\bfseries TIM\+\_\+\+OCMode\+\_\+\+PWM2}~((uint16\+\_\+t)0x0070)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__and___p_w_m__modes_ga93d898976e236c135bfd02a0c213c8ec}{IS\+\_\+\+TIM\+\_\+\+OC\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___t_i_m___output___compare__and___p_w_m__modes_ga45f530dd241d3b0787b5c2d62cd1b98f}{IS\+\_\+\+TIM\+\_\+\+OCM}}(MODE)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsubsection{Detailed Description}
+
+
+\doxysubsubsubsubsection{Macro Definition Documentation}
+\Hypertarget{group___t_i_m___output___compare__and___p_w_m__modes_ga93d898976e236c135bfd02a0c213c8ec}\label{group___t_i_m___output___compare__and___p_w_m__modes_ga93d898976e236c135bfd02a0c213c8ec} 
+\index{TIM\_Output\_Compare\_and\_PWM\_modes@{TIM\_Output\_Compare\_and\_PWM\_modes}!IS\_TIM\_OC\_MODE@{IS\_TIM\_OC\_MODE}}
+\index{IS\_TIM\_OC\_MODE@{IS\_TIM\_OC\_MODE}!TIM\_Output\_Compare\_and\_PWM\_modes@{TIM\_Output\_Compare\_and\_PWM\_modes}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_TIM\_OC\_MODE}{IS\_TIM\_OC\_MODE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+TIM\+\_\+\+OC\+\_\+\+MODE(\begin{DoxyParamCaption}\item[{}]{MODE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((MODE)\ ==\ TIM\_OCMode\_Timing)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ TIM\_OCMode\_Active)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ TIM\_OCMode\_Inactive)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ TIM\_OCMode\_Toggle)||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ TIM\_OCMode\_PWM1)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ TIM\_OCMode\_PWM2))}
+
+\end{DoxyCode}
+\Hypertarget{group___t_i_m___output___compare__and___p_w_m__modes_ga45f530dd241d3b0787b5c2d62cd1b98f}\label{group___t_i_m___output___compare__and___p_w_m__modes_ga45f530dd241d3b0787b5c2d62cd1b98f} 
+\index{TIM\_Output\_Compare\_and\_PWM\_modes@{TIM\_Output\_Compare\_and\_PWM\_modes}!IS\_TIM\_OCM@{IS\_TIM\_OCM}}
+\index{IS\_TIM\_OCM@{IS\_TIM\_OCM}!TIM\_Output\_Compare\_and\_PWM\_modes@{TIM\_Output\_Compare\_and\_PWM\_modes}}
+\doxysubsubsubsubsubsection{\texorpdfstring{IS\_TIM\_OCM}{IS\_TIM\_OCM}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+TIM\+\_\+\+OCM(\begin{DoxyParamCaption}\item[{}]{MODE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((MODE)\ ==\ TIM\_OCMode\_Timing)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ TIM\_OCMode\_Active)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ TIM\_OCMode\_Inactive)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ TIM\_OCMode\_Toggle)||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ TIM\_OCMode\_PWM1)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ TIM\_OCMode\_PWM2)\ ||\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ TIM\_ForcedAction\_Active)\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ TIM\_ForcedAction\_InActive))}
+
+\end{DoxyCode}
