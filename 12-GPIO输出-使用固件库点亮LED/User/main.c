@@ -22,7 +22,7 @@ int main(void)
     {
         LED_B(OFF);
         Delay(0xFFF); // 延时
-        LED_B(ON);
+        // LED_B(ON);
         Delay(0xFFF); // 延时
     }
 }

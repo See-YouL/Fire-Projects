@@ -896,6 +896,10 @@ while(1)
 
 项目地址: **12-GPIO输出-使用固件库点亮LED**
 
+#### RGB原理图
+
+![RGB原理图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202412290150001.png)
+
 在User目录下新建led文件夹，添加bsp_led.c和bsp_led.h
 
 #### 在bsp_led.h中添加所使用的宏定义和函数声明
