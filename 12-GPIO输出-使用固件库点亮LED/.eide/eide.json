@@ -1,5 +1,5 @@
 {
-  "name": "BH-F103",
+  "name": "12-GPIO输出",
   "type": "ARM",
   "dependenceList": [],
   "srcDirs": [
