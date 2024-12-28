@@ -22,6 +22,26 @@
             "stm32f10x_cec.h": "c",
             "inttypes.h": "c"
         },
-        "commentTranslate.source": "Bing"
+        "commentTranslate.source": "Bing",
+        "workbench.colorCustomizations": {
+            "activityBar.activeBackground": "#fe0f8c",
+            "activityBar.background": "#fe0f8c",
+            "activityBar.foreground": "#e7e7e7",
+            "activityBar.inactiveForeground": "#e7e7e799",
+            "activityBarBadge.background": "#325f00",
+            "activityBarBadge.foreground": "#e7e7e7",
+            "commandCenter.border": "#e7e7e799",
+            "sash.hoverBorder": "#fe0f8c",
+            "statusBar.background": "#d90172",
+            "statusBar.foreground": "#e7e7e7",
+            "statusBarItem.hoverBackground": "#fe0f8c",
+            "statusBarItem.remoteBackground": "#d90172",
+            "statusBarItem.remoteForeground": "#e7e7e7",
+            "titleBar.activeBackground": "#d90172",
+            "titleBar.activeForeground": "#e7e7e7",
+            "titleBar.inactiveBackground": "#d9017299",
+            "titleBar.inactiveForeground": "#e7e7e799"
+        },
+        "peacock.color": "#d90172"
 	}
 }
