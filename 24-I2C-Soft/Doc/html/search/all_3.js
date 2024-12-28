@@ -9,7 +9,7 @@ var searchData=
   ['c中编写random_20read方式的函数_6',['在bsp_i2c.c中编写Random Read方式的函数',['../md__r_e_a_d_m_e.html#autotoc_md52',1,'']]],
   ['c中编写sequential_20read方式的函数_7',['在bsp_i2c.c中编写Sequential Read方式的函数',['../md__r_e_a_d_m_e.html#autotoc_md53',1,'']]],
   ['c中进行读写测试_8',['在main.c中进行读写测试',['../md__r_e_a_d_m_e.html#autotoc_md55',1,'']]],
-  ['c函数中进行测试_9',['在main.c函数中进行测试',['../md__r_e_a_d_m_e.html#autotoc_md71',1,'']]],
+  ['c函数中进行软件模拟i2c测试_9',['在main.c函数中进行软件模拟I2C测试',['../md__r_e_a_d_m_e.html#autotoc_md71',1,'']]],
   ['calib_10',['CALIB',['../group___c_m_s_i_s___c_m3___core_debug.html#ga9c9eda0ea6f6a7c904d2d75a6963e238',1,'SysTick_Type']]],
   ['can_11',['CAN',['../group___c_a_n.html',1,'']]],
   ['can1_12',['CAN1',['../group___peripheral__declaration.html#ga4964ecb6a5c689aaf8ee2832b8093aac',1,'stm32f10x.h']]],

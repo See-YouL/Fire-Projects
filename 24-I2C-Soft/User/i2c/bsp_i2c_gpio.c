@@ -19,6 +19,8 @@
 
 static void I2C_CfgGpio(void);
 
+
+
 /**
  * @brief I2C总线位延迟, 最快400kHz 
  * @param None

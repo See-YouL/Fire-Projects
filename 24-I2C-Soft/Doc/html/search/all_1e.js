@@ -13,5 +13,5 @@ var searchData=
   ['在bsp_5fi2c_5fgpio_20c中编写函数_10',['在bsp_i2c_gpio.c中编写函数',['../md__r_e_a_d_m_e.html#autotoc_md70',1,'']]],
   ['在bsp_5fi2c_5fgpio_20h中增加宏定义_11',['在bsp_i2c_gpio.h中增加宏定义',['../md__r_e_a_d_m_e.html#autotoc_md69',1,'']]],
   ['在main_20c中进行读写测试_12',['在main.c中进行读写测试',['../md__r_e_a_d_m_e.html#autotoc_md55',1,'']]],
-  ['在main_20c函数中进行测试_13',['在main.c函数中进行测试',['../md__r_e_a_d_m_e.html#autotoc_md71',1,'']]]
+  ['在main_20c函数中进行软件模拟i2c测试_13',['在main.c函数中进行软件模拟I2C测试',['../md__r_e_a_d_m_e.html#autotoc_md71',1,'']]]
 ];

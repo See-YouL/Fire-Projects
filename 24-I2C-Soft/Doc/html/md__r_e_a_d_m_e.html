@@ -330,7 +330,7 @@ I2C初始化结构体</h2>
 <div class="line"><span class="comment">   * I2C_Ack_Disable: 禁止应答使能</span></div>
 <div class="line"><span class="comment">   * 一般配置为允许应答使能, 改为禁止应答使能往往会导致通讯错误</span></div>
 <div class="line"><span class="comment">   *-------------------------------------------------------------------------------*/</span></div>
-<div class="line">  uint16_t <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gaecd9f094a397ce4ca002fe6ca1513634">I2C_Ack</a>;                 </div>
+<div class="line">  uint16_t <a class="code hl_function" href="bsp__i2c__gpio_8c.html#aecd9f094a397ce4ca002fe6ca1513634">I2C_Ack</a>;                 </div>
 <div class="line">  <span class="comment">/*---------------------------------------------------------------------------------</span></div>
 <div class="line"><span class="comment">   * 配置I2C的寻址长度</span></div>
 <div class="line"><span class="comment">   * I2C_AcknowledgedAddress_7bit: 7位地址</span></div>
@@ -339,7 +339,7 @@ I2C初始化结构体</h2>
 <div class="line"><span class="comment">   * 只有I2C_OwnAddress1才能配置10位地址, I2C_OwnAddress2只支持7位地址 *-------------------------------------------------------------------------------*/</span></div>
 <div class="line">  uint16_t I2C_AcknowledgedAddress; </div>
 <div class="line">}<a class="code hl_struct" href="struct_i2_c___init_type_def.html">I2C_InitTypeDef</a>;</div>
-<div class="ttc" id="agroup___i2_c___g_p_i_o___fuctions_html_gaecd9f094a397ce4ca002fe6ca1513634"><div class="ttname"><a href="group___i2_c___g_p_i_o___fuctions.html#gaecd9f094a397ce4ca002fe6ca1513634">I2C_Ack</a></div><div class="ttdeci">void I2C_Ack(void)</div><div class="ttdoc">CPU产生一个ACK信号</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:231</div></div>
+<div class="ttc" id="absp__i2c__gpio_8c_html_aecd9f094a397ce4ca002fe6ca1513634"><div class="ttname"><a href="bsp__i2c__gpio_8c.html#aecd9f094a397ce4ca002fe6ca1513634">I2C_Ack</a></div><div class="ttdeci">void I2C_Ack(void)</div><div class="ttdoc">CPU产生一个ACK信号</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:233</div></div>
 <div class="ttc" id="astruct_i2_c___init_type_def_html"><div class="ttname"><a href="struct_i2_c___init_type_def.html">I2C_InitTypeDef</a></div><div class="ttdoc">I2C Init structure definition</div><div class="ttdef"><b>Definition</b> stm32f10x_i2c.h:51</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md25"></a>
 I2C库函数</h2>
@@ -1428,23 +1428,23 @@ AT24C02的Sequential Read(顺序读数据)操作</h3>
 <div class="line"><span class="preprocessor">    #define EEPROM_I2C_SDA_READ() ((EEPROM_GPIO_PORT_I2C-&gt;IDR &amp; EEPROM_I2C_SDA_PIN) != 0) </span></div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga32e58d55017fc54118e3b7a5eda44d8c">I2C_Start</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gafce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>(uint8_t _ucByte);</div>
-<div class="line">uint8_t <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gaad7f7e237b71a95d2ed2050570847099">I2C_ReadByte</a>(<span class="keywordtype">void</span>);</div>
-<div class="line">uint8_t <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gaecd9f094a397ce4ca002fe6ca1513634">I2C_Ack</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gab79fb1d2a3264e0dc2b473847f154830">I2C_NAck</a>(<span class="keywordtype">void</span>);</div>
-<div class="line">uint8_t <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga0debb563fe68e91d5ac4584ed1122aa8">I2C_CheckDevice</a>(uint8_t _Address);</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a32e58d55017fc54118e3b7a5eda44d8c">I2C_Start</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="bsp__i2c__gpio_8c.html#afce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>(uint8_t _ucByte);</div>
+<div class="line">uint8_t <a class="code hl_function" href="bsp__i2c__gpio_8c.html#aad7f7e237b71a95d2ed2050570847099">I2C_ReadByte</a>(<span class="keywordtype">void</span>);</div>
+<div class="line">uint8_t <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="bsp__i2c__gpio_8c.html#aecd9f094a397ce4ca002fe6ca1513634">I2C_Ack</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="bsp__i2c__gpio_8c.html#ab79fb1d2a3264e0dc2b473847f154830">I2C_NAck</a>(<span class="keywordtype">void</span>);</div>
+<div class="line">uint8_t <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a0debb563fe68e91d5ac4584ed1122aa8">I2C_CheckDevice</a>(uint8_t _Address);</div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#endif </span><span class="comment">// !__BSP_I2C_GPIO_H</span></div>
-<div class="ttc" id="agroup___i2_c___g_p_i_o___fuctions_html_ga0debb563fe68e91d5ac4584ed1122aa8"><div class="ttname"><a href="group___i2_c___g_p_i_o___fuctions.html#ga0debb563fe68e91d5ac4584ed1122aa8">I2C_CheckDevice</a></div><div class="ttdeci">uint8_t I2C_CheckDevice(uint8_t _Address)</div><div class="ttdoc">检测I2C总线设备是否存在</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:307</div></div>
-<div class="ttc" id="agroup___i2_c___g_p_i_o___fuctions_html_ga2688470138c570862b5776a5fc81f98e"><div class="ttname"><a href="group___i2_c___g_p_i_o___fuctions.html#ga2688470138c570862b5776a5fc81f98e">I2C_SendByte</a></div><div class="ttdeci">void I2C_SendByte(uint8_t _ucByte)</div><div class="ttdoc">CPU向I2C总线设备发送8bit数据</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:103</div></div>
-<div class="ttc" id="agroup___i2_c___g_p_i_o___fuctions_html_ga32e58d55017fc54118e3b7a5eda44d8c"><div class="ttname"><a href="group___i2_c___g_p_i_o___fuctions.html#ga32e58d55017fc54118e3b7a5eda44d8c">I2C_Start</a></div><div class="ttdeci">void I2C_Start(void)</div><div class="ttdoc">CPU发起I2C总线启动信号</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:51</div></div>
-<div class="ttc" id="agroup___i2_c___g_p_i_o___fuctions_html_ga5d79f21b701a159eb67cf263cbae647b"><div class="ttname"><a href="group___i2_c___g_p_i_o___fuctions.html#ga5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a></div><div class="ttdeci">uint8_t I2C_WaitAck(void)</div><div class="ttdoc">CPU产生一个时钟并读取器件的ACK应答信号</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:190</div></div>
-<div class="ttc" id="agroup___i2_c___g_p_i_o___fuctions_html_gaad7f7e237b71a95d2ed2050570847099"><div class="ttname"><a href="group___i2_c___g_p_i_o___fuctions.html#gaad7f7e237b71a95d2ed2050570847099">I2C_ReadByte</a></div><div class="ttdeci">uint8_t I2C_ReadByte(void)</div><div class="ttdoc">CPU从I2C总线设备读取8bit数据</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:149</div></div>
-<div class="ttc" id="agroup___i2_c___g_p_i_o___fuctions_html_gab79fb1d2a3264e0dc2b473847f154830"><div class="ttname"><a href="group___i2_c___g_p_i_o___fuctions.html#gab79fb1d2a3264e0dc2b473847f154830">I2C_NAck</a></div><div class="ttdeci">void I2C_NAck(void)</div><div class="ttdoc">CPU产生一个NACK信号</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:259</div></div>
-<div class="ttc" id="agroup___i2_c___g_p_i_o___fuctions_html_gafce134e0a1b6a8bc503c97b37639c9e6"><div class="ttname"><a href="group___i2_c___g_p_i_o___fuctions.html#gafce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a></div><div class="ttdeci">void I2C_Stop(void)</div><div class="ttdoc">CPU发起I2C总线停止信号</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:80</div></div>
+<div class="ttc" id="absp__i2c__gpio_8c_html_a0debb563fe68e91d5ac4584ed1122aa8"><div class="ttname"><a href="bsp__i2c__gpio_8c.html#a0debb563fe68e91d5ac4584ed1122aa8">I2C_CheckDevice</a></div><div class="ttdeci">uint8_t I2C_CheckDevice(uint8_t _Address)</div><div class="ttdoc">检测I2C总线设备是否存在</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:309</div></div>
+<div class="ttc" id="absp__i2c__gpio_8c_html_a2688470138c570862b5776a5fc81f98e"><div class="ttname"><a href="bsp__i2c__gpio_8c.html#a2688470138c570862b5776a5fc81f98e">I2C_SendByte</a></div><div class="ttdeci">void I2C_SendByte(uint8_t _ucByte)</div><div class="ttdoc">CPU向I2C总线设备发送8bit数据</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:105</div></div>
+<div class="ttc" id="absp__i2c__gpio_8c_html_a32e58d55017fc54118e3b7a5eda44d8c"><div class="ttname"><a href="bsp__i2c__gpio_8c.html#a32e58d55017fc54118e3b7a5eda44d8c">I2C_Start</a></div><div class="ttdeci">void I2C_Start(void)</div><div class="ttdoc">CPU发起I2C总线启动信号</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:53</div></div>
+<div class="ttc" id="absp__i2c__gpio_8c_html_a5d79f21b701a159eb67cf263cbae647b"><div class="ttname"><a href="bsp__i2c__gpio_8c.html#a5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a></div><div class="ttdeci">uint8_t I2C_WaitAck(void)</div><div class="ttdoc">CPU产生一个时钟并读取器件的ACK应答信号</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:192</div></div>
+<div class="ttc" id="absp__i2c__gpio_8c_html_aad7f7e237b71a95d2ed2050570847099"><div class="ttname"><a href="bsp__i2c__gpio_8c.html#aad7f7e237b71a95d2ed2050570847099">I2C_ReadByte</a></div><div class="ttdeci">uint8_t I2C_ReadByte(void)</div><div class="ttdoc">CPU从I2C总线设备读取8bit数据</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:151</div></div>
+<div class="ttc" id="absp__i2c__gpio_8c_html_ab79fb1d2a3264e0dc2b473847f154830"><div class="ttname"><a href="bsp__i2c__gpio_8c.html#ab79fb1d2a3264e0dc2b473847f154830">I2C_NAck</a></div><div class="ttdeci">void I2C_NAck(void)</div><div class="ttdoc">CPU产生一个NACK信号</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:261</div></div>
+<div class="ttc" id="absp__i2c__gpio_8c_html_afce134e0a1b6a8bc503c97b37639c9e6"><div class="ttname"><a href="bsp__i2c__gpio_8c.html#afce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a></div><div class="ttdeci">void I2C_Stop(void)</div><div class="ttdoc">CPU发起I2C总线停止信号</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.c:82</div></div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md70"></a>
 在bsp_i2c_gpio.c中编写函数</h3>
 <div class="fragment"><div class="line"> </div>
@@ -1455,7 +1455,7 @@ AT24C02的Sequential Read(顺序读数据)操作</h3>
 <div class="line"> </div>
 <div class="line">uint8_t <a class="code hl_function" href="group___e_e_p_r_o_m___soft___functions.html#ga2552301e482ddef46338ba37f3c6292b">ee_CheckOk</a>(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga0debb563fe68e91d5ac4584ed1122aa8">I2C_CheckDevice</a>(<a class="code hl_define" href="group___e_e_p_r_o_m___define.html#ga075014bff05eb3b88b8c4b8eec9e26b3">EEPROM_DEV_ADDRESS</a>) == 0) <span class="comment">/* 检测设备是否存在 */</span></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="bsp__i2c__gpio_8c.html#a0debb563fe68e91d5ac4584ed1122aa8">I2C_CheckDevice</a>(<a class="code hl_define" href="group___e_e_p_r_o_m___define.html#ga075014bff05eb3b88b8c4b8eec9e26b3">EEPROM_DEV_ADDRESS</a>) == 0) <span class="comment">/* 检测设备是否存在 */</span></div>
 <div class="line">    {</div>
 <div class="line">        <span class="comment">/* 发送状态值 */</span></div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
@@ -1463,7 +1463,7 @@ AT24C02的Sequential Read(顺序读数据)操作</h3>
 <div class="line">    <span class="keywordflow">else</span></div>
 <div class="line">    {</div>
 <div class="line">        <span class="comment">/* 发送停止信号 */</span></div>
-<div class="line">        <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gafce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>();</div>
+<div class="line">        <a class="code hl_function" href="bsp__i2c__gpio_8c.html#afce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>();</div>
 <div class="line">        <span class="comment">/* 发送状态值 */</span></div>
 <div class="line">        <span class="keywordflow">return</span> 0;</div>
 <div class="line">    }</div>
@@ -1474,26 +1474,26 @@ AT24C02的Sequential Read(顺序读数据)操作</h3>
 <div class="line">    <span class="comment">/* 计数变量 */</span></div>
 <div class="line">    uint16_t i = 0;</div>
 <div class="line">    <span class="comment">/* 发送启动信号 */</span></div>
-<div class="line">    <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga32e58d55017fc54118e3b7a5eda44d8c">I2C_Start</a>();</div>
+<div class="line">    <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a32e58d55017fc54118e3b7a5eda44d8c">I2C_Start</a>();</div>
 <div class="line">    <span class="comment">/* 发送设备写地址 */</span></div>
-<div class="line">    <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>(<a class="code hl_define" href="group___e_e_p_r_o_m___define.html#ga075014bff05eb3b88b8c4b8eec9e26b3">EEPROM_DEV_ADDRESS</a> | <a class="code hl_define" href="group___e_e_p_r_o_m___g_p_i_o___define.html#gafcbfbc68569420a7d017008fcf507316">EEPROM_I2C_WR</a>); </div>
+<div class="line">    <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>(<a class="code hl_define" href="group___e_e_p_r_o_m___define.html#ga075014bff05eb3b88b8c4b8eec9e26b3">EEPROM_DEV_ADDRESS</a> | <a class="code hl_define" href="bsp__i2c__gpio_8h.html#afcbfbc68569420a7d017008fcf507316">EEPROM_I2C_WR</a>); </div>
 <div class="line">    <span class="comment">/* 等待ACK */</span></div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>() != 0) <span class="comment">/* 器件无应答 */</span></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="bsp__i2c__gpio_8c.html#a5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>() != 0) <span class="comment">/* 器件无应答 */</span></div>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordflow">goto</span> cmd_fail;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">/* 发送字节地址 */</span></div>
-<div class="line">    <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>((uint8_t)_usAddress);</div>
+<div class="line">    <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>((uint8_t)_usAddress);</div>
 <div class="line">    <span class="comment">/* 等待ACK */</span></div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>()!= 0) <span class="comment">/* 器件无应答 */</span></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="bsp__i2c__gpio_8c.html#a5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>()!= 0) <span class="comment">/* 器件无应答 */</span></div>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordflow">goto</span> cmd_fail;</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">/* 重新启动I2C总线 */</span></div>
-<div class="line">    <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga32e58d55017fc54118e3b7a5eda44d8c">I2C_Start</a>();</div>
+<div class="line">    <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a32e58d55017fc54118e3b7a5eda44d8c">I2C_Start</a>();</div>
 <div class="line">    <span class="comment">/* 发送设备读地址 */</span></div>
-<div class="line">    <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>(<a class="code hl_define" href="group___e_e_p_r_o_m___define.html#ga075014bff05eb3b88b8c4b8eec9e26b3">EEPROM_DEV_ADDRESS</a> | <a class="code hl_define" href="group___e_e_p_r_o_m___g_p_i_o___define.html#ga97ea5566778755a9d3ad6c7f5261f666">EEPROM_I2C_RD</a>); </div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>()!= 0) <span class="comment">/* 器件无应答 */</span></div>
+<div class="line">    <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>(<a class="code hl_define" href="group___e_e_p_r_o_m___define.html#ga075014bff05eb3b88b8c4b8eec9e26b3">EEPROM_DEV_ADDRESS</a> | <a class="code hl_define" href="bsp__i2c__gpio_8h.html#a97ea5566778755a9d3ad6c7f5261f666">EEPROM_I2C_RD</a>); </div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="bsp__i2c__gpio_8c.html#a5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>()!= 0) <span class="comment">/* 器件无应答 */</span></div>
 <div class="line">    {</div>
 <div class="line">        <span class="keywordflow">goto</span> cmd_fail;</div>
 <div class="line">    }</div>
@@ -1501,26 +1501,26 @@ AT24C02的Sequential Read(顺序读数据)操作</h3>
 <div class="line">    <span class="keywordflow">for</span> (i = 0; i &lt; _usSize; i++)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="comment">/* 读取一个位 */</span></div>
-<div class="line">        _pReadBuf[i] = <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gaad7f7e237b71a95d2ed2050570847099">I2C_ReadByte</a>();</div>
+<div class="line">        _pReadBuf[i] = <a class="code hl_function" href="bsp__i2c__gpio_8c.html#aad7f7e237b71a95d2ed2050570847099">I2C_ReadByte</a>();</div>
 <div class="line">        <span class="keywordflow">if</span> (i != _usSize - 1)</div>
 <div class="line">        {</div>
 <div class="line">            <span class="comment">/* 中间字节读完后, CPU产生ACK信号 */</span></div>
-<div class="line">            <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gaecd9f094a397ce4ca002fe6ca1513634">I2C_Ack</a>();</div>
+<div class="line">            <a class="code hl_function" href="bsp__i2c__gpio_8c.html#aecd9f094a397ce4ca002fe6ca1513634">I2C_Ack</a>();</div>
 <div class="line">        }</div>
 <div class="line">        <span class="keywordflow">else</span></div>
 <div class="line">        {</div>
 <div class="line">            <span class="comment">/* 最后一个字节读完后, CPU产生NAck信号 */</span></div>
-<div class="line">            <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gab79fb1d2a3264e0dc2b473847f154830">I2C_NAck</a>();</div>
+<div class="line">            <a class="code hl_function" href="bsp__i2c__gpio_8c.html#ab79fb1d2a3264e0dc2b473847f154830">I2C_NAck</a>();</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">/* 发送I2C总线停止信号 */</span></div>
-<div class="line">    <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gafce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>();</div>
+<div class="line">    <a class="code hl_function" href="bsp__i2c__gpio_8c.html#afce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>();</div>
 <div class="line">    <span class="comment">/* 执行成功 */</span></div>
 <div class="line">    <span class="keywordflow">return</span> 1;</div>
 <div class="line"> </div>
 <div class="line">cmd_fail: <span class="comment">/* 命令执行失败 */</span></div>
 <div class="line">    <span class="comment">/* 发送停止命令 */</span></div>
-<div class="line">    <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gafce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>();</div>
+<div class="line">    <a class="code hl_function" href="bsp__i2c__gpio_8c.html#afce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>();</div>
 <div class="line">    <span class="comment">/* 返回函数失败值 */</span></div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
@@ -1538,7 +1538,7 @@ AT24C02的Sequential Read(顺序读数据)操作</h3>
 <div class="line">        <span class="keywordflow">if</span> ((i == 1) || (usAddress &amp; (<a class="code hl_define" href="group___e_e_p_r_o_m___define.html#gaddfda15f5f3ec6f8f325f48be50c548a">EEPROM_PAGE_SIZE</a>-1)) == 0)</div>
 <div class="line">        {</div>
 <div class="line">            <span class="comment">/* 发送停止信号 */</span></div>
-<div class="line">            <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gafce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>();</div>
+<div class="line">            <a class="code hl_function" href="bsp__i2c__gpio_8c.html#afce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>();</div>
 <div class="line">            <span class="comment">/*----------------------------------------</span></div>
 <div class="line"><span class="comment">             * 通过检查器件应答的方式</span></div>
 <div class="line"><span class="comment">             * 判断内部写操作是否完成</span></div>
@@ -1548,10 +1548,10 @@ AT24C02的Sequential Read(顺序读数据)操作</h3>
 <div class="line">            <span class="keywordflow">for</span> (m = 0; m &lt; 1000; m++) <span class="comment">/* 不断发送等待设备响应 */</span></div>
 <div class="line">            {</div>
 <div class="line">                <span class="comment">/* 发起I2C启动信号 */</span></div>
-<div class="line">                <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga32e58d55017fc54118e3b7a5eda44d8c">I2C_Start</a>();</div>
+<div class="line">                <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a32e58d55017fc54118e3b7a5eda44d8c">I2C_Start</a>();</div>
 <div class="line">                <span class="comment">/* 发送设备8位写地址 */</span></div>
-<div class="line">                <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>(<a class="code hl_define" href="group___e_e_p_r_o_m___define.html#ga075014bff05eb3b88b8c4b8eec9e26b3">EEPROM_DEV_ADDRESS</a> | <a class="code hl_define" href="group___e_e_p_r_o_m___g_p_i_o___define.html#gafcbfbc68569420a7d017008fcf507316">EEPROM_I2C_WR</a>); </div>
-<div class="line">                <span class="keywordflow">if</span> (<a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>() == 0) <span class="comment">/* 器件有应答 */</span></div>
+<div class="line">                <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>(<a class="code hl_define" href="group___e_e_p_r_o_m___define.html#ga075014bff05eb3b88b8c4b8eec9e26b3">EEPROM_DEV_ADDRESS</a> | <a class="code hl_define" href="bsp__i2c__gpio_8h.html#afcbfbc68569420a7d017008fcf507316">EEPROM_I2C_WR</a>); </div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code hl_function" href="bsp__i2c__gpio_8c.html#a5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>() == 0) <span class="comment">/* 器件有应答 */</span></div>
 <div class="line">                {</div>
 <div class="line">                    <span class="keywordflow">break</span>;</div>
 <div class="line">                }</div>
@@ -1561,15 +1561,15 @@ AT24C02的Sequential Read(顺序读数据)操作</h3>
 <div class="line">                <span class="keywordflow">goto</span> cmd_fail;</div>
 <div class="line">            }</div>
 <div class="line">            <span class="comment">/* 发送字节所在地址 */</span></div>
-<div class="line">            <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>((uint8_t)usAddress);</div>
+<div class="line">            <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>((uint8_t)usAddress);</div>
 <div class="line">            <span class="comment">/* 等待ACK响应 */</span></div>
-<div class="line">            <span class="keywordflow">if</span> (<a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>() != 0) <span class="comment">/* 器件无应答 */</span></div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code hl_function" href="bsp__i2c__gpio_8c.html#a5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>() != 0) <span class="comment">/* 器件无应答 */</span></div>
 <div class="line">            {</div>
 <div class="line">                <span class="keywordflow">goto</span> cmd_fail;</div>
 <div class="line">            }</div>
 <div class="line">            <span class="comment">/* 开始写入数据 */</span></div>
-<div class="line">            <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>(_pWriteBuf[i]);</div>
-<div class="line">            <span class="keywordflow">if</span> (<a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#ga5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>() != 0) <span class="comment">/* 器件无应答 */</span></div>
+<div class="line">            <a class="code hl_function" href="bsp__i2c__gpio_8c.html#a2688470138c570862b5776a5fc81f98e">I2C_SendByte</a>(_pWriteBuf[i]);</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code hl_function" href="bsp__i2c__gpio_8c.html#a5d79f21b701a159eb67cf263cbae647b">I2C_WaitAck</a>() != 0) <span class="comment">/* 器件无应答 */</span></div>
 <div class="line">            {</div>
 <div class="line">                <span class="keywordflow">goto</span> cmd_fail;</div>
 <div class="line">            }</div>
@@ -1577,14 +1577,14 @@ AT24C02的Sequential Read(顺序读数据)操作</h3>
 <div class="line">            usAddress++;</div>
 <div class="line">        }</div>
 <div class="line">        <span class="comment">/* 写入完成后, 发送总线停止信号 */</span></div>
-<div class="line">        <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gafce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>();</div>
+<div class="line">        <a class="code hl_function" href="bsp__i2c__gpio_8c.html#afce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>();</div>
 <div class="line">        <span class="comment">/* 返回发送成功标志值 */</span></div>
 <div class="line">        <span class="keywordflow">return</span> 1;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">cmd_fail:</div>
 <div class="line">    <span class="comment">/* 发送I2C总线停止信号 */</span></div>
-<div class="line">    <a class="code hl_function" href="group___i2_c___g_p_i_o___fuctions.html#gafce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>();</div>
+<div class="line">    <a class="code hl_function" href="bsp__i2c__gpio_8c.html#afce134e0a1b6a8bc503c97b37639c9e6">I2C_Stop</a>();</div>
 <div class="line">    <span class="comment">/* 返回发送失败标志值 */</span></div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
@@ -1697,13 +1697,13 @@ AT24C02的Sequential Read(顺序读数据)操作</h3>
 <div class="ttc" id="absp__i2c__ee_8c_html_a144f728c65cb5f88ba3665b7024fa806"><div class="ttname"><a href="bsp__i2c__ee_8c.html#a144f728c65cb5f88ba3665b7024fa806">ee_Delay</a></div><div class="ttdeci">static void ee_Delay(__IO uint32_t nCount)</div><div class="ttdoc">简单延时函数</div><div class="ttdef"><b>Definition</b> bsp_i2c_ee.c:208</div></div>
 <div class="ttc" id="absp__i2c__ee_8h_html"><div class="ttname"><a href="bsp__i2c__ee_8h.html">bsp_i2c_ee.h</a></div><div class="ttdoc">I2C EEPROM(AT24C02) 应用函数的宏定义</div></div>
 <div class="ttc" id="absp__i2c__gpio_8h_html"><div class="ttname"><a href="bsp__i2c__gpio_8h.html">bsp_i2c_gpio.h</a></div><div class="ttdoc">GPIO模拟I2C的宏定义</div></div>
+<div class="ttc" id="absp__i2c__gpio_8h_html_a97ea5566778755a9d3ad6c7f5261f666"><div class="ttname"><a href="bsp__i2c__gpio_8h.html#a97ea5566778755a9d3ad6c7f5261f666">EEPROM_I2C_RD</a></div><div class="ttdeci">#define EEPROM_I2C_RD</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.h:21</div></div>
+<div class="ttc" id="absp__i2c__gpio_8h_html_afcbfbc68569420a7d017008fcf507316"><div class="ttname"><a href="bsp__i2c__gpio_8h.html#afcbfbc68569420a7d017008fcf507316">EEPROM_I2C_WR</a></div><div class="ttdeci">#define EEPROM_I2C_WR</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.h:20</div></div>
 <div class="ttc" id="agroup___e_e_p_r_o_m___define_html_ga075014bff05eb3b88b8c4b8eec9e26b3"><div class="ttname"><a href="group___e_e_p_r_o_m___define.html#ga075014bff05eb3b88b8c4b8eec9e26b3">EEPROM_DEV_ADDRESS</a></div><div class="ttdeci">#define EEPROM_DEV_ADDRESS</div><div class="ttdef"><b>Definition</b> bsp_i2c_ee.h:26</div></div>
 <div class="ttc" id="agroup___e_e_p_r_o_m___define_html_ga99f14a943c2245bda3d8f8bc657d7dce"><div class="ttname"><a href="group___e_e_p_r_o_m___define.html#ga99f14a943c2245bda3d8f8bc657d7dce">EEPROM_DEV_SIZE</a></div><div class="ttdeci">#define EEPROM_DEV_SIZE</div><div class="ttdef"><b>Definition</b> bsp_i2c_ee.h:28</div></div>
 <div class="ttc" id="agroup___e_e_p_r_o_m___define_html_gaddfda15f5f3ec6f8f325f48be50c548a"><div class="ttname"><a href="group___e_e_p_r_o_m___define.html#gaddfda15f5f3ec6f8f325f48be50c548a">EEPROM_PAGE_SIZE</a></div><div class="ttdeci">#define EEPROM_PAGE_SIZE</div><div class="ttdef"><b>Definition</b> bsp_i2c_ee.h:27</div></div>
-<div class="ttc" id="agroup___e_e_p_r_o_m___g_p_i_o___define_html_ga97ea5566778755a9d3ad6c7f5261f666"><div class="ttname"><a href="group___e_e_p_r_o_m___g_p_i_o___define.html#ga97ea5566778755a9d3ad6c7f5261f666">EEPROM_I2C_RD</a></div><div class="ttdeci">#define EEPROM_I2C_RD</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.h:29</div></div>
-<div class="ttc" id="agroup___e_e_p_r_o_m___g_p_i_o___define_html_gafcbfbc68569420a7d017008fcf507316"><div class="ttname"><a href="group___e_e_p_r_o_m___g_p_i_o___define.html#gafcbfbc68569420a7d017008fcf507316">EEPROM_I2C_WR</a></div><div class="ttdeci">#define EEPROM_I2C_WR</div><div class="ttdoc">R/W Bit.</div><div class="ttdef"><b>Definition</b> bsp_i2c_gpio.h:28</div></div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md71"></a>
-在main.c函数中进行测试</h3>
+在main.c函数中进行软件模拟I2C测试</h3>
 <div class="fragment"><div class="line"> </div>
 <div class="line"><span class="comment">/* Includes ------------------------------------------------------------------*/</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="stm32f10x_8h.html">stm32f10x.h</a>&quot;</span></div>

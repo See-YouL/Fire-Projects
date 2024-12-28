@@ -13,6 +13,108 @@
 - 芯片型号: STM32F103ZET6
 - 参考视频: 【【单片机】野火STM32F103教学视频 (配套霸道/指南者/MINI)【全】(刘火良老师出品) (无字幕)】 <https://www.bilibili.com/video/BV1yW411Y7Gw/?p=9&share_source=copy_web&vd_source=0db47c15b9f51dbaa4548ec2dc55dea4>
 - 仓库地址: <https://github.com/See-YouL/Fire-Projects.git>
+- 使用Doxygen生成项目文档保存在Doc/html/index.html
+
+### 代码规范
+
+注意一下提到的代码规范符合**Doxygen要求**
+
+参考链接[CSDN关于Doxygen语法](https://blog.csdn.net/qq_41204464/article/details/102458103)
+
+#### 变量批注
+
+```c
+int a = 1; //!< 测试变量a的单行批注
+int b = 1; /*!< 测试变量b的块批注 */
+```
+
+#### 在每个文件的头部添加如下注释
+
+```c
+/**
+  ******************************************************************************
+  * @file    文件名
+  * @author  作者名
+  * @version 版本号V0.0.1
+  * @date    日期31-January-2024
+  * @brief   文件作用简介
+  ******************************************************************************
+  * @attention
+  *
+  * THE PRESENT FUCTIONS WHICH IS FOR GUIDANCE ONLY
+  ******************************************************************************
+  */
+```
+
+#### 在函数前添加如下注释
+
+```c
+/**
+ * @brief 函数简介
+ * @param 形参1: 形参1说明
+ * @param 形参2: 形参2说明
+ * @retval 返回值说明
+ */
+
+/// 例如
+
+/**
+  * @brief  Initializes the GPIOx peripheral according to the specified
+  *         parameters in the GPIO_InitStruct.
+  * @param  GPIOx: where x can be (A..G) to select the GPIO peripheral.
+  * @param  GPIO_InitStruct: pointer to a GPIO_InitTypeDef structure that
+  *         contains the configuration information for the specified GPIO peripheral.
+  * @retval None
+  */
+void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
+{
+
+}
+ 
+```
+
+#### 在结构体或枚举变量前添加如下注释
+
+```c
+/**
+ * @brief 结构体或枚举说明
+ */
+
+typedef struct
+{
+    int a; //!< 成员单行注释
+    int b; /*!< 成员
+                换行注释块 */
+}A;
+
+// 例如
+
+/** 
+  * @brief  GPIO Init structure definition  
+  */
+
+typedef struct
+{
+  uint16_t GPIO_Pin;             /*!< Specifies the GPIO pins to be configured.
+                                      This parameter can be any value of @ref GPIO_pins_define */
+
+  GPIOSpeed_TypeDef GPIO_Speed;  /*!< Specifies the speed for the selected pins.
+                                      This parameter can be a value of @ref GPIOSpeed_TypeDef */
+
+  GPIOMode_TypeDef GPIO_Mode;    /*!< Specifies the operating mode for the selected pins.
+                                      This parameter can be a value of @ref GPIOMode_TypeDef */
+}GPIO_InitTypeDef;
+
+/** 
+  * @brief  Bit_SET and Bit_RESET enumeration  
+  */
+
+typedef enum
+{ Bit_RESET = 0,
+  Bit_SET
+}BitAction;
+```
+
 
 ## 基础配置
 
@@ -900,142 +1002,128 @@ while(1)
 
 ![RGB原理图](https://raw.githubusercontent.com/See-YouL/MarkdownPhotos/main/202412290150001.png)
 
+- IO口低电平点亮
+- 红PB5, 绿PB0, 蓝PB1
+
 在User目录下新建led文件夹，添加bsp_led.c和bsp_led.h
 
 #### 在bsp_led.h中添加所使用的宏定义和函数声明
 
+
 ```c
+/**
+  ******************************************************************************
+  * @file    bsp_led.h
+  * @author  eric
+  * @version V0.0.1
+  * @date   29-December-2024 
+  * @brief  LED蓝灯GPIO端口定义 
+  ******************************************************************************
+  * @attention
+  *
+  * THE PRESENT FUCTIONS WHICH IS FOR GUIDANCE ONLY
+  ******************************************************************************
+  */
+
 #ifndef __BSP_LED_H
 #define __BSP_LED_H
 
+/* Includes ------------------------------------------------------------------*/
 #include "stm32f10x.h"
 
-// 宏定义
-#define LED_B_GPIO_PIN GPIO_Pin_1 // stm32f10x_gpio.h中定义
-#define LED_B_GPIO_PORT GPIOB // stm32f10x.h中定义 
-#define LED_B_GPIO_CLK RCC_APB2Periph_GPIOB
+#define LED_B_GPIO_PIN GPIO_Pin_1 //!< 引脚1 
+#define LED_B_GPIO_PORT GPIOB //!< 端口B 
+#define LED_B_GPIO_CLK RCC_APB2Periph_GPIOB //!< 端口时钟GPIOB
 
-// 函数声明
-void LED_GPIO_Config(void);
+#define ON 1 //!< 亮为1
+#define OFF 0 //!< 灭为0
 
-#endif // !__BSP_LED_H
-```
-
-#### 在bsp_led.c中添加初始化函数
-
-```c
-// bsp: board support package 板级支持包
-#include "bsp_led.h"
-
-void LED_GPIO_Config(void)
-{
-    RCC_APB2PeriphClockCmd(LED_B_GPIO_CLK, ENABLE);
-    GPIO_InitTypeDef GPIO_InitStruct;
-    GPIO_InitStruct.GPIO_Pin = LED_B_GPIO_PIN;
-    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
-    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(LED_B_GPIO_PORT, &GPIO_InitStruct);
-}
-```
-
-#### 在main.c中调用初始化函数，并进行软件延时，实现LED闪烁
-
-```c
-#include "stm32f10x.h"
-#include "bsp_led.h"
-
-void Delay(uint32_t count)
-{
-    for( ; count != 0; count--)
-    {
-        uint32_t current;
-        for(current = count; current != 0; current--)
-        {
-            ;
-        }
-    }
-    
-}
-
-int main(void)
-{
-    LED_GPIO_Config();
-
-    while(1)
-    {
-        GPIO_SetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN);
-        Delay(0xFFF); // 延时
-        GPIO_ResetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN);
-        Delay(0xFFF); // 延时
-    }
-}
-```
-
-#### 在bsp_led.h中增加函数宏定义
-
-```c
-#define ON 1 
-#define OFF 0
+// 参数为1时IO口输出低电平，灯亮；参数为0时IO口输出高电平，灯灭
 #define LED_B(a) if (a)\
                      GPIO_ResetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN); \
                      else\
                      GPIO_SetBits(LED_B_GPIO_PORT, LED_B_GPIO_PIN);
 // 使用\可以进行换行，其后不能跟空格，\后应该直接回车
+
+void LED_GPIO_Config(void);
+
+#endif // !__BSP_LED_H
+
 ```
 
-#### 在main.c中使用宏定义的函数
+#### 在bsp_led.c中添加初始化函数
 
 ```c
-LED_B(OFF);
-Delay(0xFFF); // 延时
-LED_B(ON);
-Delay(0xFFF); // 延时
-```
+/**
+  ******************************************************************************
+  * @file    bsp_led.c
+  * @author  eric
+  * @version V0.0.1
+  * @date   29-December-2024 
+  * @brief  LED蓝灯GPIO配置函数 
+  ******************************************************************************
+  * @attention
+  *
+  * THE PRESENT FUCTIONS WHICH IS FOR GUIDANCE ONLY
+  ******************************************************************************
+  */
 
-#### 补充: C语言反斜杠\换行
+/* Includes ------------------------------------------------------------------*/
+#include "bsp_led.h" // bsp: board support package 板级支持包
 
-在C语言中使用反斜杠 \ 进行换行时，确实有一些需要注意的事项。这种用法通常出现在宏定义或是将长代码行分割为多行以提高代码的可读性。正确使用时，\ 应该放在行尾，紧接着是换行符。
-
-##### C语言反斜杠\换行的注意事项
-
-- **无空格**：在行尾使用 \ 时，它之后直到行末不能有任何字符，包括空格或制表符。任何在 \ 之后的空格都会使得换行转义失效，导致编译错误。
-- **紧跟换行符**：\ 应该直接紧跟换行符。这告诉编译器忽略换行符，将下一行视为当前行的延续。
-- **可读性**：虽然使用 \ 可以将长代码行分割为多行，但过度使用可能会降低代码的可读性。适当使用，以保持代码整洁和可维护。
-- **宏定义中的使用**：在宏定义中使用 \ 进行换行是常见的做法，**因为宏定义必须是单行的**。在这种情况下，确保每一行（除了最后一行）都以 \ 结尾。
-
-##### C语言反斜杠\换行的示例
-
-正确的使用：
-
-```c
-#define MY_MACRO(a, b) \
-    do { \
-        a = 2; \
-        b = 3; \
-    } while(0)
-
-int main() {
-    int x, y;
-    MY_MACRO(x, y);
-    return 0;
+/**
+ * @brief 配置PB1为推挽输出
+ * @param None
+ * @retval None 
+ */
+void LED_GPIO_Config(void)
+{
+    RCC_APB2PeriphClockCmd(LED_B_GPIO_CLK, ENABLE); // 使能PB端口时钟
+    GPIO_InitTypeDef GPIO_InitStruct; // 定义GPIO初始化结构体变量
+    GPIO_InitStruct.GPIO_Pin = LED_B_GPIO_PIN; // 1端口
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP; // 推挽输出模式
+    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz; // 速度50MHz
+    GPIO_Init(LED_B_GPIO_PORT, &GPIO_InitStruct); // 初始化PB1
 }
+
 ```
 
-在这个例子中，宏 MY_MACRO 被分成了多行，每行的末尾都使用了 \ 来实现。
-
-错误的使用（如果 \ 后有空格）：
+#### 在main.c中调用初始化函数，并进行软件延时，实现LED闪烁
 
 ```c
-#define MY_MACRO(a, b) \ 
-    do { \
-        a = 2; \
-        b = 3; \
-    } while(0)
+/**
+  ******************************************************************************
+  * @file    bsp_led.c
+  * @author  eric
+  * @version V0.0.1
+  * @date   29-December-2024 
+  * @brief  LED蓝灯GPIO配置函数 
+  ******************************************************************************
+  * @attention
+  *
+  * THE PRESENT FUCTIONS WHICH IS FOR GUIDANCE ONLY
+  ******************************************************************************
+  */
+
+/* Includes ------------------------------------------------------------------*/
+#include "bsp_led.h" // bsp: board support package 板级支持包
+
+/**
+ * @brief 配置PB1为推挽输出
+ * @param None
+ * @retval None 
+ */
+void LED_GPIO_Config(void)
+{
+    RCC_APB2PeriphClockCmd(LED_B_GPIO_CLK, ENABLE); // 使能PB端口时钟
+    GPIO_InitTypeDef GPIO_InitStruct; // 定义GPIO初始化结构体变量
+    GPIO_InitStruct.GPIO_Pin = LED_B_GPIO_PIN; // 1端口
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP; // 推挽输出模式
+    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz; // 速度50MHz
+    GPIO_Init(LED_B_GPIO_PORT, &GPIO_InitStruct); // 初始化PB1
+}
+
 ```
-
-在这个错误的例子中，**第一行的 \ 后面如果有空格，将导致编译错误**。
-
-总之，当在C语言中使用 \ 进行换行时，**确保 \ 是每行的最后一个字符，并且紧接着换行符**，以避免编译错误并保持代码的清晰
 
 ### GPIO输入
 
