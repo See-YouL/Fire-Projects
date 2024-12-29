@@ -13,6 +13,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f10x_conf.h"
 #include "bsp_led.h" // bsp: board support package 板级支持包
 
 /**

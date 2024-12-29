@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/Libraries/CMSIS/**",
+                "${workspaceFolder}/Libraries/CMSIS/startup/**",
+                "${workspaceFolder}/Libraries/STM32F10x_StdPeriph_Driver/inc/**",
+                "${workspaceFolder}/User/**",
+                "${workspaceFolder}/User/led/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "D:\\Embedded\\Toolchains\\mingw64\\bin\\gcc.exe",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "windows-gcc-x64",
+            "configurationProvider": "cl.eide"
+        }
+    ],
+    "version": 4
+}

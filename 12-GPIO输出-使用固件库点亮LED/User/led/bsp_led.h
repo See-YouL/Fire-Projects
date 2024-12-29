@@ -16,6 +16,7 @@
 #define __BSP_LED_H
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f10x_conf.h"
 #include "stm32f10x.h"
 
 #define LED_B_GPIO_PIN GPIO_Pin_1 //!< 引脚1 
